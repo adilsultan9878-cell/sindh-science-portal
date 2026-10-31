@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <!-- sun -->
+  <g stroke="#ffb300" stroke-width="5" stroke-linecap="round">
+    <line x1="510" y1="20" x2="510" y2="36"/><line x1="510" y1="104" x2="510" y2="120"/>
+    <line x1="460" y1="70" x2="476" y2="70"/><line x1="544" y1="70" x2="560" y2="70"/>
+    <line x1="475" y1="35" x2="486" y2="46"/><line x1="534" y1="94" x2="545" y2="105"/>
+    <line x1="545" y1="35" x2="534" y2="46"/><line x1="486" y1="94" x2="475" y2="105"/>
+  </g>
+  <circle cx="510" cy="70" r="26" fill="#ffd54f"/>
+  <!-- sunlight -->
+  <g stroke="#ffe082" stroke-width="4" stroke-dasharray="10 10">
+    <line x1="470" y1="110" x2="380" y2="150"/><line x1="480" y1="130" x2="390" y2="190"/>
+  </g>
+  <!-- ground -->
+  <rect x="0" y="290" width="600" height="30" fill="#d7ccc8"/>
+  <!-- pot -->
+  <path d="M190 210 h140 l-16 82 h-108z" fill="#d1784f" stroke="#a65a37" stroke-width="3"/>
+  <rect x="182" y="198" width="156" height="20" rx="4" fill="#e08a5e" stroke="#a65a37" stroke-width="3"/>
+  <!-- stem and leaves -->
+  <path d="M260 200 C258 160 262 110 260 60" stroke="#388e3c" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M260 170 C220 160 196 140 186 116 C220 112 248 132 260 170z" fill="#66bb6a" stroke="#2e7d32" stroke-width="2"/>
+  <path d="M260 130 C296 118 322 96 332 72 C298 70 270 92 260 130z" fill="#66bb6a" stroke="#2e7d32" stroke-width="2"/>
+  <path d="M260 96 C232 86 214 66 210 44 C238 46 256 66 260 96z" fill="#66bb6a" stroke="#2e7d32" stroke-width="2"/>
+  <!-- the covered leaf: black paper on part of it, held by a clip -->
+  <path d="M261 160 C306 156 344 170 372 196 C334 214 288 200 261 160z" fill="#66bb6a" stroke="#2e7d32" stroke-width="2"/>
+  <path d="M300 160 h44 v52 h-44z" fill="#263238"/>
+  <path d="M316 150 h14 a6 6 0 0 1 6 6 v20 a6 6 0 0 1 -6 6 h-14 a6 6 0 0 1 -6 -6 v-18" stroke="#90a4ae" stroke-width="4" fill="none"/>
+  <!-- the same leaf after a few days: pale where it was covered -->
+  <path d="M400 250 l40 0" stroke="#78909c" stroke-width="4" marker-end="url(#a)"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#78909c"/></marker></defs>
+  <path d="M452 250 C490 230 540 236 576 262 C540 288 490 290 452 250z" fill="#66bb6a" stroke="#2e7d32" stroke-width="2"/>
+  <path d="M496 238 C512 236 528 238 540 242 v40 C528 286 512 286 496 282z" fill="#fff59d"/>
+</svg>

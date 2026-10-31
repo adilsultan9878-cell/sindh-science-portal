@@ -1,0 +1,340 @@
+{
+  "id": "light-sound",
+  "number": 7,
+  "icon": "💡",
+  "title": { "sd": "روشني ۽ آواز", "ur": "روشنی اور آواز", "en": "Light and Sound" },
+  "summary": {
+    "sd": "روشنيءَ جا ذريعا، پاڇو ڪيئن ٺهي ٿو، شفاف ۽ غير شفاف شيون، ۽ آواز ڪيئن پيدا ٿئي ٿو ۽ سفر ڪري ٿو، سکو.",
+    "ur": "روشنی کے ذرائع، سایہ کیسے بنتا ہے، شفاف اور غیر شفاف چیزیں، اور آواز کیسے پیدا ہوتی اور سفر کرتی ہے، سیکھیں۔",
+    "en": "Learn about sources of light, how shadows form, transparent and opaque things, and how sound is made and travels."
+  },
+  "badge": { "id": "light_expert", "icon": "💡", "name": { "sd": "روشنيءَ جو ماهر", "ur": "روشنی کا ماہر", "en": "Light and Sound Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "روشنيءَ جا ذريعا", "ur": "روشنی کے ذرائع", "en": "Sources of light" },
+      "body": {
+        "sd": [
+          "جيڪي شيون پنهنجي **روشني** پاڻ ڏين ٿيون، انهن کي **روشن شيون** يا روشنيءَ جا **ذريعا** چئبو آهي. مثال: سج، بلب، ميڻ بتي، ٽانڊاڻو.",
+          "سج روشنيءَ جو **قدرتي** ذريعو آهي. بلب ۽ ٽارچ **انسان جا ٺاهيل** ذريعا آهن.",
+          "چنڊ، ڪتاب ۽ ڪرسي پنهنجي روشني نٿا ڏين. اهي **غير روشن** شيون آهن. چنڊ سج جي روشني موٽائي ٿو، ان ڪري چمڪندو نظر اچي ٿو.",
+          "اسين ڪا شيءِ تڏهن ڏسون ٿا جڏهن ان مان روشني اسان جي **اکين** ۾ اچي ٿي."
+        ],
+        "ur": [
+          "جو چیزیں اپنی **روشنی** خود دیتی ہیں، انہیں **روشن اجسام** یا روشنی کے **ذرائع** کہتے ہیں۔ مثالیں: سورج، بلب، موم بتی، جگنو۔",
+          "سورج روشنی کا **قدرتی** ذریعہ ہے۔ بلب اور ٹارچ **انسان کے بنائے ہوئے** ذرائع ہیں۔",
+          "چاند، کتاب اور کرسی اپنی روشنی نہیں دیتے۔ یہ **غیر روشن** اجسام ہیں۔ چاند سورج کی روشنی منعکس کرتا ہے، اسی لیے چمکتا ہوا نظر آتا ہے۔",
+          "ہم کوئی چیز تب دیکھتے ہیں جب اس سے روشنی ہماری **آنکھوں** میں آتی ہے۔"
+        ],
+        "en": [
+          "Things that give out their own **light** are called **luminous objects** or **sources** of light. Examples: the sun, a bulb, a candle, a firefly.",
+          "The sun is a **natural** source of light. Bulbs and torches are **man-made** sources.",
+          "The moon, a book and a chair do not give out their own light. They are **non-luminous**. The moon reflects sunlight, so it looks bright.",
+          "We see an object when light from it enters our **eyes**."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "روشني ۽ پاڇو", "ur": "روشنی اور سایہ", "en": "Light and shadows" },
+      "body": {
+        "sd": [
+          "روشني **سڌين ليڪن** ۾ سفر ڪري ٿي.",
+          "جڏهن ڪا شيءِ روشنيءَ جو رستو روڪي ٿي ته ان جي پويان اونداهي جاءِ ٺهي ٿي. ان کي **پاڇو** چئبو آهي.",
+          "شيون ٽن قسمن جون آهن:",
+          "- **شفاف**: سموري روشني لنگهي وڃي ٿي ۽ اسين صاف ڏسي سگهون ٿا. مثال: صاف شيشو، صاف پاڻي.",
+          "- **نيم شفاف**: ٿوري روشني لنگهي ٿي ۽ شيون ڌنڌليون نظر اچن ٿيون. مثال: مکڻ وارو ڪاغذ، ڌنڌلو شيشو.",
+          "- **غير شفاف**: ڪا به روشني نٿي لنگهي ۽ پاڇو ٺهي ٿو. مثال: ڪاٺ، ڪتاب، ڀت."
+        ],
+        "ur": [
+          "روشنی **سیدھی لکیروں** میں سفر کرتی ہے۔",
+          "جب کوئی چیز روشنی کا راستہ روکتی ہے تو اس کے پیچھے تاریک جگہ بنتی ہے۔ اسے **سایہ** کہتے ہیں۔",
+          "چیزیں تین قسم کی ہیں:",
+          "- **شفاف**: ساری روشنی گزر جاتی ہے اور ہم صاف دیکھ سکتے ہیں۔ مثالیں: صاف شیشہ، صاف پانی۔",
+          "- **نیم شفاف**: تھوڑی روشنی گزرتی ہے اور چیزیں دھندلی نظر آتی ہیں۔ مثالیں: بٹر پیپر، دھندلا شیشہ۔",
+          "- **غیر شفاف**: کوئی روشنی نہیں گزرتی اور سایہ بنتا ہے۔ مثالیں: لکڑی، کتاب، دیوار۔"
+        ],
+        "en": [
+          "Light travels in **straight lines**.",
+          "When an object blocks the path of light, a dark area forms behind it. This is called a **shadow**.",
+          "Materials are of three kinds:",
+          "- **Transparent**: all the light passes through and we can see clearly. Examples: clear glass, clean water.",
+          "- **Translucent**: some light passes through and things look blurry. Examples: butter paper, frosted glass.",
+          "- **Opaque**: no light passes through and a shadow forms. Examples: wood, a book, a wall."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "آواز", "ur": "آواز", "en": "Sound" },
+      "body": {
+        "sd": [
+          "**آواز** تڏهن پيدا ٿئي ٿو جڏهن ڪا شيءِ **ٿرٿراهٽ** (تيز تيز اڳتي پوئتي ٿيڻ) ڪري ٿي. ڊرم وڄايو يا ربڙ جي ڇڪيل پٽي کي ڇهو ته ٿرٿراهٽ محسوس ٿيندي.",
+          "آواز **ٺوس، مائع ۽ گئس** ٽنهي مان سفر ڪري سگهي ٿو. هوا مان، پاڻيءَ مان ۽ ڀت مان به آواز لنگهي ٿو.",
+          "آواز **خالي خلا** ۾ سفر نٿو ڪري سگهي، ڇاڪاڻ ته اتي ڪو مادو ناهي.",
+          "ڪي آواز **وڏا** هوندا آهن ۽ ڪي **هلڪا**. تمام وڏا آواز ڪنن کي نقصان پهچائي سگهن ٿا، ان ڪري اسان کي پنهنجن ڪنن جي حفاظت ڪرڻ گهرجي."
+        ],
+        "ur": [
+          "**آواز** تب پیدا ہوتی ہے جب کوئی چیز **ارتعاش** (تیزی سے آگے پیچھے ہلنا) کرتی ہے۔ ڈھول بجائیں یا کھنچے ہوئے ربڑ بینڈ کو چھیڑیں تو ارتعاش محسوس ہوگا۔",
+          "آواز **ٹھوس، مائع اور گیس** تینوں میں سفر کر سکتی ہے۔ ہوا، پانی اور دیوار سے بھی آواز گزرتی ہے۔",
+          "آواز **خالی خلا** میں سفر نہیں کر سکتی، کیونکہ وہاں کوئی مادہ نہیں ہوتا۔",
+          "کچھ آوازیں **اونچی** ہوتی ہیں اور کچھ **دھیمی**۔ بہت اونچی آوازیں کانوں کو نقصان پہنچا سکتی ہیں، اس لیے ہمیں اپنے کانوں کی حفاظت کرنی چاہیے۔"
+        ],
+        "en": [
+          "**Sound** is made when something **vibrates** (moves quickly back and forth). Beat a drum or pluck a stretched rubber band and you can feel the vibration.",
+          "Sound can travel through **solids, liquids and gases**. It passes through air, water and even walls.",
+          "Sound cannot travel through **empty space**, because there is no matter there.",
+          "Some sounds are **loud** and some are **soft**. Very loud sounds can harm our ears, so we should protect our ears."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "tree",
+    "tree": { "id": "materials", "children": [{ "id": "transparent" }, { "id": "translucent" }, { "id": "opaque" }] },
+    "parts": [
+      { "id": "materials", "label": { "sd": "روشني ۽ شيون", "ur": "روشنی اور اشیاء", "en": "Light and materials" }, "info": { "sd": "روشني ڪن شين مان لنگهي ٿي ۽ ڪن مان نٿي لنگهي.", "ur": "روشنی کچھ چیزوں سے گزرتی ہے اور کچھ سے نہیں گزرتی۔", "en": "Light passes through some materials but not others." } },
+      { "id": "transparent", "label": { "sd": "شفاف", "ur": "شفاف", "en": "Transparent" }, "info": { "sd": "سموري روشني لنگهي ٿي. مثال: صاف شيشو، صاف پاڻي.", "ur": "ساری روشنی گزرتی ہے۔ مثالیں: صاف شیشہ، صاف پانی۔", "en": "All light passes through. Examples: clear glass, clean water." } },
+      { "id": "translucent", "label": { "sd": "نيم شفاف", "ur": "نیم شفاف", "en": "Translucent" }, "info": { "sd": "ٿوري روشني لنگهي ٿي، شيون ڌنڌليون نظر اچن ٿيون. مثال: مکڻ وارو ڪاغذ.", "ur": "تھوڑی روشنی گزرتی ہے، چیزیں دھندلی نظر آتی ہیں۔ مثال: بٹر پیپر۔", "en": "Some light passes through; things look blurry. Example: butter paper." } },
+      { "id": "opaque", "label": { "sd": "غير شفاف", "ur": "غیر شفاف", "en": "Opaque" }, "info": { "sd": "ڪا روشني نٿي لنگهي ۽ پاڇو ٺهي ٿو. مثال: ڪاٺ، ڪتاب.", "ur": "کوئی روشنی نہیں گزرتی اور سایہ بنتا ہے۔ مثالیں: لکڑی، کتاب۔", "en": "No light passes through and a shadow forms. Examples: wood, a book." } }
+    ]
+  },
+  "glossary": [
+    { "sd": "روشني", "ur": "روشنی", "en": "light" },
+    { "sd": "روشن شيءِ", "ur": "روشن جسم", "en": "luminous object" },
+    { "sd": "غير روشن شيءِ", "ur": "غیر روشن جسم", "en": "non-luminous object" },
+    { "sd": "پاڇو", "ur": "سایہ", "en": "shadow" },
+    { "sd": "شفاف", "ur": "شفاف", "en": "transparent" },
+    { "sd": "نيم شفاف", "ur": "نیم شفاف", "en": "translucent" },
+    { "sd": "غير شفاف", "ur": "غیر شفاف", "en": "opaque" },
+    { "sd": "آواز", "ur": "آواز", "en": "sound" },
+    { "sd": "ٿرٿراهٽ", "ur": "ارتعاش", "en": "vibration" },
+    { "sd": "خلا", "ur": "خلا", "en": "space (vacuum)" }
+  ],
+  "quiz": [
+    {
+      "id": "ls1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "هنن مان ڪهڙي شيءِ پنهنجي روشني پاڻ ڏئي ٿي؟", "ur": "ان میں سے کون سی چیز اپنی روشنی خود دیتی ہے؟", "en": "Which of these gives out its own light?" },
+      "options": [
+        { "sd": "چنڊ", "ur": "چاند", "en": "The moon" },
+        { "sd": "سج", "ur": "سورج", "en": "The sun" },
+        { "sd": "آئينو", "ur": "آئینہ", "en": "A mirror" },
+        { "sd": "ڪتاب", "ur": "کتاب", "en": "A book" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "ls2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "چنڊ رات جو چمڪندو ڇو نظر اچي ٿو؟", "ur": "چاند رات کو چمکتا ہوا کیوں نظر آتا ہے؟", "en": "Why does the moon look bright at night?" },
+      "options": [
+        { "sd": "اهو سج جي روشني موٽائي ٿو", "ur": "یہ سورج کی روشنی منعکس کرتا ہے", "en": "It reflects sunlight" },
+        { "sd": "ان ۾ باهه لڳل آهي", "ur": "اس میں آگ لگی ہے", "en": "It is on fire" },
+        { "sd": "ان ۾ بلب لڳل آهن", "ur": "اس میں بلب لگے ہیں", "en": "It has bulbs on it" },
+        { "sd": "اهو هڪ تارو آهي", "ur": "یہ ایک ستارہ ہے", "en": "It is a star" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ls3", "type": "mcq", "topic": "s1",
+      "q": { "sd": "اسين ڪا شيءِ ڪڏهن ڏسي سگهون ٿا؟", "ur": "ہم کوئی چیز کب دیکھ سکتے ہیں؟", "en": "When can we see an object?" },
+      "options": [
+        { "sd": "جڏهن ان مان روشني اسان جي اکين ۾ اچي", "ur": "جب اس سے روشنی ہماری آنکھوں میں آئے", "en": "When light from it enters our eyes" },
+        { "sd": "رڳو جڏهن اهو وڏو آواز ڪري", "ur": "صرف جب وہ اونچی آواز کرے", "en": "Only when it makes a loud sound" },
+        { "sd": "جڏهن اکيون بند هجن", "ur": "جب آنکھیں بند ہوں", "en": "When our eyes are closed" },
+        { "sd": "رڳو اونداهي ۾", "ur": "صرف اندھیرے میں", "en": "Only in the dark" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ls4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "روشني ڪيئن سفر ڪري ٿي؟", "ur": "روشنی کیسے سفر کرتی ہے؟", "en": "How does light travel?" },
+      "options": [
+        { "sd": "سڌين ليڪن ۾", "ur": "سیدھی لکیروں میں", "en": "In straight lines" },
+        { "sd": "گول چڪرن ۾", "ur": "گول دائروں میں", "en": "In circles" },
+        { "sd": "ونگڙين ليڪن ۾", "ur": "ٹیڑھی لکیروں میں", "en": "In wavy curves only" },
+        { "sd": "اهو سفر نٿي ڪري", "ur": "یہ سفر نہیں کرتی", "en": "It does not travel" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ls5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "پاڇو ڪڏهن ٺهي ٿو؟", "ur": "سایہ کب بنتا ہے؟", "en": "When does a shadow form?" },
+      "options": [
+        { "sd": "جڏهن غير شفاف شيءِ روشنيءَ جو رستو روڪي", "ur": "جب غیر شفاف چیز روشنی کا راستہ روکے", "en": "When an opaque object blocks the light" },
+        { "sd": "جڏهن روشني نه هجي", "ur": "جب روشنی نہ ہو", "en": "When there is no light at all" },
+        { "sd": "جڏهن شيءِ شفاف هجي", "ur": "جب چیز شفاف ہو", "en": "When the object is transparent" },
+        { "sd": "جڏهن آواز هجي", "ur": "جب آواز ہو", "en": "When there is a sound" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ls6", "type": "mcq", "topic": "s2",
+      "q": { "sd": "صاف شيشو ڪهڙي قسم جي شيءِ آهي؟", "ur": "صاف شیشہ کس قسم کی چیز ہے؟", "en": "Clear glass is which kind of material?" },
+      "options": [
+        { "sd": "شفاف", "ur": "شفاف", "en": "Transparent" },
+        { "sd": "نيم شفاف", "ur": "نیم شفاف", "en": "Translucent" },
+        { "sd": "غير شفاف", "ur": "غیر شفاف", "en": "Opaque" },
+        { "sd": "روشن", "ur": "روشن", "en": "Luminous" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ls7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "آواز ڪيئن پيدا ٿئي ٿو؟", "ur": "آواز کیسے پیدا ہوتی ہے؟", "en": "How is sound made?" },
+      "options": [
+        { "sd": "ٿرٿراهٽ سان", "ur": "ارتعاش سے", "en": "By vibrations" },
+        { "sd": "روشنيءَ سان", "ur": "روشنی سے", "en": "By light" },
+        { "sd": "پاڇي سان", "ur": "سائے سے", "en": "By shadows" },
+        { "sd": "ٿڌ سان", "ur": "ٹھنڈک سے", "en": "By cold" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ls8", "type": "mcq", "topic": "s3",
+      "q": { "sd": "آواز ڪٿي سفر نٿو ڪري سگهي؟", "ur": "آواز کہاں سفر نہیں کر سکتی؟", "en": "Where can sound NOT travel?" },
+      "options": [
+        { "sd": "هوا ۾", "ur": "ہوا میں", "en": "In air" },
+        { "sd": "پاڻيءَ ۾", "ur": "پانی میں", "en": "In water" },
+        { "sd": "خالي خلا ۾", "ur": "خالی خلا میں", "en": "In empty space" },
+        { "sd": "ڀت ۾", "ur": "دیوار میں", "en": "Through a wall" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "ls9", "type": "mcq", "topic": "s1",
+      "q": { "sd": "هنن مان ڪهڙو روشنيءَ جو انسان جو ٺاهيل ذريعو آهي؟", "ur": "ان میں سے کون سا روشنی کا انسان کا بنایا ہوا ذریعہ ہے؟", "en": "Which of these is a man-made source of light?" },
+      "options": [
+        { "sd": "سج", "ur": "سورج", "en": "The sun" },
+        { "sd": "ٽانڊاڻو", "ur": "جگنو", "en": "A firefly" },
+        { "sd": "ٽارچ", "ur": "ٹارچ", "en": "A torch" },
+        { "sd": "تارو", "ur": "ستارہ", "en": "A star" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "ls10", "type": "tf", "topic": "s1",
+      "q": { "sd": "چنڊ پنهنجي روشني پاڻ ڏئي ٿو.", "ur": "چاند اپنی روشنی خود دیتا ہے۔", "en": "The moon gives out its own light." },
+      "answer": false
+    },
+    {
+      "id": "ls11", "type": "tf", "topic": "s2",
+      "q": { "sd": "ڪاٺ غير شفاف آهي، ان ڪري ان جو پاڇو ٺهي ٿو.", "ur": "لکڑی غیر شفاف ہے، اس لیے اس کا سایہ بنتا ہے۔", "en": "Wood is opaque, so it makes a shadow." },
+      "answer": true
+    },
+    {
+      "id": "ls12", "type": "tf", "topic": "s2",
+      "q": { "sd": "مکڻ وارو ڪاغذ نيم شفاف آهي.", "ur": "بٹر پیپر نیم شفاف ہے۔", "en": "Butter paper is translucent." },
+      "answer": true
+    },
+    {
+      "id": "ls13", "type": "tf", "topic": "s3",
+      "q": { "sd": "آواز پاڻيءَ مان سفر نٿو ڪري سگهي.", "ur": "آواز پانی میں سفر نہیں کر سکتی۔", "en": "Sound cannot travel through water." },
+      "answer": false
+    },
+    {
+      "id": "ls14", "type": "tf", "topic": "s3",
+      "q": { "sd": "تمام وڏا آواز اسان جي ڪنن کي نقصان پهچائي سگهن ٿا.", "ur": "بہت اونچی آوازیں ہمارے کانوں کو نقصان پہنچا سکتی ہیں۔", "en": "Very loud sounds can harm our ears." },
+      "answer": true
+    },
+    {
+      "id": "ls15", "type": "match", "topic": "s2",
+      "q": { "sd": "هر شيءِ کي ان جي قسم سان ملايو.", "ur": "ہر چیز کو اس کی قسم سے ملائیں۔", "en": "Match each material with its kind." },
+      "pairs": [
+        { "left": { "sd": "صاف پاڻي", "ur": "صاف پانی", "en": "Clean water" }, "right": { "sd": "شفاف", "ur": "شفاف", "en": "Transparent" } },
+        { "left": { "sd": "ڌنڌلو شيشو", "ur": "دھندلا شیشہ", "en": "Frosted glass" }, "right": { "sd": "نيم شفاف", "ur": "نیم شفاف", "en": "Translucent" } },
+        { "left": { "sd": "ڀت", "ur": "دیوار", "en": "Wall" }, "right": { "sd": "غير شفاف", "ur": "غیر شفاف", "en": "Opaque" } }
+      ]
+    },
+    {
+      "id": "ls16", "type": "match", "topic": "s1",
+      "q": { "sd": "هر لفظ کي ان جي معنيٰ سان ملايو.", "ur": "ہر لفظ کو اس کے معنی سے ملائیں۔", "en": "Match each word with its meaning." },
+      "pairs": [
+        { "left": { "sd": "روشن شيءِ", "ur": "روشن جسم", "en": "Luminous object" }, "right": { "sd": "پنهنجي روشني ڏئي", "ur": "اپنی روشنی دے", "en": "Gives its own light" } },
+        { "left": { "sd": "پاڇو", "ur": "سایہ", "en": "Shadow" }, "right": { "sd": "روڪيل روشنيءَ پويان اونداهي", "ur": "رکی ہوئی روشنی کے پیچھے تاریکی", "en": "Dark area behind blocked light" } },
+        { "left": { "sd": "ٿرٿراهٽ", "ur": "ارتعاش", "en": "Vibration" }, "right": { "sd": "تيز اڳتي پوئتي حرڪت", "ur": "تیز آگے پیچھے حرکت", "en": "Quick back-and-forth movement" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "sort",
+      "title": { "sd": "شفاف، نيم شفاف يا غير شفاف؟", "ur": "شفاف، نیم شفاف یا غیر شفاف؟", "en": "Transparent, translucent or opaque?" },
+      "bins": [
+        { "id": "transparent", "name": { "sd": "شفاف", "ur": "شفاف", "en": "Transparent" } },
+        { "id": "translucent", "name": { "sd": "نيم شفاف", "ur": "نیم شفاف", "en": "Translucent" } },
+        { "id": "opaque", "name": { "sd": "غير شفاف", "ur": "غیر شفاف", "en": "Opaque" } }
+      ],
+      "items": [
+        { "emoji": "", "text": { "sd": "صاف شيشو", "ur": "صاف شیشہ", "en": "Clear glass" }, "bin": "transparent" },
+        { "emoji": "💧", "text": { "sd": "صاف پاڻي", "ur": "صاف پانی", "en": "Clean water" }, "bin": "transparent" },
+        { "emoji": "", "text": { "sd": "صاف پلاسٽڪ", "ur": "صاف پلاسٹک", "en": "Clear plastic" }, "bin": "transparent" },
+        { "emoji": "📄", "text": { "sd": "مکڻ وارو ڪاغذ", "ur": "بٹر پیپر", "en": "Butter paper" }, "bin": "translucent" },
+        { "emoji": "", "text": { "sd": "ڌنڌلو شيشو", "ur": "دھندلا شیشہ", "en": "Frosted glass" }, "bin": "translucent" },
+        { "emoji": "", "text": { "sd": "سنهو ڪپڙو", "ur": "باریک کپڑا", "en": "Thin cloth" }, "bin": "translucent" },
+        { "emoji": "📚", "text": { "sd": "ڪتاب", "ur": "کتاب", "en": "Book" }, "bin": "opaque" },
+        { "emoji": "🧱", "text": { "sd": "سِر", "ur": "اینٹ", "en": "Brick" }, "bin": "opaque" },
+        { "emoji": "", "text": { "sd": "ڪاٺ", "ur": "لکڑی", "en": "Wood" }, "bin": "opaque" }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ڌاڳي وارو فون ٺاهيو", "ur": "دھاگے والا فون بنائیں", "en": "Make a string telephone" },
+    "materials": [
+      { "sd": "ٻه ڪاغذ يا پلاسٽڪ جا ڪپ", "ur": "دو کاغذ یا پلاسٹک کے کپ", "en": "Two paper or plastic cups" },
+      { "sd": "لڳ ڀڳ 5 ميٽر ڊگهو مضبوط ڌاڳو", "ur": "تقریباً 5 میٹر لمبا مضبوط دھاگہ", "en": "About 5 metres of strong string" },
+      { "sd": "هڪ پينسل (سوراخ ڪرڻ لاءِ)", "ur": "ایک پنسل (سوراخ کرنے کے لیے)", "en": "A pencil (to make holes)" }
+    ],
+    "steps": [
+      { "sd": "ڪنهن وڏي جي مدد سان هر ڪپ جي تري ۾ پينسل سان ننڍڙو سوراخ ڪريو.", "ur": "کسی بڑے کی مدد سے ہر کپ کے پیندے میں پنسل سے چھوٹا سوراخ کریں۔", "en": "With an adult's help, make a small hole in the bottom of each cup with the pencil." },
+      { "sd": "ڌاڳي جا ٻئي ڇيڙا ڪپن جي سوراخن مان لنگهائي اندران ڳنڍ ڏيو.", "ur": "دھاگے کے دونوں سرے کپوں کے سوراخوں سے گزار کر اندر سے گانٹھ لگائیں۔", "en": "Push each end of the string through a hole and tie a knot inside the cup." },
+      { "sd": "هڪ دوست سان ايترو پري بيهو جو ڌاڳو ڇڪيل رهي.", "ur": "ایک دوست کے ساتھ اتنا دور کھڑے ہوں کہ دھاگہ تنا رہے۔", "en": "Stand far from a friend so the string is tight." },
+      { "sd": "هڪ ڪپ ۾ آهستي ڳالهايو ۽ دوست ٻئي ڪپ کي ڪن سان لڳائي ٻڌي.", "ur": "ایک کپ میں آہستہ بولیں اور دوست دوسرا کپ کان سے لگا کر سنے۔", "en": "Speak softly into one cup while your friend listens with the other cup to their ear." }
+    ],
+    "learn": {
+      "sd": "دوست کي آواز صاف ٻڌڻ ۾ اچي ٿو. توهان جو آواز ڪپ ۽ ڇڪيل ڌاڳي ۾ ٿرٿراهٽ پيدا ڪري ٿو، ۽ اها ٿرٿراهٽ ڌاڳي (ٺوس) مان سفر ڪري ٻئي ڪپ تائين پهچي ٿي. ان مان خبر پوي ٿي ته آواز ٺوس شين مان به سفر ڪري ٿو.",
+      "ur": "دوست کو آواز صاف سنائی دیتی ہے۔ آپ کی آواز کپ اور تنے ہوئے دھاگے میں ارتعاش پیدا کرتی ہے، اور یہ ارتعاش دھاگے (ٹھوس) میں سفر کر کے دوسرے کپ تک پہنچتا ہے۔ اس سے پتا چلتا ہے کہ آواز ٹھوس چیزوں میں بھی سفر کرتی ہے۔",
+      "en": "Your friend can hear you clearly. Your voice makes the cup and the tight string vibrate, and the vibrations travel along the string (a solid) to the other cup. This shows that sound travels through solids."
+    },
+    "safety": {
+      "sd": "سوراخ ڪرڻ لاءِ ڪنهن وڏي جي مدد وٺو ۽ ڪپ ۾ زور سان رڙ نه ڪريو.",
+      "ur": "سوراخ کرنے کے لیے کسی بڑے کی مدد لیں اور کپ میں زور سے نہ چیخیں۔",
+      "en": "Ask an adult to help make the holes, and never shout into the cup."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "جيڪي شيون پنهنجي روشني پاڻ ڏين، انهن کي ____ شيون چئبو آهي.", "ur": "جو چیزیں اپنی روشنی خود دیں، انہیں ____ اجسام کہتے ہیں۔", "en": "Things that give out their own light are called ____ objects." }, "answer": { "sd": "روشن", "ur": "روشن", "en": "luminous" } },
+      { "text": { "sd": "روشني ____ ليڪن ۾ سفر ڪري ٿي.", "ur": "روشنی ____ لکیروں میں سفر کرتی ہے۔", "en": "Light travels in ____ lines." }, "answer": { "sd": "سڌين", "ur": "سیدھی", "en": "straight" } },
+      { "text": { "sd": "غير شفاف شيءِ پويان ____ ٺهي ٿو.", "ur": "غیر شفاف چیز کے پیچھے ____ بنتا ہے۔", "en": "A ____ forms behind an opaque object." }, "answer": { "sd": "پاڇو", "ur": "سایہ", "en": "shadow" } },
+      { "text": { "sd": "آواز ____ سان پيدا ٿئي ٿو.", "ur": "آواز ____ سے پیدا ہوتی ہے۔", "en": "Sound is made by ____." }, "answer": { "sd": "ٿرٿراهٽ", "ur": "ارتعاش", "en": "vibrations" } },
+      { "text": { "sd": "آواز خالي ____ ۾ سفر نٿو ڪري سگهي.", "ur": "آواز خالی ____ میں سفر نہیں کر سکتی۔", "en": "Sound cannot travel through empty ____." }, "answer": { "sd": "خلا", "ur": "خلا", "en": "space" } }
+    ],
+    "tf": [
+      { "text": { "sd": "سج روشنيءَ جو قدرتي ذريعو آهي.", "ur": "سورج روشنی کا قدرتی ذریعہ ہے۔", "en": "The sun is a natural source of light." }, "answer": true },
+      { "text": { "sd": "صاف شيشي مان روشني نٿي لنگهي.", "ur": "صاف شیشے سے روشنی نہیں گزرتی۔", "en": "Light cannot pass through clear glass." }, "answer": false },
+      { "text": { "sd": "آواز هوا مان سفر ڪري ٿو.", "ur": "آواز ہوا میں سفر کرتی ہے۔", "en": "Sound travels through air." }, "answer": true },
+      { "text": { "sd": "ڪتاب هڪ روشن شيءِ آهي.", "ur": "کتاب ایک روشن جسم ہے۔", "en": "A book is a luminous object." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "ميڻ بتي", "ur": "موم بتی", "en": "Candle" }, "b": { "sd": "روشن شيءِ", "ur": "روشن جسم", "en": "Luminous object" } },
+      { "a": { "sd": "ڪرسي", "ur": "کرسی", "en": "Chair" }, "b": { "sd": "غير روشن شيءِ", "ur": "غیر روشن جسم", "en": "Non-luminous object" } },
+      { "a": { "sd": "ڊرم", "ur": "ڈھول", "en": "Drum" }, "b": { "sd": "ٿرٿراهٽ سان آواز", "ur": "ارتعاش سے آواز", "en": "Sound from vibration" } },
+      { "a": { "sd": "مکڻ وارو ڪاغذ", "ur": "بٹر پیپر", "en": "Butter paper" }, "b": { "sd": "نيم شفاف", "ur": "نیم شفاف", "en": "Translucent" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "روشنيءَ جا ٽي ذريعا لکو.", "ur": "روشنی کے تین ذرائع لکھیں۔", "en": "Write three sources of light." },
+        "a": { "sd": "سج، بلب ۽ ميڻ بتي.", "ur": "سورج، بلب اور موم بتی۔", "en": "The sun, a bulb and a candle." }
+      },
+      {
+        "q": { "sd": "پاڇو ڪيئن ٺهي ٿو؟", "ur": "سایہ کیسے بنتا ہے؟", "en": "How is a shadow formed?" },
+        "a": { "sd": "جڏهن غير شفاف شيءِ روشنيءَ جو رستو روڪي ٿي ته ان جي پويان اونداهي جاءِ ٺهي ٿي.", "ur": "جب غیر شفاف چیز روشنی کا راستہ روکتی ہے تو اس کے پیچھے تاریک جگہ بنتی ہے۔", "en": "When an opaque object blocks light, a dark area forms behind it." }
+      },
+      {
+        "q": { "sd": "آواز ڪهڙين ٽن شين مان سفر ڪري سگهي ٿو؟", "ur": "آواز کن تین چیزوں میں سفر کر سکتی ہے؟", "en": "Through which three kinds of matter can sound travel?" },
+        "a": { "sd": "ٺوس، مائع ۽ گئس.", "ur": "ٹھوس، مائع اور گیس۔", "en": "Solids, liquids and gases." }
+      }
+    ],
+    "draw": { "sd": "سج، هڪ وڻ ۽ وڻ جو پاڇو ٺاهيو. روشنيءَ جو رستو تير سان ڏيکاريو.", "ur": "سورج، ایک درخت اور درخت کا سایہ بنائیں۔ روشنی کا راستہ تیر سے دکھائیں۔", "en": "Draw the sun, a tree and the tree's shadow. Show the path of light with arrows." }
+  }
+}

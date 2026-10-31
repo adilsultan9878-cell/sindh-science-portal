@@ -1,0 +1,394 @@
+{
+  "id": "plants",
+  "number": 2,
+  "icon": "🌱",
+  "title": { "sd": "ٻوٽا: حصا ۽ کاڌو ٺاهڻ", "ur": "پودے: حصے اور غذا بنانا", "en": "Plants: Parts and Making Food" },
+  "summary": {
+    "sd": "ٻوٽي جا حصا، انهن جا ڪم ۽ پن کاڌو ڪيئن ٺاهين ٿا، سکو.",
+    "ur": "پودے کے حصے، ان کے کام اور پتے غذا کیسے بناتے ہیں، سیکھیں۔",
+    "en": "Learn the parts of a plant, their jobs, and how leaves make food."
+  },
+  "badge": { "id": "plant_expert", "icon": "🌿", "name": { "sd": "ٻوٽن جو ماهر", "ur": "پودوں کا ماہر", "en": "Plant Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "ٻوٽي جا حصا", "ur": "پودے کے حصے", "en": "Parts of a plant" },
+      "body": {
+        "sd": [
+          "ٻوٽي جا مختلف **حصا** هوندا آهن. هر حصي جو پنهنجو ڪم آهي.",
+          "- **پاڙ**: مٽيءَ هيٺان وڌي ٿي. اها ٻوٽي کي مضبوطيءَ سان جهلي رکي ٿي ۽ مٽيءَ مان **پاڻي** ۽ معدنيات چوسي ٿي.",
+          "- **ٿڙ**: ٻوٽي کي سڌو بيهاري ٿو. اهو پاڙن کان پنن تائين پاڻي ۽ پنن کان ٻين حصن تائين کاڌو پهچائي ٿو.",
+          "- **پن**: عام طور تي سائو ۽ سنهو هوندو آهي. پن ٻوٽي لاءِ **کاڌو** ٺاهين ٿا.",
+          "- **گل**: اڪثر رنگين هوندو آهي. گل **ٻج** ٺاهين ٿا.",
+          "- **ميوو**: گل مان ٺهي ٿو ۽ ٻجن جي حفاظت ڪري ٿو.",
+          "- **ٻج**: ان مان نئون ٻوٽو ڄمي سگهي ٿو."
+        ],
+        "ur": [
+          "پودے کے مختلف **حصے** ہوتے ہیں۔ ہر حصے کا اپنا کام ہے۔",
+          "- **جڑ**: مٹی کے نیچے بڑھتی ہے۔ یہ پودے کو مضبوطی سے تھامے رکھتی ہے اور مٹی سے **پانی** اور معدنیات جذب کرتی ہے۔",
+          "- **تنا**: پودے کو سیدھا کھڑا رکھتا ہے۔ یہ جڑوں سے پتوں تک پانی اور پتوں سے دوسرے حصوں تک غذا پہنچاتا ہے۔",
+          "- **پتا**: عام طور پر سبز اور پتلا ہوتا ہے۔ پتے پودے کے لیے **غذا** بناتے ہیں۔",
+          "- **پھول**: اکثر رنگین ہوتا ہے۔ پھول **بیج** بناتے ہیں۔",
+          "- **پھل**: پھول سے بنتا ہے اور بیجوں کی حفاظت کرتا ہے۔",
+          "- **بیج**: اس سے نیا پودا اُگ سکتا ہے۔"
+        ],
+        "en": [
+          "A plant has different **parts**. Each part has its own job.",
+          "- **Root**: grows under the soil. It holds the plant firmly and takes in **water** and minerals from the soil.",
+          "- **Stem**: holds the plant up. It carries water from the roots to the leaves, and food from the leaves to other parts.",
+          "- **Leaf**: is usually green and thin. Leaves make **food** for the plant.",
+          "- **Flower**: is often colourful. Flowers make **seeds**.",
+          "- **Fruit**: grows from the flower and keeps the seeds safe.",
+          "- **Seed**: can grow into a new plant."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "ٻوٽا کاڌو ڪيئن ٺاهين ٿا؟", "ur": "پودے غذا کیسے بناتے ہیں؟", "en": "How do plants make food?" },
+      "body": {
+        "sd": [
+          "سائا ٻوٽا پنهنجو کاڌو پاڻ ٺاهين ٿا. هن عمل کي **ضيائي تاليف** (فوٽو سنٿيسز) چئجي ٿو.",
+          "کاڌو ٺاهڻ لاءِ پن کي چئن شين جي ضرورت آهي:",
+          "- **سج جي روشني** (سج مان توانائي)",
+          "- **پاڻي** (پاڙن کان)",
+          "- **ڪاربان ڊاءِ آڪسائيڊ** (هوا ۾ موجود هڪ گئس، جيڪا پن جي ننڍڙن سوراخن ذريعي اندر اچي ٿي)",
+          "- **ڪلوروفل** (پنن ۾ سائو رنگ جيڪو سج جي روشنيءَ کي جذب ڪري ٿو)",
+          "پن **کنڊ (کاڌو)** ٺاهي ٿو ۽ هوا ۾ **آڪسيجن** خارج ڪري ٿو. اسان کي ساهه کڻڻ لاءِ اها آڪسيجن گهرجي!"
+        ],
+        "ur": [
+          "سبز پودے اپنی غذا خود بناتے ہیں۔ اس عمل کو **ضیائی تالیف** (فوٹو سنتھیسز) کہتے ہیں۔",
+          "غذا بنانے کے لیے پتے کو چار چیزوں کی ضرورت ہوتی ہے:",
+          "- **سورج کی روشنی** (سورج سے توانائی)",
+          "- **پانی** (جڑوں سے)",
+          "- **کاربن ڈائی آکسائیڈ** (ہوا میں موجود ایک گیس، جو پتے کے ننھے سوراخوں سے اندر جاتی ہے)",
+          "- **کلوروفل** (پتوں کا سبز رنگ جو سورج کی روشنی جذب کرتا ہے)",
+          "پتا **شکر (غذا)** بناتا ہے اور ہوا میں **آکسیجن** خارج کرتا ہے۔ ہمیں سانس لینے کے لیے یہی آکسیجن چاہیے!"
+        ],
+        "en": [
+          "Green plants make their own food. This process is called **photosynthesis**.",
+          "To make food, a leaf needs four things:",
+          "- **Sunlight** (energy from the sun)",
+          "- **Water** (from the roots)",
+          "- **Carbon dioxide** (a gas from the air that enters through tiny holes in the leaf)",
+          "- **Chlorophyll** (the green colour in leaves that traps sunlight)",
+          "The leaf makes **sugar (food)** and gives out **oxygen** into the air. We need this oxygen to breathe!"
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "ٻوٽا ڇو ضروري آهن؟", "ur": "پودے کیوں اہم ہیں؟", "en": "Why are plants important?" },
+      "body": {
+        "sd": [
+          "ٻوٽا سڀني جاندارن لاءِ تمام ضروري آهن.",
+          "- اهي اسان کي **کاڌو** ڏين ٿا: ڪڻڪ، چانور، ميوا ۽ ڀاڄيون.",
+          "- اهي اسان جي ساهه کڻڻ لاءِ **آڪسيجن** ڏين ٿا.",
+          "- اهي اسان کي **ڪاٺ**، ڪپڙن لاءِ ڪپهه ۽ دوائون ڏين ٿا.",
+          "- وڻ **ڇانو** ڏين ٿا ۽ پکين ۽ جيتن کي گهر ڏين ٿا.",
+          "اسان کي **وڻ پوکڻ** گهرجن ۽ انهن جو خيال رکڻ گهرجي."
+        ],
+        "ur": [
+          "پودے تمام جانداروں کے لیے بہت اہم ہیں۔",
+          "- یہ ہمیں **غذا** دیتے ہیں: گندم، چاول، پھل اور سبزیاں۔",
+          "- یہ ہمارے سانس لینے کے لیے **آکسیجن** دیتے ہیں۔",
+          "- یہ ہمیں **لکڑی**، کپڑوں کے لیے کپاس اور دوائیں دیتے ہیں۔",
+          "- درخت **سایہ** دیتے ہیں اور پرندوں اور کیڑوں کو گھر دیتے ہیں۔",
+          "ہمیں **درخت لگانے** چاہییں اور ان کا خیال رکھنا چاہیے۔"
+        ],
+        "en": [
+          "Plants are very important for all living things.",
+          "- They give us **food**: wheat, rice, fruits and vegetables.",
+          "- They give out **oxygen** for us to breathe.",
+          "- They give us **wood**, cotton for clothes, and medicines.",
+          "- Trees give **shade** and homes to birds and insects.",
+          "We should **plant trees** and take care of them."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "plant",
+    "parts": [
+      {
+        "id": "flower",
+        "label": { "sd": "گل", "ur": "پھول", "en": "Flower" },
+        "info": {
+          "sd": "ٻج ٺاهي ٿو. ان جا چمڪدار رنگ ماکيءَ جي مکين ۽ تتلين کي پاڻ ڏانهن ڇڪين ٿا.",
+          "ur": "بیج بناتا ہے۔ اس کے چمکدار رنگ شہد کی مکھیوں اور تتلیوں کو اپنی طرف کھینچتے ہیں۔",
+          "en": "Makes seeds. Its bright colours attract bees and butterflies."
+        }
+      },
+      {
+        "id": "leaf",
+        "label": { "sd": "پن", "ur": "پتا", "en": "Leaf" },
+        "info": {
+          "sd": "سج جي روشنيءَ سان ٻوٽي لاءِ کاڌو ٺاهي ٿو ۽ آڪسيجن خارج ڪري ٿو.",
+          "ur": "سورج کی روشنی سے پودے کے لیے غذا بناتا ہے اور آکسیجن خارج کرتا ہے۔",
+          "en": "Makes food for the plant using sunlight, and gives out oxygen."
+        }
+      },
+      {
+        "id": "stem",
+        "label": { "sd": "ٿڙ", "ur": "تنا", "en": "Stem" },
+        "info": {
+          "sd": "ٻوٽي کي سڌو بيهاري ٿو ۽ پاڻي ۽ کاڌو پهچائي ٿو.",
+          "ur": "پودے کو سیدھا کھڑا رکھتا ہے اور پانی اور غذا پہنچاتا ہے۔",
+          "en": "Holds the plant up and carries water and food."
+        }
+      },
+      {
+        "id": "fruit",
+        "label": { "sd": "ميوو", "ur": "پھل", "en": "Fruit" },
+        "info": {
+          "sd": "گل مان ٺهي ٿو ۽ ٻجن جي حفاظت ڪري ٿو.",
+          "ur": "پھول سے بنتا ہے اور بیجوں کی حفاظت کرتا ہے۔",
+          "en": "Grows from the flower and keeps the seeds safe."
+        }
+      },
+      {
+        "id": "root",
+        "label": { "sd": "پاڙ", "ur": "جڑ", "en": "Root" },
+        "info": {
+          "sd": "ٻوٽي کي مٽيءَ ۾ جهلي رکي ٿي ۽ پاڻي ۽ معدنيات چوسي ٿي.",
+          "ur": "پودے کو مٹی میں تھامے رکھتی ہے اور پانی اور معدنیات جذب کرتی ہے۔",
+          "en": "Holds the plant in the soil and takes in water and minerals."
+        }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "ٻوٽو", "ur": "پودا", "en": "plant" },
+    { "sd": "پاڙ", "ur": "جڑ", "en": "root" },
+    { "sd": "ٿڙ", "ur": "تنا", "en": "stem" },
+    { "sd": "پن", "ur": "پتا", "en": "leaf" },
+    { "sd": "گل", "ur": "پھول", "en": "flower" },
+    { "sd": "ميوو", "ur": "پھل", "en": "fruit" },
+    { "sd": "ٻج", "ur": "بیج", "en": "seed" },
+    { "sd": "ضيائي تاليف", "ur": "ضیائی تالیف", "en": "photosynthesis" },
+    { "sd": "ڪلوروفل", "ur": "کلوروفل", "en": "chlorophyll" },
+    { "sd": "آڪسيجن", "ur": "آکسیجن", "en": "oxygen" },
+    { "sd": "ڪاربان ڊاءِ آڪسائيڊ", "ur": "کاربن ڈائی آکسائیڈ", "en": "carbon dioxide" },
+    { "sd": "معدنيات", "ur": "معدنیات", "en": "minerals" }
+  ],
+  "quiz": [
+    {
+      "id": "pl1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ٻوٽي جو ڪهڙو حصو مٽيءَ مان پاڻي چوسي ٿو؟", "ur": "پودے کا کون سا حصہ مٹی سے پانی جذب کرتا ہے؟", "en": "Which part of a plant takes in water from the soil?" },
+      "options": [
+        { "sd": "پن", "ur": "پتا", "en": "Leaf" },
+        { "sd": "گل", "ur": "پھول", "en": "Flower" },
+        { "sd": "پاڙ", "ur": "جڑ", "en": "Root" },
+        { "sd": "ميوو", "ur": "پھل", "en": "Fruit" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "pl2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ڪهڙو حصو ٻوٽي کي سڌو بيهاري ٿو ۽ پاڻي پهچائي ٿو؟", "ur": "کون سا حصہ پودے کو سیدھا کھڑا رکھتا ہے اور پانی پہنچاتا ہے؟", "en": "Which part holds the plant up and carries water?" },
+      "options": [
+        { "sd": "ٿڙ", "ur": "تنا", "en": "Stem" },
+        { "sd": "ٻج", "ur": "بیج", "en": "Seed" },
+        { "sd": "گل", "ur": "پھول", "en": "Flower" },
+        { "sd": "پن", "ur": "پتا", "en": "Leaf" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "pl3", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ٻوٽي جو ڪهڙو حصو ٻج ٺاهي ٿو؟", "ur": "پودے کا کون سا حصہ بیج بناتا ہے؟", "en": "Which part of a plant makes seeds?" },
+      "options": [
+        { "sd": "پاڙ", "ur": "جڑ", "en": "Root" },
+        { "sd": "گل", "ur": "پھول", "en": "Flower" },
+        { "sd": "ٿڙ", "ur": "تنا", "en": "Stem" },
+        { "sd": "پن", "ur": "پتا", "en": "Leaf" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "pl4", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ڪهڙو حصو ٻجن جي حفاظت ڪري ٿو؟", "ur": "کون سا حصہ بیجوں کی حفاظت کرتا ہے؟", "en": "Which part keeps the seeds safe?" },
+      "options": [
+        { "sd": "ميوو", "ur": "پھل", "en": "Fruit" },
+        { "sd": "پاڙ", "ur": "جڑ", "en": "Root" },
+        { "sd": "ٿڙ", "ur": "تنا", "en": "Stem" },
+        { "sd": "پن", "ur": "پتا", "en": "Leaf" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "pl5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ٻوٽي جو ڪهڙو حصو کاڌو ٺاهي ٿو؟", "ur": "پودے کا کون سا حصہ غذا بناتا ہے؟", "en": "Which part of a plant makes food?" },
+      "options": [
+        { "sd": "پاڙ", "ur": "جڑ", "en": "Root" },
+        { "sd": "پن", "ur": "پتا", "en": "Leaf" },
+        { "sd": "ٻج", "ur": "بیج", "en": "Seed" },
+        { "sd": "ٿڙ", "ur": "تنا", "en": "Stem" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "pl6", "type": "mcq", "topic": "s2",
+      "q": { "sd": "پنن ۾ موجود سائي رنگ کي ڇا چئبو آهي؟", "ur": "پتوں میں موجود سبز رنگ کو کیا کہتے ہیں؟", "en": "What is the green colour in leaves called?" },
+      "options": [
+        { "sd": "آڪسيجن", "ur": "آکسیجن", "en": "Oxygen" },
+        { "sd": "ڪلوروفل", "ur": "کلوروفل", "en": "Chlorophyll" },
+        { "sd": "کنڊ", "ur": "شکر", "en": "Sugar" },
+        { "sd": "مٽي", "ur": "مٹی", "en": "Soil" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "pl7", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ٻوٽا کاڌو ٺاهڻ لاءِ هوا مان ڪهڙي گئس وٺن ٿا؟", "ur": "پودے غذا بنانے کے لیے ہوا سے کون سی گیس لیتے ہیں؟", "en": "Which gas do plants take in from the air to make food?" },
+      "options": [
+        { "sd": "آڪسيجن", "ur": "آکسیجن", "en": "Oxygen" },
+        { "sd": "ڪاربان ڊاءِ آڪسائيڊ", "ur": "کاربن ڈائی آکسائیڈ", "en": "Carbon dioxide" },
+        { "sd": "دونهون", "ur": "دھواں", "en": "Smoke" },
+        { "sd": "ٻاڦ", "ur": "بھاپ", "en": "Steam" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "pl8", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ٻوٽا ڪهڙي گئس خارج ڪن ٿا جيڪا اسين ساهه ۾ کڻون ٿا؟", "ur": "پودے کون سی گیس خارج کرتے ہیں جو ہم سانس میں لیتے ہیں؟", "en": "Which gas do plants give out that we breathe in?" },
+      "options": [
+        { "sd": "آڪسيجن", "ur": "آکسیجن", "en": "Oxygen" },
+        { "sd": "ڪاربان ڊاءِ آڪسائيڊ", "ur": "کاربن ڈائی آکسائیڈ", "en": "Carbon dioxide" },
+        { "sd": "دونهون", "ur": "دھواں", "en": "Smoke" },
+        { "sd": "دز", "ur": "گرد", "en": "Dust" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "pl9", "type": "mcq", "topic": "s3",
+      "q": { "sd": "هنن مان ڪهڙي شيءِ اسان کي ٻوٽن مان ملي ٿي؟", "ur": "ان میں سے کون سی چیز ہمیں پودوں سے ملتی ہے؟", "en": "Which of these do we get from plants?" },
+      "options": [
+        { "sd": "ڪپهه", "ur": "کپاس", "en": "Cotton" },
+        { "sd": "شيشو", "ur": "شیشہ", "en": "Glass" },
+        { "sd": "لوهه", "ur": "لوہا", "en": "Iron" },
+        { "sd": "پلاسٽڪ", "ur": "پلاسٹک", "en": "Plastic" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "pl10", "type": "tf", "topic": "s2",
+      "q": { "sd": "ٻوٽن کي کاڌو ٺاهڻ لاءِ سج جي روشني گهرجي.", "ur": "پودوں کو غذا بنانے کے لیے سورج کی روشنی چاہیے۔", "en": "Plants need sunlight to make food." },
+      "answer": true
+    },
+    {
+      "id": "pl11", "type": "tf", "topic": "s1",
+      "q": { "sd": "پاڙون عام طور تي مٽيءَ جي مٿان وڌن ٿيون.", "ur": "جڑیں عام طور پر مٹی کے اوپر بڑھتی ہیں۔", "en": "Roots usually grow above the soil." },
+      "answer": false
+    },
+    {
+      "id": "pl12", "type": "tf", "topic": "s1",
+      "q": { "sd": "ٻج مان نئون ٻوٽو ڄمي سگهي ٿو.", "ur": "بیج سے نیا پودا اُگ سکتا ہے۔", "en": "A seed can grow into a new plant." },
+      "answer": true
+    },
+    {
+      "id": "pl13", "type": "tf", "topic": "s3",
+      "q": { "sd": "اسان کي وڻن مان ڪاٺ ملي ٿو.", "ur": "ہمیں درختوں سے لکڑی ملتی ہے۔", "en": "We get wood from trees." },
+      "answer": true
+    },
+    {
+      "id": "pl14", "type": "tf", "topic": "s2",
+      "q": { "sd": "ٻوٽا اونداهيءَ ۾ روشنيءَ کان سواءِ کاڌو ٺاهين ٿا.", "ur": "پودے اندھیرے میں روشنی کے بغیر غذا بناتے ہیں۔", "en": "Plants make food in the dark without any light." },
+      "answer": false
+    },
+    {
+      "id": "pl15", "type": "match", "topic": "s1",
+      "q": { "sd": "ٻوٽي جي هر حصي کي ان جي ڪم سان ملايو.", "ur": "پودے کے ہر حصے کو اس کے کام سے ملائیں۔", "en": "Match each plant part with its job." },
+      "pairs": [
+        { "left": { "sd": "پاڙ", "ur": "جڑ", "en": "Root" }, "right": { "sd": "پاڻي چوسي ٿي", "ur": "پانی جذب کرتی ہے", "en": "Takes in water" } },
+        { "left": { "sd": "ٿڙ", "ur": "تنا", "en": "Stem" }, "right": { "sd": "پاڻي مٿي پهچائي ٿو", "ur": "پانی اوپر پہنچاتا ہے", "en": "Carries water up" } },
+        { "left": { "sd": "پن", "ur": "پتا", "en": "Leaf" }, "right": { "sd": "کاڌو ٺاهي ٿو", "ur": "غذا بناتا ہے", "en": "Makes food" } },
+        { "left": { "sd": "گل", "ur": "پھول", "en": "Flower" }, "right": { "sd": "ٻج ٺاهي ٿو", "ur": "بیج بناتا ہے", "en": "Makes seeds" } }
+      ]
+    },
+    {
+      "id": "pl16", "type": "match", "topic": "s2",
+      "q": { "sd": "هر لفظ کي ان جي معنيٰ سان ملايو.", "ur": "ہر لفظ کو اس کے معنی سے ملائیں۔", "en": "Match each word with its meaning." },
+      "pairs": [
+        { "left": { "sd": "سج جي روشني", "ur": "سورج کی روشنی", "en": "Sunlight" }, "right": { "sd": "کاڌو ٺاهڻ لاءِ توانائي", "ur": "غذا بنانے کے لیے توانائی", "en": "Energy to make food" } },
+        { "left": { "sd": "ڪلوروفل", "ur": "کلوروفل", "en": "Chlorophyll" }, "right": { "sd": "پنن جو سائو رنگ", "ur": "پتوں کا سبز رنگ", "en": "Green colour in leaves" } },
+        { "left": { "sd": "ڪاربان ڊاءِ آڪسائيڊ", "ur": "کاربن ڈائی آکسائیڈ", "en": "Carbon dioxide" }, "right": { "sd": "هوا مان ورتل گئس", "ur": "ہوا سے لی گئی گیس", "en": "Gas taken from the air" } },
+        { "left": { "sd": "آڪسيجن", "ur": "آکسیجن", "en": "Oxygen" }, "right": { "sd": "پنن مان نڪرندڙ گئس", "ur": "پتوں سے خارج ہونے والی گیس", "en": "Gas given out by leaves" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "memory",
+      "title": { "sd": "ٻوٽي جي حصن جي ياداشت واري راند", "ur": "پودے کے حصوں کا یادداشت کا کھیل", "en": "Plant parts memory game" },
+      "pairs": [
+        { "a": { "sd": "پاڙ", "ur": "جڑ", "en": "Root" }, "b": { "sd": "پاڻي چوسي", "ur": "پانی جذب کرے", "en": "Takes in water" } },
+        { "a": { "sd": "ٿڙ", "ur": "تنا", "en": "Stem" }, "b": { "sd": "ٻوٽي کي سڌو رکي", "ur": "پودے کو سیدھا رکھے", "en": "Holds the plant up" } },
+        { "a": { "sd": "پن", "ur": "پتا", "en": "Leaf" }, "b": { "sd": "کاڌو ٺاهي", "ur": "غذا بنائے", "en": "Makes food" } },
+        { "a": { "sd": "گل", "ur": "پھول", "en": "Flower" }, "b": { "sd": "ٻج ٺاهي", "ur": "بیج بنائے", "en": "Makes seeds" } },
+        { "a": { "sd": "ميوو", "ur": "پھل", "en": "Fruit" }, "b": { "sd": "ٻجن کي بچائي", "ur": "بیجوں کو محفوظ رکھے", "en": "Keeps seeds safe" } },
+        { "a": { "sd": "ٻج", "ur": "بیج", "en": "Seed" }, "b": { "sd": "نئون ٻوٽو بڻجي", "ur": "نیا پودا بنے", "en": "Grows into a new plant" } }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ڇا پنن کي سج جي روشني گهرجي؟", "ur": "کیا پتوں کو سورج کی روشنی چاہیے؟", "en": "Do leaves need sunlight?" },
+    "materials": [
+      { "sd": "گملي ۾ لڳل هڪ ٻوٽو جنهن جا پن سائا هجن", "ur": "سبز پتوں والا گملے کا ایک پودا", "en": "A potted plant with green leaves" },
+      { "sd": "ڪاري يا ٿلهي ڪاغذ جا ٻه ننڍا ٽڪرا", "ur": "کالے یا موٹے کاغذ کے دو چھوٹے ٹکڑے", "en": "Two small pieces of black or thick paper" },
+      { "sd": "ٻه پيپر ڪلپ", "ur": "دو پیپر کلپ", "en": "Two paper clips" }
+    ],
+    "steps": [
+      { "sd": "هڪ پن چونڊيو. ان کي ٻوٽي مان نه ٽوڙيو.", "ur": "ایک پتا منتخب کریں۔ اسے پودے سے نہ توڑیں۔", "en": "Choose one leaf. Do not pluck it from the plant." },
+      { "sd": "پن جي ڪجهه حصي کي ٻنهي پاسن کان ڪاغذ سان ڍڪيو ۽ ڪلپ لڳايو.", "ur": "پتے کے کچھ حصے کو دونوں طرف سے کاغذ سے ڈھانپیں اور کلپ لگا دیں۔", "en": "Cover part of the leaf with paper on both sides and fix it with the clips." },
+      { "sd": "ٻوٽي کي 4 کان 5 ڏينهن سج ۾ رکو ۽ پاڻي ڏيندا رهو.", "ur": "پودے کو 4 سے 5 دن دھوپ میں رکھیں اور پانی دیتے رہیں۔", "en": "Keep the plant in sunlight for 4 to 5 days and keep watering it." },
+      { "sd": "ڪاغذ لاهيو ۽ ڍڪيل حصي جو باقي پن سان مقابلو ڪريو.", "ur": "کاغذ ہٹائیں اور ڈھکے ہوئے حصے کا باقی پتے سے موازنہ کریں۔", "en": "Remove the paper and compare the covered part with the rest of the leaf." }
+    ],
+    "learn": {
+      "sd": "ڍڪيل حصو هلڪو پيلو ٿي وڃي ٿو، جڏهن ته باقي پن سائو رهي ٿو. سج جي روشنيءَ کان سواءِ پن ڪلوروفل ۽ کاڌو نٿو ٺاهي سگهي. پنن کي کاڌو ٺاهڻ لاءِ سج جي روشني گهرجي.",
+      "ur": "ڈھکا ہوا حصہ ہلکا پیلا ہو جاتا ہے، جبکہ باقی پتا سبز رہتا ہے۔ سورج کی روشنی کے بغیر پتا کلوروفل اور غذا نہیں بنا سکتا۔ پتوں کو غذا بنانے کے لیے سورج کی روشنی چاہیے۔",
+      "en": "The covered part turns pale yellow, while the rest of the leaf stays green. Without sunlight the leaf cannot make chlorophyll and food. Leaves need sunlight to make food."
+    },
+    "safety": {
+      "sd": "ٻوٽو استعمال ڪرڻ کان اڳ ڪنهن وڏي کان پڇو. پن کي آرام سان هٿ لايو.",
+      "ur": "پودا استعمال کرنے سے پہلے کسی بڑے سے پوچھیں۔ پتے کو احتیاط سے چھوئیں۔",
+      "en": "Ask an adult before you use a plant. Handle the leaf gently."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "____ مٽيءَ مان پاڻي چوسي ٿي.", "ur": "____ مٹی سے پانی جذب کرتی ہے۔", "en": "The ____ takes in water from the soil." }, "answer": { "sd": "پاڙ", "ur": "جڑ", "en": "root" } },
+      { "text": { "sd": "پن ٻوٽي لاءِ ____ ٺاهين ٿا.", "ur": "پتے پودے کے لیے ____ بناتے ہیں۔", "en": "Leaves make ____ for the plant." }, "answer": { "sd": "کاڌو", "ur": "غذا", "en": "food" } },
+      { "text": { "sd": "پنن جي سائي رنگ کي ____ چئبو آهي.", "ur": "پتوں کے سبز رنگ کو ____ کہتے ہیں۔", "en": "The green colour in leaves is called ____." }, "answer": { "sd": "ڪلوروفل", "ur": "کلوروفل", "en": "chlorophyll" } },
+      { "text": { "sd": "ٻوٽا هوا ۾ ____ خارج ڪن ٿا.", "ur": "پودے ہوا میں ____ خارج کرتے ہیں۔", "en": "Plants give out ____ into the air." }, "answer": { "sd": "آڪسيجن", "ur": "آکسیجن", "en": "oxygen" } },
+      { "text": { "sd": "گل ____ ٺاهين ٿا.", "ur": "پھول ____ بناتے ہیں۔", "en": "Flowers make ____." }, "answer": { "sd": "ٻج", "ur": "بیج", "en": "seeds" } }
+    ],
+    "tf": [
+      { "text": { "sd": "ٿڙ پاڙن کان پنن تائين پاڻي پهچائي ٿو.", "ur": "تنا جڑوں سے پتوں تک پانی پہنچاتا ہے۔", "en": "The stem carries water from the roots to the leaves." }, "answer": true },
+      { "text": { "sd": "ٻوٽا رڳو رات جو کاڌو ٺاهين ٿا.", "ur": "پودے صرف رات کو غذا بناتے ہیں۔", "en": "Plants make food only at night." }, "answer": false },
+      { "text": { "sd": "اسان کي ڪپهه ٻوٽن مان ملي ٿي.", "ur": "ہمیں کپاس پودوں سے ملتی ہے۔", "en": "We get cotton from plants." }, "answer": true },
+      { "text": { "sd": "ميوو پاڙ مان ٺهي ٿو.", "ur": "پھل جڑ سے بنتا ہے۔", "en": "A fruit grows from the root." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "پن", "ur": "پتا", "en": "Leaf" }, "b": { "sd": "کاڌو ٺاهي ٿو", "ur": "غذا بناتا ہے", "en": "Makes food" } },
+      { "a": { "sd": "ميوو", "ur": "پھل", "en": "Fruit" }, "b": { "sd": "ٻجن جي حفاظت ڪري ٿو", "ur": "بیجوں کی حفاظت کرتا ہے", "en": "Keeps seeds safe" } },
+      { "a": { "sd": "ٻج", "ur": "بیج", "en": "Seed" }, "b": { "sd": "نئون ٻوٽو بڻجي ٿو", "ur": "نیا پودا بنتا ہے", "en": "Grows into a new plant" } },
+      { "a": { "sd": "ٿڙ", "ur": "تنا", "en": "Stem" }, "b": { "sd": "ٻوٽي کي سڌو رکي ٿو", "ur": "پودے کو سیدھا رکھتا ہے", "en": "Holds the plant up" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "پن کي کاڌو ٺاهڻ لاءِ ڪهڙيون چار شيون گهرجن؟", "ur": "پتے کو غذا بنانے کے لیے کون سی چار چیزیں چاہییں؟", "en": "What four things does a leaf need to make food?" },
+        "a": { "sd": "سج جي روشني، پاڻي، ڪاربان ڊاءِ آڪسائيڊ ۽ ڪلوروفل.", "ur": "سورج کی روشنی، پانی، کاربن ڈائی آکسائیڈ اور کلوروفل۔", "en": "Sunlight, water, carbon dioxide and chlorophyll." }
+      },
+      {
+        "q": { "sd": "پاڙ جا ٻه ڪم لکو.", "ur": "جڑ کے دو کام لکھیں۔", "en": "Write two jobs of the root." },
+        "a": { "sd": "اها ٻوٽي کي مٽيءَ ۾ جهلي رکي ٿي ۽ پاڻي چوسي ٿي.", "ur": "یہ پودے کو مٹی میں تھامے رکھتی ہے اور پانی جذب کرتی ہے۔", "en": "It holds the plant in the soil and takes in water." }
+      },
+      {
+        "q": { "sd": "اسان کي وڻ ڇو پوکڻ گهرجن؟", "ur": "ہمیں درخت کیوں لگانے چاہییں؟", "en": "Why should we plant trees?" },
+        "a": { "sd": "وڻ اسان کي آڪسيجن، کاڌو، ڪاٺ ۽ ڇانو ڏين ٿا.", "ur": "درخت ہمیں آکسیجن، غذا، لکڑی اور سایہ دیتے ہیں۔", "en": "Trees give us oxygen, food, wood and shade." }
+      }
+    ],
+    "draw": { "sd": "هڪ ٻوٽو ٺاهيو ۽ پاڙ، ٿڙ، پن، گل ۽ ميوي جا نالا لکو.", "ur": "ایک پودے کی تصویر بنائیں اور جڑ، تنا، پتا، پھول اور پھل کے نام لکھیں۔", "en": "Draw a plant and label the root, stem, leaf, flower and fruit." }
+  }
+}

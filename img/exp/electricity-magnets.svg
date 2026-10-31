@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <rect x="0" y="276" width="600" height="44" fill="#d7ccc8"/>
+  <!-- horseshoe magnet -->
+  <g transform="translate(0 34)">
+  <path d="M90 60 v110 a70 70 0 0 0 140 0 v-110 h-40 v110 a30 30 0 0 1 -60 0 v-110z" fill="#e53935" stroke="#b71c1c" stroke-width="3"/>
+  <rect x="90" y="40" width="40" height="26" fill="#cfd8dc" stroke="#78909c" stroke-width="3"/>
+  <rect x="190" y="40" width="40" height="26" fill="#cfd8dc" stroke="#78909c" stroke-width="3"/>
+  <!-- iron things stuck to the magnet: nail, pin, spoon -->
+  <path d="M104 40 l-6 -30" stroke="#607d8b" stroke-width="6" stroke-linecap="round"/><path d="M90 10 h16" stroke="#607d8b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M124 40 l14 -26" stroke="#90a4ae" stroke-width="3"/><circle cx="139" cy="12" r="5" fill="#90a4ae"/>
+  <path d="M212 40 l20 -28" stroke="#b0bec5" stroke-width="6" stroke-linecap="round"/><ellipse cx="238" cy="6" rx="12" ry="8" fill="#b0bec5" transform="rotate(-50 238 6)"/>
+  </g>
+  <circle cx="285" cy="70" r="22" fill="#43a047"/><path d="M274 70 l8 8 l15 -16" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- things not pulled: paper, plastic lid, eraser, wooden pencil -->
+  <rect x="330" y="150" width="70" height="90" fill="#ffffff" stroke="#b0bec5" stroke-width="3"/>
+  <path d="M342 170 h46 M342 186 h46 M342 202 h30" stroke="#cfd8dc" stroke-width="3"/>
+  <ellipse cx="460" cy="236" rx="40" ry="12" fill="#4fc3f7" stroke="#0288d1" stroke-width="3"/>
+  <rect x="430" y="170" width="56" height="30" rx="6" fill="#f48fb1" stroke="#ec407a" stroke-width="3"/>
+  <path d="M330 268 h170 l20 -6 l-20 -6 h-170z" fill="#ffca28" stroke="#f9a825" stroke-width="2"/>
+  <path d="M500 256 l20 6 l-20 6z" fill="#ffe0b2"/><path d="M514 260 l6 2 l-6 2z" fill="#424242"/>
+  <circle cx="545" cy="160" r="22" fill="#e53935"/><path d="M536 151 l18 18 M554 151 l-18 18" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+</svg>

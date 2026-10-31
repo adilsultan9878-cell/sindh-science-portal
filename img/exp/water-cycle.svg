@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <rect x="0" y="268" width="600" height="52" fill="#d7ccc8"/>
+  <!-- steel glass full of ice -->
+  <path d="M210 60 h180 l-18 210 h-144z" fill="#cfd8dc" stroke="#90a4ae" stroke-width="4"/>
+  <path d="M232 70 l-2 0 l16 190" stroke="#eceff1" stroke-width="10" opacity="0.8"/>
+  <g fill="#e1f5fe" stroke="#81d4fa" stroke-width="3">
+    <rect x="232" y="40" width="42" height="40" rx="6" transform="rotate(-10 253 60)"/>
+    <rect x="284" y="34" width="42" height="40" rx="6" transform="rotate(8 305 54)"/>
+    <rect x="330" y="44" width="40" height="38" rx="6" transform="rotate(-4 350 63)"/>
+  </g>
+  <!-- water drops forming on the outside -->
+  <g fill="#42a5f5">
+    <path d="M250 110 q-7 12 0 15 q7 -3 0 -15z"/><path d="M300 100 q-7 12 0 15 q7 -3 0 -15z"/>
+    <path d="M350 120 q-7 12 0 15 q7 -3 0 -15z"/><path d="M270 160 q-7 12 0 15 q7 -3 0 -15z"/>
+    <path d="M325 170 q-7 12 0 15 q7 -3 0 -15z"/><path d="M245 210 q-7 12 0 15 q7 -3 0 -15z"/>
+    <path d="M300 220 q-7 12 0 15 q7 -3 0 -15z"/><path d="M345 205 q-7 12 0 15 q7 -3 0 -15z"/>
+    <path d="M260 256 q-7 12 0 15 q7 -3 0 -15z"/>
+  </g>
+  <!-- invisible water vapour in the air, drawn as soft dots -->
+  <g fill="#b3e5fc"><circle cx="120" cy="90" r="5"/><circle cx="150" cy="140" r="4"/><circle cx="100" cy="190" r="5"/><circle cx="450" cy="110" r="5"/><circle cx="480" cy="170" r="4"/><circle cx="430" cy="210" r="5"/></g>
+  <g stroke="#90caf9" stroke-width="3" fill="none" stroke-dasharray="6 6"><path d="M130 110 q40 0 70 20"/><path d="M460 130 q-30 0 -60 20"/></g>
+  <!-- dry cloth -->
+  <path d="M440 236 h110 l-10 34 h-110z" fill="#fff59d" stroke="#fbc02d" stroke-width="3"/>
+  <path d="M452 246 h84 M448 258 h84" stroke="#fbc02d" stroke-width="2"/>
+</svg>

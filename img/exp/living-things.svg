@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <!-- window with sun -->
+  <rect x="24" y="20" width="150" height="120" rx="6" fill="#e3f2fd" stroke="#90a4ae" stroke-width="4"/>
+  <line x1="99" y1="20" x2="99" y2="140" stroke="#90a4ae" stroke-width="4"/>
+  <line x1="24" y1="80" x2="174" y2="80" stroke="#90a4ae" stroke-width="4"/>
+  <circle cx="60" cy="50" r="16" fill="#ffd54f"/>
+  <!-- table -->
+  <rect x="0" y="262" width="600" height="58" fill="#d7ccc8"/>
+  <!-- plate -->
+  <ellipse cx="330" cy="250" rx="200" ry="34" fill="#eceff1" stroke="#b0bec5" stroke-width="3"/>
+  <ellipse cx="330" cy="244" rx="168" ry="24" fill="#ffffff"/>
+  <!-- wet cotton -->
+  <path d="M182 246 q14 -22 32 -8 q14 -20 32 -6 q16 -18 34 -4 q16 -18 34 -2 q18 -16 34 0 q18 -14 32 2 q16 -12 30 4 q10 10 -2 18 H186 q-12 -2 -4 -4z" fill="#e1f5fe" stroke="#81d4fa" stroke-width="2"/>
+  <!-- sprouting chickpeas -->
+  <g>
+    <path d="M225 222 q-2 -30 -18 -44" stroke="#43a047" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="203" cy="176" rx="12" ry="6" fill="#66bb6a" transform="rotate(-30 203 176)"/>
+    <path d="M226 236 q6 10 2 22" stroke="#fafafa" stroke-width="3" fill="none"/>
+    <circle cx="226" cy="230" r="11" fill="#e6c48f" stroke="#c9a46b" stroke-width="2"/>
+  </g>
+  <g>
+    <path d="M285 220 q4 -40 -6 -62" stroke="#43a047" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="270" cy="160" rx="13" ry="6" fill="#66bb6a" transform="rotate(-20 270 160)"/>
+    <ellipse cx="290" cy="166" rx="13" ry="6" fill="#66bb6a" transform="rotate(25 290 166)"/>
+    <circle cx="285" cy="228" r="11" fill="#e6c48f" stroke="#c9a46b" stroke-width="2"/>
+  </g>
+  <g>
+    <path d="M345 222 q-2 -26 10 -40" stroke="#43a047" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <ellipse cx="360" cy="180" rx="12" ry="6" fill="#66bb6a" transform="rotate(25 360 180)"/>
+    <circle cx="345" cy="230" r="11" fill="#e6c48f" stroke="#c9a46b" stroke-width="2"/>
+  </g>
+  <!-- the stone does not change -->
+  <path d="M410 238 q4 -20 26 -20 q24 0 26 18 q2 10 -10 10 h-34 q-10 0 -8 -8z" fill="#9e9e9e" stroke="#757575" stroke-width="2"/>
+  <!-- dropper with water drops -->
+  <rect x="480" y="40" width="22" height="70" rx="6" fill="#e0e0e0" stroke="#9e9e9e" stroke-width="2"/>
+  <rect x="476" y="24" width="30" height="22" rx="8" fill="#ef5350"/>
+  <path d="M486 110 h10 l-5 22z" fill="#bdbdbd"/>
+  <path d="M491 146 q-8 12 0 16 q8 -4 0 -16z" fill="#42a5f5"/>
+  <path d="M491 176 q-8 12 0 16 q8 -4 0 -16z" fill="#42a5f5"/>
+</svg>

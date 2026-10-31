@@ -1,0 +1,355 @@
+{
+  "id": "electricity-magnets",
+  "number": 8,
+  "icon": "🔋",
+  "title": { "sd": "بجلي ۽ مقناطيس", "ur": "بجلی اور مقناطیس", "en": "Electricity and Magnets" },
+  "summary": {
+    "sd": "بجلي جا استعمال ۽ حفاظت، سادو سرڪٽ، موصل ۽ غير موصل شيون، ۽ مقناطيس جا قطب سکو.",
+    "ur": "بجلی کے استعمال اور احتیاط، سادہ سرکٹ، موصل اور غیر موصل اشیاء، اور مقناطیس کے قطب سیکھیں۔",
+    "en": "Learn about uses of electricity and safety, a simple circuit, conductors and insulators, and the poles of a magnet."
+  },
+  "badge": { "id": "electric_expert", "icon": "🔋", "name": { "sd": "بجليءَ جو ماهر", "ur": "بجلی کا ماہر", "en": "Electricity Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "بجلي ۽ ان سان حفاظت", "ur": "بجلی اور اس سے احتیاط", "en": "Electricity and safety" },
+      "body": {
+        "sd": [
+          "**بجلي** توانائيءَ جو هڪ قسم آهي. ان سان بلب ٻرن ٿا، پکا هلن ٿا، فرج ٿڌو ڪري ٿو ۽ موبائل چارج ٿئي ٿو.",
+          "اسان کي بجلي **بجلي گهرن** مان تارن ذريعي ملي ٿي. ننڍيون شيون، جهڙوڪ ٽارچ ۽ گهڙيال، **بيٽري (سيل)** سان هلن ٿيون.",
+          "بجلي ڪارائتي آهي پر **خطرناڪ** به ٿي سگهي ٿي:",
+          "- آلن هٿن سان سوئچ يا ساڪيٽ کي هٿ نه لايو.",
+          "- ساڪيٽ ۾ ڪا به شيءِ نه وجهو.",
+          "- بجليءَ جي تارن ۽ کنڀن ڀرسان پتنگ نه اڏايو.",
+          "- ٽٽل تار ڏسو ته ان کي هٿ نه لايو ۽ ڪنهن وڏي کي ٻڌايو."
+        ],
+        "ur": [
+          "**بجلی** توانائی کی ایک قسم ہے۔ اس سے بلب جلتے ہیں، پنکھے چلتے ہیں، فریج ٹھنڈا کرتا ہے اور موبائل چارج ہوتا ہے۔",
+          "ہمیں بجلی **بجلی گھروں** سے تاروں کے ذریعے ملتی ہے۔ چھوٹی چیزیں، جیسے ٹارچ اور گھڑی، **بیٹری (سیل)** سے چلتی ہیں۔",
+          "بجلی مفید ہے لیکن **خطرناک** بھی ہو سکتی ہے:",
+          "- گیلے ہاتھوں سے سوئچ یا ساکٹ کو ہاتھ نہ لگائیں۔",
+          "- ساکٹ میں کوئی چیز نہ ڈالیں۔",
+          "- بجلی کی تاروں اور کھمبوں کے پاس پتنگ نہ اڑائیں۔",
+          "- ٹوٹی ہوئی تار دیکھیں تو اسے ہاتھ نہ لگائیں اور کسی بڑے کو بتائیں۔"
+        ],
+        "en": [
+          "**Electricity** is a kind of energy. It lights bulbs, runs fans, cools the fridge and charges mobile phones.",
+          "We get electricity from **power stations** through wires. Small things like torches and clocks run on a **battery (cell)**.",
+          "Electricity is useful but it can also be **dangerous**:",
+          "- Never touch a switch or socket with wet hands.",
+          "- Never push anything into a socket.",
+          "- Do not fly kites near electric wires and poles.",
+          "- If you see a broken wire, do not touch it — tell an adult."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "سادو سرڪٽ", "ur": "سادہ سرکٹ", "en": "A simple circuit" },
+      "body": {
+        "sd": [
+          "بجليءَ جي وهڪري جي رستي کي **سرڪٽ** چئبو آهي. سادي سرڪٽ ۾ هي شيون هونديون آهن:",
+          "- **بيٽري**: بجليءَ کي ڌڪي ٿي.",
+          "- **تارون**: بجليءَ کي هڪ هنڌ کان ٻئي هنڌ کڻي وڃن ٿيون.",
+          "- **سوئچ**: سرڪٽ کي کولي يا بند ڪري ٿو.",
+          "- **بلب**: بجليءَ کي روشنيءَ ۾ بدلائي ٿو.",
+          "جڏهن رستو پورو (**بند سرڪٽ**) هجي ته بلب ٻري ٿو. جڏهن رستو ڪٿان ٽٽل (**کليل سرڪٽ**) هجي ته بلب نٿو ٻري.",
+          "جن شين مان بجلي لنگهي ٿي انهن کي **موصل** چئبو آهي، جهڙوڪ ٽامو، لوهه ۽ ايلومينيم. جن مان بجلي نٿي لنگهي انهن کي **غير موصل** چئبو آهي، جهڙوڪ پلاسٽڪ، ربڙ، ڪاٺ ۽ شيشو. ان ڪري تارن تي پلاسٽڪ چڙهيل هوندي آهي."
+        ],
+        "ur": [
+          "بجلی کے بہاؤ کے راستے کو **سرکٹ** کہتے ہیں۔ سادہ سرکٹ میں یہ چیزیں ہوتی ہیں:",
+          "- **بیٹری**: بجلی کو دھکیلتی ہے۔",
+          "- **تاریں**: بجلی کو ایک جگہ سے دوسری جگہ لے جاتی ہیں۔",
+          "- **سوئچ**: سرکٹ کو کھولتا یا بند کرتا ہے۔",
+          "- **بلب**: بجلی کو روشنی میں بدلتا ہے۔",
+          "جب راستہ مکمل (**بند سرکٹ**) ہو تو بلب جلتا ہے۔ جب راستہ کہیں سے ٹوٹا ہوا (**کھلا سرکٹ**) ہو تو بلب نہیں جلتا۔",
+          "جن چیزوں سے بجلی گزرتی ہے انہیں **موصل** کہتے ہیں، جیسے تانبا، لوہا اور ایلومینیم۔ جن سے بجلی نہیں گزرتی انہیں **غیر موصل** کہتے ہیں، جیسے پلاسٹک، ربڑ، لکڑی اور شیشہ۔ اسی لیے تاروں پر پلاسٹک چڑھا ہوتا ہے۔"
+        ],
+        "en": [
+          "The path that electricity flows along is called a **circuit**. A simple circuit has:",
+          "- a **battery**, which pushes the electricity,",
+          "- **wires**, which carry the electricity from one place to another,",
+          "- a **switch**, which opens or closes the circuit,",
+          "- a **bulb**, which changes electricity into light.",
+          "When the path is complete (a **closed circuit**), the bulb lights up. When the path is broken somewhere (an **open circuit**), the bulb does not light.",
+          "Materials that let electricity pass are called **conductors**, like copper, iron and aluminium. Materials that do not let it pass are called **insulators**, like plastic, rubber, wood and glass. That is why wires are covered in plastic."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "مقناطيس", "ur": "مقناطیس", "en": "Magnets" },
+      "body": {
+        "sd": [
+          "**مقناطيس** اهو آهي جيڪو **لوهه، اسٽيل ۽ نڪل** جون شيون پاڻ ڏانهن ڇڪي ٿو. ڪاغذ، پلاسٽڪ ۽ ڪاٺ کي اهو نٿو ڇڪي.",
+          "هر مقناطيس جا ٻه **قطب** هوندا آهن: **اتر قطب (N)** ۽ **ڏکڻ قطب (S)**. مقناطيس جي ڇيڙن تي ڪشش سڀ کان وڌيڪ هوندي آهي.",
+          "- **مختلف قطب** (N ۽ S) هڪ ٻئي کي **ڇڪين** ٿا.",
+          "- **هڪجهڙا قطب** (N ۽ N، يا S ۽ S) هڪ ٻئي کي **پري ڌڪين** ٿا.",
+          "آزاديءَ سان لڙڪندڙ مقناطيس هميشه اتر-ڏکڻ ڏانهن رخ ڪري ٿو. **قطب نما** (ڪمپاس) ان اصول تي ڪم ڪري ٿو ۽ رستو ڳولڻ ۾ مدد ڏئي ٿو."
+        ],
+        "ur": [
+          "**مقناطیس** وہ ہے جو **لوہے، اسٹیل اور نکل** کی چیزوں کو اپنی طرف کھینچتا ہے۔ کاغذ، پلاسٹک اور لکڑی کو یہ نہیں کھینچتا۔",
+          "ہر مقناطیس کے دو **قطب** ہوتے ہیں: **شمالی قطب (N)** اور **جنوبی قطب (S)**۔ مقناطیس کے سروں پر کشش سب سے زیادہ ہوتی ہے۔",
+          "- **مختلف قطب** (N اور S) ایک دوسرے کو **کھینچتے** ہیں۔",
+          "- **ایک جیسے قطب** (N اور N، یا S اور S) ایک دوسرے کو **دور دھکیلتے** ہیں۔",
+          "آزادانہ لٹکا ہوا مقناطیس ہمیشہ شمال-جنوب کی طرف رخ کرتا ہے۔ **قطب نما** (کمپاس) اسی اصول پر کام کرتا ہے اور راستہ تلاش کرنے میں مدد دیتا ہے۔"
+        ],
+        "en": [
+          "A **magnet** pulls things made of **iron, steel and nickel** towards it. It does not pull paper, plastic or wood.",
+          "Every magnet has two **poles**: a **north pole (N)** and a **south pole (S)**. The pull is strongest at the ends of the magnet.",
+          "- **Unlike poles** (N and S) **attract** each other.",
+          "- **Like poles** (N and N, or S and S) **push each other away** (repel).",
+          "A magnet that hangs freely always points north–south. A **compass** works this way and helps us find our way."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "circuit",
+    "parts": [
+      { "id": "battery", "label": { "sd": "بيٽري", "ur": "بیٹری", "en": "Battery" }, "info": { "sd": "بجليءَ جي توانائي ڏئي ٿي ۽ سرڪٽ ۾ بجليءَ کي ڌڪي ٿي.", "ur": "بجلی کی توانائی دیتی ہے اور سرکٹ میں بجلی کو دھکیلتی ہے۔", "en": "Gives electrical energy and pushes electricity around the circuit." } },
+      { "id": "wire", "label": { "sd": "تار", "ur": "تار", "en": "Wire" }, "info": { "sd": "ٽامي جي تار بجلي کڻي وڃي ٿي. ٽامو سٺو موصل آهي.", "ur": "تانبے کی تار بجلی لے جاتی ہے۔ تانبا اچھا موصل ہے۔", "en": "Copper wire carries electricity. Copper is a good conductor." } },
+      { "id": "switch", "label": { "sd": "سوئچ", "ur": "سوئچ", "en": "Switch" }, "info": { "sd": "سرڪٽ کي کولي يا بند ڪري ٿو. بند ڪرڻ سان بجلي وهي ٿي ۽ بلب ٻري ٿو.", "ur": "سرکٹ کو کھولتا یا بند کرتا ہے۔ بند کرنے سے بجلی بہتی ہے اور بلب جلتا ہے۔", "en": "Opens or closes the circuit. When closed, electricity flows and the bulb lights." } },
+      { "id": "bulb", "label": { "sd": "بلب", "ur": "بلب", "en": "Bulb" }, "info": { "sd": "بجليءَ کي روشنيءَ ۾ بدلائي ٿو. رڳو پوري سرڪٽ ۾ ٻري ٿو.", "ur": "بجلی کو روشنی میں بدلتا ہے۔ صرف مکمل سرکٹ میں جلتا ہے۔", "en": "Changes electricity into light. It glows only in a complete circuit." } }
+    ]
+  },
+  "glossary": [
+    { "sd": "بجلي", "ur": "بجلی", "en": "electricity" },
+    { "sd": "بيٽري (سيل)", "ur": "بیٹری (سیل)", "en": "battery (cell)" },
+    { "sd": "سرڪٽ", "ur": "سرکٹ", "en": "circuit" },
+    { "sd": "سوئچ", "ur": "سوئچ", "en": "switch" },
+    { "sd": "موصل", "ur": "موصل", "en": "conductor" },
+    { "sd": "غير موصل", "ur": "غیر موصل", "en": "insulator" },
+    { "sd": "مقناطيس", "ur": "مقناطیس", "en": "magnet" },
+    { "sd": "قطب", "ur": "قطب", "en": "pole" },
+    { "sd": "ڇڪڻ", "ur": "کشش", "en": "attract" },
+    { "sd": "پري ڌڪڻ", "ur": "دفع کرنا", "en": "repel" },
+    { "sd": "قطب نما", "ur": "قطب نما", "en": "compass" }
+  ],
+  "quiz": [
+    {
+      "id": "em1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ٽارچ ڪهڙي شيءِ سان هلي ٿي؟", "ur": "ٹارچ کس چیز سے چلتی ہے؟", "en": "What makes a torch work?" },
+      "options": [
+        { "sd": "بيٽري", "ur": "بیٹری", "en": "A battery" },
+        { "sd": "پاڻي", "ur": "پانی", "en": "Water" },
+        { "sd": "مقناطيس", "ur": "مقناطیس", "en": "A magnet" },
+        { "sd": "ڪاغذ", "ur": "کاغذ", "en": "Paper" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "em2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "هنن مان ڪهڙو ڪم محفوظ آهي؟", "ur": "ان میں سے کون سا کام محفوظ ہے؟", "en": "Which of these is safe?" },
+      "options": [
+        { "sd": "آلن هٿن سان سوئچ دٻائڻ", "ur": "گیلے ہاتھوں سے سوئچ دبانا", "en": "Pressing a switch with wet hands" },
+        { "sd": "ساڪيٽ ۾ پن وجهڻ", "ur": "ساکٹ میں پن ڈالنا", "en": "Pushing a pin into a socket" },
+        { "sd": "کليل ميدان ۾ تارن کان پري پتنگ اڏائڻ", "ur": "کھلے میدان میں تاروں سے دور پتنگ اڑانا", "en": "Flying a kite in an open field away from wires" },
+        { "sd": "ٽٽل تار کي هٿ لائڻ", "ur": "ٹوٹی ہوئی تار کو ہاتھ لگانا", "en": "Touching a broken wire" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "em3", "type": "mcq", "topic": "s2",
+      "q": { "sd": "سرڪٽ ۾ بلب ڪڏهن ٻري ٿو؟", "ur": "سرکٹ میں بلب کب جلتا ہے؟", "en": "When does the bulb in a circuit light up?" },
+      "options": [
+        { "sd": "جڏهن سرڪٽ پورو (بند) هجي", "ur": "جب سرکٹ مکمل (بند) ہو", "en": "When the circuit is complete (closed)" },
+        { "sd": "جڏهن تار ٽٽل هجي", "ur": "جب تار ٹوٹی ہو", "en": "When a wire is broken" },
+        { "sd": "جڏهن بيٽري نه هجي", "ur": "جب بیٹری نہ ہو", "en": "When there is no battery" },
+        { "sd": "جڏهن سوئچ کليل هجي", "ur": "جب سوئچ کھلا ہو", "en": "When the switch is open" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "em4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "هنن مان ڪهڙي شيءِ موصل آهي؟", "ur": "ان میں سے کون سی چیز موصل ہے؟", "en": "Which of these is a conductor?" },
+      "options": [
+        { "sd": "پلاسٽڪ", "ur": "پلاسٹک", "en": "Plastic" },
+        { "sd": "ربڙ", "ur": "ربڑ", "en": "Rubber" },
+        { "sd": "ٽامو", "ur": "تانبا", "en": "Copper" },
+        { "sd": "ڪاٺ", "ur": "لکڑی", "en": "Wood" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "em5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "بجليءَ جي تارن تي پلاسٽڪ ڇو چڙهيل هوندي آهي؟", "ur": "بجلی کی تاروں پر پلاسٹک کیوں چڑھا ہوتا ہے؟", "en": "Why are electric wires covered in plastic?" },
+      "options": [
+        { "sd": "پلاسٽڪ غير موصل آهي ۽ اسان کي بچائي ٿي", "ur": "پلاسٹک غیر موصل ہے اور ہمیں بچاتا ہے", "en": "Plastic is an insulator and keeps us safe" },
+        { "sd": "تار کي سهڻو ڏيکارڻ لاءِ", "ur": "تار کو خوبصورت دکھانے کے لیے", "en": "To make the wire look pretty" },
+        { "sd": "بجلي تيز ڪرڻ لاءِ", "ur": "بجلی تیز کرنے کے لیے", "en": "To make electricity faster" },
+        { "sd": "تار کي ڳرو ڪرڻ لاءِ", "ur": "تار کو بھاری کرنے کے لیے", "en": "To make the wire heavy" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "em6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "مقناطيس ڪهڙي شيءِ کي ڇڪي ٿو؟", "ur": "مقناطیس کس چیز کو کھینچتا ہے؟", "en": "What does a magnet pull?" },
+      "options": [
+        { "sd": "لوهي ڪوڪو", "ur": "لوہے کی کیل", "en": "An iron nail" },
+        { "sd": "ڪاغذ", "ur": "کاغذ", "en": "Paper" },
+        { "sd": "پلاسٽڪ جو چمچو", "ur": "پلاسٹک کا چمچ", "en": "A plastic spoon" },
+        { "sd": "ڪاٺ جي پينسل", "ur": "لکڑی کی پنسل", "en": "A wooden pencil" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "em7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ٻن مقناطيسن جا N ۽ N قطب ويجها آڻيو ته ڇا ٿيندو؟", "ur": "دو مقناطیسوں کے N اور N قطب قریب لائیں تو کیا ہوگا؟", "en": "What happens when the N poles of two magnets are brought close?" },
+      "options": [
+        { "sd": "اهي هڪ ٻئي کي پري ڌڪيندا", "ur": "وہ ایک دوسرے کو دور دھکیلیں گے", "en": "They push each other away" },
+        { "sd": "اهي چنبڙي ويندا", "ur": "وہ چپک جائیں گے", "en": "They stick together" },
+        { "sd": "اهي ڳري ويندا", "ur": "وہ پگھل جائیں گے", "en": "They melt" },
+        { "sd": "ڪجهه به نه", "ur": "کچھ بھی نہیں", "en": "Nothing at all" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "em8", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪهڙو اوزار رستو ڳولڻ لاءِ مقناطيس استعمال ڪري ٿو؟", "ur": "کون سا آلہ راستہ تلاش کرنے کے لیے مقناطیس استعمال کرتا ہے؟", "en": "Which tool uses a magnet to help us find directions?" },
+      "options": [
+        { "sd": "قطب نما", "ur": "قطب نما", "en": "A compass" },
+        { "sd": "ٿرماميٽر", "ur": "تھرمامیٹر", "en": "A thermometer" },
+        { "sd": "ترازو", "ur": "ترازو", "en": "A weighing scale" },
+        { "sd": "گهڙي", "ur": "گھڑی", "en": "A watch" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "em9", "type": "mcq", "topic": "s2",
+      "q": { "sd": "سرڪٽ ۾ سوئچ جو ڪم ڇا آهي؟", "ur": "سرکٹ میں سوئچ کا کام کیا ہے؟", "en": "What does a switch do in a circuit?" },
+      "options": [
+        { "sd": "سرڪٽ کي کولي يا بند ڪري ٿو", "ur": "سرکٹ کو کھولتا یا بند کرتا ہے", "en": "Opens or closes the circuit" },
+        { "sd": "بجلي ٺاهي ٿو", "ur": "بجلی بناتا ہے", "en": "Makes electricity" },
+        { "sd": "روشني ڏئي ٿو", "ur": "روشنی دیتا ہے", "en": "Gives light" },
+        { "sd": "مقناطيس ٺاهي ٿو", "ur": "مقناطیس بناتا ہے", "en": "Makes a magnet" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "em10", "type": "tf", "topic": "s2",
+      "q": { "sd": "ربڙ غير موصل آهي.", "ur": "ربڑ غیر موصل ہے۔", "en": "Rubber is an insulator." },
+      "answer": true
+    },
+    {
+      "id": "em11", "type": "tf", "topic": "s2",
+      "q": { "sd": "کليل سرڪٽ ۾ بلب ٻري ٿو.", "ur": "کھلے سرکٹ میں بلب جلتا ہے۔", "en": "A bulb lights up in an open circuit." },
+      "answer": false
+    },
+    {
+      "id": "em12", "type": "tf", "topic": "s3",
+      "q": { "sd": "مقناطيس جا ٻه قطب هوندا آهن.", "ur": "مقناطیس کے دو قطب ہوتے ہیں۔", "en": "A magnet has two poles." },
+      "answer": true
+    },
+    {
+      "id": "em13", "type": "tf", "topic": "s3",
+      "q": { "sd": "مقناطيس ڪاغذ کي ڇڪي ٿو.", "ur": "مقناطیس کاغذ کو کھینچتا ہے۔", "en": "A magnet pulls paper." },
+      "answer": false
+    },
+    {
+      "id": "em14", "type": "tf", "topic": "s1",
+      "q": { "sd": "آلن هٿن سان ساڪيٽ کي هٿ لائڻ خطرناڪ آهي.", "ur": "گیلے ہاتھوں سے ساکٹ کو ہاتھ لگانا خطرناک ہے۔", "en": "Touching a socket with wet hands is dangerous." },
+      "answer": true
+    },
+    {
+      "id": "em15", "type": "match", "topic": "s2",
+      "q": { "sd": "سرڪٽ جي هر حصي کي ان جي ڪم سان ملايو.", "ur": "سرکٹ کے ہر حصے کو اس کے کام سے ملائیں۔", "en": "Match each part of a circuit with its job." },
+      "pairs": [
+        { "left": { "sd": "بيٽري", "ur": "بیٹری", "en": "Battery" }, "right": { "sd": "بجليءَ کي ڌڪي ٿي", "ur": "بجلی کو دھکیلتی ہے", "en": "Pushes the electricity" } },
+        { "left": { "sd": "تار", "ur": "تار", "en": "Wire" }, "right": { "sd": "بجلي کڻي وڃي ٿي", "ur": "بجلی لے جاتی ہے", "en": "Carries the electricity" } },
+        { "left": { "sd": "سوئچ", "ur": "سوئچ", "en": "Switch" }, "right": { "sd": "سرڪٽ کولي يا بند ڪري ٿو", "ur": "سرکٹ کھولتا یا بند کرتا ہے", "en": "Opens or closes the circuit" } },
+        { "left": { "sd": "بلب", "ur": "بلب", "en": "Bulb" }, "right": { "sd": "روشني ڏئي ٿو", "ur": "روشنی دیتا ہے", "en": "Gives light" } }
+      ]
+    },
+    {
+      "id": "em16", "type": "match", "topic": "s3",
+      "q": { "sd": "هر جوڙي کي ملايو.", "ur": "ہر جوڑے کو ملائیں۔", "en": "Match each pair of poles with what happens." },
+      "pairs": [
+        { "left": { "sd": "N ۽ S", "ur": "N اور S", "en": "N and S" }, "right": { "sd": "هڪ ٻئي کي ڇڪين ٿا", "ur": "ایک دوسرے کو کھینچتے ہیں", "en": "Attract each other" } },
+        { "left": { "sd": "S ۽ S", "ur": "S اور S", "en": "S and S" }, "right": { "sd": "هڪ ٻئي کي پري ڌڪين ٿا", "ur": "ایک دوسرے کو دور دھکیلتے ہیں", "en": "Push each other away" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "sort",
+      "title": { "sd": "موصل يا غير موصل؟", "ur": "موصل یا غیر موصل؟", "en": "Conductor or insulator?" },
+      "bins": [
+        { "id": "conductor", "name": { "sd": "موصل", "ur": "موصل", "en": "Conductor" } },
+        { "id": "insulator", "name": { "sd": "غير موصل", "ur": "غیر موصل", "en": "Insulator" } }
+      ],
+      "items": [
+        { "emoji": "🔩", "text": { "sd": "لوهي ڪوڪو", "ur": "لوہے کی کیل", "en": "Iron nail" }, "bin": "conductor" },
+        { "emoji": "🥄", "text": { "sd": "اسٽيل جو چمچو", "ur": "اسٹیل کا چمچ", "en": "Steel spoon" }, "bin": "conductor" },
+        { "emoji": "", "text": { "sd": "ٽامي جي تار", "ur": "تانبے کی تار", "en": "Copper wire" }, "bin": "conductor" },
+        { "emoji": "", "text": { "sd": "ايلومينيم جو ورق", "ur": "ایلومینیم فوائل", "en": "Aluminium foil" }, "bin": "conductor" },
+        { "emoji": "🔑", "text": { "sd": "ڪنجي", "ur": "چابی", "en": "Key" }, "bin": "conductor" },
+        { "emoji": "", "text": { "sd": "ربڙ", "ur": "ربڑ", "en": "Rubber" }, "bin": "insulator" },
+        { "emoji": "", "text": { "sd": "پلاسٽڪ جي اسڪيل", "ur": "پلاسٹک کا اسکیل", "en": "Plastic ruler" }, "bin": "insulator" },
+        { "emoji": "✏️", "text": { "sd": "ڪاٺ جي پينسل", "ur": "لکڑی کی پنسل", "en": "Wooden pencil" }, "bin": "insulator" },
+        { "emoji": "📄", "text": { "sd": "ڪاغذ", "ur": "کاغذ", "en": "Paper" }, "bin": "insulator" },
+        { "emoji": "🥛", "text": { "sd": "شيشي جو گلاس", "ur": "شیشے کا گلاس", "en": "Glass tumbler" }, "bin": "insulator" }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "مقناطيس ڇا ٿو ڇڪي؟", "ur": "مقناطیس کیا کھینچتا ہے؟", "en": "What does a magnet pull?" },
+    "materials": [
+      { "sd": "هڪ مقناطيس (فرج وارو به هلندو)", "ur": "ایک مقناطیس (فریج والا بھی چلے گا)", "en": "A magnet (a fridge magnet will do)" },
+      { "sd": "لوهي ڪوڪو، پن، اسٽيل جو چمچو", "ur": "لوہے کی کیل، پن، اسٹیل کا چمچ", "en": "An iron nail, a pin, a steel spoon" },
+      { "sd": "ڪاغذ، پلاسٽڪ جي ڍڪڻ، ربڙ، ڪاٺ جي پينسل", "ur": "کاغذ، پلاسٹک کا ڈھکن، ربڑ، لکڑی کی پنسل", "en": "Paper, a plastic lid, an eraser, a wooden pencil" }
+    ],
+    "steps": [
+      { "sd": "سڀ شيون ميز تي رکو.", "ur": "سب چیزیں میز پر رکھیں۔", "en": "Put all the things on a table." },
+      { "sd": "اندازو لڳايو ته ڪهڙيون شيون مقناطيس سان چنبڙنديون ۽ ڪاپيءَ ۾ لکو.", "ur": "اندازہ لگائیں کہ کون سی چیزیں مقناطیس سے چپکیں گی اور کاپی میں لکھیں۔", "en": "Guess which things will stick to the magnet and write your guesses in your notebook." },
+      { "sd": "مقناطيس کي هر شيءِ ويجهو آڻيو.", "ur": "مقناطیس کو ہر چیز کے قریب لائیں۔", "en": "Bring the magnet close to each thing." },
+      { "sd": "ٻن ٽولن ۾ لکو: ڇڪيون ويون ۽ نه ڇڪيون ويون. پنهنجي اندازي سان ڀيٽيو.", "ur": "دو گروہوں میں لکھیں: کھینچی گئیں اور نہیں کھینچی گئیں۔ اپنے اندازے سے موازنہ کریں۔", "en": "Make two lists: pulled and not pulled. Compare them with your guesses." }
+    ],
+    "learn": {
+      "sd": "ڪوڪو، پن ۽ اسٽيل جو چمچو مقناطيس سان چنبڙي ويا، ڇاڪاڻ ته اهي لوهه يا اسٽيل جا آهن. ڪاغذ، پلاسٽڪ، ربڙ ۽ ڪاٺ نه ڇڪيا ويا. مقناطيس رڳو ڪجهه ڌاتن کي ڇڪي ٿو.",
+      "ur": "کیل، پن اور اسٹیل کا چمچ مقناطیس سے چپک گئے، کیونکہ یہ لوہے یا اسٹیل کے ہیں۔ کاغذ، پلاسٹک، ربڑ اور لکڑی نہیں کھینچے گئے۔ مقناطیس صرف کچھ دھاتوں کو کھینچتا ہے۔",
+      "en": "The nail, pin and steel spoon stuck to the magnet because they are made of iron or steel. Paper, plastic, rubber and wood were not pulled. A magnet pulls only some metals."
+    },
+    "safety": {
+      "sd": "مقناطيس کي موبائل، گهڙي ۽ ڪمپيوٽر کان پري رکو. پن کي احتياط سان هٿ لايو.",
+      "ur": "مقناطیس کو موبائل، گھڑی اور کمپیوٹر سے دور رکھیں۔ پن کو احتیاط سے چھوئیں۔",
+      "en": "Keep magnets away from mobile phones, watches and computers. Handle the pin carefully."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "ٽارچ ____ سان هلي ٿي.", "ur": "ٹارچ ____ سے چلتی ہے۔", "en": "A torch runs on a ____." }, "answer": { "sd": "بيٽري", "ur": "بیٹری", "en": "battery" } },
+      { "text": { "sd": "جن شين مان بجلي لنگهي، انهن کي ____ چئبو آهي.", "ur": "جن چیزوں سے بجلی گزرے، انہیں ____ کہتے ہیں۔", "en": "Materials that let electricity pass are called ____." }, "answer": { "sd": "موصل", "ur": "موصل", "en": "conductors" } },
+      { "text": { "sd": "____ سرڪٽ کي کولي يا بند ڪري ٿو.", "ur": "____ سرکٹ کو کھولتا یا بند کرتا ہے۔", "en": "A ____ opens or closes a circuit." }, "answer": { "sd": "سوئچ", "ur": "سوئچ", "en": "switch" } },
+      { "text": { "sd": "مقناطيس جا ٻه ____ هوندا آهن.", "ur": "مقناطیس کے دو ____ ہوتے ہیں۔", "en": "A magnet has two ____." }, "answer": { "sd": "قطب", "ur": "قطب", "en": "poles" } },
+      { "text": { "sd": "____ رستو ڳولڻ ۾ مدد ڏئي ٿو.", "ur": "____ راستہ تلاش کرنے میں مدد دیتا ہے۔", "en": "A ____ helps us find directions." }, "answer": { "sd": "قطب نما", "ur": "قطب نما", "en": "compass" } }
+    ],
+    "tf": [
+      { "text": { "sd": "پلاسٽڪ مان بجلي آسانيءَ سان لنگهي ٿي.", "ur": "پلاسٹک سے بجلی آسانی سے گزرتی ہے۔", "en": "Electricity passes easily through plastic." }, "answer": false },
+      { "text": { "sd": "بند سرڪٽ ۾ بلب ٻري ٿو.", "ur": "بند سرکٹ میں بلب جلتا ہے۔", "en": "A bulb lights up in a closed circuit." }, "answer": true },
+      { "text": { "sd": "مختلف قطب هڪ ٻئي کي ڇڪين ٿا.", "ur": "مختلف قطب ایک دوسرے کو کھینچتے ہیں۔", "en": "Unlike poles attract each other." }, "answer": true },
+      { "text": { "sd": "بجليءَ جي تارن ڀرسان پتنگ اڏائڻ محفوظ آهي.", "ur": "بجلی کی تاروں کے پاس پتنگ اڑانا محفوظ ہے۔", "en": "It is safe to fly a kite near electric wires." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "ٽامو", "ur": "تانبا", "en": "Copper" }, "b": { "sd": "موصل", "ur": "موصل", "en": "Conductor" } },
+      { "a": { "sd": "ربڙ", "ur": "ربڑ", "en": "Rubber" }, "b": { "sd": "غير موصل", "ur": "غیر موصل", "en": "Insulator" } },
+      { "a": { "sd": "بلب", "ur": "بلب", "en": "Bulb" }, "b": { "sd": "روشني ڏئي ٿو", "ur": "روشنی دیتا ہے", "en": "Gives light" } },
+      { "a": { "sd": "N ۽ N قطب", "ur": "N اور N قطب", "en": "N and N poles" }, "b": { "sd": "پري ڌڪين ٿا", "ur": "دور دھکیلتے ہیں", "en": "Push away" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "بجليءَ سان حفاظت جا ٻه طريقا لکو.", "ur": "بجلی سے احتیاط کے دو طریقے لکھیں۔", "en": "Write two ways to stay safe with electricity." },
+        "a": { "sd": "آلن هٿن سان سوئچ کي هٿ نه لايو ۽ ساڪيٽ ۾ ڪا شيءِ نه وجهو.", "ur": "گیلے ہاتھوں سے سوئچ کو ہاتھ نہ لگائیں اور ساکٹ میں کوئی چیز نہ ڈالیں۔", "en": "Do not touch switches with wet hands and never push anything into a socket." }
+      },
+      {
+        "q": { "sd": "سادي سرڪٽ جا چار حصا لکو.", "ur": "سادہ سرکٹ کے چار حصے لکھیں۔", "en": "Name the four parts of a simple circuit." },
+        "a": { "sd": "بيٽري، تارون، سوئچ ۽ بلب.", "ur": "بیٹری، تاریں، سوئچ اور بلب۔", "en": "Battery, wires, switch and bulb." }
+      },
+      {
+        "q": { "sd": "مقناطيس جا ٻه استعمال لکو.", "ur": "مقناطیس کے دو استعمال لکھیں۔", "en": "Write two uses of magnets." },
+        "a": { "sd": "قطب نما ۾ ۽ فرج جي دروازي کي بند رکڻ لاءِ.", "ur": "قطب نما میں اور فریج کا دروازہ بند رکھنے کے لیے۔", "en": "In a compass, and to keep a fridge door shut." }
+      }
+    ],
+    "draw": { "sd": "بيٽري، تارن، سوئچ ۽ بلب سان هڪ سادو سرڪٽ ٺاهيو ۽ هر حصي جو نالو لکو.", "ur": "بیٹری، تاروں، سوئچ اور بلب کے ساتھ ایک سادہ سرکٹ بنائیں اور ہر حصے کا نام لکھیں۔", "en": "Draw a simple circuit with a battery, wires, a switch and a bulb, and label each part." }
+  }
+}

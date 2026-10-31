@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <!-- 1: wash hands with soap -->
+  <path d="M40 60 h50 v22 h-14 v14 h-22 v-14 h-14z" fill="#90a4ae"/>
+  <path d="M65 104 q-6 14 0 22 q6 -8 0 -22z" fill="#42a5f5"/>
+  <rect x="30" y="200" width="90" height="44" rx="14" fill="#f48fb1" stroke="#ec407a" stroke-width="3"/>
+  <circle cx="60" cy="186" r="12" fill="#e1f5fe" stroke="#81d4fa" stroke-width="2"/>
+  <circle cx="84" cy="176" r="8" fill="#e1f5fe" stroke="#81d4fa" stroke-width="2"/>
+  <circle cx="100" cy="190" r="10" fill="#e1f5fe" stroke="#81d4fa" stroke-width="2"/>
+  <path d="M36 150 q20 -24 46 -8 q24 -16 44 8 q-20 22 -44 10 q-26 14 -46 -10z" fill="#ffcc80" stroke="#e0a060" stroke-width="2"/>
+  <!-- 2: a piece of roti -->
+  <circle cx="250" cy="160" r="78" fill="#f0d39b" stroke="#c9a46b" stroke-width="4"/>
+  <g fill="#b7864b"><circle cx="220" cy="130" r="7"/><circle cx="270" cy="120" r="5"/><circle cx="240" cy="190" r="8"/><circle cx="290" cy="170" r="6"/><circle cx="205" cy="170" r="4"/></g>
+  <path d="M300 104 l40 -14 l10 34 l-36 14z" fill="#f0d39b" stroke="#c9a46b" stroke-width="3"/>
+  <path d="M296 108 q10 16 2 30" fill="none" stroke="#f6fbf6" stroke-width="6"/>
+  <!-- 3: chew slowly, the taste turns sweet -->
+  <circle cx="460" cy="160" r="70" fill="#ffcc80" stroke="#e0a060" stroke-width="3"/>
+  <circle cx="436" cy="140" r="7" fill="#4e342e"/><circle cx="484" cy="140" r="7" fill="#4e342e"/>
+  <ellipse cx="460" cy="190" rx="24" ry="12" fill="#e57373"/>
+  <circle cx="420" cy="176" r="10" fill="#ffab91" opacity="0.8"/><circle cx="500" cy="176" r="10" fill="#ffab91" opacity="0.8"/>
+  <!-- one-minute clock -->
+  <circle cx="555" cy="62" r="30" fill="#ffffff" stroke="#546e7a" stroke-width="4"/>
+  <path d="M555 62 v-20 M555 62 h14" stroke="#546e7a" stroke-width="4" stroke-linecap="round"/>
+  <!-- sweet: a little sugar cube -->
+  <rect x="520" y="232" width="34" height="34" rx="4" fill="#ffffff" stroke="#b0bec5" stroke-width="3"/>
+  <path d="M528 246 h18 M528 256 h12" stroke="#cfd8dc" stroke-width="3"/>
+</svg>

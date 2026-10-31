@@ -1,0 +1,462 @@
+{
+  "id": "living-things",
+  "number": 1,
+  "icon": "🐞",
+  "title": { "sd": "جاندار ۽ انهن جي درجه بندي", "ur": "جاندار اور ان کی درجہ بندی", "en": "Living Things and Classification" },
+  "summary": {
+    "sd": "سکو ته جاندار شيون غير جاندار شين کان ڪيئن مختلف آهن ۽ اسين انهن کي گروپن ۾ ڪيئن ورهايون ٿا.",
+    "ur": "سیکھیں کہ جاندار چیزیں بے جان چیزوں سے کیسے مختلف ہیں اور ہم انہیں گروہوں میں کیسے تقسیم کرتے ہیں۔",
+    "en": "Learn how living things are different from non-living things and how we sort them into groups."
+  },
+  "badge": { "id": "nature_expert", "icon": "🐞", "name": { "sd": "فطرت جو ماهر", "ur": "فطرت کا ماہر", "en": "Nature Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "جاندار ڇا آهي؟", "ur": "جاندار کیا ہے؟", "en": "What is a living thing?" },
+      "body": {
+        "sd": [
+          "پنهنجي چوڌاري ڏسو. توهان کي **جاندار** شيون نظر اينديون جهڙوڪ ماڻهو، پکي، وڻ ۽ ماڪوڙا. توهان کي **غير جاندار** شيون به نظر اينديون جهڙوڪ پٿر، ڪتاب ۽ ڪرسيون.",
+          "سڀني جاندارن ۾ ڪجهه خاصيتون هڪجهڙيون هونديون آهن:",
+          "- اهي وقت سان گڏ **وڌن** ٿا.",
+          "- اهي **ساهه کڻن** ٿا (هوا اندر وٺن ٿا).",
+          "- انهن کي **کاڌي** ۽ **پاڻي** جي ضرورت هوندي آهي.",
+          "- اهي پاڻمرادو **حرڪت** ڪن ٿا. ٻوٽا به آهستي حرڪت ڪن ٿا، جيئن سورج مکي جو گل سج ڏانهن ڦري ٿو.",
+          "- اهي پنهنجي جهڙا **ٻچا پيدا** ڪن ٿا.",
+          "- اهي چوڌاري جي شين تي **ردعمل** ڏيکارين ٿا، جهڙوڪ گرمي، روشني ۽ ڇهڻ."
+        ],
+        "ur": [
+          "اپنے اردگرد دیکھیں۔ آپ کو **جاندار** چیزیں نظر آئیں گی جیسے انسان، پرندے، درخت اور چیونٹیاں۔ آپ کو **بے جان** چیزیں بھی نظر آئیں گی جیسے پتھر، کتابیں اور کرسیاں۔",
+          "تمام جانداروں میں کچھ خصوصیات ایک جیسی ہوتی ہیں:",
+          "- وہ وقت کے ساتھ **بڑھتے** ہیں۔",
+          "- وہ **سانس لیتے** ہیں (ہوا اندر لیتے ہیں)۔",
+          "- انہیں **غذا** اور **پانی** کی ضرورت ہوتی ہے۔",
+          "- وہ خود **حرکت** کرتے ہیں۔ پودے بھی آہستہ حرکت کرتے ہیں، جیسے سورج مکھی کا پھول سورج کی طرف مڑتا ہے۔",
+          "- وہ اپنے جیسے **بچے پیدا** کرتے ہیں۔",
+          "- وہ اردگرد کی چیزوں پر **ردِعمل** ظاہر کرتے ہیں، جیسے گرمی، روشنی اور چھونا۔"
+        ],
+        "en": [
+          "Look around you. You can see **living things** like people, birds, trees and ants. You can also see **non-living things** like stones, books and chairs.",
+          "All living things share some features:",
+          "- They **grow** bigger with time.",
+          "- They **breathe** (take in air).",
+          "- They need **food** and **water**.",
+          "- They **move** on their own. Plants move slowly too, for example a sunflower turns towards the sun.",
+          "- They **reproduce** (make young ones like themselves).",
+          "- They **respond** to things around them, like heat, light and touch."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "غير جاندار شيون", "ur": "بے جان چیزیں", "en": "Non-living things" },
+      "body": {
+        "sd": [
+          "**غير جاندار** شيون پاڻمرادو نه وڌن ٿيون، نه ساهه کڻن ٿيون، نه کائن ٿيون ۽ نه ئي ٻچا پيدا ڪن ٿيون.",
+          "ڪجهه غير جاندار شيون **قدرتي** آهن، جهڙوڪ پٿر، پاڻي، هوا ۽ واري. ٻيون **انسان جون ٺاهيل** آهن، جهڙوڪ پينسل، ٿيلهو، ڪار ۽ پکو.",
+          "ڪار حرڪت ڪري ٿي، پر اها جاندار ناهي. اها تڏهن ئي هلي ٿي جڏهن ڪو ماڻهو ان کي هلائي ۽ ان ۾ پيٽرول هجي. اها نه وڌي سگهي ٿي ۽ نه ئي ننڍيون ڪارون پيدا ڪري سگهي ٿي!"
+        ],
+        "ur": [
+          "**بے جان** چیزیں خود سے نہ بڑھتی ہیں، نہ سانس لیتی ہیں، نہ کھاتی ہیں اور نہ ہی بچے پیدا کرتی ہیں۔",
+          "کچھ بے جان چیزیں **قدرتی** ہیں، جیسے پتھر، پانی، ہوا اور ریت۔ کچھ **انسان کی بنائی ہوئی** ہیں، جیسے پنسل، بستہ، گاڑی اور پنکھا۔",
+          "گاڑی حرکت کرتی ہے لیکن وہ جاندار نہیں۔ وہ تبھی چلتی ہے جب کوئی انسان اسے چلائے اور اس میں پیٹرول ہو۔ وہ نہ بڑھ سکتی ہے اور نہ ہی ننھی گاڑیاں پیدا کر سکتی ہے!"
+        ],
+        "en": [
+          "**Non-living things** do not grow, breathe, eat or reproduce on their own.",
+          "Some non-living things are **natural**, like stones, water, air and sand. Others are **made by people**, like pencils, bags, cars and fans.",
+          "A car moves, but it is not living. It moves only when a person drives it and it has petrol. It cannot grow or make baby cars!"
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "جاندارن جا گروپ: ٻوٽا ۽ جانور", "ur": "جانداروں کے گروہ: پودے اور جانور", "en": "Groups of living things: plants and animals" },
+      "body": {
+        "sd": [
+          "سائنسدان جاندارن کي گروپن ۾ ورهائين ٿا. ان کي **درجه بندي** چئبو آهي. ان سان انهن جو مطالعو آسان ٿئي ٿو.",
+          "ٻه سڀ کان وڏا گروپ **ٻوٽا** ۽ **جانور** آهن.",
+          "- **ٻوٽا** سج جي روشنيءَ سان پنهنجو کاڌو پاڻ ٺاهين ٿا. اهي هڪ جاءِ کان ٻي جاءِ تي هلي نٿا سگهن.",
+          "- **جانور** پنهنجو کاڌو پاڻ نٿا ٺاهي سگهن. اهي ٻوٽا يا ٻيا جانور کائين ٿا. گهڻا جانور هڪ جاءِ کان ٻي جاءِ تي وڃي سگهن ٿا.",
+          "ٻوٽا **گل وارا ٻوٽا** (جهڙوڪ انب، گلاب ۽ ڪڻڪ) يا **بنا گلن وارا ٻوٽا** (جهڙوڪ فرن ۽ ماس) ٿي سگهن ٿا."
+        ],
+        "ur": [
+          "سائنسدان جانداروں کو گروہوں میں تقسیم کرتے ہیں۔ اسے **درجہ بندی** کہتے ہیں۔ اس سے ان کا مطالعہ آسان ہو جاتا ہے۔",
+          "دو سب سے بڑے گروہ **پودے** اور **جانور** ہیں۔",
+          "- **پودے** سورج کی روشنی سے اپنی غذا خود بناتے ہیں۔ وہ ایک جگہ سے دوسری جگہ چل نہیں سکتے۔",
+          "- **جانور** اپنی غذا خود نہیں بنا سکتے۔ وہ پودے یا دوسرے جانور کھاتے ہیں۔ زیادہ تر جانور ایک جگہ سے دوسری جگہ جا سکتے ہیں۔",
+          "پودے **پھول دار پودے** (جیسے آم، گلاب اور گندم) یا **بغیر پھول والے پودے** (جیسے فرن اور کائی) ہو سکتے ہیں۔"
+        ],
+        "en": [
+          "Scientists sort living things into groups. This is called **classification**. It makes them easier to study.",
+          "The two biggest groups are **plants** and **animals**.",
+          "- **Plants** make their own food using sunlight. They cannot walk from place to place.",
+          "- **Animals** cannot make their own food. They eat plants or other animals. Most animals can move from place to place.",
+          "Plants can be **flowering plants** (like mango, rose and wheat) or **non-flowering plants** (like ferns and mosses)."
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "title": { "sd": "ريڙهه جي هڏي وارا ۽ بنا ريڙهه جي هڏي وارا جانور", "ur": "ریڑھ کی ہڈی والے اور بغیر ریڑھ کی ہڈی والے جانور", "en": "Animals with and without a backbone" },
+      "body": {
+        "sd": [
+          "جانورن کي ان بنياد تي ورهايو وڃي ٿو ته انهن ۾ **ريڙهه جو هڏو** (پٺيءَ ۾ هڏن جي قطار) آهي يا نه.",
+          "- **ريڙهه دار جانورن** ۾ ريڙهه جو هڏو هوندو آهي. مثال: مڇي، ڏيڏر، ڪرڙي، چڙي، ڳئون ۽ انسان.",
+          "- **بنا ريڙهه وارن جانورن** ۾ ريڙهه جو هڏو نه هوندو آهي. مثال: تتلي، گهونگهو، ڪوريئڙو، ماڪوڙو ۽ مڇر.",
+          "ريڙهه دار جانورن کي پنجن گروپن ۾ ورهايو ويو آهي:",
+          "- **مڇيون** پاڻيءَ ۾ رهن ٿيون ۽ گلز ذريعي ساهه کڻن ٿيون.",
+          "- **ٻه جيوت جانور** جهڙوڪ ڏيڏر پاڻيءَ ۽ زمين ٻنهي تي رهن ٿا.",
+          "- **رينگڻ وارن جانورن** جهڙوڪ ڪرڙي ۽ نانگ جي چمڙي سڪل ۽ ڇلرن واري هوندي آهي.",
+          "- **پکين** کي کنڀ هوندا آهن ۽ اهي آنا ڏين ٿا.",
+          "- **کير پيارڻ وارن جانورن** جهڙوڪ ڳئون، ٻلي ۽ انسان کي وار هوندا آهن ۽ اهي پنهنجن ٻچن کي کير پيارين ٿا."
+        ],
+        "ur": [
+          "جانوروں کو اس بنیاد پر تقسیم کیا جاتا ہے کہ ان میں **ریڑھ کی ہڈی** (کمر میں ہڈیوں کی قطار) ہے یا نہیں۔",
+          "- **فقاریہ** (ریڑھ کی ہڈی والے جانوروں) میں ریڑھ کی ہڈی ہوتی ہے۔ مثالیں: مچھلی، مینڈک، چھپکلی، چڑیا، گائے اور انسان۔",
+          "- **غیر فقاریہ** (بغیر ریڑھ کی ہڈی والے جانوروں) میں ریڑھ کی ہڈی نہیں ہوتی۔ مثالیں: تتلی، گھونگا، مکڑی، چیونٹی اور مچھر۔",
+          "فقاریہ جانوروں کو پانچ گروہوں میں تقسیم کیا جاتا ہے:",
+          "- **مچھلیاں** پانی میں رہتی ہیں اور گلپھڑوں سے سانس لیتی ہیں۔",
+          "- **جل تھلیے** جیسے مینڈک پانی اور خشکی دونوں پر رہتے ہیں۔",
+          "- **رینگنے والے جانوروں** جیسے چھپکلی اور سانپ کی جلد خشک اور چھلکے دار ہوتی ہے۔",
+          "- **پرندوں** کے پر ہوتے ہیں اور وہ انڈے دیتے ہیں۔",
+          "- **ممالیہ** جیسے گائے، بلی اور انسان کے بال ہوتے ہیں اور وہ اپنے بچوں کو دودھ پلاتے ہیں۔"
+        ],
+        "en": [
+          "Animals are sorted by whether they have a **backbone** (a line of bones down the back).",
+          "- **Vertebrates** have a backbone. Examples: fish, frog, lizard, sparrow, cow and humans.",
+          "- **Invertebrates** do not have a backbone. Examples: butterfly, snail, spider, ant and mosquito.",
+          "Vertebrates are put into five groups:",
+          "- **Fish** live in water and breathe with gills.",
+          "- **Amphibians** like frogs live both in water and on land.",
+          "- **Reptiles** like lizards and snakes have dry, scaly skin.",
+          "- **Birds** have feathers and lay eggs.",
+          "- **Mammals** like cows, cats and humans have hair and feed milk to their babies."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "tree",
+    "tree": {
+      "id": "living",
+      "children": [
+        { "id": "plants", "children": [{ "id": "flowering" }, { "id": "nonflowering" }] },
+        { "id": "animals", "children": [{ "id": "vertebrates" }, { "id": "invertebrates" }] }
+      ]
+    },
+    "parts": [
+      {
+        "id": "living",
+        "label": { "sd": "جاندار", "ur": "جاندار", "en": "Living things" },
+        "info": {
+          "sd": "اهي شيون جيڪي وڌن ٿيون، ساهه کڻن ٿيون، کاڌي ۽ پاڻي جي ضرورت رکن ٿيون ۽ ٻچا پيدا ڪن ٿيون.",
+          "ur": "وہ چیزیں جو بڑھتی ہیں، سانس لیتی ہیں، غذا اور پانی کی ضرورت رکھتی ہیں اور بچے پیدا کرتی ہیں۔",
+          "en": "Things that grow, breathe, need food and water, and reproduce."
+        }
+      },
+      {
+        "id": "plants",
+        "label": { "sd": "ٻوٽا", "ur": "پودے", "en": "Plants" },
+        "info": {
+          "sd": "اهي جاندار جيڪي سج جي روشنيءَ سان پنهنجو کاڌو پاڻ ٺاهين ٿا.",
+          "ur": "وہ جاندار جو سورج کی روشنی سے اپنی غذا خود بناتے ہیں۔",
+          "en": "Living things that make their own food using sunlight."
+        }
+      },
+      {
+        "id": "animals",
+        "label": { "sd": "جانور", "ur": "جانور", "en": "Animals" },
+        "info": {
+          "sd": "اهي جاندار جيڪي ٻوٽا يا ٻيا جانور کائين ٿا. گهڻا هڪ جاءِ کان ٻي جاءِ تي وڃي سگهن ٿا.",
+          "ur": "وہ جاندار جو پودے یا دوسرے جانور کھاتے ہیں۔ زیادہ تر ایک جگہ سے دوسری جگہ جا سکتے ہیں۔",
+          "en": "Living things that eat plants or other animals. Most can move from place to place."
+        }
+      },
+      {
+        "id": "flowering",
+        "label": { "sd": "گل وارا ٻوٽا", "ur": "پھول دار پودے", "en": "Flowering plants" },
+        "info": {
+          "sd": "اهي ٻوٽا جن ۾ گل، ميوا ۽ ٻج ٿين ٿا. مثال: انب، گلاب، ڪڻڪ.",
+          "ur": "وہ پودے جن میں پھول، پھل اور بیج ہوتے ہیں۔ مثالیں: آم، گلاب، گندم۔",
+          "en": "Plants that have flowers, fruits and seeds. Examples: mango, rose, wheat."
+        }
+      },
+      {
+        "id": "nonflowering",
+        "label": { "sd": "بنا گلن وارا ٻوٽا", "ur": "بغیر پھول والے پودے", "en": "Non-flowering plants" },
+        "info": {
+          "sd": "اهي ٻوٽا جن ۾ گل نه ٿين. مثال: فرن، ماس.",
+          "ur": "وہ پودے جن میں پھول نہیں ہوتے۔ مثالیں: فرن، کائی۔",
+          "en": "Plants that do not have flowers. Examples: fern, moss."
+        }
+      },
+      {
+        "id": "vertebrates",
+        "label": { "sd": "ريڙهه دار جانور", "ur": "فقاریہ", "en": "Vertebrates" },
+        "info": {
+          "sd": "اهي جانور جن ۾ ريڙهه جو هڏو هجي. مثال: مڇي، ڏيڏر، ڪرڙي، پکي، ڳئون.",
+          "ur": "وہ جانور جن میں ریڑھ کی ہڈی ہو۔ مثالیں: مچھلی، مینڈک، چھپکلی، پرندہ، گائے۔",
+          "en": "Animals with a backbone. Examples: fish, frog, lizard, bird, cow."
+        }
+      },
+      {
+        "id": "invertebrates",
+        "label": { "sd": "بنا ريڙهه وارا جانور", "ur": "غیر فقاریہ", "en": "Invertebrates" },
+        "info": {
+          "sd": "اهي جانور جن ۾ ريڙهه جو هڏو نه هجي. مثال: تتلي، گهونگهو، ڪوريئڙو، ماڪوڙو.",
+          "ur": "وہ جانور جن میں ریڑھ کی ہڈی نہ ہو۔ مثالیں: تتلی، گھونگا، مکڑی، چیونٹی۔",
+          "en": "Animals without a backbone. Examples: butterfly, snail, spider, ant."
+        }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "جاندار", "ur": "جاندار", "en": "living thing" },
+    { "sd": "غير جاندار", "ur": "بے جان", "en": "non-living thing" },
+    { "sd": "درجه بندي", "ur": "درجہ بندی", "en": "classification" },
+    { "sd": "ٻچا پيدا ڪرڻ", "ur": "افزائشِ نسل", "en": "reproduce" },
+    { "sd": "ريڙهه جو هڏو", "ur": "ریڑھ کی ہڈی", "en": "backbone" },
+    { "sd": "ريڙهه دار جانور", "ur": "فقاریہ", "en": "vertebrates" },
+    { "sd": "بنا ريڙهه وارا جانور", "ur": "غیر فقاریہ", "en": "invertebrates" },
+    { "sd": "ٻه جيوت جانور", "ur": "جل تھلیے", "en": "amphibians" },
+    { "sd": "رينگڻ وارا جانور", "ur": "رینگنے والے جانور", "en": "reptiles" },
+    { "sd": "کير پيارڻ وارا جانور", "ur": "ممالیہ", "en": "mammals" }
+  ],
+  "quiz": [
+    {
+      "id": "lt1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "هنن مان ڪهڙي شيءِ جاندار آهي؟", "ur": "ان میں سے کون سی چیز جاندار ہے؟", "en": "Which of these is a living thing?" },
+      "options": [
+        { "sd": "پٿر", "ur": "پتھر", "en": "Stone" },
+        { "sd": "ڪرسي", "ur": "کرسی", "en": "Chair" },
+        { "sd": "وڻ", "ur": "درخت", "en": "Tree" },
+        { "sd": "ڪتاب", "ur": "کتاب", "en": "Book" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "lt2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "جاندارن کي جيئرو رهڻ لاءِ ڇا گهرجي؟", "ur": "جانداروں کو زندہ رہنے کے لیے کیا چاہیے؟", "en": "What do living things need to stay alive?" },
+      "options": [
+        { "sd": "کاڌو ۽ پاڻي", "ur": "غذا اور پانی", "en": "Food and water" },
+        { "sd": "رنگ", "ur": "رنگ", "en": "Paint" },
+        { "sd": "پلاسٽڪ", "ur": "پلاسٹک", "en": "Plastic" },
+        { "sd": "رانديڪا", "ur": "کھلونے", "en": "Toys" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "lt3", "type": "mcq", "topic": "s1",
+      "q": { "sd": "جڏهن جاندار پنهنجي جهڙا ٻچا پيدا ڪن ٿا ته ان کي ڇا چئبو آهي؟", "ur": "جب جاندار اپنے جیسے بچے پیدا کرتے ہیں تو اسے کیا کہتے ہیں؟", "en": "What do we call it when living things make young ones like themselves?" },
+      "options": [
+        { "sd": "ساهه کڻڻ", "ur": "سانس لینا", "en": "Breathing" },
+        { "sd": "ٻچا پيدا ڪرڻ", "ur": "افزائشِ نسل", "en": "Reproduction" },
+        { "sd": "حرڪت ڪرڻ", "ur": "حرکت کرنا", "en": "Moving" },
+        { "sd": "سمهڻ", "ur": "سونا", "en": "Sleeping" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "lt4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "هنن مان ڪهڙي غير جاندار شيءِ انسان جي ٺاهيل آهي؟", "ur": "ان میں سے کون سی بے جان چیز انسان کی بنائی ہوئی ہے؟", "en": "Which of these is a non-living thing made by people?" },
+      "options": [
+        { "sd": "پينسل", "ur": "پنسل", "en": "Pencil" },
+        { "sd": "وڻ", "ur": "درخت", "en": "Tree" },
+        { "sd": "ٻلي", "ur": "بلی", "en": "Cat" },
+        { "sd": "مڇي", "ur": "مچھلی", "en": "Fish" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "lt5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "هنن مان ڪهڙي قدرتي غير جاندار شيءِ آهي؟", "ur": "ان میں سے کون سی قدرتی بے جان چیز ہے؟", "en": "Which of these is a natural non-living thing?" },
+      "options": [
+        { "sd": "ٿيلهو", "ur": "بستہ", "en": "Bag" },
+        { "sd": "واري", "ur": "ریت", "en": "Sand" },
+        { "sd": "پکو", "ur": "پنکھا", "en": "Fan" },
+        { "sd": "ڪار", "ur": "گاڑی", "en": "Car" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "lt6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "جاندارن کي گروپن ۾ ورهائڻ کي ڇا چئبو آهي؟", "ur": "جانداروں کو گروہوں میں تقسیم کرنے کو کیا کہتے ہیں؟", "en": "What is sorting living things into groups called?" },
+      "options": [
+        { "sd": "درجه بندي", "ur": "درجہ بندی", "en": "Classification" },
+        { "sd": "ساهه کڻڻ", "ur": "سانس لینا", "en": "Breathing" },
+        { "sd": "هاضمو", "ur": "ہاضمہ", "en": "Digestion" },
+        { "sd": "ڳرڻ", "ur": "پگھلنا", "en": "Melting" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "lt7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪهڙا جاندار پنهنجو کاڌو پاڻ ٺاهين ٿا؟", "ur": "کون سے جاندار اپنی غذا خود بناتے ہیں؟", "en": "Which living things make their own food?" },
+      "options": [
+        { "sd": "جانور", "ur": "جانور", "en": "Animals" },
+        { "sd": "ٻوٽا", "ur": "پودے", "en": "Plants" },
+        { "sd": "پکي", "ur": "پرندے", "en": "Birds" },
+        { "sd": "جيت", "ur": "کیڑے", "en": "Insects" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "lt8", "type": "mcq", "topic": "s4",
+      "q": { "sd": "ڪهڙي جانور ۾ ريڙهه جو هڏو آهي؟", "ur": "کس جانور میں ریڑھ کی ہڈی ہوتی ہے؟", "en": "Which animal has a backbone?" },
+      "options": [
+        { "sd": "تتلي", "ur": "تتلی", "en": "Butterfly" },
+        { "sd": "گهونگهو", "ur": "گھونگا", "en": "Snail" },
+        { "sd": "مڇي", "ur": "مچھلی", "en": "Fish" },
+        { "sd": "ڪوريئڙو", "ur": "مکڑی", "en": "Spider" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "lt9", "type": "mcq", "topic": "s4",
+      "q": { "sd": "جانورن جي ڪهڙي گروپ کي کنڀ هوندا آهن؟", "ur": "جانوروں کے کس گروہ کے پر ہوتے ہیں؟", "en": "Which group of animals has feathers?" },
+      "options": [
+        { "sd": "مڇيون", "ur": "مچھلیاں", "en": "Fish" },
+        { "sd": "پکي", "ur": "پرندے", "en": "Birds" },
+        { "sd": "رينگڻ وارا جانور", "ur": "رینگنے والے جانور", "en": "Reptiles" },
+        { "sd": "کير پيارڻ وارا جانور", "ur": "ممالیہ", "en": "Mammals" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "lt10", "type": "mcq", "topic": "s4",
+      "q": { "sd": "ڏيڏر پاڻيءَ ۽ زمين ٻنهي تي رهي ٿو. اهو ڪهڙي گروپ ۾ آهي؟", "ur": "مینڈک پانی اور خشکی دونوں پر رہتا ہے۔ یہ کس گروہ میں ہے؟", "en": "A frog lives in water and on land. Which group is it in?" },
+      "options": [
+        { "sd": "ٻه جيوت جانور", "ur": "جل تھلیے", "en": "Amphibians" },
+        { "sd": "رينگڻ وارا جانور", "ur": "رینگنے والے جانور", "en": "Reptiles" },
+        { "sd": "پکي", "ur": "پرندے", "en": "Birds" },
+        { "sd": "کير پيارڻ وارا جانور", "ur": "ممالیہ", "en": "Mammals" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "lt11", "type": "tf", "topic": "s2",
+      "q": { "sd": "ڪار جاندار آهي ڇاڪاڻ ته اها حرڪت ڪري ٿي.", "ur": "گاڑی جاندار ہے کیونکہ یہ حرکت کرتی ہے۔", "en": "A car is a living thing because it moves." },
+      "answer": false
+    },
+    {
+      "id": "lt12", "type": "tf", "topic": "s1",
+      "q": { "sd": "ٻوٽا جاندار آهن.", "ur": "پودے جاندار ہیں۔", "en": "Plants are living things." },
+      "answer": true
+    },
+    {
+      "id": "lt13", "type": "tf", "topic": "s4",
+      "q": { "sd": "ماڪوڙي ۾ ريڙهه جو هڏو نه هوندو آهي.", "ur": "چیونٹی میں ریڑھ کی ہڈی نہیں ہوتی۔", "en": "An ant does not have a backbone." },
+      "answer": true
+    },
+    {
+      "id": "lt14", "type": "tf", "topic": "s4",
+      "q": { "sd": "کير پيارڻ وارا جانور پنهنجن ٻچن کي کير پيارين ٿا.", "ur": "ممالیہ اپنے بچوں کو دودھ پلاتے ہیں۔", "en": "Mammals feed milk to their babies." },
+      "answer": true
+    },
+    {
+      "id": "lt15", "type": "match", "topic": "s4",
+      "q": { "sd": "هر جانور کي ان جي گروپ سان ملايو.", "ur": "ہر جانور کو اس کے گروہ سے ملائیں۔", "en": "Match each animal with its group." },
+      "pairs": [
+        { "left": { "sd": "ڳئون", "ur": "گائے", "en": "Cow" }, "right": { "sd": "کير پيارڻ وارو جانور", "ur": "ممالیہ", "en": "Mammal" } },
+        { "left": { "sd": "چڙي", "ur": "چڑیا", "en": "Sparrow" }, "right": { "sd": "پکي", "ur": "پرندہ", "en": "Bird" } },
+        { "left": { "sd": "نانگ", "ur": "سانپ", "en": "Snake" }, "right": { "sd": "رينگڻ وارو جانور", "ur": "رینگنے والا جانور", "en": "Reptile" } },
+        { "left": { "sd": "ڏيڏر", "ur": "مینڈک", "en": "Frog" }, "right": { "sd": "ٻه جيوت جانور", "ur": "جل تھلیا", "en": "Amphibian" } }
+      ]
+    },
+    {
+      "id": "lt16", "type": "match", "topic": "s2",
+      "q": { "sd": "هر شيءِ کي ان جي قسم سان ملايو.", "ur": "ہر چیز کو اس کی قسم سے ملائیں۔", "en": "Match each thing with its type." },
+      "pairs": [
+        { "left": { "sd": "پٿر", "ur": "پتھر", "en": "Stone" }, "right": { "sd": "قدرتي غير جاندار", "ur": "قدرتی بے جان چیز", "en": "Natural non-living thing" } },
+        { "left": { "sd": "پينسل", "ur": "پنسل", "en": "Pencil" }, "right": { "sd": "انسان جي ٺاهيل غير جاندار", "ur": "انسان کی بنائی ہوئی بے جان چیز", "en": "Man-made non-living thing" } },
+        { "left": { "sd": "انب جو وڻ", "ur": "آم کا درخت", "en": "Mango tree" }, "right": { "sd": "ٻوٽو", "ur": "پودا", "en": "Plant" } },
+        { "left": { "sd": "ٻڪري", "ur": "بکری", "en": "Goat" }, "right": { "sd": "جانور", "ur": "جانور", "en": "Animal" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "sort",
+      "title": { "sd": "جاندار يا غير جاندار؟", "ur": "جاندار یا بے جان؟", "en": "Living or non-living?" },
+      "bins": [
+        { "id": "living", "name": { "sd": "جاندار", "ur": "جاندار", "en": "Living" } },
+        { "id": "nonliving", "name": { "sd": "غير جاندار", "ur": "بے جان", "en": "Non-living" } }
+      ],
+      "items": [
+        { "emoji": "🌳", "text": { "sd": "وڻ", "ur": "درخت", "en": "Tree" }, "bin": "living" },
+        { "emoji": "🐄", "text": { "sd": "ڳئون", "ur": "گائے", "en": "Cow" }, "bin": "living" },
+        { "emoji": "🐟", "text": { "sd": "مڇي", "ur": "مچھلی", "en": "Fish" }, "bin": "living" },
+        { "emoji": "🐦", "text": { "sd": "پکي", "ur": "پرندہ", "en": "Bird" }, "bin": "living" },
+        { "emoji": "🐜", "text": { "sd": "ماڪوڙو", "ur": "چیونٹی", "en": "Ant" }, "bin": "living" },
+        { "emoji": "🌻", "text": { "sd": "سورج مکي", "ur": "سورج مکھی", "en": "Sunflower" }, "bin": "living" },
+        { "emoji": "✏️", "text": { "sd": "پينسل", "ur": "پنسل", "en": "Pencil" }, "bin": "nonliving" },
+        { "emoji": "🚗", "text": { "sd": "ڪار", "ur": "گاڑی", "en": "Car" }, "bin": "nonliving" },
+        { "emoji": "📚", "text": { "sd": "ڪتاب", "ur": "کتابیں", "en": "Books" }, "bin": "nonliving" },
+        { "emoji": "⚽", "text": { "sd": "بال", "ur": "گیند", "en": "Ball" }, "bin": "nonliving" },
+        { "emoji": "⏰", "text": { "sd": "گهڙيال", "ur": "گھڑی", "en": "Clock" }, "bin": "nonliving" },
+        { "emoji": "👟", "text": { "sd": "جوتو", "ur": "جوتا", "en": "Shoe" }, "bin": "nonliving" }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ٻج کي جيئرو ٿيندي ڏسو", "ur": "بیج کو زندہ ہوتے دیکھیں", "en": "Watch a seed come alive" },
+    "materials": [
+      { "sd": "4 يا 5 چڻن يا مُنگن جا داڻا", "ur": "4 یا 5 چنے یا مونگ کے دانے", "en": "4 or 5 chickpea (chana) or moong seeds" },
+      { "sd": "ٿوري روئي", "ur": "تھوڑی سی روئی", "en": "Some cotton wool" },
+      { "sd": "هڪ ننڍي پليٽ", "ur": "ایک چھوٹی پلیٹ", "en": "A small plate" },
+      { "sd": "پاڻي", "ur": "پانی", "en": "Water" },
+      { "sd": "هڪ ننڍڙو پٿر", "ur": "ایک چھوٹا پتھر", "en": "A small stone" }
+    ],
+    "steps": [
+      { "sd": "روئي کي پليٽ تي رکو ۽ پاڻي سان آلو ڪريو.", "ur": "روئی کو پلیٹ پر رکھیں اور پانی سے گیلا کریں۔", "en": "Put the cotton on the plate and make it wet with water." },
+      { "sd": "ٻج ۽ ننڍڙو پٿر آلي روئي تي رکو.", "ur": "بیج اور چھوٹا پتھر گیلی روئی پر رکھیں۔", "en": "Place the seeds and the small stone on the wet cotton." },
+      { "sd": "پليٽ کي دريءَ ڀرسان رکو. روز ڪجهه ڦڙا پاڻي وجهو ته جيئن روئي آلي رهي.", "ur": "پلیٹ کو کھڑکی کے پاس رکھیں۔ روزانہ پانی کے چند قطرے ڈالیں تاکہ روئی گیلی رہے۔", "en": "Keep the plate near a window. Add a few drops of water every day so the cotton stays wet." },
+      { "sd": "هڪ هفتي تائين روز پليٽ کي ڏسو. جيڪو ڏسو اهو پنهنجي ڪاپيءَ ۾ ٺاهيو.", "ur": "ایک ہفتے تک روزانہ پلیٹ کو دیکھیں۔ جو دیکھیں اپنی کاپی میں بنائیں۔", "en": "Look at the plate every day for one week. Draw what you see in your notebook." }
+    ],
+    "learn": {
+      "sd": "ڪجهه ڏينهن کان پوءِ ٻجن مان ننڍيون پاڙون ۽ پن نڪرن ٿا، پر پٿر ۾ ڪا تبديلي نٿي اچي. ٻج جاندار آهن: پاڻي ۽ هوا ملڻ تي اهي وڌن ٿا. پٿر غير جاندار آهي، ان ڪري اهو ڪڏهن به نٿو وڌي.",
+      "ur": "چند دن بعد بیجوں سے چھوٹی جڑیں اور پتے نکل آتے ہیں، لیکن پتھر میں کوئی تبدیلی نہیں آتی۔ بیج جاندار ہیں: پانی اور ہوا ملنے پر وہ بڑھتے ہیں۔ پتھر بے جان ہے، اس لیے وہ کبھی نہیں بڑھتا۔",
+      "en": "After a few days the seeds grow small roots and leaves, but the stone does not change. Seeds are alive: they grow when they get water and air. A stone is non-living, so it never grows."
+    },
+    "safety": {
+      "sd": "ٻجن کي هٿ لائڻ کان پوءِ هٿ ڌوئو. انهن کي نه کائو.",
+      "ur": "بیجوں کو چھونے کے بعد ہاتھ دھوئیں۔ انہیں نہ کھائیں۔",
+      "en": "Wash your hands after touching the seeds. Do not eat them."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "جاندارن کي کاڌي ۽ ____ جي ضرورت هوندي آهي.", "ur": "جانداروں کو غذا اور ____ کی ضرورت ہوتی ہے۔", "en": "Living things need food and ____." }, "answer": { "sd": "پاڻي", "ur": "پانی", "en": "water" } },
+      { "text": { "sd": "جاندارن کي گروپن ۾ ورهائڻ کي ____ چئبو آهي.", "ur": "جانداروں کو گروہوں میں تقسیم کرنے کو ____ کہتے ہیں۔", "en": "Sorting living things into groups is called ____." }, "answer": { "sd": "درجه بندي", "ur": "درجہ بندی", "en": "classification" } },
+      { "text": { "sd": "جن جانورن ۾ ريڙهه جو هڏو هجي، انهن کي ____ چئبو آهي.", "ur": "جن جانوروں میں ریڑھ کی ہڈی ہو، انہیں ____ کہتے ہیں۔", "en": "Animals with a backbone are called ____." }, "answer": { "sd": "ريڙهه دار جانور", "ur": "فقاریہ", "en": "vertebrates" } },
+      { "text": { "sd": "پکين جي جسم تي ____ هوندا آهن.", "ur": "پرندوں کے جسم پر ____ ہوتے ہیں۔", "en": "Birds have ____ on their bodies." }, "answer": { "sd": "کنڀ", "ur": "پر", "en": "feathers" } },
+      { "text": { "sd": "ٻوٽا سج جي روشنيءَ سان پنهنجو ____ پاڻ ٺاهين ٿا.", "ur": "پودے سورج کی روشنی سے اپنی ____ خود بناتے ہیں۔", "en": "Plants make their own ____ using sunlight." }, "answer": { "sd": "کاڌو", "ur": "غذا", "en": "food" } }
+    ],
+    "tf": [
+      { "text": { "sd": "پٿر هر سال وڏو ٿيندو آهي.", "ur": "پتھر ہر سال بڑا ہوتا ہے۔", "en": "A stone grows bigger every year." }, "answer": false },
+      { "text": { "sd": "مڇيون گلز ذريعي ساهه کڻن ٿيون.", "ur": "مچھلیاں گلپھڑوں سے سانس لیتی ہیں۔", "en": "Fish breathe with gills." }, "answer": true },
+      { "text": { "sd": "نانگ کير پيارڻ وارو جانور آهي.", "ur": "سانپ ممالیہ ہے۔", "en": "A snake is a mammal." }, "answer": false },
+      { "text": { "sd": "جانور پنهنجو کاڌو پاڻ نٿا ٺاهي سگهن.", "ur": "جانور اپنی غذا خود نہیں بنا سکتے۔", "en": "Animals cannot make their own food." }, "answer": true }
+    ],
+    "match": [
+      { "a": { "sd": "تتلي", "ur": "تتلی", "en": "Butterfly" }, "b": { "sd": "بنا ريڙهه وارو جانور", "ur": "غیر فقاریہ", "en": "Invertebrate" } },
+      { "a": { "sd": "گلاب", "ur": "گلاب", "en": "Rose" }, "b": { "sd": "گل وارو ٻوٽو", "ur": "پھول دار پودا", "en": "Flowering plant" } },
+      { "a": { "sd": "فرن", "ur": "فرن", "en": "Fern" }, "b": { "sd": "بنا گلن وارو ٻوٽو", "ur": "بغیر پھول والا پودا", "en": "Non-flowering plant" } },
+      { "a": { "sd": "ڪرڙي", "ur": "چھپکلی", "en": "Lizard" }, "b": { "sd": "رينگڻ وارو جانور", "ur": "رینگنے والا جانور", "en": "Reptile" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "جاندارن جون ڪي به ٽي خاصيتون لکو.", "ur": "جانداروں کی کوئی سی تین خصوصیات لکھیں۔", "en": "Write any three features of living things." },
+        "a": { "sd": "اهي وڌن ٿا، ساهه کڻن ٿا ۽ کين کاڌي ۽ پاڻي جي ضرورت هوندي آهي.", "ur": "وہ بڑھتے ہیں، سانس لیتے ہیں اور انہیں غذا اور پانی کی ضرورت ہوتی ہے۔", "en": "They grow, they breathe, and they need food and water." }
+      },
+      {
+        "q": { "sd": "ڪار حرڪت ڪري ٿي. پوءِ به اها جاندار ڇو ناهي؟", "ur": "گاڑی حرکت کرتی ہے۔ پھر بھی وہ جاندار کیوں نہیں؟", "en": "A car moves. Why is it not a living thing?" },
+        "a": { "sd": "اها نه وڌي ٿي، نه ساهه کڻي ٿي، نه کائي ٿي ۽ نه ٻچا پيدا ڪري ٿي. اها تڏهن ئي هلي ٿي جڏهن ڪو ان کي هلائي.", "ur": "وہ نہ بڑھتی ہے، نہ سانس لیتی ہے، نہ کھاتی ہے اور نہ بچے پیدا کرتی ہے۔ وہ تبھی چلتی ہے جب کوئی اسے چلائے۔", "en": "It cannot grow, breathe, eat or reproduce. It moves only when someone drives it." }
+      },
+      {
+        "q": { "sd": "ريڙهه دار جانورن جا پنج گروپ لکو.", "ur": "فقاریہ جانوروں کے پانچ گروہوں کے نام لکھیں۔", "en": "Name the five groups of vertebrates." },
+        "a": { "sd": "مڇيون، ٻه جيوت جانور، رينگڻ وارا جانور، پکي ۽ کير پيارڻ وارا جانور.", "ur": "مچھلیاں، جل تھلیے، رینگنے والے جانور، پرندے اور ممالیہ۔", "en": "Fish, amphibians, reptiles, birds and mammals." }
+      }
+    ],
+    "draw": { "sd": "ٻه جاندار ۽ ٻه غير جاندار شيون ٺاهيو ۽ انهن جا نالا لکو.", "ur": "دو جاندار اور دو بے جان چیزوں کی تصویر بنائیں اور ان کے نام لکھیں۔", "en": "Draw two living things and two non-living things. Write their names." }
+  }
+}

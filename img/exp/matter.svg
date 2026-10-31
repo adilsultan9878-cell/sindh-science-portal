@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <rect x="0" y="270" width="600" height="50" fill="#d7ccc8"/>
+  <!-- glass of water with a spoon of salt -->
+  <path d="M60 110 h120 l-12 160 h-96z" fill="#e3f2fd" stroke="#90a4ae" stroke-width="4"/>
+  <path d="M66 150 h108 l-8 116 h-92z" fill="#bbdefb"/>
+  <path d="M150 40 l-34 150" stroke="#9e9e9e" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="160" cy="34" rx="22" ry="10" fill="#bdbdbd" transform="rotate(-15 160 34)"/>
+  <g fill="#ffffff" stroke="#b0bec5" stroke-width="1"><rect x="150" y="26" width="6" height="6"/><rect x="160" y="22" width="6" height="6"/><rect x="166" y="30" width="6" height="6"/></g>
+  <!-- pour a little into the plate -->
+  <path d="M220 160 h70" stroke="#78909c" stroke-width="5" marker-end="url(#a)"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#78909c"/></marker></defs>
+  <!-- sun -->
+  <circle cx="470" cy="70" r="30" fill="#ffd54f"/>
+  <g stroke="#ffb300" stroke-width="5" stroke-linecap="round">
+    <line x1="470" y1="18" x2="470" y2="30"/><line x1="418" y1="70" x2="430" y2="70"/><line x1="510" y1="70" x2="522" y2="70"/>
+    <line x1="433" y1="33" x2="442" y2="42"/><line x1="507" y1="33" x2="498" y2="42"/><line x1="470" y1="110" x2="470" y2="122"/>
+  </g>
+  <!-- water rising as vapour -->
+  <g stroke="#90caf9" stroke-width="3" fill="none"><path d="M420 200 q-10 -16 0 -32 q10 -16 0 -32"/><path d="M470 196 q-10 -16 0 -32 q10 -16 0 -32"/><path d="M520 200 q-10 -16 0 -32 q10 -16 0 -32"/></g>
+  <!-- dark plate with white salt left behind -->
+  <ellipse cx="470" cy="236" rx="110" ry="28" fill="#37474f"/>
+  <ellipse cx="470" cy="230" rx="88" ry="18" fill="#455a64"/>
+  <g fill="#ffffff">
+    <rect x="420" y="226" width="6" height="6"/><rect x="436" y="232" width="5" height="5"/><rect x="452" y="222" width="6" height="6"/>
+    <rect x="468" y="230" width="5" height="5"/><rect x="484" y="224" width="6" height="6"/><rect x="500" y="232" width="5" height="5"/>
+    <rect x="514" y="226" width="6" height="6"/><rect x="444" y="238" width="4" height="4"/><rect x="492" y="238" width="4" height="4"/>
+  </g>
+</svg>

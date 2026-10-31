@@ -1,0 +1,400 @@
+{
+  "id": "digestion",
+  "number": 3,
+  "icon": "🍎",
+  "title": { "sd": "اسان جو جسم: هاضمي جو نظام", "ur": "ہمارا جسم: نظامِ انہضام", "en": "Our Body: The Digestive System" },
+  "summary": {
+    "sd": "سکو ته کائڻ کان پوءِ کاڌي سان ڇا ٿئي ٿو ۽ ڏندن ۽ معدي کي صحتمند ڪيئن رکجي.",
+    "ur": "جانیں کہ کھانے کے بعد غذا کے ساتھ کیا ہوتا ہے اور دانتوں اور معدے کو صحت مند کیسے رکھیں۔",
+    "en": "Find out what happens to food after we eat it, and how to keep our teeth and stomach healthy."
+  },
+  "badge": { "id": "body_expert", "icon": "🍎", "name": { "sd": "جسم جو ماهر", "ur": "جسم کا ماہر", "en": "Body Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "اسان کي کاڌي جي ضرورت ڇو آهي؟", "ur": "ہمیں غذا کی ضرورت کیوں ہے؟", "en": "Why do we need food?" },
+      "body": {
+        "sd": [
+          "اسان جي جسم کي **توانائي** حاصل ڪرڻ، وڌڻ ۽ صحتمند رهڻ لاءِ **کاڌي** جي ضرورت آهي.",
+          "پر جسم کاڌي کي جيئن جو تيئن استعمال نٿو ڪري سگهي. کاڌي کي تمام ننڍڙن ذرڙن ۾ ٽوڙڻو پوي ٿو. ان کي **هاضمو** چئجي ٿو.",
+          "جسم جا اهي حصا جيڪي گڏجي هي ڪم ڪن ٿا، انهن کي **هاضمي جو نظام** چئجي ٿو."
+        ],
+        "ur": [
+          "ہمارے جسم کو **توانائی** حاصل کرنے، بڑھنے اور صحت مند رہنے کے لیے **غذا** کی ضرورت ہے۔",
+          "لیکن جسم غذا کو ویسے ہی استعمال نہیں کر سکتا۔ غذا کو بہت چھوٹے ذرات میں توڑنا پڑتا ہے۔ اسے **ہاضمہ** کہتے ہیں۔",
+          "جسم کے وہ حصے جو مل کر یہ کام کرتے ہیں، **نظامِ انہضام** کہلاتے ہیں۔"
+        ],
+        "en": [
+          "Our body needs **food** to get **energy**, to grow and to stay healthy.",
+          "But the body cannot use food as it is. Food must be broken down into very small pieces. This is called **digestion**.",
+          "The parts of the body that do this work together are called the **digestive system**."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "کاڌي جو سفر", "ur": "غذا کا سفر", "en": "The journey of food" },
+      "body": {
+        "sd": [
+          "اچو ته ماني جي هڪ گرهه جي جسم اندر سفر کي ڏسون.",
+          "- **وات**: ڏند کاڌي کي ڪٽين ۽ چٻاڙين ٿا. **لعاب** ان کي آلو ۽ نرم ڪري ٿو ۽ هاضمي جي شروعات ڪري ٿو.",
+          "- **کاڌي جي نالي**: هڪ ڊگهي نالي جيڪا کاڌي کي وات کان معدي تائين پهچائي ٿي.",
+          "- **معدو**: عضلن مان ٺهيل هڪ ٿيلهي. اهو کاڌي کي چڱيءَ طرح ملائي ٿو ۽ ان ۾ هاضمي جا رس شامل ڪري ٿو.",
+          "- **ننڍو آنڊو**: هڪ ڊگهي ۽ ويڙهيل نالي. هتي هاضمو پورو ٿئي ٿو ۽ ڪارائتو کاڌو **رت** ۾ شامل ٿئي ٿو.",
+          "- **وڏو آنڊو**: اهو بچيل کاڌي مان پاڻي واپس جذب ڪري ٿو. پوءِ فضلو جسم مان خارج ٿئي ٿو."
+        ],
+        "ur": [
+          "آئیے روٹی کے ایک نوالے کا جسم کے اندر سفر دیکھیں۔",
+          "- **منہ**: دانت غذا کو کاٹتے اور چباتے ہیں۔ **لعاب** اسے گیلا اور نرم کرتا ہے اور ہاضمے کا آغاز کرتا ہے۔",
+          "- **غذا کی نالی**: ایک لمبی نالی جو غذا کو منہ سے معدے تک پہنچاتی ہے۔",
+          "- **معدہ**: پٹھوں سے بنی ایک تھیلی۔ یہ غذا کو اچھی طرح ملاتا ہے اور اس میں ہاضمے کے رس شامل کرتا ہے۔",
+          "- **چھوٹی آنت**: ایک لمبی اور لپٹی ہوئی نالی۔ یہاں ہاضمہ مکمل ہوتا ہے اور مفید غذا **خون** میں شامل ہو جاتی ہے۔",
+          "- **بڑی آنت**: یہ بچی ہوئی غذا سے پانی واپس جذب کرتی ہے۔ پھر فضلہ جسم سے خارج ہو جاتا ہے۔"
+        ],
+        "en": [
+          "Let us follow a bite of roti on its journey through the body.",
+          "- **Mouth**: Teeth cut and chew the food. **Saliva** makes it wet and soft and starts digestion.",
+          "- **Food pipe**: A long tube that carries food from the mouth to the stomach.",
+          "- **Stomach**: A bag made of muscles. It mixes the food well and adds digestive juices to it.",
+          "- **Small intestine**: A long, coiled tube. Here digestion finishes and useful food passes into the **blood**.",
+          "- **Large intestine**: It takes water back from the leftover food. Then the waste leaves the body."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "اسان جا ڏند", "ur": "ہمارے دانت", "en": "Our teeth" },
+      "body": {
+        "sd": [
+          "ڏند اسان کي کاڌو ڪٽڻ ۽ چٻاڙڻ ۾ مدد ڏين ٿا. اسان جا ڏند مختلف قسمن جا آهن:",
+          "- **اڳيان وارا ڏند** سنها ۽ تيز هوندا آهن. اهي کاڌو **ڪٽين** ٿا.",
+          "- **نوڪدار ڏند** کاڌي کي **ڦاڙين** ٿا.",
+          "- **ڏاڙهون** پويان ويڪرا ڏند آهن. اهي کاڌي کي **پيهن** ۽ چٻاڙين ٿيون.",
+          "ٻارن جا 20 **کير وارا ڏند** هوندا آهن. اهي ڪري پون ٿا ۽ انهن جي جاءِ تي **پڪا ڏند** اچن ٿا."
+        ],
+        "ur": [
+          "دانت غذا کاٹنے اور چبانے میں ہماری مدد کرتے ہیں۔ ہمارے دانت مختلف قسم کے ہوتے ہیں:",
+          "- **سامنے کے دانت** پتلے اور تیز ہوتے ہیں۔ یہ غذا کو **کاٹتے** ہیں۔",
+          "- **نوکیلے دانت** غذا کو **چیرتے** ہیں۔",
+          "- **داڑھیں** پیچھے کے چوڑے دانت ہیں۔ یہ غذا کو **پیستی** اور چباتی ہیں۔",
+          "بچوں کے 20 **دودھ کے دانت** ہوتے ہیں۔ یہ گر جاتے ہیں اور ان کی جگہ **پکے دانت** نکل آتے ہیں۔"
+        ],
+        "en": [
+          "Teeth help us cut and chew food. We have different kinds of teeth:",
+          "- **Front teeth (incisors)** are thin and sharp. They **cut** food.",
+          "- **Pointed teeth (canines)** **tear** food.",
+          "- **Molars** are wide back teeth. They **grind** and chew food.",
+          "Children have 20 **milk teeth**. They fall out and **permanent teeth** grow in their place."
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "title": { "sd": "صحتمند عادتون", "ur": "صحت مند عادات", "en": "Healthy habits" },
+      "body": {
+        "sd": [
+          "- ڏينهن ۾ ٻه ڀيرا، صبح ۽ سمهڻ کان اڳ، ڏندن کي **برش** ڪريو.",
+          "- کائڻ کان اڳ صابڻ سان **هٿ ڌوئو**.",
+          "- کاڌو چڱيءَ طرح **چٻاڙيو** ۽ آهستي کائو.",
+          "- ميوا، ڀاڄيون ۽ **صاف کاڌو** کائو. مٺايون ۽ چپس گهٽ کائو.",
+          "- گهڻو **صاف پاڻي** پيئو."
+        ],
+        "ur": [
+          "- دن میں دو بار، صبح اور سونے سے پہلے، دانتوں پر **برش** کریں۔",
+          "- کھانے سے پہلے صابن سے **ہاتھ دھوئیں**۔",
+          "- غذا کو اچھی طرح **چبائیں** اور آہستہ کھائیں۔",
+          "- پھل، سبزیاں اور **صاف غذا** کھائیں۔ مٹھائیاں اور چپس کم کھائیں۔",
+          "- خوب **صاف پانی** پئیں۔"
+        ],
+        "en": [
+          "- **Brush** your teeth twice a day, in the morning and before sleeping.",
+          "- **Wash your hands** with soap before eating.",
+          "- **Chew** your food well and eat slowly.",
+          "- Eat fruits, vegetables and **clean food**. Eat fewer sweets and chips.",
+          "- Drink plenty of **clean water**."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "digestive",
+    "parts": [
+      {
+        "id": "mouth",
+        "label": { "sd": "وات", "ur": "منہ", "en": "Mouth" },
+        "info": {
+          "sd": "ڏند کاڌو چٻاڙين ٿا ۽ لعاب ان کي نرم ڪري ٿو. هاضمو هتان شروع ٿئي ٿو.",
+          "ur": "دانت غذا چباتے ہیں اور لعاب اسے نرم کرتا ہے۔ ہاضمہ یہاں سے شروع ہوتا ہے۔",
+          "en": "Teeth chew the food and saliva makes it soft. Digestion starts here."
+        }
+      },
+      {
+        "id": "foodpipe",
+        "label": { "sd": "کاڌي جي نالي", "ur": "غذا کی نالی", "en": "Food pipe" },
+        "info": {
+          "sd": "هڪ ڊگهي نالي جيڪا کاڌي کي وات کان معدي تائين پهچائي ٿي.",
+          "ur": "ایک لمبی نالی جو غذا کو منہ سے معدے تک پہنچاتی ہے۔",
+          "en": "A long tube that carries food from the mouth to the stomach."
+        }
+      },
+      {
+        "id": "stomach",
+        "label": { "sd": "معدو", "ur": "معدہ", "en": "Stomach" },
+        "info": {
+          "sd": "عضلن جي ٿيلهي جيڪا کاڌي کي چڱيءَ طرح ملائي ٿي ۽ ان ۾ هاضمي جا رس شامل ڪري ٿي.",
+          "ur": "پٹھوں کی تھیلی جو غذا کو اچھی طرح ملاتی ہے اور اس میں ہاضمے کے رس شامل کرتی ہے۔",
+          "en": "A bag of muscles that mixes food well and adds digestive juices."
+        }
+      },
+      {
+        "id": "smallint",
+        "label": { "sd": "ننڍو آنڊو", "ur": "چھوٹی آنت", "en": "Small intestine" },
+        "info": {
+          "sd": "هڪ ڊگهي ويڙهيل نالي جتي هاضمو پورو ٿئي ٿو ۽ کاڌو رت ۾ شامل ٿئي ٿو.",
+          "ur": "ایک لمبی لپٹی ہوئی نالی جہاں ہاضمہ مکمل ہوتا ہے اور غذا خون میں شامل ہوتی ہے۔",
+          "en": "A long coiled tube where digestion finishes and food goes into the blood."
+        }
+      },
+      {
+        "id": "largeint",
+        "label": { "sd": "وڏو آنڊو", "ur": "بڑی آنت", "en": "Large intestine" },
+        "info": {
+          "sd": "بچيل کاڌي مان پاڻي واپس جذب ڪري ٿو. پوءِ فضلو جسم مان خارج ٿئي ٿو.",
+          "ur": "بچی ہوئی غذا سے پانی واپس جذب کرتی ہے۔ پھر فضلہ جسم سے خارج ہوتا ہے۔",
+          "en": "Takes water back from leftover food. Then the waste leaves the body."
+        }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "هاضمو", "ur": "ہاضمہ", "en": "digestion" },
+    { "sd": "هاضمي جو نظام", "ur": "نظامِ انہضام", "en": "digestive system" },
+    { "sd": "توانائي", "ur": "توانائی", "en": "energy" },
+    { "sd": "وات", "ur": "منہ", "en": "mouth" },
+    { "sd": "لعاب", "ur": "لعاب", "en": "saliva" },
+    { "sd": "کاڌي جي نالي", "ur": "غذا کی نالی", "en": "food pipe" },
+    { "sd": "معدو", "ur": "معدہ", "en": "stomach" },
+    { "sd": "ننڍو آنڊو", "ur": "چھوٹی آنت", "en": "small intestine" },
+    { "sd": "وڏو آنڊو", "ur": "بڑی آنت", "en": "large intestine" },
+    { "sd": "ڏند", "ur": "دانت", "en": "teeth" },
+    { "sd": "ڏاڙهون", "ur": "داڑھیں", "en": "molars" }
+  ],
+  "quiz": [
+    {
+      "id": "dg1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "جسم اندر کاڌي کي تمام ننڍڙن ذرڙن ۾ ٽوڙڻ کي ڇا چئبو آهي؟", "ur": "جسم کے اندر غذا کو بہت چھوٹے ذرات میں توڑنے کو کیا کہتے ہیں؟", "en": "What is breaking food down into very small pieces inside the body called?" },
+      "options": [
+        { "sd": "هاضمو", "ur": "ہاضمہ", "en": "Digestion" },
+        { "sd": "ساهه کڻڻ", "ur": "سانس لینا", "en": "Breathing" },
+        { "sd": "وڌڻ", "ur": "بڑھنا", "en": "Growing" },
+        { "sd": "سمهڻ", "ur": "سونا", "en": "Sleeping" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "dg2", "type": "mcq", "topic": "s2",
+      "q": { "sd": "هاضمو ڪٿان شروع ٿئي ٿو؟", "ur": "ہاضمہ کہاں سے شروع ہوتا ہے؟", "en": "Where does digestion start?" },
+      "options": [
+        { "sd": "معدي ۾", "ur": "معدے میں", "en": "In the stomach" },
+        { "sd": "وات ۾", "ur": "منہ میں", "en": "In the mouth" },
+        { "sd": "وڏي آنڊي ۾", "ur": "بڑی آنت میں", "en": "In the large intestine" },
+        { "sd": "کاڌي جي نالي ۾", "ur": "غذا کی نالی میں", "en": "In the food pipe" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "dg3", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڪهڙي نالي کاڌي کي وات کان معدي تائين پهچائي ٿي؟", "ur": "کون سی نالی غذا کو منہ سے معدے تک پہنچاتی ہے؟", "en": "Which tube carries food from the mouth to the stomach?" },
+      "options": [
+        { "sd": "کاڌي جي نالي", "ur": "غذا کی نالی", "en": "Food pipe" },
+        { "sd": "ننڍو آنڊو", "ur": "چھوٹی آنت", "en": "Small intestine" },
+        { "sd": "ساهه جي نالي", "ur": "سانس کی نالی", "en": "Wind pipe" },
+        { "sd": "وڏو آنڊو", "ur": "بڑی آنت", "en": "Large intestine" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "dg4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڪهڙي حصي ۾ ڪارائتو کاڌو رت ۾ شامل ٿئي ٿو؟", "ur": "کس حصے میں مفید غذا خون میں شامل ہوتی ہے؟", "en": "In which part does useful food pass into the blood?" },
+      "options": [
+        { "sd": "وات", "ur": "منہ", "en": "Mouth" },
+        { "sd": "ننڍو آنڊو", "ur": "چھوٹی آنت", "en": "Small intestine" },
+        { "sd": "ڏند", "ur": "دانت", "en": "Teeth" },
+        { "sd": "کاڌي جي نالي", "ur": "غذا کی نالی", "en": "Food pipe" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "dg5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڪهڙو حصو بچيل کاڌي مان پاڻي واپس جذب ڪري ٿو؟", "ur": "کون سا حصہ بچی ہوئی غذا سے پانی واپس جذب کرتا ہے؟", "en": "Which part takes back water from leftover food?" },
+      "options": [
+        { "sd": "وڏو آنڊو", "ur": "بڑی آنت", "en": "Large intestine" },
+        { "sd": "وات", "ur": "منہ", "en": "Mouth" },
+        { "sd": "معدو", "ur": "معدہ", "en": "Stomach" },
+        { "sd": "ڏند", "ur": "دانت", "en": "Teeth" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "dg6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪهڙا ڏند کاڌي کي پيهن ٿا؟", "ur": "کون سے دانت غذا کو پیستے ہیں؟", "en": "Which teeth grind food?" },
+      "options": [
+        { "sd": "اڳيان وارا ڏند", "ur": "سامنے کے دانت", "en": "Front teeth" },
+        { "sd": "نوڪدار ڏند", "ur": "نوکیلے دانت", "en": "Pointed teeth" },
+        { "sd": "ڏاڙهون", "ur": "داڑھیں", "en": "Molars" },
+        { "sd": "ڪوبه نه", "ur": "کوئی نہیں", "en": "None of them" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "dg7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ٻارن جا ڪيترا کير وارا ڏند هوندا آهن؟", "ur": "بچوں کے کتنے دودھ کے دانت ہوتے ہیں؟", "en": "How many milk teeth do children have?" },
+      "options": [
+        { "sd": "10", "ur": "10", "en": "10" },
+        { "sd": "20", "ur": "20", "en": "20" },
+        { "sd": "32", "ur": "32", "en": "32" },
+        { "sd": "40", "ur": "40", "en": "40" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "dg8", "type": "mcq", "topic": "s4",
+      "q": { "sd": "اسان کي ڏند ڪيترا ڀيرا برش ڪرڻ گهرجن؟", "ur": "ہمیں دانت کتنی بار برش کرنے چاہییں؟", "en": "How often should we brush our teeth?" },
+      "options": [
+        { "sd": "هفتي ۾ هڪ ڀيرو", "ur": "ہفتے میں ایک بار", "en": "Once a week" },
+        { "sd": "ڏينهن ۾ ٻه ڀيرا", "ur": "دن میں دو بار", "en": "Twice a day" },
+        { "sd": "ڪڏهن به نه", "ur": "کبھی نہیں", "en": "Never" },
+        { "sd": "مهيني ۾ هڪ ڀيرو", "ur": "مہینے میں ایک بار", "en": "Once a month" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "dg9", "type": "mcq", "topic": "s2",
+      "q": { "sd": "وات ۾ کاڌي کي آلو ۽ نرم ڇا ٿو ڪري؟", "ur": "منہ میں غذا کو گیلا اور نرم کون کرتا ہے؟", "en": "What makes food wet and soft in the mouth?" },
+      "options": [
+        { "sd": "لعاب", "ur": "لعاب", "en": "Saliva" },
+        { "sd": "رت", "ur": "خون", "en": "Blood" },
+        { "sd": "هوا", "ur": "ہوا", "en": "Air" },
+        { "sd": "هڏا", "ur": "ہڈیاں", "en": "Bones" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "dg10", "type": "tf", "topic": "s2",
+      "q": { "sd": "معدو عضلن مان ٺهيل هڪ ٿيلهي آهي.", "ur": "معدہ پٹھوں سے بنی ایک تھیلی ہے۔", "en": "The stomach is a bag made of muscles." },
+      "answer": true
+    },
+    {
+      "id": "dg11", "type": "tf", "topic": "s3",
+      "q": { "sd": "نوڪدار ڏند کاڌي کي ڦاڙين ٿا.", "ur": "نوکیلے دانت غذا کو چیرتے ہیں۔", "en": "Pointed teeth (canines) tear food." },
+      "answer": true
+    },
+    {
+      "id": "dg12", "type": "tf", "topic": "s4",
+      "q": { "sd": "اسان کي کائڻ کان اڳ هٿ ڌوئڻ گهرجن.", "ur": "ہمیں کھانے سے پہلے ہاتھ دھونے چاہییں۔", "en": "We should wash our hands before eating." },
+      "answer": true
+    },
+    {
+      "id": "dg13", "type": "tf", "topic": "s4",
+      "q": { "sd": "گهڻيون مٺايون کائڻ اسان جي ڏندن لاءِ سٺو آهي.", "ur": "زیادہ مٹھائیاں کھانا ہمارے دانتوں کے لیے اچھا ہے۔", "en": "Eating lots of sweets is good for our teeth." },
+      "answer": false
+    },
+    {
+      "id": "dg14", "type": "tf", "topic": "s2",
+      "q": { "sd": "کاڌو وات مان سڌو وڏي آنڊي ۾ وڃي ٿو.", "ur": "غذا منہ سے سیدھی بڑی آنت میں جاتی ہے۔", "en": "Food goes from the mouth straight to the large intestine." },
+      "answer": false
+    },
+    {
+      "id": "dg15", "type": "match", "topic": "s2",
+      "q": { "sd": "جسم جي هر حصي کي ان جي ڪم سان ملايو.", "ur": "جسم کے ہر حصے کو اس کے کام سے ملائیں۔", "en": "Match each body part with its job." },
+      "pairs": [
+        { "left": { "sd": "وات", "ur": "منہ", "en": "Mouth" }, "right": { "sd": "کاڌو چٻاڙي ٿو", "ur": "غذا چباتا ہے", "en": "Chews food" } },
+        { "left": { "sd": "کاڌي جي نالي", "ur": "غذا کی نالی", "en": "Food pipe" }, "right": { "sd": "کاڌو معدي تائين پهچائي ٿي", "ur": "غذا معدے تک پہنچاتی ہے", "en": "Carries food to the stomach" } },
+        { "left": { "sd": "معدو", "ur": "معدہ", "en": "Stomach" }, "right": { "sd": "کاڌي ۾ رس ملائي ٿو", "ur": "غذا میں رس ملاتا ہے", "en": "Mixes food with juices" } },
+        { "left": { "sd": "ننڍو آنڊو", "ur": "چھوٹی آنت", "en": "Small intestine" }, "right": { "sd": "کاڌو رت ۾ موڪلي ٿو", "ur": "غذا خون میں بھیجتی ہے", "en": "Sends food into the blood" } }
+      ]
+    },
+    {
+      "id": "dg16", "type": "match", "topic": "s3",
+      "q": { "sd": "هر قسم جي ڏند کي ان جي ڪم سان ملايو.", "ur": "ہر قسم کے دانت کو اس کے کام سے ملائیں۔", "en": "Match each type of tooth with its job." },
+      "pairs": [
+        { "left": { "sd": "اڳيان وارا ڏند", "ur": "سامنے کے دانت", "en": "Front teeth" }, "right": { "sd": "ڪٽڻ", "ur": "کاٹنا", "en": "Cut" } },
+        { "left": { "sd": "نوڪدار ڏند", "ur": "نوکیلے دانت", "en": "Pointed teeth" }, "right": { "sd": "ڦاڙڻ", "ur": "چیرنا", "en": "Tear" } },
+        { "left": { "sd": "ڏاڙهون", "ur": "داڑھیں", "en": "Molars" }, "right": { "sd": "پيهڻ", "ur": "پیسنا", "en": "Grind" } },
+        { "left": { "sd": "کير وارا ڏند", "ur": "دودھ کے دانت", "en": "Milk teeth" }, "right": { "sd": "ننڍپڻ ۾ ڪرن ٿا", "ur": "بچپن میں گرتے ہیں", "en": "Fall out in childhood" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "match",
+      "title": { "sd": "جسم جا حصا ملايو", "ur": "جسم کے حصے ملائیں", "en": "Match the body parts" },
+      "pairs": [
+        { "a": { "sd": "وات", "ur": "منہ", "en": "Mouth" }, "b": { "sd": "کاڌو چٻاڙي", "ur": "غذا چبائے", "en": "Chews food" } },
+        { "a": { "sd": "کاڌي جي نالي", "ur": "غذا کی نالی", "en": "Food pipe" }, "b": { "sd": "کاڌو هيٺ پهچائي", "ur": "غذا نیچے پہنچائے", "en": "Carries food down" } },
+        { "a": { "sd": "معدو", "ur": "معدہ", "en": "Stomach" }, "b": { "sd": "کاڌي ۾ رس ملائي", "ur": "غذا میں رس ملائے", "en": "Mixes food with juices" } },
+        { "a": { "sd": "ننڍو آنڊو", "ur": "چھوٹی آنت", "en": "Small intestine" }, "b": { "sd": "کاڌو رت ۾ موڪلي", "ur": "غذا خون میں بھیجے", "en": "Sends food into blood" } },
+        { "a": { "sd": "وڏو آنڊو", "ur": "بڑی آنت", "en": "Large intestine" }, "b": { "sd": "پاڻي واپس وٺي", "ur": "پانی واپس لے", "en": "Takes back water" } }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ماني مٺي ڇو لڳي ٿي؟", "ur": "روٹی میٹھی کیوں لگتی ہے؟", "en": "Why does roti taste sweet?" },
+    "materials": [
+      { "sd": "سادي ماني يا ڊبل روٽيءَ جو ننڍڙو ٽڪر", "ur": "سادہ روٹی یا ڈبل روٹی کا چھوٹا ٹکڑا", "en": "A small piece of plain roti or bread" },
+      { "sd": "صاف هٿ", "ur": "صاف ہاتھ", "en": "Clean hands" }
+    ],
+    "steps": [
+      { "sd": "صابڻ سان هٿ ڌوئو.", "ur": "صابن سے ہاتھ دھوئیں۔", "en": "Wash your hands with soap." },
+      { "sd": "ماني جو ننڍڙو ٽڪر وات ۾ وجهو.", "ur": "روٹی کا چھوٹا ٹکڑا منہ میں ڈالیں۔", "en": "Put a small piece of roti in your mouth." },
+      { "sd": "ان کي لڳ ڀڳ هڪ منٽ آهستي آهستي چٻاڙيو. جلدي نه ڳهو.", "ur": "اسے تقریباً ایک منٹ آہستہ آہستہ چبائیں۔ جلدی نہ نگلیں۔", "en": "Chew it slowly for about one minute. Do not swallow it quickly." },
+      { "sd": "ڏسو ته ذائقو ڪيئن بدلجي ٿو.", "ur": "دیکھیں کہ ذائقہ کیسے بدلتا ہے۔", "en": "Notice how the taste changes." }
+    ],
+    "learn": {
+      "sd": "ڪجهه دير چٻاڙڻ کان پوءِ ماني ٿوري مٺي لڳڻ شروع ٿئي ٿي. لعاب مانيءَ ۾ موجود نشاستي جي ڪجهه حصي کي کنڊ ۾ بدلائي ٿو. ان مان خبر پوي ٿي ته هاضمو وات کان شروع ٿئي ٿو!",
+      "ur": "کچھ دیر چبانے کے بعد روٹی تھوڑی میٹھی لگنے لگتی ہے۔ لعاب روٹی میں موجود نشاستے کے کچھ حصے کو شکر میں بدل دیتا ہے۔ اس سے پتا چلتا ہے کہ ہاضمہ منہ سے شروع ہوتا ہے!",
+      "en": "After chewing for a while, the roti starts to taste a little sweet. Saliva changes some of the starch in the roti into sugar. This shows that digestion starts in the mouth!"
+    },
+    "safety": {
+      "sd": "رڳو صاف ۽ تازو کاڌو استعمال ڪريو. وات ۾ وڌل کاڌو ڪنهن سان به ونڊ نه ڪريو.",
+      "ur": "صرف صاف اور تازہ غذا استعمال کریں۔ منہ میں ڈالی ہوئی غذا کسی کے ساتھ نہ بانٹیں۔",
+      "en": "Use only clean, fresh food. Never share food that has been in your mouth."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "هاضمو ____ کان شروع ٿئي ٿو.", "ur": "ہاضمہ ____ سے شروع ہوتا ہے۔", "en": "Digestion starts in the ____." }, "answer": { "sd": "وات", "ur": "منہ", "en": "mouth" } },
+      { "text": { "sd": "____ کاڌي کي وات کان معدي تائين پهچائي ٿي.", "ur": "____ غذا کو منہ سے معدے تک پہنچاتی ہے۔", "en": "The ____ carries food from the mouth to the stomach." }, "answer": { "sd": "کاڌي جي نالي", "ur": "غذا کی نالی", "en": "food pipe" } },
+      { "text": { "sd": "____ ۾ ڪارائتو کاڌو رت ۾ شامل ٿئي ٿو.", "ur": "مفید غذا ____ میں خون میں شامل ہوتی ہے۔", "en": "Useful food goes into the blood in the ____." }, "answer": { "sd": "ننڍي آنڊي", "ur": "چھوٹی آنت", "en": "small intestine" } },
+      { "text": { "sd": "____ کاڌي کي پيهن ۽ چٻاڙين ٿيون.", "ur": "____ غذا کو پیستی اور چباتی ہیں۔", "en": "____ grind and chew food." }, "answer": { "sd": "ڏاڙهون", "ur": "داڑھیں", "en": "Molars" } },
+      { "text": { "sd": "اسان کي ڏينهن ۾ ____ ڀيرا ڏند برش ڪرڻ گهرجن.", "ur": "ہمیں دن میں ____ بار دانت برش کرنے چاہییں۔", "en": "We should brush our teeth ____ a day." }, "answer": { "sd": "ٻه", "ur": "دو", "en": "twice" } }
+    ],
+    "tf": [
+      { "text": { "sd": "لعاب کاڌي کي نرم ڪري ٿو.", "ur": "لعاب غذا کو نرم کرتا ہے۔", "en": "Saliva makes food soft." }, "answer": true },
+      { "text": { "sd": "ٻارن جا 20 کير وارا ڏند هوندا آهن.", "ur": "بچوں کے 20 دودھ کے دانت ہوتے ہیں۔", "en": "Children have 20 milk teeth." }, "answer": true },
+      { "text": { "sd": "اسان کي هٿ ڌوئڻ کان سواءِ کاڌو کائڻ گهرجي.", "ur": "ہمیں ہاتھ دھوئے بغیر کھانا کھانا چاہیے۔", "en": "We should eat food without washing our hands." }, "answer": false },
+      { "text": { "sd": "معدو کاڌي ۾ هاضمي جا رس ملائي ٿو.", "ur": "معدہ غذا میں ہاضمے کے رس ملاتا ہے۔", "en": "The stomach mixes food with digestive juices." }, "answer": true }
+    ],
+    "match": [
+      { "a": { "sd": "اڳيان وارا ڏند", "ur": "سامنے کے دانت", "en": "Front teeth" }, "b": { "sd": "کاڌو ڪٽين", "ur": "غذا کاٹتے ہیں", "en": "Cut food" } },
+      { "a": { "sd": "نوڪدار ڏند", "ur": "نوکیلے دانت", "en": "Pointed teeth" }, "b": { "sd": "کاڌو ڦاڙين", "ur": "غذا چیرتے ہیں", "en": "Tear food" } },
+      { "a": { "sd": "ڏاڙهون", "ur": "داڑھیں", "en": "Molars" }, "b": { "sd": "کاڌو پيهن", "ur": "غذا پیستی ہیں", "en": "Grind food" } },
+      { "a": { "sd": "وڏو آنڊو", "ur": "بڑی آنت", "en": "Large intestine" }, "b": { "sd": "پاڻي واپس وٺي ٿو", "ur": "پانی واپس لیتی ہے", "en": "Takes back water" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "اسان جي جسم کي کاڌي جي ضرورت ڇو آهي؟", "ur": "ہمارے جسم کو غذا کی ضرورت کیوں ہے؟", "en": "Why does our body need food?" },
+        "a": { "sd": "توانائي حاصل ڪرڻ، وڌڻ ۽ صحتمند رهڻ لاءِ.", "ur": "توانائی حاصل کرنے، بڑھنے اور صحت مند رہنے کے لیے۔", "en": "To get energy, to grow and to stay healthy." }
+      },
+      {
+        "q": { "sd": "هاضمي جي نظام جا حصا ترتيب سان لکو.", "ur": "نظامِ انہضام کے حصے ترتیب سے لکھیں۔", "en": "Write the parts of the digestive system in order." },
+        "a": { "sd": "وات، کاڌي جي نالي، معدو، ننڍو آنڊو، وڏو آنڊو.", "ur": "منہ، غذا کی نالی، معدہ، چھوٹی آنت، بڑی آنت۔", "en": "Mouth, food pipe, stomach, small intestine, large intestine." }
+      },
+      {
+        "q": { "sd": "سٺي هاضمي لاءِ ٻه صحتمند عادتون لکو.", "ur": "اچھے ہاضمے کے لیے دو صحت مند عادات لکھیں۔", "en": "Write two healthy habits for good digestion." },
+        "a": { "sd": "کاڌو چڱيءَ طرح چٻاڙيو ۽ کائڻ کان اڳ هٿ ڌوئو.", "ur": "غذا اچھی طرح چبائیں اور کھانے سے پہلے ہاتھ دھوئیں۔", "en": "Chew food well and wash your hands before eating." }
+      }
+    ],
+    "draw": { "sd": "هاضمي جو نظام ٺاهيو ۽ وات، کاڌي جي نالي، معدي، ننڍي آنڊي ۽ وڏي آنڊي جا نالا لکو.", "ur": "نظامِ انہضام کی تصویر بنائیں اور منہ، غذا کی نالی، معدہ، چھوٹی آنت اور بڑی آنت کے نام لکھیں۔", "en": "Draw the digestive system and label the mouth, food pipe, stomach, small intestine and large intestine." }
+  }
+}

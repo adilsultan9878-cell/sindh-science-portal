@@ -1,0 +1,339 @@
+{
+  "id": "earth-space",
+  "number": 9,
+  "icon": "🌍",
+  "title": { "sd": "زمين ۽ خلا", "ur": "زمین اور خلا", "en": "Earth and Space" },
+  "summary": {
+    "sd": "شمسي نظام، ڏينهن ۽ رات ڪيئن ٿين ٿا، سال ڇا آهي ۽ چنڊ جون شڪليون ڇو بدلجن ٿيون، سکو.",
+    "ur": "نظامِ شمسی، دن اور رات کیسے ہوتے ہیں، سال کیا ہے اور چاند کی شکلیں کیوں بدلتی ہیں، سیکھیں۔",
+    "en": "Learn about the solar system, how day and night happen, what a year is, and why the moon seems to change shape."
+  },
+  "badge": { "id": "space_expert", "icon": "🌍", "name": { "sd": "خلا جو ماهر", "ur": "خلا کا ماہر", "en": "Space Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "شمسي نظام", "ur": "نظامِ شمسی", "en": "The solar system" },
+      "body": {
+        "sd": [
+          "**سج** هڪ **تارو** آهي. اهو گرم گئسن جو تمام وڏو گولو آهي جيڪو روشني ۽ گرمي ڏئي ٿو.",
+          "سج ۽ ان جي چوڌاري ڦرندڙ **سيارا**، چنڊ ۽ ٻيون شيون گڏجي **شمسي نظام** ٺاهين ٿيون.",
+          "سج کان شروع ڪري اٺ سيارا هن ترتيب ۾ آهن: **عطارد، زهره، زمين، مريخ، مشتري، زحل، يورينس ۽ نيپچون**.",
+          "اسان جي **زمين** ئي اهو سيارو آهي جتي اسان کي خبر آهي ته زندگي آهي، ڇاڪاڻ ته هتي پاڻي، هوا ۽ مناسب گرمي آهي.",
+          "مشتري سڀ کان وڏو سيارو آهي ۽ عطارد سج کي سڀ کان ويجهو آهي."
+        ],
+        "ur": [
+          "**سورج** ایک **ستارہ** ہے۔ یہ گرم گیسوں کا بہت بڑا گولا ہے جو روشنی اور گرمی دیتا ہے۔",
+          "سورج اور اس کے گرد گھومنے والے **سیارے**، چاند اور دوسری چیزیں مل کر **نظامِ شمسی** بناتے ہیں۔",
+          "سورج سے شروع کر کے آٹھ سیارے اس ترتیب میں ہیں: **عطارد، زہرہ، زمین، مریخ، مشتری، زحل، یورینس اور نیپچون**۔",
+          "ہماری **زمین** ہی وہ سیارہ ہے جہاں ہمیں معلوم ہے کہ زندگی ہے، کیونکہ یہاں پانی، ہوا اور مناسب گرمی ہے۔",
+          "مشتری سب سے بڑا سیارہ ہے اور عطارد سورج کے سب سے قریب ہے۔"
+        ],
+        "en": [
+          "The **sun** is a **star**. It is a huge ball of hot gases that gives out light and heat.",
+          "The sun and the **planets**, moons and other objects that go around it make up the **solar system**.",
+          "Starting from the sun, the eight planets are: **Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune**.",
+          "Our **Earth** is the only planet where we know there is life, because it has water, air and the right amount of heat.",
+          "Jupiter is the biggest planet and Mercury is the closest to the sun."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "ڏينهن، رات ۽ سال", "ur": "دن، رات اور سال", "en": "Day, night and year" },
+      "body": {
+        "sd": [
+          "زمين پنهنجي **محور** (هڪ سوچيل سڌي ليڪ) تي لٽو وانگر ڦرندي رهي ٿي. ان کي **گردش** چئبو آهي. هڪ پورو چڪر لڳ ڀڳ **24 ڪلاڪن** ۾ پورو ٿئي ٿو.",
+          "زمين جو جيڪو پاسو سج ڏانهن هوندو آهي اتي **ڏينهن** ۽ جيڪو پاسو سج کان ٻئي پاسي هوندو آهي اتي **رات** هوندي آهي.",
+          "زمين سج جي چوڌاري به ڦري ٿي. سج جو هڪ پورو چڪر لڳ ڀڳ **365 ڏينهن** يعني هڪ **سال** ۾ پورو ٿئي ٿو.",
+          "سج هر روز **اوڀر** کان اڀرندو ۽ **اولهه** ۾ لهندو نظر اچي ٿو، ڇاڪاڻ ته زمين ڦري رهي آهي."
+        ],
+        "ur": [
+          "زمین اپنے **محور** (ایک فرضی سیدھی لکیر) پر لٹو کی طرح گھومتی رہتی ہے۔ اسے **محوری گردش** کہتے ہیں۔ ایک پورا چکر تقریباً **24 گھنٹوں** میں مکمل ہوتا ہے۔",
+          "زمین کا جو حصہ سورج کی طرف ہوتا ہے وہاں **دن** اور جو حصہ سورج سے دوسری طرف ہوتا ہے وہاں **رات** ہوتی ہے۔",
+          "زمین سورج کے گرد بھی گھومتی ہے۔ سورج کا ایک پورا چکر تقریباً **365 دن** یعنی ایک **سال** میں مکمل ہوتا ہے۔",
+          "سورج ہر روز **مشرق** سے طلوع اور **مغرب** میں غروب ہوتا نظر آتا ہے، کیونکہ زمین گھوم رہی ہے۔"
+        ],
+        "en": [
+          "The Earth spins like a top on its **axis** (an imaginary straight line). This is called **rotation**. One full spin takes about **24 hours**.",
+          "The side of the Earth facing the sun has **day**, and the side facing away from the sun has **night**.",
+          "The Earth also travels around the sun. One full trip around the sun takes about **365 days** — one **year**.",
+          "The sun seems to rise in the **east** and set in the **west** every day, because the Earth is spinning."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "چنڊ", "ur": "چاند", "en": "The moon" },
+      "body": {
+        "sd": [
+          "**چنڊ** زمين جو قدرتي **سيٽلائيٽ** آهي، يعني اهو زمين جي چوڌاري ڦري ٿو. هڪ چڪر لڳ ڀڳ هڪ **مهيني** ۾ پورو ٿئي ٿو.",
+          "چنڊ پنهنجي روشني نٿو ڏئي. اهو سج جي روشني **موٽائي** ٿو.",
+          "چنڊ جو اڌ حصو هميشه روشن هوندو آهي، پر زمين تان اسين ان جو مختلف حصو ڏسون ٿا. ان ڪري چنڊ جون **شڪليون** بدلجنديون نظر اچن ٿيون: **نئون چنڊ، ٻج جو چنڊ (هلال)، اڌ چنڊ ۽ پورو چنڊ (چوڏهين جو چنڊ)**.",
+          "اسلامي مهينا چنڊ سان شروع ٿين ٿا. نئين مهيني جي شروعات ۾ سنهو هلال ڏٺو ويندو آهي.",
+          "چنڊ تي هوا ۽ پاڻي ناهي، ان ڪري اتي زندگي ناهي."
+        ],
+        "ur": [
+          "**چاند** زمین کا قدرتی **سیارچہ** (سیٹلائٹ) ہے، یعنی یہ زمین کے گرد گھومتا ہے۔ ایک چکر تقریباً ایک **مہینے** میں مکمل ہوتا ہے۔",
+          "چاند اپنی روشنی نہیں دیتا۔ یہ سورج کی روشنی **منعکس** کرتا ہے۔",
+          "چاند کا آدھا حصہ ہمیشہ روشن ہوتا ہے، لیکن زمین سے ہم اس کا مختلف حصہ دیکھتے ہیں۔ اسی لیے چاند کی **شکلیں** بدلتی نظر آتی ہیں: **نیا چاند، ہلال، آدھا چاند اور پورا چاند (چودھویں کا چاند)**۔",
+          "اسلامی مہینے چاند سے شروع ہوتے ہیں۔ نئے مہینے کے آغاز میں باریک ہلال دیکھا جاتا ہے۔",
+          "چاند پر ہوا اور پانی نہیں، اس لیے وہاں زندگی نہیں ہے۔"
+        ],
+        "en": [
+          "The **moon** is the Earth's natural **satellite**, which means it goes around the Earth. One trip takes about a **month**.",
+          "The moon does not give out its own light. It **reflects** sunlight.",
+          "Half of the moon is always lit, but from the Earth we see different amounts of the lit half. That is why the moon seems to change **shape**: **new moon, crescent, half moon and full moon**.",
+          "Islamic months begin with the moon. A thin crescent is looked for at the start of each new month.",
+          "There is no air or water on the moon, so nothing lives there."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "solar",
+    "parts": [
+      { "id": "sun", "label": { "sd": "سج", "ur": "سورج", "en": "Sun" }, "info": { "sd": "هڪ تارو جيڪو شمسي نظام کي روشني ۽ گرمي ڏئي ٿو.", "ur": "ایک ستارہ جو نظامِ شمسی کو روشنی اور گرمی دیتا ہے۔", "en": "A star that gives light and heat to the solar system." } },
+      { "id": "mercury", "label": { "sd": "عطارد", "ur": "عطارد", "en": "Mercury" }, "info": { "sd": "سج کي سڀ کان ويجهو ۽ سڀ کان ننڍو سيارو.", "ur": "سورج کے سب سے قریب اور سب سے چھوٹا سیارہ۔", "en": "The closest planet to the sun and the smallest." } },
+      { "id": "venus", "label": { "sd": "زهره", "ur": "زہرہ", "en": "Venus" }, "info": { "sd": "سڀ کان گرم سيارو. صبح ۽ شام جو چمڪندڙ تاري وانگر نظر اچي ٿو.", "ur": "سب سے گرم سیارہ۔ صبح اور شام کو چمکتے ستارے کی طرح نظر آتا ہے۔", "en": "The hottest planet. It shines like a bright star in the morning or evening." } },
+      { "id": "earth", "label": { "sd": "زمين", "ur": "زمین", "en": "Earth" }, "info": { "sd": "اسان جو گهر. پاڻي، هوا ۽ زندگي وارو سيارو. ان جو هڪ چنڊ آهي.", "ur": "ہمارا گھر۔ پانی، ہوا اور زندگی والا سیارہ۔ اس کا ایک چاند ہے۔", "en": "Our home: the planet with water, air and life. It has one moon." } },
+      { "id": "mars", "label": { "sd": "مريخ", "ur": "مریخ", "en": "Mars" }, "info": { "sd": "ڳاڙهو سيارو، ڇاڪاڻ ته ان جي مٽيءَ ۾ ڪٽ آهي.", "ur": "سرخ سیارہ، کیونکہ اس کی مٹی میں زنگ ہے۔", "en": "The red planet, because its soil has rust in it." } },
+      { "id": "jupiter", "label": { "sd": "مشتري", "ur": "مشتری", "en": "Jupiter" }, "info": { "sd": "سڀ کان وڏو سيارو، گئسن مان ٺهيل.", "ur": "سب سے بڑا سیارہ، گیسوں سے بنا ہوا۔", "en": "The biggest planet, made mostly of gases." } },
+      { "id": "saturn", "label": { "sd": "زحل", "ur": "زحل", "en": "Saturn" }, "info": { "sd": "ان جي چوڌاري برف ۽ پٿر جا سهڻا ڇلا (رِنگ) آهن.", "ur": "اس کے گرد برف اور پتھر کے خوبصورت حلقے ہیں۔", "en": "It has beautiful rings made of ice and rock." } },
+      { "id": "uranus", "label": { "sd": "يورينس", "ur": "یورینس", "en": "Uranus" }, "info": { "sd": "تمام ٿڌو سيارو جيڪو پاسي تي ليٽيل وانگر ڦري ٿو.", "ur": "بہت ٹھنڈا سیارہ جو پہلو کے بل لیٹا ہوا گھومتا ہے۔", "en": "A very cold planet that spins lying on its side." } },
+      { "id": "neptune", "label": { "sd": "نيپچون", "ur": "نیپچون", "en": "Neptune" }, "info": { "sd": "سج کان سڀ کان پري سيارو. اتي تمام تيز هوائون لڳن ٿيون.", "ur": "سورج سے سب سے دور سیارہ۔ وہاں بہت تیز ہوائیں چلتی ہیں۔", "en": "The farthest planet from the sun, with very strong winds." } }
+    ]
+  },
+  "glossary": [
+    { "sd": "شمسي نظام", "ur": "نظامِ شمسی", "en": "solar system" },
+    { "sd": "تارو", "ur": "ستارہ", "en": "star" },
+    { "sd": "سيارو", "ur": "سیارہ", "en": "planet" },
+    { "sd": "سيٽلائيٽ", "ur": "سیارچہ", "en": "satellite" },
+    { "sd": "محور", "ur": "محور", "en": "axis" },
+    { "sd": "گردش", "ur": "محوری گردش", "en": "rotation" },
+    { "sd": "سج جو چڪر", "ur": "سالانہ گردش", "en": "revolution" },
+    { "sd": "اوڀر", "ur": "مشرق", "en": "east" },
+    { "sd": "اولهه", "ur": "مغرب", "en": "west" },
+    { "sd": "هلال", "ur": "ہلال", "en": "crescent" },
+    { "sd": "پورو چنڊ", "ur": "پورا چاند", "en": "full moon" }
+  ],
+  "quiz": [
+    {
+      "id": "es1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "سج ڇا آهي؟", "ur": "سورج کیا ہے؟", "en": "What is the sun?" },
+      "options": [
+        { "sd": "هڪ تارو", "ur": "ایک ستارہ", "en": "A star" },
+        { "sd": "هڪ سيارو", "ur": "ایک سیارہ", "en": "A planet" },
+        { "sd": "هڪ چنڊ", "ur": "ایک چاند", "en": "A moon" },
+        { "sd": "هڪ ڪڪر", "ur": "ایک بادل", "en": "A cloud" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "es2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "شمسي نظام ۾ ڪيترا سيارا آهن؟", "ur": "نظامِ شمسی میں کتنے سیارے ہیں؟", "en": "How many planets are there in the solar system?" },
+      "options": [
+        { "sd": "6", "ur": "6", "en": "6" },
+        { "sd": "8", "ur": "8", "en": "8" },
+        { "sd": "10", "ur": "10", "en": "10" },
+        { "sd": "12", "ur": "12", "en": "12" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "es3", "type": "mcq", "topic": "s1",
+      "q": { "sd": "سڀ کان وڏو سيارو ڪهڙو آهي؟", "ur": "سب سے بڑا سیارہ کون سا ہے؟", "en": "Which is the biggest planet?" },
+      "options": [
+        { "sd": "زمين", "ur": "زمین", "en": "Earth" },
+        { "sd": "مريخ", "ur": "مریخ", "en": "Mars" },
+        { "sd": "مشتري", "ur": "مشتری", "en": "Jupiter" },
+        { "sd": "عطارد", "ur": "عطارد", "en": "Mercury" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "es4", "type": "mcq", "topic": "s1",
+      "q": { "sd": "سج کي سڀ کان ويجهو سيارو ڪهڙو آهي؟", "ur": "سورج کے سب سے قریب سیارہ کون سا ہے؟", "en": "Which planet is closest to the sun?" },
+      "options": [
+        { "sd": "عطارد", "ur": "عطارد", "en": "Mercury" },
+        { "sd": "زهره", "ur": "زہرہ", "en": "Venus" },
+        { "sd": "نيپچون", "ur": "نیپچون", "en": "Neptune" },
+        { "sd": "زحل", "ur": "زحل", "en": "Saturn" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "es5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڏينهن ۽ رات ڇو ٿين ٿا؟", "ur": "دن اور رات کیوں ہوتے ہیں؟", "en": "Why do we have day and night?" },
+      "options": [
+        { "sd": "زمين پنهنجي محور تي ڦري ٿي", "ur": "زمین اپنے محور پر گھومتی ہے", "en": "The Earth spins on its axis" },
+        { "sd": "سج بند ٿي وڃي ٿو", "ur": "سورج بند ہو جاتا ہے", "en": "The sun switches off" },
+        { "sd": "چنڊ سج کي ڍڪي ٿو", "ur": "چاند سورج کو ڈھانپ لیتا ہے", "en": "The moon covers the sun" },
+        { "sd": "ڪڪر سج کي لڪائين ٿا", "ur": "بادل سورج کو چھپا لیتے ہیں", "en": "Clouds hide the sun" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "es6", "type": "mcq", "topic": "s2",
+      "q": { "sd": "زمين کي پنهنجي محور تي هڪ پورو چڪر لڳائڻ ۾ ڪيترو وقت لڳي ٿو؟", "ur": "زمین کو اپنے محور پر ایک پورا چکر لگانے میں کتنا وقت لگتا ہے؟", "en": "How long does the Earth take to spin once on its axis?" },
+      "options": [
+        { "sd": "لڳ ڀڳ 24 ڪلاڪ", "ur": "تقریباً 24 گھنٹے", "en": "About 24 hours" },
+        { "sd": "هڪ هفتو", "ur": "ایک ہفتہ", "en": "One week" },
+        { "sd": "هڪ مهينو", "ur": "ایک مہینہ", "en": "One month" },
+        { "sd": "365 ڏينهن", "ur": "365 دن", "en": "365 days" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "es7", "type": "mcq", "topic": "s2",
+      "q": { "sd": "زمين کي سج جي چوڌاري هڪ پورو چڪر لڳائڻ ۾ ڪيترو وقت لڳي ٿو؟", "ur": "زمین کو سورج کے گرد ایک پورا چکر لگانے میں کتنا وقت لگتا ہے؟", "en": "How long does the Earth take to go once around the sun?" },
+      "options": [
+        { "sd": "24 ڪلاڪ", "ur": "24 گھنٹے", "en": "24 hours" },
+        { "sd": "30 ڏينهن", "ur": "30 دن", "en": "30 days" },
+        { "sd": "لڳ ڀڳ 365 ڏينهن", "ur": "تقریباً 365 دن", "en": "About 365 days" },
+        { "sd": "10 سال", "ur": "10 سال", "en": "10 years" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "es8", "type": "mcq", "topic": "s2",
+      "q": { "sd": "سج ڪهڙي طرف کان اڀرندو نظر اچي ٿو؟", "ur": "سورج کس طرف سے طلوع ہوتا نظر آتا ہے؟", "en": "In which direction does the sun seem to rise?" },
+      "options": [
+        { "sd": "اوڀر", "ur": "مشرق", "en": "East" },
+        { "sd": "اولهه", "ur": "مغرب", "en": "West" },
+        { "sd": "اتر", "ur": "شمال", "en": "North" },
+        { "sd": "ڏکڻ", "ur": "جنوب", "en": "South" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "es9", "type": "mcq", "topic": "s3",
+      "q": { "sd": "چنڊ ڇا آهي؟", "ur": "چاند کیا ہے؟", "en": "What is the moon?" },
+      "options": [
+        { "sd": "زمين جو قدرتي سيٽلائيٽ", "ur": "زمین کا قدرتی سیارچہ", "en": "The Earth's natural satellite" },
+        { "sd": "هڪ تارو", "ur": "ایک ستارہ", "en": "A star" },
+        { "sd": "سج جو ٽڪرو", "ur": "سورج کا ٹکڑا", "en": "A piece of the sun" },
+        { "sd": "هڪ سيارو", "ur": "ایک سیارہ", "en": "A planet" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "es10", "type": "tf", "topic": "s1",
+      "q": { "sd": "زمين ئي اهو سيارو آهي جتي اسان کي زندگيءَ جي خبر آهي.", "ur": "زمین ہی وہ سیارہ ہے جہاں ہمیں زندگی کا علم ہے۔", "en": "Earth is the only planet where we know there is life." },
+      "answer": true
+    },
+    {
+      "id": "es11", "type": "tf", "topic": "s3",
+      "q": { "sd": "چنڊ پنهنجي روشني پاڻ ڏئي ٿو.", "ur": "چاند اپنی روشنی خود دیتا ہے۔", "en": "The moon makes its own light." },
+      "answer": false
+    },
+    {
+      "id": "es12", "type": "tf", "topic": "s2",
+      "q": { "sd": "زمين جو جيڪو پاسو سج ڏانهن هجي اتي ڏينهن هوندو آهي.", "ur": "زمین کا جو حصہ سورج کی طرف ہو وہاں دن ہوتا ہے۔", "en": "It is day on the side of the Earth that faces the sun." },
+      "answer": true
+    },
+    {
+      "id": "es13", "type": "tf", "topic": "s3",
+      "q": { "sd": "چنڊ تي هوا ۽ پاڻي گهڻو آهي.", "ur": "چاند پر ہوا اور پانی بہت ہے۔", "en": "There is lots of air and water on the moon." },
+      "answer": false
+    },
+    {
+      "id": "es14", "type": "tf", "topic": "s1",
+      "q": { "sd": "زحل جي چوڌاري ڇلا (رِنگ) آهن.", "ur": "زحل کے گرد حلقے ہیں۔", "en": "Saturn has rings around it." },
+      "answer": true
+    },
+    {
+      "id": "es15", "type": "match", "topic": "s2",
+      "q": { "sd": "هر لفظ کي ان جي معنيٰ سان ملايو.", "ur": "ہر لفظ کو اس کے معنی سے ملائیں۔", "en": "Match each word with its meaning." },
+      "pairs": [
+        { "left": { "sd": "گردش", "ur": "محوری گردش", "en": "Rotation" }, "right": { "sd": "زمين جو محور تي ڦرڻ", "ur": "زمین کا محور پر گھومنا", "en": "Earth spinning on its axis" } },
+        { "left": { "sd": "سال", "ur": "سال", "en": "Year" }, "right": { "sd": "سج جو هڪ پورو چڪر", "ur": "سورج کا ایک پورا چکر", "en": "One trip around the sun" } },
+        { "left": { "sd": "سيٽلائيٽ", "ur": "سیارچہ", "en": "Satellite" }, "right": { "sd": "سيارو جي چوڌاري ڦرندڙ شيءِ", "ur": "سیارے کے گرد گھومنے والی چیز", "en": "Something that goes around a planet" } }
+      ]
+    },
+    {
+      "id": "es16", "type": "match", "topic": "s1",
+      "q": { "sd": "هر سياري کي ان جي خاصيت سان ملايو.", "ur": "ہر سیارے کو اس کی خصوصیت سے ملائیں۔", "en": "Match each planet with a fact about it." },
+      "pairs": [
+        { "left": { "sd": "مريخ", "ur": "مریخ", "en": "Mars" }, "right": { "sd": "ڳاڙهو سيارو", "ur": "سرخ سیارہ", "en": "The red planet" } },
+        { "left": { "sd": "مشتري", "ur": "مشتری", "en": "Jupiter" }, "right": { "sd": "سڀ کان وڏو سيارو", "ur": "سب سے بڑا سیارہ", "en": "The biggest planet" } },
+        { "left": { "sd": "زحل", "ur": "زحل", "en": "Saturn" }, "right": { "sd": "سهڻن ڇلن وارو", "ur": "خوبصورت حلقوں والا", "en": "Has beautiful rings" } },
+        { "left": { "sd": "زمين", "ur": "زمین", "en": "Earth" }, "right": { "sd": "زندگيءَ وارو", "ur": "زندگی والا", "en": "Has life" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "memory",
+      "title": { "sd": "خلا جي ياداشت واري راند", "ur": "خلا کا یادداشت کا کھیل", "en": "Space memory game" },
+      "pairs": [
+        { "a": { "sd": "سج", "ur": "سورج", "en": "Sun" }, "b": { "sd": "هڪ تارو", "ur": "ایک ستارہ", "en": "A star" } },
+        { "a": { "sd": "چنڊ", "ur": "چاند", "en": "Moon" }, "b": { "sd": "زمين جو سيٽلائيٽ", "ur": "زمین کا سیارچہ", "en": "Earth's satellite" } },
+        { "a": { "sd": "مريخ", "ur": "مریخ", "en": "Mars" }, "b": { "sd": "ڳاڙهو سيارو", "ur": "سرخ سیارہ", "en": "Red planet" } },
+        { "a": { "sd": "مشتري", "ur": "مشتری", "en": "Jupiter" }, "b": { "sd": "سڀ کان وڏو سيارو", "ur": "سب سے بڑا سیارہ", "en": "Biggest planet" } },
+        { "a": { "sd": "24 ڪلاڪ", "ur": "24 گھنٹے", "en": "24 hours" }, "b": { "sd": "هڪ ڏينهن ۽ رات", "ur": "ایک دن اور رات", "en": "One day and night" } },
+        { "a": { "sd": "365 ڏينهن", "ur": "365 دن", "en": "365 days" }, "b": { "sd": "هڪ سال", "ur": "ایک سال", "en": "One year" } }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ٽارچ ۽ بال سان ڏينهن ۽ رات", "ur": "ٹارچ اور گیند سے دن اور رات", "en": "Day and night with a torch and a ball" },
+    "materials": [
+      { "sd": "هڪ ٽارچ (سج لاءِ)", "ur": "ایک ٹارچ (سورج کے لیے)", "en": "A torch (the sun)" },
+      { "sd": "هڪ بال يا نارنگي (زمين لاءِ)", "ur": "ایک گیند یا مالٹا (زمین کے لیے)", "en": "A ball or an orange (the Earth)" },
+      { "sd": "هڪ ننڍو اسٽيڪر يا قلم جو نشان", "ur": "ایک چھوٹا اسٹیکر یا قلم کا نشان", "en": "A small sticker or a pen mark" },
+      { "sd": "هڪ اونداهو ڪمرو", "ur": "ایک اندھیرا کمرہ", "en": "A dark room" }
+    ],
+    "steps": [
+      { "sd": "بال تي ننڍو نشان لڳايو. اهو توهان جو گهر آهي.", "ur": "گیند پر چھوٹا نشان لگائیں۔ یہ آپ کا گھر ہے۔", "en": "Put a small mark on the ball. This is your home." },
+      { "sd": "ڪمري جون بتيون بند ڪريو ۽ دوست کي ٽارچ بال ڏانهن ٻارڻ لاءِ چئو.", "ur": "کمرے کی بتیاں بند کریں اور دوست سے کہیں کہ ٹارچ گیند کی طرف جلائے۔", "en": "Turn off the room lights and ask a friend to shine the torch at the ball." },
+      { "sd": "بال کي آهستي آهستي ڦيرايو.", "ur": "گیند کو آہستہ آہستہ گھمائیں۔", "en": "Slowly spin the ball." },
+      { "sd": "ڏسو ته نشان ڪڏهن روشنيءَ ۾ آهي ۽ ڪڏهن اونداهي ۾.", "ur": "دیکھیں کہ نشان کب روشنی میں ہے اور کب اندھیرے میں۔", "en": "Watch when the mark is in the light and when it is in the dark." }
+    ],
+    "learn": {
+      "sd": "جڏهن نشان ٽارچ ڏانهن هوندو آهي ته اتي روشني (ڏينهن) هوندي آهي. جڏهن بال ڦري ٿي ۽ نشان ٻئي پاسي ٿو وڃي ته اتي اونداهي (رات) ٿئي ٿي. زمين جي ڦرڻ سان ئي ڏينهن ۽ رات ٿين ٿا.",
+      "ur": "جب نشان ٹارچ کی طرف ہوتا ہے تو وہاں روشنی (دن) ہوتی ہے۔ جب گیند گھومتی ہے اور نشان دوسری طرف چلا جاتا ہے تو وہاں اندھیرا (رات) ہو جاتا ہے۔ زمین کے گھومنے سے ہی دن اور رات ہوتے ہیں۔",
+      "en": "When the mark faces the torch it is in the light (day). As the ball spins and the mark moves to the other side, it is in the dark (night). Day and night happen because the Earth spins."
+    },
+    "safety": {
+      "sd": "اونداهي ۾ آهستي هلو ۽ ٽارچ ڪنهن جي اکين ۾ نه ٻاريو. سج ڏانهن ڪڏهن به سڌو نه ڏسو.",
+      "ur": "اندھیرے میں آہستہ چلیں اور ٹارچ کسی کی آنکھوں میں نہ ڈالیں۔ سورج کی طرف کبھی سیدھا نہ دیکھیں۔",
+      "en": "Move carefully in the dark and never shine the torch into anyone's eyes. Never look straight at the sun."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "سج هڪ ____ آهي.", "ur": "سورج ایک ____ ہے۔", "en": "The sun is a ____." }, "answer": { "sd": "تارو", "ur": "ستارہ", "en": "star" } },
+      { "text": { "sd": "شمسي نظام ۾ ____ سيارا آهن.", "ur": "نظامِ شمسی میں ____ سیارے ہیں۔", "en": "There are ____ planets in the solar system." }, "answer": { "sd": "اٺ", "ur": "آٹھ", "en": "eight" } },
+      { "text": { "sd": "زمين پنهنجي محور تي لڳ ڀڳ ____ ڪلاڪن ۾ هڪ چڪر پورو ڪري ٿي.", "ur": "زمین اپنے محور پر تقریباً ____ گھنٹوں میں ایک چکر پورا کرتی ہے۔", "en": "The Earth spins once on its axis in about ____ hours." }, "answer": { "sd": "24", "ur": "24", "en": "24" } },
+      { "text": { "sd": "چنڊ زمين جو قدرتي ____ آهي.", "ur": "چاند زمین کا قدرتی ____ ہے۔", "en": "The moon is the Earth's natural ____." }, "answer": { "sd": "سيٽلائيٽ", "ur": "سیارچہ", "en": "satellite" } },
+      { "text": { "sd": "سج ____ کان اڀرندو نظر اچي ٿو.", "ur": "سورج ____ سے طلوع ہوتا نظر آتا ہے۔", "en": "The sun seems to rise in the ____." }, "answer": { "sd": "اوڀر", "ur": "مشرق", "en": "east" } }
+    ],
+    "tf": [
+      { "text": { "sd": "مشتري سڀ کان ننڍو سيارو آهي.", "ur": "مشتری سب سے چھوٹا سیارہ ہے۔", "en": "Jupiter is the smallest planet." }, "answer": false },
+      { "text": { "sd": "زمين سج جي چوڌاري ڦري ٿي.", "ur": "زمین سورج کے گرد گھومتی ہے۔", "en": "The Earth goes around the sun." }, "answer": true },
+      { "text": { "sd": "چنڊ سج جي روشني موٽائي ٿو.", "ur": "چاند سورج کی روشنی منعکس کرتا ہے۔", "en": "The moon reflects sunlight." }, "answer": true },
+      { "text": { "sd": "هڪ سال ۾ لڳ ڀڳ 100 ڏينهن هوندا آهن.", "ur": "ایک سال میں تقریباً 100 دن ہوتے ہیں۔", "en": "A year has about 100 days." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "عطارد", "ur": "عطارد", "en": "Mercury" }, "b": { "sd": "سج کي سڀ کان ويجهو", "ur": "سورج کے سب سے قریب", "en": "Closest to the sun" } },
+      { "a": { "sd": "مريخ", "ur": "مریخ", "en": "Mars" }, "b": { "sd": "ڳاڙهو سيارو", "ur": "سرخ سیارہ", "en": "Red planet" } },
+      { "a": { "sd": "زحل", "ur": "زحل", "en": "Saturn" }, "b": { "sd": "ڇلن وارو سيارو", "ur": "حلقوں والا سیارہ", "en": "Planet with rings" } },
+      { "a": { "sd": "پورو چنڊ", "ur": "پورا چاند", "en": "Full moon" }, "b": { "sd": "گول روشن چنڊ", "ur": "گول روشن چاند", "en": "Round bright moon" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "سج کان شروع ڪري اٺ سيارن جا نالا ترتيب سان لکو.", "ur": "سورج سے شروع کر کے آٹھ سیاروں کے نام ترتیب سے لکھیں۔", "en": "Write the names of the eight planets in order from the sun." },
+        "a": { "sd": "عطارد، زهره، زمين، مريخ، مشتري، زحل، يورينس، نيپچون.", "ur": "عطارد، زہرہ، زمین، مریخ، مشتری، زحل، یورینس، نیپچون۔", "en": "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune." }
+      },
+      {
+        "q": { "sd": "ڏينهن ۽ رات ڇو ٿين ٿا؟", "ur": "دن اور رات کیوں ہوتے ہیں؟", "en": "Why do day and night happen?" },
+        "a": { "sd": "زمين پنهنجي محور تي ڦري ٿي. سج ڏانهن پاسي تي ڏينهن ۽ ٻئي پاسي رات هوندي آهي.", "ur": "زمین اپنے محور پر گھومتی ہے۔ سورج کی طرف والے حصے پر دن اور دوسری طرف رات ہوتی ہے۔", "en": "The Earth spins on its axis. The side facing the sun has day and the other side has night." }
+      },
+      {
+        "q": { "sd": "زمين تي زندگي ڇو ممڪن آهي؟", "ur": "زمین پر زندگی کیوں ممکن ہے؟", "en": "Why is life possible on Earth?" },
+        "a": { "sd": "ڇاڪاڻ ته هتي پاڻي، هوا ۽ مناسب گرمي آهي.", "ur": "کیونکہ یہاں پانی، ہوا اور مناسب گرمی ہے۔", "en": "Because it has water, air and the right amount of heat." }
+      }
+    ],
+    "draw": { "sd": "چنڊ جون چار شڪليون ٺاهيو: نئون چنڊ، هلال، اڌ چنڊ ۽ پورو چنڊ، ۽ انهن جا نالا لکو.", "ur": "چاند کی چار شکلیں بنائیں: نیا چاند، ہلال، آدھا چاند اور پورا چاند، اور ان کے نام لکھیں۔", "en": "Draw four shapes of the moon: new moon, crescent, half moon and full moon, and label them." }
+  }
+}

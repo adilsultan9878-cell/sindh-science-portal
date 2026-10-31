@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#cfd8dc"/>
+  <!-- torch (the sun) -->
+  <rect x="30" y="140" width="90" height="40" rx="8" fill="#546e7a"/>
+  <path d="M120 132 l30 -10 v76 l-30 -10z" fill="#78909c"/>
+  <rect x="60" y="134" width="16" height="8" rx="3" fill="#ef5350"/>
+  <!-- light beam -->
+  <path d="M150 124 L400 70 L400 250 L150 196z" fill="#fff59d" opacity="0.75"/>
+  <!-- ball (the Earth): lit side faces the torch, far side is dark -->
+  <circle cx="430" cy="160" r="86" fill="#42a5f5"/>
+  <path d="M396 104 q30 -10 40 14 q-10 24 -34 16 q-20 -8 -6 -30z M440 170 q26 -6 34 18 q-6 30 -30 26 q-22 -14 -4 -44z M380 190 q18 4 16 22 q-16 10 -26 -6z" fill="#66bb6a"/>
+  <path d="M430 74 a86 86 0 0 1 0 172 a40 86 0 0 0 0 -172z" fill="#263238" opacity="0.55"/>
+  <!-- the mark: your home -->
+  <circle cx="380" cy="150" r="9" fill="#e53935" stroke="#fff" stroke-width="3"/>
+  <!-- spin arrow -->
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#37474f"/></marker></defs>
+  <path d="M350 40 q80 -30 160 0" stroke="#37474f" stroke-width="5" fill="none" marker-end="url(#a)"/>
+  <!-- stand -->
+  <rect x="420" y="246" width="20" height="40" fill="#8d6e63"/>
+  <rect x="380" y="286" width="100" height="14" rx="4" fill="#6d4c41"/>
+</svg>

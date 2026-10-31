@@ -1,0 +1,348 @@
+{
+  "id": "force-machines",
+  "number": 6,
+  "icon": "⚙️",
+  "title": { "sd": "قوت ۽ سادا مشينون", "ur": "قوت اور سادہ مشینیں", "en": "Force and Simple Machines" },
+  "summary": {
+    "sd": "ڌڪو ۽ ڇڪ، قوت جا اثر، رگڙ ۽ ڪم کي آسان ڪندڙ ڇهه سادا مشينون سکو.",
+    "ur": "دھکا اور کھنچاؤ، قوت کے اثرات، رگڑ اور کام کو آسان بنانے والی چھ سادہ مشینیں سیکھیں۔",
+    "en": "Learn about pushes and pulls, what forces do, friction, and six simple machines that make work easier."
+  },
+  "badge": { "id": "machine_expert", "icon": "⚙️", "name": { "sd": "مشينن جو ماهر", "ur": "مشینوں کا ماہر", "en": "Machine Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "قوت ڇا آهي؟", "ur": "قوت کیا ہے؟", "en": "What is a force?" },
+      "body": {
+        "sd": [
+          "**ڌڪو** يا **ڇڪ** کي **قوت** چئبو آهي. دروازو کولڻ لاءِ اسين ان کي ڇڪيون يا ڌڪيون ٿا.",
+          "قوت سان هي ڪم ٿي سگهن ٿا:",
+          "- بيٺل شيءِ کي **هلائي** سگهجي ٿو، جيئن فٽبال کي لت هڻڻ.",
+          "- هلندڙ شيءِ کي **روڪي** سگهجي ٿو، جيئن ڪيچ پڪڙڻ.",
+          "- شيءِ جو **رخ** يا **رفتار** بدلائي سگهجي ٿي، جيئن ڪرڪيٽ ۾ بال کي بيٽ هڻڻ.",
+          "- شيءِ جي **شڪل** بدلائي سگهجي ٿي، جيئن مٽيءَ مان پيالو ٺاهڻ."
+        ],
+        "ur": [
+          "**دھکے** یا **کھنچاؤ** کو **قوت** کہتے ہیں۔ دروازہ کھولنے کے لیے ہم اسے کھینچتے یا دھکیلتے ہیں۔",
+          "قوت سے یہ کام ہو سکتے ہیں:",
+          "- رکی ہوئی چیز کو **چلایا** جا سکتا ہے، جیسے فٹبال کو کک لگانا۔",
+          "- چلتی ہوئی چیز کو **روکا** جا سکتا ہے، جیسے کیچ پکڑنا۔",
+          "- چیز کی **سمت** یا **رفتار** بدلی جا سکتی ہے، جیسے کرکٹ میں گیند کو بلا مارنا۔",
+          "- چیز کی **شکل** بدلی جا سکتی ہے، جیسے مٹی سے پیالہ بنانا۔"
+        ],
+        "en": [
+          "A **push** or a **pull** is called a **force**. To open a door we push it or pull it.",
+          "A force can:",
+          "- **start** something moving, like kicking a football.",
+          "- **stop** something that is moving, like catching a ball.",
+          "- change the **direction** or **speed** of something, like hitting a cricket ball with a bat.",
+          "- change the **shape** of something, like making a cup out of clay."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "قوت جا ڪجهه قسم", "ur": "قوت کی چند اقسام", "en": "Some kinds of force" },
+      "body": {
+        "sd": [
+          "- **عضلاتي قوت**: اسان جي جسم جي طاقت، جيئن ٿيلهو کڻڻ يا سائيڪل هلائڻ.",
+          "- **ڪشش ثقل**: زمين هر شيءِ کي پاڻ ڏانهن هيٺ ڇڪي ٿي. ان ڪري مٿي اڇلايل بال واپس هيٺ ڪري ٿو.",
+          "- **رگڙ**: جڏهن ٻه سطحون هڪ ٻئي تي گسن ٿيون ته رگڙ هلندڙ شيءِ کي آهستي ڪري ٿي. کهري سطح تي رگڙ وڌيڪ ۽ سنهي سطح تي گهٽ هوندي آهي. رگڙ سبب ئي اسين ترڪڻ کان سواءِ هلي سگهون ٿا.",
+          "- **مقناطيسي قوت**: مقناطيس لوهه کي ڇهڻ کان سواءِ به پاڻ ڏانهن ڇڪي ٿو."
+        ],
+        "ur": [
+          "- **عضلاتی قوت**: ہمارے جسم کی طاقت، جیسے بستہ اٹھانا یا سائیکل چلانا۔",
+          "- **کششِ ثقل**: زمین ہر چیز کو اپنی طرف نیچے کھینچتی ہے۔ اسی لیے اوپر پھینکی گئی گیند واپس نیچے گرتی ہے۔",
+          "- **رگڑ**: جب دو سطحیں ایک دوسرے پر رگڑ کھاتی ہیں تو رگڑ چلتی ہوئی چیز کو آہستہ کر دیتی ہے۔ کھردری سطح پر رگڑ زیادہ اور ہموار سطح پر کم ہوتی ہے۔ رگڑ کی وجہ سے ہی ہم پھسلے بغیر چل سکتے ہیں۔",
+          "- **مقناطیسی قوت**: مقناطیس لوہے کو چھوئے بغیر بھی اپنی طرف کھینچتا ہے۔"
+        ],
+        "en": [
+          "- **Muscular force**: the strength of our body, like lifting a bag or riding a bicycle.",
+          "- **Gravity**: the Earth pulls everything down towards it. That is why a ball thrown up comes back down.",
+          "- **Friction**: when two surfaces rub together, friction slows a moving thing down. There is more friction on rough surfaces and less on smooth ones. Friction is also what lets us walk without slipping.",
+          "- **Magnetic force**: a magnet pulls iron towards it, even without touching it."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "سادا مشينون", "ur": "سادہ مشینیں", "en": "Simple machines" },
+      "body": {
+        "sd": [
+          "**سادا مشينون** اهي اوزار آهن جيڪي گهٽ قوت سان ڪم کي **آسان** بڻائين ٿا. ڇهه سادا مشينون آهن:",
+          "- **ليور**: هڪ مضبوط ڏنڊو جيڪو هڪ نقطي تي ڦري ٿو. مثال: سي-سا (جهولو)، ڍڪڻ کولڻ لاءِ چمچو.",
+          "- **پُلي (چرخي)**: ڦيٿو جنهن تي رسي هلي ٿي. مثال: کوهه مان پاڻي ڪڍڻ، جهنڊو مٿي چاڙهڻ.",
+          "- **ڦيٿو ۽ ڌُرو**: هڪ ڦيٿو جيڪو ڌُري سان گڏ ڦري ٿو. مثال: سائيڪل، گاڏي، دروازي جو هينڊل.",
+          "- **لاهي واري سطح (ريمپ)**: لاهي واري سطح ڳري شيءِ کي مٿي چاڙهڻ آسان ڪري ٿي. مثال: ٽرڪ ۾ سامان چاڙهڻ لاءِ تختو.",
+          "- **ڪاتي نما (ويج)**: شين کي چيرڻ يا ڌار ڪرڻ لاءِ. مثال: ڪهاڙي، چاقو.",
+          "- **پيچ (اسڪرو)**: ڦيرائڻ سان شيون جوڙي ٿو. مثال: بوتل جو ڍڪڻ، پيچ."
+        ],
+        "ur": [
+          "**سادہ مشینیں** وہ اوزار ہیں جو کم قوت سے کام کو **آسان** بنا دیتے ہیں۔ چھ سادہ مشینیں ہیں:",
+          "- **لیور (بیرم)**: ایک مضبوط ڈنڈا جو ایک نقطے پر گھومتا ہے۔ مثالیں: سی سا (جھولا)، ڈھکن کھولنے کے لیے چمچ۔",
+          "- **پُلی (چرخی)**: پہیہ جس پر رسی چلتی ہے۔ مثالیں: کنویں سے پانی نکالنا، جھنڈا اوپر چڑھانا۔",
+          "- **پہیہ اور دُھرا**: ایک پہیہ جو دُھرے کے ساتھ گھومتا ہے۔ مثالیں: سائیکل، گاڑی، دروازے کا ہینڈل۔",
+          "- **ڈھلوان سطح (ریمپ)**: ڈھلوان سطح بھاری چیز کو اوپر چڑھانا آسان بنا دیتی ہے۔ مثال: ٹرک میں سامان چڑھانے کے لیے تختہ۔",
+          "- **فانہ (ویج)**: چیزوں کو چیرنے یا الگ کرنے کے لیے۔ مثالیں: کلہاڑی، چاقو۔",
+          "- **پیچ (اسکرو)**: گھمانے سے چیزوں کو جوڑتا ہے۔ مثالیں: بوتل کا ڈھکن، پیچ۔"
+        ],
+        "en": [
+          "**Simple machines** are tools that make work **easier** using less force. There are six simple machines:",
+          "- **Lever**: a strong bar that turns on one point. Examples: a see-saw, a spoon used to open a tin lid.",
+          "- **Pulley**: a wheel with a rope running over it. Examples: pulling water from a well, raising a flag.",
+          "- **Wheel and axle**: a wheel that turns together with a rod (axle). Examples: a bicycle, a cart, a door handle.",
+          "- **Inclined plane (ramp)**: a sloping surface that makes it easier to move heavy things up. Example: a plank for loading a truck.",
+          "- **Wedge**: used to cut or split things apart. Examples: an axe, a knife.",
+          "- **Screw**: holds things together when it is turned. Examples: a bottle cap, a screw."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "tree",
+    "tree": {
+      "id": "machines",
+      "children": [{ "id": "lever" }, { "id": "pulley" }, { "id": "wheel" }, { "id": "ramp" }, { "id": "wedge" }, { "id": "screw" }]
+    },
+    "parts": [
+      { "id": "machines", "label": { "sd": "سادا مشينون", "ur": "سادہ مشینیں", "en": "Simple machines" }, "info": { "sd": "اوزار جيڪي گهٽ قوت سان ڪم آسان ڪن ٿا.", "ur": "اوزار جو کم قوت سے کام آسان بناتے ہیں۔", "en": "Tools that make work easier with less force." } },
+      { "id": "lever", "label": { "sd": "ليور", "ur": "لیور", "en": "Lever" }, "info": { "sd": "هڪ نقطي تي ڦرندڙ ڏنڊو. مثال: سي-سا، چمچي سان ڍڪڻ کولڻ.", "ur": "ایک نقطے پر گھومنے والا ڈنڈا۔ مثالیں: سی سا، چمچ سے ڈھکن کھولنا۔", "en": "A bar that turns on one point. Examples: see-saw, opening a lid with a spoon." } },
+      { "id": "pulley", "label": { "sd": "پُلي", "ur": "پُلی", "en": "Pulley" }, "info": { "sd": "رسي وارو ڦيٿو جيڪو ڳري شيءِ مٿي کڻڻ آسان ڪري ٿو. مثال: کوهه، جهنڊو.", "ur": "رسی والا پہیہ جو بھاری چیز اوپر اٹھانا آسان بناتا ہے۔ مثالیں: کنواں، جھنڈا۔", "en": "A wheel and rope that make lifting easier. Examples: a well, a flagpole." } },
+      { "id": "wheel", "label": { "sd": "ڦيٿو ۽ ڌُرو", "ur": "پہیہ اور دُھرا", "en": "Wheel and axle" }, "info": { "sd": "ڦيٿو ۽ ڌُرو گڏ ڦرن ٿا. مثال: سائيڪل، گاڏي.", "ur": "پہیہ اور دُھرا ساتھ گھومتے ہیں۔ مثالیں: سائیکل، گاڑی۔", "en": "A wheel and rod that turn together. Examples: bicycle, cart." } },
+      { "id": "ramp", "label": { "sd": "لاهي واري سطح", "ur": "ڈھلوان سطح", "en": "Inclined plane" }, "info": { "sd": "لاهي واري سطح ڳري شيءِ کي مٿي چاڙهڻ آسان ڪري ٿي. مثال: ريمپ.", "ur": "ڈھلوان سطح بھاری چیز کو اوپر چڑھانا آسان بناتی ہے۔ مثال: ریمپ۔", "en": "A slope that makes moving heavy things up easier. Example: a ramp." } },
+      { "id": "wedge", "label": { "sd": "ويج", "ur": "فانہ", "en": "Wedge" }, "info": { "sd": "تيز ڪنڊ شين کي چيري ٿي. مثال: ڪهاڙي، چاقو.", "ur": "تیز کنارہ چیزوں کو چیرتا ہے۔ مثالیں: کلہاڑی، چاقو۔", "en": "A sharp edge that splits things. Examples: axe, knife." } },
+      { "id": "screw", "label": { "sd": "پيچ", "ur": "پیچ", "en": "Screw" }, "info": { "sd": "ڦيرائڻ سان شيون مضبوطيءَ سان جوڙي ٿو. مثال: بوتل جو ڍڪڻ.", "ur": "گھمانے سے چیزوں کو مضبوطی سے جوڑتا ہے۔ مثال: بوتل کا ڈھکن۔", "en": "Holds things tightly when turned. Example: a bottle cap." } }
+    ]
+  },
+  "glossary": [
+    { "sd": "قوت", "ur": "قوت", "en": "force" },
+    { "sd": "ڌڪو", "ur": "دھکا", "en": "push" },
+    { "sd": "ڇڪ", "ur": "کھنچاؤ", "en": "pull" },
+    { "sd": "ڪشش ثقل", "ur": "کششِ ثقل", "en": "gravity" },
+    { "sd": "رگڙ", "ur": "رگڑ", "en": "friction" },
+    { "sd": "سادي مشين", "ur": "سادہ مشین", "en": "simple machine" },
+    { "sd": "ليور", "ur": "لیور", "en": "lever" },
+    { "sd": "پُلي", "ur": "پُلی", "en": "pulley" },
+    { "sd": "ڦيٿو ۽ ڌُرو", "ur": "پہیہ اور دُھرا", "en": "wheel and axle" },
+    { "sd": "لاهي واري سطح", "ur": "ڈھلوان سطح", "en": "inclined plane" }
+  ],
+  "quiz": [
+    {
+      "id": "fm1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "قوت ڇا آهي؟", "ur": "قوت کیا ہے؟", "en": "What is a force?" },
+      "options": [
+        { "sd": "ڌڪو يا ڇڪ", "ur": "دھکا یا کھنچاؤ", "en": "A push or a pull" },
+        { "sd": "هڪ رنگ", "ur": "ایک رنگ", "en": "A colour" },
+        { "sd": "هڪ آواز", "ur": "ایک آواز", "en": "A sound" },
+        { "sd": "هڪ ٻوٽو", "ur": "ایک پودا", "en": "A plant" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fm2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "مٽيءَ مان پيالو ٺاهڻ وقت قوت ڇا ٿي بدلائي؟", "ur": "مٹی سے پیالہ بناتے وقت قوت کیا بدلتی ہے؟", "en": "When we make a cup from clay, what does the force change?" },
+      "options": [
+        { "sd": "رنگ", "ur": "رنگ", "en": "The colour" },
+        { "sd": "شڪل", "ur": "شکل", "en": "The shape" },
+        { "sd": "وزن", "ur": "وزن", "en": "The mass" },
+        { "sd": "ذائقو", "ur": "ذائقہ", "en": "The taste" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "fm3", "type": "mcq", "topic": "s2",
+      "q": { "sd": "مٿي اڇلايل بال واپس هيٺ ڇو ڪري ٿو؟", "ur": "اوپر پھینکی گئی گیند واپس نیچے کیوں گرتی ہے؟", "en": "Why does a ball thrown up come back down?" },
+      "options": [
+        { "sd": "رگڙ سبب", "ur": "رگڑ کی وجہ سے", "en": "Because of friction" },
+        { "sd": "ڪشش ثقل سبب", "ur": "کششِ ثقل کی وجہ سے", "en": "Because of gravity" },
+        { "sd": "هوا سبب", "ur": "ہوا کی وجہ سے", "en": "Because of the wind" },
+        { "sd": "روشنيءَ سبب", "ur": "روشنی کی وجہ سے", "en": "Because of light" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "fm4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڪهڙي سطح تي رگڙ سڀ کان وڌيڪ هوندي آهي؟", "ur": "کس سطح پر رگڑ سب سے زیادہ ہوتی ہے؟", "en": "On which surface is there the most friction?" },
+      "options": [
+        { "sd": "برف", "ur": "برف", "en": "Ice" },
+        { "sd": "سنهو شيشو", "ur": "ہموار شیشہ", "en": "Smooth glass" },
+        { "sd": "کهري پٿريلي سڙڪ", "ur": "کھردری پتھریلی سڑک", "en": "A rough stony road" },
+        { "sd": "تيل وارو فرش", "ur": "تیل والا فرش", "en": "An oily floor" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "fm5", "type": "mcq", "topic": "s3",
+      "q": { "sd": "سي-سا ڪهڙي سادي مشين آهي؟", "ur": "سی سا کون سی سادہ مشین ہے؟", "en": "A see-saw is which simple machine?" },
+      "options": [
+        { "sd": "ليور", "ur": "لیور", "en": "Lever" },
+        { "sd": "پيچ", "ur": "پیچ", "en": "Screw" },
+        { "sd": "ويج", "ur": "فانہ", "en": "Wedge" },
+        { "sd": "پُلي", "ur": "پُلی", "en": "Pulley" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fm6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "کوهه مان پاڻي ڪڍڻ لاءِ ڪهڙي سادي مشين استعمال ٿيندي آهي؟", "ur": "کنویں سے پانی نکالنے کے لیے کون سی سادہ مشین استعمال ہوتی ہے؟", "en": "Which simple machine is used to pull water from a well?" },
+      "options": [
+        { "sd": "ويج", "ur": "فانہ", "en": "Wedge" },
+        { "sd": "پُلي", "ur": "پُلی", "en": "Pulley" },
+        { "sd": "لاهي واري سطح", "ur": "ڈھلوان سطح", "en": "Inclined plane" },
+        { "sd": "پيچ", "ur": "پیچ", "en": "Screw" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "fm7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪهاڙي ڪهڙي سادي مشين آهي؟", "ur": "کلہاڑی کون سی سادہ مشین ہے؟", "en": "An axe is which simple machine?" },
+      "options": [
+        { "sd": "ڦيٿو ۽ ڌُرو", "ur": "پہیہ اور دُھرا", "en": "Wheel and axle" },
+        { "sd": "پُلي", "ur": "پُلی", "en": "Pulley" },
+        { "sd": "ويج", "ur": "فانہ", "en": "Wedge" },
+        { "sd": "ليور", "ur": "لیور", "en": "Lever" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "fm8", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ٽرڪ ۾ ڳرو سامان چاڙهڻ لاءِ تختو ڪهڙي سادي مشين آهي؟", "ur": "ٹرک میں بھاری سامان چڑھانے کا تختہ کون سی سادہ مشین ہے؟", "en": "A plank used to load heavy things onto a truck is which simple machine?" },
+      "options": [
+        { "sd": "لاهي واري سطح", "ur": "ڈھلوان سطح", "en": "Inclined plane" },
+        { "sd": "پيچ", "ur": "پیچ", "en": "Screw" },
+        { "sd": "پُلي", "ur": "پُلی", "en": "Pulley" },
+        { "sd": "ويج", "ur": "فانہ", "en": "Wedge" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "fm9", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ٿيلهو کڻڻ وقت اسين ڪهڙي قوت استعمال ڪريون ٿا؟", "ur": "بستہ اٹھاتے وقت ہم کون سی قوت استعمال کرتے ہیں؟", "en": "Which force do we use to lift a school bag?" },
+      "options": [
+        { "sd": "مقناطيسي قوت", "ur": "مقناطیسی قوت", "en": "Magnetic force" },
+        { "sd": "عضلاتي قوت", "ur": "عضلاتی قوت", "en": "Muscular force" },
+        { "sd": "رگڙ", "ur": "رگڑ", "en": "Friction" },
+        { "sd": "روشني", "ur": "روشنی", "en": "Light" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "fm10", "type": "tf", "topic": "s1",
+      "q": { "sd": "قوت هلندڙ شيءِ کي روڪي سگهي ٿي.", "ur": "قوت چلتی ہوئی چیز کو روک سکتی ہے۔", "en": "A force can stop a moving object." },
+      "answer": true
+    },
+    {
+      "id": "fm11", "type": "tf", "topic": "s2",
+      "q": { "sd": "رگڙ هلندڙ شين کي تيز ڪري ٿي.", "ur": "رگڑ چلتی ہوئی چیزوں کو تیز کر دیتی ہے۔", "en": "Friction makes moving things go faster." },
+      "answer": false
+    },
+    {
+      "id": "fm12", "type": "tf", "topic": "s2",
+      "q": { "sd": "مقناطيس لوهه کي ڇهڻ کان سواءِ به ڇڪي سگهي ٿو.", "ur": "مقناطیس لوہے کو چھوئے بغیر بھی کھینچ سکتا ہے۔", "en": "A magnet can pull iron without touching it." },
+      "answer": true
+    },
+    {
+      "id": "fm13", "type": "tf", "topic": "s3",
+      "q": { "sd": "سادا مشينون ڪم کي ڏکيو بڻائين ٿيون.", "ur": "سادہ مشینیں کام کو مشکل بنا دیتی ہیں۔", "en": "Simple machines make work harder." },
+      "answer": false
+    },
+    {
+      "id": "fm14", "type": "tf", "topic": "s3",
+      "q": { "sd": "سائيڪل ۾ ڦيٿو ۽ ڌُرو هوندو آهي.", "ur": "سائیکل میں پہیہ اور دُھرا ہوتا ہے۔", "en": "A bicycle has a wheel and axle." },
+      "answer": true
+    },
+    {
+      "id": "fm15", "type": "match", "topic": "s3",
+      "q": { "sd": "هر سادي مشين کي ان جي مثال سان ملايو.", "ur": "ہر سادہ مشین کو اس کی مثال سے ملائیں۔", "en": "Match each simple machine with an example." },
+      "pairs": [
+        { "left": { "sd": "ليور", "ur": "لیور", "en": "Lever" }, "right": { "sd": "سي-سا", "ur": "سی سا", "en": "See-saw" } },
+        { "left": { "sd": "پُلي", "ur": "پُلی", "en": "Pulley" }, "right": { "sd": "جهنڊو چاڙهڻ", "ur": "جھنڈا چڑھانا", "en": "Raising a flag" } },
+        { "left": { "sd": "ويج", "ur": "فانہ", "en": "Wedge" }, "right": { "sd": "چاقو", "ur": "چاقو", "en": "Knife" } },
+        { "left": { "sd": "پيچ", "ur": "پیچ", "en": "Screw" }, "right": { "sd": "بوتل جو ڍڪڻ", "ur": "بوتل کا ڈھکن", "en": "Bottle cap" } }
+      ]
+    },
+    {
+      "id": "fm16", "type": "match", "topic": "s1",
+      "q": { "sd": "هر ڪم کي ان سان ملايو جيڪو قوت ڪري ٿي.", "ur": "ہر کام کو اس سے ملائیں جو قوت کرتی ہے۔", "en": "Match each action with what the force does." },
+      "pairs": [
+        { "left": { "sd": "فٽبال کي لت هڻڻ", "ur": "فٹبال کو کک لگانا", "en": "Kicking a football" }, "right": { "sd": "هلائي ٿي", "ur": "چلاتی ہے", "en": "Starts it moving" } },
+        { "left": { "sd": "ڪيچ پڪڙڻ", "ur": "کیچ پکڑنا", "en": "Catching a ball" }, "right": { "sd": "روڪي ٿي", "ur": "روکتی ہے", "en": "Stops it" } },
+        { "left": { "sd": "مٽيءَ جو پيالو ٺاهڻ", "ur": "مٹی کا پیالہ بنانا", "en": "Making a clay cup" }, "right": { "sd": "شڪل بدلائي ٿي", "ur": "شکل بدلتی ہے", "en": "Changes its shape" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "match",
+      "title": { "sd": "مشين ۽ ان جو مثال", "ur": "مشین اور اس کی مثال", "en": "Machine and example" },
+      "pairs": [
+        { "a": { "sd": "ليور", "ur": "لیور", "en": "Lever" }, "b": { "sd": "سي-سا", "ur": "سی سا", "en": "See-saw" } },
+        { "a": { "sd": "پُلي", "ur": "پُلی", "en": "Pulley" }, "b": { "sd": "کوهه جي رسي", "ur": "کنویں کی رسی", "en": "Well rope" } },
+        { "a": { "sd": "ڦيٿو ۽ ڌُرو", "ur": "پہیہ اور دُھرا", "en": "Wheel and axle" }, "b": { "sd": "سائيڪل", "ur": "سائیکل", "en": "Bicycle" } },
+        { "a": { "sd": "لاهي واري سطح", "ur": "ڈھلوان سطح", "en": "Inclined plane" }, "b": { "sd": "ريمپ", "ur": "ریمپ", "en": "Ramp" } },
+        { "a": { "sd": "ويج", "ur": "فانہ", "en": "Wedge" }, "b": { "sd": "ڪهاڙي", "ur": "کلہاڑی", "en": "Axe" } },
+        { "a": { "sd": "پيچ", "ur": "پیچ", "en": "Screw" }, "b": { "sd": "بوتل جو ڍڪڻ", "ur": "بوتل کا ڈھکن", "en": "Bottle cap" } }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "کهري ۽ سنهي سطح تي رگڙ", "ur": "کھردری اور ہموار سطح پر رگڑ", "en": "Friction on rough and smooth surfaces" },
+    "materials": [
+      { "sd": "هڪ رانديڪو گاڏي يا گول بال", "ur": "ایک کھلونا گاڑی یا گیند", "en": "A toy car or a small ball" },
+      { "sd": "هڪ ڪتاب ۽ هڪ تختو يا ٿلهو ڪارڊ", "ur": "ایک کتاب اور ایک تختہ یا موٹا گتہ", "en": "A book and a board or thick card" },
+      { "sd": "هڪ ٽوال يا دري", "ur": "ایک تولیہ یا دری", "en": "A towel or a rug" }
+    ],
+    "steps": [
+      { "sd": "ڪتاب تي تختو رکي لاهي واري سطح (ريمپ) ٺاهيو.", "ur": "کتاب پر تختہ رکھ کر ڈھلوان سطح (ریمپ) بنائیں۔", "en": "Lean the board on the book to make a ramp." },
+      { "sd": "گاڏي کي مٿان ڇڏيو ۽ ڏسو ته اها صاف فرش تي ڪيترو پري وڃي ٿي.", "ur": "گاڑی کو اوپر سے چھوڑیں اور دیکھیں کہ وہ صاف فرش پر کتنی دور جاتی ہے۔", "en": "Let the car roll down and see how far it goes on the smooth floor." },
+      { "sd": "هاڻي ريمپ جي هيٺان ٽوال وڇايو ۽ گاڏي کي ٻيهر ڇڏيو.", "ur": "اب ریمپ کے نیچے تولیہ بچھائیں اور گاڑی کو دوبارہ چھوڑیں۔", "en": "Now spread the towel at the bottom of the ramp and let the car roll again." },
+      { "sd": "ٻنهي ڀيرن جو فاصلو ڀيٽيو.", "ur": "دونوں بار کا فاصلہ موازنہ کریں۔", "en": "Compare how far the car went each time." }
+    ],
+    "learn": {
+      "sd": "ٽوال تي گاڏي جلدي رڪجي وڃي ٿي. کهري ٽوال وڌيڪ رگڙ پيدا ڪري ٿو، جيڪا گاڏي کي آهستي ڪري ٿي. سنهي فرش تي رگڙ گهٽ آهي، ان ڪري گاڏي پري تائين وڃي ٿي.",
+      "ur": "تولیے پر گاڑی جلدی رک جاتی ہے۔ کھردرا تولیہ زیادہ رگڑ پیدا کرتا ہے، جو گاڑی کو آہستہ کر دیتی ہے۔ ہموار فرش پر رگڑ کم ہے، اس لیے گاڑی دور تک جاتی ہے۔",
+      "en": "The car stops sooner on the towel. The rough towel makes more friction, which slows the car down. The smooth floor has less friction, so the car goes further."
+    },
+    "safety": {
+      "sd": "تجربو فرش تي ڪريو ۽ گاڏي کي ڪنهن ڏانهن زور سان نه اڇلايو.",
+      "ur": "تجربہ فرش پر کریں اور گاڑی کو کسی کی طرف زور سے نہ پھینکیں۔",
+      "en": "Do the experiment on the floor and never throw the car at anyone."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "ڌڪي يا ڇڪ کي ____ چئبو آهي.", "ur": "دھکے یا کھنچاؤ کو ____ کہتے ہیں۔", "en": "A push or a pull is called a ____." }, "answer": { "sd": "قوت", "ur": "قوت", "en": "force" } },
+      { "text": { "sd": "زمين هر شيءِ کي ____ سبب هيٺ ڇڪي ٿي.", "ur": "زمین ہر چیز کو ____ کی وجہ سے نیچے کھینچتی ہے۔", "en": "The Earth pulls everything down because of ____." }, "answer": { "sd": "ڪشش ثقل", "ur": "کششِ ثقل", "en": "gravity" } },
+      { "text": { "sd": "کهري سطح تي ____ وڌيڪ هوندي آهي.", "ur": "کھردری سطح پر ____ زیادہ ہوتی ہے۔", "en": "There is more ____ on a rough surface." }, "answer": { "sd": "رگڙ", "ur": "رگڑ", "en": "friction" } },
+      { "text": { "sd": "کوهه مان پاڻي ڪڍڻ لاءِ ____ استعمال ٿيندي آهي.", "ur": "کنویں سے پانی نکالنے کے لیے ____ استعمال ہوتی ہے۔", "en": "A ____ is used to pull water from a well." }, "answer": { "sd": "پُلي", "ur": "پُلی", "en": "pulley" } },
+      { "text": { "sd": "سي-سا هڪ ____ آهي.", "ur": "سی سا ایک ____ ہے۔", "en": "A see-saw is a ____." }, "answer": { "sd": "ليور", "ur": "لیور", "en": "lever" } }
+    ],
+    "tf": [
+      { "text": { "sd": "قوت شيءِ جو رخ بدلائي سگهي ٿي.", "ur": "قوت چیز کی سمت بدل سکتی ہے۔", "en": "A force can change the direction of an object." }, "answer": true },
+      { "text": { "sd": "برف تي رگڙ تمام گهڻي هوندي آهي.", "ur": "برف پر رگڑ بہت زیادہ ہوتی ہے۔", "en": "There is a lot of friction on ice." }, "answer": false },
+      { "text": { "sd": "چاقو هڪ ويج آهي.", "ur": "چاقو ایک فانہ ہے۔", "en": "A knife is a wedge." }, "answer": true },
+      { "text": { "sd": "سادا مشينون وڌيڪ قوت گهرن ٿيون.", "ur": "سادہ مشینیں زیادہ قوت مانگتی ہیں۔", "en": "Simple machines need more force to do work." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "ڦيٿو ۽ ڌُرو", "ur": "پہیہ اور دُھرا", "en": "Wheel and axle" }, "b": { "sd": "گاڏي", "ur": "گاڑی", "en": "Cart" } },
+      { "a": { "sd": "پيچ", "ur": "پیچ", "en": "Screw" }, "b": { "sd": "بوتل جو ڍڪڻ", "ur": "بوتل کا ڈھکن", "en": "Bottle cap" } },
+      { "a": { "sd": "ويج", "ur": "فانہ", "en": "Wedge" }, "b": { "sd": "ڪهاڙي", "ur": "کلہاڑی", "en": "Axe" } },
+      { "a": { "sd": "لاهي واري سطح", "ur": "ڈھلوان سطح", "en": "Inclined plane" }, "b": { "sd": "ريمپ", "ur": "ریمپ", "en": "Ramp" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "قوت جا ٻه اثر لکو.", "ur": "قوت کے دو اثرات لکھیں۔", "en": "Write two things a force can do." },
+        "a": { "sd": "قوت شيءِ کي هلائي سگهي ٿي ۽ ان جي شڪل بدلائي سگهي ٿي.", "ur": "قوت چیز کو چلا سکتی ہے اور اس کی شکل بدل سکتی ہے۔", "en": "A force can start an object moving and can change its shape." }
+      },
+      {
+        "q": { "sd": "رگڙ اسان جي ڪهڙي مدد ڪري ٿي؟", "ur": "رگڑ ہماری کیا مدد کرتی ہے؟", "en": "How does friction help us?" },
+        "a": { "sd": "رگڙ سبب اسين ترڪڻ کان سواءِ هلي سگهون ٿا.", "ur": "رگڑ کی وجہ سے ہم پھسلے بغیر چل سکتے ہیں۔", "en": "Friction lets us walk without slipping." }
+      },
+      {
+        "q": { "sd": "ڇهه سادا مشينون لکو.", "ur": "چھ سادہ مشینوں کے نام لکھیں۔", "en": "Name the six simple machines." },
+        "a": { "sd": "ليور، پُلي، ڦيٿو ۽ ڌُرو، لاهي واري سطح، ويج ۽ پيچ.", "ur": "لیور، پُلی، پہیہ اور دُھرا، ڈھلوان سطح، فانہ اور پیچ۔", "en": "Lever, pulley, wheel and axle, inclined plane, wedge and screw." }
+      }
+    ],
+    "draw": { "sd": "پنهنجي گهر يا اسڪول ۾ استعمال ٿيندڙ ٻن سادين مشينن جون تصويرون ٺاهيو ۽ انهن جا نالا لکو.", "ur": "اپنے گھر یا اسکول میں استعمال ہونے والی دو سادہ مشینوں کی تصویریں بنائیں اور ان کے نام لکھیں۔", "en": "Draw two simple machines used at your home or school and write their names." }
+  }
+}

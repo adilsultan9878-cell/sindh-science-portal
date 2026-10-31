@@ -1,0 +1,390 @@
+{
+  "id": "water-cycle",
+  "number": 4,
+  "icon": "💧",
+  "title": { "sd": "پاڻي ۽ پاڻيءَ جو چڪر", "ur": "پانی اور آبی چکر", "en": "Water and the Water Cycle" },
+  "summary": {
+    "sd": "پاڻيءَ جون ٽي حالتون، پاڻيءَ جو چڪر ۽ پاڻي بچائڻ جا طريقا سکو.",
+    "ur": "پانی کی تین حالتیں، آبی چکر اور پانی بچانے کے طریقے سیکھیں۔",
+    "en": "Learn the three states of water, the water cycle and ways to save water."
+  },
+  "badge": { "id": "water_expert", "icon": "💧", "name": { "sd": "پاڻيءَ جو ماهر", "ur": "پانی کا ماہر", "en": "Water Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "پاڻيءَ جون ٽي حالتون", "ur": "پانی کی تین حالتیں", "en": "The three states of water" },
+      "body": {
+        "sd": [
+          "پاڻي ٽن صورتن ۾ ملي ٿو، جن کي **حالتون** چئجي ٿو:",
+          "- **ٺوس**: برف. ان جي شڪل مقرر هوندي آهي.",
+          "- **مائع**: پاڻي. اهو وهي ٿو ۽ جنهن برتن ۾ هجي ان جي شڪل وٺي ٿو.",
+          "- **گئس**: ٻاڦ. اسين ان کي ڏسي نٿا سگهون. اها هوا ۾ پکڙجي وڃي ٿي.",
+          "جڏهن برف کي گرم ڪبو آهي ته اها **ڳري** پاڻي بڻجي ٿي. جڏهن پاڻي کي گهڻو ٿڌو ڪبو آهي ته اهو **ڄمي** برف بڻجي ٿو."
+        ],
+        "ur": [
+          "پانی تین صورتوں میں پایا جاتا ہے، جنہیں **حالتیں** کہتے ہیں:",
+          "- **ٹھوس**: برف۔ اس کی شکل مقرر ہوتی ہے۔",
+          "- **مائع**: پانی۔ یہ بہتا ہے اور جس برتن میں ہو اس کی شکل اختیار کر لیتا ہے۔",
+          "- **گیس**: آبی بخارات۔ ہم انہیں دیکھ نہیں سکتے۔ یہ ہوا میں پھیل جاتے ہیں۔",
+          "جب برف کو گرم کیا جائے تو وہ **پگھل** کر پانی بن جاتی ہے۔ جب پانی کو بہت زیادہ ٹھنڈا کیا جائے تو وہ **جم** کر برف بن جاتا ہے۔"
+        ],
+        "en": [
+          "Water can be found in three forms, called **states**:",
+          "- **Solid**: ice. It has a fixed shape.",
+          "- **Liquid**: water. It flows and takes the shape of its container.",
+          "- **Gas**: water vapour. We cannot see it. It spreads out in the air.",
+          "When ice is heated, it **melts** into water. When water is made very cold, it **freezes** into ice."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "پاڻيءَ جو چڪر", "ur": "آبی چکر", "en": "The water cycle" },
+      "body": {
+        "sd": [
+          "زمين تي پاڻي گول چڪر ۾ گهمندو رهي ٿو. ان کي **پاڻيءَ جو چڪر** چئجي ٿو. ان جا چار مرحلا آهن:",
+          "- **ٻاڦ ٿيڻ**: سج سمنڊن، دريائن ۽ تلائن جي پاڻي کي گرم ڪري ٿو. پاڻي ٻاڦ بڻجي مٿي چڙهي ٿو.",
+          "- **ڪڪر ٺهڻ**: مٿي هوا ٿڌي هوندي آهي. ٻاڦ ٿڌي ٿي ننڍڙن ڦڙن ۾ بدلجي ٿي. اهي ڦڙا **ڪڪر** ٺاهين ٿا.",
+          "- **مينهن وسڻ**: جڏهن ڦڙا وڏا ۽ ڳرا ٿين ٿا ته اهي **مينهن** (يا برف ۽ ڳڙن) جي صورت ۾ ڪرن ٿا.",
+          "- **پاڻي گڏ ٿيڻ**: مينهن جو پاڻي دريائن، ڍنڍن، سمنڊن ۽ زمين هيٺان گڏ ٿئي ٿو. پوءِ چڪر وري شروع ٿئي ٿو."
+        ],
+        "ur": [
+          "زمین پر پانی چکر میں گھومتا رہتا ہے۔ اسے **آبی چکر** کہتے ہیں۔ اس کے چار مراحل ہیں:",
+          "- **تبخیر**: سورج سمندروں، دریاؤں اور تالابوں کا پانی گرم کرتا ہے۔ پانی بخارات بن کر اوپر اٹھتا ہے۔",
+          "- **تکثیف**: اوپر ہوا ٹھنڈی ہوتی ہے۔ بخارات ٹھنڈے ہو کر ننھے قطروں میں بدل جاتے ہیں۔ یہ قطرے **بادل** بناتے ہیں۔",
+          "- **بارش**: جب قطرے بڑے اور بھاری ہو جاتے ہیں تو وہ **بارش** (یا برف اور اولوں) کی صورت میں گرتے ہیں۔",
+          "- **جمع ہونا**: بارش کا پانی دریاؤں، جھیلوں، سمندروں اور زمین کے نیچے جمع ہو جاتا ہے۔ پھر چکر دوبارہ شروع ہوتا ہے۔"
+        ],
+        "en": [
+          "Water on Earth moves round and round. This is called the **water cycle**. It has four steps:",
+          "- **Evaporation**: The sun heats water in seas, rivers and ponds. The water turns into water vapour and rises up.",
+          "- **Condensation**: High up, the air is cool. Water vapour cools down and turns into tiny drops. These drops make **clouds**.",
+          "- **Precipitation**: When the drops become big and heavy, they fall as **rain** (or snow or hail).",
+          "- **Collection**: Rain water collects in rivers, lakes, seas and under the ground. Then the cycle starts again."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "اچو پاڻي بچايون", "ur": "آئیے پانی بچائیں", "en": "Let us save water" },
+      "body": {
+        "sd": [
+          "زمين تي موجود پاڻيءَ جو رڳو ٿورو حصو **صاف پاڻي** آهي جيڪو اسين پي سگهون ٿا. اسان کي اهو ضايع نه ڪرڻ گهرجي.",
+          "- ڏند برش ڪندي **نل بند** ڪريو.",
+          "- **ٽمندڙ** نل ۽ پائپ ٺيڪ ڪرايو.",
+          "- ٻوٽن کي **صبح يا شام** جو پاڻي ڏيو، جڏهن گهٽ پاڻي ٻاڦ بڻجي ٿو.",
+          "- دريائن، واهن ۽ تلائن ۾ ڪچرو نه اڇلايو. پاڻي **صاف** رکو."
+        ],
+        "ur": [
+          "زمین پر موجود پانی کا صرف تھوڑا سا حصہ **صاف پانی** ہے جو ہم پی سکتے ہیں۔ ہمیں اسے ضائع نہیں کرنا چاہیے۔",
+          "- دانت برش کرتے وقت **نل بند** رکھیں۔",
+          "- **ٹپکتے** نل اور پائپ ٹھیک کروائیں۔",
+          "- پودوں کو **صبح یا شام** کے وقت پانی دیں، جب کم پانی بخارات بنتا ہے۔",
+          "- دریاؤں، نہروں اور تالابوں میں کچرا نہ پھینکیں۔ پانی کو **صاف** رکھیں۔"
+        ],
+        "en": [
+          "Only a small part of the water on Earth is **clean water** that we can drink. We must not waste it.",
+          "- **Turn off the tap** while brushing your teeth.",
+          "- Fix **leaking** taps and pipes.",
+          "- Water plants in the **morning or evening**, when less water evaporates.",
+          "- Do not throw rubbish into rivers, canals and ponds. Keep water **clean**."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "watercycle",
+    "parts": [
+      {
+        "id": "sun",
+        "label": { "sd": "سج", "ur": "سورج", "en": "Sun" },
+        "info": {
+          "sd": "سج پاڻي کي گرم ڪري ٿو ۽ پاڻيءَ جو چڪر شروع ڪري ٿو.",
+          "ur": "سورج پانی کو گرم کرتا ہے اور آبی چکر شروع کرتا ہے۔",
+          "en": "The sun heats the water and starts the water cycle."
+        }
+      },
+      {
+        "id": "evaporation",
+        "label": { "sd": "ٻاڦ ٿيڻ", "ur": "تبخیر", "en": "Evaporation" },
+        "info": {
+          "sd": "سج جي گرمي پاڻي کي ٻاڦ ۾ بدلائي ٿي، جيڪا مٿي چڙهي ٿي.",
+          "ur": "سورج کی گرمی پانی کو بخارات میں بدل دیتی ہے، جو اوپر اٹھتے ہیں۔",
+          "en": "Heat from the sun turns water into water vapour, which rises up."
+        }
+      },
+      {
+        "id": "condensation",
+        "label": { "sd": "ڪڪر ٺهڻ", "ur": "تکثیف", "en": "Condensation" },
+        "info": {
+          "sd": "مٿي ٻاڦ ٿڌي ٿي ننڍڙن ڦڙن ۾ بدلجي ٿي ۽ ڪڪر ٺهن ٿا.",
+          "ur": "اوپر بخارات ٹھنڈے ہو کر ننھے قطروں میں بدلتے ہیں اور بادل بنتے ہیں۔",
+          "en": "High up, water vapour cools into tiny drops that form clouds."
+        }
+      },
+      {
+        "id": "precipitation",
+        "label": { "sd": "مينهن وسڻ", "ur": "بارش", "en": "Precipitation" },
+        "info": {
+          "sd": "جڏهن ڦڙا وڏا ۽ ڳرا ٿين ٿا ته مينهن، برف يا ڳڙن جي صورت ۾ ڪرن ٿا.",
+          "ur": "جب قطرے بڑے اور بھاری ہو جاتے ہیں تو بارش، برف یا اولوں کی صورت میں گرتے ہیں۔",
+          "en": "When drops get big and heavy, they fall as rain, snow or hail."
+        }
+      },
+      {
+        "id": "collection",
+        "label": { "sd": "پاڻي گڏ ٿيڻ", "ur": "جمع ہونا", "en": "Collection" },
+        "info": {
+          "sd": "پاڻي دريائن، ڍنڍن، سمنڊن ۽ زمين هيٺان گڏ ٿئي ٿو، پوءِ چڪر وري شروع ٿئي ٿو.",
+          "ur": "پانی دریاؤں، جھیلوں، سمندروں اور زمین کے نیچے جمع ہوتا ہے، پھر چکر دوبارہ شروع ہوتا ہے۔",
+          "en": "Water collects in rivers, lakes, seas and under the ground, then the cycle starts again."
+        }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "پاڻي", "ur": "پانی", "en": "water" },
+    { "sd": "ٺوس", "ur": "ٹھوس", "en": "solid" },
+    { "sd": "مائع", "ur": "مائع", "en": "liquid" },
+    { "sd": "گئس", "ur": "گیس", "en": "gas" },
+    { "sd": "ٻاڦ", "ur": "آبی بخارات", "en": "water vapour" },
+    { "sd": "ڳرڻ", "ur": "پگھلنا", "en": "melting" },
+    { "sd": "ڄمڻ", "ur": "جمنا", "en": "freezing" },
+    { "sd": "پاڻيءَ جو چڪر", "ur": "آبی چکر", "en": "water cycle" },
+    { "sd": "ٻاڦ ٿيڻ", "ur": "تبخیر", "en": "evaporation" },
+    { "sd": "ڪڪر ٺهڻ", "ur": "تکثیف", "en": "condensation" },
+    { "sd": "مينهن وسڻ", "ur": "بارش (ترسیب)", "en": "precipitation" },
+    { "sd": "ڪڪر", "ur": "بادل", "en": "cloud" }
+  ],
+  "quiz": [
+    {
+      "id": "wc1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "برف پاڻيءَ جي ڪهڙي حالت آهي؟", "ur": "برف پانی کی کون سی حالت ہے؟", "en": "Ice is water in which state?" },
+      "options": [
+        { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" },
+        { "sd": "مائع", "ur": "مائع", "en": "Liquid" },
+        { "sd": "گئس", "ur": "گیس", "en": "Gas" },
+        { "sd": "انهن مان ڪابه نه", "ur": "ان میں سے کوئی نہیں", "en": "None of these" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "wc2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "جڏهن برف کي گرم ڪبو آهي ته ڇا ٿيندو آهي؟", "ur": "جب برف کو گرم کیا جائے تو کیا ہوتا ہے؟", "en": "What happens when ice is heated?" },
+      "options": [
+        { "sd": "ڄمي ٿي", "ur": "جم جاتی ہے", "en": "It freezes" },
+        { "sd": "ڳري ٿي", "ur": "پگھل جاتی ہے", "en": "It melts" },
+        { "sd": "سڙي ٿي", "ur": "جل جاتی ہے", "en": "It burns" },
+        { "sd": "وڌي ٿي", "ur": "بڑھ جاتی ہے", "en": "It grows" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "wc3", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ٻاڦ پاڻيءَ جي ڪهڙي حالت آهي؟", "ur": "آبی بخارات پانی کی کون سی حالت ہیں؟", "en": "Water vapour is water in which state?" },
+      "options": [
+        { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" },
+        { "sd": "مائع", "ur": "مائع", "en": "Liquid" },
+        { "sd": "گئس", "ur": "گیس", "en": "Gas" },
+        { "sd": "برف", "ur": "برف", "en": "Ice" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "wc4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "سج پاڻي کي گرم ڪري ٿو ۽ اهو ٻاڦ بڻجي ٿو. ان کي ڇا چئبو آهي؟", "ur": "سورج پانی کو گرم کرتا ہے اور وہ بخارات بن جاتا ہے۔ اسے کیا کہتے ہیں؟", "en": "The sun heats water and it turns into vapour. What is this called?" },
+      "options": [
+        { "sd": "ٻاڦ ٿيڻ", "ur": "تبخیر", "en": "Evaporation" },
+        { "sd": "ڪڪر ٺهڻ", "ur": "تکثیف", "en": "Condensation" },
+        { "sd": "مينهن وسڻ", "ur": "بارش", "en": "Precipitation" },
+        { "sd": "پاڻي گڏ ٿيڻ", "ur": "جمع ہونا", "en": "Collection" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "wc5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڪڪر ڇا مان ٺهيل هوندا آهن؟", "ur": "بادل کس چیز سے بنے ہوتے ہیں؟", "en": "What are clouds made of?" },
+      "options": [
+        { "sd": "پاڻيءَ جي ننڍڙن ڦڙن مان", "ur": "پانی کے ننھے قطروں سے", "en": "Tiny drops of water" },
+        { "sd": "دونهين مان", "ur": "دھوئیں سے", "en": "Smoke" },
+        { "sd": "روئيءَ مان", "ur": "روئی سے", "en": "Cotton" },
+        { "sd": "واريءَ مان", "ur": "ریت سے", "en": "Sand" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "wc6", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ٻاڦ ٿڌي ٿي ننڍڙن ڦڙن ۾ بدلجي ٿي. ان کي ڇا چئبو آهي؟", "ur": "بخارات ٹھنڈے ہو کر ننھے قطروں میں بدل جاتے ہیں۔ اسے کیا کہتے ہیں؟", "en": "Water vapour cools and turns into tiny drops. What is this called?" },
+      "options": [
+        { "sd": "ٻاڦ ٿيڻ", "ur": "تبخیر", "en": "Evaporation" },
+        { "sd": "ڪڪر ٺهڻ", "ur": "تکثیف", "en": "Condensation" },
+        { "sd": "ڳرڻ", "ur": "پگھلنا", "en": "Melting" },
+        { "sd": "پاڻي گڏ ٿيڻ", "ur": "جمع ہونا", "en": "Collection" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "wc7", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڪڪرن مان مينهن وسڻ کي ڇا چئبو آهي؟", "ur": "بادلوں سے بارش برسنے کو کیا کہتے ہیں؟", "en": "What is rain falling from clouds called?" },
+      "options": [
+        { "sd": "مينهن وسڻ", "ur": "بارش (ترسیب)", "en": "Precipitation" },
+        { "sd": "ٻاڦ ٿيڻ", "ur": "تبخیر", "en": "Evaporation" },
+        { "sd": "ڄمڻ", "ur": "جمنا", "en": "Freezing" },
+        { "sd": "ڪڪر ٺهڻ", "ur": "تکثیف", "en": "Condensation" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "wc8", "type": "mcq", "topic": "s2",
+      "q": { "sd": "پاڻيءَ جي چڪر کي شروع ڪرڻ لاءِ گرمي ڪير ڏئي ٿو؟", "ur": "آبی چکر شروع کرنے کے لیے گرمی کون دیتا ہے؟", "en": "What gives the heat that starts the water cycle?" },
+      "options": [
+        { "sd": "چنڊ", "ur": "چاند", "en": "The moon" },
+        { "sd": "سج", "ur": "سورج", "en": "The sun" },
+        { "sd": "هوا", "ur": "ہوا", "en": "The wind" },
+        { "sd": "تارا", "ur": "ستارے", "en": "The stars" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "wc9", "type": "mcq", "topic": "s3",
+      "q": { "sd": "پاڻي بچائڻ جو سٺو طريقو ڪهڙو آهي؟", "ur": "پانی بچانے کا اچھا طریقہ کون سا ہے؟", "en": "Which is a good way to save water?" },
+      "options": [
+        { "sd": "نل کليل ڇڏڻ", "ur": "نل کھلا چھوڑنا", "en": "Leave the tap running" },
+        { "sd": "برش ڪندي نل بند ڪرڻ", "ur": "برش کرتے وقت نل بند کرنا", "en": "Turn off the tap while brushing" },
+        { "sd": "واهن ۾ ڪچرو اڇلائڻ", "ur": "نہروں میں کچرا پھینکنا", "en": "Throw rubbish in canals" },
+        { "sd": "روز پائپ سان ڪار ڌوئڻ", "ur": "روزانہ پائپ سے گاڑی دھونا", "en": "Wash the car every day with a pipe" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "wc10", "type": "tf", "topic": "s1",
+      "q": { "sd": "مائع پاڻي جنهن برتن ۾ هجي ان جي شڪل وٺي ٿو.", "ur": "مائع پانی جس برتن میں ہو اس کی شکل اختیار کر لیتا ہے۔", "en": "Liquid water takes the shape of its container." },
+      "answer": true
+    },
+    {
+      "id": "wc11", "type": "tf", "topic": "s1",
+      "q": { "sd": "اسين هوا ۾ ٻاڦ کي آسانيءَ سان ڏسي سگهون ٿا.", "ur": "ہم ہوا میں آبی بخارات کو آسانی سے دیکھ سکتے ہیں۔", "en": "We can easily see water vapour in the air." },
+      "answer": false
+    },
+    {
+      "id": "wc12", "type": "tf", "topic": "s2",
+      "q": { "sd": "مينهن جو پاڻي دريائن، ڍنڍن ۽ سمنڊن ۾ گڏ ٿئي ٿو.", "ur": "بارش کا پانی دریاؤں، جھیلوں اور سمندروں میں جمع ہوتا ہے۔", "en": "Rain water collects in rivers, lakes and seas." },
+      "answer": true
+    },
+    {
+      "id": "wc13", "type": "tf", "topic": "s2",
+      "q": { "sd": "پاڻيءَ جو چڪر رڳو هڪ ڀيرو ٿئي ٿو ۽ پوءِ بند ٿي وڃي ٿو.", "ur": "آبی چکر صرف ایک بار ہوتا ہے اور پھر رک جاتا ہے۔", "en": "The water cycle happens only once and then stops." },
+      "answer": false
+    },
+    {
+      "id": "wc14", "type": "tf", "topic": "s3",
+      "q": { "sd": "اسان کي دريائن ۾ ڪچرو اڇلائڻ گهرجي.", "ur": "ہمیں دریاؤں میں کچرا پھینکنا چاہیے۔", "en": "We should throw rubbish into rivers." },
+      "answer": false
+    },
+    {
+      "id": "wc15", "type": "match", "topic": "s2",
+      "q": { "sd": "پاڻيءَ جي چڪر جي هر مرحلي کي ان سان ملايو جيڪو ان ۾ ٿئي ٿو.", "ur": "آبی چکر کے ہر مرحلے کو اس سے ملائیں جو اس میں ہوتا ہے۔", "en": "Match each step of the water cycle with what happens." },
+      "pairs": [
+        { "left": { "sd": "ٻاڦ ٿيڻ", "ur": "تبخیر", "en": "Evaporation" }, "right": { "sd": "پاڻي ٻاڦ بڻجي ٿو", "ur": "پانی بخارات بنتا ہے", "en": "Water turns into vapour" } },
+        { "left": { "sd": "ڪڪر ٺهڻ", "ur": "تکثیف", "en": "Condensation" }, "right": { "sd": "ڪڪر جڙن ٿا", "ur": "بادل بنتے ہیں", "en": "Clouds form" } },
+        { "left": { "sd": "مينهن وسڻ", "ur": "بارش", "en": "Precipitation" }, "right": { "sd": "مينهن پوي ٿو", "ur": "بارش برستی ہے", "en": "Rain falls" } },
+        { "left": { "sd": "پاڻي گڏ ٿيڻ", "ur": "جمع ہونا", "en": "Collection" }, "right": { "sd": "پاڻي سمنڊن ۽ دريائن ۾ گڏ ٿئي ٿو", "ur": "پانی سمندروں اور دریاؤں میں جمع ہوتا ہے", "en": "Water gathers in seas and rivers" } }
+      ]
+    },
+    {
+      "id": "wc16", "type": "match", "topic": "s1",
+      "q": { "sd": "هر لفظ کي ان جي حالت يا تبديليءَ سان ملايو.", "ur": "ہر لفظ کو اس کی حالت یا تبدیلی سے ملائیں۔", "en": "Match each word with its state or change." },
+      "pairs": [
+        { "left": { "sd": "برف", "ur": "برف", "en": "Ice" }, "right": { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" } },
+        { "left": { "sd": "پاڻي", "ur": "پانی", "en": "Water" }, "right": { "sd": "مائع", "ur": "مائع", "en": "Liquid" } },
+        { "left": { "sd": "ٻاڦ", "ur": "آبی بخارات", "en": "Water vapour" }, "right": { "sd": "گئس", "ur": "گیس", "en": "Gas" } },
+        { "left": { "sd": "ڳرڻ", "ur": "پگھلنا", "en": "Melting" }, "right": { "sd": "برف جو پاڻي بڻجڻ", "ur": "برف کا پانی بننا", "en": "Ice turning into water" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "sort",
+      "title": { "sd": "ٺوس، مائع يا گئس؟", "ur": "ٹھوس، مائع یا گیس؟", "en": "Solid, liquid or gas?" },
+      "bins": [
+        { "id": "solid", "name": { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" } },
+        { "id": "liquid", "name": { "sd": "مائع", "ur": "مائع", "en": "Liquid" } },
+        { "id": "gas", "name": { "sd": "گئس", "ur": "گیس", "en": "Gas" } }
+      ],
+      "items": [
+        { "emoji": "🧊", "text": { "sd": "برف", "ur": "برف", "en": "Ice" }, "bin": "solid" },
+        { "emoji": "✏️", "text": { "sd": "پينسل", "ur": "پنسل", "en": "Pencil" }, "bin": "solid" },
+        { "emoji": "📚", "text": { "sd": "ڪتاب", "ur": "کتاب", "en": "Book" }, "bin": "solid" },
+        { "emoji": "🍎", "text": { "sd": "صوف", "ur": "سیب", "en": "Apple" }, "bin": "solid" },
+        { "emoji": "🥛", "text": { "sd": "کير", "ur": "دودھ", "en": "Milk" }, "bin": "liquid" },
+        { "emoji": "💧", "text": { "sd": "پاڻي", "ur": "پانی", "en": "Water" }, "bin": "liquid" },
+        { "emoji": "☕", "text": { "sd": "چانهه", "ur": "چائے", "en": "Tea" }, "bin": "liquid" },
+        { "emoji": "", "text": { "sd": "کاڌي جو تيل", "ur": "کھانے کا تیل", "en": "Cooking oil" }, "bin": "liquid" },
+        { "emoji": "💨", "text": { "sd": "هوا", "ur": "ہوا", "en": "Air" }, "bin": "gas" },
+        { "emoji": "♨️", "text": { "sd": "ٻاڦ", "ur": "بھاپ", "en": "Steam" }, "bin": "gas" },
+        { "emoji": "", "text": { "sd": "آڪسيجن", "ur": "آکسیجن", "en": "Oxygen" }, "bin": "gas" },
+        { "emoji": "", "text": { "sd": "ڪاربان ڊاءِ آڪسائيڊ", "ur": "کاربن ڈائی آکسائیڈ", "en": "Carbon dioxide" }, "bin": "gas" }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "هوا مان پاڻيءَ جا ڦڙا", "ur": "ہوا سے پانی کے قطرے", "en": "Water drops from the air" },
+    "materials": [
+      { "sd": "اسٽيل جو گلاس يا بوتل", "ur": "اسٹیل کا گلاس یا بوتل", "en": "A steel glass or bottle" },
+      { "sd": "برف جا ڪجهه ٽڪر (يا فرج جو تمام ٿڌو پاڻي)", "ur": "برف کے چند ٹکڑے (یا فریج کا بہت ٹھنڈا پانی)", "en": "Some ice cubes (or very cold water from the fridge)" },
+      { "sd": "سڪل ڪپڙو", "ur": "خشک کپڑا", "en": "A dry cloth" }
+    ],
+    "steps": [
+      { "sd": "گلاس کي ٻاهران سڪل ڪپڙي سان صاف ڪريو.", "ur": "گلاس کو باہر سے خشک کپڑے سے صاف کریں۔", "en": "Wipe the outside of the glass with the dry cloth." },
+      { "sd": "گلاس ۾ برف ۽ ٿورو پاڻي وجهو.", "ur": "گلاس میں برف اور تھوڑا پانی ڈالیں۔", "en": "Fill the glass with ice and a little water." },
+      { "sd": "5 منٽ انتظار ڪريو ۽ گلاس کي هٿ نه لايو.", "ur": "5 منٹ انتظار کریں اور گلاس کو ہاتھ نہ لگائیں۔", "en": "Wait for 5 minutes and do not touch the glass." },
+      { "sd": "گلاس جي ٻاهرين پاسي کي ڏسو. توهان کي ڇا ٿو نظر اچي؟", "ur": "گلاس کے باہر کی طرف دیکھیں۔ آپ کو کیا نظر آتا ہے؟", "en": "Look at the outside of the glass. What do you see?" }
+    ],
+    "learn": {
+      "sd": "گلاس جي ٻاهرين پاسي تي پاڻيءَ جا ننڍڙا ڦڙا نظر اچن ٿا. اهي هوا ۾ موجود ٻاڦ مان اچن ٿا، جيڪا ٿڌي گلاس تي ٿڌي ٿي ڦڙن ۾ بدلجي ٿي. ان کي ڪڪر ٺهڻ (ڪنڊينسيشن) چئجي ٿو — آسمان ۾ ڪڪر به ائين ئي ٺهن ٿا!",
+      "ur": "گلاس کے باہر پانی کے ننھے قطرے نظر آتے ہیں۔ یہ ہوا میں موجود بخارات سے آتے ہیں، جو ٹھنڈے گلاس پر ٹھنڈے ہو کر قطروں میں بدل جاتے ہیں۔ اسے تکثیف کہتے ہیں — آسمان میں بادل بھی اسی طرح بنتے ہیں!",
+      "en": "Small drops of water appear on the outside of the glass. They come from water vapour in the air, which cools on the cold glass and turns into drops. This is condensation — clouds form in the sky in the same way!"
+    },
+    "safety": {
+      "sd": "خيال ڪريو ته گلاس هيٺ نه ڪري. فرش تي پيل پاڻي صاف ڪريو ته جيئن ڪو ترڪي نه پوي.",
+      "ur": "خیال رکیں کہ گلاس نیچے نہ گرے۔ فرش پر گرا پانی صاف کریں تاکہ کوئی پھسل نہ جائے۔",
+      "en": "Be careful not to drop the glass. Wipe up any water on the floor so no one slips."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "برف پاڻيءَ جي ____ حالت آهي.", "ur": "برف پانی کی ____ حالت ہے۔", "en": "Ice is water in the ____ state." }, "answer": { "sd": "ٺوس", "ur": "ٹھوس", "en": "solid" } },
+      { "text": { "sd": "جڏهن پاڻي ٻاڦ بڻجي ٿو ته ان کي ____ چئبو آهي.", "ur": "جب پانی بخارات بنتا ہے تو اسے ____ کہتے ہیں۔", "en": "When water turns into vapour, it is called ____." }, "answer": { "sd": "ٻاڦ ٿيڻ", "ur": "تبخیر", "en": "evaporation" } },
+      { "text": { "sd": "ڪڪر ____ جي ننڍڙن ڦڙن مان ٺهن ٿا.", "ur": "بادل ____ کے ننھے قطروں سے بنتے ہیں۔", "en": "Clouds are made of tiny drops of ____." }, "answer": { "sd": "پاڻيءَ", "ur": "پانی", "en": "water" } },
+      { "text": { "sd": "____ سمنڊن ۽ دريائن جي پاڻي کي گرم ڪري ٿو.", "ur": "____ سمندروں اور دریاؤں کا پانی گرم کرتا ہے۔", "en": "The ____ heats water in seas and rivers." }, "answer": { "sd": "سج", "ur": "سورج", "en": "sun" } },
+      { "text": { "sd": "برش ڪندي اسان کي ____ بند ڪرڻ گهرجي.", "ur": "برش کرتے وقت ہمیں ____ بند کرنا چاہیے۔", "en": "We should turn off the ____ while brushing." }, "answer": { "sd": "نل", "ur": "نل", "en": "tap" } }
+    ],
+    "tf": [
+      { "text": { "sd": "ٻاڦ هڪ گئس آهي.", "ur": "آبی بخارات ایک گیس ہیں۔", "en": "Water vapour is a gas." }, "answer": true },
+      { "text": { "sd": "برف جي شڪل مقرر هوندي آهي.", "ur": "برف کی شکل مقرر ہوتی ہے۔", "en": "Ice has a fixed shape." }, "answer": true },
+      { "text": { "sd": "ڪڪر دونهين مان ٺهن ٿا.", "ur": "بادل دھوئیں سے بنتے ہیں۔", "en": "Clouds are made of smoke." }, "answer": false },
+      { "text": { "sd": "اسان کي ٽمندڙ نل ٺيڪ ڪرائڻ گهرجن.", "ur": "ہمیں ٹپکتے نل ٹھیک کروانے چاہییں۔", "en": "We should fix leaking taps." }, "answer": true }
+    ],
+    "match": [
+      { "a": { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" }, "b": { "sd": "برف", "ur": "برف", "en": "Ice" } },
+      { "a": { "sd": "مائع", "ur": "مائع", "en": "Liquid" }, "b": { "sd": "کير", "ur": "دودھ", "en": "Milk" } },
+      { "a": { "sd": "گئس", "ur": "گیس", "en": "Gas" }, "b": { "sd": "هوا", "ur": "ہوا", "en": "Air" } },
+      { "a": { "sd": "ڄمڻ", "ur": "جمنا", "en": "Freezing" }, "b": { "sd": "پاڻيءَ جو برف بڻجڻ", "ur": "پانی کا برف بننا", "en": "Water turning into ice" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "پاڻيءَ جي چڪر جا چار مرحلا لکو.", "ur": "آبی چکر کے چار مراحل کے نام لکھیں۔", "en": "Name the four steps of the water cycle." },
+        "a": { "sd": "ٻاڦ ٿيڻ، ڪڪر ٺهڻ، مينهن وسڻ ۽ پاڻي گڏ ٿيڻ.", "ur": "تبخیر، تکثیف، بارش اور جمع ہونا۔", "en": "Evaporation, condensation, precipitation and collection." }
+      },
+      {
+        "q": { "sd": "جڏهن برف کي گرم ڪبو آهي ته ان سان ڇا ٿئي ٿو؟", "ur": "جب برف کو گرم کیا جائے تو اس کے ساتھ کیا ہوتا ہے؟", "en": "What happens to ice when it is heated?" },
+        "a": { "sd": "اها ڳري پاڻي بڻجي ٿي.", "ur": "وہ پگھل کر پانی بن جاتی ہے۔", "en": "It melts and turns into water." }
+      },
+      {
+        "q": { "sd": "گهر ۾ پاڻي بچائڻ جا ٻه طريقا لکو.", "ur": "گھر میں پانی بچانے کے دو طریقے لکھیں۔", "en": "Write two ways to save water at home." },
+        "a": { "sd": "برش ڪندي نل بند ڪريو ۽ ٽمندڙ نل ٺيڪ ڪرايو.", "ur": "برش کرتے وقت نل بند کریں اور ٹپکتے نل ٹھیک کروائیں۔", "en": "Turn off the tap while brushing and fix leaking taps." }
+      }
+    ],
+    "draw": { "sd": "پاڻيءَ جو چڪر ٺاهيو. سج، ڪڪر، مينهن ۽ درياهه يا سمنڊ ڏيکاريو ۽ هر مرحلي جو نالو لکو.", "ur": "آبی چکر کی تصویر بنائیں۔ سورج، بادل، بارش اور دریا یا سمندر دکھائیں اور ہر مرحلے کا نام لکھیں۔", "en": "Draw the water cycle. Show the sun, clouds, rain and a river or sea, and label each step." }
+  }
+}

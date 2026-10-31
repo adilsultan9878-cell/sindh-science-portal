@@ -1,0 +1,10 @@
+# For Apache / cPanel hosting: /admin opens the staff panel, every other page address goes to index.html.
+AddType application/manifest+json .webmanifest
+<Files "sw.js">
+  Header set Cache-Control "no-cache"
+</Files>
+RewriteEngine On
+RewriteRule ^admin/?$ admin.html [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]

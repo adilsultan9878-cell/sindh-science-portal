@@ -1,0 +1,353 @@
+{
+  "id": "matter",
+  "number": 5,
+  "icon": "⚗️",
+  "title": { "sd": "مادو ۽ ان ۾ تبديليون", "ur": "مادہ اور اس میں تبدیلیاں", "en": "Matter and Its Changes" },
+  "summary": {
+    "sd": "سکو ته مادو ڇا آهي، ان جون ٽي حالتون ڪهڙيون آهن ۽ طبعي ۽ ڪيميائي تبديليءَ ۾ ڪهڙو فرق آهي.",
+    "ur": "سیکھیں کہ مادہ کیا ہے، اس کی تین حالتیں کون سی ہیں اور طبعی اور کیمیائی تبدیلی میں کیا فرق ہے۔",
+    "en": "Learn what matter is, its three states, and the difference between physical and chemical changes."
+  },
+  "badge": { "id": "matter_expert", "icon": "⚗️", "name": { "sd": "مادي جو ماهر", "ur": "مادے کا ماہر", "en": "Matter Expert" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "مادو ڇا آهي؟", "ur": "مادہ کیا ہے؟", "en": "What is matter?" },
+      "body": {
+        "sd": [
+          "جيڪا به شيءِ **جاءِ والاري** ۽ جنهن ۾ **وزن (ڪميت)** هجي، ان کي **مادو** چئبو آهي.",
+          "ڪتاب، پاڻي، هوا، پٿر ۽ اسان جو جسم — سڀ مادو آهن.",
+          "هوا نظر نٿي اچي، پر اها به مادو آهي. ڦوڪڻو ڦوڪيو ته اهو وڏو ٿئي ٿو، ڇاڪاڻ ته هوا جاءِ والاري ٿي.",
+          "مادو ننڍڙن **ذرڙن** مان ٺهيل آهي، جيڪي ايترا ننڍا آهن جو اسين انهن کي اکين سان ڏسي نٿا سگهون."
+        ],
+        "ur": [
+          "جو بھی چیز **جگہ گھیرتی** ہو اور جس میں **وزن (کمیت)** ہو، اسے **مادہ** کہتے ہیں۔",
+          "کتاب، پانی، ہوا، پتھر اور ہمارا جسم — سب مادہ ہیں۔",
+          "ہوا نظر نہیں آتی، لیکن یہ بھی مادہ ہے۔ غبارہ پھلائیں تو وہ بڑا ہو جاتا ہے، کیونکہ ہوا جگہ گھیرتی ہے۔",
+          "مادہ ننھے **ذرات** سے بنا ہے، جو اتنے چھوٹے ہیں کہ ہم انہیں آنکھوں سے نہیں دیکھ سکتے۔"
+        ],
+        "en": [
+          "Anything that **takes up space** and has **mass (weight)** is called **matter**.",
+          "Books, water, air, stones and our own bodies — all are matter.",
+          "We cannot see air, but it is matter too. When you blow into a balloon it gets bigger, because air takes up space.",
+          "Matter is made of tiny **particles** that are too small to see with our eyes."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "مادي جون ٽي حالتون", "ur": "مادے کی تین حالتیں", "en": "The three states of matter" },
+      "body": {
+        "sd": [
+          "مادو ٽن حالتن ۾ ملي ٿو:",
+          "- **ٺوس**: ان جي شڪل ۽ ماپ مقرر هوندي آهي. ذرڙا هڪ ٻئي سان تمام ويجها هوندا آهن. مثال: پٿر، ڪاٺ، برف.",
+          "- **مائع**: ان جي ماپ مقرر هوندي آهي پر شڪل نه. اهو جنهن برتن ۾ وجهو ان جي شڪل وٺي ٿو. مثال: پاڻي، کير، تيل.",
+          "- **گئس**: ان جي نه شڪل مقرر هوندي آهي ۽ نه ماپ. اها سڄي جاءِ ۾ پکڙجي وڃي ٿي. مثال: هوا، ٻاڦ، آڪسيجن.",
+          "گرمي ڏيڻ يا ٿڌو ڪرڻ سان مادو هڪ حالت مان ٻي حالت ۾ بدلجي سگهي ٿو."
+        ],
+        "ur": [
+          "مادہ تین حالتوں میں پایا جاتا ہے:",
+          "- **ٹھوس**: اس کی شکل اور حجم مقرر ہوتے ہیں۔ ذرات ایک دوسرے کے بہت قریب ہوتے ہیں۔ مثالیں: پتھر، لکڑی، برف۔",
+          "- **مائع**: اس کا حجم مقرر ہوتا ہے لیکن شکل نہیں۔ یہ جس برتن میں ڈالیں اس کی شکل اختیار کر لیتا ہے۔ مثالیں: پانی، دودھ، تیل۔",
+          "- **گیس**: اس کی نہ شکل مقرر ہوتی ہے اور نہ حجم۔ یہ پوری جگہ میں پھیل جاتی ہے۔ مثالیں: ہوا، بھاپ، آکسیجن۔",
+          "گرم کرنے یا ٹھنڈا کرنے سے مادہ ایک حالت سے دوسری حالت میں بدل سکتا ہے۔"
+        ],
+        "en": [
+          "Matter is found in three states:",
+          "- **Solid**: has a fixed shape and a fixed size. Its particles are packed very close together. Examples: stone, wood, ice.",
+          "- **Liquid**: has a fixed size but no fixed shape. It takes the shape of the container it is poured into. Examples: water, milk, oil.",
+          "- **Gas**: has no fixed shape and no fixed size. It spreads out to fill all the space. Examples: air, steam, oxygen.",
+          "Heating or cooling can change matter from one state to another."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "طبعي ۽ ڪيميائي تبديليون", "ur": "طبعی اور کیمیائی تبدیلیاں", "en": "Physical and chemical changes" },
+      "body": {
+        "sd": [
+          "مادي ۾ ٻه قسم جون تبديليون اچن ٿيون:",
+          "- **طبعي تبديلي**: ان ۾ ڪا نئين شيءِ نٿي ٺهي. اڪثر هي تبديلي واپس به ٿي سگهي ٿي. مثال: برف جو ڳرڻ، پاڻيءَ جو ٻاڦ بڻجڻ، ڪاغذ جو ڦاٽڻ، کنڊ جو پاڻيءَ ۾ ڳرڻ.",
+          "- **ڪيميائي تبديلي**: ان ۾ **نئين شيءِ** ٺهي ٿي ۽ اها تبديلي آسانيءَ سان واپس نٿي ٿي سگهي. مثال: ڪاغذ جو سڙڻ، آني جو پچڻ، لوهه کي **ڪٽ** لڳڻ، کير جو ڦاٽي ڏهي بڻجڻ.",
+          "ڪيميائي تبديليءَ ۾ اڪثر رنگ بدلجي ٿو، گرمي يا روشني نڪري ٿي، يا ڪا نئين بوءِ اچي ٿي."
+        ],
+        "ur": [
+          "مادے میں دو قسم کی تبدیلیاں آتی ہیں:",
+          "- **طبعی تبدیلی**: اس میں کوئی نئی چیز نہیں بنتی۔ اکثر یہ تبدیلی واپس بھی ہو سکتی ہے۔ مثالیں: برف کا پگھلنا، پانی کا بخارات بننا، کاغذ کا پھٹنا، چینی کا پانی میں گھلنا۔",
+          "- **کیمیائی تبدیلی**: اس میں **نئی چیز** بنتی ہے اور یہ تبدیلی آسانی سے واپس نہیں ہو سکتی۔ مثالیں: کاغذ کا جلنا، انڈے کا پکنا، لوہے کو **زنگ** لگنا، دودھ سے دہی بننا۔",
+          "کیمیائی تبدیلی میں اکثر رنگ بدلتا ہے، گرمی یا روشنی نکلتی ہے، یا کوئی نئی بو آتی ہے۔"
+        ],
+        "en": [
+          "Matter can go through two kinds of change:",
+          "- **Physical change**: no new substance is made. Often the change can be reversed. Examples: ice melting, water turning into vapour, paper tearing, sugar dissolving in water.",
+          "- **Chemical change**: a **new substance** is made and the change cannot easily be reversed. Examples: paper burning, an egg cooking, iron getting **rust**, milk turning into yoghurt.",
+          "In a chemical change the colour often changes, heat or light is given out, or a new smell appears."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "tree",
+    "tree": { "id": "matter", "children": [{ "id": "solid" }, { "id": "liquid" }, { "id": "gas" }] },
+    "parts": [
+      {
+        "id": "matter",
+        "label": { "sd": "مادو", "ur": "مادہ", "en": "Matter" },
+        "info": { "sd": "هر اها شيءِ جيڪا جاءِ والاري ۽ جنهن ۾ وزن هجي.", "ur": "ہر وہ چیز جو جگہ گھیرے اور جس میں وزن ہو۔", "en": "Anything that takes up space and has mass." }
+      },
+      {
+        "id": "solid",
+        "label": { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" },
+        "info": { "sd": "شڪل ۽ ماپ مقرر. ذرڙا تمام ويجها. مثال: پٿر، ڪاٺ، برف.", "ur": "شکل اور حجم مقرر۔ ذرات بہت قریب۔ مثالیں: پتھر، لکڑی، برف۔", "en": "Fixed shape and size. Particles packed close. Examples: stone, wood, ice." }
+      },
+      {
+        "id": "liquid",
+        "label": { "sd": "مائع", "ur": "مائع", "en": "Liquid" },
+        "info": { "sd": "ماپ مقرر پر شڪل نه. برتن جي شڪل وٺي ٿو. مثال: پاڻي، کير، تيل.", "ur": "حجم مقرر لیکن شکل نہیں۔ برتن کی شکل اختیار کرتا ہے۔ مثالیں: پانی، دودھ، تیل۔", "en": "Fixed size but no fixed shape. Takes the shape of its container. Examples: water, milk, oil." }
+      },
+      {
+        "id": "gas",
+        "label": { "sd": "گئس", "ur": "گیس", "en": "Gas" },
+        "info": { "sd": "نه شڪل مقرر نه ماپ. سڄي جاءِ ۾ پکڙجي وڃي ٿي. مثال: هوا، ٻاڦ.", "ur": "نہ شکل مقرر نہ حجم۔ پوری جگہ میں پھیل جاتی ہے۔ مثالیں: ہوا، بھاپ۔", "en": "No fixed shape or size. Spreads to fill all the space. Examples: air, steam." }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "مادو", "ur": "مادہ", "en": "matter" },
+    { "sd": "ڪميت", "ur": "کمیت", "en": "mass" },
+    { "sd": "ذرڙا", "ur": "ذرات", "en": "particles" },
+    { "sd": "ٺوس", "ur": "ٹھوس", "en": "solid" },
+    { "sd": "مائع", "ur": "مائع", "en": "liquid" },
+    { "sd": "گئس", "ur": "گیس", "en": "gas" },
+    { "sd": "طبعي تبديلي", "ur": "طبعی تبدیلی", "en": "physical change" },
+    { "sd": "ڪيميائي تبديلي", "ur": "کیمیائی تبدیلی", "en": "chemical change" },
+    { "sd": "ڳرڻ (حل ٿيڻ)", "ur": "گھلنا", "en": "dissolve" },
+    { "sd": "ڪٽ", "ur": "زنگ", "en": "rust" }
+  ],
+  "quiz": [
+    {
+      "id": "mt1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "مادو ڇا آهي؟", "ur": "مادہ کیا ہے؟", "en": "What is matter?" },
+      "options": [
+        { "sd": "جيڪا شيءِ جاءِ والاري ۽ جنهن ۾ وزن هجي", "ur": "جو چیز جگہ گھیرے اور جس میں وزن ہو", "en": "Anything that takes up space and has mass" },
+        { "sd": "رڳو اهي شيون جيڪي نظر اچن", "ur": "صرف وہ چیزیں جو نظر آئیں", "en": "Only things we can see" },
+        { "sd": "رڳو جاندار شيون", "ur": "صرف جاندار چیزیں", "en": "Only living things" },
+        { "sd": "رڳو ٺوس شيون", "ur": "صرف ٹھوس چیزیں", "en": "Only solid things" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mt2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ڦوڪڻو ڦوڪڻ سان وڏو ڇو ٿئي ٿو؟", "ur": "غبارہ پھلانے سے بڑا کیوں ہو جاتا ہے؟", "en": "Why does a balloon get bigger when we blow into it?" },
+      "options": [
+        { "sd": "هوا جاءِ والاري ٿي", "ur": "ہوا جگہ گھیرتی ہے", "en": "Air takes up space" },
+        { "sd": "ڦوڪڻو جاندار آهي", "ur": "غبارہ جاندار ہے", "en": "The balloon is alive" },
+        { "sd": "ڦوڪڻو ڳري ٿو", "ur": "غبارہ پگھلتا ہے", "en": "The balloon melts" },
+        { "sd": "هوا ۾ ڪو وزن ناهي", "ur": "ہوا میں کوئی وزن نہیں", "en": "Air has no mass" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mt3", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڪهڙي حالت جي شڪل ۽ ماپ ٻئي مقرر هونديون آهن؟", "ur": "کس حالت کی شکل اور حجم دونوں مقرر ہوتے ہیں؟", "en": "Which state has both a fixed shape and a fixed size?" },
+      "options": [
+        { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" },
+        { "sd": "مائع", "ur": "مائع", "en": "Liquid" },
+        { "sd": "گئس", "ur": "گیس", "en": "Gas" },
+        { "sd": "ڪابه نه", "ur": "کوئی نہیں", "en": "None" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mt4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "کير کي گلاس ۾ وجهو ته اهو گلاس جي شڪل وٺي ٿو. کير ڪهڙي حالت ۾ آهي؟", "ur": "دودھ گلاس میں ڈالیں تو وہ گلاس کی شکل اختیار کر لیتا ہے۔ دودھ کس حالت میں ہے؟", "en": "Milk takes the shape of the glass it is poured into. Which state is milk in?" },
+      "options": [
+        { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" },
+        { "sd": "مائع", "ur": "مائع", "en": "Liquid" },
+        { "sd": "گئس", "ur": "گیس", "en": "Gas" },
+        { "sd": "ذرڙو", "ur": "ذرہ", "en": "Particle" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "mt5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "هنن مان ڪهڙي شيءِ گئس آهي؟", "ur": "ان میں سے کون سی چیز گیس ہے؟", "en": "Which of these is a gas?" },
+      "options": [
+        { "sd": "ڪاٺ", "ur": "لکڑی", "en": "Wood" },
+        { "sd": "تيل", "ur": "تیل", "en": "Oil" },
+        { "sd": "آڪسيجن", "ur": "آکسیجن", "en": "Oxygen" },
+        { "sd": "پٿر", "ur": "پتھر", "en": "Stone" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "mt6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "هنن مان ڪهڙي ڪيميائي تبديلي آهي؟", "ur": "ان میں سے کون سی کیمیائی تبدیلی ہے؟", "en": "Which of these is a chemical change?" },
+      "options": [
+        { "sd": "برف جو ڳرڻ", "ur": "برف کا پگھلنا", "en": "Ice melting" },
+        { "sd": "ڪاغذ جو ڦاٽڻ", "ur": "کاغذ کا پھٹنا", "en": "Paper tearing" },
+        { "sd": "ڪاغذ جو سڙڻ", "ur": "کاغذ کا جلنا", "en": "Paper burning" },
+        { "sd": "کنڊ جو پاڻيءَ ۾ ڳرڻ", "ur": "چینی کا پانی میں گھلنا", "en": "Sugar dissolving in water" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "mt7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "هنن مان ڪهڙي طبعي تبديلي آهي؟", "ur": "ان میں سے کون سی طبعی تبدیلی ہے؟", "en": "Which of these is a physical change?" },
+      "options": [
+        { "sd": "آني جو پچڻ", "ur": "انڈے کا پکنا", "en": "An egg cooking" },
+        { "sd": "لوهه کي ڪٽ لڳڻ", "ur": "لوہے کو زنگ لگنا", "en": "Iron rusting" },
+        { "sd": "پاڻيءَ جو ڄمي برف بڻجڻ", "ur": "پانی کا جم کر برف بننا", "en": "Water freezing into ice" },
+        { "sd": "ڪاٺ جو سڙڻ", "ur": "لکڑی کا جلنا", "en": "Wood burning" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "mt8", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪيميائي تبديليءَ ۾ ڇا ٿو ٿئي؟", "ur": "کیمیائی تبدیلی میں کیا ہوتا ہے؟", "en": "What happens in a chemical change?" },
+      "options": [
+        { "sd": "نئين شيءِ ٺهي ٿي", "ur": "نئی چیز بنتی ہے", "en": "A new substance is made" },
+        { "sd": "رڳو شڪل بدلجي ٿي", "ur": "صرف شکل بدلتی ہے", "en": "Only the shape changes" },
+        { "sd": "ڪجهه به نٿو ٿئي", "ur": "کچھ بھی نہیں ہوتا", "en": "Nothing happens" },
+        { "sd": "شيءِ هميشه واپس اڳ جهڙي ٿي وڃي ٿي", "ur": "چیز ہمیشہ واپس پہلے جیسی ہو جاتی ہے", "en": "The thing always goes back to how it was" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mt9", "type": "mcq", "topic": "s1",
+      "q": { "sd": "مادو ڪهڙين ننڍڙين شين مان ٺهيل آهي؟", "ur": "مادہ کن ننھی چیزوں سے بنا ہے؟", "en": "Matter is made of tiny what?" },
+      "options": [
+        { "sd": "ذرڙن مان", "ur": "ذرات سے", "en": "Particles" },
+        { "sd": "پنن مان", "ur": "پتوں سے", "en": "Leaves" },
+        { "sd": "ڦڙن مان", "ur": "قطروں سے", "en": "Drops" },
+        { "sd": "ٻجن مان", "ur": "بیجوں سے", "en": "Seeds" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mt10", "type": "tf", "topic": "s1",
+      "q": { "sd": "هوا مادو ناهي ڇاڪاڻ ته اها نظر نٿي اچي.", "ur": "ہوا مادہ نہیں کیونکہ یہ نظر نہیں آتی۔", "en": "Air is not matter because we cannot see it." },
+      "answer": false
+    },
+    {
+      "id": "mt11", "type": "tf", "topic": "s2",
+      "q": { "sd": "گئس سڄي جاءِ ۾ پکڙجي وڃي ٿي.", "ur": "گیس پوری جگہ میں پھیل جاتی ہے۔", "en": "A gas spreads out to fill all the space." },
+      "answer": true
+    },
+    {
+      "id": "mt12", "type": "tf", "topic": "s2",
+      "q": { "sd": "ٺوس ۾ ذرڙا هڪ ٻئي کان تمام پري هوندا آهن.", "ur": "ٹھوس میں ذرات ایک دوسرے سے بہت دور ہوتے ہیں۔", "en": "In a solid, the particles are very far apart." },
+      "answer": false
+    },
+    {
+      "id": "mt13", "type": "tf", "topic": "s3",
+      "q": { "sd": "پچيل آني کي واپس ڪچو آنو نٿو بڻائي سگهجي.", "ur": "پکے ہوئے انڈے کو واپس کچا انڈا نہیں بنایا جا سکتا۔", "en": "A cooked egg cannot be turned back into a raw egg." },
+      "answer": true
+    },
+    {
+      "id": "mt14", "type": "tf", "topic": "s3",
+      "q": { "sd": "لوهه کي ڪٽ لڳڻ هڪ طبعي تبديلي آهي.", "ur": "لوہے کو زنگ لگنا ایک طبعی تبدیلی ہے۔", "en": "Iron rusting is a physical change." },
+      "answer": false
+    },
+    {
+      "id": "mt15", "type": "match", "topic": "s2",
+      "q": { "sd": "هر شيءِ کي ان جي حالت سان ملايو.", "ur": "ہر چیز کو اس کی حالت سے ملائیں۔", "en": "Match each thing with its state." },
+      "pairs": [
+        { "left": { "sd": "ڪاٺ", "ur": "لکڑی", "en": "Wood" }, "right": { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" } },
+        { "left": { "sd": "تيل", "ur": "تیل", "en": "Oil" }, "right": { "sd": "مائع", "ur": "مائع", "en": "Liquid" } },
+        { "left": { "sd": "ٻاڦ", "ur": "بھاپ", "en": "Steam" }, "right": { "sd": "گئس", "ur": "گیس", "en": "Gas" } }
+      ]
+    },
+    {
+      "id": "mt16", "type": "match", "topic": "s3",
+      "q": { "sd": "هر تبديليءَ کي ان جي قسم سان ملايو.", "ur": "ہر تبدیلی کو اس کی قسم سے ملائیں۔", "en": "Match each change with its kind." },
+      "pairs": [
+        { "left": { "sd": "ڪاغذ جو ڦاٽڻ", "ur": "کاغذ کا پھٹنا", "en": "Paper tearing" }, "right": { "sd": "طبعي تبديلي", "ur": "طبعی تبدیلی", "en": "Physical change" } },
+        { "left": { "sd": "کير جو ڏهي بڻجڻ", "ur": "دودھ کا دہی بننا", "en": "Milk turning into yoghurt" }, "right": { "sd": "ڪيميائي تبديلي", "ur": "کیمیائی تبدیلی", "en": "Chemical change" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "sort",
+      "title": { "sd": "طبعي يا ڪيميائي تبديلي؟", "ur": "طبعی یا کیمیائی تبدیلی؟", "en": "Physical or chemical change?" },
+      "bins": [
+        { "id": "physical", "name": { "sd": "طبعي تبديلي", "ur": "طبعی تبدیلی", "en": "Physical change" } },
+        { "id": "chemical", "name": { "sd": "ڪيميائي تبديلي", "ur": "کیمیائی تبدیلی", "en": "Chemical change" } }
+      ],
+      "items": [
+        { "emoji": "🧊", "text": { "sd": "برف جو ڳرڻ", "ur": "برف کا پگھلنا", "en": "Ice melting" }, "bin": "physical" },
+        { "emoji": "📄", "text": { "sd": "ڪاغذ جو ڦاٽڻ", "ur": "کاغذ کا پھٹنا", "en": "Paper tearing" }, "bin": "physical" },
+        { "emoji": "🥤", "text": { "sd": "کنڊ جو پاڻيءَ ۾ ڳرڻ", "ur": "چینی کا پانی میں گھلنا", "en": "Sugar dissolving" }, "bin": "physical" },
+        { "emoji": "✂️", "text": { "sd": "ڪپڙي جو ڪٽجڻ", "ur": "کپڑے کا کٹنا", "en": "Cutting cloth" }, "bin": "physical" },
+        { "emoji": "💧", "text": { "sd": "پاڻيءَ جو ڄمڻ", "ur": "پانی کا جمنا", "en": "Water freezing" }, "bin": "physical" },
+        { "emoji": "🔥", "text": { "sd": "ڪاٺ جو سڙڻ", "ur": "لکڑی کا جلنا", "en": "Wood burning" }, "bin": "chemical" },
+        { "emoji": "🍳", "text": { "sd": "آني جو پچڻ", "ur": "انڈے کا پکنا", "en": "Egg cooking" }, "bin": "chemical" },
+        { "emoji": "🔩", "text": { "sd": "لوهه کي ڪٽ لڳڻ", "ur": "لوہے کو زنگ لگنا", "en": "Iron rusting" }, "bin": "chemical" },
+        { "emoji": "🍞", "text": { "sd": "ماني پچڻ", "ur": "روٹی پکنا", "en": "Baking bread" }, "bin": "chemical" },
+        { "emoji": "🥛", "text": { "sd": "کير جو ڏهي بڻجڻ", "ur": "دودھ کا دہی بننا", "en": "Milk turning into yoghurt" }, "bin": "chemical" }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ڳريل لوڻ واپس ملي سگهي ٿو؟", "ur": "کیا گھلا ہوا نمک واپس مل سکتا ہے؟", "en": "Can we get dissolved salt back?" },
+    "materials": [
+      { "sd": "هڪ چمچو لوڻ", "ur": "ایک چمچ نمک", "en": "One spoon of salt" },
+      { "sd": "اڌ گلاس پاڻي", "ur": "آدھا گلاس پانی", "en": "Half a glass of water" },
+      { "sd": "هڪ ڪاري يا اونهي پليٽ", "ur": "ایک کالی یا گہری پلیٹ", "en": "A dark or deep plate" },
+      { "sd": "چمچو", "ur": "چمچ", "en": "A spoon" }
+    ],
+    "steps": [
+      { "sd": "پاڻيءَ ۾ لوڻ وجهو ۽ چمچي سان ملايو. لوڻ نظر اچڻ بند ٿي ويندو.", "ur": "پانی میں نمک ڈالیں اور چمچ سے ملائیں۔ نمک نظر آنا بند ہو جائے گا۔", "en": "Put the salt in the water and stir. The salt will disappear from sight." },
+      { "sd": "لوڻ وارو ٿورو پاڻي پليٽ ۾ وجهو.", "ur": "نمک والا تھوڑا پانی پلیٹ میں ڈالیں۔", "en": "Pour a little of the salty water into the plate." },
+      { "sd": "پليٽ کي 2 يا 3 ڏينهن سج ۾ رکو.", "ur": "پلیٹ کو 2 یا 3 دن دھوپ میں رکھیں۔", "en": "Keep the plate in the sun for 2 or 3 days." },
+      { "sd": "جڏهن سمورو پاڻي سڪي وڃي ته پليٽ کي ڏسو.", "ur": "جب سارا پانی سوکھ جائے تو پلیٹ کو دیکھیں۔", "en": "When all the water has dried up, look at the plate." }
+    ],
+    "learn": {
+      "sd": "پليٽ ۾ لوڻ جا اڇا داڻا رهجي ويا. پاڻي ٻاڦ بڻجي هليو ويو پر لوڻ ساڳيو رهيو. لوڻ جو پاڻيءَ ۾ ڳرڻ هڪ طبعي تبديلي آهي، ڇاڪاڻ ته ڪا نئين شيءِ نه ٺهي ۽ لوڻ واپس ملي ويو.",
+      "ur": "پلیٹ میں نمک کے سفید دانے رہ گئے۔ پانی بخارات بن کر اڑ گیا لیکن نمک ویسا ہی رہا۔ نمک کا پانی میں گھلنا ایک طبعی تبدیلی ہے، کیونکہ کوئی نئی چیز نہیں بنی اور نمک واپس مل گیا۔",
+      "en": "White grains of salt are left on the plate. The water evaporated but the salt stayed the same. Salt dissolving in water is a physical change, because no new substance was made and we got the salt back."
+    },
+    "safety": {
+      "sd": "لوڻ وارو پاڻي نه پيئو ۽ تجربي کان پوءِ هٿ ڌوئو.",
+      "ur": "نمک والا پانی نہ پئیں اور تجربے کے بعد ہاتھ دھوئیں۔",
+      "en": "Do not drink the salty water, and wash your hands after the experiment."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "جيڪا شيءِ جاءِ والاري ۽ جنهن ۾ وزن هجي، ان کي ____ چئبو آهي.", "ur": "جو چیز جگہ گھیرے اور جس میں وزن ہو، اسے ____ کہتے ہیں۔", "en": "Anything that takes up space and has mass is called ____." }, "answer": { "sd": "مادو", "ur": "مادہ", "en": "matter" } },
+      { "text": { "sd": "____ جي شڪل ۽ ماپ ٻئي مقرر هونديون آهن.", "ur": "____ کی شکل اور حجم دونوں مقرر ہوتے ہیں۔", "en": "A ____ has a fixed shape and a fixed size." }, "answer": { "sd": "ٺوس", "ur": "ٹھوس", "en": "solid" } },
+      { "text": { "sd": "مائع جنهن ____ ۾ هجي ان جي شڪل وٺي ٿو.", "ur": "مائع جس ____ میں ہو اس کی شکل اختیار کر لیتا ہے۔", "en": "A liquid takes the shape of its ____." }, "answer": { "sd": "برتن", "ur": "برتن", "en": "container" } },
+      { "text": { "sd": "ڪيميائي تبديليءَ ۾ ____ شيءِ ٺهي ٿي.", "ur": "کیمیائی تبدیلی میں ____ چیز بنتی ہے۔", "en": "In a chemical change a ____ substance is made." }, "answer": { "sd": "نئين", "ur": "نئی", "en": "new" } },
+      { "text": { "sd": "لوهه تي نمي سان ____ لڳي ٿي.", "ur": "لوہے پر نمی سے ____ لگتا ہے۔", "en": "Damp air makes ____ form on iron." }, "answer": { "sd": "ڪٽ", "ur": "زنگ", "en": "rust" } }
+    ],
+    "tf": [
+      { "text": { "sd": "اسان جو جسم به مادو آهي.", "ur": "ہمارا جسم بھی مادہ ہے۔", "en": "Our body is also matter." }, "answer": true },
+      { "text": { "sd": "گئس جي شڪل مقرر هوندي آهي.", "ur": "گیس کی شکل مقرر ہوتی ہے۔", "en": "A gas has a fixed shape." }, "answer": false },
+      { "text": { "sd": "ڪاغذ جو سڙڻ ڪيميائي تبديلي آهي.", "ur": "کاغذ کا جلنا کیمیائی تبدیلی ہے۔", "en": "Paper burning is a chemical change." }, "answer": true },
+      { "text": { "sd": "برف جو ڳرڻ واپس نٿو ٿي سگهي.", "ur": "برف کا پگھلنا واپس نہیں ہو سکتا۔", "en": "Melting ice can never be reversed." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "پٿر", "ur": "پتھر", "en": "Stone" }, "b": { "sd": "ٺوس", "ur": "ٹھوس", "en": "Solid" } },
+      { "a": { "sd": "کير", "ur": "دودھ", "en": "Milk" }, "b": { "sd": "مائع", "ur": "مائع", "en": "Liquid" } },
+      { "a": { "sd": "هوا", "ur": "ہوا", "en": "Air" }, "b": { "sd": "گئس", "ur": "گیس", "en": "Gas" } },
+      { "a": { "sd": "آني جو پچڻ", "ur": "انڈے کا پکنا", "en": "Egg cooking" }, "b": { "sd": "ڪيميائي تبديلي", "ur": "کیمیائی تبدیلی", "en": "Chemical change" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "مادي جون ٽي حالتون لکو ۽ هر هڪ جو هڪ مثال ڏيو.", "ur": "مادے کی تین حالتیں لکھیں اور ہر ایک کی ایک مثال دیں۔", "en": "Write the three states of matter with one example of each." },
+        "a": { "sd": "ٺوس (پٿر)، مائع (پاڻي)، گئس (هوا).", "ur": "ٹھوس (پتھر)، مائع (پانی)، گیس (ہوا)۔", "en": "Solid (stone), liquid (water), gas (air)." }
+      },
+      {
+        "q": { "sd": "طبعي ۽ ڪيميائي تبديليءَ ۾ هڪ فرق لکو.", "ur": "طبعی اور کیمیائی تبدیلی میں ایک فرق لکھیں۔", "en": "Write one difference between a physical and a chemical change." },
+        "a": { "sd": "طبعي تبديليءَ ۾ ڪا نئين شيءِ نٿي ٺهي، پر ڪيميائي تبديليءَ ۾ نئين شيءِ ٺهي ٿي.", "ur": "طبعی تبدیلی میں کوئی نئی چیز نہیں بنتی، لیکن کیمیائی تبدیلی میں نئی چیز بنتی ہے۔", "en": "No new substance is made in a physical change, but a new substance is made in a chemical change." }
+      },
+      {
+        "q": { "sd": "اسان ڪيئن ٿا ڄاڻون ته هوا جاءِ والاري ٿي؟", "ur": "ہم کیسے جانتے ہیں کہ ہوا جگہ گھیرتی ہے؟", "en": "How do we know that air takes up space?" },
+        "a": { "sd": "ڦوڪڻو ڦوڪڻ سان هوا ان ۾ ڀرجي ٿي ۽ اهو وڏو ٿئي ٿو.", "ur": "غبارہ پھلانے سے ہوا اس میں بھرتی ہے اور وہ بڑا ہو جاتا ہے۔", "en": "When we blow up a balloon, air fills it and it gets bigger." }
+      }
+    ],
+    "draw": { "sd": "ٽي دٻا ٺاهيو: ٺوس، مائع ۽ گئس. هر دٻي ۾ هڪ شيءِ جي تصوير ٺاهي ان جو نالو لکو.", "ur": "تین ڈبے بنائیں: ٹھوس، مائع اور گیس۔ ہر ڈبے میں ایک چیز کی تصویر بنا کر اس کا نام لکھیں۔", "en": "Draw three boxes: solid, liquid and gas. In each box draw one thing and write its name." }
+  }
+}

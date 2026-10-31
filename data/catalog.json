@@ -1,0 +1,25 @@
+{
+  "classes": [
+    {
+      "id": "5",
+      "active": true,
+      "name": { "sd": "ڪلاس 5", "ur": "جماعت پنجم", "en": "Class 5" },
+      "subjects": [
+        {
+          "id": "science",
+          "active": true,
+          "icon": "🔬",
+          "name": { "sd": "سائنس", "ur": "سائنس", "en": "Science" },
+          "chapters": ["living-things", "plants", "digestion", "water-cycle", "matter", "force-machines", "light-sound", "electricity-magnets", "earth-space"]
+        },
+        { "id": "maths", "active": false, "icon": "➗", "name": { "sd": "رياضي", "ur": "ریاضی", "en": "Maths" } },
+        { "id": "english", "active": false, "icon": "🔤", "name": { "sd": "انگريزي", "ur": "انگریزی", "en": "English" } },
+        { "id": "urdu", "active": false, "icon": "📗", "name": { "sd": "اردو", "ur": "اردو", "en": "Urdu" } },
+        { "id": "sindhi", "active": false, "icon": "📘", "name": { "sd": "سنڌي", "ur": "سندھی", "en": "Sindhi" } }
+      ]
+    },
+    { "id": "6", "active": false, "name": { "sd": "ڪلاس 6", "ur": "جماعت ششم", "en": "Class 6" }, "subjects": [] },
+    { "id": "7", "active": false, "name": { "sd": "ڪلاس 7", "ur": "جماعت ہفتم", "en": "Class 7" }, "subjects": [] },
+    { "id": "8", "active": false, "name": { "sd": "ڪلاس 8", "ur": "جماعت ہشتم", "en": "Class 8" }, "subjects": [] }
+  ]
+}

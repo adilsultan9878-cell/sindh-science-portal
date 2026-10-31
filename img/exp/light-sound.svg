@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <!-- child speaking -->
+  <circle cx="70" cy="130" r="46" fill="#ffcc80" stroke="#e0a060" stroke-width="3"/>
+  <path d="M26 118 q10 -46 52 -40 q30 4 36 32 q-30 -16 -88 8z" fill="#4e342e"/>
+  <circle cx="84" cy="124" r="5" fill="#4e342e"/>
+  <ellipse cx="108" cy="150" rx="7" ry="9" fill="#e57373"/>
+  <rect x="40" y="176" width="60" height="90" rx="20" fill="#4fc3f7"/>
+  <!-- cup at the mouth -->
+  <path d="M118 130 l40 -14 v68 l-40 -14z" fill="#fff59d" stroke="#fbc02d" stroke-width="3"/>
+  <!-- sound waves going along the string -->
+  <g stroke="#7e57c2" stroke-width="3" fill="none"><path d="M172 136 q8 14 0 28"/><path d="M184 128 q12 22 0 44"/><path d="M196 120 q16 30 0 60"/></g>
+  <!-- tight string -->
+  <line x1="158" y1="150" x2="442" y2="150" stroke="#8d6e63" stroke-width="3"/>
+  <g stroke="#7e57c2" stroke-width="3" fill="none" opacity="0.6"><path d="M260 142 q6 8 0 16"/><path d="M300 142 q6 8 0 16"/><path d="M340 142 q6 8 0 16"/></g>
+  <!-- cup at the ear -->
+  <path d="M482 130 l-40 -14 v68 l40 -14z" fill="#fff59d" stroke="#fbc02d" stroke-width="3"/>
+  <!-- child listening -->
+  <circle cx="530" cy="130" r="46" fill="#ffcc80" stroke="#e0a060" stroke-width="3"/>
+  <path d="M488 116 q4 -44 46 -40 q34 4 40 40 q-20 -20 -86 0z" fill="#212121"/>
+  <circle cx="548" cy="124" r="5" fill="#4e342e"/>
+  <path d="M540 152 q10 8 20 0" stroke="#4e342e" stroke-width="3" fill="none"/>
+  <rect x="500" y="176" width="60" height="90" rx="20" fill="#81c784"/>
+</svg>
