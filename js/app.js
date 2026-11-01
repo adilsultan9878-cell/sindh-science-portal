@@ -12,7 +12,8 @@
   var COMP_QUESTIONS = 15;
   var COMP_SECONDS = 300;
   // Chapters whose home experiment has a drawing in /img/exp/<chapter id>.svg
-  var EXP_PICTURES = ['living-things', 'plants', 'digestion', 'water-cycle', 'matter', 'force-machines', 'light-sound', 'electricity-magnets', 'earth-space'];
+  var EXP_PICTURES = ['living-things', 'plants', 'digestion', 'water-cycle', 'matter', 'force-machines', 'light-sound', 'electricity-magnets', 'earth-space',
+    'microorganisms', 'seeds', 'pollution', 'soils'];
   // Order of the parts of a chapter; the Back / Next buttons follow it.
   var TAB_ORDER = ['lesson', 'diagram', 'quiz', 'worksheet', 'experiment', 'game', 'words'];
 
@@ -435,7 +436,8 @@
     return p === href || p.indexOf(href + '/') === 0;
   }
   function renderFrame() {
-    var links = [['/', 'home'], ['/class-5/science', 'learn'], ['/glossary', 'glossary'], ['/competition', 'competition'], ['/progress', 'progress'], ['/search', 'search']];
+    var links = [['/', 'home'], ['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/competition', 'competition'],
+      ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers'], ['/search', 'search']];
     var offline = state.lang && navigator.onLine === false;
     document.getElementById('top').innerHTML = (offline ? '<p class="offline-note" role="status">' + icon('offline') + ' ' + esc(t('offlineNote')) + '</p>' : '') +
       '<div class="wrap top-row">' +
@@ -454,7 +456,8 @@
     document.getElementById('foot').innerHTML = state.lang ?
       '<div class="wrap foot-grid">' +
         '<div><p class="foot-brand">' + LEAF + '<span>' + esc(t('siteName')) + '</span></p><p>' + esc(t('footerFree')) + '</p></div>' +
-        '<nav class="foot-links" aria-label="' + esc(t('more')) + '"><a href="/teachers">' + esc(t('teachers')) + '</a><a href="/videos/">' + esc(t('videoGuide')) + '</a>' +
+        '<nav class="foot-links" aria-label="' + esc(t('more')) + '"><a href="/teachers">' + esc(t('teachers')) + '</a><a href="/watch">' + esc(t('videosTitle')) + '</a><a href="/games">' + esc(t('gamesTitle')) + '</a>' +
+          '<a href="/paper/">' + esc(t('questionPaper')) + '</a><a href="/class/">' + esc(t('classTitle')) + '</a>' +
           '<a href="/leaderboard">' + esc(t('leaderboard')) + '</a><a href="/about">' + esc(t('about')) + '</a><a href="/admin">' + esc(t('staff')) + '</a></nav>' +
       '</div>' +
       '<div class="wrap foot-base"><p>© The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p></div>' : '';
@@ -473,6 +476,8 @@
     [/^\/progress\/?$/, viewProgress],
     [/^\/leaderboard\/?$/, viewLeaderboard],
     [/^\/teachers\/?$/, viewTeachers],
+    [/^\/watch\/?$/, viewWatch],
+    [/^\/games\/?$/, viewGames],
     [/^\/about\/?$/, viewAbout]
   ];
   var renderId = 0;
@@ -546,26 +551,8 @@
   window.addEventListener('online', function () { renderFrame(); flushOutbox(); });
   window.addEventListener('offline', renderFrame);
 
-  /* ---------- offline app (service worker) and "install as an app" ---------- */
+  /* ---------- offline use (service worker) ---------- */
 
-  var installPrompt = null;
-  window.addEventListener('beforeinstallprompt', function (e) {
-    e.preventDefault();
-    installPrompt = e;
-    showInstall();
-  });
-  window.addEventListener('appinstalled', function () { installPrompt = null; showInstall(); });
-  function showInstall() {
-    var slot = document.getElementById('install-slot');
-    if (!slot) return;
-    if (!installPrompt) { slot.innerHTML = ''; return; }
-    slot.innerHTML = '<div class="card install"><span class="icon-tile">' + icon('phone') + '</span><div><strong>' + esc(t('install')) + '</strong>' +
-      '<p class="muted">' + esc(t('installText')) + '</p><button type="button" class="btn">' + esc(t('install')) + '</button></div></div>';
-    slot.querySelector('button').addEventListener('click', function () {
-      installPrompt.prompt();
-      installPrompt.userChoice.then(function () { installPrompt = null; showInstall(); });
-    });
-  }
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
     window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () { /* offline mode unavailable */ }); });
   }
@@ -598,7 +585,8 @@
       var cat = state.catalog, p = getProgress();
       var qCount = chs.reduce(function (n, ch) { return n + ch.quiz.length; }, 0);
       var last = p.last && chs.filter(function (ch) { return p.last === chUrl(ch) || p.last.indexOf(chUrl(ch) + '/') === 0; })[0];
-      var pics = chs.filter(function (ch) { return (window.PICTURES || {})[ch.id]; }).slice(0, 4);
+      var pics = chs.filter(function (ch) { return ['plants', 'water-cycle', 'earth-space', 'seeds'].indexOf(ch.id) >= 0 && (window.PICTURES || {})[ch.id]; });
+      var subjUrl = '/class-5/science';
       main.innerHTML =
         '<section class="hero">' +
           '<div class="hero-text">' +
@@ -615,24 +603,24 @@
         (last ? '<a class="card continue" href="' + esc(p.last) + '">' + thumb(last) +
           '<span class="continue-body"><small class="muted">' + esc(t('continueLearning')) + '</small><strong>' + esc(chLabel(last)) + '</strong>' +
           progressBar(chapterStatus(last, p).pct) + '</span>' + icon('next', 'flip') + '</a>' : '') +
-        '<div id="install-slot"></div>' +
         searchForm('') +
-        '<h2>' + esc(t('chooseClass')) + '</h2>' +
-        '<div class="grid classes">' + cat.classes.map(function (c) {
-          return c.active
-            ? '<a class="card class-card" href="/class-' + c.id + '"><span class="big-num">' + esc(c.id) + '</span><span>' + esc(L(c.name)) + '</span></a>'
-            : '<div class="card class-card is-off"><span class="big-num">' + esc(c.id) + '</span><span>' + esc(L(c.name)) + '</span><small>' + esc(t('comingSoon')) + '</small></div>';
+        '<div class="sec-head"><h2>' + esc(L(cat.classes.filter(function (c) { return c.active; })[0].name)) + ' ' + esc(t('learn')) + '</h2>' +
+          '<a href="' + subjUrl + '">' + esc(t('allChapters')) + icon('next', 'flip') + '</a></div>' +
+        '<div class="ch-strip">' + chs.map(function (ch) {
+          return '<a class="card ch-mini" href="' + chUrl(ch) + '">' + thumb(ch) + '<span><small class="eyebrow">' + esc(t('chapterN', { n: ch.number })) + '</small>' +
+            '<strong>' + esc(L(ch.title)) + '</strong>' + progressBar(chapterStatus(ch, p).pct) + '</span></a>';
         }).join('') + '</div>' +
         '<section class="card daily" id="daily"></section>' +
         '<h2>' + esc(t('more')) + '</h2>' +
         '<div class="grid">' +
+          quickLink('/watch', 'video', 'videosTitle', 'videosShort') +
+          quickLink('/games', 'game', 'gamesTitle', 'gamesShort') +
           quickLink('/competition', 'trophy', 'competition', 'compShort') +
           quickLink('/glossary', 'words', 'glossary', 'glossShort') +
           quickLink('/progress', 'star', 'progress', 'progShort') +
           quickLink('/teachers', 'users', 'teachers', 'teachShort') +
         '</div>';
       renderDaily(document.getElementById('daily'), chs);
-      showInstall();
     });
   }
   function quickLink(href, iconName, titleKey, textKey) {
@@ -755,13 +743,17 @@
   function viewClass(id, cls) {
     var c = findClass(cls);
     if (!c || !c.active) return viewNotFound();
+    // Only subjects that are switched on are shown; with just one, go straight to its chapters.
+    var subs = c.subjects.filter(function (s) { return s.active; });
+    if (subs.length === 1) {
+      history.replaceState(null, '', '/class-' + c.id + '/' + subs[0].id);
+      return viewSubject(id, cls, subs[0].id);
+    }
     setMeta(L(c.name), t('welcomeText'));
     main.innerHTML = crumbs([['/', t('home')], ['', L(c.name)]]) +
       '<h1>' + esc(L(c.name)) + ' — ' + esc(t('subjects')) + '</h1>' +
-      '<div class="grid">' + c.subjects.map(function (s) {
-        return s.active
-          ? '<a class="card subject-card" href="/class-' + c.id + '/' + s.id + '"><span class="quick-icon" aria-hidden="true">' + s.icon + '</span><strong>' + esc(L(s.name)) + '</strong></a>'
-          : '<div class="card subject-card is-off"><span class="quick-icon" aria-hidden="true">' + s.icon + '</span><strong>' + esc(L(s.name)) + '</strong><small>' + esc(t('comingSoon')) + '</small></div>';
+      '<div class="grid">' + subs.map(function (s) {
+        return '<a class="card subject-card" href="/class-' + c.id + '/' + s.id + '"><span class="quick-icon" aria-hidden="true">' + s.icon + '</span><strong>' + esc(L(s.name)) + '</strong></a>';
       }).join('') + '</div>';
   }
 
@@ -772,7 +764,7 @@
       if (stale(id)) return;
       var p = getProgress();
       setMeta(L(c.name) + ' ' + L(s.name), chs.map(function (ch) { return L(ch.title); }).join(' · '));
-      main.innerHTML = crumbs([['/', t('home')], ['/class-' + cls, L(c.name)], ['', L(s.name)]]) +
+      main.innerHTML = crumbs([['/', t('home')], ['', L(c.name) + ' ' + L(s.name)]]) +
         '<h1>' + esc(L(c.name)) + ' ' + esc(L(s.name)) + ' — ' + esc(t('chapters')) + '</h1>' +
         '<div class="ch-list">' + chs.map(function (ch) {
           var st = chapterStatus(ch, p);
@@ -828,7 +820,7 @@
       p.last = location.pathname;
       saveProgress(p);
       setMeta(L(ch.title) + ' — ' + t('tab_' + tab), L(ch.summary));
-      main.innerHTML = crumbs([['/', t('home')], ['/class-' + cls, L(c.name)], ['/class-' + cls + '/' + subj, L(s.name)], ['', L(ch.title)]]) +
+      main.innerHTML = crumbs([['/', t('home')], ['/class-' + cls + '/' + subj, L(c.name) + ' ' + L(s.name)], ['', L(ch.title)]]) +
         '<header class="ch-head">' + thumb(ch, 'lg') + '<div class="ch-head-text">' +
           '<p class="eyebrow">' + esc(t('chapterN', { n: ch.number })) + ' · ' + esc(L(c.name)) + ' ' + esc(L(s.name)) + '</p>' +
           '<h1>' + esc(L(ch.title)) + ' ' + sayBtn(L(ch.title), state.lang) + '</h1>' +
@@ -1397,14 +1389,46 @@
       return n >= 3 && n <= 9 && !/[\s‌-‏-]/.test(L(w));
     });
   }
+  // Every game of a chapter: its own games, plus games made automatically from its key words, quiz and worksheet.
+  function chapterGames(ch) {
+    var list = (ch.games || []).map(function (g, i) { return { g: g, key: ch._key + '#' + i }; });
+    if (spellWords(ch).length >= 3) list.push({ g: { type: 'spell', words: spellWords(ch) }, key: ch._key + '#spell' });
+    var words = (ch.glossary || []).filter(function (w) { return w.en && w.ur; });
+    if (words.length >= 4) {
+      list.push({ g: { type: 'match', title: UI.gWordsTitle, pairs: shuffle(words).slice(0, 5).map(function (w) {
+        return { a: w, b: { sd: w.en, ur: w.en, en: w.ur } };
+      }) }, key: ch._key + '#words' });
+    }
+    var qs = (ch.quiz || []).filter(function (q) { return q.type !== 'match'; });
+    if (qs.length >= 5) list.push({ g: { type: 'race', title: UI.gRaceTitle, questions: qs }, key: ch._key + '#race' });
+    var blanks = (ch.worksheet && ch.worksheet.blanks) || [];
+    if (blanks.length >= 3) list.push({ g: { type: 'fill', title: UI.gFillTitle, blanks: blanks }, key: ch._key + '#fill' });
+    return list;
+  }
+  function gameTitle(g) { return g.type === 'spell' ? t('spellTitle') : L(g.title); }
+
+  // The game tab: a row of game buttons; one game is played at a time.
   function tabGame(el, ch) {
-    var games = (ch.games || []).map(function (g, i) { return { g: g, key: ch._key + '#' + i }; });
-    if (spellWords(ch).length >= 3) games.push({ g: { type: 'spell', words: spellWords(ch) }, key: ch._key + '#spell' });
-    el.innerHTML = games.map(function (x, i) { return '<section class="card game" data-i="' + i + '"></section>'; }).join('');
-    games.forEach(function (x, i) { startGame(el.querySelector('.game[data-i="' + i + '"]'), x.g, x.key); });
+    var games = chapterGames(ch), done = getProgress().games;
+    el.innerHTML = '<p class="muted">' + esc(t('chooseGame')) + '</p><div class="game-pick no-print" role="group">' + games.map(function (x, i) {
+      return '<button type="button" class="game-tab" data-gi="' + i + '" aria-pressed="false">' + icon(done[x.key] ? 'check' : 'game') +
+        '<span>' + esc(gameTitle(x.g)) + '</span></button>';
+    }).join('') + '</div><div class="game-slot"></div>';
+    function start(i) {
+      el.querySelectorAll('.game-tab').forEach(function (b, k) { b.classList.toggle('on', k === i); b.setAttribute('aria-pressed', String(k === i)); });
+      var slot = el.querySelector('.game-slot');
+      slot.innerHTML = '<section class="card game"></section>';
+      startGame(slot.querySelector('.game'), games[i].g, games[i].key);
+    }
+    el.querySelector('.game-pick').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-gi]');
+      if (b) start(+b.getAttribute('data-gi'));
+    });
+    var want = location.hash.match(/^#game-(\d+)$/);
+    start(want ? Math.min(+want[1], games.length - 1) : 0);
   }
   function startGame(box, g, key) {
-    var engines = { sort: gameSort, memory: gameMemory, match: gameMatch, spell: gameSpell };
+    var engines = { sort: gameSort, memory: gameMemory, match: gameMatch, spell: gameSpell, race: gameRace, fill: gameFill };
     engines[g.type](box, g, function onWin() {
       var p = getProgress(), gained = 0;
       if (!p.games[key]) { p.games[key] = true; p.points += 5; gained = 5; }
@@ -1415,14 +1439,95 @@
       end.hidden = false;
       end.innerHTML = guide(t('gameDone')) +
         (gained ? '<p class="points">' + icon('star') + ' ' + esc(t('pointsEarned', { n: gained })) + '</p>' : '') + newBadgesHTML(fresh) +
-        '<button type="button" class="btn" data-act="again">' + esc(t('playAgain')) + '</button>';
-      end.querySelector('[data-act="again"]').addEventListener('click', function () { startGame(box, g, key); });
+        '<button type="button" class="btn" data-act="again">' + icon('refresh') + esc(t('playAgain')) + '</button>';
+      end.querySelector('[data-act="again"]').addEventListener('click', function () { restartGame(box, g, key); });
     });
+  }
+  // A fresh box, so listeners from the last round do not stay behind.
+  function restartGame(box, g, key) {
+    var fresh = box.cloneNode(false);
+    box.replaceWith(fresh);
+    startGame(fresh, g, key);
   }
   function say(box, text, kind) {
     var m = box.querySelector('.game-msg');
     m.textContent = text;
     m.className = 'game-msg' + (kind ? ' ' + kind : '');
+  }
+
+  // Quick quiz race: answer up to 10 questions in 60 seconds; half or more right wins.
+  function gameRace(box, g, onWin) {
+    var qs = shuffle(g.questions).slice(0, 10), n = 0, good = 0, left = 60, over = false, timer;
+    box.innerHTML = '<h2>' + esc(L(g.title)) + '</h2><p>' + esc(t('raceHelp')) + '</p>' +
+      '<div class="race-bar"><span class="race-time">' + icon('clock') + ' <b>1:00</b></span><span class="race-score"></span></div>' +
+      '<div class="race-q"></div><p class="game-msg" aria-live="polite"></p><div class="game-end" hidden></div>';
+    function show() {
+      var q = qs[n];
+      box.querySelector('.race-score').textContent = t('scoreOf', { n: good, m: qs.length });
+      var opts = q.type === 'tf' ? [['true', t('true')], ['false', t('false')]] : shuffle(q.options.map(function (o, i) { return [String(i), L(o)]; }));
+      box.querySelector('.race-q').innerHTML = '<p class="race-text"><span class="qn">' + (n + 1) + ' / ' + qs.length + '</span> ' + esc(L(q.q)) + '</p>' +
+        '<div class="qc-opts">' + opts.map(function (o) { return '<button type="button" class="qc-opt" data-v="' + esc(o[0]) + '">' + esc(o[1]) + '</button>'; }).join('') + '</div>';
+    }
+    function finish() {
+      if (over) return;
+      over = true;
+      clearInterval(timer);
+      box.querySelector('.race-score').textContent = t('scoreOf', { n: good, m: qs.length });
+      box.querySelector('.race-q').innerHTML = '<p class="race-final">' + esc(t('scoreOf', { n: good, m: qs.length })) + '</p>';
+      if (good >= Math.ceil(qs.length / 2)) { onWin(); return; }
+      say(box, t('raceTry'), 'bad');
+      var end = box.querySelector('.game-end');
+      end.hidden = false;
+      end.innerHTML = '<button type="button" class="btn" data-act="again">' + icon('refresh') + esc(t('playAgain')) + '</button>';
+      end.querySelector('button').addEventListener('click', function () { gameRace(box, g, onWin); });
+    }
+    box.querySelector('.race-q').addEventListener('click', function (e) {
+      var b = e.target.closest('.qc-opt');
+      if (!b || over) return;
+      var q = qs[n], ok = b.getAttribute('data-v') === String(q.answer);
+      if (ok) good++;
+      say(box, ok ? t('nice') : t('correctAnswerIs') + ' ' + answerText(q), ok ? 'ok' : 'bad');
+      n++;
+      if (n >= qs.length) finish(); else show();
+    });
+    timer = setInterval(function () {
+      if (!box.isConnected) { clearInterval(timer); return; }
+      left--;
+      box.querySelector('.race-time b').textContent = fmtTime(Math.max(0, left));
+      if (left <= 0) finish();
+    }, 1000);
+    show();
+  }
+
+  // Fill the gap: pick the missing word of each worksheet sentence.
+  function gameFill(box, g, onWin) {
+    var items = shuffle(g.blanks).slice(0, 5), n = 0, all = g.blanks.map(function (b) { return L(b.answer); });
+    box.innerHTML = '<h2>' + esc(L(g.title)) + '</h2><p>' + esc(t('fillHelp')) + '</p><p class="moves"></p>' +
+      '<div class="fill-q"></div><p class="game-msg" aria-live="polite"></p><div class="game-end" hidden></div>';
+    function show() {
+      var b = items[n], right = L(b.answer);
+      var opts = shuffle([right].concat(shuffle(all.filter(function (x) { return x !== right; })).slice(0, 3)));
+      box.querySelector('.moves').textContent = t('sentenceOf', { n: n + 1, m: items.length });
+      box.querySelector('.fill-q').innerHTML = '<p class="fill-text">' + esc(L(b.text)).replace('____', '<span class="fill-gap">?</span>') + '</p>' +
+        '<div class="qc-opts">' + opts.map(function (o) { return '<button type="button" class="qc-opt" data-v="' + esc(o) + '">' + esc(o) + '</button>'; }).join('') + '</div>';
+      say(box, '');
+    }
+    box.querySelector('.fill-q').addEventListener('click', function (e) {
+      var b = e.target.closest('.qc-opt');
+      if (!b || b.disabled) return;
+      var right = L(items[n].answer);
+      if (b.getAttribute('data-v') !== right) { b.classList.add('is-wrong'); b.disabled = true; say(box, t('notQuite'), 'bad'); return; }
+      b.classList.add('is-right');
+      var gap = box.querySelector('.fill-gap');
+      gap.textContent = right;
+      gap.classList.add('ok');
+      say(box, t('nice'), 'ok');
+      box.querySelectorAll('.fill-q .qc-opt').forEach(function (x) { x.disabled = true; });
+      n++;
+      if (n >= items.length) { onWin(); return; }
+      setTimeout(show, 900);
+    });
+    show();
   }
 
   // Sort items into boxes: tap an item, then tap a box (drag and drop also works with a mouse).
@@ -1589,6 +1694,11 @@
     var d = store.get(dkey, null) || { stage: getProgress().exp[key] ? RESULT : 0, have: [], predict: '', observe: '' };
     var pic = EXP_PICTURES.indexOf(ch.id) >= 0 ? '<img class="exp-pic" src="/img/exp/' + ch.id + '.svg" width="600" height="320" alt="' + esc(L(x.title)) + '">' : '';
     var phases = [['expReady', 0], ['expYourGuess', 1], ['steps', 2], ['expYourObs', OBSERVE], ['whatLearn', RESULT]];
+    var vid = (window.EXP_VIDEOS || {})[ch.id];
+    el.innerHTML = (vid ? '<section class="card lesson-video"><h2>' + icon('video') + ' ' + esc(t('expVideoTitle')) + '</h2>' +
+      '<video controls preload="none" playsinline width="960" height="540" poster="' + vid.poster + '" src="' + vid.src + '"></video>' +
+      '<p class="small muted">' + esc(t('expVideoNote')) + '</p></section>' : '') + '<div class="exp-main"></div>';
+    var holder = el.querySelector('.exp-main');
 
     function save() { store.set(dkey, d); refreshStatus(ch); }
     function stepper() {
@@ -1631,7 +1741,7 @@
           (d.observe ? '<div class="exp-saved"><h4>' + esc(t('expYourObs')) + '</h4><p>' + esc(d.observe) + '</p></div>' : '') +
           '<p><button type="button" class="btn ghost" data-act="again">' + icon('refresh') + esc(t('expAgain')) + '</button></p>';
       }
-      el.innerHTML = '<section class="card exp"><h2>' + icon('experiment') + ' ' + esc(L(x.title)) + '</h2>' + stepper() + '<div class="exp-body">' + body + '</div></section>';
+      holder.innerHTML = '<section class="card exp"><h2>' + icon('experiment') + ' ' + esc(L(x.title)) + '</h2>' + stepper() + '<div class="exp-body">' + body + '</div></section>';
     }
     el.addEventListener('click', function (e) {
       var b = e.target.closest('[data-stage], [data-act]');
@@ -1906,6 +2016,56 @@
         if (window.confirm(t('resetConfirm'))) { store.set('progress', {}); render(false); }
       });
       if (window.Classroom) window.Classroom.mount(document.getElementById('class-slot'));
+    });
+  }
+
+  // All games of all chapters on one page.
+  function viewGames(id) {
+    return loadAll().then(function (chs) {
+      if (stale(id)) return;
+      setMeta(t('gamesTitle'), t('gamesShort'));
+      var won = getProgress().games;
+      main.innerHTML = crumbs([['/', t('home')], ['', t('gamesTitle')]]) +
+        '<h1>' + icon('game') + ' ' + esc(t('gamesTitle')) + '</h1><p>' + esc(t('gamesIntro')) + '</p>' +
+        '<div class="games-grid">' + chs.map(function (ch) {
+          var gs = chapterGames(ch), n = gs.filter(function (x) { return won[x.key]; }).length;
+          return '<div class="card game-ch"><a class="game-ch-head" href="' + chUrl(ch, 'game') + '">' + thumb(ch) +
+            '<span><small class="eyebrow">' + esc(t('chapterN', { n: ch.number })) + '</small><strong>' + esc(L(ch.title)) + '</strong>' +
+            '<small class="muted">' + esc(t('gamesWon', { n: n, m: gs.length })) + '</small></span></a>' +
+            '<div class="chips">' + gs.map(function (x, i) {
+              return '<a class="chip' + (won[x.key] ? ' done' : '') + '" href="' + chUrl(ch, 'game') + '#game-' + i + '">' + (won[x.key] ? icon('check') + ' ' : '') + esc(gameTitle(x.g)) + '</a>';
+            }).join('') + '</div></div>';
+        }).join('') + '</div>';
+    });
+  }
+
+  // Every video in one place: lesson videos, experiment videos and the how-to guides.
+  var GUIDES = [
+    { key: 'guideStudents', src: '/videos/students-guide-urdu.mp4', poster: '/videos/students-guide-urdu.jpg' },
+    { key: 'guideTeachers', src: '/videos/teachers-guide-urdu.mp4', poster: '/videos/teachers-guide-urdu.jpg' },
+    { key: 'guideStaff', src: '/videos/staff-panel-guide-urdu.mp4', poster: '/videos/staff-panel-guide-urdu.jpg' }
+  ];
+  function videoCard(v, title, sub, href) {
+    return '<article class="card vid-card"><video controls preload="none" playsinline width="960" height="540" poster="' + v.poster + '" src="' + v.src + '"></video>' +
+      '<strong>' + (href ? '<a href="' + href + '">' + esc(title) + '</a>' : esc(title)) + '</strong>' + (sub ? '<small class="muted">' + esc(sub) + '</small>' : '') + '</article>';
+  }
+  function viewWatch(id) {
+    return loadAll().then(function (chs) {
+      if (stale(id)) return;
+      setMeta(t('videosTitle'), t('videosShort'));
+      var LV = window.LESSON_VIDEOS || {}, EV = window.EXP_VIDEOS || {};
+      var exp = chs.filter(function (ch) { return EV[ch.id] && ch.experiment; });
+      main.innerHTML = crumbs([['/', t('home')], ['', t('videosTitle')]]) +
+        '<h1>' + icon('video') + ' ' + esc(t('videosTitle')) + '</h1><p>' + esc(t('videosIntro')) + '</p>' +
+        '<h2 id="lessons">' + esc(t('lessonVideos')) + '</h2><div class="vid-grid">' + chs.filter(function (ch) { return LV[ch.id]; }).map(function (ch) {
+          return videoCard(LV[ch.id], chLabel(ch), t('videoUrdu'), chUrl(ch));
+        }).join('') + '</div>' +
+        (exp.length ? '<h2 id="experiments">' + esc(t('expVideos')) + '</h2><div class="vid-grid">' + exp.map(function (ch) {
+          return videoCard(EV[ch.id], L(ch.experiment.title), chLabel(ch), chUrl(ch, 'experiment'));
+        }).join('') + '</div>' : '') +
+        '<h2 id="guides">' + esc(t('videoGuide')) + '</h2><div class="vid-grid">' + GUIDES.map(function (v) {
+          return videoCard(v, t(v.key), t('videoUrdu'));
+        }).join('') + '</div>';
     });
   }
 

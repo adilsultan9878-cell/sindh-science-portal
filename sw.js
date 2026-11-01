@@ -1,7 +1,7 @@
 /* Offline support. On the first visit the phone keeps a copy of the app, the fonts and every
    chapter file, so lessons, quizzes and games open later without internet.
    When you change CSS or JS, raise VERSION here and the ?v= number in index.html to the same value. */
-var VERSION = '20261101a';
+var VERSION = '20261101b';
 var CACHE = 'ssp-' + VERSION;
 var SHELL = [
   '/',

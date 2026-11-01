@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <!-- window with sun: the warm room -->
+  <rect x="110" y="16" width="150" height="90" rx="6" fill="#e3f2fd" stroke="#90a4ae" stroke-width="4"/>
+  <line x1="185" y1="16" x2="185" y2="106" stroke="#90a4ae" stroke-width="4"/>
+  <circle cx="146" cy="50" r="15" fill="#ffd54f"/>
+  <rect x="0" y="270" width="600" height="50" fill="#d7ccc8"/>
+  <!-- fridge, open, with a snowflake -->
+  <rect x="404" y="20" width="180" height="250" rx="12" fill="#cfd8dc" stroke="#90a4ae" stroke-width="4"/>
+  <rect x="418" y="34" width="152" height="222" rx="6" fill="#e1f5fe"/>
+  <g stroke="#4fc3f7" stroke-width="4" stroke-linecap="round">
+    <path d="M494 50 v52 M471 63 l46 26 M471 89 l46 -26"/>
+    <path d="M486 52 l8 8 l8 -8 M486 100 l8 -8 l8 8"/>
+  </g>
+  <!-- wet cotton (A and C) and dry cotton (B) -->
+  <g stroke-width="2">
+    <path d="M52 266 v-24 q14 -12 24 -2 q12 -12 24 -2 q12 -12 24 -2 q14 -10 24 2 v26z" fill="#b3e5fc" stroke="#4fc3f7"/>
+    <path d="M222 266 v-24 q14 -12 24 -2 q12 -12 24 -2 q12 -12 24 -2 q14 -10 24 2 v26z" fill="#ffffff" stroke="#cfd8dc"/>
+    <path d="M442 254 v-24 q14 -12 24 -2 q12 -12 24 -2 q12 -12 24 -2 q14 -10 24 2 v26z" fill="#b3e5fc" stroke="#4fc3f7"/>
+  </g>
+  <!-- jar A: seeds with roots and shoots -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M78 238 q-4 14 2 24 M112 236 q4 14 -2 26 M140 238 q-2 12 4 22" stroke="#fafafa" stroke-width="3"/>
+    <path d="M80 228 q-2 -30 -12 -46 M112 226 q2 -36 6 -56 M140 228 q0 -24 10 -38" stroke="#43a047" stroke-width="4"/>
+  </g>
+  <g fill="#66bb6a"><ellipse cx="64" cy="180" rx="11" ry="5" transform="rotate(-30 64 180)"/><ellipse cx="110" cy="170" rx="11" ry="5" transform="rotate(-20 110 170)"/><ellipse cx="127" cy="168" rx="11" ry="5" transform="rotate(25 127 168)"/><ellipse cx="154" cy="188" rx="11" ry="5" transform="rotate(30 154 188)"/></g>
+  <!-- the beans -->
+  <g fill="#a1887f" stroke="#6d4c41" stroke-width="2">
+    <ellipse cx="80" cy="234" rx="11" ry="7"/><ellipse cx="112" cy="232" rx="11" ry="7"/><ellipse cx="140" cy="234" rx="11" ry="7"/>
+    <ellipse cx="250" cy="236" rx="11" ry="7"/><ellipse cx="282" cy="234" rx="11" ry="7"/><ellipse cx="310" cy="236" rx="11" ry="7"/>
+    <ellipse cx="470" cy="224" rx="11" ry="7"/><ellipse cx="502" cy="222" rx="11" ry="7"/><ellipse cx="530" cy="224" rx="11" ry="7"/>
+  </g>
+  <!-- the three jars with coloured labels -->
+  <g fill="#e3f2fd" fill-opacity="0.35" stroke="#90a4ae" stroke-width="4">
+    <path d="M48 140 h112 v120 a10 10 0 0 1 -10 10 h-92 a10 10 0 0 1 -10 -10z"/>
+    <path d="M218 140 h112 v120 a10 10 0 0 1 -10 10 h-92 a10 10 0 0 1 -10 -10z"/>
+    <path d="M438 128 h112 v120 a10 10 0 0 1 -10 10 h-92 a10 10 0 0 1 -10 -10z"/>
+  </g>
+  <circle cx="68" cy="204" r="11" fill="#43a047"/><circle cx="238" cy="204" r="11" fill="#fbc02d"/><circle cx="458" cy="192" r="11" fill="#1e88e5"/>
+  <!-- water drops for the wet jars -->
+  <g fill="#42a5f5"><path d="M104 104 q-8 12 0 16 q8 -4 0 -16z"/><path d="M494 108 q-8 12 0 16 q8 -4 0 -16z"/></g>
+</svg>

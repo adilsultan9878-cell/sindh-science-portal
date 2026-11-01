@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <rect width="600" height="320" fill="#f6fbf6"/>
+  <rect x="0" y="262" width="600" height="58" fill="#d7ccc8"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#43a047"/></marker></defs>
+  <!-- warm place -->
+  <circle cx="540" cy="62" r="24" fill="#ffd54f"/>
+  <g stroke="#ffb300" stroke-width="5" stroke-linecap="round">
+    <line x1="540" y1="20" x2="540" y2="30"/><line x1="498" y1="62" x2="508" y2="62"/><line x1="572" y1="62" x2="582" y2="62"/>
+    <line x1="510" y1="32" x2="517" y2="39"/><line x1="570" y1="32" x2="563" y2="39"/><line x1="540" y1="94" x2="540" y2="104"/>
+  </g>
+  <!-- dough with yeast: risen high above its mark, full of bubbles -->
+  <path d="M103 258 L93 100 C90 58 230 58 227 100 L217 258z" fill="#f5deb3" stroke="#c9a46b" stroke-width="3"/>
+  <g fill="#fffaf0" stroke="#e0c48c" stroke-width="1.5">
+    <circle cx="130" cy="200" r="6"/><circle cx="172" cy="168" r="8"/><circle cx="150" cy="128" r="5"/><circle cx="196" cy="214" r="5"/>
+    <circle cx="118" cy="150" r="4"/><circle cx="188" cy="108" r="6"/><circle cx="160" cy="236" r="4"/><circle cx="128" cy="94" r="4"/>
+  </g>
+  <!-- dough without yeast: still at its mark -->
+  <path d="M313 258 L307 192 Q370 182 433 192 L427 258z" fill="#f5deb3" stroke="#c9a46b" stroke-width="3"/>
+  <g fill="#fffaf0" stroke="#e0c48c" stroke-width="1.5"><circle cx="342" cy="230" r="3"/><circle cx="398" cy="218" r="3"/></g>
+  <!-- the two glasses -->
+  <g fill="#e3f2fd" fill-opacity="0.35" stroke="#90a4ae" stroke-width="4">
+    <path d="M90 92 h140 l-12 170 h-116z"/><path d="M300 92 h140 l-12 170 h-116z"/>
+  </g>
+  <!-- marker lines at the starting height -->
+  <g stroke="#e53935" stroke-width="5" stroke-linecap="round"><line x1="88" y1="190" x2="118" y2="190"/><line x1="298" y1="190" x2="328" y2="190"/></g>
+  <path d="M262 186 V96" stroke="#43a047" stroke-width="5" marker-end="url(#a)"/>
+  <!-- spoon of yeast and the marker -->
+  <path d="M488 250 L566 226" stroke="#9e9e9e" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="478" cy="252" rx="22" ry="9" fill="#bdbdbd"/>
+  <g fill="#8d6e63"><circle cx="470" cy="249" r="3"/><circle cx="479" cy="247" r="3"/><circle cx="487" cy="250" r="3"/><circle cx="475" cy="254" r="3"/></g>
+  <rect x="470" y="276" width="84" height="14" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-width="2"/>
+  <rect x="540" y="276" width="30" height="14" rx="6" fill="#e53935"/>
+</svg>

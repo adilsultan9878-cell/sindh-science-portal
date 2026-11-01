@@ -196,8 +196,44 @@ input:focus, select:focus, textarea:focus { border-color: var(--green); outline:
 .points .ic { color: #d4a106; fill: #f5c518; }
 
 /* chapter pictures */
-.thumb { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; flex: none; border-radius: 10px; overflow: hidden; background: var(--soft); border: 1px solid var(--line); }
-.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; flex: none; border-radius: 10px; overflow: hidden; background: #fff; border: 1px solid var(--line); }
+.thumb img { width: 100%; height: 100%; object-fit: contain; }
+.hero-pics img { object-fit: contain; background: #fff; padding: 4px; }
+
+/* home: chapters strip */
+.sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.sec-head a { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+.ch-strip { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.ch-mini { display: flex; align-items: center; gap: 10px; margin: 0; padding: 10px 12px; }
+.ch-mini > span:last-child { display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0; }
+.ch-mini strong { font-size: 0.98rem; color: var(--green-ink); line-height: 1.4; }
+
+/* games */
+.game-pick { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; }
+.game-tab { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 0.95rem; min-height: 44px; padding: 6px 14px; cursor: pointer; border: 1px solid var(--line-2); border-radius: 8px; background: #fff; color: var(--text); }
+.game-tab:hover { background: var(--soft); }
+.game-tab.on { background: var(--green); border-color: var(--green); color: #fff; }
+.game-tab .ic { color: inherit; }
+.race-bar { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding: 8px 12px; border-radius: 8px; background: var(--yellow); border: 1px solid var(--yellow-line); font-weight: 700; }
+.race-time { display: inline-flex; align-items: center; gap: 6px; }
+.race-text { font-weight: 600; font-size: 1.08rem; margin: 12px 0 8px; }
+.race-final { font-size: 1.6rem; font-weight: 700; color: var(--green-dark); text-align: center; margin: 16px 0; }
+.fill-text { font-size: 1.15rem; line-height: 2; margin: 10px 0; }
+.fill-gap { display: inline-block; min-width: 4em; padding: 0 10px; margin: 0 4px; border-bottom: 3px solid var(--amber); color: var(--amber); font-weight: 700; text-align: center; }
+.fill-gap.ok { border-color: var(--green); color: var(--green-dark); }
+.games-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.game-ch { margin: 0; }
+.game-ch-head { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); margin-bottom: 10px; }
+.game-ch-head > span { display: flex; flex-direction: column; }
+.game-ch-head strong { color: var(--green-ink); }
+.game-ch .chips { gap: 6px; }
+.game-ch .chip { min-height: 38px; padding: 4px 10px; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+
+/* videos page */
+.vid-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.vid-card { display: flex; flex-direction: column; gap: 6px; margin: 0; }
+.vid-card video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #eef3ef; border-radius: 8px; }
+.vid-card strong a { color: var(--green-ink); }
 .thumb-emoji { font-size: 1.9rem; line-height: 1; color: var(--muted); }
 .thumb-emoji .ic { width: 26px; height: 26px; }
 .thumb-lg { width: 88px; height: 88px; }
