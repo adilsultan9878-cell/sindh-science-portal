@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="sd" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>استاد جو ڪلاس | Teacher class | Sindh Science Learning Portal</title>
+<meta name="description" content="اساتذہ اپنی کلاس بنائیں اور بچوں کے کوئز، ورک شیٹ اور تجربے کے نتائج ایک جگہ دیکھیں۔ Teachers: make a class and see your students' results in one place.">
+<meta name="theme-color" content="#2e7d32">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .tc-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .tc-classes { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tc-classes .chip[aria-current="true"] { background: var(--soft); border-color: var(--green); font-weight: 700; }
+  .tc-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start; }
+  .tc-grid .card { margin: 0; }
+  .tc-form { display: flex; flex-direction: column; gap: 10px; }
+  .tc-form .field { max-width: none; }
+  .tc-form input, .tc-form select { width: 100%; }
+  .bigcode { font-family: "Segoe UI", Arial, sans-serif; direction: ltr; font-size: 2.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--green-ink); }
+  .keycode { font-family: "Segoe UI", Arial, sans-serif; direction: ltr; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; }
+  .tc-tiles { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin: 12px 0; }
+  .tc-tiles .card { margin: 0; text-align: center; }
+  .tc-tiles b { display: block; font-size: 1.7rem; color: var(--green-ink); line-height: 1.3; }
+  .tc-table th, .tc-table td { white-space: nowrap; text-align: center; }
+  .tc-table th:first-child, .tc-table td:first-child { text-align: start; position: sticky; inset-inline-start: 0; background: #fff; }
+  .tc-table thead th:first-child { background: var(--page); }
+  .tc-table td.good { background: #e3f3e6; color: #1b5e20; font-weight: 700; }
+  .tc-table td.ok { background: #fff6dd; color: #6d4c00; font-weight: 700; }
+  .tc-table td.low { background: #fde8e8; color: #9b1c1c; font-weight: 700; }
+  .tc-table td.none { color: #a5b0a8; }
+  .tc-legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: var(--muted); }
+  .tc-legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-inline-end: 6px; vertical-align: -1px; }
+  .tc-legend .g::before { background: #cfe9d4; } .tc-legend .o::before { background: #fbe7b0; } .tc-legend .l::before { background: #f6c9c9; }
+  .tc-recent li { margin: 4px 0; }
+  .ltr { direction: ltr; unicode-bidi: isolate; }
+  .print-card { display: none; }
+  @media print {
+    body.print-code header, body.print-code main > *:not(.print-card), body.print-code footer { display: none !important; }
+    body.print-code .print-card { display: block; text-align: center; border: 4px double #2e7d32; padding: 40px 20px; margin-top: 40px; }
+    body.print-code .print-card .bigcode { font-size: 4rem; }
+    body:not(.print-code) .no-print { display: none !important; }
+  }
+</style>
+<script src="/js/config.js" defer></script>
+<script src="/js/ui-text.js" defer></script>
+<script src="/js/class-teacher.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="/"><img src="/favicon.svg" alt="" width="36" height="36"><span id="site-name">سنڌ سائنس سکيا پورٽل</span></a>
+    <div class="langs" role="group" aria-label="Language / ٻولي / زبان">
+      <button type="button" class="lang-btn" data-lang="sd" lang="sd">سنڌي</button>
+      <button type="button" class="lang-btn" data-lang="ur" lang="ur">اردو</button>
+      <button type="button" class="lang-btn" data-lang="en" lang="en">English</button>
+    </div>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <p class="loading">…</p>
+  <noscript><p>Please turn on JavaScript.</p></noscript>
+</main>
+<footer><div class="wrap"><p><a href="/">sindh-science-portal.vercel.app</a> · The Professional Educator · EduPulse Nexus</p></div></footer>
+</body>
+</html>

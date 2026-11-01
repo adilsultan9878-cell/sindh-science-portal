@@ -1,6 +1,9 @@
 /* Interface text in Sindhi (sd), Urdu (ur) and English (en).
    Lesson content lives in /data; this file only holds buttons, labels and messages. */
 window.UI_TEXT = {
+  classTitle: { sd: 'استاد جو ڪلاس', ur: 'استاد کی کلاس', en: 'Your class' },
+  classText: { sd: 'پنهنجو ڪلاس ٺاهيو ۽ ٻارن کي ڪلاس ڪوڊ ڏيو. پوءِ هر ٻار جا ڪوئز، ورڪ شيٽ ۽ تجربي جا نتيجا هڪ ئي هنڌ ڏسو.', ur: 'اپنی کلاس بنائیں اور بچوں کو کلاس کوڈ دیں۔ پھر ہر بچے کے کوئز، ورک شیٹ اور تجربے کے نتائج ایک ہی جگہ دیکھیں۔', en: 'Make your class and give your students the class code. Then see every student\'s quiz, worksheet and experiment results in one place.' },
+  classOpen: { sd: 'ڪلاس ٺاهيو يا کوليو', ur: 'کلاس بنائیں یا کھولیں', en: 'Make or open a class' },
   siteName: { sd: 'سنڌ سائنس سکيا پورٽل', ur: 'سندھ سائنس لرننگ پورٹل', en: 'Sindh Science Learning Portal' },
   menu: { sd: 'مينيو', ur: 'مینیو', en: 'Menu' },
   home: { sd: 'گهر', ur: 'ہوم', en: 'Home' },

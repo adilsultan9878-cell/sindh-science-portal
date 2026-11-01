@@ -1,7 +1,7 @@
 /* Offline support. On the first visit the phone keeps a copy of the app, the fonts and every
    chapter file, so lessons, quizzes and games open later without internet.
    When you change CSS or JS, raise VERSION here and the ?v= number in index.html to the same value. */
-var VERSION = '20261031a';
+var VERSION = '20261101a';
 var CACHE = 'ssp-' + VERSION;
 var SHELL = [
   '/',
@@ -9,6 +9,7 @@ var SHELL = [
   '/js/config.js?v=' + VERSION,
   '/js/ui-text.js?v=' + VERSION,
   '/js/diagrams.js?v=' + VERSION,
+  '/js/classroom.js?v=' + VERSION,
   '/js/app.js?v=' + VERSION,
   '/fonts/noto-naskh-arabic-arabic-400-normal.woff2',
   '/fonts/noto-naskh-arabic-arabic-700-normal.woff2',
@@ -91,7 +92,7 @@ self.addEventListener('fetch', function (event) {
   var request = event.request, url = new URL(request.url);
   if (request.method !== 'GET' || url.origin !== self.location.origin) return; // the database is always asked directly
   if (url.pathname.indexOf('/admin') === 0) return;                            // the staff panel always needs internet
-  if (/^\/(videos|lesson-videos)(\/|$)/.test(url.pathname)) return;               // videos are large and stream in parts
+  if (/^\/(videos|lesson-videos|class)(\/|$)/.test(url.pathname)) return;               // videos are large and stream in parts
   if (/^\/paper(\/|$)/.test(url.pathname)) return;                                // the teachers' question paper page is its own page
   if (request.headers.get('range')) return;                                        // audio played in parts cannot be cached
   event.respondWith(request.mode === 'navigate' ? page(request) : file(event));

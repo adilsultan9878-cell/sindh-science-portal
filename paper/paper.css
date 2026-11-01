@@ -1,0 +1,123 @@
+/* Exam paper maker (/paper/): the form, shown on screen only, and the A4 paper with its answer key.
+   Builds on the tokens and blocks of /css/style.css. */
+
+/* ---------- form ---------- */
+.pm-intro h1 { margin-top: 0.2em; }
+.pm-intro .lead { max-width: 760px; }
+fieldset.pm-step { min-width: 0; margin: 14px 0; padding: 16px 18px; }
+.pm-step > legend { float: inline-start; width: 100%; display: flex; align-items: center; gap: 10px; padding: 0; margin: 0 0 10px; font-size: 1.15rem; font-weight: 700; color: var(--green-ink); }
+.pm-step > legend + * { clear: both; }
+.pm-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: none; border-radius: 50%; background: var(--soft); color: var(--green); font-family: var(--f-en); font-size: 0.95rem; }
+
+.pm-sel { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-bottom: 8px; }
+.pm-sel .btn { margin: 0; }
+.pm-chapters { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+.pm-chapters label { min-height: 48px; }
+.pm-chn { font-weight: 700; color: var(--green-ink); }
+
+.pm-qs { display: grid; }
+.pm-q { display: grid; grid-template-columns: minmax(0, 1fr) 8.5em 8.5em 5em; gap: 6px 14px; align-items: end; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.pm-q-name { display: flex; flex-direction: column; align-self: center; margin: 0; line-height: 1.45; }
+.pm-avail { color: var(--muted); }
+.pm-avail.over { color: var(--amber); font-weight: 600; }
+.pm-in { display: flex; flex-direction: column; gap: 2px; }
+.pm-in > span, .pm-sum > span { color: var(--muted); }
+.pm-in input { width: 100%; }
+.pm-sum { display: flex; flex-direction: column; margin: 0; text-align: end; }
+.pm-sum b { font-size: 1.1rem; line-height: 44px; }
+.pm-total { margin: 12px 0 0; text-align: end; font-size: 1.15rem; }
+.pm-total b { color: var(--green-ink); font-size: 1.3rem; }
+
+.pm-fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px 16px; }
+.pm-fields .field { max-width: none; }
+.pm-fields .field.wide { grid-column: 1 / -1; }
+.pm-fields input { width: 100%; }
+#maker input[type="date"] { font: inherit; min-height: 44px; padding: 8px 12px; max-width: 100%; border: 1px solid var(--line-2); border-radius: 8px; background: #fff; color: var(--text); }
+.pm-code-in { max-width: 12em; font-family: var(--f-en); letter-spacing: 0.12em; text-transform: uppercase; }
+.pm-msg { min-height: 1.5em; margin: 6px 0 0; font-weight: 600; color: var(--green-dark); }
+.pm-msg.err { color: var(--wrong-line); }
+
+.pm-tools { margin: 22px 0 12px; padding: 12px 16px; background: var(--soft); border: 1px solid var(--line); border-radius: var(--radius); }
+.pm-tools .btn-row { margin: 8px 0; }
+.pm-code { margin: 0; font-weight: 600; }
+.pm-code b { font-family: var(--f-en); font-size: 1.2rem; letter-spacing: 0.1em; color: var(--green-ink); }
+
+/* ---------- paper and answer key (A4) ---------- */
+.sheet { max-width: 210mm; margin: 0 auto 20px; padding: 14mm 15mm; background: #fff; color: #111; border: 1px solid var(--line-2); box-shadow: var(--shadow); font-size: 15px; line-height: 1.6; overflow-wrap: break-word; }
+html[dir="rtl"] .sheet { font-size: 16px; line-height: 1.95; }
+.sheet h2, .sheet h3 { color: #111; }
+.sheet ol { margin: 0; }
+
+.p-head { text-align: center; border-bottom: 2px solid #111; padding-bottom: 8px; margin-bottom: 8px; }
+.p-code { margin: 0; text-align: end; font-size: 0.8em; color: #444; }
+.p-school { margin: 0; font-size: 1.4em; font-weight: 700; }
+.p-exam { margin: 0; font-size: 1.08em; font-weight: 600; }
+.p-title { margin: 0.1em 0 0.2em; font-size: 1.22em; }
+.p-sub { margin: 0; }
+.p-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; font-weight: 600; }
+.p-fill { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 10px; text-align: start; }
+.p-fl { display: flex; align-items: flex-end; gap: 6px; flex: 1 1 9em; white-space: nowrap; }
+.p-fl.wide { flex: 2 1 15em; }
+.p-line { flex: 1; min-width: 4em; min-height: 1.5em; border-bottom: 1px solid #111; text-align: center; }
+.p-line.p-inline { display: inline-block; width: 7em; vertical-align: bottom; }
+.p-syl { margin: 8px 0 0; text-align: start; font-size: 0.92em; }
+.p-general { margin: 4px 0; font-weight: 600; }
+
+.p-sec { margin-top: 14px; }
+.p-sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid #888; }
+.p-sec-head h3 { margin: 0.15em 0 0.1em; font-size: 1.08em; }
+.p-marks { white-space: nowrap; font-weight: 600; }
+.p-ins { margin: 4px 0 6px; color: #333; font-size: 0.95em; }
+.p-list { padding-inline-start: 1.9em; }
+.p-list > li { margin: 0 0 8px; padding-inline-start: 0.2em; }
+.p-q p { margin: 0; }
+.p-opts { display: grid; gap: 0 14px; margin: 2px 0 0; padding: 0; list-style: none; }
+.p-opts.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.p-opts.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.p-opts.cols-1 { grid-template-columns: minmax(0, 1fr); }
+.p-let { font-weight: 600; }
+.p-row { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+.p-br { white-space: nowrap; }
+.p-br > span { display: inline-block; min-width: 2.2em; text-align: center; font-weight: 700; }
+.p-blank { display: inline-block; width: 8em; max-width: 45%; height: 1.1em; margin: 0 4px; border-bottom: 1px solid #111; }
+.p-lines > span { display: block; height: 2em; border-bottom: 1px solid #888; }
+.p-match { width: 100%; margin-top: 4px; border-collapse: collapse; }
+.p-match th, .p-match td { width: 50%; padding: 4px 10px; border: 1px solid #555; text-align: start; vertical-align: top; }
+.p-match th { background: var(--soft); }
+.p-n { font-weight: 600; }
+.p-end { margin: 18px 0 0; text-align: center; font-weight: 600; }
+
+.k-list { padding-inline-start: 1.9em; }
+.k-list > li { margin: 0 0 4px; }
+.k-cols { columns: 2; column-gap: 28px; }
+.k-cols > li { break-inside: avoid; }
+.k-list p { margin: 0; }
+.k-q { color: #444; }
+
+/* phones */
+@media (max-width: 640px) {
+  fieldset.pm-step { padding: 14px; }
+  .pm-q { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 4.2em; gap: 4px 10px; }
+  .pm-q-name { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0 10px; }
+  .pm-chapters { grid-template-columns: minmax(0, 1fr); }
+  .sheet { padding: 16px 14px; font-size: 14px; }
+  html[dir="rtl"] .sheet { font-size: 15px; }
+  .p-opts.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .k-cols { columns: 1; }
+  .p-match th, .p-match td { padding: 4px 6px; }
+}
+
+/* printing: the paper and the key only; each starts on its own page */
+@media print {
+  @page { size: A4; margin: 12mm 13mm; }
+  html, body { background: #fff; }
+  main.wrap { max-width: none; margin: 0; padding: 0; min-height: 0; }
+  .sheet { max-width: none; margin: 0; padding: 0; border: 0; box-shadow: none; color: #000; font-size: 12pt; }
+  html[dir="rtl"] .sheet { font-size: 13pt; }
+  .sheet.key { break-before: page; }
+  body[data-print="paper"] .sheet.key, body[data-print="key"] .sheet.paper { display: none; }
+  body[data-print="key"] .sheet.key { break-before: auto; }
+  .p-list > li, .p-match tr, .k-list > li { break-inside: avoid; }
+  .p-sec-head, .p-ins { break-after: avoid; }
+  .p-match th { background: none; }
+}

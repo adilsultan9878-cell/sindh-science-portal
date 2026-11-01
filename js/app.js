@@ -334,6 +334,7 @@
     var row = { kind: kind, lang: state.lang };
     Object.keys(extra || {}).forEach(function (k) { row[k] = extra[k]; });
     send('events', row);
+    if (window.Classroom) window.Classroom.track(row);   // results also go to the student's class, if they joined one
   }
   function trackVisit() {
     try { if (sessionStorage.getItem('ssp.visit')) return; sessionStorage.setItem('ssp.visit', '1'); } catch (e) { return; }
@@ -530,7 +531,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|paper)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|class|paper)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -1356,6 +1357,7 @@
       store.set(dkey, d);
       var r = mark(d), p = getProgress(), first = !p.ws[key];
       p.ws[key] = { score: r.score, total: r.total, at: todayStr() };
+      if (window.Classroom) window.Classroom.report('worksheet', key, r.score, r.total);
       if (first) p.points += 5;
       var fresh = evaluateBadges(p);
       saveProgress(p);
@@ -1641,6 +1643,7 @@
         d.stage = RESULT;
         var p = getProgress(), first = !p.exp[key];
         p.exp[key] = { at: todayStr() };
+        if (first && window.Classroom) window.Classroom.report('experiment', key, null, null);
         if (first) p.points += 5;
         evaluateBadges(p);
         saveProgress(p);
@@ -1875,6 +1878,7 @@
       main.innerHTML = crumbs([['/', t('home')], ['', t('progress')]]) +
         '<h1>' + icon('star') + ' ' + esc(t('progress')) + '</h1>' +
         '<form class="card nick-form">' + nickField(p.nick) + '<button class="btn" type="submit">' + esc(t('save')) + '</button> <span class="form-msg" aria-live="polite"></span></form>' +
+        '<div id="class-slot"></div>' +
         '<div class="stats">' +
           '<div class="card stat"><span class="stat-num">' + p.points + '</span><span>' + esc(t('points')) + '</span></div>' +
           '<div class="card stat"><span class="stat-num">' + streak + '</span><span>' + icon('flame') + ' ' + esc(t('dayStreak')) + '</span></div>' +
@@ -1901,6 +1905,7 @@
       main.querySelector('[data-act="reset"]').addEventListener('click', function () {
         if (window.confirm(t('resetConfirm'))) { store.set('progress', {}); render(false); }
       });
+      if (window.Classroom) window.Classroom.mount(document.getElementById('class-slot'));
     });
   }
 
@@ -1917,6 +1922,9 @@
             '<td><a href="' + chUrl(ch, 'quiz') + '">' + esc(t('tab_quiz')) + '</a></td>' +
             '<td><a href="' + chUrl(ch, 'worksheet') + '">' + icon('worksheet') + ' ' + esc(t('tab_worksheet')) + '</a></td></tr>';
         }).join('') + '</tbody></table></div>' +
+        '<div class="card install"><span class="icon-tile">' + icon('worksheet') + '</span><div><strong>' + esc(t('questionPaper')) + '</strong>' +
+          '<p class="muted">' + esc(t('questionPaperText')) + '</p><a class="btn" href="/paper/">' + icon('printer') + esc(t('questionPaper')) + '</a></div></div>' +
+        '<div class="card note ok"><h2>' + icon('users') + ' ' + esc(t('classTitle')) + '</h2><p>' + esc(t('classText')) + '</p><p><a class="btn" href="/class/">' + esc(t('classOpen')) + '</a></p></div>' +
         '<div class="card note"><p>' + icon('lock') + ' ' + esc(t('staffIntro')) + '</p><p><a class="btn" href="/admin">' + esc(t('staffLogin')) + '</a></p></div>';
     });
   }
