@@ -156,27 +156,43 @@
   // All come from Wikimedia Commons under free licences; the credit line is required, so keep it.
   var BY_SA_25 = 'https://creativecommons.org/licenses/by-sa/2.5/',
       BY_SA_30 = 'https://creativecommons.org/licenses/by-sa/3.0/',
+      BY_SA_40 = 'https://creativecommons.org/licenses/by-sa/4.0/',
       BY_25 = 'https://creativecommons.org/licenses/by/2.5/',
       CC0 = 'https://creativecommons.org/publicdomain/zero/1.0/';
-  function pic(name, w, h, author, license, licenseUrl, file) {
-    return { src: '/img/' + name + '.webp', w: w, h: h, author: author, license: license, licenseUrl: licenseUrl,
+  // "topic" is the lesson section (s1, s2…) the picture belongs to; the diagram page groups pictures by topic.
+  function pic(name, topic, w, h, author, license, licenseUrl, file) {
+    return { src: '/img/' + name + '.webp', topic: topic, w: w, h: h, author: author, license: license, licenseUrl: licenseUrl,
       link: 'https://commons.wikimedia.org/wiki/File:' + file };
   }
   window.PICTURES = {
-    'living-things': pic('living-things', 655, 900, 'Stemonitis', 'CC BY-SA 2.5', BY_SA_25, 'Animalia_diversity.jpg'),
-    'plants': pic('plants', 651, 900, 'Kelvinsong', 'CC BY-SA 3.0', BY_SA_30, 'Plant.svg'),
-    'digestion': pic('digestion', 637, 900, 'Mariana Ruiz, Jmarchn', 'Public domain', '', 'Digestive_system_diagram_en.svg'),
-    'water-cycle': pic('water-cycle', 760, 360, 'Joooo, moyogo, Alexchr', 'CC BY-SA 3.0', BY_SA_30, 'Water_Cycle-en.png'),
-    'matter': pic('matter', 500, 556, 'Luis Javier Rodriguez Lopez', 'CC BY 2.5', BY_25, 'Solid_liquid_gas.svg'),
-    'force-machines': pic('force-machines', 760, 702, 'Pearson Scott Foresman', 'Public domain', '', 'Lever_(PSF).png'),
-    'light-sound': pic('light-sound', 760, 506, 'Kelvinsong', 'CC0', CC0, 'Prism_flat_rainbow.jpg'),
-    'electricity-magnets': pic('electricity-magnets', 620, 421, 'Newton Henry Black', 'Public domain', '', 'Magnet0873.png'),
-    'earth-space': pic('earth-space', 760, 428, 'Lsmpascal', 'CC BY-SA 3.0', BY_SA_30, 'Size_planets_comparison.jpg')
+    'living-things': pic('living-things', 's3', 655, 900, 'Stemonitis', 'CC BY-SA 2.5', BY_SA_25, 'Animalia_diversity.jpg'),
+    'plants': pic('plants', 's1', 651, 900, 'Kelvinsong', 'CC BY-SA 3.0', BY_SA_30, 'Plant.svg'),
+    'digestion': pic('digestion', 's2', 637, 900, 'Mariana Ruiz, Jmarchn', 'Public domain', '', 'Digestive_system_diagram_en.svg'),
+    'water-cycle': pic('water-cycle', 's2', 760, 360, 'Joooo, moyogo, Alexchr', 'CC BY-SA 3.0', BY_SA_30, 'Water_Cycle-en.png'),
+    'matter': pic('matter', 's2', 500, 556, 'Luis Javier Rodriguez Lopez', 'CC BY 2.5', BY_25, 'Solid_liquid_gas.svg'),
+    'force-machines': pic('force-machines', 's3', 760, 702, 'Pearson Scott Foresman', 'Public domain', '', 'Lever_(PSF).png'),
+    'light-sound': pic('light-sound', 's1', 760, 506, 'Kelvinsong', 'CC0', CC0, 'Prism_flat_rainbow.jpg'),
+    'electricity-magnets': pic('electricity-magnets', 's3', 620, 421, 'Newton Henry Black', 'Public domain', '', 'Magnet0873.png'),
+    'earth-space': pic('earth-space', 's1', 760, 428, 'Lsmpascal', 'CC BY-SA 3.0', BY_SA_30, 'Size_planets_comparison.jpg'),
+    'microorganisms': pic('microorganisms', 's2', 760, 639, 'NIAID', 'Public domain', '', 'EscherichiaColi_NIAID.jpg'),
+    'seeds': pic('seeds', 's3', 760, 630, 'HudsonFlagg', 'CC0', CC0, 'Sequential_Steps_of_Bean_Seedling_Germination.svg'),
+    'pollution': pic('pollution', 's2', 760, 448, 'Adina Voicu', 'CC0', CC0, 'Smoke_Pollution.jpg'),
+    'soils': pic('soils', 's3', 760, 445, 'Kaerii', 'CC BY-SA 4.0', BY_SA_40, 'Soil_texture.png')
+  };
+
+  // The lesson section each chapter's clickable diagram explains.
+  window.DIAGRAM_TOPICS = {
+    'living-things': 's3', 'plants': 's1', 'digestion': 's2', 'water-cycle': 's2', 'matter': 's2',
+    'force-machines': 's3', 'light-sound': 's2', 'electricity-magnets': 's2', 'earth-space': 's1',
+    'microorganisms': 's2', 'seeds': 's1', 'pollution': 's1', 'soils': 's3'
   };
 
   // Short narrated videos (Urdu) for key topics, shown at the top of the lesson.
+  function lv(name) { return { src: '/lesson-videos/' + name + '-ur.mp4', poster: '/lesson-videos/' + name + '-ur.webp' }; }
   window.LESSON_VIDEOS = {
-    'plants': { src: '/lesson-videos/photosynthesis-ur.mp4', poster: '/lesson-videos/photosynthesis-ur.webp' },
-    'water-cycle': { src: '/lesson-videos/water-cycle-ur.mp4', poster: '/lesson-videos/water-cycle-ur.webp' }
+    'living-things': lv('living-things'), 'microorganisms': lv('microorganisms'), 'seeds': lv('seeds'), 'pollution': lv('pollution'),
+    'matter': lv('matter'), 'force-machines': lv('force-machines'), 'light-sound': lv('light-sound'),
+    'electricity-magnets': lv('electricity-magnets'), 'soils': lv('soils'), 'earth-space': lv('earth-space'),
+    'plants': lv('photosynthesis'), 'digestion': lv('digestion'), 'water-cycle': lv('water-cycle')
   };
 })();

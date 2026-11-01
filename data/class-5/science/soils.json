@@ -1,0 +1,384 @@
+{
+  "id": "soils",
+  "number": 9,
+  "icon": "🪱",
+  "title": { "sd": "مٽي", "ur": "مٹی", "en": "Soils" },
+  "summary": {
+    "sd": "سکو ته مٽي ڪنهن مان ٺهي ٿي، ان جون خاصيتون ۽ قسم ڪهڙا آهن، ۽ مٽيءَ ۾ ڪهڙا جاندار رهن ٿا.",
+    "ur": "سیکھیں کہ مٹی کس چیز سے بنتی ہے، اس کی خصوصیات اور اقسام کون سی ہیں، اور مٹی میں کون سے جاندار رہتے ہیں۔",
+    "en": "Learn what soil is made of, its properties and types, and which living things live in it."
+  },
+  "badge": { "id": "soil_scientist", "icon": "🪱", "name": { "sd": "مٽيءَ جو سائنسدان", "ur": "مٹی کا سائنس دان", "en": "Soil Scientist" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "مٽي ڪنهن مان ٺهي ٿي؟", "ur": "مٹی کس چیز سے بنتی ہے؟", "en": "What is soil made of?" },
+      "body": {
+        "sd": [
+          "زمين جي مٿاڇري جي سڀ کان مٿئين نرم تهه کي **مٽي** چئبو آهي. ٻوٽا مٽيءَ ۾ وڌن ٿا.",
+          "مٽي **پٿرن** مان ٺهي ٿي. گرمي، ٿڌ، مينهن ۽ هوا هزارين سالن تائين پٿرن کي ٽوڙي ننڍڙن ذرڙن ۾ بدلائي ڇڏين ٿا.",
+          "مٽيءَ ۾ هي شيون هونديون آهن:",
+          "- **معدني ذرڙا**: ريتي، گاد (سِلٽ) ۽ چيڪي مٽيءَ جا ذرڙا.",
+          "- **سڙيل نامياتي مادو (هيومس)**: سڙيل پن، ٻوٽا ۽ مئل جانور. هيومس مٽيءَ کي زرخيز بڻائي ٿو.",
+          "- **هوا** ۽ **پاڻي**، ۽ ڪيترائي **جاندار**."
+        ],
+        "ur": [
+          "زمین کی سطح کی سب سے اوپری نرم تہہ کو **مٹی** کہتے ہیں۔ پودے مٹی میں اگتے ہیں۔",
+          "مٹی **چٹانوں** سے بنتی ہے۔ گرمی، سردی، بارش اور ہوا ہزاروں سال تک چٹانوں کو توڑ کر ننھے ذرات میں بدل دیتے ہیں۔",
+          "مٹی میں یہ چیزیں ہوتی ہیں:",
+          "- **معدنی ذرات**: ریت، گاد (سلٹ) اور چکنی مٹی کے ذرات۔",
+          "- **گلا سڑا نامیاتی مادہ (ہیومس)**: گلے سڑے پتے، پودے اور مردہ جانور۔ ہیومس مٹی کو زرخیز بناتا ہے۔",
+          "- **ہوا** اور **پانی**، اور بہت سے **جاندار**۔"
+        ],
+        "en": [
+          "The soft top layer on the surface of the Earth is called **soil**. Plants grow in soil.",
+          "Soil is made from **rocks**. Heat, cold, rain and wind break rocks into tiny pieces over thousands of years.",
+          "Soil contains:",
+          "- **Mineral particles**: grains of sand, silt and clay.",
+          "- **Humus**: rotted leaves, plants and dead animals. Humus makes soil rich.",
+          "- **Air** and **water**, and many **living things**."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "مٽيءَ جون خاصيتون", "ur": "مٹی کی خصوصیات", "en": "Properties of soil" },
+      "body": {
+        "sd": [
+          "- **رنگ**: مٽي ڳاڙهي، ناسي، ڪاري يا ڀوري ٿي سگهي ٿي. ڪاري ۽ ڳاڙهي ناسي مٽيءَ ۾ گهڻو ڪري گهڻو هيومس هوندو آهي.",
+          "- **بناوت (ٽيڪسچر)**: آلي مٽيءَ کي آڱرين ۾ مهٽي ڏسو. ريتي **ڪُرڪُري**، گاد **نرم ۽ سلڪي**، ۽ چيڪي مٽي **چيڪي** لڳي ٿي.",
+          "- **سختي**: تمام سخت دٻيل مٽيءَ ۾ هوا ۽ پاڻي گهٽ وڃن ٿا ۽ پاڙون مشڪل سان وڌن ٿيون.",
+          "- **پاڻي جذب ڪرڻ ۽ نيڪال**: ڪا مٽي پاڻي جلد ڪڍي ڇڏي ٿي ۽ ڪا گهڻي دير تائين جهلي رکي ٿي. سٺي مٽي پوري پاڻي کي جهليندي آهي ۽ وڌيڪ پاڻي کي نڪرڻ ڏيندي آهي."
+        ],
+        "ur": [
+          "- **رنگ**: مٹی سرخ، بھوری، کالی یا سرمئی ہو سکتی ہے۔ کالی اور گہری بھوری مٹی میں عام طور پر زیادہ ہیومس ہوتا ہے۔",
+          "- **ساخت (ٹیکسچر)**: گیلی مٹی کو انگلیوں میں مسل کر دیکھیں۔ ریت **کھردری**، گاد **نرم اور ریشمی**، اور چکنی مٹی **چپچپی** لگتی ہے۔",
+          "- **سختی**: بہت دبی ہوئی سخت مٹی میں ہوا اور پانی کم جاتے ہیں اور جڑیں مشکل سے بڑھتی ہیں۔",
+          "- **پانی جذب کرنا اور نکاس**: کوئی مٹی پانی جلدی نکال دیتی ہے اور کوئی بہت دیر تک روکے رکھتی ہے۔ اچھی مٹی ضرورت کے مطابق پانی روکتی ہے اور فالتو پانی نکل جانے دیتی ہے۔"
+        ],
+        "en": [
+          "- **Colour**: soil can be red, brown, black or grey. Black and dark brown soils usually contain a lot of humus.",
+          "- **Texture**: rub some wet soil between your fingers. Sand feels **gritty**, silt feels **smooth and silky**, and clay feels **sticky**.",
+          "- **Compaction**: in tightly packed, hard soil, little air and water can get in and roots grow with difficulty.",
+          "- **Holding water and drainage**: some soils let water run through quickly, while others hold it for a long time. Good soil holds enough water and lets the extra water drain away."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "مٽيءَ جا قسم", "ur": "مٹی کی اقسام", "en": "Types of soil" },
+      "body": {
+        "sd": [
+          "- **واريءَ واري مٽي**: وڏا ۽ ڪرڪرا ذرڙا. پاڻي تمام جلد ان مان نڪري وڃي ٿو، تنهنڪري ان ۾ پاڻي ۽ غذائي جزا گهٽ رهن ٿا. ٿر جهڙن ريگستانن ۾ ملي ٿي.",
+          "- **گادَ واري (سِلٽي) مٽي**: سنها ۽ نرم ذرڙا. پاڻي سٺو جهلي ٿي ۽ زرخيز آهي. سنڌو درياءَ جي ڪنارن تي ملي ٿي.",
+          "- **چيڪي مٽي**: تمام ننڍڙا ذرڙا. آلي هجي ته چيڪي ۽ سڪي ته سخت ٿي وڃي ٿي. گهڻو پاڻي جهلي ٿي، تنهنڪري ان ۾ پاڻي بيهي رهي ٿو.",
+          "- **لوم (ملي جلي مٽي)**: ريتي، گاد، چيڪي مٽي ۽ هيومس جو ميلاپ. هوا ۽ پاڻي ٻئي مناسب جهلي ٿي، تنهنڪري ٻوٽن لاءِ **سڀ کان بهتر** آهي.",
+          "ذرڙن جي ماپ: ريتي سڀ کان وڏي، پوءِ گاد، ۽ چيڪي مٽيءَ جا ذرڙا سڀ کان ننڍا."
+        ],
+        "ur": [
+          "- **ریتلی مٹی**: بڑے اور کھردرے ذرات۔ پانی بہت جلدی اس سے نکل جاتا ہے، اس لیے اس میں پانی اور غذائی اجزا کم رہتے ہیں۔ تھر جیسے صحراؤں میں پائی جاتی ہے۔",
+          "- **گادی (سلٹی) مٹی**: باریک اور نرم ذرات۔ پانی اچھی طرح روکتی ہے اور زرخیز ہے۔ دریائے سندھ کے کناروں پر پائی جاتی ہے۔",
+          "- **چکنی مٹی**: بہت ننھے ذرات۔ گیلی ہو تو چپچپی اور سوکھ جائے تو سخت ہو جاتی ہے۔ بہت پانی روکتی ہے، اس لیے اس میں پانی کھڑا رہتا ہے۔",
+          "- **میرا مٹی (لوم)**: ریت، گاد، چکنی مٹی اور ہیومس کا ملاپ۔ ہوا اور پانی دونوں مناسب روکتی ہے، اس لیے پودوں کے لیے **سب سے بہتر** ہے۔",
+          "ذرات کا سائز: ریت سب سے بڑی، پھر گاد، اور چکنی مٹی کے ذرات سب سے چھوٹے۔"
+        ],
+        "en": [
+          "- **Sandy soil**: large, gritty grains. Water drains through it very fast, so it holds little water and few nutrients. It is found in deserts like the Thar.",
+          "- **Silty soil**: fine, smooth grains. It holds water well and is fertile. It is found along the banks of the River Indus.",
+          "- **Clay soil**: very tiny grains. It is sticky when wet and hard when dry. It holds a lot of water, so water stands on it.",
+          "- **Loam**: a mixture of sand, silt, clay and humus. It holds the right amount of air and water, so it is the **best soil for plants**.",
+          "Grain size: sand is the largest, then silt, and clay grains are the smallest."
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "title": { "sd": "مٽيءَ ۾ زندگي ۽ مٽيءَ جو کاتو", "ur": "مٹی میں زندگی اور مٹی کا کٹاؤ", "en": "Life in the soil and soil erosion" },
+      "body": {
+        "sd": [
+          "مٽي ڪيترن ئي جاندارن جو گهر آهي. هڪ چمچي مٽيءَ ۾ لکين جراثيم هوندا آهن.",
+          "- **بيڪٽيريا ۽ فنگس** مئل ٻوٽن ۽ جانورن کي سڙائي **غذائي جزا** مٽيءَ ۾ واپس ملائين ٿا. انهن کي **سڙائيندڙ (ڊي ڪمپوزر)** چئبو آهي.",
+          "- **ڳنڍيا (ارٿ ورم)** مٽيءَ ۾ سرنگهون ٺاهين ٿا، جن مان هوا ۽ پاڻي اندر وڃن ٿا. اهي مٽيءَ کي ملائي زرخيز بڻائين ٿا.",
+          "- ڪيڙيون، جيتَ ۽ ڪوئا به مٽيءَ ۾ رهن ٿا.",
+          "وهندڙ پاڻي ۽ تيز هوا مٿئين زرخيز مٽيءَ کي لاهي کڻي وڃن ٿا. ان کي **مٽيءَ جو کاتو (ايروزن)** چئبو آهي. وڻ ۽ گاهه پوکڻ سان پاڙون مٽيءَ کي جهلي رکن ٿيون ۽ کاتو گهٽ ٿئي ٿو."
+        ],
+        "ur": [
+          "مٹی بہت سے جانداروں کا گھر ہے۔ ایک چمچ مٹی میں لاکھوں جراثیم ہوتے ہیں۔",
+          "- **بیکٹیریا اور فنجائی** مردہ پودوں اور جانوروں کو گلا سڑا کر **غذائی اجزا** مٹی میں واپس ملاتے ہیں۔ انہیں **تحلیل کار (ڈی کمپوزر)** کہتے ہیں۔",
+          "- **کیچوے (ارتھ ورم)** مٹی میں سرنگیں بناتے ہیں جن سے ہوا اور پانی اندر جاتے ہیں۔ یہ مٹی کو ملا کر زرخیز بناتے ہیں۔",
+          "- چیونٹیاں، کیڑے اور چوہے بھی مٹی میں رہتے ہیں۔",
+          "بہتا پانی اور تیز ہوا اوپری زرخیز مٹی کو بہا کر لے جاتے ہیں۔ اسے **مٹی کا کٹاؤ (ایروژن)** کہتے ہیں۔ درخت اور گھاس لگانے سے جڑیں مٹی کو تھامے رکھتی ہیں اور کٹاؤ کم ہوتا ہے۔"
+        ],
+        "en": [
+          "Soil is home to many living things. A single spoonful of soil can hold millions of microbes.",
+          "- **Bacteria and fungi** rot dead plants and animals and return **nutrients** to the soil. They are called **decomposers**.",
+          "- **Earthworms** dig tunnels that let air and water into the soil. They mix the soil and make it rich.",
+          "- Ants, insects and moles also live in the soil.",
+          "Running water and strong wind can carry away the rich top layer of soil. This is called **soil erosion**. Planting trees and grass helps, because roots hold the soil in place."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "tree",
+    "tree": { "id": "soil", "children": [{ "id": "sandy" }, { "id": "silty" }, { "id": "clay" }, { "id": "loam" }] },
+    "parts": [
+      {
+        "id": "soil",
+        "label": { "sd": "مٽي", "ur": "مٹی", "en": "Soil" },
+        "info": { "sd": "پٿرن جي ٽٽڻ مان ٺهيل نرم تهه، جنهن ۾ معدني ذرڙا، هيومس، هوا، پاڻي ۽ جاندار هوندا آهن.", "ur": "چٹانوں کے ٹوٹنے سے بنی نرم تہہ، جس میں معدنی ذرات، ہیومس، ہوا، پانی اور جاندار ہوتے ہیں۔", "en": "The soft layer made from broken rock, with mineral grains, humus, air, water and living things." }
+      },
+      {
+        "id": "sandy",
+        "label": { "sd": "واريءَ واري مٽي", "ur": "ریتلی مٹی", "en": "Sandy soil" },
+        "info": { "sd": "وڏا ڪرڪرا ذرڙا. پاڻي جلد نڪري وڃي ٿو. ريگستان ۾ ملي ٿي.", "ur": "بڑے کھردرے ذرات۔ پانی جلدی نکل جاتا ہے۔ صحرا میں ملتی ہے۔", "en": "Large gritty grains. Water drains away fast. Found in deserts." }
+      },
+      {
+        "id": "silty",
+        "label": { "sd": "گاد واري مٽي", "ur": "گادی مٹی", "en": "Silty soil" },
+        "info": { "sd": "نرم سلڪي ذرڙا. پاڻي سٺو جهلي ٿي ۽ زرخيز آهي. درياءَ ڪناري ملي ٿي.", "ur": "نرم ریشمی ذرات۔ پانی اچھی طرح روکتی ہے اور زرخیز ہے۔ دریا کنارے ملتی ہے۔", "en": "Smooth silky grains. Holds water well and is fertile. Found along rivers." }
+      },
+      {
+        "id": "clay",
+        "label": { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "Clay soil" },
+        "info": { "sd": "سڀ کان ننڍا ذرڙا. آلي هجي ته چيڪي، سڪي ته سخت. گهڻو پاڻي جهلي ٿي.", "ur": "سب سے ننھے ذرات۔ گیلی ہو تو چپچپی، سوکھے تو سخت۔ بہت پانی روکتی ہے۔", "en": "The tiniest grains. Sticky when wet, hard when dry. Holds a lot of water." }
+      },
+      {
+        "id": "loam",
+        "label": { "sd": "لوم", "ur": "میرا مٹی", "en": "Loam" },
+        "info": { "sd": "ريتي، گاد، چيڪي مٽي ۽ هيومس جو ميلاپ. ٻوٽن لاءِ سڀ کان بهتر.", "ur": "ریت، گاد، چکنی مٹی اور ہیومس کا ملاپ۔ پودوں کے لیے سب سے بہتر۔", "en": "A mix of sand, silt, clay and humus. The best soil for plants." }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "مٽي", "ur": "مٹی", "en": "soil" },
+    { "sd": "ريتي", "ur": "ریت", "en": "sand" },
+    { "sd": "گاد", "ur": "گاد", "en": "silt" },
+    { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "clay" },
+    { "sd": "لوم", "ur": "میرا مٹی", "en": "loam" },
+    { "sd": "هيومس", "ur": "ہیومس", "en": "humus" },
+    { "sd": "معدنيات", "ur": "معدنیات", "en": "minerals" },
+    { "sd": "سڙائيندڙ", "ur": "تحلیل کار", "en": "decomposer" },
+    { "sd": "ڳنڍيو", "ur": "کیچوا", "en": "earthworm" },
+    { "sd": "مٽيءَ جو کاتو", "ur": "مٹی کا کٹاؤ", "en": "erosion" }
+  ],
+  "quiz": [
+    {
+      "id": "so1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "مٽي ڪنهن مان ٺهي ٿي؟", "ur": "مٹی کس چیز سے بنتی ہے؟", "en": "What is soil made from?" },
+      "options": [
+        { "sd": "ٽٽل پٿرن مان", "ur": "ٹوٹی ہوئی چٹانوں سے", "en": "Broken-down rocks" },
+        { "sd": "پلاسٽڪ مان", "ur": "پلاسٹک سے", "en": "Plastic" },
+        { "sd": "رڳو پاڻيءَ مان", "ur": "صرف پانی سے", "en": "Only water" },
+        { "sd": "ڪڪرن مان", "ur": "بادلوں سے", "en": "Clouds" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "so2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "سڙيل پنن ۽ مئل جانورن مان ٺهيل مٽيءَ جي حصي کي ڇا چئبو آهي؟", "ur": "گلے سڑے پتوں اور مردہ جانوروں سے بنے مٹی کے حصے کو کیا کہتے ہیں؟", "en": "What is the part of soil made from rotted leaves and dead animals called?" },
+      "options": [
+        { "sd": "ريتي", "ur": "ریت", "en": "Sand" },
+        { "sd": "هيومس", "ur": "ہیومس", "en": "Humus" },
+        { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "Clay" },
+        { "sd": "پٿر", "ur": "چٹان", "en": "Rock" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "so3", "type": "mcq", "topic": "s2",
+      "q": { "sd": "آلي چيڪي مٽيءَ کي آڱرين ۾ مهٽڻ سان اها ڪيئن لڳي ٿي؟", "ur": "گیلی چکنی مٹی کو انگلیوں میں مسلنے سے وہ کیسی لگتی ہے؟", "en": "How does wet clay feel when you rub it between your fingers?" },
+      "options": [
+        { "sd": "ڪرڪري", "ur": "کھردری", "en": "Gritty" },
+        { "sd": "چيڪي", "ur": "چپچپی", "en": "Sticky" },
+        { "sd": "گرم", "ur": "گرم", "en": "Hot" },
+        { "sd": "سڪل", "ur": "سوکھی", "en": "Dry" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "so4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ڪاري مٽيءَ ۾ گهڻو ڪري ڇا گهڻو هوندو آهي؟", "ur": "کالی مٹی میں عام طور پر کیا زیادہ ہوتا ہے؟", "en": "What does dark black soil usually have a lot of?" },
+      "options": [
+        { "sd": "هيومس", "ur": "ہیومس", "en": "Humus" },
+        { "sd": "پلاسٽڪ", "ur": "پلاسٹک", "en": "Plastic" },
+        { "sd": "لوڻ", "ur": "نمک", "en": "Salt" },
+        { "sd": "شيشو", "ur": "شیشہ", "en": "Glass" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "so5", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ٻوٽن لاءِ سڀ کان بهتر مٽي ڪهڙي آهي؟", "ur": "پودوں کے لیے سب سے بہتر مٹی کون سی ہے؟", "en": "Which soil is the best for plants?" },
+      "options": [
+        { "sd": "واريءَ واري مٽي", "ur": "ریتلی مٹی", "en": "Sandy soil" },
+        { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "Clay soil" },
+        { "sd": "لوم", "ur": "میرا مٹی", "en": "Loam" },
+        { "sd": "پٿر", "ur": "چٹان", "en": "Rock" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "so6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪهڙي مٽيءَ مان پاڻي سڀ کان جلد نڪري وڃي ٿو؟", "ur": "کس مٹی سے پانی سب سے جلدی نکل جاتا ہے؟", "en": "Which soil lets water drain away fastest?" },
+      "options": [
+        { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "Clay soil" },
+        { "sd": "واريءَ واري مٽي", "ur": "ریتلی مٹی", "en": "Sandy soil" },
+        { "sd": "لوم", "ur": "میرا مٹی", "en": "Loam" },
+        { "sd": "گاد واري مٽي", "ur": "گادی مٹی", "en": "Silty soil" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "so7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪهڙي مٽيءَ جا ذرڙا سڀ کان ننڍا آهن؟", "ur": "کس مٹی کے ذرات سب سے چھوٹے ہیں؟", "en": "Which soil has the smallest grains?" },
+      "options": [
+        { "sd": "ريتي", "ur": "ریت", "en": "Sand" },
+        { "sd": "گاد", "ur": "گاد", "en": "Silt" },
+        { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "Clay" },
+        { "sd": "سڀني جا برابر", "ur": "سب کے برابر", "en": "All are equal" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "so8", "type": "mcq", "topic": "s4",
+      "q": { "sd": "ڳنڍيا مٽيءَ جي ڪيئن مدد ڪن ٿا؟", "ur": "کیچوے مٹی کی کیسے مدد کرتے ہیں؟", "en": "How do earthworms help the soil?" },
+      "options": [
+        { "sd": "سرنگهون ٺاهي هوا ۽ پاڻي اندر وڃڻ ڏين ٿا", "ur": "سرنگیں بنا کر ہوا اور پانی اندر جانے دیتے ہیں", "en": "They dig tunnels that let air and water in" },
+        { "sd": "مٽي کي سخت ڪن ٿا", "ur": "مٹی کو سخت کرتے ہیں", "en": "They make the soil hard" },
+        { "sd": "ٻوٽا کائي ختم ڪن ٿا", "ur": "پودے کھا کر ختم کرتے ہیں", "en": "They eat all the plants" },
+        { "sd": "پاڻي سڪائي ڇڏين ٿا", "ur": "پانی سکھا دیتے ہیں", "en": "They dry up the water" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "so9", "type": "mcq", "topic": "s4",
+      "q": { "sd": "وهندڙ پاڻيءَ ۽ هوا سان مٿئين مٽيءَ جي لهي وڃڻ کي ڇا چئبو آهي؟", "ur": "بہتے پانی اور ہوا سے اوپری مٹی کے بہہ جانے کو کیا کہتے ہیں؟", "en": "What is it called when running water and wind carry away topsoil?" },
+      "options": [
+        { "sd": "ڦٽڻ", "ur": "اگنا", "en": "Germination" },
+        { "sd": "آلودگي", "ur": "آلودگی", "en": "Pollution" },
+        { "sd": "مٽيءَ جو کاتو", "ur": "مٹی کا کٹاؤ", "en": "Soil erosion" },
+        { "sd": "ري سائيڪل", "ur": "ری سائیکل", "en": "Recycling" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "so10", "type": "tf", "topic": "s1",
+      "q": { "sd": "مٽيءَ ۾ هوا ۽ پاڻي به هوندا آهن.", "ur": "مٹی میں ہوا اور پانی بھی ہوتے ہیں۔", "en": "Soil also contains air and water." },
+      "answer": true
+    },
+    {
+      "id": "so11", "type": "tf", "topic": "s2",
+      "q": { "sd": "سخت دٻيل مٽيءَ ۾ پاڙون آسانيءَ سان وڌن ٿيون.", "ur": "سخت دبی ہوئی مٹی میں جڑیں آسانی سے بڑھتی ہیں۔", "en": "Roots grow easily in hard, tightly packed soil." },
+      "answer": false
+    },
+    {
+      "id": "so12", "type": "tf", "topic": "s3",
+      "q": { "sd": "چيڪي مٽي سڪڻ کان پوءِ سخت ٿي وڃي ٿي.", "ur": "چکنی مٹی سوکھنے کے بعد سخت ہو جاتی ہے۔", "en": "Clay soil becomes hard when it dries." },
+      "answer": true
+    },
+    {
+      "id": "so13", "type": "tf", "topic": "s4",
+      "q": { "sd": "مٽيءَ ۾ ڪوبه جاندار نٿو رهي.", "ur": "مٹی میں کوئی جاندار نہیں رہتا۔", "en": "No living things live in soil." },
+      "answer": false
+    },
+    {
+      "id": "so14", "type": "tf", "topic": "s4",
+      "q": { "sd": "وڻ پوکڻ سان مٽيءَ جو کاتو گهٽ ٿئي ٿو.", "ur": "درخت لگانے سے مٹی کا کٹاؤ کم ہوتا ہے۔", "en": "Planting trees reduces soil erosion." },
+      "answer": true
+    },
+    {
+      "id": "so15", "type": "match", "topic": "s3",
+      "q": { "sd": "هر مٽيءَ کي ان جي خاصيت سان ملايو.", "ur": "ہر مٹی کو اس کی خصوصیت سے ملائیں۔", "en": "Match each soil with what it is like." },
+      "pairs": [
+        { "left": { "sd": "واريءَ واري مٽي", "ur": "ریتلی مٹی", "en": "Sandy soil" }, "right": { "sd": "پاڻي جلد نڪري ٿو", "ur": "پانی جلدی نکلتا ہے", "en": "Drains fast" } },
+        { "left": { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "Clay soil" }, "right": { "sd": "پاڻي بيهي ٿو", "ur": "پانی کھڑا رہتا ہے", "en": "Water stands on it" } },
+        { "left": { "sd": "لوم", "ur": "میرا مٹی", "en": "Loam" }, "right": { "sd": "ٻوٽن لاءِ بهترين", "ur": "پودوں کے لیے بہترین", "en": "Best for plants" } }
+      ]
+    },
+    {
+      "id": "so16", "type": "match", "topic": "s4",
+      "q": { "sd": "هر جاندار کي مٽيءَ ۾ ان جي ڪم سان ملايو.", "ur": "ہر جاندار کو مٹی میں اس کے کام سے ملائیں۔", "en": "Match each living thing with its job in the soil." },
+      "pairs": [
+        { "left": { "sd": "ڳنڍيو", "ur": "کیچوا", "en": "Earthworm" }, "right": { "sd": "سرنگهون ٺاهي ٿو", "ur": "سرنگیں بناتا ہے", "en": "Digs tunnels" } },
+        { "left": { "sd": "بيڪٽيريا", "ur": "بیکٹیریا", "en": "Bacteria" }, "right": { "sd": "مئل شيون سڙائين ٿا", "ur": "مردہ چیزیں گلاتے ہیں", "en": "Rot dead things" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "memory",
+      "title": { "sd": "مٽيءَ جي ياداشت واري راند", "ur": "مٹی کا یادداشت کا کھیل", "en": "Soil memory game" },
+      "pairs": [
+        { "a": { "sd": "ريتي", "ur": "ریت", "en": "Sand" }, "b": { "sd": "ڪرڪري، پاڻي جلد نڪري", "ur": "کھردری، پانی جلدی نکلے", "en": "Gritty, drains fast" } },
+        { "a": { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "Clay" }, "b": { "sd": "چيڪي، پاڻي جهلي", "ur": "چپچپی، پانی روکے", "en": "Sticky, holds water" } },
+        { "a": { "sd": "لوم", "ur": "میرا مٹی", "en": "Loam" }, "b": { "sd": "ٻوٽن لاءِ بهترين", "ur": "پودوں کے لیے بہترین", "en": "Best for plants" } },
+        { "a": { "sd": "هيومس", "ur": "ہیومس", "en": "Humus" }, "b": { "sd": "سڙيل پن", "ur": "گلے سڑے پتے", "en": "Rotted leaves" } },
+        { "a": { "sd": "ڳنڍيو", "ur": "کیچوا", "en": "Earthworm" }, "b": { "sd": "مٽيءَ ۾ سرنگهون", "ur": "مٹی میں سرنگیں", "en": "Tunnels in soil" } },
+        { "a": { "sd": "کاتو", "ur": "کٹاؤ", "en": "Erosion" }, "b": { "sd": "پاڻي ۽ هوا مٽي لاهين", "ur": "پانی اور ہوا مٹی بہائیں", "en": "Water and wind carry soil away" } }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "مٽيءَ ۾ ڇا ڇا آهي؟", "ur": "مٹی میں کیا کیا ہے؟", "en": "What is in soil?" },
+    "materials": [
+      { "sd": "ڍڪڻ واري صاف پلاسٽڪ بوتل يا جار", "ur": "ڈھکن والی صاف پلاسٹک بوتل یا جار", "en": "A clear plastic bottle or jar with a lid" },
+      { "sd": "باغ مان ٻه مٺ مٽي", "ur": "باغ سے دو مٹھی مٹی", "en": "Two handfuls of garden soil" },
+      { "sd": "پاڻي", "ur": "پانی", "en": "Water" },
+      { "sd": "فيتو يا اسڪيل", "ur": "فیتہ یا اسکیل", "en": "A ruler" }
+    ],
+    "steps": [
+      { "sd": "بوتل جو ٽيون حصو مٽيءَ سان ڀريو.", "ur": "بوتل کا تیسرا حصہ مٹی سے بھریں۔", "en": "Fill one third of the bottle with soil." },
+      { "sd": "ان ۾ پاڻي وجهي بوتل لڳ ڀڳ ڀري ڇڏيو ۽ ڍڪڻ مضبوط بند ڪريو.", "ur": "اس میں پانی ڈال کر بوتل تقریباً بھر دیں اور ڈھکن مضبوطی سے بند کریں۔", "en": "Add water until the bottle is almost full, and close the lid tightly." },
+      { "sd": "بوتل کي هڪ منٽ چڱيءَ طرح لوڏيو.", "ur": "بوتل کو ایک منٹ اچھی طرح ہلائیں۔", "en": "Shake the bottle well for one minute." },
+      { "sd": "بوتل کي هڪ ڏينهن لاءِ هڪ هنڌ رکي ڇڏيو.", "ur": "بوتل کو ایک دن کے لیے ایک جگہ رکھ دیں۔", "en": "Leave the bottle still for one day." },
+      { "sd": "تهن کي ڏسو ۽ اسڪيل سان هر تهه ماپي لکو.", "ur": "تہوں کو دیکھیں اور اسکیل سے ہر تہہ ناپ کر لکھیں۔", "en": "Look at the layers and measure each layer with the ruler." }
+    ],
+    "learn": {
+      "sd": "مٽي تهن ۾ ورهائجي وئي: سڀ کان ڳري ريتي هيٺ، ان مٿان گاد، ۽ سڀ کان مٿي سنهي چيڪي مٽي. سڙيل پنن جا ٽڪر (هيومس) پاڻيءَ جي مٿان ترڻ لڳا. ان مان معلوم ٿيو ته مٽي ڪيترين شين جو ميلاپ آهي.",
+      "ur": "مٹی تہوں میں بٹ گئی: سب سے بھاری ریت نیچے، اس کے اوپر گاد، اور سب سے اوپر باریک چکنی مٹی۔ گلے سڑے پتوں کے ٹکڑے (ہیومس) پانی کے اوپر تیرنے لگے۔ اس سے پتا چلا کہ مٹی کئی چیزوں کا ملاپ ہے۔",
+      "en": "The soil settled in layers: the heaviest sand at the bottom, silt above it and fine clay on top. Bits of rotted leaves (humus) floated on the water. This shows that soil is a mixture of many things."
+    },
+    "safety": {
+      "sd": "شيشي بدران پلاسٽڪ جي بوتل استعمال ڪريو. مٽي وات ۾ نه وجهو ۽ ڪم کان پوءِ صابڻ سان هٿ ڌوئو.",
+      "ur": "شیشے کی جگہ پلاسٹک کی بوتل استعمال کریں۔ مٹی منہ میں نہ ڈالیں اور کام کے بعد صابن سے ہاتھ دھوئیں۔",
+      "en": "Use a plastic bottle instead of glass. Do not put soil in your mouth, and wash your hands with soap afterwards."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "مٽي ٽٽل ____ مان ٺهي ٿي.", "ur": "مٹی ٹوٹی ہوئی ____ سے بنتی ہے۔", "en": "Soil is made from broken-down ____." }, "answer": { "sd": "پٿرن", "ur": "چٹانوں", "en": "rocks" } },
+      { "text": { "sd": "سڙيل پنن مان ٺهيل زرخيز حصي کي ____ چئبو آهي.", "ur": "گلے سڑے پتوں سے بنے زرخیز حصے کو ____ کہتے ہیں۔", "en": "The rich part of soil made from rotted leaves is called ____." }, "answer": { "sd": "هيومس", "ur": "ہیومس", "en": "humus" } },
+      { "text": { "sd": "____ ٻوٽن لاءِ سڀ کان بهتر مٽي آهي.", "ur": "____ پودوں کے لیے سب سے بہتر مٹی ہے۔", "en": "____ is the best soil for plants." }, "answer": { "sd": "لوم", "ur": "میرا مٹی", "en": "Loam" } },
+      { "text": { "sd": "____ مٽيءَ ۾ سرنگهون ٺاهي هوا اندر وڃڻ ڏين ٿا.", "ur": "____ مٹی میں سرنگیں بنا کر ہوا اندر جانے دیتے ہیں۔", "en": "____ dig tunnels that let air into the soil." }, "answer": { "sd": "ڳنڍيا", "ur": "کیچوے", "en": "Earthworms" } },
+      { "text": { "sd": "پاڻيءَ ۽ هوا سان مٽيءَ جي لهي وڃڻ کي ____ چئبو آهي.", "ur": "پانی اور ہوا سے مٹی کے بہہ جانے کو ____ کہتے ہیں۔", "en": "Soil being carried away by water and wind is called ____." }, "answer": { "sd": "کاتو", "ur": "کٹاؤ", "en": "erosion" } }
+    ],
+    "tf": [
+      { "text": { "sd": "ريتيءَ جا ذرڙا چيڪي مٽيءَ کان وڏا آهن.", "ur": "ریت کے ذرات چکنی مٹی سے بڑے ہیں۔", "en": "Sand grains are bigger than clay grains." }, "answer": true },
+      { "text": { "sd": "واريءَ واري مٽي گهڻو پاڻي جهلي ٿي.", "ur": "ریتلی مٹی بہت پانی روکتی ہے۔", "en": "Sandy soil holds a lot of water." }, "answer": false },
+      { "text": { "sd": "سڙائيندڙ مئل شين کي ٽوڙي مٽيءَ ۾ ملائين ٿا.", "ur": "تحلیل کار مردہ چیزوں کو توڑ کر مٹی میں ملاتے ہیں۔", "en": "Decomposers break down dead things into the soil." }, "answer": true },
+      { "text": { "sd": "مٽيءَ جو کاتو وڻ ڪٽڻ سان گهٽ ٿئي ٿو.", "ur": "مٹی کا کٹاؤ درخت کاٹنے سے کم ہوتا ہے۔", "en": "Cutting down trees reduces soil erosion." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "ريتي", "ur": "ریت", "en": "Sand" }, "b": { "sd": "ڪرڪري", "ur": "کھردری", "en": "Gritty" } },
+      { "a": { "sd": "گاد", "ur": "گاد", "en": "Silt" }, "b": { "sd": "نرم ۽ سلڪي", "ur": "نرم اور ریشمی", "en": "Smooth and silky" } },
+      { "a": { "sd": "چيڪي مٽي", "ur": "چکنی مٹی", "en": "Clay" }, "b": { "sd": "چيڪي", "ur": "چپچپی", "en": "Sticky" } },
+      { "a": { "sd": "هيومس", "ur": "ہیومس", "en": "Humus" }, "b": { "sd": "سڙيل پن", "ur": "گلے سڑے پتے", "en": "Rotted leaves" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "مٽيءَ ۾ ڪهڙيون چار شيون هونديون آهن؟", "ur": "مٹی میں کون سی چار چیزیں ہوتی ہیں؟", "en": "Name four things found in soil." },
+        "a": { "sd": "معدني ذرڙا، هيومس، هوا ۽ پاڻي (۽ جاندار).", "ur": "معدنی ذرات، ہیومس، ہوا اور پانی (اور جاندار)۔", "en": "Mineral grains, humus, air and water (and living things)." }
+      },
+      {
+        "q": { "sd": "لوم ٻوٽن لاءِ سڀ کان بهتر ڇو آهي؟", "ur": "میرا مٹی پودوں کے لیے سب سے بہتر کیوں ہے؟", "en": "Why is loam the best soil for plants?" },
+        "a": { "sd": "ان ۾ ريتي، گاد، چيڪي مٽي ۽ هيومس آهن، ۽ اها هوا ۽ پاڻي ٻئي مناسب جهلي ٿي.", "ur": "اس میں ریت، گاد، چکنی مٹی اور ہیومس ہیں، اور یہ ہوا اور پانی دونوں مناسب روکتی ہے۔", "en": "It has sand, silt, clay and humus, and holds the right amount of air and water." }
+      },
+      {
+        "q": { "sd": "مٽيءَ جي کاتي کي ڪيئن روڪي سگهجي ٿو؟", "ur": "مٹی کے کٹاؤ کو کیسے روکا جا سکتا ہے؟", "en": "How can we stop soil erosion?" },
+        "a": { "sd": "وڻ ۽ گاهه پوکڻ سان، ڇاڪاڻ ته پاڙون مٽيءَ کي جهلي رکن ٿيون.", "ur": "درخت اور گھاس لگانے سے، کیونکہ جڑیں مٹی کو تھامے رکھتی ہیں۔", "en": "By planting trees and grass, because roots hold the soil in place." }
+      }
+    ],
+    "draw": { "sd": "مٽيءَ واري بوتل جي تصوير ٺاهيو ۽ ريتي، گاد، چيڪي مٽي ۽ هيومس جا تهه ڏيکاري انهن جا نالا لکو.", "ur": "مٹی والی بوتل کی تصویر بنائیں اور ریت، گاد، چکنی مٹی اور ہیومس کی تہیں دکھا کر ان کے نام لکھیں۔", "en": "Draw the soil-in-a-bottle test and label the layers of sand, silt, clay and humus." }
+  }
+}

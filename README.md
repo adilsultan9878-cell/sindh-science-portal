@@ -7,7 +7,15 @@ Free Class 5 Science website in Sindhi, Urdu and English (pilot), built for The 
 
 ## What is in it
 
-- 9 chapters, each with a lesson, a clickable diagram, a 16-question quiz, a printable worksheet (with an answer key), a game, a home experiment and key words.
+- 13 chapters: the 10 chapters of the Sindh Textbook Board book *Science for Class V* in the book's order, then three extra chapters (plants, digestion, water cycle).
+- Each chapter walks the child through seven parts in order, with **Back / Next** buttons at the bottom of every part (and on to the next chapter):
+  1. **Lesson** — one part at a time, each with a quick check question, the picture for that topic, and a narrated Urdu video at the top.
+  2. **Diagram** — pictures grouped by lesson topic, a tap-to-explore diagram, and a "label the diagram" question.
+  3. **Quiz** — 16 questions, one at a time with Back / Next, then a review of every answer.
+  4. **Worksheet** — filled in on the screen; the draft is saved on the device as the child types, then **Save and submit** marks it. It can still be printed filled in or blank, with a teachers' answer key.
+  5. **Experiment** — step by step: safety and things needed, a guess, each step, what you saw, and what we learned.
+  6. **Game** and 7. **Key words**.
+- Under the chapter title, a progress bar and three statuses (quiz, worksheet, experiment: not started / in progress / done) show how far the child has got. The chapter list and the progress page show the same.
 - A daily question with a streak, points and badges, a timed competition with a certificate, and a leaderboard for all of Sindh, filtered by district.
 - Teachers' page, glossary and search in all three languages.
 - A staff panel for admins, reviewers and editors: chapters, question bank, draft → review → published, leaderboard moderation, users and statistics.
@@ -62,7 +70,11 @@ A new class or subject is added in `data/catalog.json`: set it to `"active": tru
 
 ## Lesson videos
 
-Two short narrated videos in Urdu (about 2½ minutes each) open at the top of the lesson: photosynthesis (chapter 2, plants) and the water cycle (chapter 4). They are in `lesson-videos/` and listed in `window.LESSON_VIDEOS` in `js/diagrams.js`. The scripts that made them are in `tools/lesson-videos/` (`content.js` holds the Urdu narration): render the slides with `node render.js`, then build the MP4 with `python build.py` (needs `npm install playwright-core`, `pip install edge-tts imageio-ffmpeg`).
+Every chapter has a short narrated video in Urdu (about 2 minutes) at the top of its lesson. They are in `lesson-videos/` and listed in `window.LESSON_VIDEOS` in `js/diagrams.js`. The scripts that made them are in `tools/lesson-videos/`: `content.js` (photosynthesis, water cycle) and `content2.js` (the other 11 chapters) hold the Urdu narration. Render the slides with `node render2.js <site folder> <chapter id> <out folder>` (uses the Chrome installed on the computer), then build the MP4 with `python build.py <out folder> lesson-videos/<chapter id>-ur.mp4` (needs `pip install edge-tts imageio-ffmpeg`).
+
+Which lesson topic each picture and diagram belongs to is set in `window.PICTURES[id].topic` and `window.DIAGRAM_TOPICS` in `js/diagrams.js` (topic = lesson section id such as `s2`). Each lesson section's quick check is the first MCQ or true/false question whose `topic` is that section.
+
+Children's progress (lessons, quiz scores, worksheet drafts and results, experiment notes, diagram labelling) stays in the browser's local storage on their own device.
 
 ## Google search
 

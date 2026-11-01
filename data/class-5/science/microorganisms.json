@@ -1,0 +1,387 @@
+{
+  "id": "microorganisms",
+  "number": 2,
+  "icon": "🦠",
+  "title": { "sd": "خوردبيني جاندار", "ur": "خوردبینی جاندار", "en": "Microorganisms" },
+  "summary": {
+    "sd": "سکو ته خوردبيني جاندار ڇا آهن، بيڪٽيريا، وائرس ۽ فنگس ۾ ڪهڙو فرق آهي، ۽ اهي ڪيئن فائديمند ۽ ڪيئن نقصانڪار آهن.",
+    "ur": "سیکھیں کہ خوردبینی جاندار کیا ہیں، بیکٹیریا، وائرس اور فنجائی میں کیا فرق ہے، اور یہ کیسے فائدہ مند اور کیسے نقصان دہ ہیں۔",
+    "en": "Learn what microorganisms are, how bacteria, viruses and fungi differ, and how they can be useful or harmful."
+  },
+  "badge": { "id": "microbe_detective", "icon": "🔬", "name": { "sd": "جراثيمن جو جاسوس", "ur": "جراثیم کا جاسوس", "en": "Microbe Detective" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "خوردبيني جاندار ڇا آهن؟", "ur": "خوردبینی جاندار کیا ہیں؟", "en": "What are microorganisms?" },
+      "body": {
+        "sd": [
+          "ڪجهه جاندار ايترا ننڍا آهن جو اسين انهن کي اکين سان ڏسي نٿا سگهون. انهن کي **خوردبيني جاندار** يا **جراثيم** چئبو آهي.",
+          "انهن کي رڳو **خوردبين (مائڪرواسڪوپ)** سان ڏسي سگهجي ٿو. خوردبين ننڍين شين کي گهڻو وڏو ڪري ڏيکاري ٿي.",
+          "خوردبيني جاندار هر هنڌ ملن ٿا: مٽيءَ، هوا ۽ پاڻيءَ ۾، ٻوٽن ۽ جانورن تي، ۽ اسان جي جسم جي اندر ۽ ٻاهر به.",
+          "انهن جا ٽي وڏا گروهه آهن: **بيڪٽيريا**، **وائرس** ۽ **فنگس**."
+        ],
+        "ur": [
+          "کچھ جاندار اتنے چھوٹے ہوتے ہیں کہ ہم انہیں آنکھوں سے نہیں دیکھ سکتے۔ انہیں **خوردبینی جاندار** یا **جراثیم** کہتے ہیں۔",
+          "انہیں صرف **خوردبین (مائیکروسکوپ)** سے دیکھا جا سکتا ہے۔ خوردبین چھوٹی چیزوں کو بہت بڑا کر کے دکھاتی ہے۔",
+          "خوردبینی جاندار ہر جگہ پائے جاتے ہیں: مٹی، ہوا اور پانی میں، پودوں اور جانوروں پر، اور ہمارے جسم کے اندر اور باہر بھی۔",
+          "ان کے تین بڑے گروہ ہیں: **بیکٹیریا**، **وائرس** اور **فنجائی**۔"
+        ],
+        "en": [
+          "Some living things are so small that we cannot see them with our eyes. They are called **microorganisms** or **microbes**.",
+          "They can only be seen with a **microscope**. A microscope makes tiny things look much bigger.",
+          "Microorganisms are found everywhere: in soil, air and water, on plants and animals, and inside and outside our bodies.",
+          "There are three main groups: **bacteria**, **viruses** and **fungi**."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "بيڪٽيريا، وائرس ۽ فنگس", "ur": "بیکٹیریا، وائرس اور فنجائی", "en": "Bacteria, viruses and fungi" },
+      "body": {
+        "sd": [
+          "- **بيڪٽيريا**: هڪ خاني (سيل) وارا جاندار. ڪي گول، ڪي لٺ جهڙا ۽ ڪي ورڪ جهڙا هوندا آهن. اهي کائين، ساهه کڻن ۽ ورهائجي وڌن ٿا.",
+          "- **وائرس**: سڀ کان ننڍا جراثيم. انهن کي تمام طاقتور خوردبين سان ئي ڏسي سگهجي ٿو. وائرس رڳو ڪنهن جاندار جي سيل اندر وڌي سگهي ٿو. زڪام، فلو، پوليو ۽ خسرو وائرس سبب ٿين ٿا.",
+          "- **فنگس**: ڪي فنگس هڪ خاني وارا ۽ ننڍا هوندا آهن، جهڙوڪ **خمير (يِيسٽ)**. ڪي وڏا هوندا آهن، جهڙوڪ **کنڀيون (مشروم)**. ماني تي لڳندڙ سائي يا ڪاري **ڦوڪڙ** به فنگس آهي.",
+          "فنگس پنهنجو کاڌو پاڻ نٿا ٺاهين. اهي مئل يا سڙندڙ شين مان کاڌو وٺن ٿا."
+        ],
+        "ur": [
+          "- **بیکٹیریا**: ایک خلیے والے جاندار۔ کچھ گول، کچھ سلاخ جیسے اور کچھ چکر دار ہوتے ہیں۔ یہ کھاتے، سانس لیتے اور تقسیم ہو کر بڑھتے ہیں۔",
+          "- **وائرس**: سب سے چھوٹے جراثیم۔ انہیں بہت طاقتور خوردبین سے ہی دیکھا جا سکتا ہے۔ وائرس صرف کسی جاندار کے خلیے کے اندر بڑھ سکتا ہے۔ زکام، فلو، پولیو اور خسرہ وائرس سے ہوتے ہیں۔",
+          "- **فنجائی (پھپھوندی)**: کچھ فنجائی ایک خلیے والی اور چھوٹی ہوتی ہیں، جیسے **خمیر**۔ کچھ بڑی ہوتی ہیں، جیسے **کھمبی (مشروم)**۔ روٹی پر لگنے والی ہری یا کالی **پھپھوندی** بھی فنجائی ہے۔",
+          "فنجائی اپنی غذا خود نہیں بناتیں۔ یہ مردہ یا گلنے سڑنے والی چیزوں سے غذا لیتی ہیں۔"
+        ],
+        "en": [
+          "- **Bacteria**: living things made of one cell. Some are round, some are rod-shaped and some are spiral. They feed, breathe and grow by dividing.",
+          "- **Viruses**: the smallest microbes. They can only be seen with a very powerful microscope. A virus can only grow inside the cells of a living thing. Colds, flu, polio and measles are caused by viruses.",
+          "- **Fungi**: some fungi are tiny and have one cell, like **yeast**. Some are large, like **mushrooms**. The green or black **mould** on old bread is also a fungus.",
+          "Fungi cannot make their own food. They take food from dead or rotting things."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "فائديمند جراثيم", "ur": "فائدہ مند جراثیم", "en": "Useful microorganisms" },
+      "body": {
+        "sd": [
+          "گهڻا خوردبيني جاندار نقصانڪار نه، پر اسان جا دوست آهن:",
+          "- **سڙائڻ**: بيڪٽيريا ۽ فنگس مئل ٻوٽن، جانورن ۽ ڪچري کي ٽوڙي **مٽيءَ** ۾ ملائي ڇڏين ٿا. ان سان مٽي زرخيز ٿئي ٿي.",
+          "- **کاڌو ٺاهڻ**: **خمير** اٽي کي ڦولائي ٿو، تنهنڪري نان ۽ ڊبل روٽي نرم ٿين ٿا. بيڪٽيريا کير کي **ڏهي** ۽ پنير ۾ بدلائين ٿا.",
+          "- **هاضمو**: اسان جي آنڊن ۾ رهندڙ ڪي بيڪٽيريا کاڌو هضم ڪرڻ ۾ مدد ڪن ٿا.",
+          "- **دوائون**: ڪجهه **اينٽي بايوٽڪ** دوائون جراثيمن مان ٺهن ٿيون. **پينيسلين** هڪ فنگس مان ٺهي ٿي. **ويڪسين** (جهڙوڪ پوليو جا ڦڙا) اسان کي بيمارين کان بچائين ٿيون."
+        ],
+        "ur": [
+          "زیادہ تر خوردبینی جاندار نقصان دہ نہیں بلکہ ہمارے دوست ہیں:",
+          "- **گلانا سڑانا**: بیکٹیریا اور فنجائی مردہ پودوں، جانوروں اور کچرے کو توڑ کر **مٹی** میں ملا دیتے ہیں۔ اس سے مٹی زرخیز ہوتی ہے۔",
+          "- **غذا بنانا**: **خمیر** آٹے کو پھلاتا ہے، اس لیے نان اور ڈبل روٹی نرم بنتے ہیں۔ بیکٹیریا دودھ کو **دہی** اور پنیر میں بدلتے ہیں۔",
+          "- **ہاضمہ**: ہماری آنتوں میں رہنے والے کچھ بیکٹیریا غذا ہضم کرنے میں مدد کرتے ہیں۔",
+          "- **دوائیں**: کچھ **اینٹی بایوٹک** دوائیں جراثیم سے بنتی ہیں۔ **پینسلین** ایک فنجائی سے بنتی ہے۔ **ویکسین** (جیسے پولیو کے قطرے) ہمیں بیماریوں سے بچاتی ہیں۔"
+        ],
+        "en": [
+          "Most microorganisms are not harmful. Many are our friends:",
+          "- **Decomposing**: bacteria and fungi break down dead plants, dead animals and rubbish and mix them into the **soil**. This makes the soil rich.",
+          "- **Making food**: **yeast** makes dough rise, so naan and bread become soft. Bacteria turn milk into **yoghurt** and cheese.",
+          "- **Digestion**: some bacteria living in our intestines help us digest food.",
+          "- **Medicines**: some **antibiotics** are made from microbes. **Penicillin** is made from a fungus. **Vaccines** (like polio drops) protect us from diseases."
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "title": { "sd": "نقصانڪار جراثيم ۽ بچاءُ", "ur": "نقصان دہ جراثیم اور بچاؤ", "en": "Harmful microorganisms and staying safe" },
+      "body": {
+        "sd": [
+          "ڪي جراثيم کاڌو **خراب** ڪن ٿا ۽ بيماريون پکيڙين ٿا. جراثيمن سبب ٿيندڙ بيماريءَ کي **انفيڪشن** چئبو آهي.",
+          "- بيڪٽيريا سبب: **ڪالرا**، **ٽائيفائيڊ** ۽ دستن جون ڪي بيماريون.",
+          "- وائرس سبب: زڪام، فلو، خسرو ۽ **ڊينگي** (ڊينگي جو وائرس مڇر پکيڙي ٿو).",
+          "- فنگس سبب: پيرن جي آڱرين وچ ۾ خارش ۽ چمڙيءَ جون ڪي بيماريون.",
+          "جراثيم وات (گندو کاڌو ۽ پاڻي)، نڪ (ساهه) ۽ چمڙيءَ جي زخمن رستي جسم ۾ داخل ٿين ٿا.",
+          "بچاءُ: صابڻ سان **هٿ ڌوئو**، پاڻي اٻاري پيئو، کاڌو ڍڪي رکو، ڀرسان صفائي رکو، بيٺل پاڻي ختم ڪريو ۽ **ويڪسين** لڳرايو."
+        ],
+        "ur": [
+          "کچھ جراثیم غذا کو **خراب** کرتے ہیں اور بیماریاں پھیلاتے ہیں۔ جراثیم سے ہونے والی بیماری کو **انفیکشن** کہتے ہیں۔",
+          "- بیکٹیریا سے: **ہیضہ**، **ٹائیفائیڈ** اور اسہال کی کچھ بیماریاں۔",
+          "- وائرس سے: زکام، فلو، خسرہ اور **ڈینگی** (ڈینگی کا وائرس مچھر پھیلاتا ہے)۔",
+          "- فنجائی سے: پاؤں کی انگلیوں کے بیچ خارش اور جلد کی کچھ بیماریاں۔",
+          "جراثیم منہ (گندی غذا اور پانی)، ناک (سانس) اور جلد کے زخموں کے راستے جسم میں داخل ہوتے ہیں۔",
+          "بچاؤ: صابن سے **ہاتھ دھوئیں**، پانی ابال کر پئیں، کھانا ڈھانپ کر رکھیں، آس پاس صفائی رکھیں، کھڑا پانی ختم کریں اور **ویکسین** لگوائیں۔"
+        ],
+        "en": [
+          "Some microbes **spoil** food and spread diseases. A disease caused by microbes is called an **infection**.",
+          "- Caused by bacteria: **cholera**, **typhoid** and some kinds of diarrhoea.",
+          "- Caused by viruses: colds, flu, measles and **dengue** (the dengue virus is spread by mosquitoes).",
+          "- Caused by fungi: athlete's foot (itching between the toes) and some skin diseases.",
+          "Microbes enter the body through the mouth (dirty food and water), the nose (breathing) and cuts in the skin.",
+          "Stay safe: **wash your hands** with soap, boil drinking water, keep food covered, keep your surroundings clean, remove standing water and get **vaccinated**."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "tree",
+    "tree": { "id": "microbes", "children": [{ "id": "bacteria" }, { "id": "viruses" }, { "id": "fungi" }] },
+    "parts": [
+      {
+        "id": "microbes",
+        "label": { "sd": "خوردبيني جاندار", "ur": "خوردبینی جاندار", "en": "Microorganisms" },
+        "info": { "sd": "ننڍڙا جاندار جيڪي رڳو خوردبين سان نظر اچن ٿا.", "ur": "ننھے جاندار جو صرف خوردبین سے نظر آتے ہیں۔", "en": "Tiny living things that can only be seen with a microscope." }
+      },
+      {
+        "id": "bacteria",
+        "label": { "sd": "بيڪٽيريا", "ur": "بیکٹیریا", "en": "Bacteria" },
+        "info": { "sd": "هڪ خاني وارا. ڪي ڏهي ٺاهين ٿا، ڪي ڪالرا ۽ ٽائيفائيڊ ڪن ٿا.", "ur": "ایک خلیے والے۔ کچھ دہی بناتے ہیں، کچھ ہیضہ اور ٹائیفائیڈ کرتے ہیں۔", "en": "One-celled. Some make yoghurt; some cause cholera and typhoid." }
+      },
+      {
+        "id": "viruses",
+        "label": { "sd": "وائرس", "ur": "وائرس", "en": "Viruses" },
+        "info": { "sd": "سڀ کان ننڍا. رڳو جاندار جي سيل اندر وڌن ٿا. زڪام، فلو ۽ پوليو ڪن ٿا.", "ur": "سب سے چھوٹے۔ صرف جاندار کے خلیے کے اندر بڑھتے ہیں۔ زکام، فلو اور پولیو کرتے ہیں۔", "en": "The smallest. They grow only inside living cells. They cause colds, flu and polio." }
+      },
+      {
+        "id": "fungi",
+        "label": { "sd": "فنگس", "ur": "فنجائی", "en": "Fungi" },
+        "info": { "sd": "خمير، ڦوڪڙ ۽ کنڀيون. خمير اٽو ڦولائي ٿو؛ هڪ فنگس مان پينيسلين ٺهي ٿي.", "ur": "خمیر، پھپھوندی اور کھمبیاں۔ خمیر آٹا پھلاتا ہے؛ ایک فنجائی سے پینسلین بنتی ہے۔", "en": "Yeast, mould and mushrooms. Yeast makes dough rise; penicillin comes from a fungus." }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "خوردبيني جاندار", "ur": "خوردبینی جاندار", "en": "microorganism" },
+    { "sd": "خوردبين", "ur": "خوردبین", "en": "microscope" },
+    { "sd": "بيڪٽيريا", "ur": "بیکٹیریا", "en": "bacteria" },
+    { "sd": "وائرس", "ur": "وائرس", "en": "virus" },
+    { "sd": "فنگس", "ur": "فنجائی", "en": "fungi" },
+    { "sd": "خمير", "ur": "خمیر", "en": "yeast" },
+    { "sd": "ڦوڪڙ", "ur": "پھپھوندی", "en": "mould" },
+    { "sd": "اينٽي بايوٽڪ", "ur": "اینٹی بایوٹک", "en": "antibiotic" },
+    { "sd": "ويڪسين", "ur": "ویکسین", "en": "vaccine" },
+    { "sd": "انفيڪشن", "ur": "انفیکشن", "en": "infection" },
+    { "sd": "صفائي", "ur": "حفظان صحت", "en": "hygiene" }
+  ],
+  "quiz": [
+    {
+      "id": "mo1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "خوردبيني جاندارن کي ڪنهن سان ڏسي سگهجي ٿو؟", "ur": "خوردبینی جانداروں کو کس سے دیکھا جا سکتا ہے؟", "en": "What do we need to see microorganisms?" },
+      "options": [
+        { "sd": "خوردبين", "ur": "خوردبین", "en": "A microscope" },
+        { "sd": "دوربين", "ur": "دوربین", "en": "A telescope" },
+        { "sd": "آئينو", "ur": "آئینہ", "en": "A mirror" },
+        { "sd": "رڳو اکيون", "ur": "صرف آنکھیں", "en": "Only our eyes" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mo2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "خوردبيني جاندار ڪٿي ملن ٿا؟", "ur": "خوردبینی جاندار کہاں پائے جاتے ہیں؟", "en": "Where are microorganisms found?" },
+      "options": [
+        { "sd": "رڳو گندي پاڻيءَ ۾", "ur": "صرف گندے پانی میں", "en": "Only in dirty water" },
+        { "sd": "هر هنڌ: مٽي، هوا، پاڻي ۽ جسم ۾", "ur": "ہر جگہ: مٹی، ہوا، پانی اور جسم میں", "en": "Everywhere: in soil, air, water and our bodies" },
+        { "sd": "رڳو اسپتال ۾", "ur": "صرف ہسپتال میں", "en": "Only in hospitals" },
+        { "sd": "رڳو ٻوٽن تي", "ur": "صرف پودوں پر", "en": "Only on plants" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "mo3", "type": "mcq", "topic": "s2",
+      "q": { "sd": "سڀ کان ننڍا جراثيم ڪهڙا آهن؟", "ur": "سب سے چھوٹے جراثیم کون سے ہیں؟", "en": "Which are the smallest microbes?" },
+      "options": [
+        { "sd": "کنڀيون", "ur": "کھمبیاں", "en": "Mushrooms" },
+        { "sd": "بيڪٽيريا", "ur": "بیکٹیریا", "en": "Bacteria" },
+        { "sd": "وائرس", "ur": "وائرس", "en": "Viruses" },
+        { "sd": "خمير", "ur": "خمیر", "en": "Yeast" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "mo4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "ماني تي لڳندڙ سائي ڦوڪڙ ڇا آهي؟", "ur": "روٹی پر لگنے والی ہری پھپھوندی کیا ہے؟", "en": "What is the green mould on old bread?" },
+      "options": [
+        { "sd": "هڪ فنگس", "ur": "ایک فنجائی", "en": "A fungus" },
+        { "sd": "هڪ وائرس", "ur": "ایک وائرس", "en": "A virus" },
+        { "sd": "هڪ ٻوٽو", "ur": "ایک پودا", "en": "A plant" },
+        { "sd": "مٽي", "ur": "مٹی", "en": "Soil" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mo5", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪهڙو خوردبيني جاندار اٽي کي ڦولائي ٿو؟", "ur": "کون سا خوردبینی جاندار آٹے کو پھلاتا ہے؟", "en": "Which microorganism makes dough rise?" },
+      "options": [
+        { "sd": "وائرس", "ur": "وائرس", "en": "Virus" },
+        { "sd": "خمير", "ur": "خمیر", "en": "Yeast" },
+        { "sd": "مڇر", "ur": "مچھر", "en": "Mosquito" },
+        { "sd": "ڪالرا جا بيڪٽيريا", "ur": "ہیضے کے بیکٹیریا", "en": "Cholera bacteria" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "mo6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "پينيسلين دوا ڪنهن مان ٺهي ٿي؟", "ur": "پینسلین دوا کس سے بنتی ہے؟", "en": "Penicillin is made from what?" },
+      "options": [
+        { "sd": "هڪ فنگس مان", "ur": "ایک فنجائی سے", "en": "A fungus" },
+        { "sd": "هڪ پٿر مان", "ur": "ایک پتھر سے", "en": "A rock" },
+        { "sd": "سمنڊ جي پاڻيءَ مان", "ur": "سمندر کے پانی سے", "en": "Sea water" },
+        { "sd": "هڪ وائرس مان", "ur": "ایک وائرس سے", "en": "A virus" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mo7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "مئل پنن کي ٽوڙي مٽيءَ ۾ ملائڻ کي ڇا چئبو آهي؟", "ur": "مردہ پتوں کو توڑ کر مٹی میں ملانے کو کیا کہتے ہیں؟", "en": "What do we call breaking down dead leaves into the soil?" },
+      "options": [
+        { "sd": "انفيڪشن", "ur": "انفیکشن", "en": "Infection" },
+        { "sd": "سڙائڻ (ڊي ڪمپوزيشن)", "ur": "گلنا سڑنا (ڈی کمپوزیشن)", "en": "Decomposition" },
+        { "sd": "ويڪسين", "ur": "ویکسین", "en": "Vaccination" },
+        { "sd": "ڦلجڻ", "ur": "پھولنا", "en": "Rising" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "mo8", "type": "mcq", "topic": "s4",
+      "q": { "sd": "ڊينگي جو وائرس ڪير پکيڙي ٿو؟", "ur": "ڈینگی کا وائرس کون پھیلاتا ہے؟", "en": "What spreads the dengue virus?" },
+      "options": [
+        { "sd": "ماکي جي مک", "ur": "شہد کی مکھی", "en": "Honeybee" },
+        { "sd": "مڇر", "ur": "مچھر", "en": "Mosquito" },
+        { "sd": "ڪتو", "ur": "کتا", "en": "Dog" },
+        { "sd": "ٻلي", "ur": "بلی", "en": "Cat" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "mo9", "type": "mcq", "topic": "s4",
+      "q": { "sd": "جراثيمن کان بچڻ جو بهترين طريقو ڪهڙو آهي؟", "ur": "جراثیم سے بچنے کا بہترین طریقہ کون سا ہے؟", "en": "What is the best way to stay safe from germs?" },
+      "options": [
+        { "sd": "کاڌي کان اڳ صابڻ سان هٿ ڌوئڻ", "ur": "کھانے سے پہلے صابن سے ہاتھ دھونا", "en": "Washing hands with soap before eating" },
+        { "sd": "کاڌو کليل ڇڏڻ", "ur": "کھانا کھلا چھوڑنا", "en": "Leaving food uncovered" },
+        { "sd": "ڪچو پاڻي پيئڻ", "ur": "کچا پانی پینا", "en": "Drinking unboiled pond water" },
+        { "sd": "ڪچرو گهر ۾ رکڻ", "ur": "کچرا گھر میں رکھنا", "en": "Keeping rubbish in the house" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "mo10", "type": "tf", "topic": "s1",
+      "q": { "sd": "سڀ خوردبيني جاندار نقصانڪار آهن.", "ur": "تمام خوردبینی جاندار نقصان دہ ہیں۔", "en": "All microorganisms are harmful." },
+      "answer": false
+    },
+    {
+      "id": "mo11", "type": "tf", "topic": "s2",
+      "q": { "sd": "وائرس رڳو ڪنهن جاندار جي سيل اندر وڌي سگهي ٿو.", "ur": "وائرس صرف کسی جاندار کے خلیے کے اندر بڑھ سکتا ہے۔", "en": "A virus can only grow inside the cells of a living thing." },
+      "answer": true
+    },
+    {
+      "id": "mo12", "type": "tf", "topic": "s3",
+      "q": { "sd": "بيڪٽيريا کير کي ڏهيءَ ۾ بدلائين ٿا.", "ur": "بیکٹیریا دودھ کو دہی میں بدلتے ہیں۔", "en": "Bacteria turn milk into yoghurt." },
+      "answer": true
+    },
+    {
+      "id": "mo13", "type": "tf", "topic": "s4",
+      "q": { "sd": "ڪالرا وائرس سبب ٿئي ٿو.", "ur": "ہیضہ وائرس سے ہوتا ہے۔", "en": "Cholera is caused by a virus." },
+      "answer": false
+    },
+    {
+      "id": "mo14", "type": "tf", "topic": "s4",
+      "q": { "sd": "پاڻي اٻارڻ سان ان ۾ موجود نقصانڪار جراثيم مري وڃن ٿا.", "ur": "پانی ابالنے سے اس میں موجود نقصان دہ جراثیم مر جاتے ہیں۔", "en": "Boiling water kills the harmful germs in it." },
+      "answer": true
+    },
+    {
+      "id": "mo15", "type": "match", "topic": "s2",
+      "q": { "sd": "هر جراثيم کي ان جي گروهه سان ملايو.", "ur": "ہر جرثومے کو اس کے گروہ سے ملائیں۔", "en": "Match each microbe with its group." },
+      "pairs": [
+        { "left": { "sd": "خمير", "ur": "خمیر", "en": "Yeast" }, "right": { "sd": "فنگس", "ur": "فنجائی", "en": "Fungus" } },
+        { "left": { "sd": "پوليو جو جراثيم", "ur": "پولیو کا جرثومہ", "en": "Polio germ" }, "right": { "sd": "وائرس", "ur": "وائرس", "en": "Virus" } },
+        { "left": { "sd": "ڏهي ٺاهيندڙ جراثيم", "ur": "دہی بنانے والے جراثیم", "en": "Yoghurt germs" }, "right": { "sd": "بيڪٽيريا", "ur": "بیکٹیریا", "en": "Bacteria" } }
+      ]
+    },
+    {
+      "id": "mo16", "type": "match", "topic": "s4",
+      "q": { "sd": "هر بيماريءَ کي ان جي سبب سان ملايو.", "ur": "ہر بیماری کو اس کی وجہ سے ملائیں۔", "en": "Match each disease with its cause." },
+      "pairs": [
+        { "left": { "sd": "ٽائيفائيڊ", "ur": "ٹائیفائیڈ", "en": "Typhoid" }, "right": { "sd": "بيڪٽيريا", "ur": "بیکٹیریا", "en": "Bacteria" } },
+        { "left": { "sd": "خسرو", "ur": "خسرہ", "en": "Measles" }, "right": { "sd": "وائرس", "ur": "وائرس", "en": "Virus" } },
+        { "left": { "sd": "پيرن جي خارش", "ur": "پاؤں کی خارش", "en": "Athlete's foot" }, "right": { "sd": "فنگس", "ur": "فنجائی", "en": "Fungus" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "sort",
+      "title": { "sd": "فائديمند يا نقصانڪار؟", "ur": "فائدہ مند یا نقصان دہ؟", "en": "Useful or harmful?" },
+      "bins": [
+        { "id": "useful", "name": { "sd": "فائديمند", "ur": "فائدہ مند", "en": "Useful" } },
+        { "id": "harmful", "name": { "sd": "نقصانڪار", "ur": "نقصان دہ", "en": "Harmful" } }
+      ],
+      "items": [
+        { "emoji": "🥛", "text": { "sd": "کير مان ڏهي ٺهڻ", "ur": "دودھ سے دہی بننا", "en": "Milk turning into yoghurt" }, "bin": "useful" },
+        { "emoji": "🍞", "text": { "sd": "اٽي جو ڦلجڻ", "ur": "آٹے کا پھولنا", "en": "Dough rising" }, "bin": "useful" },
+        { "emoji": "💊", "text": { "sd": "پينيسلين دوا", "ur": "پینسلین دوا", "en": "Penicillin medicine" }, "bin": "useful" },
+        { "emoji": "🍂", "text": { "sd": "سڪل پنن جو مٽي بڻجڻ", "ur": "سوکھے پتوں کا مٹی بننا", "en": "Dead leaves turning into soil" }, "bin": "useful" },
+        { "emoji": "🧀", "text": { "sd": "پنير ٺهڻ", "ur": "پنیر بننا", "en": "Making cheese" }, "bin": "useful" },
+        { "emoji": "🤧", "text": { "sd": "زڪام ۽ فلو", "ur": "زکام اور فلو", "en": "Cold and flu" }, "bin": "harmful" },
+        { "emoji": "🍊", "text": { "sd": "ميوي کي ڦوڪڙ لڳڻ", "ur": "پھل کو پھپھوندی لگنا", "en": "Mould on fruit" }, "bin": "harmful" },
+        { "emoji": "🚱", "text": { "sd": "گندي پاڻيءَ مان ڪالرا", "ur": "گندے پانی سے ہیضہ", "en": "Cholera from dirty water" }, "bin": "harmful" },
+        { "emoji": "🦶", "text": { "sd": "پيرن جي خارش", "ur": "پاؤں کی خارش", "en": "Athlete's foot" }, "bin": "harmful" },
+        { "emoji": "🦟", "text": { "sd": "ڊينگي بخار", "ur": "ڈینگی بخار", "en": "Dengue fever" }, "bin": "harmful" }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ڇا خمير اٽي کي ڦولائي ٿو؟", "ur": "کیا خمیر آٹے کو پھلاتا ہے؟", "en": "Does yeast make dough rise?" },
+    "materials": [
+      { "sd": "ٻه ننڍا پيالا اٽو", "ur": "آٹے کے دو چھوٹے پیالے", "en": "Two small bowls of flour" },
+      { "sd": "اڌ چمچو خمير (يِيسٽ)", "ur": "آدھا چمچ خمیر", "en": "Half a spoon of yeast" },
+      { "sd": "هڪ چمچو کنڊ", "ur": "ایک چمچ چینی", "en": "One spoon of sugar" },
+      { "sd": "ڪوسو پاڻي", "ur": "نیم گرم پانی", "en": "Lukewarm water" },
+      { "sd": "ٻه گلاس ۽ هڪ قلم", "ur": "دو گلاس اور ایک قلم", "en": "Two glasses and a marker" }
+    ],
+    "steps": [
+      { "sd": "پهرئين پيالي ۾ خمير ۽ کنڊ ملايو. ٻئي پيالي ۾ ڪجهه نه وجهو.", "ur": "پہلے پیالے میں خمیر اور چینی ملائیں۔ دوسرے پیالے میں کچھ نہ ڈالیں۔", "en": "Mix the yeast and sugar into the first bowl of flour. Add nothing to the second bowl." },
+      { "sd": "ٻنهي ۾ ٿورو ڪوسو پاڻي وجهي نرم اٽو ڳوهيو.", "ur": "دونوں میں تھوڑا نیم گرم پانی ڈال کر نرم آٹا گوندھیں۔", "en": "Add a little lukewarm water to both and knead two soft doughs." },
+      { "sd": "هر اٽي کي الڳ گلاس ۾ وجهو ۽ قلم سان ان جي اوچائيءَ جو نشان لڳايو.", "ur": "ہر آٹے کو الگ گلاس میں ڈالیں اور قلم سے اس کی اونچائی کا نشان لگائیں۔", "en": "Press each dough into its own glass and mark its height with the marker." },
+      { "sd": "ٻنهي گلاسن کي ڍڪي 2 ڪلاڪ گرم جاءِ تي رکو.", "ur": "دونوں گلاسوں کو ڈھانپ کر 2 گھنٹے گرم جگہ پر رکھیں۔", "en": "Cover both glasses and keep them in a warm place for 2 hours." },
+      { "sd": "ٻنهي اٽن جي اوچائيءَ کي نشان سان ڀيٽيو.", "ur": "دونوں آٹوں کی اونچائی کا نشان سے موازنہ کریں۔", "en": "Compare the height of each dough with its mark." }
+    ],
+    "learn": {
+      "sd": "خمير وارو اٽو گهڻو ڦلجي ويو. خمير هڪ ننڍڙو فنگس آهي، جيڪو کنڊ کائي گئس ڪڍي ٿو. اها گئس اٽي ۾ ننڍا ٻڙا ٺاهي ٿي، تنهنڪري اٽو ڦلجي ٿو. اهو فائديمند جراثيمن جو مثال آهي.",
+      "ur": "خمیر والا آٹا بہت پھول گیا۔ خمیر ایک ننھی فنجائی ہے جو چینی کھا کر گیس خارج کرتی ہے۔ یہ گیس آٹے میں ننھے بلبلے بناتی ہے، اس لیے آٹا پھولتا ہے۔ یہ فائدہ مند جراثیم کی مثال ہے۔",
+      "en": "The dough with yeast rose much more. Yeast is a tiny fungus that feeds on sugar and gives out a gas. The gas makes small bubbles in the dough, so it rises. This is an example of useful microbes."
+    },
+    "safety": {
+      "sd": "ڪوسو پاڻي استعمال ڪريو، گرم نه. ڪنهن وڏي جي مدد وٺو ۽ ڪم کان پوءِ هٿ ڌوئو.",
+      "ur": "نیم گرم پانی استعمال کریں، گرم نہیں۔ کسی بڑے کی مدد لیں اور کام کے بعد ہاتھ دھوئیں۔",
+      "en": "Use lukewarm water, not hot water. Ask an adult to help, and wash your hands afterwards."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "ننڍين شين کي وڏو ڪري ڏيکاريندڙ اوزار کي ____ چئبو آهي.", "ur": "چھوٹی چیزوں کو بڑا کر کے دکھانے والے آلے کو ____ کہتے ہیں۔", "en": "An instrument that makes tiny things look bigger is called a ____." }, "answer": { "sd": "خوردبين", "ur": "خوردبین", "en": "microscope" } },
+      { "text": { "sd": "____ سڀ کان ننڍا جراثيم آهن.", "ur": "____ سب سے چھوٹے جراثیم ہیں۔", "en": "____ are the smallest microbes." }, "answer": { "sd": "وائرس", "ur": "وائرس", "en": "Viruses" } },
+      { "text": { "sd": "____ اٽي کي ڦولائي ٿو.", "ur": "____ آٹے کو پھلاتا ہے۔", "en": "____ makes dough rise." }, "answer": { "sd": "خمير", "ur": "خمیر", "en": "Yeast" } },
+      { "text": { "sd": "پينيسلين هڪ ____ مان ٺهي ٿي.", "ur": "پینسلین ایک ____ سے بنتی ہے۔", "en": "Penicillin is made from a ____." }, "answer": { "sd": "فنگس", "ur": "فنجائی", "en": "fungus" } },
+      { "text": { "sd": "جراثيمن سبب ٿيندڙ بيماريءَ کي ____ چئبو آهي.", "ur": "جراثیم سے ہونے والی بیماری کو ____ کہتے ہیں۔", "en": "A disease caused by microbes is called an ____." }, "answer": { "sd": "انفيڪشن", "ur": "انفیکشن", "en": "infection" } }
+    ],
+    "tf": [
+      { "text": { "sd": "بيڪٽيريا هڪ خاني وارا جاندار آهن.", "ur": "بیکٹیریا ایک خلیے والے جاندار ہیں۔", "en": "Bacteria are made of one cell." }, "answer": true },
+      { "text": { "sd": "کنڀيون (مشروم) هڪ قسم جو وائرس آهن.", "ur": "کھمبیاں (مشروم) ایک قسم کا وائرس ہیں۔", "en": "Mushrooms are a kind of virus." }, "answer": false },
+      { "text": { "sd": "ويڪسين اسان کي بيمارين کان بچائي ٿي.", "ur": "ویکسین ہمیں بیماریوں سے بچاتی ہے۔", "en": "Vaccines protect us from diseases." }, "answer": true },
+      { "text": { "sd": "کاڌو کليل رکڻ سان ان کي جراثيم نٿا لڳن.", "ur": "کھانا کھلا رکھنے سے اسے جراثیم نہیں لگتے۔", "en": "Food left uncovered never gets germs." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "خمير", "ur": "خمیر", "en": "Yeast" }, "b": { "sd": "نان ۽ ڊبل روٽي", "ur": "نان اور ڈبل روٹی", "en": "Naan and bread" } },
+      { "a": { "sd": "بيڪٽيريا", "ur": "بیکٹیریا", "en": "Bacteria" }, "b": { "sd": "ڏهي", "ur": "دہی", "en": "Yoghurt" } },
+      { "a": { "sd": "وائرس", "ur": "وائرس", "en": "Virus" }, "b": { "sd": "زڪام", "ur": "زکام", "en": "Common cold" } },
+      { "a": { "sd": "ويڪسين", "ur": "ویکسین", "en": "Vaccine" }, "b": { "sd": "پوليو جا ڦڙا", "ur": "پولیو کے قطرے", "en": "Polio drops" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "خوردبيني جاندارن جا ٽي گروهه لکو.", "ur": "خوردبینی جانداروں کے تین گروہ لکھیں۔", "en": "Name the three groups of microorganisms." },
+        "a": { "sd": "بيڪٽيريا، وائرس ۽ فنگس.", "ur": "بیکٹیریا، وائرس اور فنجائی۔", "en": "Bacteria, viruses and fungi." }
+      },
+      {
+        "q": { "sd": "فائديمند جراثيمن جا ٻه مثال ڏيو.", "ur": "فائدہ مند جراثیم کی دو مثالیں دیں۔", "en": "Give two examples of useful microbes." },
+        "a": { "sd": "خمير اٽو ڦولائي ٿو؛ بيڪٽيريا کير مان ڏهي ٺاهين ٿا.", "ur": "خمیر آٹا پھلاتا ہے؛ بیکٹیریا دودھ سے دہی بناتے ہیں۔", "en": "Yeast makes dough rise; bacteria turn milk into yoghurt." }
+      },
+      {
+        "q": { "sd": "جراثيمن کان بچڻ جا ٽي طريقا لکو.", "ur": "جراثیم سے بچنے کے تین طریقے لکھیں۔", "en": "Write three ways to protect ourselves from germs." },
+        "a": { "sd": "صابڻ سان هٿ ڌوئڻ، پاڻي اٻاري پيئڻ ۽ کاڌو ڍڪي رکڻ.", "ur": "صابن سے ہاتھ دھونا، پانی ابال کر پینا اور کھانا ڈھانپ کر رکھنا۔", "en": "Wash hands with soap, boil drinking water and keep food covered." }
+      }
+    ],
+    "draw": { "sd": "ٽي دٻا ٺاهيو: بيڪٽيريا، وائرس ۽ فنگس. هر دٻي ۾ ان جي تصوير ٺاهي ان جو هڪ مثال لکو.", "ur": "تین ڈبے بنائیں: بیکٹیریا، وائرس اور فنجائی۔ ہر ڈبے میں اس کی تصویر بنا کر ایک مثال لکھیں۔", "en": "Draw three boxes: bacteria, virus and fungus. In each box draw a picture and write one example." }
+  }
+}

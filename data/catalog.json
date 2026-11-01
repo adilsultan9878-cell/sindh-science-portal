@@ -10,7 +10,7 @@
           "active": true,
           "icon": "🔬",
           "name": { "sd": "سائنس", "ur": "سائنس", "en": "Science" },
-          "chapters": ["living-things", "plants", "digestion", "water-cycle", "matter", "force-machines", "light-sound", "electricity-magnets", "earth-space"]
+          "chapters": ["living-things", "microorganisms", "seeds", "pollution", "matter", "force-machines", "light-sound", "electricity-magnets", "soils", "earth-space", "plants", "digestion", "water-cycle"]
         },
         { "id": "maths", "active": false, "icon": "➗", "name": { "sd": "رياضي", "ur": "ریاضی", "en": "Maths" } },
         { "id": "english", "active": false, "icon": "🔤", "name": { "sd": "انگريزي", "ur": "انگریزی", "en": "English" } },

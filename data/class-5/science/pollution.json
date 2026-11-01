@@ -1,0 +1,379 @@
+{
+  "id": "pollution",
+  "number": 4,
+  "icon": "🏭",
+  "title": { "sd": "ماحولياتي آلودگي", "ur": "ماحولیاتی آلودگی", "en": "Environmental Pollution" },
+  "summary": {
+    "sd": "سکو ته آلودگي ڇا آهي، هوا، پاڻي ۽ زمين ڪيئن آلوده ٿين ٿا، ۽ اسين ڪچرو گهٽائي ماحول کي ڪيئن صاف رکي سگهون ٿا.",
+    "ur": "سیکھیں کہ آلودگی کیا ہے، ہوا، پانی اور زمین کیسے آلودہ ہوتے ہیں، اور ہم کچرا کم کر کے ماحول کو کیسے صاف رکھ سکتے ہیں۔",
+    "en": "Learn what pollution is, how air, water and land get polluted, and how we can cut waste and keep our surroundings clean."
+  },
+  "badge": { "id": "green_guardian", "icon": "♻️", "name": { "sd": "ماحول جو محافظ", "ur": "ماحول کا محافظ", "en": "Green Guardian" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "آلودگي ڇا آهي؟", "ur": "آلودگی کیا ہے؟", "en": "What is pollution?" },
+      "body": {
+        "sd": [
+          "جڏهن هوا، پاڻي يا زمين ۾ اهڙيون شيون ملي وڃن جيڪي ماڻهن، جانورن ۽ ٻوٽن لاءِ **نقصانڪار** هجن، ته ان کي **آلودگي** چئبو آهي.",
+          "آلودگي پيدا ڪندڙ نقصانڪار شين کي **آلوده ڪندڙ** چئبو آهي، جهڙوڪ دونهون، گندو پاڻي، پلاسٽڪ جون ٿيلهيون ۽ ڪارخانن جا ڪيميڪل.",
+          "گهڻي آلودگي **انسانن** جي ڪمن سبب ٿئي ٿي.",
+          "آلودگيءَ جا ٽي مکيه قسم آهن: **هوا جي آلودگي**، **پاڻيءَ جي آلودگي** ۽ **زمين جي آلودگي**."
+        ],
+        "ur": [
+          "جب ہوا، پانی یا زمین میں ایسی چیزیں مل جائیں جو انسانوں، جانوروں اور پودوں کے لیے **نقصان دہ** ہوں، تو اسے **آلودگی** کہتے ہیں۔",
+          "آلودگی پیدا کرنے والی نقصان دہ چیزوں کو **آلودہ کار** کہتے ہیں، جیسے دھواں، گندا پانی، پلاسٹک کی تھیلیاں اور کارخانوں کے کیمیکل۔",
+          "زیادہ تر آلودگی **انسانوں** کے کاموں سے ہوتی ہے۔",
+          "آلودگی کی تین بڑی قسمیں ہیں: **ہوائی آلودگی**، **آبی آلودگی** اور **زمینی آلودگی**۔"
+        ],
+        "en": [
+          "When things that are **harmful** to people, animals and plants get mixed into air, water or land, we call it **pollution**.",
+          "The harmful things that cause pollution are called **pollutants**, such as smoke, dirty water, plastic bags and chemicals from factories.",
+          "Most pollution is caused by the things **people** do.",
+          "There are three main kinds of pollution: **air pollution**, **water pollution** and **land pollution**."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "هوا جي آلودگي", "ur": "ہوائی آلودگی", "en": "Air pollution" },
+      "body": {
+        "sd": [
+          "هوا جي آلودگي جا سبب:",
+          "- گاڏين ۽ رڪشن جو **دونهون**.",
+          "- **ڪارخانن** جي چمنين مان نڪرندڙ دونهون ۽ گئس.",
+          "- **ڪچري کي ساڙڻ** ۽ ڪاٺ، ڪوئلي ۽ تيل جهڙن ٻارڻن کي ساڙڻ.",
+          "آلوده هوا ۾ ساهه کڻڻ سان **کنگهه**، **دمو**، اکين ۾ جلن، مٿي جو سور ۽ ڦڦڙن جون بيماريون ٿين ٿيون. وڏن شهرن، جهڙوڪ ڪراچي ۾، گاڏين جي دونهين سبب هوا جي آلودگي تمام گهڻي آهي."
+        ],
+        "ur": [
+          "ہوائی آلودگی کی وجوہات:",
+          "- گاڑیوں اور رکشوں کا **دھواں**۔",
+          "- **کارخانوں** کی چمنیوں سے نکلنے والا دھواں اور گیسیں۔",
+          "- **کچرا جلانا** اور لکڑی، کوئلہ اور تیل جیسے ایندھن جلانا۔",
+          "آلودہ ہوا میں سانس لینے سے **کھانسی**، **دمہ**، آنکھوں میں جلن، سر درد اور پھیپھڑوں کی بیماریاں ہوتی ہیں۔ بڑے شہروں جیسے کراچی میں گاڑیوں کے دھوئیں کی وجہ سے ہوائی آلودگی بہت زیادہ ہے۔"
+        ],
+        "en": [
+          "Causes of air pollution:",
+          "- **Smoke** from cars, buses and rickshaws.",
+          "- Smoke and gases from **factory** chimneys.",
+          "- **Burning rubbish** and burning fuels such as wood, coal and oil.",
+          "Breathing polluted air causes **coughing**, **asthma**, burning eyes, headaches and lung diseases. In big cities like Karachi, smoke from vehicles makes air pollution very high."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "پاڻيءَ ۽ زمين جي آلودگي", "ur": "آبی اور زمینی آلودگی", "en": "Water and land pollution" },
+      "body": {
+        "sd": [
+          "**پاڻيءَ جي آلودگي** جا سبب: گهرن جو گندو پاڻي (**سيوريج**) صاف ڪرڻ کان سواءِ نديءَ يا سمنڊ ۾ ڇڏڻ، ڪارخانن جا ڪيميڪل، ۽ پوکن مان وهندڙ جيت مار دوائون ۽ ڀاڻ.",
+          "آلودو پاڻي پيئڻ سان **ڪالرا**، **ٽائيفائيڊ** ۽ دستن جون بيماريون ٿين ٿيون. آلودي پاڻيءَ ۾ مڇيون ۽ ٻيا جاندار به مري وڃن ٿا.",
+          "**زمين جي آلودگي** تڏهن ٿئي ٿي جڏهن ڪچرو، جهڙوڪ پلاسٽڪ جون ٿيلهيون، بوتلون، ڪاغذ ۽ ٽين جا ڊٻا، زمين تي اڇلايا وڃن.",
+          "ڪچري جا ڍير مٽيءَ ۽ زير زمين پاڻيءَ کي خراب ڪن ٿا. جانور پلاسٽڪ کائي بيمار ٿين ٿا ۽ ڪچري تي مکيون ۽ مڇر پلجن ٿا."
+        ],
+        "ur": [
+          "**آبی آلودگی** کی وجوہات: گھروں کا گندا پانی (**سیوریج**) صاف کیے بغیر دریا یا سمندر میں چھوڑنا، کارخانوں کے کیمیکل، اور کھیتوں سے بہنے والی کیڑے مار دوائیں اور کھادیں۔",
+          "آلودہ پانی پینے سے **ہیضہ**، **ٹائیفائیڈ** اور اسہال کی بیماریاں ہوتی ہیں۔ آلودہ پانی میں مچھلیاں اور دوسرے جاندار بھی مر جاتے ہیں۔",
+          "**زمینی آلودگی** تب ہوتی ہے جب کچرا، جیسے پلاسٹک کی تھیلیاں، بوتلیں، کاغذ اور ٹین کے ڈبے، زمین پر پھینکے جائیں۔",
+          "کچرے کے ڈھیر مٹی اور زیر زمین پانی کو خراب کرتے ہیں۔ جانور پلاسٹک کھا کر بیمار ہوتے ہیں اور کچرے پر مکھیاں اور مچھر پلتے ہیں۔"
+        ],
+        "en": [
+          "Causes of **water pollution**: letting dirty water from homes (**sewage**) into rivers or the sea without cleaning it, chemicals from factories, and pesticides and fertilisers washing off farms.",
+          "Drinking polluted water causes **cholera**, **typhoid** and diarrhoea. Fish and other living things also die in polluted water.",
+          "**Land pollution** happens when rubbish such as plastic bags, bottles, paper and tin cans is thrown on the ground.",
+          "Heaps of rubbish spoil the soil and the water under the ground. Animals get sick from eating plastic, and flies and mosquitoes breed in rubbish."
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "title": { "sd": "ڳرندڙ ۽ نه ڳرندڙ ڪچرو", "ur": "گلنے والا اور نہ گلنے والا کچرا", "en": "Biodegradable and non-biodegradable waste" },
+      "body": {
+        "sd": [
+          "- **ڳرندڙ (بايو ڊيگريڊيبل) ڪچرو**: جيڪو جراثيمن سبب ڪجهه وقت ۾ سڙي مٽيءَ ۾ ملي وڃي. مثال: ڀاڄين ۽ ميون جا ڇلڪا، بچيل کاڌو، سڪل پن ۽ ڪاغذ.",
+          "- **نه ڳرندڙ ڪچرو**: جيڪو سؤ سالن تائين به نٿو سڙي. مثال: **پلاسٽڪ**، شيشو، ٽين جا ڊٻا ۽ پوليٿين.",
+          "پلاسٽڪ نديءَ ۽ سمنڊ ۾ پهچي مڇين، ڪڇن ۽ پکين کي نقصان پهچائي ٿو.",
+          "اسين آلودگي هيئن گهٽائي سگهون ٿا: **گهٽ استعمال**، **ٻيهر استعمال** ۽ **ري سائيڪل** ڪريون. ڪپڙي جي ٿيلهي استعمال ڪريون، ڪچرو نه ساڙيون، ڪچرو ڊسٽ بن ۾ وجهون، پنڌ هلون يا گڏيل سواري استعمال ڪريون ۽ **وڻ پوکيون**."
+        ],
+        "ur": [
+          "- **گلنے والا (بائیوڈیگریڈیبل) کچرا**: جو جراثیم کی وجہ سے کچھ عرصے میں گل سڑ کر مٹی میں مل جائے۔ مثالیں: سبزیوں اور پھلوں کے چھلکے، بچا ہوا کھانا، سوکھے پتے اور کاغذ۔",
+          "- **نہ گلنے والا کچرا**: جو سو سال تک بھی نہیں گلتا۔ مثالیں: **پلاسٹک**، شیشہ، ٹین کے ڈبے اور پولیتھین۔",
+          "پلاسٹک دریا اور سمندر میں پہنچ کر مچھلیوں، کچھوؤں اور پرندوں کو نقصان پہنچاتا ہے۔",
+          "ہم آلودگی یوں کم کر سکتے ہیں: **کم استعمال**، **دوبارہ استعمال** اور **ری سائیکل** کریں۔ کپڑے کی تھیلی استعمال کریں، کچرا نہ جلائیں، کچرا ڈسٹ بن میں ڈالیں، پیدل چلیں یا مشترکہ سواری استعمال کریں اور **درخت لگائیں**۔"
+        ],
+        "en": [
+          "- **Biodegradable waste**: rots away into the soil after some time because of microbes. Examples: fruit and vegetable peels, leftover food, dry leaves and paper.",
+          "- **Non-biodegradable waste**: does not rot even in a hundred years. Examples: **plastic**, glass, tin cans and polythene.",
+          "Plastic that reaches rivers and the sea harms fish, turtles and birds.",
+          "We can reduce pollution: **reduce**, **reuse** and **recycle**. Use cloth bags, do not burn rubbish, put rubbish in the bin, walk or share rides, and **plant trees**."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "tree",
+    "tree": { "id": "pollution", "children": [{ "id": "air" }, { "id": "water" }, { "id": "land" }] },
+    "parts": [
+      {
+        "id": "pollution",
+        "label": { "sd": "آلودگي", "ur": "آلودگی", "en": "Pollution" },
+        "info": { "sd": "هوا، پاڻي يا زمين ۾ نقصانڪار شين جو ملي وڃڻ.", "ur": "ہوا، پانی یا زمین میں نقصان دہ چیزوں کا مل جانا۔", "en": "Harmful things getting mixed into air, water or land." }
+      },
+      {
+        "id": "air",
+        "label": { "sd": "هوا جي آلودگي", "ur": "ہوائی آلودگی", "en": "Air pollution" },
+        "info": { "sd": "گاڏين، ڪارخانن ۽ ڪچري ساڙڻ جو دونهون. ان سان کنگهه ۽ دمو ٿئي ٿو.", "ur": "گاڑیوں، کارخانوں اور کچرا جلانے کا دھواں۔ اس سے کھانسی اور دمہ ہوتا ہے۔", "en": "Smoke from vehicles, factories and burning rubbish. It causes coughing and asthma." }
+      },
+      {
+        "id": "water",
+        "label": { "sd": "پاڻيءَ جي آلودگي", "ur": "آبی آلودگی", "en": "Water pollution" },
+        "info": { "sd": "سيوريج، ڪيميڪل ۽ ڪچرو پاڻيءَ ۾. ان سان ڪالرا ۽ ٽائيفائيڊ ٿئي ٿو.", "ur": "سیوریج، کیمیکل اور کچرا پانی میں۔ اس سے ہیضہ اور ٹائیفائیڈ ہوتا ہے۔", "en": "Sewage, chemicals and rubbish in water. It causes cholera and typhoid." }
+      },
+      {
+        "id": "land",
+        "label": { "sd": "زمين جي آلودگي", "ur": "زمینی آلودگی", "en": "Land pollution" },
+        "info": { "sd": "پلاسٽڪ، بوتلون ۽ ڪچرو زمين تي اڇلائڻ. ان سان مٽي ۽ زير زمين پاڻي خراب ٿئي ٿو.", "ur": "پلاسٹک، بوتلیں اور کچرا زمین پر پھینکنا۔ اس سے مٹی اور زیر زمین پانی خراب ہوتا ہے۔", "en": "Throwing plastic, bottles and rubbish on the ground. It spoils soil and underground water." }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "آلودگي", "ur": "آلودگی", "en": "pollution" },
+    { "sd": "آلوده ڪندڙ", "ur": "آلودہ کار", "en": "pollutant" },
+    { "sd": "ماحول", "ur": "ماحول", "en": "environment" },
+    { "sd": "دونهون", "ur": "دھواں", "en": "smoke" },
+    { "sd": "سيوريج", "ur": "سیوریج", "en": "sewage" },
+    { "sd": "ڪچرو", "ur": "کچرا", "en": "waste" },
+    { "sd": "ڳرندڙ ڪچرو", "ur": "گلنے والا کچرا", "en": "biodegradable" },
+    { "sd": "نه ڳرندڙ ڪچرو", "ur": "نہ گلنے والا کچرا", "en": "non-biodegradable" },
+    { "sd": "ري سائيڪل", "ur": "ری سائیکل", "en": "recycle" },
+    { "sd": "دمو", "ur": "دمہ", "en": "asthma" }
+  ],
+  "quiz": [
+    {
+      "id": "ep1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "آلودگي ڇا آهي؟", "ur": "آلودگی کیا ہے؟", "en": "What is pollution?" },
+      "options": [
+        { "sd": "هوا، پاڻي يا زمين ۾ نقصانڪار شين جو ملي وڃڻ", "ur": "ہوا، پانی یا زمین میں نقصان دہ چیزوں کا مل جانا", "en": "Harmful things getting into air, water or land" },
+        { "sd": "وڻ پوکڻ", "ur": "درخت لگانا", "en": "Planting trees" },
+        { "sd": "مينهن وسڻ", "ur": "بارش ہونا", "en": "Rain falling" },
+        { "sd": "ڪچرو ڊسٽ بن ۾ وجهڻ", "ur": "کچرا ڈسٹ بن میں ڈالنا", "en": "Putting rubbish in a bin" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ep2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "آلودگي پيدا ڪندڙ نقصانڪار شين کي ڇا چئبو آهي؟", "ur": "آلودگی پیدا کرنے والی نقصان دہ چیزوں کو کیا کہتے ہیں؟", "en": "What are the harmful things that cause pollution called?" },
+      "options": [
+        { "sd": "ڀاڻ", "ur": "کھاد", "en": "Manure" },
+        { "sd": "آلوده ڪندڙ", "ur": "آلودہ کار", "en": "Pollutants" },
+        { "sd": "ڳرندڙ", "ur": "گلنے والی", "en": "Biodegradables" },
+        { "sd": "ويڪسين", "ur": "ویکسین", "en": "Vaccines" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "ep3", "type": "mcq", "topic": "s2",
+      "q": { "sd": "هنن مان ڪهڙي شيءِ هوا جي آلودگي پيدا ڪري ٿي؟", "ur": "ان میں سے کون سی چیز ہوائی آلودگی پیدا کرتی ہے؟", "en": "Which of these causes air pollution?" },
+      "options": [
+        { "sd": "سائيڪل هلائڻ", "ur": "سائیکل چلانا", "en": "Riding a bicycle" },
+        { "sd": "وڻ پوکڻ", "ur": "درخت لگانا", "en": "Planting trees" },
+        { "sd": "ڪچرو ساڙڻ", "ur": "کچرا جلانا", "en": "Burning rubbish" },
+        { "sd": "پنڌ هلڻ", "ur": "پیدل چلنا", "en": "Walking" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "ep4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "آلوده هوا ۾ ساهه کڻڻ سان ڪهڙي بيماري ٿي سگهي ٿي؟", "ur": "آلودہ ہوا میں سانس لینے سے کون سی بیماری ہو سکتی ہے؟", "en": "Which illness can breathing polluted air cause?" },
+      "options": [
+        { "sd": "دمو", "ur": "دمہ", "en": "Asthma" },
+        { "sd": "ڏندن جو ڪيڙو", "ur": "دانتوں کا کیڑا", "en": "Tooth decay" },
+        { "sd": "هڏي ڀڄڻ", "ur": "ہڈی ٹوٹنا", "en": "A broken bone" },
+        { "sd": "پيرن جي خارش", "ur": "پاؤں کی خارش", "en": "Athlete's foot" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ep5", "type": "mcq", "topic": "s3",
+      "q": { "sd": "گهرن جي گندي پاڻيءَ کي ڇا چئبو آهي؟", "ur": "گھروں کے گندے پانی کو کیا کہتے ہیں؟", "en": "What is dirty water from homes called?" },
+      "options": [
+        { "sd": "مينهن جو پاڻي", "ur": "بارش کا پانی", "en": "Rainwater" },
+        { "sd": "سيوريج", "ur": "سیوریج", "en": "Sewage" },
+        { "sd": "ٻاڦ", "ur": "بھاپ", "en": "Steam" },
+        { "sd": "برف", "ur": "برف", "en": "Ice" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "ep6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "آلودو پاڻي پيئڻ سان ڪهڙي بيماري ٿئي ٿي؟", "ur": "آلودہ پانی پینے سے کون سی بیماری ہوتی ہے؟", "en": "Which disease can come from drinking polluted water?" },
+      "options": [
+        { "sd": "ڪالرا", "ur": "ہیضہ", "en": "Cholera" },
+        { "sd": "نظر جي ڪمزوري", "ur": "نظر کی کمزوری", "en": "Weak eyesight" },
+        { "sd": "دمو", "ur": "دمہ", "en": "Asthma" },
+        { "sd": "ڪوبه نه", "ur": "کوئی نہیں", "en": "None" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ep7", "type": "mcq", "topic": "s4",
+      "q": { "sd": "هنن مان ڪهڙو ڪچرو ڳرندڙ آهي؟", "ur": "ان میں سے کون سا کچرا گلنے والا ہے؟", "en": "Which of these is biodegradable?" },
+      "options": [
+        { "sd": "پلاسٽڪ جي بوتل", "ur": "پلاسٹک کی بوتل", "en": "Plastic bottle" },
+        { "sd": "شيشي جو گلاس", "ur": "شیشے کا گلاس", "en": "Glass" },
+        { "sd": "ڪيلي جو ڇلڪو", "ur": "کیلے کا چھلکا", "en": "Banana peel" },
+        { "sd": "ٽين جو ڊٻو", "ur": "ٹین کا ڈبہ", "en": "Tin can" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "ep8", "type": "mcq", "topic": "s4",
+      "q": { "sd": "پلاسٽڪ جي ٿيلهيءَ بدران ڇا استعمال ڪرڻ گهرجي؟", "ur": "پلاسٹک کی تھیلی کی جگہ کیا استعمال کرنا چاہیے؟", "en": "What should we use instead of a plastic bag?" },
+      "options": [
+        { "sd": "ٻي پلاسٽڪ ٿيلهي", "ur": "دوسری پلاسٹک تھیلی", "en": "Another plastic bag" },
+        { "sd": "ڪپڙي جي ٿيلهي", "ur": "کپڑے کی تھیلی", "en": "A cloth bag" },
+        { "sd": "پوليٿين", "ur": "پولیتھین", "en": "Polythene" },
+        { "sd": "ڪجهه به نه، ڪچرو ساڙيو", "ur": "کچھ نہیں، کچرا جلائیں", "en": "Nothing, just burn it" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "ep9", "type": "mcq", "topic": "s4",
+      "q": { "sd": "ري سائيڪل ڪرڻ جو مطلب ڇا آهي؟", "ur": "ری سائیکل کرنے کا مطلب کیا ہے؟", "en": "What does recycling mean?" },
+      "options": [
+        { "sd": "پراڻي شيءِ مان نئين شيءِ ٺاهڻ", "ur": "پرانی چیز سے نئی چیز بنانا", "en": "Making new things from old things" },
+        { "sd": "ڪچرو ساڙڻ", "ur": "کچرا جلانا", "en": "Burning rubbish" },
+        { "sd": "ڪچرو نديءَ ۾ اڇلائڻ", "ur": "کچرا دریا میں پھینکنا", "en": "Throwing rubbish in a river" },
+        { "sd": "وڌيڪ پلاسٽڪ خريد ڪرڻ", "ur": "زیادہ پلاسٹک خریدنا", "en": "Buying more plastic" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "ep10", "type": "tf", "topic": "s1",
+      "q": { "sd": "گهڻي آلودگي انسانن جي ڪمن سبب ٿئي ٿي.", "ur": "زیادہ تر آلودگی انسانوں کے کاموں سے ہوتی ہے۔", "en": "Most pollution is caused by people." },
+      "answer": true
+    },
+    {
+      "id": "ep11", "type": "tf", "topic": "s2",
+      "q": { "sd": "ڪچرو ساڙڻ سان هوا صاف ٿئي ٿي.", "ur": "کچرا جلانے سے ہوا صاف ہوتی ہے۔", "en": "Burning rubbish makes the air clean." },
+      "answer": false
+    },
+    {
+      "id": "ep12", "type": "tf", "topic": "s3",
+      "q": { "sd": "پوکن مان وهندڙ جيت مار دوائون پاڻي آلوده ڪري سگهن ٿيون.", "ur": "کھیتوں سے بہنے والی کیڑے مار دوائیں پانی آلودہ کر سکتی ہیں۔", "en": "Pesticides washing off farms can pollute water." },
+      "answer": true
+    },
+    {
+      "id": "ep13", "type": "tf", "topic": "s4",
+      "q": { "sd": "پلاسٽڪ ڪجهه ڏينهن ۾ سڙي مٽيءَ ۾ ملي وڃي ٿو.", "ur": "پلاسٹک کچھ دنوں میں گل کر مٹی میں مل جاتا ہے۔", "en": "Plastic rots into the soil in a few days." },
+      "answer": false
+    },
+    {
+      "id": "ep14", "type": "tf", "topic": "s4",
+      "q": { "sd": "وڻ پوکڻ سان هوا صاف رهي ٿي.", "ur": "درخت لگانے سے ہوا صاف رہتی ہے۔", "en": "Planting trees helps keep the air clean." },
+      "answer": true
+    },
+    {
+      "id": "ep15", "type": "match", "topic": "s3",
+      "q": { "sd": "هر سبب کي آلودگيءَ جي قسم سان ملايو.", "ur": "ہر وجہ کو آلودگی کی قسم سے ملائیں۔", "en": "Match each cause with the kind of pollution." },
+      "pairs": [
+        { "left": { "sd": "گاڏين جو دونهون", "ur": "گاڑیوں کا دھواں", "en": "Smoke from cars" }, "right": { "sd": "هوا جي آلودگي", "ur": "ہوائی آلودگی", "en": "Air pollution" } },
+        { "left": { "sd": "سمنڊ ۾ سيوريج", "ur": "سمندر میں سیوریج", "en": "Sewage in the sea" }, "right": { "sd": "پاڻيءَ جي آلودگي", "ur": "آبی آلودگی", "en": "Water pollution" } },
+        { "left": { "sd": "ڪچري جا ڍير", "ur": "کچرے کے ڈھیر", "en": "Heaps of rubbish" }, "right": { "sd": "زمين جي آلودگي", "ur": "زمینی آلودگی", "en": "Land pollution" } }
+      ]
+    },
+    {
+      "id": "ep16", "type": "match", "topic": "s4",
+      "q": { "sd": "هر ڪچري کي ان جي قسم سان ملايو.", "ur": "ہر کچرے کو اس کی قسم سے ملائیں۔", "en": "Match each piece of waste with its kind." },
+      "pairs": [
+        { "left": { "sd": "سڪل پن", "ur": "سوکھے پتے", "en": "Dry leaves" }, "right": { "sd": "ڳرندڙ", "ur": "گلنے والا", "en": "Biodegradable" } },
+        { "left": { "sd": "پلاسٽڪ جي ٿيلهي", "ur": "پلاسٹک کی تھیلی", "en": "Plastic bag" }, "right": { "sd": "نه ڳرندڙ", "ur": "نہ گلنے والا", "en": "Non-biodegradable" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "sort",
+      "title": { "sd": "ڪچري کي صحيح دٻي ۾ وجهو", "ur": "کچرے کو صحیح ڈبے میں ڈالیں", "en": "Put the waste in the right bin" },
+      "bins": [
+        { "id": "bio", "name": { "sd": "ڳرندڙ", "ur": "گلنے والا", "en": "Biodegradable" } },
+        { "id": "nonbio", "name": { "sd": "نه ڳرندڙ", "ur": "نہ گلنے والا", "en": "Non-biodegradable" } }
+      ],
+      "items": [
+        { "emoji": "🍌", "text": { "sd": "ڪيلي جو ڇلڪو", "ur": "کیلے کا چھلکا", "en": "Banana peel" }, "bin": "bio" },
+        { "emoji": "🍂", "text": { "sd": "سڪل پن", "ur": "سوکھے پتے", "en": "Dry leaves" }, "bin": "bio" },
+        { "emoji": "📰", "text": { "sd": "پراڻو اخبار", "ur": "پرانا اخبار", "en": "Old newspaper" }, "bin": "bio" },
+        { "emoji": "🥕", "text": { "sd": "ڀاڄيءَ جا ڇلڪا", "ur": "سبزی کے چھلکے", "en": "Vegetable peels" }, "bin": "bio" },
+        { "emoji": "🍞", "text": { "sd": "بچيل ماني", "ur": "بچی ہوئی روٹی", "en": "Leftover bread" }, "bin": "bio" },
+        { "emoji": "🛍️", "text": { "sd": "پلاسٽڪ جي ٿيلهي", "ur": "پلاسٹک کی تھیلی", "en": "Plastic bag" }, "bin": "nonbio" },
+        { "emoji": "🧴", "text": { "sd": "پلاسٽڪ جي بوتل", "ur": "پلاسٹک کی بوتل", "en": "Plastic bottle" }, "bin": "nonbio" },
+        { "emoji": "🥫", "text": { "sd": "ٽين جو ڊٻو", "ur": "ٹین کا ڈبہ", "en": "Tin can" }, "bin": "nonbio" },
+        { "emoji": "🍾", "text": { "sd": "شيشي جي بوتل", "ur": "شیشے کی بوتل", "en": "Glass bottle" }, "bin": "nonbio" },
+        { "emoji": "🔋", "text": { "sd": "پراڻي بيٽري", "ur": "پرانی بیٹری", "en": "Old battery" }, "bin": "nonbio" }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ڪهڙو ڪچرو مٽيءَ ۾ ڳري ٿو؟", "ur": "کون سا کچرا مٹی میں گلتا ہے؟", "en": "Which waste rots away in soil?" },
+    "materials": [
+      { "sd": "ٽي ننڍا ڪونڊا يا گملا مٽيءَ سان ڀريل", "ur": "مٹی سے بھرے تین چھوٹے گملے", "en": "Three small pots filled with soil" },
+      { "sd": "ڪيلي يا ڀاڄيءَ جو ڇلڪو", "ur": "کیلے یا سبزی کا چھلکا", "en": "A banana or vegetable peel" },
+      { "sd": "ڪاغذ جو ٽڪرو", "ur": "کاغذ کا ٹکڑا", "en": "A piece of paper" },
+      { "sd": "پلاسٽڪ جي ٿيلهيءَ جو ٽڪرو", "ur": "پلاسٹک کی تھیلی کا ٹکڑا", "en": "A piece of plastic bag" },
+      { "sd": "پاڻي ۽ ليبل", "ur": "پانی اور لیبل", "en": "Water and labels" }
+    ],
+    "steps": [
+      { "sd": "هر گملي ۾ هڪ شيءِ تقريباً 5 سينٽي ميٽر اونهي دفن ڪريو.", "ur": "ہر گملے میں ایک چیز تقریباً 5 سینٹی میٹر گہری دفن کریں۔", "en": "Bury one item about 5 centimetres deep in each pot." },
+      { "sd": "هر گملي تي ان شيءِ جو نالو لکو.", "ur": "ہر گملے پر اس چیز کا نام لکھیں۔", "en": "Label each pot with the name of the item." },
+      { "sd": "هر ٻئي ڏينهن مٽيءَ تي ٿورو پاڻي هاريو، ته مٽي آلي رهي.", "ur": "ہر دوسرے دن مٹی پر تھوڑا پانی ڈالیں تاکہ مٹی نم رہے۔", "en": "Sprinkle a little water every other day to keep the soil damp." },
+      { "sd": "ٽن هفتن کان پوءِ احتياط سان مٽي کوٽي ٽنهي شين کي ڏسو.", "ur": "تین ہفتوں کے بعد احتیاط سے مٹی کھود کر تینوں چیزیں دیکھیں۔", "en": "After three weeks, dig carefully and look at all three items." },
+      { "sd": "لکو ته ڪهڙي شيءِ ڳري وئي ۽ ڪهڙي ساڳي رهي.", "ur": "لکھیں کہ کون سی چیز گل گئی اور کون سی ویسی ہی رہی۔", "en": "Write down which item rotted and which stayed the same." }
+    ],
+    "learn": {
+      "sd": "ڇلڪو گهڻو ڳري ويو، ڪاغذ نرم ٿي ڦاٽڻ لڳو، پر پلاسٽڪ بلڪل ساڳيو رهيو. مٽيءَ جا جراثيم ڳرندڙ ڪچري کي ٽوڙي ڇڏين ٿا، پر پلاسٽڪ کي نٿا ٽوڙي سگهن. تنهنڪري پلاسٽڪ گهٽ استعمال ڪرڻ گهرجي.",
+      "ur": "چھلکا کافی گل گیا، کاغذ نرم ہو کر پھٹنے لگا، لیکن پلاسٹک بالکل ویسا ہی رہا۔ مٹی کے جراثیم گلنے والے کچرے کو توڑ دیتے ہیں، لیکن پلاسٹک کو نہیں توڑ سکتے۔ اس لیے پلاسٹک کم استعمال کرنا چاہیے۔",
+      "en": "The peel rotted a lot and the paper became soft and started to break up, but the plastic stayed exactly the same. Microbes in the soil break down biodegradable waste but cannot break down plastic. So we should use less plastic."
+    },
+    "safety": {
+      "sd": "مٽي ۽ ڪچري کي هٿ لائڻ کان پوءِ صابڻ سان هٿ ڌوئو. شيشو يا تيز شيون استعمال نه ڪريو.",
+      "ur": "مٹی اور کچرے کو ہاتھ لگانے کے بعد صابن سے ہاتھ دھوئیں۔ شیشہ یا تیز دھار چیزیں استعمال نہ کریں۔",
+      "en": "Wash your hands with soap after touching soil and waste. Do not use glass or sharp things."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "آلودگي پيدا ڪندڙ نقصانڪار شين کي ____ چئبو آهي.", "ur": "آلودگی پیدا کرنے والی نقصان دہ چیزوں کو ____ کہتے ہیں۔", "en": "The harmful things that cause pollution are called ____." }, "answer": { "sd": "آلوده ڪندڙ", "ur": "آلودہ کار", "en": "pollutants" } },
+      { "text": { "sd": "گهرن جو گندو پاڻي ____ سڏجي ٿو.", "ur": "گھروں کا گندا پانی ____ کہلاتا ہے۔", "en": "Dirty water from homes is called ____." }, "answer": { "sd": "سيوريج", "ur": "سیوریج", "en": "sewage" } },
+      { "text": { "sd": "آلوده هوا سان ____ جي بيماري ٿي سگهي ٿي.", "ur": "آلودہ ہوا سے ____ کی بیماری ہو سکتی ہے۔", "en": "Polluted air can cause ____." }, "answer": { "sd": "دمي", "ur": "دمے", "en": "asthma" } },
+      { "text": { "sd": "____ سؤ سالن تائين به نٿو ڳري.", "ur": "____ سو سال تک بھی نہیں گلتا۔", "en": "____ does not rot even in a hundred years." }, "answer": { "sd": "پلاسٽڪ", "ur": "پلاسٹک", "en": "Plastic" } },
+      { "text": { "sd": "پراڻين شين مان نيون شيون ٺاهڻ کي ____ چئبو آهي.", "ur": "پرانی چیزوں سے نئی چیزیں بنانے کو ____ کہتے ہیں۔", "en": "Making new things from old things is called ____." }, "answer": { "sd": "ري سائيڪل", "ur": "ری سائیکل", "en": "recycling" } }
+    ],
+    "tf": [
+      { "text": { "sd": "ڪارخانن جو دونهون هوا کي آلوده ڪري ٿو.", "ur": "کارخانوں کا دھواں ہوا کو آلودہ کرتا ہے۔", "en": "Smoke from factories pollutes the air." }, "answer": true },
+      { "text": { "sd": "آلودي پاڻيءَ ۾ مڇيون سٺيون رهن ٿيون.", "ur": "آلودہ پانی میں مچھلیاں ٹھیک رہتی ہیں۔", "en": "Fish live happily in polluted water." }, "answer": false },
+      { "text": { "sd": "ميوي جا ڇلڪا ڳرندڙ ڪچرو آهن.", "ur": "پھلوں کے چھلکے گلنے والا کچرا ہیں۔", "en": "Fruit peels are biodegradable." }, "answer": true },
+      { "text": { "sd": "ڪچرو ساڙڻ آلودگي گهٽائڻ جو سٺو طريقو آهي.", "ur": "کچرا جلانا آلودگی کم کرنے کا اچھا طریقہ ہے۔", "en": "Burning rubbish is a good way to reduce pollution." }, "answer": false }
+    ],
+    "match": [
+      { "a": { "sd": "هوا جي آلودگي", "ur": "ہوائی آلودگی", "en": "Air pollution" }, "b": { "sd": "گاڏين جو دونهون", "ur": "گاڑیوں کا دھواں", "en": "Smoke from vehicles" } },
+      { "a": { "sd": "پاڻيءَ جي آلودگي", "ur": "آبی آلودگی", "en": "Water pollution" }, "b": { "sd": "ڪارخانن جا ڪيميڪل", "ur": "کارخانوں کے کیمیکل", "en": "Factory chemicals" } },
+      { "a": { "sd": "زمين جي آلودگي", "ur": "زمینی آلودگی", "en": "Land pollution" }, "b": { "sd": "پلاسٽڪ جون ٿيلهيون", "ur": "پلاسٹک کی تھیلیاں", "en": "Plastic bags" } },
+      { "a": { "sd": "ڳرندڙ ڪچرو", "ur": "گلنے والا کچرا", "en": "Biodegradable waste" }, "b": { "sd": "ڀاڄيءَ جا ڇلڪا", "ur": "سبزی کے چھلکے", "en": "Vegetable peels" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "آلودگيءَ جا ٽي قسم لکو.", "ur": "آلودگی کی تین قسمیں لکھیں۔", "en": "Name the three kinds of pollution." },
+        "a": { "sd": "هوا جي آلودگي، پاڻيءَ جي آلودگي ۽ زمين جي آلودگي.", "ur": "ہوائی آلودگی، آبی آلودگی اور زمینی آلودگی۔", "en": "Air pollution, water pollution and land pollution." }
+      },
+      {
+        "q": { "sd": "ڳرندڙ ۽ نه ڳرندڙ ڪچري ۾ ڪهڙو فرق آهي؟", "ur": "گلنے والے اور نہ گلنے والے کچرے میں کیا فرق ہے؟", "en": "What is the difference between biodegradable and non-biodegradable waste?" },
+        "a": { "sd": "ڳرندڙ ڪچرو سڙي مٽيءَ ۾ ملي وڃي ٿو، نه ڳرندڙ ڪچرو گهڻن سالن تائين نٿو سڙي.", "ur": "گلنے والا کچرا گل کر مٹی میں مل جاتا ہے، نہ گلنے والا کچرا بہت سالوں تک نہیں گلتا۔", "en": "Biodegradable waste rots into the soil; non-biodegradable waste does not rot for many years." }
+      },
+      {
+        "q": { "sd": "آلودگي گهٽائڻ جا ٽي طريقا لکو.", "ur": "آلودگی کم کرنے کے تین طریقے لکھیں۔", "en": "Write three ways to reduce pollution." },
+        "a": { "sd": "ڪپڙي جي ٿيلهي استعمال ڪريو، ڪچرو نه ساڙيو ۽ وڻ پوکيو.", "ur": "کپڑے کی تھیلی استعمال کریں، کچرا نہ جلائیں اور درخت لگائیں۔", "en": "Use cloth bags, do not burn rubbish and plant trees." }
+      }
+    ],
+    "draw": { "sd": "پنهنجي اسڪول کي صاف رکڻ لاءِ هڪ پوسٽر ٺاهيو. ان تي هڪ ڊسٽ بن ۽ هڪ نعرو لکو.", "ur": "اپنے اسکول کو صاف رکھنے کے لیے ایک پوسٹر بنائیں۔ اس پر ایک ڈسٹ بن اور ایک نعرہ لکھیں۔", "en": "Make a poster to keep your school clean. Draw a rubbish bin on it and write a slogan." }
+  }
+}

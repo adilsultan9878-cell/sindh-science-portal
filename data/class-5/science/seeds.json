@@ -1,0 +1,383 @@
+{
+  "id": "seeds",
+  "number": 3,
+  "icon": "🫘",
+  "title": { "sd": "ٻج: بناوت ۽ ڦٽڻ", "ur": "بیج: ساخت اور اگنا", "en": "Seeds: Structure and Germination" },
+  "summary": {
+    "sd": "سکو ته ٻج جا ڪهڙا حصا آهن، لوبيا ۽ مڪئي جي ٻج ۾ ڪهڙو فرق آهي، ۽ ٻج کي ڦٽڻ لاءِ ڇا گهرجي.",
+    "ur": "سیکھیں کہ بیج کے کون سے حصے ہیں، لوبیا اور مکئی کے بیج میں کیا فرق ہے، اور بیج کو اگنے کے لیے کیا چاہیے۔",
+    "en": "Learn the parts of a seed, how a bean seed and a maize seed differ, and what a seed needs to germinate."
+  },
+  "badge": { "id": "seed_sprouter", "icon": "🌱", "name": { "sd": "ٻج اُڳائيندڙ", "ur": "بیج اگانے والا", "en": "Seed Sprouter" } },
+  "lesson": [
+    {
+      "id": "s1",
+      "title": { "sd": "ٻج جا حصا", "ur": "بیج کے حصے", "en": "Parts of a seed" },
+      "body": {
+        "sd": [
+          "ٻج مان نئون ٻوٽو ٺهي ٿو. هر ٻج اندر هڪ ننڍڙو ٻوٽو ۽ ان لاءِ کاڌو هوندو آهي.",
+          "- **ٻج جو کل (ٻاهريون پردو)**: ٻج کي ٻاهران ڍڪي ٿو ۽ ان جي حفاظت ڪري ٿو. ان ۾ هڪ ننڍڙو سوراخ هوندو آهي جنهن کي **مائڪروپائل** چئبو آهي. ان مان پاڻي اندر وڃي ٿو.",
+          "- **ڦوٽ (ايمبريو)**: ٻج اندر ننڍڙو ٻوٽو. ان جو جيڪو حصو **پاڙ** بڻجي ٿو ان کي **ريڊيڪل** چئبو آهي، ۽ جيڪو **ٿڙ ۽ پن** بڻجي ٿو ان کي **پليومول** چئبو آهي.",
+          "- **ٻج پن (ڪوٽيليڊن)**: انهن ۾ ننڍڙي ٻوٽي لاءِ **کاڌو** گڏ ٿيل هوندو آهي.",
+          "جن ٻجن ۾ ٻه ٻج پن هجن، انهن کي **ٻه پني ٻج** چئبو آهي، جهڙوڪ لوبيا، مٽر ۽ چڻا. جن ۾ هڪ ٻج پن هجي، انهن کي **هڪ پني ٻج** چئبو آهي، جهڙوڪ مڪئي، ڪڻڪ ۽ چانور."
+        ],
+        "ur": [
+          "بیج سے نیا پودا بنتا ہے۔ ہر بیج کے اندر ایک ننھا پودا اور اس کے لیے غذا ہوتی ہے۔",
+          "- **بیج کا چھلکا**: بیج کو باہر سے ڈھانپتا ہے اور اس کی حفاظت کرتا ہے۔ اس میں ایک ننھا سوراخ ہوتا ہے جسے **مائیکروپائل** کہتے ہیں۔ اس سے پانی اندر جاتا ہے۔",
+          "- **جنین (ایمبریو)**: بیج کے اندر ننھا پودا۔ اس کا جو حصہ **جڑ** بنتا ہے اسے **ریڈیکل** کہتے ہیں، اور جو **تنا اور پتے** بنتا ہے اسے **پلیومیول** کہتے ہیں۔",
+          "- **دال پتے (کوٹیلیڈن)**: ان میں ننھے پودے کے لیے **غذا** جمع ہوتی ہے۔",
+          "جن بیجوں میں دو دال پتے ہوں انہیں **دو دالے بیج** کہتے ہیں، جیسے لوبیا، مٹر اور چنا۔ جن میں ایک دال پتا ہو انہیں **یک دالے بیج** کہتے ہیں، جیسے مکئی، گندم اور چاول۔"
+        ],
+        "en": [
+          "A new plant grows from a seed. Inside every seed there is a tiny plant and food for it.",
+          "- **Seed coat**: covers the seed and protects it. It has a tiny hole called the **micropyle**. Water goes in through it.",
+          "- **Embryo**: the baby plant inside the seed. The part that becomes the **root** is called the **radicle**, and the part that becomes the **stem and leaves** is called the **plumule**.",
+          "- **Cotyledons (seed leaves)**: they store **food** for the baby plant.",
+          "Seeds with two cotyledons are called **dicot seeds**, like beans, peas and chickpeas. Seeds with one cotyledon are called **monocot seeds**, like maize, wheat and rice."
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "title": { "sd": "لوبيا ۽ مڪئي جو ٻج", "ur": "لوبیا اور مکئی کا بیج", "en": "A bean seed and a maize seed" },
+      "body": {
+        "sd": [
+          "- **لوبيا جو ٻج** ٻه پني آهي. پاڻيءَ ۾ ڀڄايل ٻج جو کل لاهيو ته اهو آسانيءَ سان ٻن اڌن ۾ کلي ٿو. اهي ٻه اڌ ٻه **ٻج پن** آهن ۽ انهن جي وچ ۾ ننڍڙو **ڦوٽ** لڳل هوندو آهي.",
+          "- **مڪئي جو داڻو** هڪ پني آهي. ان ۾ هڪ ٻج پن، هڪ ڦوٽ ۽ کاڌي جو وڏو ذخيرو هوندو آهي، جنهن کي **اينڊواسپرم** چئبو آهي.",
+          "لوبيا ۾ کاڌو ٻج پنن ۾ گڏ ٿئي ٿو، پر مڪئي ۾ کاڌو گهڻو ڪري اينڊواسپرم ۾ هوندو آهي.",
+          "اسين ڪيترائي ٻج کاڌي طور کائون ٿا، جهڙوڪ دالون، چڻا، مونگ پَلي ۽ مڪئي."
+        ],
+        "ur": [
+          "- **لوبیا کا بیج** دو دالا ہے۔ پانی میں بھگوئے ہوئے بیج کا چھلکا اتاریں تو یہ آسانی سے دو حصوں میں کھل جاتا ہے۔ یہ دو حصے دو **دال پتے** ہیں اور ان کے بیچ ننھا **جنین** لگا ہوتا ہے۔",
+          "- **مکئی کا دانہ** یک دالا ہے۔ اس میں ایک دال پتا، ایک جنین اور غذا کا بڑا ذخیرہ ہوتا ہے جسے **اینڈوسپرم** کہتے ہیں۔",
+          "لوبیا میں غذا دال پتوں میں جمع ہوتی ہے، لیکن مکئی میں غذا زیادہ تر اینڈوسپرم میں ہوتی ہے۔",
+          "ہم بہت سے بیج غذا کے طور پر کھاتے ہیں، جیسے دالیں، چنے، مونگ پھلی اور مکئی۔"
+        ],
+        "en": [
+          "- A **bean seed** is a dicot. Take the coat off a soaked bean and it opens easily into two halves. The two halves are the two **cotyledons**, and the tiny **embryo** is attached between them.",
+          "- A **maize grain** is a monocot. It has one cotyledon, an embryo and a large store of food called the **endosperm**.",
+          "In a bean, food is stored in the cotyledons. In maize, most of the food is stored in the endosperm.",
+          "We eat many seeds as food, such as lentils, chickpeas, peanuts and maize."
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "title": { "sd": "ٻج ڪيئن ڦٽي ٿو؟", "ur": "بیج کیسے اگتا ہے؟", "en": "How does a seed germinate?" },
+      "body": {
+        "sd": [
+          "جڏهن ٻج مان ننڍڙو ٻوٽو نڪري وڌڻ لڳي ته ان کي **ڦٽڻ (جرمينيشن)** چئبو آهي. ننڍڙي نئين ٻوٽي کي **سِلنگ (ٻوٽڙو)** چئبو آهي.",
+          "سڀ کان پهرين **ريڊيڪل** ٻاهر نڪري هيٺ مٽيءَ ڏانهن وڌي ٿو ۽ پاڙ بڻجي ٿو. پوءِ **پليومول** مٿي روشنيءَ ڏانهن وڌي ٿو.",
+          "- **لوبيا ۾**: ٿڙ ڪُنڍي جهڙو مُڙي مٽيءَ مان نڪري ٿو ۽ ٻج پنن کي **مٽيءَ کان مٿي** کڻي اچي ٿو. ٻج پن سائا ٿي ڪجهه ڏينهن کاڌو ٺاهين ٿا، پوءِ سڪي ڪري پون ٿا.",
+          "- **مڪئي ۾**: ٻج پن **مٽيءَ هيٺ** ئي رهي ٿو. نرم پليومول هڪ سڌي حفاظتي کوهه اندر مٿي وڌي ٿو."
+        ],
+        "ur": [
+          "جب بیج سے ننھا پودا نکل کر بڑھنے لگے تو اسے **اگنا (جرمینیشن)** کہتے ہیں۔ ننھے نئے پودے کو **پنیری (سیڈلنگ)** کہتے ہیں۔",
+          "سب سے پہلے **ریڈیکل** باہر نکل کر نیچے مٹی کی طرف بڑھتا ہے اور جڑ بنتا ہے۔ پھر **پلیومیول** اوپر روشنی کی طرف بڑھتا ہے۔",
+          "- **لوبیا میں**: تنا کنڈے کی طرح مڑ کر مٹی سے نکلتا ہے اور دال پتوں کو **مٹی سے اوپر** لے آتا ہے۔ دال پتے ہرے ہو کر کچھ دن غذا بناتے ہیں، پھر سوکھ کر گر جاتے ہیں۔",
+          "- **مکئی میں**: دال پتا **مٹی کے نیچے** ہی رہتا ہے۔ نرم پلیومیول ایک سیدھے حفاظتی غلاف کے اندر اوپر بڑھتا ہے۔"
+        ],
+        "en": [
+          "When a tiny plant comes out of a seed and starts to grow, we call it **germination**. The young new plant is called a **seedling**.",
+          "First the **radicle** comes out and grows down into the soil to become the root. Then the **plumule** grows up towards the light.",
+          "- **In a bean**: the stem bends like a hook, pushes out of the soil and pulls the cotyledons **above the soil**. The cotyledons turn green and make food for a few days, then dry up and fall off.",
+          "- **In maize**: the cotyledon stays **under the soil**. The soft plumule grows straight up inside a protective sheath."
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "title": { "sd": "ڦٽڻ لاءِ ضروري شيون", "ur": "اگنے کے لیے ضروری چیزیں", "en": "What seeds need to germinate" },
+      "body": {
+        "sd": [
+          "هر ٻج نٿو ڦٽي. ٻج کي ڦٽڻ لاءِ ٽي شيون گهرجن:",
+          "- **پاڻي**: ٻج پاڻي چوسي ڦولجي ٿو ۽ ان جو کل نرم ٿي ڦاٽي ٿو. سڪل ٻج نٿو ڦٽي.",
+          "- **هوا (آڪسيجن)**: ٻج کي توانائي لاءِ ساهه کڻڻو پوي ٿو.",
+          "- **مناسب گرمي پد**: گهڻا ٻج ڪوسي موسم ۾ ڦٽن ٿا. تمام گهڻي ٿڌ يا گرميءَ ۾ ٻج نٿا ڦٽن.",
+          "ڪن ٻجن کي روشني به گهرجي ۽ ڪي اونداهيءَ ۾ ڦٽن ٿا. ٻج کي ڦٽڻ لاءِ **مٽي ضروري ناهي**: اهو آلي روئيءَ تي به ڦٽي سگهي ٿو. پر وڌڻ لاءِ ٻوٽي کي مٽي، سج جي روشني ۽ کاڌي جي ضرورت پوي ٿي."
+        ],
+        "ur": [
+          "ہر بیج نہیں اگتا۔ بیج کو اگنے کے لیے تین چیزیں چاہئیں:",
+          "- **پانی**: بیج پانی جذب کر کے پھول جاتا ہے اور اس کا چھلکا نرم ہو کر پھٹ جاتا ہے۔ سوکھا بیج نہیں اگتا۔",
+          "- **ہوا (آکسیجن)**: بیج کو توانائی کے لیے سانس لینا پڑتا ہے۔",
+          "- **مناسب درجہ حرارت**: زیادہ تر بیج معتدل گرم موسم میں اگتے ہیں۔ بہت زیادہ سردی یا گرمی میں بیج نہیں اگتے۔",
+          "کچھ بیجوں کو روشنی بھی چاہیے اور کچھ اندھیرے میں اگتے ہیں۔ بیج کو اگنے کے لیے **مٹی ضروری نہیں**: یہ گیلی روئی پر بھی اگ سکتا ہے۔ لیکن بڑھنے کے لیے پودے کو مٹی، دھوپ اور غذا کی ضرورت ہوتی ہے۔"
+        ],
+        "en": [
+          "Not every seed germinates. A seed needs three things to germinate:",
+          "- **Water**: the seed soaks up water and swells, and its coat softens and splits. A dry seed does not germinate.",
+          "- **Air (oxygen)**: the seed has to breathe to get energy.",
+          "- **The right temperature**: most seeds germinate when it is warm. They do not germinate when it is very cold or very hot.",
+          "Some seeds also need light, while others germinate in the dark. A seed **does not need soil** to germinate: it can sprout on wet cotton. But to keep growing, the plant needs soil, sunlight and food."
+        ]
+      }
+    }
+  ],
+  "diagram": {
+    "type": "tree",
+    "tree": { "id": "seed", "children": [{ "id": "seedcoat" }, { "id": "cotyledon" }, { "id": "embryo", "children": [{ "id": "radicle" }, { "id": "plumule" }] }] },
+    "parts": [
+      {
+        "id": "seed",
+        "label": { "sd": "ٻج", "ur": "بیج", "en": "Seed" },
+        "info": { "sd": "ٻج مان نئون ٻوٽو ٺهي ٿو. ان ۾ ننڍڙو ٻوٽو ۽ ان جو کاڌو هوندو آهي.", "ur": "بیج سے نیا پودا بنتا ہے۔ اس میں ننھا پودا اور اس کی غذا ہوتی ہے۔", "en": "A new plant grows from a seed. It holds a tiny plant and its food." }
+      },
+      {
+        "id": "seedcoat",
+        "label": { "sd": "ٻج جو کل", "ur": "بیج کا چھلکا", "en": "Seed coat" },
+        "info": { "sd": "ٻج جي حفاظت ڪري ٿو. ان جي ننڍڙي سوراخ (مائڪروپائل) مان پاڻي اندر وڃي ٿو.", "ur": "بیج کی حفاظت کرتا ہے۔ اس کے ننھے سوراخ (مائیکروپائل) سے پانی اندر جاتا ہے۔", "en": "Protects the seed. Water enters through its tiny hole, the micropyle." }
+      },
+      {
+        "id": "cotyledon",
+        "label": { "sd": "ٻج پن", "ur": "دال پتا", "en": "Cotyledon" },
+        "info": { "sd": "ننڍڙي ٻوٽي لاءِ کاڌو گڏ ڪري ٿو. لوبيا ۾ ٻه، مڪئي ۾ هڪ.", "ur": "ننھے پودے کے لیے غذا جمع کرتا ہے۔ لوبیا میں دو، مکئی میں ایک۔", "en": "Stores food for the baby plant. A bean has two; maize has one." }
+      },
+      {
+        "id": "embryo",
+        "label": { "sd": "ڦوٽ", "ur": "جنین", "en": "Embryo" },
+        "info": { "sd": "ٻج اندر ننڍڙو ٻوٽو، جيڪو وڌي نئون ٻوٽو بڻجي ٿو.", "ur": "بیج کے اندر ننھا پودا، جو بڑھ کر نیا پودا بنتا ہے۔", "en": "The baby plant inside the seed, which grows into a new plant." }
+      },
+      {
+        "id": "radicle",
+        "label": { "sd": "ريڊيڪل", "ur": "ریڈیکل", "en": "Radicle" },
+        "info": { "sd": "سڀ کان پهرين نڪري ٿو ۽ هيٺ وڌي پاڙ بڻجي ٿو.", "ur": "سب سے پہلے نکلتا ہے اور نیچے بڑھ کر جڑ بنتا ہے۔", "en": "Comes out first and grows down to become the root." }
+      },
+      {
+        "id": "plumule",
+        "label": { "sd": "پليومول", "ur": "پلیومیول", "en": "Plumule" },
+        "info": { "sd": "مٿي روشنيءَ ڏانهن وڌي ٿڙ ۽ پن بڻجي ٿو.", "ur": "اوپر روشنی کی طرف بڑھ کر تنا اور پتے بنتا ہے۔", "en": "Grows up towards the light to become the stem and leaves." }
+      }
+    ]
+  },
+  "glossary": [
+    { "sd": "ٻج", "ur": "بیج", "en": "seed" },
+    { "sd": "ٻج جو کل", "ur": "بیج کا چھلکا", "en": "seed coat" },
+    { "sd": "مائڪروپائل", "ur": "مائیکروپائل", "en": "micropyle" },
+    { "sd": "ڦوٽ", "ur": "جنین", "en": "embryo" },
+    { "sd": "ريڊيڪل", "ur": "ریڈیکل", "en": "radicle" },
+    { "sd": "پليومول", "ur": "پلیومیول", "en": "plumule" },
+    { "sd": "ٻج پن", "ur": "دال پتا", "en": "cotyledon" },
+    { "sd": "اينڊواسپرم", "ur": "اینڈوسپرم", "en": "endosperm" },
+    { "sd": "ڦٽڻ", "ur": "اگنا", "en": "germination" },
+    { "sd": "ٻوٽڙو", "ur": "پنیری", "en": "seedling" }
+  ],
+  "quiz": [
+    {
+      "id": "sd1", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ٻج جو ڪهڙو حصو ان جي حفاظت ڪري ٿو؟", "ur": "بیج کا کون سا حصہ اس کی حفاظت کرتا ہے؟", "en": "Which part of a seed protects it?" },
+      "options": [
+        { "sd": "ٻج جو کل", "ur": "بیج کا چھلکا", "en": "Seed coat" },
+        { "sd": "ريڊيڪل", "ur": "ریڈیکل", "en": "Radicle" },
+        { "sd": "پليومول", "ur": "پلیومیول", "en": "Plumule" },
+        { "sd": "اينڊواسپرم", "ur": "اینڈوسپرم", "en": "Endosperm" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "sd2", "type": "mcq", "topic": "s1",
+      "q": { "sd": "ڦوٽ جو ڪهڙو حصو پاڙ بڻجي ٿو؟", "ur": "جنین کا کون سا حصہ جڑ بنتا ہے؟", "en": "Which part of the embryo becomes the root?" },
+      "options": [
+        { "sd": "پليومول", "ur": "پلیومیول", "en": "Plumule" },
+        { "sd": "ريڊيڪل", "ur": "ریڈیکل", "en": "Radicle" },
+        { "sd": "ٻج پن", "ur": "دال پتا", "en": "Cotyledon" },
+        { "sd": "مائڪروپائل", "ur": "مائیکروپائل", "en": "Micropyle" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "sd3", "type": "mcq", "topic": "s1",
+      "q": { "sd": "هنن مان ڪهڙو ٻه پني ٻج آهي؟", "ur": "ان میں سے کون سا دو دالا بیج ہے؟", "en": "Which of these is a dicot seed?" },
+      "options": [
+        { "sd": "مڪئي", "ur": "مکئی", "en": "Maize" },
+        { "sd": "ڪڻڪ", "ur": "گندم", "en": "Wheat" },
+        { "sd": "لوبيا", "ur": "لوبیا", "en": "Bean" },
+        { "sd": "چانور", "ur": "چاول", "en": "Rice" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "sd4", "type": "mcq", "topic": "s2",
+      "q": { "sd": "مڪئي جي داڻي ۾ کاڌو گهڻو ڪري ڪٿي گڏ ٿئي ٿو؟", "ur": "مکئی کے دانے میں غذا زیادہ تر کہاں جمع ہوتی ہے؟", "en": "Where is most of the food stored in a maize grain?" },
+      "options": [
+        { "sd": "اينڊواسپرم ۾", "ur": "اینڈوسپرم میں", "en": "In the endosperm" },
+        { "sd": "ريڊيڪل ۾", "ur": "ریڈیکل میں", "en": "In the radicle" },
+        { "sd": "کل ۾", "ur": "چھلکے میں", "en": "In the seed coat" },
+        { "sd": "مائڪروپائل ۾", "ur": "مائیکروپائل میں", "en": "In the micropyle" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "sd5", "type": "mcq", "topic": "s2",
+      "q": { "sd": "لوبيا جي ٻج ۾ ڪيترا ٻج پن آهن؟", "ur": "لوبیا کے بیج میں کتنے دال پتے ہیں؟", "en": "How many cotyledons does a bean seed have?" },
+      "options": [
+        { "sd": "هڪ", "ur": "ایک", "en": "One" },
+        { "sd": "ٻه", "ur": "دو", "en": "Two" },
+        { "sd": "ٽي", "ur": "تین", "en": "Three" },
+        { "sd": "ڪوبه نه", "ur": "کوئی نہیں", "en": "None" }
+      ],
+      "answer": 1
+    },
+    {
+      "id": "sd6", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڦٽڻ وقت ٻج مان سڀ کان پهرين ڇا نڪري ٿو؟", "ur": "اگتے وقت بیج سے سب سے پہلے کیا نکلتا ہے؟", "en": "What comes out of the seed first during germination?" },
+      "options": [
+        { "sd": "پن", "ur": "پتے", "en": "Leaves" },
+        { "sd": "گل", "ur": "پھول", "en": "A flower" },
+        { "sd": "ريڊيڪل", "ur": "ریڈیکل", "en": "The radicle" },
+        { "sd": "ميوو", "ur": "پھل", "en": "A fruit" }
+      ],
+      "answer": 2
+    },
+    {
+      "id": "sd7", "type": "mcq", "topic": "s3",
+      "q": { "sd": "ڪهڙي ٻج ۾ ٻج پن مٽيءَ کان مٿي اچن ٿا؟", "ur": "کس بیج میں دال پتے مٹی سے اوپر آتے ہیں؟", "en": "In which seed do the cotyledons come above the soil?" },
+      "options": [
+        { "sd": "لوبيا", "ur": "لوبیا", "en": "Bean" },
+        { "sd": "مڪئي", "ur": "مکئی", "en": "Maize" },
+        { "sd": "ڪڻڪ", "ur": "گندم", "en": "Wheat" },
+        { "sd": "ڪنهن ۾ به نه", "ur": "کسی میں بھی نہیں", "en": "None of them" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "sd8", "type": "mcq", "topic": "s4",
+      "q": { "sd": "هنن مان ڪهڙي شيءِ ٻج کي ڦٽڻ لاءِ ضروري ناهي؟", "ur": "ان میں سے کون سی چیز بیج کو اگنے کے لیے ضروری نہیں؟", "en": "Which of these does a seed NOT need to germinate?" },
+      "options": [
+        { "sd": "پاڻي", "ur": "پانی", "en": "Water" },
+        { "sd": "هوا", "ur": "ہوا", "en": "Air" },
+        { "sd": "مناسب گرمي پد", "ur": "مناسب درجہ حرارت", "en": "The right temperature" },
+        { "sd": "مٽي", "ur": "مٹی", "en": "Soil" }
+      ],
+      "answer": 3
+    },
+    {
+      "id": "sd9", "type": "mcq", "topic": "s4",
+      "q": { "sd": "ٻج کي هوا (آڪسيجن) ڇو گهرجي؟", "ur": "بیج کو ہوا (آکسیجن) کیوں چاہیے؟", "en": "Why does a seed need air (oxygen)?" },
+      "options": [
+        { "sd": "ساهه کڻڻ ۽ توانائي حاصل ڪرڻ لاءِ", "ur": "سانس لینے اور توانائی حاصل کرنے کے لیے", "en": "To breathe and get energy" },
+        { "sd": "رنگ بدلائڻ لاءِ", "ur": "رنگ بدلنے کے لیے", "en": "To change colour" },
+        { "sd": "ڳرو ٿيڻ لاءِ", "ur": "بھاری ہونے کے لیے", "en": "To become heavy" },
+        { "sd": "سڪي وڃڻ لاءِ", "ur": "سوکھ جانے کے لیے", "en": "To dry out" }
+      ],
+      "answer": 0
+    },
+    {
+      "id": "sd10", "type": "tf", "topic": "s1",
+      "q": { "sd": "ٻج پن ننڍڙي ٻوٽي لاءِ کاڌو گڏ ڪن ٿا.", "ur": "دال پتے ننھے پودے کے لیے غذا جمع کرتے ہیں۔", "en": "Cotyledons store food for the baby plant." },
+      "answer": true
+    },
+    {
+      "id": "sd11", "type": "tf", "topic": "s2",
+      "q": { "sd": "مڪئي جي داڻي ۾ ٻه ٻج پن هوندا آهن.", "ur": "مکئی کے دانے میں دو دال پتے ہوتے ہیں۔", "en": "A maize grain has two cotyledons." },
+      "answer": false
+    },
+    {
+      "id": "sd12", "type": "tf", "topic": "s3",
+      "q": { "sd": "مڪئي ۾ ٻج پن مٽيءَ هيٺ ئي رهي ٿو.", "ur": "مکئی میں دال پتا مٹی کے نیچے ہی رہتا ہے۔", "en": "In maize, the cotyledon stays under the soil." },
+      "answer": true
+    },
+    {
+      "id": "sd13", "type": "tf", "topic": "s4",
+      "q": { "sd": "سڪل ٻج به پاڻيءَ کان سواءِ ڦٽي سگهي ٿو.", "ur": "سوکھا بیج بھی پانی کے بغیر اگ سکتا ہے۔", "en": "A dry seed can germinate without water." },
+      "answer": false
+    },
+    {
+      "id": "sd14", "type": "tf", "topic": "s4",
+      "q": { "sd": "ٻج آلي روئيءَ تي به ڦٽي سگهي ٿو.", "ur": "بیج گیلی روئی پر بھی اگ سکتا ہے۔", "en": "A seed can germinate on wet cotton." },
+      "answer": true
+    },
+    {
+      "id": "sd15", "type": "match", "topic": "s1",
+      "q": { "sd": "ٻج جي هر حصي کي ان جي ڪم سان ملايو.", "ur": "بیج کے ہر حصے کو اس کے کام سے ملائیں۔", "en": "Match each part of a seed with its job." },
+      "pairs": [
+        { "left": { "sd": "ريڊيڪل", "ur": "ریڈیکل", "en": "Radicle" }, "right": { "sd": "پاڙ بڻجي ٿو", "ur": "جڑ بنتا ہے", "en": "Becomes the root" } },
+        { "left": { "sd": "پليومول", "ur": "پلیومیول", "en": "Plumule" }, "right": { "sd": "ٿڙ ۽ پن بڻجي ٿو", "ur": "تنا اور پتے بنتا ہے", "en": "Becomes the stem and leaves" } },
+        { "left": { "sd": "مائڪروپائل", "ur": "مائیکروپائل", "en": "Micropyle" }, "right": { "sd": "پاڻي اندر وڃڻ ڏئي ٿو", "ur": "پانی اندر جانے دیتا ہے", "en": "Lets water in" } }
+      ]
+    },
+    {
+      "id": "sd16", "type": "match", "topic": "s2",
+      "q": { "sd": "هر ٻج کي ان جي قسم سان ملايو.", "ur": "ہر بیج کو اس کی قسم سے ملائیں۔", "en": "Match each seed with its type." },
+      "pairs": [
+        { "left": { "sd": "مٽر", "ur": "مٹر", "en": "Pea" }, "right": { "sd": "ٻه پني ٻج", "ur": "دو دالا بیج", "en": "Dicot seed" } },
+        { "left": { "sd": "ڪڻڪ", "ur": "گندم", "en": "Wheat" }, "right": { "sd": "هڪ پني ٻج", "ur": "یک دالا بیج", "en": "Monocot seed" } }
+      ]
+    }
+  ],
+  "games": [
+    {
+      "type": "match",
+      "title": { "sd": "ٻج جو حصو ۽ ان جو ڪم", "ur": "بیج کا حصہ اور اس کا کام", "en": "Seed part and its job" },
+      "pairs": [
+        { "a": { "sd": "ٻج جو کل", "ur": "بیج کا چھلکا", "en": "Seed coat" }, "b": { "sd": "حفاظت ڪري ٿو", "ur": "حفاظت کرتا ہے", "en": "Protects the seed" } },
+        { "a": { "sd": "ريڊيڪل", "ur": "ریڈیکل", "en": "Radicle" }, "b": { "sd": "پاڙ بڻجي ٿو", "ur": "جڑ بنتا ہے", "en": "Becomes the root" } },
+        { "a": { "sd": "پليومول", "ur": "پلیومیول", "en": "Plumule" }, "b": { "sd": "ٿڙ بڻجي ٿو", "ur": "تنا بنتا ہے", "en": "Becomes the shoot" } },
+        { "a": { "sd": "ٻج پن", "ur": "دال پتا", "en": "Cotyledon" }, "b": { "sd": "کاڌو گڏ ڪري ٿو", "ur": "غذا جمع کرتا ہے", "en": "Stores food" } },
+        { "a": { "sd": "مائڪروپائل", "ur": "مائیکروپائل", "en": "Micropyle" }, "b": { "sd": "پاڻي اندر وڃي ٿو", "ur": "پانی اندر جاتا ہے", "en": "Lets water in" } },
+        { "a": { "sd": "اينڊواسپرم", "ur": "اینڈوسپرم", "en": "Endosperm" }, "b": { "sd": "مڪئي جو کاڌو", "ur": "مکئی کی غذا", "en": "Food store in maize" } }
+      ]
+    }
+  ],
+  "experiment": {
+    "title": { "sd": "ٻج کي ڦٽڻ لاءِ ڇا گهرجي؟", "ur": "بیج کو اگنے کے لیے کیا چاہیے؟", "en": "What does a seed need to germinate?" },
+    "materials": [
+      { "sd": "ٽي ننڍا جار يا پيالا", "ur": "تین چھوٹے جار یا پیالے", "en": "Three small jars or cups" },
+      { "sd": "روئي", "ur": "روئی", "en": "Cotton wool" },
+      { "sd": "12 لوبيا يا چڻن جا ٻج", "ur": "لوبیا یا چنے کے 12 بیج", "en": "12 bean or chickpea seeds" },
+      { "sd": "پاڻي ۽ ليبل", "ur": "پانی اور لیبل", "en": "Water and labels" }
+    ],
+    "steps": [
+      { "sd": "ٽنهي جارن تي A، B ۽ C لکو ۽ هر هڪ ۾ روئي ۽ 4 ٻج رکو.", "ur": "تینوں جاروں پر A، B اور C لکھیں اور ہر ایک میں روئی اور 4 بیج رکھیں۔", "en": "Label the jars A, B and C, and put cotton wool and 4 seeds in each." },
+      { "sd": "جار A جي روئي آلي ڪريو ۽ ان کي ڪمري ۾ رکو.", "ur": "جار A کی روئی گیلی کریں اور اسے کمرے میں رکھیں۔", "en": "Make the cotton in jar A wet and keep it in the room." },
+      { "sd": "جار B جي روئي سڪل ڇڏيو ۽ ان کي به ڪمري ۾ رکو.", "ur": "جار B کی روئی سوکھی چھوڑیں اور اسے بھی کمرے میں رکھیں۔", "en": "Leave the cotton in jar B dry and keep it in the room too." },
+      { "sd": "جار C جي روئي آلي ڪريو ۽ ان کي فرج ۾ رکو.", "ur": "جار C کی روئی گیلی کریں اور اسے فریج میں رکھیں۔", "en": "Make the cotton in jar C wet and put it in the fridge." },
+      { "sd": "5 ڏينهن روز ڏسو ۽ A ۽ C جي روئي آلي رکو. لکو ته ڪهڙن ٻجن مان پاڙون نڪتيون.", "ur": "5 دن روز دیکھیں اور A اور C کی روئی گیلی رکھیں۔ لکھیں کہ کن بیجوں سے جڑیں نکلیں۔", "en": "Check every day for 5 days and keep A and C wet. Write down which seeds grew roots." }
+    ],
+    "learn": {
+      "sd": "رڳو جار A جا ٻج ڦٽيا، جتي پاڻي، هوا ۽ مناسب گرمي ٽئي هيون. جار B ۾ پاڻي نه هو ۽ جار C ۾ تمام گهڻي ٿڌ هئي. تنهنڪري ٻج کي ڦٽڻ لاءِ پاڻي، هوا ۽ مناسب گرمي پد گهرجي.",
+      "ur": "صرف جار A کے بیج اگے، جہاں پانی، ہوا اور مناسب گرمی تینوں تھے۔ جار B میں پانی نہیں تھا اور جار C میں بہت زیادہ ٹھنڈ تھی۔ اس لیے بیج کو اگنے کے لیے پانی، ہوا اور مناسب درجہ حرارت چاہیے۔",
+      "en": "Only the seeds in jar A germinated, where they had water, air and warmth. Jar B had no water and jar C was too cold. So a seed needs water, air and the right temperature to germinate."
+    },
+    "safety": {
+      "sd": "فرج استعمال ڪرڻ کان اڳ گهر جي ڪنهن وڏي کان پڇو. ٻج نه کائو ۽ ڪم کان پوءِ هٿ ڌوئو.",
+      "ur": "فریج استعمال کرنے سے پہلے گھر کے کسی بڑے سے پوچھیں۔ بیج نہ کھائیں اور کام کے بعد ہاتھ دھوئیں۔",
+      "en": "Ask an adult at home before using the fridge. Do not eat the seeds, and wash your hands afterwards."
+    }
+  },
+  "worksheet": {
+    "blanks": [
+      { "text": { "sd": "ٻج کي ٻاهران ڍڪيندڙ پردي کي ____ چئبو آهي.", "ur": "بیج کو باہر سے ڈھانپنے والے پردے کو ____ کہتے ہیں۔", "en": "The cover on the outside of a seed is called the ____." }, "answer": { "sd": "ٻج جو کل", "ur": "بیج کا چھلکا", "en": "seed coat" } },
+      { "text": { "sd": "ڦوٽ جو ____ مٿي وڌي ٿڙ ۽ پن بڻجي ٿو.", "ur": "جنین کا ____ اوپر بڑھ کر تنا اور پتے بنتا ہے۔", "en": "The ____ of the embryo grows up into the stem and leaves." }, "answer": { "sd": "پليومول", "ur": "پلیومیول", "en": "plumule" } },
+      { "text": { "sd": "مڪئي ۾ کاڌو ____ ۾ گڏ ٿئي ٿو.", "ur": "مکئی میں غذا ____ میں جمع ہوتی ہے۔", "en": "In maize, food is stored in the ____." }, "answer": { "sd": "اينڊواسپرم", "ur": "اینڈوسپرم", "en": "endosperm" } },
+      { "text": { "sd": "ٻج مان ننڍڙي ٻوٽي جي نڪرڻ کي ____ چئبو آهي.", "ur": "بیج سے ننھے پودے کے نکلنے کو ____ کہتے ہیں۔", "en": "A tiny plant coming out of a seed and growing is called ____." }, "answer": { "sd": "ڦٽڻ", "ur": "اگنا", "en": "germination" } },
+      { "text": { "sd": "ٻج کي ڦٽڻ لاءِ پاڻي، هوا ۽ مناسب ____ گهرجي.", "ur": "بیج کو اگنے کے لیے پانی، ہوا اور مناسب ____ چاہیے۔", "en": "A seed needs water, air and the right ____ to germinate." }, "answer": { "sd": "گرمي پد", "ur": "درجہ حرارت", "en": "temperature" } }
+    ],
+    "tf": [
+      { "text": { "sd": "لوبيا جو ٻج ٻه پني ٻج آهي.", "ur": "لوبیا کا بیج دو دالا بیج ہے۔", "en": "A bean seed is a dicot seed." }, "answer": true },
+      { "text": { "sd": "ڦٽڻ وقت پليومول سڀ کان پهرين نڪري ٿو.", "ur": "اگتے وقت پلیومیول سب سے پہلے نکلتا ہے۔", "en": "The plumule comes out first during germination." }, "answer": false },
+      { "text": { "sd": "ٻج کي ڦٽڻ لاءِ مٽي لازمي آهي.", "ur": "بیج کو اگنے کے لیے مٹی لازمی ہے۔", "en": "A seed must have soil to germinate." }, "answer": false },
+      { "text": { "sd": "ٻج مائڪروپائل رستي پاڻي چوسي ٿو.", "ur": "بیج مائیکروپائل کے راستے پانی جذب کرتا ہے۔", "en": "A seed takes in water through the micropyle." }, "answer": true }
+    ],
+    "match": [
+      { "a": { "sd": "ريڊيڪل", "ur": "ریڈیکل", "en": "Radicle" }, "b": { "sd": "پاڙ", "ur": "جڑ", "en": "Root" } },
+      { "a": { "sd": "پليومول", "ur": "پلیومیول", "en": "Plumule" }, "b": { "sd": "ٿڙ ۽ پن", "ur": "تنا اور پتے", "en": "Stem and leaves" } },
+      { "a": { "sd": "مڪئي", "ur": "مکئی", "en": "Maize" }, "b": { "sd": "هڪ پني ٻج", "ur": "یک دالا بیج", "en": "Monocot seed" } },
+      { "a": { "sd": "چڻا", "ur": "چنا", "en": "Chickpea" }, "b": { "sd": "ٻه پني ٻج", "ur": "دو دالا بیج", "en": "Dicot seed" } }
+    ],
+    "short": [
+      {
+        "q": { "sd": "ٻج جا ٽي مکيه حصا لکو.", "ur": "بیج کے تین بڑے حصے لکھیں۔", "en": "Name the three main parts of a seed." },
+        "a": { "sd": "ٻج جو کل، ڦوٽ ۽ ٻج پن.", "ur": "بیج کا چھلکا، جنین اور دال پتے۔", "en": "Seed coat, embryo and cotyledons." }
+      },
+      {
+        "q": { "sd": "لوبيا ۽ مڪئي جي ٻج ۾ هڪ فرق لکو.", "ur": "لوبیا اور مکئی کے بیج میں ایک فرق لکھیں۔", "en": "Write one difference between a bean seed and a maize grain." },
+        "a": { "sd": "لوبيا ۾ ٻه ٻج پن آهن، مڪئي ۾ هڪ ٻج پن ۽ اينڊواسپرم آهي.", "ur": "لوبیا میں دو دال پتے ہیں، مکئی میں ایک دال پتا اور اینڈوسپرم ہے۔", "en": "A bean has two cotyledons; maize has one cotyledon and an endosperm." }
+      },
+      {
+        "q": { "sd": "ٻج کي ڦٽڻ لاءِ ڪهڙيون ٽي شيون گهرجن؟", "ur": "بیج کو اگنے کے لیے کون سی تین چیزیں چاہئیں؟", "en": "What three things does a seed need to germinate?" },
+        "a": { "sd": "پاڻي، هوا (آڪسيجن) ۽ مناسب گرمي پد.", "ur": "پانی، ہوا (آکسیجن) اور مناسب درجہ حرارت۔", "en": "Water, air (oxygen) and the right temperature." }
+      }
+    ],
+    "draw": { "sd": "لوبيا جي کليل ٻج جي تصوير ٺاهيو ۽ ٻج جو کل، ٻج پن، ريڊيڪل ۽ پليومول جا نالا لکو.", "ur": "لوبیا کے کھلے ہوئے بیج کی تصویر بنائیں اور بیج کا چھلکا، دال پتے، ریڈیکل اور پلیومیول کے نام لکھیں۔", "en": "Draw an opened bean seed and label the seed coat, cotyledons, radicle and plumule." }
+  }
+}

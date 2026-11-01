@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/((?!css/|js/|data/|fonts/|icons/|img/|audio/|videos(?:/|$)|lesson-videos/|admin\\.html|sw\\.js|manifest\\.webmanifest|favicon\\.svg|robots\\.txt|sitemap\\.xml|google[0-9a-f]+\\.html).*)", "destination": "/index.html" }
+    { "source": "/((?!css/|js/|data/|fonts/|icons/|img/|audio/|videos(?:/|$)|lesson-videos/|paper(?:/|$)|admin\\.html|sw\\.js|manifest\\.webmanifest|favicon\\.svg|robots\\.txt|sitemap\\.xml|google[0-9a-f]+\\.html).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
