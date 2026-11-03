@@ -195,4 +195,11 @@
     'electricity-magnets': lv('electricity-magnets'), 'soils': lv('soils'), 'earth-space': lv('earth-space'),
     'plants': lv('photosynthesis'), 'digestion': lv('digestion'), 'water-cycle': lv('water-cycle')
   };
+
+  // Narrated videos (Urdu) that show each chapter's experiment step by step, shown at the top of the experiment part.
+  window.EXP_VIDEOS = {};
+  ['living-things', 'microorganisms', 'seeds', 'pollution', 'matter', 'force-machines', 'light-sound', 'electricity-magnets',
+    'soils', 'earth-space', 'plants', 'digestion', 'water-cycle'].forEach(function (id) {
+    window.EXP_VIDEOS[id] = { src: '/exp-videos/' + id + '-ur.mp4', poster: '/exp-videos/' + id + '-ur.webp' };
+  });
 })();

@@ -3,296 +3,386 @@
   "s1": {
    "ur": "living-things-s1-ur.mp3",
    "en": "living-things-s1-en.mp3",
+   "sd": "living-things-s1-sd.mp3",
    "urSecs": 45,
-   "enSecs": 38
+   "enSecs": 38,
+   "sdSecs": 48
   },
   "s2": {
    "ur": "living-things-s2-ur.mp3",
    "en": "living-things-s2-en.mp3",
+   "sd": "living-things-s2-sd.mp3",
    "urSecs": 32,
-   "enSecs": 28
+   "enSecs": 28,
+   "sdSecs": 34
   },
   "s3": {
    "ur": "living-things-s3-ur.mp3",
    "en": "living-things-s3-en.mp3",
+   "sd": "living-things-s3-sd.mp3",
    "urSecs": 44,
-   "enSecs": 38
+   "enSecs": 38,
+   "sdSecs": 46
   },
   "s4": {
    "ur": "living-things-s4-ur.mp3",
    "en": "living-things-s4-en.mp3",
+   "sd": "living-things-s4-sd.mp3",
    "urSecs": 60,
-   "enSecs": 47
+   "enSecs": 47,
+   "sdSecs": 60
   }
  },
  "microorganisms": {
   "s1": {
    "ur": "microorganisms-s1-ur.mp3",
    "en": "microorganisms-s1-en.mp3",
+   "sd": "microorganisms-s1-sd.mp3",
    "urSecs": 34,
-   "enSecs": 31
+   "enSecs": 31,
+   "sdSecs": 37
   },
   "s2": {
    "ur": "microorganisms-s2-ur.mp3",
    "en": "microorganisms-s2-en.mp3",
+   "sd": "microorganisms-s2-sd.mp3",
    "urSecs": 51,
-   "enSecs": 48
+   "enSecs": 48,
+   "sdSecs": 53
   },
   "s3": {
    "ur": "microorganisms-s3-ur.mp3",
    "en": "microorganisms-s3-en.mp3",
+   "sd": "microorganisms-s3-sd.mp3",
    "urSecs": 46,
-   "enSecs": 43
+   "enSecs": 43,
+   "sdSecs": 47
   },
   "s4": {
    "ur": "microorganisms-s4-ur.mp3",
    "en": "microorganisms-s4-en.mp3",
+   "sd": "microorganisms-s4-sd.mp3",
    "urSecs": 46,
-   "enSecs": 49
+   "enSecs": 49,
+   "sdSecs": 47
   }
  },
  "seeds": {
   "s1": {
    "ur": "seeds-s1-ur.mp3",
    "en": "seeds-s1-en.mp3",
+   "sd": "seeds-s1-sd.mp3",
    "urSecs": 50,
-   "enSecs": 45
+   "enSecs": 45,
+   "sdSecs": 53
   },
   "s2": {
    "ur": "seeds-s2-ur.mp3",
    "en": "seeds-s2-en.mp3",
+   "sd": "seeds-s2-sd.mp3",
    "urSecs": 38,
-   "enSecs": 38
+   "enSecs": 38,
+   "sdSecs": 39
   },
   "s3": {
    "ur": "seeds-s3-ur.mp3",
    "en": "seeds-s3-en.mp3",
+   "sd": "seeds-s3-sd.mp3",
    "urSecs": 44,
-   "enSecs": 40
+   "enSecs": 40,
+   "sdSecs": 44
   },
   "s4": {
    "ur": "seeds-s4-ur.mp3",
    "en": "seeds-s4-en.mp3",
+   "sd": "seeds-s4-sd.mp3",
    "urSecs": 45,
-   "enSecs": 43
+   "enSecs": 43,
+   "sdSecs": 44
   }
  },
  "pollution": {
   "s1": {
    "ur": "pollution-s1-ur.mp3",
    "en": "pollution-s1-en.mp3",
+   "sd": "pollution-s1-sd.mp3",
    "urSecs": 30,
-   "enSecs": 29
+   "enSecs": 29,
+   "sdSecs": 32
   },
   "s2": {
    "ur": "pollution-s2-ur.mp3",
    "en": "pollution-s2-en.mp3",
+   "sd": "pollution-s2-sd.mp3",
    "urSecs": 28,
-   "enSecs": 27
+   "enSecs": 27,
+   "sdSecs": 30
   },
   "s3": {
    "ur": "pollution-s3-ur.mp3",
    "en": "pollution-s3-en.mp3",
+   "sd": "pollution-s3-sd.mp3",
    "urSecs": 43,
-   "enSecs": 42
+   "enSecs": 42,
+   "sdSecs": 45
   },
   "s4": {
    "ur": "pollution-s4-ur.mp3",
    "en": "pollution-s4-en.mp3",
+   "sd": "pollution-s4-sd.mp3",
    "urSecs": 48,
-   "enSecs": 44
+   "enSecs": 44,
+   "sdSecs": 47
   }
  },
  "matter": {
   "s1": {
    "ur": "matter-s1-ur.mp3",
    "en": "matter-s1-en.mp3",
+   "sd": "matter-s1-sd.mp3",
    "urSecs": 27,
-   "enSecs": 25
+   "enSecs": 25,
+   "sdSecs": 31
   },
   "s2": {
    "ur": "matter-s2-ur.mp3",
    "en": "matter-s2-en.mp3",
+   "sd": "matter-s2-sd.mp3",
    "urSecs": 42,
-   "enSecs": 40
+   "enSecs": 40,
+   "sdSecs": 43
   },
   "s3": {
    "ur": "matter-s3-ur.mp3",
    "en": "matter-s3-en.mp3",
+   "sd": "matter-s3-sd.mp3",
    "urSecs": 39,
-   "enSecs": 39
+   "enSecs": 39,
+   "sdSecs": 39
   }
  },
  "force-machines": {
   "s1": {
    "ur": "force-machines-s1-ur.mp3",
    "en": "force-machines-s1-en.mp3",
+   "sd": "force-machines-s1-sd.mp3",
    "urSecs": 32,
-   "enSecs": 26
+   "enSecs": 26,
+   "sdSecs": 31
   },
   "s2": {
    "ur": "force-machines-s2-ur.mp3",
    "en": "force-machines-s2-en.mp3",
+   "sd": "force-machines-s2-sd.mp3",
    "urSecs": 39,
-   "enSecs": 35
+   "enSecs": 35,
+   "sdSecs": 39
   },
   "s3": {
    "ur": "force-machines-s3-ur.mp3",
    "en": "force-machines-s3-en.mp3",
+   "sd": "force-machines-s3-sd.mp3",
    "urSecs": 59,
-   "enSecs": 56
+   "enSecs": 56,
+   "sdSecs": 61
   }
  },
  "light-sound": {
   "s1": {
    "ur": "light-sound-s1-ur.mp3",
    "en": "light-sound-s1-en.mp3",
+   "sd": "light-sound-s1-sd.mp3",
    "urSecs": 36,
-   "enSecs": 31
+   "enSecs": 31,
+   "sdSecs": 38
   },
   "s2": {
    "ur": "light-sound-s2-ur.mp3",
    "en": "light-sound-s2-en.mp3",
+   "sd": "light-sound-s2-sd.mp3",
    "urSecs": 41,
-   "enSecs": 38
+   "enSecs": 38,
+   "sdSecs": 43
   },
   "s3": {
    "ur": "light-sound-s3-ur.mp3",
    "en": "light-sound-s3-en.mp3",
+   "sd": "light-sound-s3-sd.mp3",
    "urSecs": 37,
-   "enSecs": 32
+   "enSecs": 32,
+   "sdSecs": 40
   }
  },
  "electricity-magnets": {
   "s1": {
    "ur": "electricity-magnets-s1-ur.mp3",
    "en": "electricity-magnets-s1-en.mp3",
+   "sd": "electricity-magnets-s1-sd.mp3",
    "urSecs": 40,
-   "enSecs": 37
+   "enSecs": 37,
+   "sdSecs": 41
   },
   "s2": {
    "ur": "electricity-magnets-s2-ur.mp3",
    "en": "electricity-magnets-s2-en.mp3",
+   "sd": "electricity-magnets-s2-sd.mp3",
    "urSecs": 49,
-   "enSecs": 50
+   "enSecs": 50,
+   "sdSecs": 52
   },
   "s3": {
    "ur": "electricity-magnets-s3-ur.mp3",
    "en": "electricity-magnets-s3-en.mp3",
+   "sd": "electricity-magnets-s3-sd.mp3",
    "urSecs": 44,
-   "enSecs": 37
+   "enSecs": 37,
+   "sdSecs": 43
   }
  },
  "soils": {
   "s1": {
    "ur": "soils-s1-ur.mp3",
    "en": "soils-s1-en.mp3",
+   "sd": "soils-s1-sd.mp3",
    "urSecs": 38,
-   "enSecs": 33
+   "enSecs": 33,
+   "sdSecs": 39
   },
   "s2": {
    "ur": "soils-s2-ur.mp3",
    "en": "soils-s2-en.mp3",
+   "sd": "soils-s2-sd.mp3",
    "urSecs": 41,
-   "enSecs": 39
+   "enSecs": 39,
+   "sdSecs": 42
   },
   "s3": {
    "ur": "soils-s3-ur.mp3",
    "en": "soils-s3-en.mp3",
+   "sd": "soils-s3-sd.mp3",
    "urSecs": 54,
-   "enSecs": 49
+   "enSecs": 49,
+   "sdSecs": 56
   },
   "s4": {
    "ur": "soils-s4-ur.mp3",
    "en": "soils-s4-en.mp3",
+   "sd": "soils-s4-sd.mp3",
    "urSecs": 49,
-   "enSecs": 42
+   "enSecs": 42,
+   "sdSecs": 50
   }
  },
  "earth-space": {
   "s1": {
    "ur": "earth-space-s1-ur.mp3",
    "en": "earth-space-s1-en.mp3",
+   "sd": "earth-space-s1-sd.mp3",
    "urSecs": 37,
-   "enSecs": 36
+   "enSecs": 36,
+   "sdSecs": 39
   },
   "s2": {
    "ur": "earth-space-s2-ur.mp3",
    "en": "earth-space-s2-en.mp3",
+   "sd": "earth-space-s2-sd.mp3",
    "urSecs": 39,
-   "enSecs": 34
+   "enSecs": 34,
+   "sdSecs": 41
   },
   "s3": {
    "ur": "earth-space-s3-ur.mp3",
    "en": "earth-space-s3-en.mp3",
+   "sd": "earth-space-s3-sd.mp3",
    "urSecs": 44,
-   "enSecs": 38
+   "enSecs": 38,
+   "sdSecs": 46
   }
  },
  "plants": {
   "s1": {
    "ur": "plants-s1-ur.mp3",
    "en": "plants-s1-en.mp3",
+   "sd": "plants-s1-sd.mp3",
    "urSecs": 45,
-   "enSecs": 39
+   "enSecs": 39,
+   "sdSecs": 46
   },
   "s2": {
    "ur": "plants-s2-ur.mp3",
    "en": "plants-s2-en.mp3",
+   "sd": "plants-s2-sd.mp3",
    "urSecs": 41,
-   "enSecs": 33
+   "enSecs": 33,
+   "sdSecs": 43
   },
   "s3": {
    "ur": "plants-s3-ur.mp3",
    "en": "plants-s3-en.mp3",
+   "sd": "plants-s3-sd.mp3",
    "urSecs": 27,
-   "enSecs": 25
+   "enSecs": 25,
+   "sdSecs": 29
   }
  },
  "digestion": {
   "s1": {
    "ur": "digestion-s1-ur.mp3",
    "en": "digestion-s1-en.mp3",
+   "sd": "digestion-s1-sd.mp3",
    "urSecs": 25,
-   "enSecs": 21
+   "enSecs": 21,
+   "sdSecs": 26
   },
   "s2": {
    "ur": "digestion-s2-ur.mp3",
    "en": "digestion-s2-en.mp3",
+   "sd": "digestion-s2-sd.mp3",
    "urSecs": 46,
-   "enSecs": 40
+   "enSecs": 40,
+   "sdSecs": 48
   },
   "s3": {
    "ur": "digestion-s3-ur.mp3",
    "en": "digestion-s3-en.mp3",
+   "sd": "digestion-s3-sd.mp3",
    "urSecs": 31,
-   "enSecs": 27
+   "enSecs": 27,
+   "sdSecs": 33
   },
   "s4": {
    "ur": "digestion-s4-ur.mp3",
    "en": "digestion-s4-en.mp3",
+   "sd": "digestion-s4-sd.mp3",
    "urSecs": 22,
-   "enSecs": 21
+   "enSecs": 21,
+   "sdSecs": 23
   }
  },
  "water-cycle": {
   "s1": {
    "ur": "water-cycle-s1-ur.mp3",
    "en": "water-cycle-s1-en.mp3",
+   "sd": "water-cycle-s1-sd.mp3",
    "urSecs": 35,
-   "enSecs": 28
+   "enSecs": 28,
+   "sdSecs": 35
   },
   "s2": {
    "ur": "water-cycle-s2-ur.mp3",
    "en": "water-cycle-s2-en.mp3",
+   "sd": "water-cycle-s2-sd.mp3",
    "urSecs": 45,
-   "enSecs": 43
+   "enSecs": 43,
+   "sdSecs": 46
   },
   "s3": {
    "ur": "water-cycle-s3-ur.mp3",
    "en": "water-cycle-s3-en.mp3",
+   "sd": "water-cycle-s3-sd.mp3",
    "urSecs": 29,
-   "enSecs": 25
+   "enSecs": 25,
+   "sdSecs": 29
   }
  }
 }

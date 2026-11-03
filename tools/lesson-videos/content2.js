@@ -36,7 +36,7 @@ module.exports = {
 
   digestion: {
     chapter: 'digestion',
-    head: 'باب 3 · ہمارا جسم: نظامِ انہضام',
+    head: 'باب 12 · ہمارا جسم: نظامِ انہضام',
     steps: [
       { kind: 'title', title: 'غذا کا سفر', sub: 'نظامِ انہضام · جماعت پنجم سائنس', img: 'digestion',
         say: 'السلام علیکم بچو! کیا آپ نے کبھی سوچا ہے کہ روٹی کا ایک نوالہ کھانے کے بعد کہاں جاتا ہے؟' },
@@ -181,7 +181,7 @@ module.exports = {
 
   'earth-space': {
     chapter: 'earth-space',
-    head: 'باب 9 · زمین اور خلا',
+    head: 'باب 10 · زمین اور خلا',
     steps: [
       { kind: 'title', title: 'ہمارا نظامِ شمسی', sub: 'زمین اور خلا · جماعت پنجم سائنس', img: 'earth-space',
         say: 'السلام علیکم بچو! آج ہم خلا کی سیر کریں گے۔' },

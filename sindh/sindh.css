@@ -1,0 +1,89 @@
+/* "Science in Sindh" (/sindh/): hero, map, place cards and the teachers' activity.
+   Builds on the tokens and blocks of /css/style.css. */
+
+/* hero, with a thin ajrak-style band in the site's greens */
+.sp-hero { margin: 4px 0 16px; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+.sp-band {
+  height: 18px; background-color: var(--green);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='18' viewBox='0 0 24 18'%3E%3Crect width='24' height='18' fill='%231e7a3c'/%3E%3Cpath d='M0 2h24M0 16h24' stroke='%23a5d6a7' stroke-width='1'/%3E%3Cpath d='M12 4l3.5 5-3.5 5-3.5-5z' fill='%23e1efe3'/%3E%3Ccircle cx='12' cy='9' r='1.3' fill='%231e7a3c'/%3E%3Ccircle cx='0' cy='9' r='2' fill='%23a5d6a7'/%3E%3Ccircle cx='24' cy='9' r='2' fill='%23a5d6a7'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+}
+.sp-hero-in { padding: 20px 26px 14px; }
+.sp-hero h1 { font-size: 2rem; margin: 0.15em 0 0.3em; }
+.sp-hero .lead { max-width: 760px; }
+.sp-hero .btn-row { margin: 12px 0 4px; }
+
+/* map */
+.sp-mapcard, .sp-place { scroll-margin-top: 12px; outline: none; }
+.sp-mapcard h2 { margin-top: 0.2em; margin-bottom: 0.1em; }
+.sp-mapgrid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 18px; align-items: start; margin-top: 8px; }
+.sm-map { display: block; width: 100%; max-width: 470px; height: auto; margin: 0 auto; }
+.sm-sea { fill: #e4f1f7; }
+.sm-land { fill: var(--soft); stroke: #8fb996; stroke-width: 1.5; stroke-linejoin: round; }
+.sm-river { fill: none; stroke: #4a90c2; stroke-width: 3.5; stroke-linejoin: round; stroke-linecap: round; }
+.sm-river-name, .sm-sea-name { fill: #2f6f9a; font-size: 13px; font-weight: 600; }
+.sm-city { fill: #586a5c; }
+.sm-city-name { fill: #47584b; font-size: 12px; }
+.sm-north path { fill: #586a5c; }
+.sm-north text { fill: #47584b; font-size: 12px; font-weight: 700; }
+.sm-mark circle { fill: var(--green); stroke: #fff; stroke-width: 2; }
+.sm-mark text { fill: #fff; font-family: var(--f-en); font-size: 12px; font-weight: 700; }
+.sm-mark:hover circle, .sm-mark:focus-visible circle { fill: var(--green-ink); }
+.sm-mark:focus-visible { outline: none; }
+.sm-mark:focus-visible circle { stroke: #f2b705; stroke-width: 3; }
+
+.sp-legend { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+.sp-legend a { display: flex; align-items: flex-start; gap: 10px; padding: 6px 8px; border-radius: 8px; color: var(--text); text-decoration: none; line-height: 1.4; }
+.sp-legend a:hover { background: var(--soft); }
+.sp-lnum { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; flex: none; border-radius: 50%; background: var(--green); color: #fff; font-family: var(--f-en); font-size: 0.8rem; font-weight: 700; margin-top: 2px; }
+.sp-lwhere { display: block; color: var(--muted); font-size: 0.86rem; }
+
+/* place cards */
+.sp-title { margin-top: 1.1em; }
+.sp-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(310px, 100%), 1fr)); }
+.sp-place { display: flex; flex-direction: column; margin: 0; }
+.sp-place:target { border-color: var(--green); box-shadow: 0 0 0 2px rgba(30, 122, 60, 0.22); }
+.sp-place > p { margin: 10px 0; }
+.sp-head { display: flex; align-items: center; gap: 12px; }
+.sp-head h3 { margin: 0; }
+.sp-icon { position: relative; }
+.sp-num { position: absolute; top: -7px; inset-inline-end: -7px; display: inline-flex; align-items: center; justify-content: center; min-width: 21px; height: 21px; padding: 0 4px; border-radius: 11px; border: 2px solid #fff; background: var(--green); color: #fff; font-family: var(--f-en); font-size: 0.72rem; font-weight: 700; }
+.sp-where { display: flex; align-items: center; gap: 4px; margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.4; }
+.sp-where .ic { width: 1em; height: 1em; flex: none; }
+.sp-think { margin: 0 0 12px; padding: 8px 12px; background: var(--soft); border-inline-start: 3px solid var(--green); border-radius: 6px; }
+.sp-think p { margin: 0; }
+.sp-label { font-weight: 700; color: var(--green-dark); }
+p.sp-label { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
+.sp-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; }
+.sp-chap { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--line-2); border-radius: 8px; background: #fff; color: var(--green-ink); text-decoration: none; font-size: 0.92rem; line-height: 1.4; }
+.sp-chap:hover { background: var(--soft); }
+.sp-chap .ic { color: var(--green); }
+.sp-up { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 0.85rem; }
+
+.sp-teach { margin-top: 18px; }
+.sp-teach h2 { margin-top: 0.2em; }
+.sp-teach ol { margin: 0; padding-inline-start: 1.5em; }
+.sp-teach li { margin: 4px 0; }
+
+/* tablets and phones */
+@media (max-width: 760px) {
+  .sp-mapgrid { grid-template-columns: minmax(0, 1fr); }
+  .sp-legend { grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr)); }
+}
+@media (max-width: 640px) {
+  .sp-hero-in { padding: 16px 16px 10px; }
+  .sp-hero h1 { font-size: 1.6rem; }
+}
+
+/* printing: a handout for the class */
+@media print {
+  .sp-hero { border: 0; box-shadow: none; }
+  .sp-hero-in { padding: 0; }
+  .sp-band { display: none; }
+  .sp-mapcard, .sp-place, .sp-teach { break-inside: avoid; }
+  .sp-mapgrid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .sp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sp-place { border: 1px solid #bbb; }
+  .sp-think { background: none; }
+  .sp-chap { border: 0; padding: 0; }
+}

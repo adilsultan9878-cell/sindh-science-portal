@@ -70,6 +70,18 @@
     kind_game: { sd: 'راند', ur: 'کھیل', en: 'Game' },
     kind_competition: { sd: 'مقابلو', ur: 'مقابلہ', en: 'Competition' },
     chapterN: { sd: 'باب {n}', ur: 'باب {n}', en: 'Ch {n}' },
+    linkSchool: { sd: 'اسڪول سان ڳنڍيو', ur: 'اسکول سے جوڑیں', en: 'Link to a school' },
+    linkHelp: {
+      sd: 'جيڪڏهن هيڊ ماستر توهان کي اسڪول ڪوڊ ڏنو آهي ته هتي لکو. پوءِ هيڊ ماستر هن ڪلاس جو اوسط ڏسي سگهندو، ٻارن جا نالا نه.',
+      ur: 'اگر ہیڈ ماسٹر نے آپ کو اسکول کوڈ دیا ہے تو یہاں لکھیں۔ پھر ہیڈ ماسٹر اس کلاس کا اوسط دیکھ سکیں گے، بچوں کے نام نہیں۔',
+      en: 'If your head teacher gave you a school code, type it here. The head teacher then sees this class\'s averages, not student names.'
+    },
+    schoolCode: { sd: 'اسڪول ڪوڊ', ur: 'اسکول کوڈ', en: 'School code' },
+    link: { sd: 'ڳنڍيو', ur: 'جوڑیں', en: 'Link' },
+    linkedTo: { sd: 'هي ڪلاس هن اسڪول سان ڳنڍيل آهي:', ur: 'یہ کلاس اس اسکول سے جڑی ہے:', en: 'This class is linked to:' },
+    unlink: { sd: 'ڳنڍ ختم ڪريو', ur: 'تعلق ختم کریں', en: 'Unlink' },
+    unlinkConfirm: { sd: 'هيڊ ماستر هن ڪلاس جا نتيجا وڌيڪ نه ڏسي سگهندو. پڪ آهي؟', ur: 'ہیڈ ماسٹر اس کلاس کے نتائج مزید نہیں دیکھ سکیں گے۔ یقین ہے؟', en: 'The head teacher will no longer see this class. Are you sure?' },
+    unknownSchool: { sd: 'اهو اسڪول ڪوڊ نه مليو.', ur: 'یہ اسکول کوڈ نہیں ملا۔', en: 'That school code was not found.' },
     wait: { sd: 'ٿورو انتظار ڪريو…', ur: 'تھوڑا انتظار کریں…', en: 'Please wait…' },
     needName: { sd: 'ڪلاس جو نالو لکو.', ur: 'کلاس کا نام لکھیں۔', en: 'Write a class name.' },
     wrong: { sd: 'ڪوڊ يا ڪنجي غلط آهي.', ur: 'کوڈ یا کلید غلط ہے۔', en: 'The code or key is wrong.' },
@@ -298,10 +310,33 @@
       return '<li><span class="ltr muted">' + esc(day(r.at)) + '</span> · <strong>' + esc(r.student) + '</strong> · ' + esc(T('kind_' + r.kind)) +
         (r.chapter ? ' · ' + esc(titles[r.chapter] || r.chapter) : '') + (r.total ? ' · <span class="ltr">' + r.score + '/' + r.total + '</span>' : '') + '</li>';
     }).join('') + '</ul>' : '';
+    var link = info.school_link;
+    var school = '<section class="card no-print tc-school"><h2>' + esc(T('linkSchool')) + '</h2>' + (link
+      ? '<p>' + esc(T('linkedTo')) + ' <strong>' + esc(link.name) + '</strong> <span class="ltr">(' + esc(link.code) + ')</span></p>' +
+        '<button type="button" class="btn ghost small" data-act="unlink">' + esc(T('unlink')) + '</button>'
+      : '<p class="muted">' + esc(T('linkHelp')) + '</p><form id="link-school" class="btn-row" novalidate>' +
+        '<input type="text" name="school" maxlength="6" dir="ltr" autocapitalize="characters" autocomplete="off" spellcheck="false" aria-label="' + esc(T('schoolCode')) + '" placeholder="' + esc(T('schoolCode')) + '">' +
+        '<button type="submit" class="btn small">' + esc(T('link')) + '</button></form>') +
+      '<p class="form-msg" aria-live="polite"></p></section>';
     main.innerHTML = '<p class="crumbs no-print"><a href="/">' + esc(T('siteName')) + '</a> › <a href="#" data-home>' + esc(T('title')) + '</a> › ' + esc(info.name) + '</p>' +
-      head + tools + tiles + table + recent + printCard({ code: info.code, name: info.name });
+      head + tools + tiles + table + school + recent + printCard({ code: info.code, name: info.name });
 
     main.querySelector('[data-home]').addEventListener('click', function (e) { e.preventDefault(); openClass = null; render(); });
+    var lf = document.getElementById('link-school');
+    if (lf) lf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var code = lf.school.value.replace(/\s+/g, '').toUpperCase();
+      if (code) linkSchool(code);
+    });
+  }
+
+  // Links the open class to a school code (or unlinks it with null), then reloads the class.
+  function linkSchool(code) {
+    var msg = main.querySelector('.tc-school .form-msg');
+    msg.textContent = T('wait');
+    rpc('class_link_school', { p_code: openClass.code, p_key: openClass.key, p_school: code }).then(function () {
+      data = null; renderClass();
+    }).catch(function (err) { msg.textContent = code && err.status && err.status < 500 ? T('unknownSchool') : T('error'); });
   }
   function tile(n, label) { return '<div class="card"><b>' + esc(n) + '</b><span>' + esc(label) + '</span></div>'; }
 
@@ -314,6 +349,7 @@
     if (act === 'print') window.print();
     if (act === 'print-code') printCode();
     if (act === 'csv') downloadCsv();
+    if (act === 'unlink' && window.confirm(T('unlinkConfirm'))) linkSchool(null);
     if (act === 'forget' && window.confirm(T('forgetConfirm'))) {
       saveMine(mine().filter(function (x) { return x.code !== openClass.code; }));
       openClass = null; data = null; render();

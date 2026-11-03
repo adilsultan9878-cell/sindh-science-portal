@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="sd" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اسڪول ڊيش بورڊ | School dashboard | Sindh Science Learning Portal</title>
+<meta name="description" content="ہیڈ ماسٹر اور پرنسپل اپنے اسکول کی تمام کلاسوں کے نتائج ایک جگہ دیکھیں۔ Principals: see all your school's classes in one place.">
+<meta name="theme-color" content="#2e7d32">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=20261102a">
+<style>
+  .sc-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start; }
+  .sc-grid .card { margin: 0; }
+  .sc-form { display: flex; flex-direction: column; gap: 10px; }
+  .sc-form .field { max-width: none; }
+  .sc-form input, .sc-form select { width: 100%; }
+  .sc-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .bigcode { font-family: "Segoe UI", Arial, sans-serif; direction: ltr; font-size: 2.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--green-ink); }
+  .keycode { font-family: "Segoe UI", Arial, sans-serif; direction: ltr; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; }
+  .sc-tiles { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin: 12px 0; }
+  .sc-tiles .card { margin: 0; text-align: center; }
+  .sc-tiles b { display: block; font-size: 1.7rem; color: var(--green-ink); line-height: 1.3; }
+  .sc-table th, .sc-table td { white-space: nowrap; text-align: center; }
+  .sc-table th:first-child, .sc-table td:first-child { text-align: start; position: sticky; inset-inline-start: 0; background: #fff; }
+  .sc-table thead th:first-child { background: var(--page); }
+  .sc-table td.good { background: #e3f3e6; color: #1b5e20; font-weight: 700; }
+  .sc-table td.ok { background: #fff6dd; color: #6d4c00; font-weight: 700; }
+  .sc-table td.low { background: #fde8e8; color: #9b1c1c; font-weight: 700; }
+  .sc-table td.none { color: #a5b0a8; }
+  .sc-legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: var(--muted); }
+  .sc-legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-inline-end: 6px; vertical-align: -1px; }
+  .sc-legend .g::before { background: #cfe9d4; } .sc-legend .o::before { background: #fbe7b0; } .sc-legend .l::before { background: #f6c9c9; }
+  .sc-weak li { margin: 6px 0; }
+  .ltr { direction: ltr; unicode-bidi: isolate; }
+  .print-card { display: none; }
+  @media print {
+    body.print-code header, body.print-code main > *:not(.print-card), body.print-code footer { display: none !important; }
+    body.print-code .print-card { display: block; text-align: center; border: 4px double #2e7d32; padding: 40px 20px; margin-top: 40px; }
+    body.print-code .print-card .bigcode { font-size: 4rem; }
+    .no-print { display: none !important; }
+  }
+</style>
+<script src="/js/config.js?v=20261102a" defer></script>
+<script src="/js/ui-text.js?v=20261102a" defer></script>
+<script src="/js/school.js?v=20261102a" defer></script>
+<script src="/js/site-nav.js?v=20261102a" data-current="/teachers" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="/"><img src="/favicon.svg" alt="" width="36" height="36"><span id="site-name">سنڌ سائنس سکيا پورٽل</span></a>
+    <div class="langs" role="group" aria-label="Language / ٻولي / زبان">
+      <button type="button" class="lang-btn" data-lang="sd" lang="sd">سنڌي</button>
+      <button type="button" class="lang-btn" data-lang="ur" lang="ur">اردو</button>
+      <button type="button" class="lang-btn" data-lang="en" lang="en">English</button>
+    </div>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <p class="loading">…</p>
+  <noscript><p>Please turn on JavaScript.</p></noscript>
+</main>
+<footer><div class="wrap"><p><a href="/">sindh-science-portal.vercel.app</a> · The Professional Educator · EduPulse Nexus</p></div></footer>
+</body>
+</html>

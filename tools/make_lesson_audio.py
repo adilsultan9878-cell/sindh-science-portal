@@ -1,7 +1,9 @@
-"""Make spoken Urdu and English narration for every lesson part of every chapter.
+"""Make spoken Urdu, English and Sindhi narration for every lesson part of every chapter.
 Usage: python make_lesson_audio.py <site_dir> [--force]
-Writes <site_dir>/audio/lessons/<chapterId>-<sectionId>-{ur,en}.mp3 (section title, a short pause, then the body)
-and <site_dir>/audio/lessons/index.json ({chapterId: {sectionId: {ur, en, urSecs, enSecs}}}).
+Writes <site_dir>/audio/lessons/<chapterId>-<sectionId>-{ur,en,sd}.mp3 (section title, a short pause, then the body)
+and <site_dir>/audio/lessons/index.json ({chapterId: {sectionId: {ur, en, sd, urSecs, enSecs, sdSecs}}}).
+There is no Sindhi computer voice, so Sindhi text is read by the Urdu voice after its Sindhi-only letters are
+respelt with the nearest Urdu letters (see SD_LETTERS); it sounds like Sindhi read with an Urdu accent.
 A file is made again only when its spoken text, voice or rate changed (a hash of them is kept in the MP3's
 comment tag), or for every file with --force. MP3s for lesson parts that no longer exist are removed.
 """
@@ -11,9 +13,21 @@ import edge_tts
 sys.stdout.reconfigure(encoding='utf-8')
 site = sys.argv[1]
 force = '--force' in sys.argv
-VOICES = {'ur': ('ur-PK-UzmaNeural', '-5%'), 'en': ('en-GB-SoniaNeural', '-5%')}
-FULL_STOP = {'ur': '۔', 'en': '.'}
+VOICES = {'ur': ('ur-PK-UzmaNeural', '-5%'), 'en': ('en-GB-SoniaNeural', '-5%'), 'sd': ('ur-PK-UzmaNeural', '-8%')}
+FULL_STOP = {'ur': '۔', 'en': '.', 'sd': '.'}
 PAUSE_SECS = 0.8
+SD_DIGRAPHS = [('گه', 'گھ'), ('جه', 'جھ')]
+SD_LETTERS = str.maketrans({'ک': 'کھ', 'ڪ': 'ک', 'ٻ': 'ب', 'ڀ': 'بھ', 'ٿ': 'تھ', 'ٽ': 'ٹ', 'ٺ': 'ٹھ', 'ڄ': 'ج', 'ڃ': 'ن', 'ڇ': 'چھ',
+                            'ڌ': 'دھ', 'ڏ': 'د', 'ڊ': 'ڈ', 'ڍ': 'ڈھ', 'ڙ': 'ڑ', 'ڦ': 'پھ', 'ڳ': 'گ', 'ڱ': 'نگ', 'ڻ': 'ن', 'ه': 'ہ',
+                            'ي': 'ی', '۽': 'اَیں', '۾': 'میں'})
+
+
+def for_voice(text, lang):
+    if lang != 'sd':
+        return text
+    for a, b in SD_DIGRAPHS:
+        text = text.replace(a, b)
+    return text.translate(SD_LETTERS)
 out_dir = os.path.join(site, 'audio', 'lessons')
 
 try:
@@ -35,7 +49,7 @@ def clean(line, lang):
 def spoken(section, lang):
     title = re.sub(r'\*+', '', section['title'][lang]).strip()
     body = ' '.join(l for l in (clean(x, lang) for x in section['body'][lang]) if l)
-    return title, body
+    return for_voice(title, lang), for_voice(body, lang)
 
 
 def ffmpeg_info(path):
@@ -99,7 +113,8 @@ async def main():
                 data = json.load(open(os.path.join(site, 'data', f'class-{cls["id"]}', subject['id'], chapter + '.json'), encoding='utf-8'))
                 sections += [(chapter, s) for s in data.get('lesson', [])]
     failed, sem = [], asyncio.Semaphore(4)
-    with tempfile.TemporaryDirectory() as tmp:
+    # Work files go next to the output, not in %TEMP%, which other tools on this machine clean up mid-run.
+    with tempfile.TemporaryDirectory(prefix='.work-', dir=out_dir) as tmp:
         silence = os.path.join(tmp, 'silence.mp3')
         # Same format as edge-tts output (24 kHz mono 48 kbit/s) and no header, so the frames join cleanly.
         subprocess.run([FFMPEG, '-hide_banner', '-loglevel', 'error', '-f', 'lavfi', '-i', 'anullsrc=r=24000:cl=mono', '-t', str(PAUSE_SECS),
@@ -114,7 +129,7 @@ async def main():
                 entry[lang], entry[lang + 'Secs'] = name, secs
                 kept.add(name)
         if entry:
-            index.setdefault(chapter, {})[s['id']] = {k: entry[k] for k in ('ur', 'en', 'urSecs', 'enSecs') if k in entry}
+            index.setdefault(chapter, {})[s['id']] = {k: entry[k] for k in ('ur', 'en', 'sd', 'urSecs', 'enSecs', 'sdSecs') if k in entry}
     for old in glob.glob(os.path.join(out_dir, '*.mp3')):
         if os.path.basename(old) not in kept:
             os.remove(old)

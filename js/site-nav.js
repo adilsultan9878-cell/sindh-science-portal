@@ -5,7 +5,7 @@
   'use strict';
 
   var LINKS = [['/', 'home'], ['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/competition', 'competition'],
-    ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers'], ['/search', 'search']];
+    ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers']];
   var current = (document.currentScript && document.currentScript.getAttribute('data-current')) || '';
 
   function lang() {

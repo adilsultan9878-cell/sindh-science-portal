@@ -399,5 +399,10 @@ Object.assign(window.UI_TEXT, {
   fillHelp: { sd: 'جملو پڙهو ۽ خالي جاءِ لاءِ صحيح لفظ چونڊيو.', ur: 'جملہ پڑھیں اور خالی جگہ کے لیے درست لفظ چنیں۔', en: 'Read the sentence and choose the right word for the gap.' },
   sentenceOf: { sd: 'جملو {n} / {m}', ur: 'جملہ {n} / {m}', en: 'Sentence {n} of {m}' },
   questionPaper: { sd: 'سوالن جو پرچو ٺاهيو', ur: 'سوالیہ پرچہ بنائیں', en: 'Make a question paper' },
-  questionPaperText: { sd: 'باب چونڊيو ۽ امتحان لاءِ پرنٽ ٿيڻ لائق پرچو ۽ جوابن جي ڪنجي ٺاهيو.', ur: 'ابواب چنیں اور امتحان کے لیے پرنٹ ہونے والا پرچہ اور جوابات کی کلید بنائیں۔', en: 'Choose chapters and make a printable exam paper with an answer key.' }
+  questionPaperText: { sd: 'باب چونڊيو ۽ امتحان لاءِ پرنٽ ٿيڻ لائق پرچو ۽ جوابن جي ڪنجي ٺاهيو.', ur: 'ابواب چنیں اور امتحان کے لیے پرنٹ ہونے والا پرچہ اور جوابات کی کلید بنائیں۔', en: 'Choose chapters and make a printable exam paper with an answer key.' },
+  sindhScience: { sd: 'سنڌ ۾ سائنس', ur: 'سندھ میں سائنس', en: 'Science in Sindh' },
+  sindhShort: { sd: 'سنڌ جون 12 جايون ۽ ڪتاب جا باب.', ur: 'سندھ کی 12 جگہیں اور کتاب کے ابواب۔', en: '12 places of Sindh and your book chapters.' },
+  schoolTitle: { sd: 'اسڪول ڊيش بورڊ', ur: 'اسکول ڈیش بورڈ', en: 'School dashboard' },
+  schoolText: { sd: 'هيڊ ماستر سڄي اسڪول جي ڪلاسن جا نتيجا هڪ هنڌ ڏسي سگهن ٿا.', ur: 'ہیڈ ماسٹر پورے اسکول کی کلاسوں کے نتائج ایک جگہ دیکھ سکتے ہیں۔', en: 'Head teachers see the results of all their school\'s classes in one place.' },
+  schoolOpen: { sd: 'اسڪول ڊيش بورڊ کوليو', ur: 'اسکول ڈیش بورڈ کھولیں', en: 'Open the school dashboard' }
 });

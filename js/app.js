@@ -55,7 +55,8 @@
     offline: '<path d="M2 2l20 20M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5.2-2.8M19 13a10 10 0 0 0-2.3-1.7M12 20h.01"/>',
     phone: '<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/>',
     grid: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
-    download: '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>'
+    download: '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>',
+    map: '<path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5zM9 4v13.5M15 6.5V20"/>'
   };
   function icon(name, cls) {
     return '<svg class="ic' + (cls ? ' ' + cls : '') + '" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (ICON_PATHS[name] || '') + '</svg>';
@@ -437,7 +438,7 @@
   }
   function renderFrame() {
     var links = [['/', 'home'], ['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/competition', 'competition'],
-      ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers'], ['/search', 'search']];
+      ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers']];
     var offline = state.lang && navigator.onLine === false;
     document.getElementById('top').innerHTML = (offline ? '<p class="offline-note" role="status">' + icon('offline') + ' ' + esc(t('offlineNote')) + '</p>' : '') +
       '<div class="wrap top-row">' +
@@ -457,7 +458,7 @@
       '<div class="wrap foot-grid">' +
         '<div><p class="foot-brand">' + LEAF + '<span>' + esc(t('siteName')) + '</span></p><p>' + esc(t('footerFree')) + '</p></div>' +
         '<nav class="foot-links" aria-label="' + esc(t('more')) + '"><a href="/teachers">' + esc(t('teachers')) + '</a><a href="/watch">' + esc(t('videosTitle')) + '</a><a href="/games">' + esc(t('gamesTitle')) + '</a>' +
-          '<a href="/paper/">' + esc(t('questionPaper')) + '</a><a href="/class/">' + esc(t('classTitle')) + '</a>' +
+          '<a href="/paper/">' + esc(t('questionPaper')) + '</a><a href="/class/">' + esc(t('classTitle')) + '</a><a href="/sindh/">' + esc(t('sindhScience')) + '</a>' +
           '<a href="/leaderboard">' + esc(t('leaderboard')) + '</a><a href="/about">' + esc(t('about')) + '</a><a href="/admin">' + esc(t('staff')) + '</a></nav>' +
       '</div>' +
       '<div class="wrap foot-base"><p>© The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p></div>' : '';
@@ -471,7 +472,7 @@
     [/^\/class-(\w+)\/([\w-]+)\/?$/, viewSubject],
     [/^\/class-(\w+)\/([\w-]+)\/([\w-]+)(?:\/(\w+))?\/?$/, viewChapter],
     [/^\/glossary\/?$/, viewGlossary],
-    [/^\/search\/?$/, viewSearch],
+    [/^\/search\/?$/, function () { history.replaceState(null, '', '/'); return viewHome.apply(null, arguments); }], // search was removed; old links go home
     [/^\/competition\/?$/, viewCompetition],
     [/^\/progress\/?$/, viewProgress],
     [/^\/leaderboard\/?$/, viewLeaderboard],
@@ -524,7 +525,7 @@
     }
     var sb = e.target.closest('.say');
     if (sb) { speak(sb); return; }
-    var zb = e.target.closest('[data-zoom]');
+    var zb = e.target.closest('.zoom-btn');
     if (zb) {
       var z = Math.max(-1, Math.min(3, store.get('zoom', 0) + (+zb.getAttribute('data-zoom'))));
       store.set('zoom', z);
@@ -536,16 +537,10 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|class|paper)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|sindh|school)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
-  });
-  document.addEventListener('submit', function (e) {
-    if (!e.target.classList.contains('search-form')) return;
-    e.preventDefault();
-    var q = e.target.querySelector('input[name="q"]').value.trim();
-    go('/search' + (q ? '?q=' + encodeURIComponent(q) : ''));
   });
   window.addEventListener('popstate', function () { render(false); });
   window.addEventListener('online', function () { renderFrame(); flushOutbox(); });
@@ -603,7 +598,6 @@
         (last ? '<a class="card continue" href="' + esc(p.last) + '">' + thumb(last) +
           '<span class="continue-body"><small class="muted">' + esc(t('continueLearning')) + '</small><strong>' + esc(chLabel(last)) + '</strong>' +
           progressBar(chapterStatus(last, p).pct) + '</span>' + icon('next', 'flip') + '</a>' : '') +
-        searchForm('') +
         '<div class="sec-head"><h2>' + esc(L(cat.classes.filter(function (c) { return c.active; })[0].name)) + ' ' + esc(t('learn')) + '</h2>' +
           '<a href="' + subjUrl + '">' + esc(t('allChapters')) + icon('next', 'flip') + '</a></div>' +
         '<div class="ch-strip">' + chs.map(function (ch) {
@@ -613,6 +607,7 @@
         '<section class="card daily" id="daily"></section>' +
         '<h2>' + esc(t('more')) + '</h2>' +
         '<div class="grid">' +
+          quickLink('/sindh/', 'map', 'sindhScience', 'sindhShort') +
           quickLink('/watch', 'video', 'videosTitle', 'videosShort') +
           quickLink('/games', 'game', 'gamesTitle', 'gamesShort') +
           quickLink('/competition', 'trophy', 'competition', 'compShort') +
@@ -681,12 +676,6 @@
     window.print();
     document.body.classList.remove('print-cert');
   });
-  function searchForm(q) {
-    return '<form class="search-form" action="/search" role="search">' +
-      '<input type="search" name="q" value="' + esc(q) + '" placeholder="' + esc(t('searchPlaceholder')) + '" aria-label="' + esc(t('search')) + '">' +
-      '<button class="btn" type="submit">' + esc(t('searchBtn')) + '</button></form>';
-  }
-
   /* Daily challenge: same question for everyone on the same day. */
   function dailyPick(chs) {
     var pool = [];
@@ -1806,39 +1795,6 @@
     });
   }
 
-  function viewSearch(id) {
-    var q = new URLSearchParams(location.search).get('q') || '';
-    return loadAll().then(function (chs) {
-      if (stale(id)) return;
-      setMeta(t('search') + (q ? ': ' + q : ''), t('searchPlaceholder'));
-      var entries = [];
-      chs.forEach(function (ch) {
-        entries.push({ kind: 'kindChapter', title: L(ch.title), sub: t('chapterN', { n: ch.number }), url: chUrl(ch), hay: allLangs(ch.title) + ' ' + allLangs(ch.summary) });
-        ch.lesson.forEach(function (sec) {
-          entries.push({ kind: 'kindSection', title: L(sec.title), sub: chLabel(ch), url: chUrl(ch) + '#' + sec.id, hay: allLangs(sec.title) + ' ' + allLangs(sec.body) });
-        });
-        ch.glossary.forEach(function (w) {
-          entries.push({ kind: 'kindWord', title: LANGS.map(function (l) { return w[l]; }).join(' · '), sub: chLabel(ch), url: chUrl(ch, 'words'), hay: allLangs(w) });
-        });
-      });
-      var terms = norm(q).split(' ').filter(Boolean), found = [];
-      if (terms.length) {
-        found = entries.filter(function (e) {
-          var hay = e._n || (e._n = norm(e.hay));
-          return terms.every(function (tm) { return hay.indexOf(tm) >= 0; });
-        });
-      }
-      main.innerHTML = crumbs([['/', t('home')], ['', t('search')]]) +
-        '<h1>' + icon('search') + ' ' + esc(t('search')) + '</h1>' + searchForm(q) +
-        (terms.length ? '<p class="muted">' + esc(t('resultsCount', { n: found.length })) + '</p>' +
-          (found.length ? '<ul class="results">' + found.map(function (e) {
-            return '<li class="card"><a href="' + e.url + '"><strong>' + esc(e.title) + '</strong></a><br><small class="muted">' + esc(t(e.kind)) + ' · ' + esc(e.sub) + '</small></li>';
-          }).join('') + '</ul>' : '<p>' + esc(t('noResults')) + '</p>') : '');
-      var input = main.querySelector('input[name="q"]');
-      if (!q) input.focus();
-    });
-  }
-
   /* ---------- competition, leaderboard, progress ---------- */
 
   function validNick(s) {
@@ -2085,6 +2041,7 @@
         '<div class="card install"><span class="icon-tile">' + icon('worksheet') + '</span><div><strong>' + esc(t('questionPaper')) + '</strong>' +
           '<p class="muted">' + esc(t('questionPaperText')) + '</p><a class="btn" href="/paper/">' + icon('printer') + esc(t('questionPaper')) + '</a></div></div>' +
         '<div class="card note ok"><h2>' + icon('users') + ' ' + esc(t('classTitle')) + '</h2><p>' + esc(t('classText')) + '</p><p><a class="btn" href="/class/">' + esc(t('classOpen')) + '</a></p></div>' +
+        '<div class="card note"><h2>' + icon('grid') + ' ' + esc(t('schoolTitle')) + '</h2><p>' + esc(t('schoolText')) + '</p><p><a class="btn" href="/school/">' + esc(t('schoolOpen')) + '</a></p></div>' +
         '<div class="card note"><p>' + icon('lock') + ' ' + esc(t('staffIntro')) + '</p><p><a class="btn" href="/admin">' + esc(t('staffLogin')) + '</a></p></div>';
     });
   }
