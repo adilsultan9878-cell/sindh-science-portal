@@ -584,3 +584,14 @@ html[dir="rtl"] .q legend { float: right; }
   body.print-cert .certificate, body.print-cert .certificate * { visibility: visible; }
   body.print-cert .certificate { position: absolute; left: 0; right: 0; top: 0; }
 }
+
+/* certificate check: QR code and code on printed certificates, and the /verify page */
+.cert-verify:empty { display: none; }
+.cert-verify { display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 14px; }
+.cert-qr { width: 96px; height: 96px; flex: none; background: #fff; }
+.cert-qr svg { display: block; width: 100%; height: 100%; }
+.cert-code { font-size: 0.85rem; margin: 0; text-align: start; max-width: 260px; }
+.verify-form { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; margin: 14px 0; }
+.verify-form input { width: 12em; font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.verify-result h2 { display: flex; align-items: center; gap: 8px; margin-top: 0.2em; }
+.verify-table th { text-align: start; width: 35%; }

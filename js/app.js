@@ -482,7 +482,8 @@
     [/^\/teachers\/?$/, viewTeachers],
     [/^\/watch\/?$/, viewWatch],
     [/^\/games\/?$/, viewGames],
-    [/^\/about\/?$/, viewAbout]
+    [/^\/about\/?$/, viewAbout],
+    [/^\/verify(?:\/([A-Za-z0-9-]{1,20}))?\/?$/, viewVerify]
   ];
   var renderId = 0;
 
@@ -667,18 +668,63 @@
     if (chapterStatus(ch).done < 3) return '';
     var p = getProgress();
     return '<div class="card note ok ch-done no-print"><p><strong>' + icon('medal') + ' ' + esc(t('chapterDoneTitle')) + '</strong></p>' +
-      '<p>' + esc(t('chapterDoneText')) + '</p><button type="button" class="btn small" data-act="chapter-cert">' + icon('printer') + esc(t('printCert')) + '</button></div>' +
+      '<p>' + esc(t('chapterDoneText')) + '</p><button type="button" class="btn small" data-act="chapter-cert" data-ch="' + esc(ch._key) + '">' + icon('printer') + esc(t('printCert')) + '</button></div>' +
       '<div class="certificate cert-chapter">' +
         '<p class="cert-site">' + esc(t('siteName')) + '</p><h2>' + esc(t('chapterCertHead')) + '</h2>' +
         '<p class="cert-text">' + esc(t('chapterCertText', { name: p.nick || '________________', chapter: chLabel(ch) })) + '</p>' +
-        '<p class="muted">' + esc(t('date')) + ': ' + todayStr() + '</p><p class="cert-org">The Professional Educator · EduPulse Nexus</p></div>';
+        '<p class="muted">' + esc(t('date')) + ': ' + todayStr() + '</p><p class="cert-org">The Professional Educator · EduPulse Nexus</p>' +
+        '<div class="cert-verify"></div></div>';
   }
   document.addEventListener('click', function (e) {
-    if (!e.target.closest('[data-act="chapter-cert"]')) return;
-    document.body.classList.add('print-cert');
-    window.print();
-    document.body.classList.remove('print-cert');
+    var b = e.target.closest('[data-act="chapter-cert"]');
+    if (!b) return;
+    var ch = state.chapters[b.getAttribute('data-ch')], p = getProgress();
+    if (!p.nick) {
+      var name = (window.prompt(t('certAskName')) || '').trim().slice(0, 40);
+      if (name) { p.nick = name; saveProgress(p); }
+    }
+    var slot = document.querySelector('.ch-done-slot');
+    if (slot && ch) slot.innerHTML = chapterDoneHTML(ch);   // shows the name just typed
+    printCertificate(document.querySelector('.cert-chapter'), { kind: 'chapter', name: getProgress().nick, chapter: ch && ch._key });
   });
+
+  /* Certificate check: each printed certificate is saved in the database under a short code, and gets a QR code
+     that opens /verify/CODE, where anyone can see that it is real. The same certificate on the same day keeps its code. */
+  function loadQr() {
+    if (window.qrcode) return Promise.resolve();
+    return new Promise(function (ok, bad) {
+      var s = document.createElement('script');
+      s.src = '/js/qrcode.js'; s.onload = ok; s.onerror = bad;
+      document.head.appendChild(s);
+    });
+  }
+  function certCode(info) {
+    var key = 'cert.' + [info.kind, info.name, info.chapter || '', info.score == null ? '' : info.score, info.total == null ? '' : info.total, todayStr()].join('|');
+    var saved = store.get(key, null);
+    if (saved) return Promise.resolve(saved);
+    if (!CFG) return Promise.reject(new Error('no database'));
+    return timeout(dbFetch('rpc/issue_certificate', { method: 'POST', body: {
+      p_kind: info.kind, p_name: info.name, p_chapter: info.chapter || null,
+      p_score: info.score == null ? null : info.score, p_total: info.total == null ? null : info.total, p_secs: info.secs == null ? null : info.secs
+    } }), 8000).then(function (code) { store.set(key, code); return code; });
+  }
+  function printCertificate(box, info) {
+    function print() {
+      document.body.classList.add('print-cert');
+      window.print();
+      document.body.classList.remove('print-cert');
+    }
+    var slot = box && box.querySelector('.cert-verify');
+    if (!slot || !info.name) { print(); return; }   // without a name there is nothing to check
+    Promise.all([certCode(info), loadQr()]).then(function (res) {
+      var code = res[0], url = location.origin + '/verify/' + code;
+      var qr = window.qrcode(0, 'M');
+      qr.addData(url);
+      qr.make();
+      slot.innerHTML = '<div class="cert-qr">' + qr.createSvgTag({ cellSize: 3, margin: 0, scalable: true, alt: url }) + '</div>' +
+        '<p class="cert-code">' + esc(t('certCheck')) + ' <b dir="ltr">' + esc(code) + '</b><br><small dir="ltr">' + esc(url.replace(/^https?:\/\//, '')) + '</small></p>';
+    }).catch(function () { slot.innerHTML = ''; }).then(print);   // offline: the certificate still prints, without the check
+  }
   /* Daily challenge: same question for everyone on the same day. */
   function dailyPick(chs) {
     var pool = [];
@@ -1805,6 +1851,45 @@
     });
   }
 
+  /* ---------- certificate check (/verify/CODE, opened from the QR code) ---------- */
+
+  function viewVerify(id, code) {
+    code = (code || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+    setMeta(t('verifyTitle'), t('verifyIntro'));
+    var head = crumbs([['/', t('home')], ['', t('verifyTitle')]]) + '<h1>' + icon('medal') + ' ' + esc(t('verifyTitle')) + '</h1>';
+    var form = '<form class="verify-form no-print" novalidate><label class="field"><span>' + esc(t('verifyCode')) + '</span>' +
+      '<input type="text" name="code" dir="ltr" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" value="' + esc(code) + '"></label>' +
+      '<button class="btn" type="submit">' + esc(t('verifyBtn')) + '</button></form>';
+    if (!code) { main.innerHTML = head + '<p>' + esc(t('verifyIntro')) + '</p>' + form; return; }
+    main.innerHTML = head + '<p class="loading">…</p>';
+    if (!CFG) { main.innerHTML = head + '<p class="card note warn">' + esc(t('offlineNote')) + '</p>' + form; return; }
+    return timeout(dbFetch('rpc/verify_certificate', { method: 'POST', body: { p_code: code } }), 8000).then(function (c) {
+      if (stale(id)) return;
+      var body;
+      if (!c) body = '<div class="card note warn verify-result"><h2>' + icon('cross') + ' ' + esc(t('verifyBad')) + '</h2><p>' + esc(t('verifyBadText')) + '</p>' +
+        '<p>' + esc(t('verifyCode')) + ': <b dir="ltr">' + esc(code) + '</b></p></div>';
+      else {
+        var rows = [[t('verifyName'), esc(c.name)], [t('verifyKind'), esc(t(c.kind === 'chapter' ? 'verifyKindChapter' : 'verifyKindComp'))]];
+        if (c.kind === 'chapter') rows.push([t('verifyChapter'), esc(t('chapterN', { n: c.chapter_number }) + ': ' + L(c.chapter_title))]);
+        else rows.push([t('score'), '<b dir="ltr">' + c.score + ' / ' + c.total + '</b>' + (c.secs ? ' · ' + esc(t('timeTaken')) + ': <span dir="ltr">' + fmtTime(c.secs) + '</span>' : '')]);
+        rows.push([t('date'), '<span dir="ltr">' + esc(c.date) + '</span>'], [t('verifyCode'), '<b dir="ltr">' + esc(c.code) + '</b>']);
+        body = '<div class="card note ok verify-result"><h2>' + icon('check') + ' ' + esc(t('verifyOk')) + '</h2><p>' + esc(t('verifyOkText')) + '</p>' +
+          '<table class="table verify-table"><tbody>' + rows.map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + r[1] + '</td></tr>'; }).join('') + '</tbody></table>' +
+          '<p class="muted small">' + esc(t('verifyNote')) + '</p></div>';
+      }
+      main.innerHTML = head + body + form;
+    }).catch(function () {
+      if (stale(id)) return;
+      main.innerHTML = head + '<p class="card note warn">' + esc(t('offlineNote')) + '</p>' + form;
+    });
+  }
+  document.addEventListener('submit', function (e) {
+    if (!e.target.classList.contains('verify-form')) return;
+    e.preventDefault();
+    var code = e.target.querySelector('input[name="code"]').value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    go('/verify' + (code ? '/' + code : ''));
+  });
+
   /* ---------- competition, leaderboard, progress ---------- */
 
   function validNick(s) {
@@ -1881,6 +1966,7 @@
             '<p class="cert-score">' + esc(t('score')) + ': <b>' + r.score + ' / ' + r.total + '</b> · ' + esc(t('timeTaken')) + ': <b>' + fmtTime(secs) + '</b></p>' +
             '<p class="muted">' + esc(t('date')) + ': ' + todayStr() + '</p>' +
             '<p class="cert-org">The Professional Educator · EduPulse Nexus</p>' +
+            '<div class="cert-verify"></div>' +
           '</div>' +
           '<div class="no-print">' +
             '<p class="points">' + icon('star') + ' ' + esc(t('pointsEarned', { n: r.score })) + '</p>' + newBadgesHTML(fresh) +
@@ -1889,9 +1975,7 @@
             '<a class="btn ghost" href="/leaderboard">' + icon('medal') + ' ' + esc(t('leaderboard')) + '</a></div>' +
           '</div>';
         out.querySelector('[data-act="cert"]').addEventListener('click', function () {
-          document.body.classList.add('print-cert');
-          window.print();
-          document.body.classList.remove('print-cert');
+          printCertificate(out.querySelector('.certificate'), { kind: 'competition', name: nick, score: r.score, total: r.total, secs: secs });
         });
       }
     });

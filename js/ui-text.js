@@ -404,5 +404,21 @@ Object.assign(window.UI_TEXT, {
   sindhShort: { sd: 'سنڌ جون 12 جايون ۽ ڪتاب جا باب.', ur: 'سندھ کی 12 جگہیں اور کتاب کے ابواب۔', en: '12 places of Sindh and your book chapters.' },
   schoolTitle: { sd: 'اسڪول ڊيش بورڊ', ur: 'اسکول ڈیش بورڈ', en: 'School dashboard' },
   schoolText: { sd: 'هيڊ ماستر سڄي اسڪول جي ڪلاسن جا نتيجا هڪ هنڌ ڏسي سگهن ٿا.', ur: 'ہیڈ ماسٹر پورے اسکول کی کلاسوں کے نتائج ایک جگہ دیکھ سکتے ہیں۔', en: 'Head teachers see the results of all their school\'s classes in one place.' },
-  schoolOpen: { sd: 'اسڪول ڊيش بورڊ کوليو', ur: 'اسکول ڈیش بورڈ کھولیں', en: 'Open the school dashboard' }
+  schoolOpen: { sd: 'اسڪول ڊيش بورڊ کوليو', ur: 'اسکول ڈیش بورڈ کھولیں', en: 'Open the school dashboard' },
+  certCheck: { sd: 'هي سرٽيفڪيٽ اصلي آهي يا نه، QR ڪوڊ اسڪين ڪري ڏسو. ڪوڊ:', ur: 'یہ سرٹیفکیٹ اصلی ہے یا نہیں، QR کوڈ اسکین کر کے دیکھیں۔ کوڈ:', en: 'Scan the QR code to check that this certificate is real. Code:' },
+  certAskName: { sd: 'سرٽيفڪيٽ تي ڪهڙو نالو لکجي؟', ur: 'سرٹیفکیٹ پر کون سا نام لکھا جائے؟', en: 'Which name should go on the certificate?' },
+  verifyTitle: { sd: 'سرٽيفڪيٽ جي جانچ', ur: 'سرٹیفکیٹ کی تصدیق', en: 'Check a certificate' },
+  verifyIntro: { sd: 'سرٽيفڪيٽ تي لکيل ڪوڊ لکو يا ان جو QR ڪوڊ اسڪين ڪريو.', ur: 'سرٹیفکیٹ پر لکھا کوڈ لکیں یا اس کا QR کوڈ اسکین کریں۔', en: 'Type the code printed on the certificate, or scan its QR code.' },
+  verifyCode: { sd: 'سرٽيفڪيٽ ڪوڊ', ur: 'سرٹیفکیٹ کوڈ', en: 'Certificate code' },
+  verifyBtn: { sd: 'جانچيو', ur: 'تصدیق کریں', en: 'Check' },
+  verifyOk: { sd: 'هي سرٽيفڪيٽ اصلي آهي', ur: 'یہ سرٹیفکیٹ اصلی ہے', en: 'This certificate is real' },
+  verifyOkText: { sd: 'هي سرٽيفڪيٽ سنڌ سائنس سکيا پورٽل تان جاري ٿيو هو.', ur: 'یہ سرٹیفکیٹ سندھ سائنس لرننگ پورٹل سے جاری ہوا تھا۔', en: 'This certificate was issued by the Sindh Science Learning Portal.' },
+  verifyBad: { sd: 'هن ڪوڊ سان ڪو سرٽيفڪيٽ نه مليو', ur: 'اس کوڈ کا کوئی سرٹیفکیٹ نہیں ملا', en: 'No certificate found with this code' },
+  verifyBadText: { sd: 'ڪوڊ ٻيهر غور سان لکو. جيڪڏهن پوءِ به نه ملي ته اهو سرٽيفڪيٽ هن ويب سائيٽ جو ناهي.', ur: 'کوڈ دوبارہ غور سے لکھیں۔ اگر پھر بھی نہ ملے تو یہ سرٹیفکیٹ اس ویب سائٹ کا نہیں۔', en: 'Type the code again carefully. If it is still not found, the certificate did not come from this website.' },
+  verifyName: { sd: 'نالو', ur: 'نام', en: 'Name' },
+  verifyKind: { sd: 'سرٽيفڪيٽ', ur: 'سرٹیفکیٹ', en: 'Certificate' },
+  verifyKindChapter: { sd: 'باب مڪمل ڪرڻ جو سرٽيفڪيٽ', ur: 'باب مکمل کرنے کا سرٹیفکیٹ', en: 'Chapter completion certificate' },
+  verifyKindComp: { sd: 'مقابلي جو سرٽيفڪيٽ', ur: 'مقابلے کا سرٹیفکیٹ', en: 'Competition certificate' },
+  verifyChapter: { sd: 'باب', ur: 'باب', en: 'Chapter' },
+  verifyNote: { sd: 'هي جانچ ٻڌائي ٿي ته سرٽيفڪيٽ هن ويب سائيٽ تان ان ڏينهن هن نالي سان ٺهيو هو.', ur: 'یہ تصدیق بتاتی ہے کہ سرٹیفکیٹ اس ویب سائٹ سے اس دن اس نام سے بنا تھا۔', en: 'This check shows that the certificate was made on this website, on this date, with this name.' }
 });
