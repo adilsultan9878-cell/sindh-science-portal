@@ -3,6 +3,9 @@
 Free Class 5 Science website in Sindhi, Urdu and English (pilot), built for The Professional Educator / EduPulse Nexus.
 
 - **Website:** https://sindh-science-portal.vercel.app
+- **All videos:** https://sindh-science-portal.vercel.app/watch · **All games:** https://sindh-science-portal.vercel.app/games
+- **For teachers:** https://sindh-science-portal.vercel.app/teachers (question paper `/paper/`, teacher's class `/class/`, school dashboard `/school/`)
+- **Science in Sindh:** https://sindh-science-portal.vercel.app/sindh/
 - **Staff panel:** https://sindh-science-portal.vercel.app/admin
 
 ## What is in it
@@ -13,8 +16,12 @@ Free Class 5 Science website in Sindhi, Urdu and English (pilot), built for The 
   2. **Diagram** — pictures grouped by lesson topic, a tap-to-explore diagram, and a "label the diagram" question.
   3. **Quiz** — 16 questions, one at a time with Back / Next, then a review of every answer.
   4. **Worksheet** — filled in on the screen; the draft is saved on the device as the child types, then **Save and submit** marks it. It can still be printed filled in or blank, with a teachers' answer key.
-  5. **Experiment** — step by step: safety and things needed, a guess, each step, what you saw, and what we learned.
-  6. **Game** and 7. **Key words**.
+  5. **Experiment** — a narrated Urdu video of the experiment, then step by step: safety and things needed, a guess, each step, what you saw, and what we learned.
+  6. **Games** — the chapter's own game plus four made automatically from its content: spelling, word match, a 60-second quiz race and fill the gap. `/games` lists every chapter's games.
+  7. **Key words**.
+- `/watch` shows every video in one place: 13 lesson videos, 13 experiment videos and the 3 how-to guides.
+- `/sindh/` ("Science in Sindh") is a map of 12 places in Sindh, each tied to a book chapter with a question to talk about in class.
+- Teachers can make a printable question paper with an answer key (`/paper/`), follow their own class's results (`/class/`), and head teachers can see all their school's classes together (`/school/`).
 - Under the chapter title, a progress bar and three statuses (quiz, worksheet, experiment: not started / in progress / done) show how far the child has got. The chapter list and the progress page show the same.
 - A daily question with a streak, points and badges, a timed competition with a certificate, and a leaderboard for all of Sindh, filtered by district.
 - Teachers' page, glossary and search in all three languages.
@@ -57,12 +64,15 @@ The 🔊 buttons play recorded Urdu and English voices for key words and chapter
 
 A new class or subject is added in `data/catalog.json`: set it to `"active": true` and add chapters from the staff panel.
 
-## Offline use (installable app)
+## Offline use
 
 - `sw.js` saves the app, the fonts and every chapter file on the phone during the first visit. After that, lessons, quizzes, worksheets and games open without internet.
 - Scores and usage counts made while offline are kept on the phone and sent when the internet comes back.
-- On Android, the home page shows an **Install as an app** button. It adds an app icon to the phone.
-- When you change any CSS or JS file, raise `VERSION` in `sw.js` and the `?v=` number in `index.html` and `admin.html` to the same new value, so phones pick up the update.
+- When you change any CSS or JS file, raise `VERSION` in `sw.js` and the `?v=` number in `index.html`, `admin.html` and the separate pages (`paper/`, `class/`, `school/`) to the same new value, so phones pick up the update.
+
+## Separate pages
+
+`/paper/`, `/class/`, `/school/`, `/sindh/` and `/videos/` are their own HTML pages, but they show the main site's menu through `js/site-nav.js`, so the portal still works as one website. A new page of this kind needs three things: its folder added to the rewrite exclusion in `vercel.json`, a skip line in `sw.js`, and its path added to the link rule in the click handler of `js/app.js`.
 
 ## Video guides
 
@@ -71,6 +81,10 @@ A new class or subject is added in `data/catalog.json`: set it to `"active": tru
 ## Lesson videos
 
 Every chapter has a short narrated video in Urdu (about 2 minutes) at the top of its lesson. They are in `lesson-videos/` and listed in `window.LESSON_VIDEOS` in `js/diagrams.js`. The scripts that made them are in `tools/lesson-videos/`: `content.js` (photosynthesis, water cycle) and `content2.js` (the other 11 chapters) hold the Urdu narration. Render the slides with `node render2.js <site folder> <chapter id> <out folder>` (uses the Chrome installed on the computer), then build the MP4 with `python build.py <out folder> lesson-videos/<chapter id>-ur.mp4` (needs `pip install edge-tts imageio-ffmpeg`).
+
+## Experiment videos
+
+Every chapter's experiment also has a narrated Urdu video (about 2 minutes) that shows the drawing, the things needed and each step. They are in `exp-videos/` and listed in `window.EXP_VIDEOS` in `js/diagrams.js`. The scripts are in `tools/exp-videos/`: `content.js` holds the narration, `node render.js <site folder> <work folder> [chapter ids]` makes the slides, `python build.py <site folder> <work folder> [chapter ids]` voices them and writes `exp-videos/<id>-ur.mp4` plus its poster, and `check.py` / `transcribe.py` check the result.
 
 Which lesson topic each picture and diagram belongs to is set in `window.PICTURES[id].topic` and `window.DIAGRAM_TOPICS` in `js/diagrams.js` (topic = lesson section id such as `s2`). Each lesson section's quick check is the first MCQ or true/false question whose `topic` is that section.
 
