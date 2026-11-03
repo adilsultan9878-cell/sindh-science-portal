@@ -92,6 +92,8 @@ html[data-zoom="3"] main { zoom: 1.4; }
 .share-link { display: inline-flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 0.9rem; }
 .listen-slot { margin: 0 0 6px; min-height: 0; }
 .listen-part small { margin-inline-start: 4px; }
+.listen-part .lang-tag { margin-inline-start: 6px; padding: 0 6px; border-radius: 6px; background: var(--page); font-weight: 600; font-size: .85em; }
+.topic-fig img.lesson-pic, .photo img.lesson-pic { width: 100%; max-width: 640px; max-height: none; height: auto; border-radius: 12px; }
 .listen-part.on { background: var(--yellow); border-color: var(--yellow-line); }
 .ch-done { display: flex; flex-direction: column; gap: 2px; }
 .ch-done p { margin: 2px 0; }

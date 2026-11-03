@@ -204,8 +204,8 @@
     }).catch(function () { /* no sound offline before the first listen */ });
   }
 
-  // Spoken lesson parts (Urdu and English, made by tools/make_lesson_audio.py and listed in audio/lessons/index.json).
-  // Sindhi readers hear the Urdu voice, as there is no Sindhi computer voice.
+  // Spoken lesson parts (Urdu, English and Sindhi, made by tools/make_lesson_audio.py and listed in audio/lessons/index.json).
+  // Sindhi readers get two buttons: the Sindhi reading and the Urdu one.
   var lessonAudio = null;
   function loadLessonAudio() {
     if (lessonAudio) return Promise.resolve(lessonAudio);
@@ -214,13 +214,16 @@
   }
   function fillListenButtons(box, ch) {
     loadLessonAudio().then(function (idx) {
-      var lang = state.lang === 'en' ? 'en' : 'ur', secs = idx[ch.id] || {};
+      var langs = state.lang === 'en' ? ['en'] : state.lang === 'sd' ? ['sd', 'ur'] : ['ur'], secs = idx[ch.id] || {};
+      var tags = { sd: 'سنڌي', ur: 'اردو' };
       box.querySelectorAll('.listen-slot').forEach(function (slot) {
-        var a = secs[slot.getAttribute('data-sec')];
-        if (!a || !a[lang]) return;
-        var len = a[lang + 'Secs'];
-        slot.innerHTML = '<button type="button" class="btn ghost small listen-part" data-src="/audio/lessons/' + esc(a[lang]) + '">' + icon('volume') +
-          '<span>' + esc(t('listenPart')) + '</span>' + (len ? '<small class="muted">' + fmtTime(len) + '</small>' : '') + '</button>';
+        var a = secs[slot.getAttribute('data-sec')] || {}, have = langs.filter(function (l) { return a[l]; });
+        slot.innerHTML = have.map(function (l) {
+          var len = a[l + 'Secs'];
+          return '<button type="button" class="btn ghost small listen-part" data-src="/audio/lessons/' + esc(a[l]) + '">' + icon('volume') +
+            '<span>' + esc(t('listenPart')) + '</span>' + (have.length > 1 ? '<b class="lang-tag">' + tags[l] + '</b>' : '') +
+            (len ? '<small class="muted">' + fmtTime(len) + '</small>' : '') + '</button>';
+        }).join(' ');
       });
     });
   }
@@ -830,11 +833,18 @@
   /* ---------- lesson: one part at a time, each with a quick check ---------- */
 
   // The picture that belongs to one lesson section (topic), with a link to its diagram.
+  // Every lesson part has its own drawing, img/lesson/<chapter>-<part>.svg (tools/lesson-pictures/make_pictures.py).
+  // A part without one (e.g. a new chapter) simply drops the image, see the error listener below.
+  function lessonPic(ch, sid) {
+    return '<img class="lesson-pic" src="/img/lesson/' + ch.id + '-' + sid + '.svg" alt="" width="640" height="400" loading="lazy" decoding="async">';
+  }
+  document.addEventListener('error', function (e) {
+    if (e.target.classList && e.target.classList.contains('lesson-pic')) e.target.remove();
+  }, true);
   function topicFigure(ch, sid) {
-    var photo = (window.PICTURES || {})[ch.id], hasDiagram = ch.diagram && (window.DIAGRAM_TOPICS || {})[ch.id] === sid;
+    var photo = (window.PICTURES || {})[ch.id];
     var hasPhoto = photo && photo.topic === sid;
-    if (!hasPhoto && !hasDiagram) return '';
-    return '<figure class="topic-fig">' +
+    return '<figure class="topic-fig">' + lessonPic(ch, sid) +
       (hasPhoto ? '<img src="' + photo.src + '" alt="' + esc(L(ch.title)) + '" width="' + photo.w + '" height="' + photo.h + '" loading="lazy" decoding="async">' : '') +
       '<figcaption><a class="btn ghost small" href="' + chUrl(ch, 'diagram') + '#topic-' + sid + '">' + icon('diagram') + ' ' + esc(t('openDiagram')) + '</a></figcaption></figure>';
   }
@@ -950,8 +960,8 @@
       '<p class="lbl-result" aria-live="polite"></p></div></div>';
 
     el.innerHTML = ch.lesson.map(function (sec, i) {
-      var parts2 = (photo && sec.id === pTopic ? photoFigure(ch, photo) : '') + (sec.id === dTopic ? explore + labelling : '');
-      if (!parts2) return '';
+      var parts2 = '<figure class="card photo">' + lessonPic(ch, sec.id) + '</figure>' +
+        (photo && sec.id === pTopic ? photoFigure(ch, photo) : '') + (sec.id === dTopic ? explore + labelling : '');
       return '<section class="topic-block" id="topic-' + sec.id + '"><p class="eyebrow">' + esc(t('topicN', { n: i + 1 })) + '</p>' +
         '<h2>' + esc(L(sec.title)) + '</h2>' + parts2 +
         '<p><a href="' + chUrl(ch) + '#' + sec.id + '">' + icon('lesson') + ' ' + esc(t('tab_lesson')) + ': ' + esc(L(sec.title)) + '</a></p></section>';

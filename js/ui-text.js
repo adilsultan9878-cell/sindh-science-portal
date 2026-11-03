@@ -363,7 +363,7 @@ Object.assign(window.UI_TEXT, {
   tip: { sd: 'صلاح', ur: 'مشورہ', en: 'Tip' },
   heroStats: { sd: '{c} باب · {q} سوال · 3 ٻوليون', ur: '{c} ابواب · {q} سوالات · 3 زبانیں', en: '{c} chapters · {q} questions · 3 languages' },
   forTeachers: { sd: 'استادن لاءِ', ur: 'اساتذہ کے لیے', en: 'For teachers' },
-  listenPart: { sd: 'هي حصو ٻڌو (اردو ۾)', ur: 'یہ حصہ سنیں', en: 'Listen to this part' },
+  listenPart: { sd: 'هي حصو ٻڌو', ur: 'یہ حصہ سنیں', en: 'Listen to this part' },
   stopListening: { sd: 'روڪيو', ur: 'روکیں', en: 'Stop' },
   share: { sd: 'واٽس ايپ تي موڪليو', ur: 'واٹس ایپ پر بھیجیں', en: 'Share on WhatsApp' },
   shareText: { sd: 'سنڌ سائنس سکيا پورٽل تي هي سبق ڏسو:', ur: 'سندھ سائنس لرننگ پورٹل پر یہ سبق دیکھیں:', en: 'Have a look at this lesson on the Sindh Science Learning Portal:' },
