@@ -78,6 +78,7 @@
   }
 
   function report(kind, chapterKey, score, total) {
+    if (window.Stars) window.Stars.report(kind, chapterKey, score, total);   // Science Stars of the Week (stars.js), if the student joined
     var c = current();
     if (!c || !CFG) return;
     sendRow({ p_code: c.code, p_student: c.name, p_kind: kind, p_chapter: chapterKey || null,

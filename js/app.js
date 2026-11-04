@@ -461,7 +461,7 @@
       '<div class="wrap foot-grid">' +
         '<div><p class="foot-brand">' + LEAF + '<span>' + esc(t('siteName')) + '</span></p><p>' + esc(t('footerFree')) + '</p></div>' +
         '<nav class="foot-links" aria-label="' + esc(t('more')) + '"><a href="/teachers">' + esc(t('teachers')) + '</a><a href="/watch">' + esc(t('videosTitle')) + '</a><a href="/games">' + esc(t('gamesTitle')) + '</a>' +
-          '<a href="/paper/">' + esc(t('questionPaper')) + '</a><a href="/class/">' + esc(t('classTitle')) + '</a><a href="/sindh/">' + esc(t('sindhScience')) + '</a>' +
+          '<a href="/paper/">' + esc(t('questionPaper')) + '</a><a href="/book/">' + esc(t('bookPdf')) + '</a><a href="/class/">' + esc(t('classTitle')) + '</a><a href="/sindh/">' + esc(t('sindhScience')) + '</a>' +
           '<a href="/leaderboard">' + esc(t('leaderboard')) + '</a><a href="/about">' + esc(t('about')) + '</a><a href="/admin">' + esc(t('staff')) + '</a></nav>' +
       '</div>' +
       '<div class="wrap foot-base"><p>© The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p></div>' : '';
@@ -541,7 +541,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|sindh|school)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|book|sindh|school)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -609,6 +609,7 @@
             '<strong>' + esc(L(ch.title)) + '</strong>' + progressBar(chapterStatus(ch, p).pct) + '</span></a>';
         }).join('') + '</div>' +
         '<section class="card daily" id="daily"></section>' +
+        '<div id="stars-slot"></div>' +
         '<h2>' + esc(t('more')) + '</h2>' +
         '<div class="grid">' +
           quickLink('/sindh/', 'map', 'sindhScience', 'sindhShort') +
@@ -620,6 +621,7 @@
           quickLink('/teachers', 'users', 'teachers', 'teachShort') +
         '</div>';
       renderDaily(document.getElementById('daily'), chs);
+      if (window.Stars) window.Stars.mount(document.getElementById('stars-slot'));
     });
   }
   function quickLink(href, iconName, titleKey, textKey) {
@@ -864,7 +866,8 @@
           '<h1>' + esc(L(ch.title)) + ' ' + sayBtn(L(ch.title), state.lang) + '</h1>' +
           '<p class="muted">' + esc(L(ch.summary)) + '</p>' +
           '<a class="share-link no-print" href="https://wa.me/?text=' + encodeURIComponent(t('shareText') + ' ' + L(ch.title) + ' — ' + location.origin + chUrl(ch)) +
-            '" target="_blank" rel="noopener">' + icon('next', 'flip') + esc(t('share')) + '</a></div></header>' +
+            '" target="_blank" rel="noopener">' + icon('next', 'flip') + esc(t('share')) + '</a>' +
+          '<a class="share-link no-print" href="/book/?ch=' + encodeURIComponent(ch.id) + '&amp;lang=' + state.lang + '">' + icon('printer') + esc(t('bookPdf')) + '</a></div></header>' +
         statusHTML(ch, true) + '<div class="ch-done-slot">' + chapterDoneHTML(ch) + '</div>' +
         '<nav class="tabs no-print" aria-label="' + esc(L(ch.title)) + '">' + tabs.map(function (tb, i) {
           return '<a class="tab" href="' + chUrl(ch, tb) + '"' + (tb === tab ? ' aria-current="page"' : '') + '>' +
@@ -2077,6 +2080,9 @@
       var won = getProgress().games;
       main.innerHTML = crumbs([['/', t('home')], ['', t('gamesTitle')]]) +
         '<h1>' + icon('game') + ' ' + esc(t('gamesTitle')) + '</h1><p>' + esc(t('gamesIntro')) + '</p>' +
+        '<h2>' + esc(t('quickGames')) + '</h2><div class="grid quick-games">' + quickLink('/play/?g=picture', 'eye', 'picGame', 'picGameText') +
+          quickLink('/play/?g=tf', 'clock', 'tfGame', 'tfGameText') + '</div>' +
+        '<h2>' + esc(t('chapterGames')) + '</h2>' +
         '<div class="games-grid">' + chs.map(function (ch) {
           var gs = chapterGames(ch), n = gs.filter(function (x) { return won[x.key]; }).length;
           return '<div class="card game-ch"><a class="game-ch-head" href="' + chUrl(ch, 'game') + '">' + thumb(ch) +
@@ -2134,6 +2140,8 @@
         }).join('') + '</tbody></table></div>' +
         '<div class="card install"><span class="icon-tile">' + icon('worksheet') + '</span><div><strong>' + esc(t('questionPaper')) + '</strong>' +
           '<p class="muted">' + esc(t('questionPaperText')) + '</p><a class="btn" href="/paper/">' + icon('printer') + esc(t('questionPaper')) + '</a></div></div>' +
+        '<div class="card install"><span class="icon-tile">' + icon('lesson') + '</span><div><strong>' + esc(t('bookPdf')) + '</strong>' +
+          '<p class="muted">' + esc(t('bookPdfText')) + '</p><a class="btn" href="/book/">' + icon('printer') + esc(t('bookPdf')) + '</a></div></div>' +
         '<div class="card note ok"><h2>' + icon('users') + ' ' + esc(t('classTitle')) + '</h2><p>' + esc(t('classText')) + '</p><p><a class="btn" href="/class/">' + esc(t('classOpen')) + '</a></p></div>' +
         '<div class="card note"><h2>' + icon('grid') + ' ' + esc(t('schoolTitle')) + '</h2><p>' + esc(t('schoolText')) + '</p><p><a class="btn" href="/school/">' + esc(t('schoolOpen')) + '</a></p></div>' +
         '<div class="card note"><p>' + icon('lock') + ' ' + esc(t('staffIntro')) + '</p><p><a class="btn" href="/admin">' + esc(t('staffLogin')) + '</a></p></div>';
