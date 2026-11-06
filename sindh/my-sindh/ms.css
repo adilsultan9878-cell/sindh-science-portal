@@ -1,0 +1,43 @@
+/* My Sindh (/sindh/my-sindh/): the ajrak map of finished chapters and its certificate. Builds on /sindh/sindh.css. */
+
+.ms-ajrak-band {
+  background-color: #8e1b1f;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='18' viewBox='0 0 28 18'%3E%3Crect width='28' height='18' fill='%238e1b1f'/%3E%3Cpath d='M14 1l8 8-8 8-8-8z' fill='%231d2a5b'/%3E%3Ccircle cx='14' cy='9' r='2.2' fill='%23f7efe2'/%3E%3Ccircle cx='0' cy='9' r='2.4' fill='%23f7efe2'/%3E%3Ccircle cx='28' cy='9' r='2.4' fill='%23f7efe2'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+}
+.ms-count { margin: 10px 0 6px; }
+.ms-bar { height: 12px; border-radius: 6px; background: #efe5d6; overflow: hidden; max-width: 420px; }
+.ms-bar span { display: block; height: 100%; background: #8e1b1f; }
+
+.ms-maphead { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.ms-maphead h2 { margin: 0.2em 0; }
+.ms-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px; align-items: start; margin-top: 8px; }
+.ms-map { display: block; width: 100%; max-width: 440px; height: auto; margin: 0 auto; }
+.ms-d { fill: #f1ead9; stroke: #b9a98a; stroke-width: 1.2; stroke-linejoin: round; }
+.ms-d.lit { fill: url(#ajrak); stroke: #f7efe2; stroke-width: 1.6; }
+.ms-map.all .ms-d.lit { stroke: #f2b705; stroke-width: 2.2; }
+.ms-num circle { fill: #fff; stroke: #8f7f62; stroke-width: 1.5; }
+.ms-num text { fill: #5b4a33; font-family: var(--f-en); font-size: 11px; font-weight: 700; pointer-events: none; }
+.ms-num.lit circle { fill: #f2b705; stroke: #fff; }
+.ms-num.lit text { fill: #2b2b2b; }
+
+.ms-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.ms-list a { display: flex; align-items: flex-start; gap: 10px; padding: 7px 8px; border-radius: 8px; color: var(--text); text-decoration: none; line-height: 1.4; }
+.ms-list a:hover { background: var(--soft); }
+.ms-list small { display: block; color: var(--muted); }
+.ms-lnum { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; flex: none; border-radius: 50%; background: #efe5d6; color: #5b4a33; font-family: var(--f-en); font-size: 0.8rem; font-weight: 700; }
+.ms-list li.done .ms-lnum { background: #8e1b1f; color: #fff; }
+.ms-state { margin-inline-start: auto; white-space: nowrap; font-size: 0.85rem; color: var(--muted); }
+.ms-list li.done .ms-state { color: #1b5e20; }
+
+.ms-done h2 { color: #8e1b1f; }
+.ms-cert .ms-band { height: 14px; margin: -24px -20px 12px; border-radius: 8px 8px 0 0; background: #8e1b1f; }
+.ms-cert-map { max-width: 220px; margin: 0 auto 8px; }
+.ms-cert-map .ms-num { display: none; }
+.ms-cert { border-color: #8e1b1f; }
+.ms-cert .cert-verify { flex-wrap: wrap; }
+.ms-cert .cert-code { overflow-wrap: anywhere; }
+
+@media (max-width: 760px) {
+  .ms-grid { grid-template-columns: minmax(0, 1fr); }
+}

@@ -618,6 +618,7 @@
           quickLink('/ustad/', 'lesson', 'ustadTitle', 'ustadShort') +
           quickLink('/sindh/', 'map', 'sindhScience', 'sindhShort') +
           quickLink('/lok/', 'lesson', 'lokScience', 'lokShort') +
+          quickLink('/sindh/my-sindh/', 'map', 'mySindh', 'mySindhText') +
           quickLink('/sindh/mohenjo-daro/', 'map', 'mohenjoLab', 'mohenjoShort') +
           quickLink('/sindh/weather/', 'diagram', 'weatherLab', 'weatherShort') +
           quickLink('/sindh/dolphin/', 'game', 'dolphinGame', 'dolphinShort') +
@@ -678,7 +679,7 @@
     if (chapterStatus(ch).done < 3) return '';
     var p = getProgress();
     return '<div class="card note ok ch-done no-print"><p><strong>' + icon('medal') + ' ' + esc(t('chapterDoneTitle')) + '</strong></p>' +
-      '<p>' + esc(t('chapterDoneText')) + '</p><button type="button" class="btn small" data-act="chapter-cert" data-ch="' + esc(ch._key) + '">' + icon('printer') + esc(t('printCert')) + '</button></div>' +
+      '<p>' + esc(t('chapterDoneText')) + '</p><button type="button" class="btn small" data-act="chapter-cert" data-ch="' + esc(ch._key) + '">' + icon('printer') + esc(t('printCert')) + '</button> <a href="/sindh/my-sindh/" class="btn ghost small">' + icon('map') + esc(t('mySindh')) + '</a></div>' +
       '<div class="certificate cert-chapter">' +
         '<p class="cert-site">' + esc(t('siteName')) + '</p><h2>' + esc(t('chapterCertHead')) + '</h2>' +
         '<p class="cert-text">' + esc(t('chapterCertText', { name: p.nick || '________________', chapter: chLabel(ch) })) + '</p>' +
@@ -1880,7 +1881,7 @@
       if (!c) body = '<div class="card note warn verify-result"><h2>' + icon('cross') + ' ' + esc(t('verifyBad')) + '</h2><p>' + esc(t('verifyBadText')) + '</p>' +
         '<p>' + esc(t('verifyCode')) + ': <b dir="ltr">' + esc(code) + '</b></p></div>';
       else {
-        var rows = [[t('verifyName'), esc(c.name)], [t('verifyKind'), esc(t(c.kind === 'chapter' ? 'verifyKindChapter' : 'verifyKindComp'))]];
+        var rows = [[t('verifyName'), esc(c.name)], [t('verifyKind'), esc(t(c.kind === 'chapter' ? 'verifyKindChapter' : c.kind === 'mera-sindh' ? 'verifyKindSindh' : 'verifyKindComp'))]];
         if (c.kind === 'chapter') rows.push([t('verifyChapter'), esc(t('chapterN', { n: c.chapter_number }) + ': ' + L(c.chapter_title))]);
         else rows.push([t('score'), '<b dir="ltr">' + c.score + ' / ' + c.total + '</b>' + (c.secs ? ' · ' + esc(t('timeTaken')) + ': <span dir="ltr">' + fmtTime(c.secs) + '</span>' : '')]);
         rows.push([t('date'), '<span dir="ltr">' + esc(c.date) + '</span>'], [t('verifyCode'), '<b dir="ltr">' + esc(c.code) + '</b>']);
@@ -2051,6 +2052,7 @@
         '<form class="card nick-form">' + nickField(p.nick) + '<button class="btn" type="submit">' + esc(t('save')) + '</button> <span class="form-msg" aria-live="polite"></span></form>' +
         '<div id="student-slot"></div>' +
         '<div id="class-slot"></div>' +
+        '<div class="grid">' + quickLink('/sindh/my-sindh/', 'map', 'mySindh', 'mySindhText') + '</div>' +
         '<div class="stats">' +
           '<div class="card stat"><span class="stat-num">' + p.points + '</span><span>' + esc(t('points')) + '</span></div>' +
           '<div class="card stat"><span class="stat-num">' + streak + '</span><span>' + icon('flame') + ' ' + esc(t('dayStreak')) + '</span></div>' +
