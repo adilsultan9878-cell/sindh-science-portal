@@ -1,10 +1,13 @@
 // "Science Ustad" (سائنس استاد): answers a child's science question in Sindhi, Urdu or English using only the
 // Class 5 book text. Supabase Edge Function `science-ustad`; deploy this file as its index.ts.
-// Secrets: ANTHROPIC_API_KEY (required). Optional: USTAD_MODEL, USTAD_DAY_CAP, USTAD_PERSON_CAP, USTAD_SALT.
+// Secrets: OPENROUTER_API_KEY (the owner's choice; optional OPENROUTER_MODEL) or ANTHROPIC_API_KEY (optional USTAD_MODEL).
+// Optional: USTAD_DAY_CAP, USTAD_PERSON_CAP, USTAD_SALT.
 // SUPABASE_URL, SUPABASE_ANON_KEY and SUPABASE_SERVICE_ROLE_KEY are provided by Supabase.
 import Anthropic from "npm:@anthropic-ai/sdk";
 
 const MODEL = Deno.env.get("USTAD_MODEL") ?? "claude-opus-5-5";
+const OR_KEY = Deno.env.get("OPENROUTER_API_KEY") ?? "";
+const OR_MODEL = Deno.env.get("OPENROUTER_MODEL") ?? "google/gemini-2.5-flash";
 const DAY_CAP = Number(Deno.env.get("USTAD_DAY_CAP") ?? "300");      // questions per day for the whole site
 const PERSON_CAP = Number(Deno.env.get("USTAD_PERSON_CAP") ?? "20"); // questions per day from one connection
 const SALT = Deno.env.get("USTAD_SALT") ?? "ssp-ustad";
@@ -122,7 +125,7 @@ Deno.serve(async (req: Request) => {
   const lang = (["sd", "ur", "en"].includes(input.lang as string) ? input.lang : "ur") as "sd" | "ur" | "en";
   const hint = typeof input.chapter === "string" ? input.chapter.slice(0, 40) : undefined;
   if (q.length < 3) return reply({ error: "too_short" }, 400, origin);
-  if (!Deno.env.get("ANTHROPIC_API_KEY")) return reply({ error: "not_ready" }, 503, origin);
+  if (!OR_KEY && !Deno.env.get("ANTHROPIC_API_KEY")) return reply({ error: "not_ready" }, 503, origin);
 
   const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
   const allowed = await take(await hash(ip));
@@ -132,6 +135,29 @@ Deno.serve(async (req: Request) => {
   try { pieces = pick(await loadBook(), q, hint); } catch { return reply({ error: "busy" }, 503, origin); }
   const sources = pieces.map((p) => ({ chapter: p.chapter.id, section: p.section.id, title: p.chapter.title }));
   if (!pieces.length) return reply({ answer: null, sources: [], notInBook: true }, 200, origin);
+
+  const userText = `Book extracts:\n${bookText(pieces, lang)}\n\nAnswer in ${LANG_NAME[lang]}.\n\n<question>\n${q}\n</question>`;
+  if (OR_KEY) {
+    // OpenRouter (an OpenAI-style chat API)
+    try {
+      const r = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${OR_KEY}`, "Content-Type": "application/json",
+          "HTTP-Referer": "https://sindh-science-portal.vercel.app", "X-Title": "Sindh Science Learning Portal" },
+        body: JSON.stringify({ model: OR_MODEL, max_tokens: 600, temperature: 0.3,
+          messages: [{ role: "system", content: SYSTEM }, { role: "user", content: userText }] }),
+      });
+      const d: any = await r.json().catch(() => null);
+      if (r.status === 401 || r.status === 402) { console.error("openrouter", r.status, JSON.stringify(d).slice(0, 200)); return reply({ error: "not_ready" }, 503, origin); }
+      if (r.status === 429) return reply({ error: "busy" }, 429, origin);
+      const answer = String(d?.choices?.[0]?.message?.content ?? "").trim();
+      if (!r.ok || !answer) { console.error("openrouter", r.status, JSON.stringify(d).slice(0, 300)); return reply({ error: "busy" }, 502, origin); }
+      return reply({ answer, sources }, 200, origin);
+    } catch (e) {
+      console.error("openrouter", String(e));
+      return reply({ error: "busy" }, 502, origin);
+    }
+  }
 
   const client = new Anthropic();
   try {
@@ -144,7 +170,7 @@ Deno.serve(async (req: Request) => {
       system: SYSTEM,
       messages: [{
         role: "user",
-        content: `Book extracts:\n${bookText(pieces, lang)}\n\nAnswer in ${LANG_NAME[lang]}.\n\n<question>\n${q}\n</question>`,
+        content: userText,
       }],
     } as any);
     if (response.stop_reason === "refusal") return reply({ answer: null, sources, refused: true }, 200, origin);
