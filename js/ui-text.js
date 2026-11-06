@@ -436,6 +436,8 @@ Object.assign(window.UI_TEXT, {
   loginText: { sd: 'يوزر نالي ۽ پن سان لاگ ان ڪريو ته توهان جي پيش رفت هر فون تي ملي.', ur: 'یوزر نیم اور پن سے لاگ ان کریں تاکہ آپ کی پیش رفت ہر فون پر ملے۔', en: 'Log in with a username and PIN so your progress is there on every phone.' },
   lokScience: { sd: 'سنڌ جي لوڪ سائنس', ur: 'سندھ کی لوک سائنس', en: 'Folk science of Sindh' },
   lokShort: { sd: 'مٽڪو، رلي، اٺ ۽ پلو: گهر جي شين ۾ سائنس.', ur: 'مٹکا، رلی، اونٹ اور پلا: گھر کی چیزوں میں سائنس۔', en: 'Matka, ralli, camel and palla: the science in everyday things.' },
+  ustadTitle: { sd: 'سائنس استاد', ur: 'سائنس استاد', en: 'Science Ustad' },
+  ustadShort: { sd: 'سوال پڇو ۽ ڪتاب مان آسان جواب وٺو.', ur: 'سوال پوچھیں اور کتاب سے آسان جواب لیں۔', en: 'Ask a question and get a simple answer from the book.' },
   mohenjoLab: { sd: 'موئن جو دڙو سائنس ليب', ur: 'موہنجو داڑو سائنس لیب', en: 'Mohenjo-daro Science Lab' },
   mohenjoShort: { sd: 'ناليون ٺاهيو، سرون پچايو ۽ تارازو برابر ڪريو.', ur: 'نالیاں بنائیں، اینٹیں پکائیں اور ترازو برابر کریں۔', en: 'Build drains, bake bricks and balance the scales.' },
   weatherLab: { sd: 'سنڌ جي موسم ليب', ur: 'سندھ کی موسمی لیب', en: 'Sindh weather lab' },

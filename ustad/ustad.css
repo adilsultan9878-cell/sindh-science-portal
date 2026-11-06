@@ -1,0 +1,23 @@
+/* Science Ustad page (/ustad/) */
+.us-hero { display: flex; gap: 14px; align-items: flex-start; }
+.us-hero h1 { margin: 0 0 4px; }
+.us-hero .lead { margin: 0; }
+.us-icon .ic { width: 28px; height: 28px; }
+.us-form { display: grid; gap: 10px; }
+.us-form textarea { font: inherit; width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid var(--line-2); border-radius: 8px; background: #fff; color: var(--text); resize: vertical; min-height: 5.5em; }
+.us-form textarea:focus { outline: 3px solid var(--soft-2); border-color: var(--green); }
+.us-form p { margin: 0; }
+.us-mic.on { background: var(--yellow); border-color: var(--yellow-line); }
+.us-try { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.us-try .chip { font: inherit; font-size: 0.95rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--soft); color: var(--green-dark); cursor: pointer; }
+.us-try .chip:hover, .us-try .chip:focus-visible { border-color: var(--green); }
+.us-answer { margin-top: 14px; }
+.us-msg { padding: 12px 14px; border-radius: var(--radius); background: var(--soft); }
+.us-q { margin: 0 0 6px; color: var(--muted); font-style: italic; }
+.us-reply h2 { margin: 4px 0 6px; font-size: 1.15rem; }
+.us-text p { margin: 0 0 0.6em; line-height: 1.9; }
+.us-listen.on, .us-listen:active { background: var(--yellow); }
+.us-sources { margin-top: 10px; display: grid; gap: 6px; }
+.us-sources p { margin: 0; }
+.us-sources a { display: inline-flex; gap: 6px; align-items: center; }
+.us-note { margin-top: 14px; }

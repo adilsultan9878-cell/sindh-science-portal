@@ -100,7 +100,7 @@ self.addEventListener('fetch', function (event) {
   if (/^\/book(\/|$)/.test(url.pathname)) return;                                 // the chapter book page and its PDFs are their own pages
   if (/^\/play(\/|$)/.test(url.pathname)) return;                                 // the quick games page is its own page
   if (/^\/paper(\/|$)/.test(url.pathname)) return;                                // the teachers' question paper page is its own page
-  if (/^\/(sindh|school|lok)(\/|$)/.test(url.pathname)) return;                                // "Science in Sindh" is its own page too
+  if (/^\/(sindh|school|lok|ustad)(\/|$)/.test(url.pathname)) return;                                // "Science in Sindh" is its own page too
   if (request.headers.get('range')) return;                                        // audio played in parts cannot be cached
   event.respondWith(request.mode === 'navigate' ? page(request) : file(event));
 });

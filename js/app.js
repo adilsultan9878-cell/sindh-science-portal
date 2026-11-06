@@ -544,7 +544,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|book|sindh|school|lok)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|book|sindh|school|lok|ustad)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -615,6 +615,7 @@
         '<div id="stars-slot"></div>' +
         '<h2>' + esc(t('more')) + '</h2>' +
         '<div class="grid">' +
+          quickLink('/ustad/', 'lesson', 'ustadTitle', 'ustadShort') +
           quickLink('/sindh/', 'map', 'sindhScience', 'sindhShort') +
           quickLink('/lok/', 'lesson', 'lokScience', 'lokShort') +
           quickLink('/sindh/mohenjo-daro/', 'map', 'mohenjoLab', 'mohenjoShort') +
