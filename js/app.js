@@ -441,7 +441,8 @@
   }
   function renderFrame() {
     var links = [['/', 'home'], ['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/competition', 'competition'],
-      ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers']];
+      ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
+    var student = window.Student && window.Student.current();
     var offline = state.lang && navigator.onLine === false;
     document.getElementById('top').innerHTML = (offline ? '<p class="offline-note" role="status">' + icon('offline') + ' ' + esc(t('offlineNote')) + '</p>' : '') +
       '<div class="wrap top-row">' +
@@ -455,13 +456,14 @@
         }).join('') + '</div></div>' +
       '</div>' +
       (state.lang ? '<nav class="wrap nav" aria-label="' + esc(t('menu')) + '">' + links.map(function (x) {
-        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(t(x[1])) + '</a>';
+        var label = x[0] === '/login' && student ? student.name : t(x[1]);
+        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + (x[0] === '/login' ? ' class="nav-login"' : '') + '>' + esc(label) + '</a>';
       }).join('') + '</nav>' : '');
     document.getElementById('foot').innerHTML = state.lang ?
       '<div class="wrap foot-grid">' +
         '<div><p class="foot-brand">' + LEAF + '<span>' + esc(t('siteName')) + '</span></p><p>' + esc(t('footerFree')) + '</p></div>' +
         '<nav class="foot-links" aria-label="' + esc(t('more')) + '"><a href="/teachers">' + esc(t('teachers')) + '</a><a href="/watch">' + esc(t('videosTitle')) + '</a><a href="/games">' + esc(t('gamesTitle')) + '</a>' +
-          '<a href="/paper/">' + esc(t('questionPaper')) + '</a><a href="/book/">' + esc(t('bookPdf')) + '</a><a href="/class/">' + esc(t('classTitle')) + '</a><a href="/sindh/">' + esc(t('sindhScience')) + '</a>' +
+          '<a href="/paper/">' + esc(t('questionPaper')) + '</a><a href="/book/">' + esc(t('bookPdf')) + '</a><a href="/class/">' + esc(t('classTitle')) + '</a><a href="/sindh/">' + esc(t('sindhScience')) + '</a><a href="/lok/">' + esc(t('lokScience')) + '</a>' +
           '<a href="/leaderboard">' + esc(t('leaderboard')) + '</a><a href="/about">' + esc(t('about')) + '</a><a href="/admin">' + esc(t('staff')) + '</a></nav>' +
       '</div>' +
       '<div class="wrap foot-base"><p>© The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p></div>' : '';
@@ -478,6 +480,7 @@
     [/^\/search\/?$/, function () { history.replaceState(null, '', '/'); return viewHome.apply(null, arguments); }], // search was removed; old links go home
     [/^\/competition\/?$/, viewCompetition],
     [/^\/progress\/?$/, viewProgress],
+    [/^\/login\/?$/, viewLogin],
     [/^\/leaderboard\/?$/, viewLeaderboard],
     [/^\/teachers\/?$/, viewTeachers],
     [/^\/watch\/?$/, viewWatch],
@@ -541,7 +544,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|book|sindh|school)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|book|sindh|school|lok)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -613,6 +616,10 @@
         '<h2>' + esc(t('more')) + '</h2>' +
         '<div class="grid">' +
           quickLink('/sindh/', 'map', 'sindhScience', 'sindhShort') +
+          quickLink('/lok/', 'lesson', 'lokScience', 'lokShort') +
+          quickLink('/sindh/mohenjo-daro/', 'map', 'mohenjoLab', 'mohenjoShort') +
+          quickLink('/sindh/weather/', 'diagram', 'weatherLab', 'weatherShort') +
+          quickLink('/sindh/dolphin/', 'game', 'dolphinGame', 'dolphinShort') +
           quickLink('/watch', 'video', 'videosTitle', 'videosShort') +
           quickLink('/games', 'game', 'gamesTitle', 'gamesShort') +
           quickLink('/competition', 'trophy', 'competition', 'compShort') +
@@ -2041,6 +2048,7 @@
       main.innerHTML = crumbs([['/', t('home')], ['', t('progress')]]) +
         '<h1>' + icon('star') + ' ' + esc(t('progress')) + '</h1>' +
         '<form class="card nick-form">' + nickField(p.nick) + '<button class="btn" type="submit">' + esc(t('save')) + '</button> <span class="form-msg" aria-live="polite"></span></form>' +
+        '<div id="student-slot"></div>' +
         '<div id="class-slot"></div>' +
         '<div class="stats">' +
           '<div class="card stat"><span class="stat-num">' + p.points + '</span><span>' + esc(t('points')) + '</span></div>' +
@@ -2068,8 +2076,18 @@
       main.querySelector('[data-act="reset"]').addEventListener('click', function () {
         if (window.confirm(t('resetConfirm'))) { store.set('progress', {}); render(false); }
       });
+      if (window.Student) window.Student.status(document.getElementById('student-slot'));
       if (window.Classroom) window.Classroom.mount(document.getElementById('class-slot'));
     });
+  }
+
+  // Student login (js/student.js): username + PIN, so progress follows the child to any phone.
+  function viewLogin() {
+    setMeta(t('loginTitle'), t('loginText'));
+    main.innerHTML = crumbs([['/', t('home')], ['', t('loginTitle')]]) + '<div id="login-slot"></div>';
+    if (window.Student) window.Student.mount(document.getElementById('login-slot'));
+    else main.insertAdjacentHTML('beforeend', '<p class="card note">' + esc(t('loginText')) + '</p>');
+    return Promise.resolve();
   }
 
   // All games of all chapters on one page.

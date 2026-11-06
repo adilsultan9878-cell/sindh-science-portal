@@ -430,3 +430,16 @@ Object.assign(window.UI_TEXT, {
   verifyChapter: { sd: 'باب', ur: 'باب', en: 'Chapter' },
   verifyNote: { sd: 'هي جانچ ٻڌائي ٿي ته سرٽيفڪيٽ هن ويب سائيٽ تان ان ڏينهن هن نالي سان ٺهيو هو.', ur: 'یہ تصدیق بتاتی ہے کہ سرٹیفکیٹ اس ویب سائٹ سے اس دن اس نام سے بنا تھا۔', en: 'This check shows that the certificate was made on this website, on this date, with this name.' }
 });
+
+Object.assign(window.UI_TEXT, {
+  loginTitle: { sd: 'لاگ ان', ur: 'لاگ ان', en: 'Log in' },
+  loginText: { sd: 'يوزر نالي ۽ پن سان لاگ ان ڪريو ته توهان جي پيش رفت هر فون تي ملي.', ur: 'یوزر نیم اور پن سے لاگ ان کریں تاکہ آپ کی پیش رفت ہر فون پر ملے۔', en: 'Log in with a username and PIN so your progress is there on every phone.' },
+  lokScience: { sd: 'سنڌ جي لوڪ سائنس', ur: 'سندھ کی لوک سائنس', en: 'Folk science of Sindh' },
+  lokShort: { sd: 'مٽڪو، رلي، اٺ ۽ پلو: گهر جي شين ۾ سائنس.', ur: 'مٹکا، رلی، اونٹ اور پلا: گھر کی چیزوں میں سائنس۔', en: 'Matka, ralli, camel and palla: the science in everyday things.' },
+  mohenjoLab: { sd: 'موئن جو دڙو سائنس ليب', ur: 'موہنجو داڑو سائنس لیب', en: 'Mohenjo-daro Science Lab' },
+  mohenjoShort: { sd: 'ناليون ٺاهيو، سرون پچايو ۽ تارازو برابر ڪريو.', ur: 'نالیاں بنائیں، اینٹیں پکائیں اور ترازو برابر کریں۔', en: 'Build drains, bake bricks and balance the scales.' },
+  weatherLab: { sd: 'سنڌ جي موسم ليب', ur: 'سندھ کی موسمی لیب', en: 'Sindh weather lab' },
+  weatherShort: { sd: 'جيڪب آباد جي گرمي، سنڌو ڊيلٽا ۽ جهمپير جي هوا.', ur: 'جیکب آباد کی گرمی، سندھ ڈیلٹا اور جھمپیر کی ہوا۔', en: 'Jacobabad heat, the Indus delta and Jhimpir wind.' },
+  dolphinGame: { sd: 'ٻلڻ بچايو', ur: 'بُلھن بچاؤ', en: 'Save the Indus dolphin' },
+  dolphinShort: { sd: 'آواز سان رستو ڳوليو ۽ ڊولفن کي گندگي کان بچايو.', ur: 'آواز سے راستہ ڈھونڈیں اور ڈولفن کو آلودگی سے بچائیں۔', en: 'Find the way with sound and keep the dolphin safe from pollution.' }
+});

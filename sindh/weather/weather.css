@@ -1,0 +1,31 @@
+/* "Sindh weather lab" (/sindh/weather/): three slider labs, text on one side and the drawing on the other.
+   Builds on /css/style.css and the hero, labels and chapter links of /sindh/sindh.css. */
+
+.wl-lab { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px 26px; align-items: start; margin: 16px 0; scroll-margin-top: 12px; }
+.wl-lab h2 { margin-top: 0.15em; margin-bottom: 0.1em; }
+.wl-lab .sp-where { margin-bottom: 8px; }
+.wl-text > p { margin: 8px 0; }
+
+.wl-slider { display: flex; flex-direction: column; gap: 6px; margin: 14px 0 6px; font-weight: 600; }
+.wl-slider b { color: var(--green-ink); }
+.wl-slider input[type="range"] { width: 100%; min-height: 36px; accent-color: var(--green); direction: ltr; }
+.wl-presets { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 12px; }
+.wl-presets .chip { min-height: 38px; padding: 4px 12px; font-size: 0.9rem; }
+.wl-chaps { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.wl-view { position: sticky; top: 12px; }
+.wl-pic { display: block; width: 100%; height: auto; background: #fbfdfb; border: 1px solid var(--line); border-radius: 10px; }
+.wl-num { fill: #263238; font-family: var(--f-en); font-size: 13px; font-weight: 700; direction: ltr; unicode-bidi: isolate; }
+.wl-lbl { fill: #455a64; font-size: 12px; font-weight: 600; }
+.wl-lbl.salt { fill: #1f5f7a; }
+.wl-out { margin-top: 10px; padding: 10px 14px; background: var(--soft); border-radius: 8px; }
+.wl-out p { margin: 4px 0; }
+.wl-stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.wl-stats p { display: flex; flex-direction: column; margin: 0; padding: 6px 12px; background: #fff; border-radius: 8px; }
+.wl-stats b { font-family: var(--f-en); color: var(--green-ink); font-size: 1.1rem; }
+
+/* phones: the drawing comes right after the slider text */
+@media (max-width: 760px) {
+  .wl-lab { grid-template-columns: minmax(0, 1fr); }
+  .wl-view { position: static; }
+}

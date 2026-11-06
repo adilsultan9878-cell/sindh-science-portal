@@ -1,0 +1,22 @@
+/* Student login page and the signed-in card (js/student.js). Colours and fonts from style.css. */
+.stu-card { max-width: 480px; }
+.stu-card h1 { margin-top: 0.1em; font-size: 1.5rem; }
+.stu-tabs { display: flex; gap: 0; margin: 12px 0 14px; border: 1px solid var(--line-2); border-radius: var(--radius); overflow: hidden; }
+.stu-tabs .tab { flex: 1; justify-content: center; font: inherit; font-weight: 600; background: #fff; border: 0; border-bottom: 0; padding: 10px; cursor: pointer; color: var(--muted); }
+.stu-tabs .tab.on { background: var(--green); color: #fff; }
+.stu-form { display: grid; gap: 12px; }
+.stu-form label { display: grid; gap: 4px; font-weight: 600; }
+.stu-form input { font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid var(--line-2); border-radius: 8px; background: #fff; color: var(--text); width: 100%; box-sizing: border-box; }
+.stu-form input:focus { outline: 3px solid var(--soft-2); border-color: var(--green); }
+.stu-form input[name="pin"] { letter-spacing: 0.3em; }
+.stu-form small { font-weight: 400; }
+.stu-form .btn { justify-self: start; }
+.stu-form .form-msg { margin: 0; color: var(--wrong-line); font-weight: 600; min-height: 1.2em; }
+.stu-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0; }
+.stu-stats div { display: flex; flex-direction: column; align-items: center; padding: 10px 4px; border-radius: var(--radius); background: var(--soft); }
+.stu-stats b { font-size: 1.4rem; color: var(--green-dark); }
+.stu-stats span { font-size: 0.85rem; color: var(--muted); }
+.stu-card hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
+.stu-status p { margin: 0.3em 0; }
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+@media (max-width: 420px) { .stu-stats { grid-template-columns: repeat(2, 1fr); } }

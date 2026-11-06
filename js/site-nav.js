@@ -5,7 +5,11 @@
   'use strict';
 
   var LINKS = [['/', 'home'], ['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/competition', 'competition'],
-    ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers']];
+    ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
+  // the signed-in student's name replaces "Log in" (account saved by js/student.js)
+  function studentName() {
+    try { var s = JSON.parse(localStorage.getItem('ssp1.student')); return s && s.token ? s.name : ''; } catch (e) { return ''; }
+  }
   var current = (document.currentScript && document.currentScript.getAttribute('data-current')) || '';
 
   function lang() {
@@ -25,7 +29,7 @@
     }
     nav.setAttribute('aria-label', (UI.menu && UI.menu[l]) || 'Menu');
     nav.innerHTML = LINKS.map(function (x) {
-      var s = UI[x[1]], text = s ? (s[l] || s.en) : x[1];
+      var s = UI[x[1]], text = (x[0] === '/login' && studentName()) || (s ? (s[l] || s.en) : x[1]);
       return '<a href="' + x[0] + '"' + (x[0] === current ? ' aria-current="page"' : '') + '>' + esc(text) + '</a>';
     }).join('');
   }
