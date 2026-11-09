@@ -61,6 +61,26 @@
     if (!bar) { bar = document.createElement('nav'); bar.className = 'tabbar no-print'; document.body.appendChild(bar); }
     bar.setAttribute('aria-label', t('menu'));
     bar.innerHTML = main.map(function (x) { return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + icon(x[3]) + '<span>' + esc(t(x[2])) + '</span></a>'; }).join('');
+
+    // the same footer as the main site (footerHTML in js/app.js)
+    var foot = document.querySelector('body > footer');
+    if (!foot) { foot = document.createElement('footer'); document.body.insertBefore(foot, bar); }
+    foot.classList.add('no-print');
+    function col(head, links) {
+      return '<nav class="foot-col" aria-label="' + esc(head) + '"><h2>' + esc(head) + '</h2>' + links.map(function (x) {
+        return '<a href="' + x[0] + '">' + esc(t(x[1])) + '</a>';
+      }).join('') + '</nav>';
+    }
+    foot.innerHTML = '<div class="wrap foot-grid">' +
+        '<div class="foot-about"><p class="foot-brand"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1e7a3c"/><path d="M9 23C9 13.5 15.5 8 24 8c0 9.5-5.5 15-15 15z" fill="#fff"/></svg><span>' + esc(t('siteName')) + '</span></p>' +
+          '<p>' + esc(t('footerFree')) + '</p>' +
+          '<p class="foot-tags"><span>' + esc(t('footFree')) + '</span><span>' + esc(t('footLangs')) + '</span><span>' + esc(t('footNoAds')) + '</span></p></div>' +
+        col(t('footLearn'), [['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/ustad/', 'ustadTitle'], ['/book/', 'bookPdf'], ['/glossary', 'glossary']]) +
+        col(t('sindhShelf'), [['/sindh/', 'sindhScience'], ['/lok/', 'lokScience'], ['/sindh/mohenjo-daro/', 'mohenjoLab'], ['/mausam/', 'mausamLab'], ['/citizen/', 'citizenTitle'], ['/league/', 'leagueTitle']]) +
+        col(t('teachers'), [['/teachers', 'teachers'], ['/paper/', 'questionPaper'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/verify', 'verifyTitle'], ['/admin', 'staff']]) +
+      '</div>' +
+      '<div class="wrap foot-base"><p>© 2026 The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p>' +
+        '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/leaderboard">' + esc(t('leaderboard')) + '</a></p></div>';
   }
   document.addEventListener('click', function (e) {
     document.querySelectorAll('details.more-menu[open]').forEach(function (d) {
