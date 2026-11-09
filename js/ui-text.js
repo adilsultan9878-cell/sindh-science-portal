@@ -12,6 +12,7 @@ window.UI_TEXT = {
   competition: { sd: 'مقابلو', ur: 'مقابلہ', en: 'Competition' },
   progress: { sd: 'منهنجي ترقي', ur: 'میری پیش رفت', en: 'My Progress' },
   leaderboard: { sd: 'ليڊر بورڊ', ur: 'لیڈر بورڈ', en: 'Leaderboard' },
+  leagueLink: { sd: 'ضلعن جي سائنس ليگ ۽ اجرڪ ٽرافي ڏسو', ur: 'اضلاع کی سائنس لیگ اور اجرک ٹرافی دیکھیں', en: 'See the District Science League and the Ajrak Trophy' },
   teachers: { sd: 'استادن لاءِ', ur: 'اساتذہ کے لیے', en: 'For Teachers' },
   about: { sd: 'اسان بابت', ur: 'ہمارے بارے میں', en: 'About' },
   search: { sd: 'ڳولا', ur: 'تلاش', en: 'Search' },

@@ -1,7 +1,7 @@
 /* Offline support. On the first visit the phone keeps a copy of the app, the fonts and every
    chapter file, so lessons, quizzes and games open later without internet.
    When you change CSS or JS, raise VERSION here and the ?v= number in index.html to the same value. */
-var VERSION = '20261109e';
+var VERSION = '20261109f';
 var CACHE = 'ssp-' + VERSION;
 var SHELL = [
   '/',
@@ -96,6 +96,7 @@ self.addEventListener('fetch', function (event) {
   if (url.pathname.indexOf('/admin') === 0) return;                            // the staff panel always needs internet
   if (/^\/(videos|lesson-videos|exp-videos|class)(\/|$)/.test(url.pathname)) return;           // videos are large and stream in parts
   if (/^\/book(\/|$)/.test(url.pathname)) return;                                 // the chapter book page and its PDFs are their own pages
+  if (/^\/league(\/|$)/.test(url.pathname)) return;                               // the district league page is its own page
   if (/^\/play(\/|$)/.test(url.pathname)) return;                                 // the quick games page is its own page
   if (/^\/mausam(\/|$)/.test(url.pathname)) return;                               // the digital weather lab is its own page
   if (/^\/paper(\/|$)/.test(url.pathname)) return;                                // the teachers' question paper page is its own page

@@ -77,6 +77,9 @@
       en: 'Mohenjo-daro is one of the oldest planned cities in the world, and it is here in Sindh. Try the science of its people yourself: build the drains, bake a brick, keep water in the bath and balance the scales.'
     },
     toCity: { sd: 'شهر ڏسو', ur: 'شہر دیکھیں', en: 'See the city' },
+    toVideo: { sd: 'وڊيو ڏسو', ur: 'ویڈیو دیکھیں', en: 'Watch the video' },
+    videoTitle: { sd: 'وڊيو: هي ليب ڇا آهي ۽ ڪيئن کيڏجي (اردو ۾)', ur: 'ویڈیو: یہ لیب کیا ہے اور کیسے کھیلیں', en: 'Video: what this lab is and how to play it (in Urdu)' },
+    videoNote: { sd: '3.5 منٽ · نالين جي پزل جو پورو حل به ڏيکاريل آهي.', ur: '3.5 منٹ · نالیوں کی پہیلی کا پورا حل بھی دکھایا گیا ہے۔', en: '3.5 minutes · shows the full answer to the drains puzzle too.' },
     print: { sd: 'هي صفحو پرنٽ ڪريو', ur: 'یہ صفحہ پرنٹ کریں', en: 'Print this page' },
     cityTitle: { sd: 'شهر ۾ گهمو', ur: 'شہر میں گھومیں', en: 'Walk through the city' },
     cityNote: { sd: 'ڪنهن نمبر تي ٽيپ ڪريو ۽ ڏسو ته ان جي پويان ڪهڙي سائنس آهي. (تصوير سادي آهي، ماپ مطابق ناهي.)', ur: 'کسی نمبر پر ٹیپ کریں اور دیکھیں کہ اس کے پیچھے کون سی سائنس ہے۔ (تصویر سادہ ہے، پیمانے کے مطابق نہیں۔)', en: 'Tap a number to see the science behind it. (A simple drawing, not to scale.)' },
@@ -225,7 +228,8 @@
     up: '<path d="M12 19V5M6 11l6-6 6 6"/>',
     flask: '<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3M7.5 15h9"/>',
     drop: '<path d="M12 3c3 4 6 7.4 6 11a6 6 0 0 1-12 0c0-3.6 3-7 6-11z"/>',
-    city: '<path d="M3 21h18M5 21V10l4-3v14M9 21V4h6v17M15 21V9l4 3v9"/>'
+    city: '<path d="M3 21h18M5 21V10l4-3v14M9 21V4h6v17M15 21V9l4 3v9"/>',
+    play: '<circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/>'
   };
   function icon(name) {
     return '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (ICONS[name] || '') + '</svg>';
@@ -679,7 +683,11 @@
       '<section class="sp-hero md-hero"><div class="sp-band" aria-hidden="true"></div>' +
         '<div class="sp-hero-in"><p class="eyebrow">' + esc(t('eyebrow')) + '</p><h1>' + esc(t('title')) + '</h1><p class="lead">' + esc(t('lead')) + '</p>' +
         '<div class="btn-row no-print"><a class="btn" href="#city">' + icon('city') + esc(t('toCity')) + '</a>' +
+        '<a class="btn ghost" href="#video">' + icon('play') + esc(t('toVideo')) + '</a>' +
         '<button type="button" class="btn ghost" data-act="print">' + icon('printer') + esc(t('print')) + '</button></div></div></section>' +
+      '<section class="card md-video no-print" id="video" tabindex="-1"><h2>' + esc(t('videoTitle')) + '</h2>' +
+        '<video controls playsinline preload="none" lang="ur" poster="/exp-videos/mohenjo-daro-ur.webp" src="/exp-videos/mohenjo-daro-ur.mp4"></video>' +
+        '<p class="muted small">' + esc(t('videoNote')) + '</p></section>' +
       '<section class="card md-citycard" id="city" tabindex="-1"><h2 id="city-title">' + esc(t('cityTitle')) + '</h2>' +
         '<div class="md-citygrid"><div class="md-citybox">' + citySvg() + '</div><div class="md-spotinfo" id="spot" tabindex="-1" aria-live="polite">' + spotPanel() + '</div></div></section>' +
       labSection(1, 'lab-drains', 'drainsTitle', 'drainsHow', 'dr-box', ['pollution', 'microorganisms']) +

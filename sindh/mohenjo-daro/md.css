@@ -43,6 +43,11 @@
 .md-spotinfo h3 { display: flex; align-items: center; gap: 8px; margin-top: 0.2em; }
 .md-links { display: grid; gap: 6px; margin: 8px 0; }
 
+/* video */
+.md-video { scroll-margin-top: 12px; outline: none; }
+.md-video h2 { margin-top: 0.2em; }
+.md-video video { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; background: #1f2d1f; border-radius: 12px; }
+
 /* labs */
 .md-lab { scroll-margin-top: 12px; outline: none; }
 .md-lab h2 { margin-top: 0.1em; }

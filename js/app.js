@@ -564,7 +564,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|book|sindh|school|lok|mausam|ustad)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|school|lok|mausam|ustad)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -1964,7 +1964,8 @@
         '<form class="card nick-form">' + nickField(p.nick) +
           '<label class="field"><span>' + esc(t('city')) + '</span>' + citySelect('city', p.city, 'cityNone') + '</label>' +
           '<button class="btn big" type="submit">' + esc(t('startComp')) + '</button> <span class="form-msg" aria-live="polite"></span></form>' +
-        '<p><a href="/leaderboard">' + icon('medal') + ' ' + esc(t('leaderboard')) + '</a></p>';
+        '<p><a href="/leaderboard">' + icon('medal') + ' ' + esc(t('leaderboard')) + '</a></p>' +
+        '<p class="league-link"><a href="/league/">' + icon('trophy') + ' ' + esc(t('leagueLink')) + '</a></p>';
       main.querySelector('.nick-form').addEventListener('submit', function (e) {
         e.preventDefault();
         var nick = validNick(e.target.querySelector('input[name="nick"]').value);
@@ -2050,6 +2051,7 @@
       var medals = [1, 2, 3].map(function (n) { return '<span class="rank r' + n + '">' + n + '</span>'; });
       main.innerHTML = crumbs([['/', t('home')], ['', t('leaderboard')]]) +
         '<h1>' + icon('medal') + ' ' + esc(t('leaderboard')) + '</h1><p class="muted">' + esc(t(res.shared ? 'lbNoteShared' : 'lbNote')) + '</p>' +
+        '<p class="league-link"><a href="/league/">' + icon('trophy') + ' ' + esc(t('leagueLink')) + '</a></p>' +
         '<p><label class="field"><span>' + esc(t('city')) + '</span>' + citySelect('lbcity', city, 'allSindh') + '</label></p>' +
         (res.rows.length ? '<div class="table-wrap"><table class="table"><thead><tr><th>' + esc(t('rank')) + '</th><th>' + esc(t('nickname')) + '</th><th>' + esc(t('score')) + '</th><th>' + esc(t('timeTaken')) + '</th><th>' + esc(t('city')) + '</th><th>' + esc(t('date')) + '</th></tr></thead><tbody>' +
           res.rows.map(function (r, i) {
