@@ -473,14 +473,24 @@
       '<nav class="tabbar no-print" aria-label="' + esc(t('menu')) + '">' + links.map(function (x) {
         return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + icon(x[3]) + '<span>' + esc(t(x[2])) + '</span></a>';
       }).join('') + '</nav>' : '');
-    document.getElementById('foot').innerHTML = state.lang ?
-      '<div class="wrap foot-grid">' +
-        '<div><p class="foot-brand">' + LEAF + '<span>' + esc(t('siteName')) + '</span></p><p>' + esc(t('footerFree')) + '</p></div>' +
-        '<nav class="foot-links" aria-label="' + esc(t('more')) + '"><a href="/teachers">' + esc(t('teachers')) + '</a><a href="/watch">' + esc(t('videosTitle')) + '</a><a href="/games">' + esc(t('gamesTitle')) + '</a>' +
-          '<a href="/paper/">' + esc(t('questionPaper')) + '</a><a href="/book/">' + esc(t('bookPdf')) + '</a><a href="/class/">' + esc(t('classTitle')) + '</a><a href="/sindh/">' + esc(t('sindhScience')) + '</a><a href="/lok/">' + esc(t('lokScience')) + '</a>' +
-          '<a href="/leaderboard">' + esc(t('leaderboard')) + '</a><a href="/about">' + esc(t('about')) + '</a><a href="/admin">' + esc(t('staff')) + '</a></nav>' +
+    document.getElementById('foot').innerHTML = state.lang ? footerHTML() : '';
+  }
+  // The same footer is drawn on the separate pages by js/site-nav.js; keep the two lists alike.
+  function footerHTML() {
+    function col(head, links) {
+      return '<nav class="foot-col" aria-label="' + esc(head) + '"><h2>' + esc(head) + '</h2>' + links.map(function (x) {
+        return '<a href="' + x[0] + '">' + esc(t(x[1])) + '</a>';
+      }).join('') + '</nav>';
+    }
+    return '<div class="wrap foot-grid">' +
+        '<div class="foot-about"><p class="foot-brand">' + LEAF + '<span>' + esc(t('siteName')) + '</span></p><p>' + esc(t('footerFree')) + '</p>' +
+          '<p class="foot-tags"><span>' + esc(t('footFree')) + '</span><span>' + esc(t('footLangs')) + '</span><span>' + esc(t('footNoAds')) + '</span></p></div>' +
+        col(t('footLearn'), [['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/ustad/', 'ustadTitle'], ['/book/', 'bookPdf'], ['/glossary', 'glossary']]) +
+        col(t('sindhShelf'), [['/sindh/', 'sindhScience'], ['/lok/', 'lokScience'], ['/sindh/mohenjo-daro/', 'mohenjoLab'], ['/mausam/', 'mausamLab'], ['/citizen/', 'citizenTitle'], ['/league/', 'leagueTitle']]) +
+        col(t('teachers'), [['/teachers', 'teachers'], ['/paper/', 'questionPaper'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/verify', 'verifyTitle'], ['/admin', 'staff']]) +
       '</div>' +
-      '<div class="wrap foot-base"><p>© The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p></div>' : '';
+      '<div class="wrap foot-base"><p>© 2026 The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p>' +
+        '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/leaderboard">' + esc(t('leaderboard')) + '</a></p></div>';
   }
 
   /* ---------- router ---------- */
@@ -512,6 +522,11 @@
     applyLang();
     renderFrame();
     if (!state.lang) { viewChooseLang(); return; }
+    // students log in first; the login page, the teachers' page, "about" and the certificate check stay open to all
+    if (window.Student && !window.Student.current() && !/^\/(login|teachers|about|verify)(\/|$)/.test(location.pathname)) {
+      history.replaceState(null, '', '/login?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
+      renderFrame();
+    }
     trackVisit();
     loadCatalog().then(function () {
       if (id !== renderId) return;

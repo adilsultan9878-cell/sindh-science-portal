@@ -14,6 +14,14 @@
     list: '<path d="M4 6h16M4 12h16M4 18h16"/>'
   };
   var current = (document.currentScript && document.currentScript.getAttribute('data-current')) || '';
+  // students log in first (js/student.js); the teachers' pages (class, school dashboard, question paper) stay open
+  try {
+    var me = JSON.parse(localStorage.getItem('ssp1.student'));
+    if (!(me && me.token) && !/^\/(class|school|paper)(\/|$)/.test(location.pathname)) {
+      location.replace('/login?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
+      return;
+    }
+  } catch (e) { /* storage blocked: leave the page open */ }
 
   function lang() {
     try { var l = JSON.parse(localStorage.getItem('ssp1.lang')); return ['sd', 'ur', 'en'].indexOf(l) >= 0 ? l : 'sd'; } catch (e) { return 'sd'; }

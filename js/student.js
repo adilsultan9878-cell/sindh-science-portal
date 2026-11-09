@@ -15,6 +15,7 @@
 
   var TEXT = {
     title: { sd: 'شاگرد لاگ ان', ur: 'طالب علم لاگ ان', en: 'Student login' },
+    first: { sd: 'سائيٽ استعمال ڪرڻ لاءِ پهريان لاگ ان ڪريو. نئين آهيو؟ "نئون اڪائونٽ" دٻايو.', ur: 'سائٹ استعمال کرنے کے لیے پہلے لاگ ان کریں۔ نئے ہیں؟ "نیا اکاؤنٹ" دبائیں۔', en: 'Please log in first to use the site. New here? Tap "New account".' },
     intro: {
       sd: 'لاگ ان ڪريو ته توهان جي پيش رفت، پوائنٽس ۽ بيج محفوظ رهندا، ۽ ڪنهن به فون يا ڪمپيوٽر تي واپس ملندا.',
       ur: 'لاگ ان کریں تو آپ کی پیش رفت، پوائنٹس اور بیج محفوظ رہیں گے، اور کسی بھی فون یا کمپیوٹر پر واپس مل جائیں گے۔',
@@ -84,6 +85,11 @@
   }
 
   function session() { return load(KEY, null); }
+  // the page the student wanted before being sent to log in (only paths on this site)
+  function next() {
+    var n = new URLSearchParams(location.search).get('next') || '';
+    return /^\/(?![\/\\])/.test(n) && !/^\/login/.test(n) ? n : '';
+  }
 
   /* ---------- what is saved: every ssp1.* key the site keeps on this phone ---------- */
 
@@ -193,7 +199,7 @@
         return;
       }
       var up = mode === 'signup';
-      el.innerHTML = '<section class="card stu-card"><h2>' + esc(T('title')) + '</h2><p>' + esc(T('intro')) + '</p>' +
+      el.innerHTML = '<section class="card stu-card"><h2>' + esc(T('title')) + '</h2>' + (next() ? '<p class="stu-first">' + esc(T('first')) + '</p>' : '') + '<p>' + esc(T('intro')) + '</p>' +
         '<div class="stu-tabs" role="tablist"><button type="button" role="tab" class="tab' + (up ? '' : ' on') + '" aria-selected="' + !up + '" data-mode="login">' + esc(T('login')) + '</button>' +
         '<button type="button" role="tab" class="tab' + (up ? ' on' : '') + '" aria-selected="' + up + '" data-mode="signup">' + esc(T('signup')) + '</button></div>' +
         '<form class="stu-form" novalidate>' +
@@ -234,7 +240,7 @@
         try { sessionStorage.setItem('ssp1.studentPulled', '1'); } catch (err) { /* ignore */ }
         lastSent = '';
         return push();
-      }).then(function () { location.reload(); }).catch(function (err) { msg.textContent = errText(err); });   // reload: the menu shows the name, pages show the joined progress
+      }).then(function () { if (next()) location.replace(next()); else location.reload(); }).catch(function (err) { msg.textContent = errText(err); });   // reload: the menu shows the name, pages show the joined progress
     });
     draw();
   }
