@@ -142,14 +142,16 @@
     out.innerHTML = '<section class="card us-reply" aria-live="polite">' +
       '<p class="us-q">' + esc(q) + '</p>' +
       '<h2>' + esc(t('answer')) + '</h2>' +
-      '<div class="us-text">' + answer.split(/\n+/).map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + '</div>' +
+      '<div class="us-text">' + answer.split(/\n+/).map(function (p) {
+        return '<p>' + esc(p).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*\*/g, '') + '</p>';   // the AI marks key words like **this**
+      }).join('') + '</div>' +
       (canSpeak ? '<button type="button" class="btn ghost small us-listen">' + icon('volume') + '<span>' + esc(t('listen')) + '</span></button>' : '') +
       (links ? '<div class="us-sources"><p class="muted small">' + esc(t('readMore')) + '</p>' + links + '</div>' : '') +
       '</section>';
     var lb = out.querySelector('.us-listen');
     if (lb) lb.addEventListener('click', function () {
       if (speechSynthesis.speaking) { speechSynthesis.cancel(); lb.querySelector('span').textContent = t('listen'); return; }
-      var u = new SpeechSynthesisUtterance(answer);
+      var u = new SpeechSynthesisUtterance(answer.replace(/\*\*/g, ''));
       u.voice = voiceFor(state.lang); u.lang = u.voice.lang; u.rate = 0.9;
       u.onend = function () { lb.querySelector('span').textContent = t('listen'); };
       lb.querySelector('span').textContent = t('stop');

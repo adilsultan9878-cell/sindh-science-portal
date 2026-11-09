@@ -55,7 +55,7 @@ async function loadBook(): Promise<Chapter[]> {
 // Same letters for the same word, whichever keyboard typed it.
 function norm(s: string): string {
   return (s || "").toLowerCase()
-    .replace(/[ً-ٰٟۖ-ۭ]/g, "")
+    .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, "")
     .replace(/[يى]/g, "ی").replace(/ك/g, "ک").replace(/[ہھة]/g, "ه").replace(/[أإآ]/g, "ا")
     .replace(/\*\*/g, "");
 }
@@ -64,21 +64,34 @@ function words(s: string): string[] {
 }
 const STOP = new Set(["کیا", "کیوں", "کیسے", "ہے", "هے", "ہیں", "هیں", "میں", "کی", "کا", "کے", "اور", "سے", "کو", "یہ", "وہ", "جو", "ڇا", "ڇو", "ڪيئن", "آهي", "۾", "جي", "جو", "۽", "کي", "تي", "the", "is", "are", "why", "what", "how", "do", "does", "a", "an", "of", "in", "to", "and"]);
 
+// Rare words count more than common ones (IDF), so "rain" finds the water chapter and words like "it" find nothing.
 function pick(chapters: Chapter[], question: string, hint?: string): Piece[] {
-  const q = words(question).filter((w) => !STOP.has(w));
-  const pieces: Piece[] = [];
+  const q = [...new Set(words(question).filter((w) => !STOP.has(w)))];
+  const secs: { ch: Chapter; sec: Section; title: string[]; body: string[] }[] = [];
   for (const ch of chapters) {
     for (const sec of ch.lesson) {
-      const title = words([sec.title?.sd, sec.title?.ur, sec.title?.en, ch.title?.sd, ch.title?.ur, ch.title?.en].join(" "));
-      const body = words([sec.body?.sd, sec.body?.ur, sec.body?.en].join(" "));
-      let score = 0;
-      for (const w of q) {
-        score += 3 * title.filter((t) => t === w).length;
-        score += Math.min(4, body.filter((t) => t === w || (w.length > 3 && t.startsWith(w))).length);
-      }
-      if (hint && ch.id === hint) score += 2;
-      if (score > 0) pieces.push({ chapter: ch, section: sec, score });
+      secs.push({
+        ch, sec,
+        title: words([sec.title?.sd, sec.title?.ur, sec.title?.en, ch.title?.sd, ch.title?.ur, ch.title?.en].join(" ")),
+        body: words([sec.body?.sd, sec.body?.ur, sec.body?.en].join(" ")),
+      });
     }
+  }
+  const hit = (t: string, w: string) => t === w || (w.length > 3 && t.startsWith(w));
+  const idf: Record<string, number> = {};
+  for (const w of q) {
+    const df = secs.filter((s) => s.title.some((t) => hit(t, w)) || s.body.some((t) => hit(t, w))).length;
+    idf[w] = df === 0 || df > secs.length * 0.4 ? 0 : Math.log((secs.length + 1) / (df + 1)) + 0.5;
+  }
+  const pieces: Piece[] = [];
+  for (const s of secs) {
+    let score = 0;
+    for (const w of q) {
+      if (!idf[w]) continue;
+      score += idf[w] * (3 * s.title.filter((t) => hit(t, w)).length + Math.min(4, s.body.filter((t) => hit(t, w)).length));
+    }
+    if (score > 0 && hint && s.ch.id === hint) score += 2;
+    if (score > 0) pieces.push({ chapter: s.ch, section: s.sec, score });
   }
   return pieces.sort((a, b) => b.score - a.score).slice(0, 3);
 }
