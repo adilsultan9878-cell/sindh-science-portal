@@ -461,6 +461,4 @@ Object.assign(window.UI_TEXT, {
   mohenjoShort: { sd: 'ناليون ٺاهيو، سرون پچايو ۽ تارازو برابر ڪريو.', ur: 'نالیاں بنائیں، اینٹیں پکائیں اور ترازو برابر کریں۔', en: 'Build drains, bake bricks and balance the scales.' },
   weatherLab: { sd: 'سنڌ جي موسم ليب', ur: 'سندھ کی موسمی لیب', en: 'Sindh weather lab' },
   weatherShort: { sd: 'جيڪب آباد جي گرمي، سنڌو ڊيلٽا ۽ جهمپير جي هوا.', ur: 'جیکب آباد کی گرمی، سندھ ڈیلٹا اور جھمپیر کی ہوا۔', en: 'Jacobabad heat, the Indus delta and Jhimpir wind.' },
-  dolphinGame: { sd: 'ٻلڻ بچايو', ur: 'بُلھن بچاؤ', en: 'Save the Indus dolphin' },
-  dolphinShort: { sd: 'آواز سان رستو ڳوليو ۽ ڊولفن کي گندگي کان بچايو.', ur: 'آواز سے راستہ ڈھونڈیں اور ڈولفن کو آلودگی سے بچائیں۔', en: 'Find the way with sound and keep the dolphin safe from pollution.' }
 });

@@ -639,17 +639,15 @@
         '<div class="sec-head"><h2>' + esc(t('sindhShelf')) + '</h2><a href="/sindh/">' + esc(t('sindhScience')) + icon('next', 'flip') + '</a></div>' +
         '<div class="shelf">' +
           shelfTile('/lok/', 'lesson', 'lokScience') + shelfTile('/sindh/mohenjo-daro/', 'map', 'mohenjoLab') +
-          shelfTile('/mausam/', 'sun', 'mausamLab') + shelfTile('/sindh/dolphin/', 'game', 'dolphinGame') +
+          shelfTile('/mausam/', 'sun', 'mausamLab') +
           shelfTile('/sindh/my-sindh/', 'map', 'mySindh') + shelfTile('/sindh/', 'map', 'sindhScience') +
         '</div>' +
-        '<div id="stars-slot"></div>' +
         '<nav class="mini-links" aria-label="' + esc(t('more')) + '">' +
           [['/competition', 'trophy', 'competition'], ['/progress', 'star', 'progress'], ['/glossary', 'words', 'glossary'], ['/teachers', 'users', 'teachers']].map(function (x) {
             return '<a href="' + x[0] + '">' + icon(x[1]) + esc(t(x[2])) + '</a>';
           }).join('') +
         '</nav>';
       renderDaily(document.getElementById('daily'), chs);
-      if (window.Stars) window.Stars.mount(document.getElementById('stars-slot'));
     });
   }
   // First-visit help: the three steps of the site, in plain words.

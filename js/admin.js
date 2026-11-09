@@ -774,26 +774,6 @@
     });
     table.appendChild(tbody);
     main.appendChild(rows.length ? h('div', { class: 'table-wrap' }, [table]) : h('p', { text: 'No scores yet.' }));
-
-    // Science Stars of the Week (home page): nicknames of this week and last week
-    main.appendChild(h('h2', { text: 'Science Stars of the Week' }));
-    main.appendChild(h('p', { class: 'muted', text: 'These nicknames can appear on the home page. Hide any that is rude or looks like a real full name; it stays hidden in later weeks too.' }));
-    var stars = [];
-    try { stars = (await rpc('star_staff_list')) || []; } catch (e) { main.appendChild(h('p', { text: e.message })); }
-    var stable = h('table', { class: 'table', html: '<thead><tr><th>Last active</th><th>Nickname</th><th>District</th><th>Points (2 weeks)</th><th>Shown</th><th>Actions</th></tr></thead>' });
-    var sbody = h('tbody');
-    stars.forEach(function (s) {
-      var tr = h('tr', { html: '<td>' + esc(when(s.last_at)) + '</td><td>' + esc(s.nickname) + '</td><td>' + esc(s.city || '—') + '</td><td>' + s.points + '</td><td>' +
-        (s.hidden ? pill('draft').replace('Draft', 'Hidden') : pill('published').replace('Published', 'Visible')) + '</td>' });
-      var td = h('td');
-      td.appendChild(btn(s.hidden ? 'Show' : 'Hide', async function () {
-        try { await rpc('star_hide', { p_nick: s.nickname, p_hide: !s.hidden }); viewLeaderboard(); } catch (e) { alert(e.message); }
-      }));
-      tr.appendChild(td);
-      sbody.appendChild(tr);
-    });
-    stable.appendChild(sbody);
-    main.appendChild(stars.length ? h('div', { class: 'table-wrap' }, [stable]) : h('p', { text: 'No stars yet.' }));
   }
 
   /* ---------- badges ---------- */

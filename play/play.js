@@ -1,7 +1,7 @@
 /* Quick games (/play/) from the whole book:
    - Picture puzzle: a real photo or a lesson drawing; the child picks the chapter it belongs to (10 pictures).
    - True or false in 30 seconds: as many statements as the child can answer.
-   Results add to "My progress" points and, for children who joined, to Science Stars of the Week (stars.js).
+   Results add to "My progress" points.
    Chapters come from the database (what the staff panel publishes), with the files in /data as backup.
    Address: /play/ (both games), /play/?g=picture, /play/?g=tf */
 (function () {
@@ -41,8 +41,6 @@
     allGames: { sd: 'سڀ رانديون', ur: 'تمام کھیل', en: 'All games' },
     newBest: { sd: 'نئون رڪارڊ!', ur: 'نیا ریکارڈ!', en: 'New record!' },
     points: { sd: '+{n} پوائنٽس «منهنجي ترقي» ۾', ur: '+{n} پوائنٹس «میری پیش رفت» میں', en: '+{n} points in "My progress"' },
-    starsOn: { sd: '⭐ هي پوائنٽس «سائنس اسٽار» ۾ به ڳڻيا ويندا.', ur: '⭐ یہ پوائنٹس «سائنس اسٹار» میں بھی گنے جائیں گے۔', en: '⭐ These points also count for Science Stars of the Week.' },
-    starsOff: { sd: '⭐ گهر واري صفحي تي «سائنس اسٽار» ۾ شامل ٿيو ۽ هفتي جي فهرست ۾ پنهنجو نالو ڏسو.', ur: '⭐ ہوم پیج پر «سائنس اسٹار» میں شامل ہوں اور ہفتے کی فہرست میں اپنا نام دیکھیں۔', en: '⭐ Join Science Stars on the home page and see your name on the weekly list.' },
     tfRules: { sd: 'جملو پڙهو ۽ ✔ صحيح يا ✘ غلط دٻايو. هر صحيح جواب = 1 پوائنٽ. «شروع ڪريو» دٻائڻ سان 30 سيڪنڊ شروع ٿيندا.', ur: 'جملہ پڑھیں اور ✔ سچ یا ✘ جھوٹ دبائیں۔ ہر درست جواب = 1 پوائنٹ۔ «شروع کریں» دبانے سے 30 سیکنڈ شروع ہوں گے۔', en: 'Read the sentence and press ✔ True or ✘ False. Each right answer = 1 point. The 30 seconds start when you press Start.' },
     keys: { sd: 'ڪمپيوٽر تي: T = صحيح، F = غلط', ur: 'کمپیوٹر پر: T = سچ، F = جھوٹ', en: 'On a computer: T = true, F = false' },
     start: { sd: 'شروع ڪريو', ur: 'شروع کریں', en: 'Start' },
@@ -149,19 +147,16 @@
   /* ---------- results ---------- */
 
   function bestOf(game) { return (load('play', {}) || {})[game] || 0; }
-  // Saves the best score, adds the points to "My progress" and sends them to Science Stars.
+  // Saves the best score, adds the points to "My progress".
   function finishGame(game, score, total) {
     var bests = load('play', {}) || {}, isBest = score > (bests[game] || 0);
     if (isBest) { bests[game] = score; save('play', bests); }
     if (score > 0) { var p = load('progress', {}) || {}; p.points = (p.points || 0) + score; save('progress', p); }
-    if (window.Stars) window.Stars.report(game === 'tf' ? 'truefalse' : 'picture', null, score, total);
     return isBest && score > 0;
   }
   function resultExtras(score, isBest) {
-    var joined = window.Stars && window.Stars.joined();
     return (isBest ? '<p class="pl-best">🏆 ' + esc(t('newBest')) + '</p>' : '') +
-      (score > 0 ? '<p class="pl-points">' + esc(t('points', { n: score })) + '</p>' : '') +
-      '<p class="pl-stars">' + (joined ? esc(t('starsOn')) : '<a href="/">' + esc(t('starsOff')) + '</a>') + '</p>';
+      (score > 0 ? '<p class="pl-points">' + esc(t('points', { n: score })) + '</p>' : '');
   }
 
   /* ---------- landing ---------- */
