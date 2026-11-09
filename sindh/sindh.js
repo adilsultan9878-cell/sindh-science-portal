@@ -99,7 +99,7 @@
       }
     },
     {
-      id: 'mohenjo', icon: 'bricks', lon: 68.14, lat: 27.33, chapter: 'matter',
+      id: 'mohenjo', icon: 'bricks', lon: 68.14, lat: 27.33, chapter: 'matter', lab: '/sindh/mohenjo-daro/',
       name: { sd: 'موئن جو دڙو', ur: 'موہنجو داڑو', en: 'Mohenjo-daro' },
       where: { sd: 'لاڙڪاڻي ضلعي ۾', ur: 'ضلع لاڑکانہ', en: 'Larkana district' },
       text: {
@@ -225,6 +225,7 @@
     },
     placesTitle: { sd: 'سنڌ جون 12 جايون', ur: 'سندھ کی 12 جگہیں', en: '12 places in Sindh' },
     think: { sd: 'سوچيو ۽ ڳالهايو', ur: 'سوچیں اور بات کریں', en: 'Think and talk' },
+    openLab: { sd: 'موئن جو دڙو سائنس ليب کوليو', ur: 'موہنجو داڑو سائنس لیب کھولیں', en: 'Open the Mohenjo-daro Science Lab' },
     inBook: { sd: 'ڪتاب ۾', ur: 'کتاب میں', en: 'In your book' },
     chapterN: { sd: 'باب {n}', ur: 'باب {n}', en: 'Chapter {n}' },
     toMap: { sd: 'نقشي ڏانهن', ur: 'نقشے پر واپس', en: 'Back to the map' },
@@ -345,6 +346,7 @@
         '<div><h3>' + esc(L(pl.name)) + '</h3><p class="sp-where">' + icon('pin') + '<span>' + esc(L(pl.where)) + '</span></p></div></div>' +
       '<p>' + esc(L(pl.text)) + '</p>' +
       '<div class="sp-think"><p class="sp-label">' + icon('chat') + esc(t('think')) + '</p><p>' + esc(L(pl.think)) + '</p></div>' +
+      (pl.lab ? '<p class="no-print"><a class="btn small" href="' + pl.lab + '">' + icon('bricks') + esc(t('openLab')) + '</a></p>' : '') +
       '<div class="sp-foot"><a class="sp-chap" href="/class-5/science/' + pl.chapter + '">' + icon('book') +
         '<span><span class="sp-label">' + esc(t('inBook')) + '</span> ' + esc(t('chapterN', { n: ch.n })) + ': ' + esc(L(ch)) + '</span></a>' +
         '<a class="sp-up no-print" href="#map">' + icon('up') + esc(t('toMap')) + '</a></div>' +
