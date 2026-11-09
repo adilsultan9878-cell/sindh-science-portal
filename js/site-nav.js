@@ -17,7 +17,8 @@
   // students log in first (js/student.js); the teachers' pages (class, school dashboard, question paper) stay open
   try {
     var me = JSON.parse(localStorage.getItem('ssp1.student'));
-    if (!(me && me.token) && !/^\/(class|school|paper)(\/|$)/.test(location.pathname)) {
+    var guest = JSON.parse(localStorage.getItem('ssp1.guest')) === true;   // started without internet (js/student.js)
+    if (!(me && me.token) && !guest && !/^\/(class|school|paper|parent)(\/|$)/.test(location.pathname)) {
       location.replace('/login?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
       return;
     }

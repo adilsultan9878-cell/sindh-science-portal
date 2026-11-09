@@ -8,7 +8,7 @@
   var LANGS = ['sd', 'ur', 'en'];
   var LANG_LABEL = { sd: 'Sindhi', ur: 'Urdu', en: 'English' };
   var STATUS_LABEL = { draft: 'Draft', review: 'In review', published: 'Published' };
-  var ROLE_LABEL = { pending: 'No access (waiting)', editor: 'Editor', reviewer: 'Reviewer', admin: 'Admin' };
+  var ROLE_LABEL = { pending: 'No access (waiting)', teacher: 'Teacher', admin: 'Admin' };   // editor and reviewer were removed (2026-11)
   var SESSION_KEY = 'ssp-staff-session';
 
   var main = document.getElementById('main');
@@ -50,7 +50,7 @@
   function txt(o, l) { return o && typeof o === 'object' ? (o[l || 'en'] || o.en || '') : (o || ''); }
   function when(iso) { return iso ? new Date(iso).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' }) : ''; }
   function eq(v) { return 'eq.' + encodeURIComponent(v); }
-  function canPublish() { return me && (me.role === 'reviewer' || me.role === 'admin'); }
+  function canPublish() { return me && (me.role === 'reviewer' || me.role === 'admin'); }   // reviewer: old accounts only
   function isAdmin() { return me && me.role === 'admin'; }
   function page(title, intro) {
     main.innerHTML = '<h1>' + esc(title) + '</h1>' + (intro ? '<p class="muted">' + esc(intro) + '</p>' : '');
@@ -354,6 +354,7 @@
       saveSession(null);
       return viewLogin(e.message);
     }
+    if (me.role === 'teacher') return viewTeacherHere();
     if (me.role === 'pending') return viewPending();
     renderNav();
     var parts = location.hash.slice(1).split('/');
@@ -863,12 +864,14 @@
 
   async function viewUsers() {
     if (!isAdmin()) { page('Admins only'); return; }
-    page('Users', 'Editors write drafts and send them to review. Reviewers also publish. Admins also manage users. "No access" accounts cannot do anything.');
+    page('Users', 'Teachers sign in on the teacher page (/class/) with the email and password you give them, make their class and their students\' accounts. Admins also edit chapters and manage users.');
+    main.appendChild(newTeacherForm());
     var rows = await rpc('staff_list');
     var table = h('table', { class: 'table', html: '<thead><tr><th>Email</th><th>Joined</th><th>Email confirmed</th><th>Last sign-in</th><th>Role</th><th></th></tr></thead>' });
     var tbody = h('tbody');
     rows.forEach(function (r) {
-      var sel = h('select', null, Object.keys(ROLE_LABEL).map(function (k) { return h('option', { value: k, text: ROLE_LABEL[k] }); }));
+      var roles = Object.keys(ROLE_LABEL).concat(ROLE_LABEL[r.role] ? [] : [r.role]);   // an old editor or reviewer still shows its role
+      var sel = h('select', null, roles.map(function (k) { return h('option', { value: k, text: ROLE_LABEL[k] || (k + ' (old)') }); }));
       sel.value = r.role;
       if (r.id === me.id) sel.disabled = true;
       var msg = h('span', { class: 'msg' });
@@ -878,12 +881,49 @@
       tr.appendChild(h('td', null, [r.id === me.id ? null : btn('Save role', async function () {
         try { await rpc('set_staff_role', { p_user: r.id, p_role: sel.value }); msg.className = 'msg ok'; msg.textContent = '✔ Saved'; }
         catch (e) { msg.className = 'msg bad'; msg.textContent = e.message; }
+      }), r.id === me.id ? null : btn('New password', async function () {
+        var pw = window.prompt('New password for ' + r.email + ' (at least 8 letters or numbers):');
+        if (!pw) return;
+        try { await rpc('admin_set_password', { p_user: r.id, p_password: pw }); msg.className = 'msg ok'; msg.textContent = '✔ Password changed. Tell the teacher the new password.'; }
+        catch (e) { msg.className = 'msg bad'; msg.textContent = /short_password/.test(e.message) ? 'The password needs at least 8 letters or numbers.' : e.message; }
       }), msg]));
       tbody.appendChild(tr);
     });
     table.appendChild(tbody);
     main.appendChild(h('div', { class: 'table-wrap' }, [table]));
-    main.appendChild(h('p', { class: 'muted', text: 'New staff create their own account at this same page ("Create a staff account"), then you give them a role here. Giving a role also confirms their email, so they can sign in even if the confirmation email never arrived.' }));
+    main.appendChild(h('p', { class: 'muted', text: 'Add teachers with the form above. Someone who made their own account here waits as "No access" until you give them a role. "New password" replaces a forgotten password.' }));
+  }
+
+  // The admin makes a teacher's account: email + password, saved straight to the database (no email is sent).
+  function newTeacherForm() {
+    var email = h('input', { type: 'email', autocomplete: 'off', placeholder: 'teacher@example.com', dir: 'ltr' });
+    var pw = h('input', { type: 'text', autocomplete: 'off', placeholder: 'at least 8 letters or numbers', dir: 'ltr' });
+    var msg = h('span', { class: 'msg' });
+    var errs = { bad_email: 'Please write a correct email.', short_password: 'The password needs at least 8 letters or numbers.', email_taken: 'This email already has an account.' };
+    return h('form', { class: 'card', onsubmit: async function (e) {
+      e.preventDefault();
+      msg.className = 'msg'; msg.textContent = 'Saving…';
+      try {
+        await rpc('admin_create_teacher', { p_email: email.value.trim(), p_password: pw.value });
+        msg.className = 'msg ok';
+        msg.textContent = '✔ Teacher added. Give them: the page ' + location.origin + '/class/ , email ' + email.value.trim() + ' and the password.';
+        setTimeout(function () { viewUsers().catch(fail); }, 4000);
+      } catch (err) {
+        var code = (err.message.match(/bad_email|short_password|email_taken/) || [])[0];
+        msg.className = 'msg bad'; msg.textContent = code ? errs[code] : err.message;
+      }
+    } }, [h('h2', { text: 'Add a teacher' }),
+      h('label', { class: 'field' }, [h('span', { text: 'Teacher\'s email' }), email]),
+      h('label', { class: 'field' }, [h('span', { text: 'Password' }), pw]),
+      h('p', null, [h('button', { type: 'submit', class: 'btn', text: 'Add teacher' }), ' ', msg])]);
+  }
+
+  // a teacher signed in here: their place is the teacher page
+  function viewTeacherHere() {
+    main.innerHTML = '';
+    page('Teacher account', 'Your class, your students and their homework are on the teacher page.');
+    main.appendChild(h('p', null, [h('a', { class: 'btn', href: '/class/', text: 'Open the teacher page' }), ' ',
+      btn('Sign out', function () { saveSession(null); location.reload(); })]));
   }
 
   /* ---------- statistics ---------- */

@@ -22,3 +22,12 @@
 .ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
 @media (max-width: 420px) { .stu-stats { grid-template-columns: repeat(2, 1fr); } }
 .stu-card .stu-first { background: var(--soft); border-radius: var(--radius); padding: 8px 12px; font-weight: 600; text-align: center; }
+/* homework from the teacher (home page) and "My class" (progress page) */
+.stu-hw ul { list-style: none; margin: 0; padding: 0; }
+.stu-hw li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
+.stu-hw li:first-child { border-top: 0; }
+.stu-hw li.done span:first-child { color: var(--muted); }
+.stu-done { color: var(--green-dark); font-weight: 700; white-space: nowrap; }
+.stu-class h3 { margin: 14px 0 4px; font-size: 1.05rem; }
+.stu-class .ltr { word-break: break-all; }
+.stu-guest { text-align: center; margin-top: 12px; }

@@ -1,7 +1,7 @@
 /* Offline support. On the first visit the phone keeps a copy of the app, the fonts and every
    chapter file, so lessons, quizzes and games open later without internet.
    When you change CSS or JS, raise VERSION here and the ?v= number in index.html to the same value. */
-var VERSION = '20261109j';
+var VERSION = '20261109k';
 var CACHE = 'ssp-' + VERSION;
 var SHELL = [
   '/',
@@ -101,7 +101,7 @@ self.addEventListener('fetch', function (event) {
   if (/^\/mausam(\/|$)/.test(url.pathname)) return;                               // the digital weather lab is its own page
   if (/^\/paper(\/|$)/.test(url.pathname)) return;                                // the teachers' question paper page is its own page
   if (/^\/citizen(\/|$)/.test(url.pathname)) return;                              // Citizen Science is its own page and needs fresh data
-  if (/^\/(sindh|school|lok|ustad)(\/|$)/.test(url.pathname)) return;                                // "Science in Sindh" is its own page too
+  if (/^\/(sindh|school|lok|ustad|parent)(\/|$)/.test(url.pathname)) return;                                // "Science in Sindh" is its own page too
   if (request.headers.get('range')) return;                                        // audio played in parts cannot be cached
   event.respondWith(request.mode === 'navigate' ? page(request) : file(event));
 });

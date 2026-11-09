@@ -9,7 +9,7 @@
 <meta name="color-scheme" content="light">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=20261109j">
+<link rel="stylesheet" href="/css/style.css?v=20261109k">
 <style>
   .tc-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
   .tc-classes { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -37,7 +37,21 @@
   .tc-recent li { margin: 4px 0; }
   .tc-school input { width: 9em; font-family: "Segoe UI", Arial, sans-serif; font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase; }
   .ltr { direction: ltr; unicode-bidi: isolate; }
-  .print-card { display: none; }
+  .tc-login { max-width: 440px; margin: 12px auto; }
+  .tc-classes .tc-class { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 200px; margin: 0; cursor: pointer; font: inherit; text-align: start; }
+  .tc-classes .tc-class b { font-size: 1.15rem; }
+  .tc-tabs { margin: 10px 0 14px; }
+  .tc-form textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid var(--line-2); border-radius: 8px; box-sizing: border-box; }
+  .tc-acts { white-space: nowrap; }
+  .tc-hw h3 { margin: 0 0 4px; }
+  .tc-slips { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .tc-slip { border: 2px dashed var(--green); border-radius: 10px; padding: 10px 14px; background: #fff; break-inside: avoid; }
+  .tc-slip p { margin: 4px 0; }
+  .tc-slip-name { font-weight: 700; font-size: 1.15rem; }
+  @media print {
+    header, footer, .tabbar, .site-nav, .no-print { display: none !important; }
+    .tc-slips { grid-template-columns: repeat(2, 1fr); }
+  }  .print-card { display: none; }
   @media print {
     body.print-code header, body.print-code main > *:not(.print-card), body.print-code footer { display: none !important; }
     body.print-code .print-card { display: block; text-align: center; border: 4px double #2e7d32; padding: 40px 20px; margin-top: 40px; }
@@ -45,10 +59,10 @@
     body:not(.print-code) .no-print { display: none !important; }
   }
 </style>
-<script src="/js/config.js?v=20261109j" defer></script>
-<script src="/js/ui-text.js?v=20261109j" defer></script>
-<script src="/js/class-teacher.js?v=20261109j" defer></script>
-<script src="/js/site-nav.js?v=20261109j" data-current="/teachers" defer></script>
+<script src="/js/config.js?v=20261109k" defer></script>
+<script src="/js/ui-text.js?v=20261109k" defer></script>
+<script src="/js/teacher.js?v=20261109k" defer></script>
+<script src="/js/site-nav.js?v=20261109k" data-current="/teachers" defer></script>
 </head>
 <body>
 <header class="top">

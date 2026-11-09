@@ -10,10 +10,26 @@
   var KEY = 'ssp1.student';
   // settings of this phone, caches of site files and waiting uploads are not part of the student's record
   var SKIP = { 'ssp1.lang': 1, 'ssp1.zoom': 1, 'ssp1.student': 1, 'ssp1.studentSynced': 1, 'ssp1.outbox': 1, 'ssp1.classOutbox': 1,
-    'ssp1.starsOutbox': 1, 'ssp1.starsCache': 1, 'ssp1.badges': 1, 'ssp1.schools': 1, 'ssp1.teacherClasses': 1 };
+    'ssp1.starsOutbox': 1, 'ssp1.starsCache': 1, 'ssp1.badges': 1, 'ssp1.schools': 1, 'ssp1.teacherClasses': 1, 'ssp1.reportOutbox': 1, 'ssp1.guest': 1 };
   function skip(k) { return !k || k.indexOf('ssp1.') !== 0 || SKIP[k] || k.indexOf('ssp1.content.') === 0; }
 
   var TEXT = {
+    hwTitle: { sd: 'گهر جو ڪم', ur: 'ہوم ورک', en: 'Homework' },
+    hwDue: { sd: 'آخري تاريخ', ur: 'آخری تاریخ', en: 'Due' },
+    hwDone: { sd: 'ٿي ويو', ur: 'ہو گیا', en: 'Done' },
+    hwOpen: { sd: 'شروع ڪريو', ur: 'شروع کریں', en: 'Start' },
+    k_quiz: { sd: 'ڪوئز', ur: 'کوئز', en: 'Quiz' },
+    k_worksheet: { sd: 'ورڪ شيٽ', ur: 'ورک شیٹ', en: 'Worksheet' },
+    k_experiment: { sd: 'تجربو', ur: 'تجربہ', en: 'Experiment' },
+    myClass: { sd: 'منهنجو ڪلاس', ur: 'میری کلاس', en: 'My class' },
+    inClass: { sd: 'توهان جا نتيجا پاڻمرادو استاد ڏانهن وڃن ٿا.', ur: 'آپ کے نتائج خود بخود استاد کو جاتے ہیں۔', en: 'Your results go to your teacher by themselves.' },
+    noClass: { sd: 'توهان ڪنهن ڪلاس ۾ ناهيو. استاد کان اڪائونٽ وٺو ته نتيجا استاد کي ملندا.', ur: 'آپ کسی کلاس میں نہیں ہیں۔ استاد سے اکاؤنٹ لیں تو نتائج استاد کو ملیں گے۔', en: 'You are not in a class. Ask your teacher for an account and your results will reach them.' },
+    parentTitle: { sd: 'والدين لاءِ', ur: 'والدین کے لیے', en: 'For parents' },
+    parentText: { sd: 'هي لنڪ والدين کي موڪليو. اهي توهان جي پيش رفت ڏسي سگهن ٿا، بدلائي نٿا سگهن.', ur: 'یہ لنک والدین کو بھیجیں۔ وہ آپ کی پیش رفت دیکھ سکتے ہیں، بدل نہیں سکتے۔', en: 'Send this link to your parents. They can see your progress but cannot change it.' },
+    shareWa: { sd: 'واٽس ايپ تي موڪليو', ur: 'واٹس ایپ پر بھیجیں', en: 'Send on WhatsApp' },
+    waParent: { sd: 'منهنجي سائنس جي پيش رفت ڏسو:', ur: 'میری سائنس کی پیش رفت دیکھیں:', en: 'See my science progress:' },
+    guestBtn: { sd: 'انٽرنيٽ کان سواءِ شروع ڪريو', ur: 'انٹرنیٹ کے بغیر شروع کریں', en: 'Start without internet' },
+    guestNote: { sd: 'انٽرنيٽ اچڻ تي لاگ ان ڪريو، پوءِ هتي جو ڪم اڪائونٽ ۾ محفوظ ٿيندو.', ur: 'انٹرنیٹ آنے پر لاگ ان کریں، پھر یہاں کا کام اکاؤنٹ میں محفوظ ہو جائے گا۔', en: 'Log in when the internet is back; what you did here is then saved to your account.' },
     title: { sd: 'شاگرد لاگ ان', ur: 'طالب علم لاگ ان', en: 'Student login' },
     first: { sd: 'سائيٽ استعمال ڪرڻ لاءِ پهريان لاگ ان ڪريو. نئين آهيو؟ "نئون اڪائونٽ" دٻايو.', ur: 'سائٹ استعمال کرنے کے لیے پہلے لاگ ان کریں۔ نئے ہیں؟ "نیا اکاؤنٹ" دبائیں۔', en: 'Please log in first to use the site. New here? Tap "New account".' },
     intro: {
@@ -39,9 +55,9 @@
     badges: { sd: 'بيج', ur: 'بیج', en: 'Badges' },
     myProgress: { sd: 'منهنجي پيش رفت ڏسو', ur: 'میری پیش رفت دیکھیں', en: 'See my progress' },
     classHint: {
-      sd: 'استاد کي توهان جا نتيجا ڏسڻا آهن؟ "منهنجي پيش رفت" تي استاد جو ڪلاس ڪوڊ لکو.',
-      ur: 'استاد آپ کے نتائج دیکھیں؟ "میری پیش رفت" پر استاد کا کلاس کوڈ لکھیں۔',
-      en: 'Want your teacher to see your results? Type your teacher\'s class code on "My progress".'
+      sd: 'جيڪڏهن استاد توهان جو اڪائونٽ ٺاهيو آهي ته توهان جا نتيجا پاڻمرادو استاد ڏانهن ويندا.',
+      ur: 'اگر استاد نے آپ کا اکاؤنٹ بنایا ہے تو آپ کے نتائج خود بخود استاد کو جائیں گے۔',
+      en: 'If your teacher made your account, your results go to your teacher by themselves.'
     },
     logout: { sd: 'لاگ آئوٽ', ur: 'لاگ آؤٹ', en: 'Log out' },
     logoutNote: { sd: 'لاگ آئوٽ کان پوءِ هن فون تان توهان جي پيش رفت هٽي ويندي، پر اڪائونٽ ۾ محفوظ رهندي.', ur: 'لاگ آؤٹ کے بعد اس فون سے آپ کی پیش رفت ہٹ جائے گی، لیکن اکاؤنٹ میں محفوظ رہے گی۔', en: 'After logging out your progress is removed from this phone, but stays in your account.' },
@@ -209,11 +225,13 @@
           '<label>' + esc(T('pin')) + '<input name="pin" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" dir="ltr" autocomplete="' + (up ? 'new-password' : 'current-password') + '">' +
             (up ? '<small class="muted">' + esc(T('pinHelp')) + '</small>' : '') + '</label>' +
           '<button type="submit" class="btn">' + esc(up ? T('create') : T('login')) + '</button>' +
-          '<p class="form-msg" aria-live="polite"></p></form></section>';
+          '<p class="form-msg" aria-live="polite"></p></form>' +
+          (navigator.onLine === false ? '<p class="stu-guest"><button type="button" class="btn ghost" data-act="guest">' + esc(T('guestBtn')) + '</button><br><small class="muted">' + esc(T('guestNote')) + '</small></p>' : '') + '</section>';
     }
     el.addEventListener('click', function (e) {
       var m = e.target.closest('[data-mode]');
       if (m) { mode = m.getAttribute('data-mode'); draw(); return; }
+      if (e.target.closest('[data-act="guest"]')) { save('ssp1.guest', true); location.replace(next() || '/'); return; }
       if (e.target.closest('[data-act="logout"]')) {
         var s = session();
         push().then(function () { return s && s.token ? rpc('student_logout', { p_token: s.token }).catch(function () {}) : null; }).then(function () {
@@ -237,6 +255,7 @@
         if (!d || d.error || !d.token) { throw new Error((d && d.error) || 'other'); }
         restore(d.data);
         save(KEY, { token: d.token, username: d.username, name: d.name });
+        save('ssp1.guest', null);   // work done without internet is now part of the account
         try { sessionStorage.setItem('ssp1.studentPulled', '1'); } catch (err) { /* ignore */ }
         lastSent = '';
         return push();
@@ -255,6 +274,85 @@
   }
   function current() { var s = session(); return s && s.token ? { name: s.name, username: s.username } : null; }
 
-  window.Student = { mount: mount, status: status, current: current, session: session, save: push, merge: merge };
+  // a child who started without internet may use the site until they can log in
+  function guest() { return !current() && load('ssp1.guest', null) === true; }
+
+  /* ---------- class, homework and parents (accounts made by the teacher) ---------- */
+
+  // finished work goes to the teacher; kept on the phone while there is no internet
+  function report(kind, chapter, score, total) {
+    var s = session();
+    if (!s || !s.token) return;
+    var box = load('ssp1.reportOutbox', []) || [];
+    box.push({ p_kind: kind, p_chapter: chapter || null, p_score: score == null ? null : score, p_total: total == null ? null : total });
+    save('ssp1.reportOutbox', box.slice(-100));
+    flush();
+  }
+  var flushing = false;
+  function flush() {
+    var s = session(), box = load('ssp1.reportOutbox', []) || [];
+    if (!s || !s.token || !box.length || flushing || navigator.onLine === false) return;
+    flushing = true;
+    rpc('student_report', Object.assign({ p_token: s.token }, box[0])).then(function () { return true; }, function (e) { return !!(e.status && e.status < 500); })
+      .then(function (drop) {
+        flushing = false;
+        if (!drop) return;   // server or network trouble: try again later
+        save('ssp1.reportOutbox', (load('ssp1.reportOutbox', []) || []).slice(1));
+        try { sessionStorage.removeItem('ssp1.home'); } catch (e) { /* ignore */ }
+        flush();
+      });
+  }
+  window.addEventListener('online', flush);
+
+  // class name, parents' code and homework, asked once per visit (and again after new work is sent)
+  var homeReq = null;
+  function home() {
+    var s = session();
+    if (!s || !s.token || navigator.onLine === false) return Promise.resolve(null);
+    try { var c = JSON.parse(sessionStorage.getItem('ssp1.home')); if (c) return Promise.resolve(c); } catch (e) { /* ignore */ }
+    if (!homeReq) homeReq = rpc('student_home', { p_token: s.token }).then(function (d) {
+      try { sessionStorage.setItem('ssp1.home', JSON.stringify(d)); } catch (e) { /* ignore */ }
+      homeReq = null; return d;
+    }, function () { homeReq = null; return null; });
+    return homeReq;
+  }
+  function chapterTitle(key) {
+    var id = String(key || '').split('/')[2] || key, list = load('ssp1.content.5/science', null);
+    var ch = Array.isArray(list) && list.filter(function (c) { return c && c.id === id; })[0];
+    var t = ch && ch.title;
+    return t ? (typeof t === 'object' ? (t[lang()] || t.en) : t) : id;
+  }
+  function day(d) { return d ? new Date(d + 'T00:00:00').toLocaleDateString(lang() === 'en' ? 'en-GB' : 'ur-PK', { day: 'numeric', month: 'short' }) : ''; }
+  // "Homework" card at the top of the home page and on "My progress"
+  function homework(el) {
+    if (!el) return;
+    home().then(function (d) {
+      if (!d || !d.class || !d.homework || !d.homework.length) { el.innerHTML = ''; return; }
+      el.innerHTML = '<section class="card stu-hw"><h2>' + esc(T('hwTitle')) + '</h2><ul>' + d.homework.map(function (h) {
+        var p = h.chapter.split('/'), url = '/class-' + p[0] + '/' + p[1] + '/' + p[2] + '/' + h.kind;
+        return '<li class="' + (h.done ? 'done' : '') + '"><span><b>' + esc(T('k_' + h.kind)) + '</b> · ' + esc(chapterTitle(h.chapter)) +
+          (h.due ? ' <small class="muted">(' + esc(T('hwDue')) + ': ' + esc(day(h.due)) + ')</small>' : '') + '</span>' +
+          (h.done ? '<span class="stu-done">✓ ' + esc(T('hwDone')) + '</span>' : '<a class="btn small" href="' + esc(url) + '">' + esc(T('hwOpen')) + '</a>') + '</li>';
+      }).join('') + '</ul></section>';
+    });
+  }
+  // "My class" card on "My progress": the class, and the parents' link with a WhatsApp button
+  function classCard(el) {
+    if (!el) return;
+    home().then(function (d) {
+      if (!d) { el.innerHTML = ''; return; }
+      var link = location.origin + '/parent/?c=' + (d.parent || '');
+      el.innerHTML = '<section class="card stu-class"><h2>' + esc(T('myClass')) + '</h2>' +
+        (d.class ? '<p><strong>' + esc(d.class.name) + '</strong>' + (d.class.school ? ' · ' + esc(d.class.school) : '') + '</p><p class="muted small">' + esc(T('inClass')) + '</p>'
+                 : '<p class="muted">' + esc(T('noClass')) + '</p>') +
+        (d.parent ? '<h3>' + esc(T('parentTitle')) + '</h3><p class="muted small">' + esc(T('parentText')) + '</p><p class="ltr small">' + esc(link) + '</p>' +
+          '<p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/?text=' + encodeURIComponent(T('waParent') + ' ' + link) + '">' + esc(T('shareWa')) + '</a></p>' : '') +
+        '</section>';
+    });
+  }
+
+  window.Student = { mount: mount, status: status, current: current, session: session, save: push, merge: merge,
+    guest: guest, report: report, home: home, homework: homework, classCard: classCard };
+  flush();
   startSync();
 })();

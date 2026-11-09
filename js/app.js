@@ -538,7 +538,7 @@
     renderFrame();
     if (!state.lang) { viewChooseLang(); return; }
     // students log in first; the login page, the teachers' page, "about" and the certificate check stay open to all
-    if (window.Student && !window.Student.current() && !/^\/(login|teachers|about|verify)(\/|$)/.test(location.pathname)) {
+    if (window.Student && !window.Student.current() && !window.Student.guest() && !/^\/(login|teachers|about|verify)(\/|$)/.test(location.pathname)) {
       history.replaceState(null, '', '/login?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
       renderFrame();
     }
@@ -594,7 +594,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|citizen|school|lok|mausam|ustad)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|citizen|school|lok|mausam|ustad|parent)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -639,7 +639,7 @@
       var last = p.last && chs.filter(function (ch) { return p.last === chUrl(ch) || p.last.indexOf(chUrl(ch) + '/') === 0; })[0];
       var pics = chs.filter(function (ch) { return ['plants', 'water-cycle', 'earth-space', 'seeds'].indexOf(ch.id) >= 0 && (window.PICTURES || {})[ch.id]; });
       var subjUrl = '/class-5/science';
-      main.innerHTML =
+      main.innerHTML = '<div id="hw-slot"></div>' +   // homework from the teacher, first thing a signed-in child sees
         '<section class="hero">' +
           '<div class="hero-text">' +
             '<p class="eyebrow">' + esc(t('heroStats', { c: chs.length, q: qCount })) + '</p>' +
@@ -678,6 +678,7 @@
           }).join('') +
         '</nav>';
       renderDaily(document.getElementById('daily'), chs);
+      if (window.Student) window.Student.homework(document.getElementById('hw-slot'));
     });
   }
   // First-visit help: the three steps of the site, in plain words.
