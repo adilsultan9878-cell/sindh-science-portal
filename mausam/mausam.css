@@ -1,0 +1,82 @@
+/* Sindh digital weather lab (/mausam/): hero, three simulation cards, sliders and the small animations. */
+.ms-hero { margin: 4px 0 16px; background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+.ms-band { height: 10px; background: linear-gradient(90deg, #f59e0b, #3d8fd1 50%, #16a34a); }
+.ms-hero-in { padding: 20px 26px 14px; }
+.ms-hero h1 { font-size: 2rem; margin: 0.15em 0 0.3em; }
+.ms-hero .lead { max-width: 760px; }
+.ms-jump { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 4px; }
+.ms-jump a { padding: 4px 12px; border: 1px solid var(--line-2); border-radius: 999px; background: var(--soft); text-decoration: none; }
+
+.ms-sim { margin: 0 0 18px; }
+.ms-sim h2 { margin-top: 0; }
+.ms-body { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px; align-items: start; margin: 12px 0; }
+.ms-scene { min-width: 0; }
+.ms-svg { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: #fff; direction: ltr; }
+.ms-side { min-width: 0; }
+
+.ms-control { margin: 0 0 12px; }
+.ms-control label { display: block; font-weight: 700; margin-bottom: 4px; }
+.ms-range { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.ms-range input[type="range"] { flex: 1 1 160px; min-width: 0; width: 100%; height: 32px; accent-color: var(--green); margin: 0; }
+.ms-range input[type="range"]:focus-visible { outline: 3px solid #f59e0b; outline-offset: 2px; border-radius: 6px; }
+.ms-range output { font-weight: 700; color: var(--green-ink); }
+.ms-btns { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; }
+.ms-btns .ic { width: 18px; height: 18px; vertical-align: -3px; margin-inline-end: 6px; fill: none; stroke: currentColor; stroke-width: 2; }
+#heat-play .ic { fill: currentColor; stroke: none; }
+
+.ms-stats { display: grid; gap: 8px; }
+.ms-stat { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; padding: 8px 12px; border-radius: 10px; background: var(--soft); border: 1px solid var(--line); }
+.ms-stat strong { color: var(--green-ink); }
+.ms-label { font-weight: 700; color: var(--muted); }
+.ms-note { font-size: 0.9rem; color: var(--muted); margin: 10px 0 0; }
+.ms-state { padding: 8px 12px; border-radius: 10px; margin: 0 0 10px; border: 1px solid var(--line); }
+.ms-stage0 { background: #f1f5f9; }
+.ms-stage1 { background: var(--right); border-color: var(--right-line); }
+.ms-stage2 { background: var(--yellow); border-color: var(--yellow-line); }
+.ms-stage3 { background: var(--wrong); border-color: var(--wrong-line); }
+
+.ms-try { background: var(--yellow); border: 1px solid var(--yellow-line); border-radius: 10px; padding: 10px 14px; margin: 8px 0 12px; }
+.ms-try p { margin: 0.2em 0; }
+.ms-try .ms-label { color: var(--amber); display: flex; align-items: center; gap: 6px; }
+.ic { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.ms-chaps { display: flex; flex-wrap: wrap; gap: 8px; }
+.ms-chap { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--line-2); border-radius: 10px; text-decoration: none; background: #fff; flex: 1 1 220px; }
+.ms-chap:hover { background: var(--soft); }
+.ms-teach ol { padding-inline-start: 1.3em; margin-bottom: 0; }
+
+/* animations (all off with reduced motion, below) */
+.ms-steam { animation: ms-rise var(--steam-time, 2s) ease-in infinite; }
+.ms-s2 { animation-delay: -0.7s; }
+.ms-s3 { animation-delay: -1.4s; }
+@keyframes ms-rise { from { transform: translateY(6px); opacity: 0; } 30% { opacity: 1; } to { transform: translateY(-26px); opacity: 0; } }
+.ms-rays { transform-origin: 262px 44px; animation: ms-turn 12s linear infinite; }
+@keyframes ms-turn { to { transform: rotate(360deg); } }
+.ms-flow { animation: ms-dash var(--flow-time, 3s) linear infinite; }
+@keyframes ms-dash { to { stroke-dashoffset: -32; } }
+.ms-fish { animation: ms-swim 2.4s ease-in-out infinite alternate; }
+.ms-f2 { animation-duration: 3.1s; }
+@keyframes ms-swim { from { transform: translateY(3px); } to { transform: translateY(-5px); } }
+.ms-tree { transition: opacity 0.4s; }
+.ms-dead { opacity: 0.18; }
+.ms-gust { animation: ms-gust var(--gust-time, 2s) linear infinite; }
+.ms-g2 { animation-delay: -0.5s; }
+.ms-g3 { animation-delay: -1s; }
+@keyframes ms-gust { from { transform: translateX(-50px); } to { transform: translateX(330px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-steam, .ms-rays, .ms-flow, .ms-fish, .ms-gust { animation: none; }
+  .ms-tree { transition: none; }
+  .ms-gust { transform: translateX(60px); }
+}
+
+@media (max-width: 760px) {
+  .ms-body { grid-template-columns: 1fr; }
+  .ms-hero-in { padding: 16px 16px 10px; }
+  .ms-hero h1 { font-size: 1.6rem; }
+}
+@media print {
+  .ms-hero { border: 0; box-shadow: none; }
+  .ms-hero-in { padding: 0; }
+  .ms-sim { break-inside: avoid; }
+}

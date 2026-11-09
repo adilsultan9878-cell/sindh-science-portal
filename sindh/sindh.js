@@ -358,6 +358,7 @@
         '<div class="sp-hero-in"><p class="eyebrow">' + esc(t('eyebrow')) + '</p><h1>' + esc(t('title')) + '</h1>' +
           '<p class="lead">' + esc(t('lead')) + '</p>' +
           '<div class="btn-row no-print"><a class="btn" href="#map">' + icon('map') + esc(t('seeMap')) + '</a>' +
+            '<a class="btn ghost" href="/mausam/">' + esc(L({ sd: 'ڊجيٽل موسم ليب', ur: 'ڈیجیٹل موسمی لیب', en: 'Digital weather lab' })) + '</a>' +
             '<button type="button" class="btn ghost" data-act="print">' + icon('printer') + esc(t('print')) + '</button></div></div>' +
       '</section>' +
       '<section class="card sp-mapcard" id="map" tabindex="-1">' +

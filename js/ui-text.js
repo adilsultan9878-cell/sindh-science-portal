@@ -409,6 +409,8 @@ Object.assign(window.UI_TEXT, {
   tfGame: { sd: 'صحيح يا غلط: 30 سيڪنڊ', ur: 'سچ یا جھوٹ: 30 سیکنڈ', en: 'True or false: 30 seconds' },
   tfGameText: { sd: '30 سيڪنڊن ۾ جيترا وڌيڪ جواب ڏئي سگهو، ڏيو.', ur: '30 سیکنڈ میں جتنے زیادہ جواب دے سکیں، دیں۔', en: 'Answer as many as you can in 30 seconds.' },
   sindhScience: { sd: 'سنڌ ۾ سائنس', ur: 'سندھ میں سائنس', en: 'Science in Sindh' },
+  mausamLab: { sd: 'ڊجيٽل موسم ليب', ur: 'ڈیجیٹل موسمی لیب', en: 'Digital weather lab' },
+  mausamShort: { sd: 'سلائيڊر ۽ اينيميشن: گرمي، سنڌو جو ڇوڙ ۽ هوا جي بجلي.', ur: 'سلائیڈر اور اینیمیشن: گرمی، سندھ ڈیلٹا اور ہوا کی بجلی۔', en: 'Animated sliders: heat, the Indus delta and wind power.' },
   sindhShort: { sd: 'سنڌ جون 12 جايون ۽ ڪتاب جا باب.', ur: 'سندھ کی 12 جگہیں اور کتاب کے ابواب۔', en: '12 places of Sindh and your book chapters.' },
   schoolTitle: { sd: 'اسڪول ڊيش بورڊ', ur: 'اسکول ڈیش بورڈ', en: 'School dashboard' },
   schoolText: { sd: 'هيڊ ماستر سڄي اسڪول جي ڪلاسن جا نتيجا هڪ هنڌ ڏسي سگهن ٿا.', ur: 'ہیڈ ماسٹر پورے اسکول کی کلاسوں کے نتائج ایک جگہ دیکھ سکتے ہیں۔', en: 'Head teachers see the results of all their school\'s classes in one place.' },

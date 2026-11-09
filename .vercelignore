@@ -4,5 +4,4 @@ extras-feature
 # pages still being built by other sessions; remove a line once its page is tested and wired in
 citizen
 league
-mausam
 js/citizen.js
