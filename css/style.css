@@ -711,3 +711,13 @@ footer::before {
 .foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding-top: 12px; padding-bottom: 16px; }
 .foot-base a { color: var(--muted); }
 @media (max-width: 860px) { .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .foot-about { grid-column: 1 / -1; } }
+/* worksheet: one submit button per question; below-50% notes */
+.ws-one { margin-inline-start: 8px; vertical-align: middle; min-height: 36px; padding: 4px 12px; }
+.ws-done { display: inline-flex; align-items: center; gap: 4px; margin-inline-start: 8px; color: var(--green-dark); font-weight: 600; font-size: 0.9rem; }
+.ws-need { display: block; color: var(--wrong-line); font-weight: 600; }
+.ws-item.is-done { background: var(--soft); outline: 1px solid var(--line-2); }
+.ws-count { margin: 6px 0 0; color: var(--green-dark); font-weight: 600; }
+.ws-count .ic, .ws-done .ic { width: 18px; height: 18px; }
+.low-score { border: 2px solid var(--yellow-line); background: var(--yellow); }
+.low-score h2 { display: flex; align-items: center; gap: 8px; margin-top: 0.1em; color: var(--amber); font-size: 1.15rem; }
+.low-score ul { margin: 0; }

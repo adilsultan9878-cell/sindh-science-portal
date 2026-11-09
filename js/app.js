@@ -100,10 +100,25 @@
       labels: p.labels || {},     // chapter key -> best % in "label the diagram"
       ws: p.ws || {},             // chapter key -> { score, total, at } when the worksheet was submitted
       exp: p.exp || {},           // chapter key -> { at } when the experiment was finished
+      retake: p.retake || [],     // [{ kind, key, pct, at }]: quizzes and worksheets under 50%, which are not saved as results
       last: p.last || null        // url of the last chapter page opened
     };
   }
   function saveProgress(p) { store.set('progress', p); }
+  // Below 50% a quiz or worksheet is not recorded (no score, no points, nothing to the teacher); it is only noted
+  // so the child sees it under "To try again". A pass at 50% or more removes the note.
+  var PASS_PCT = 50;
+  function noteRetake(kind, key, pct) {
+    var p = getProgress();
+    p.retake = p.retake.filter(function (r) { return !(r.kind === kind && r.key === key); });
+    if (pct < PASS_PCT) p.retake.unshift({ kind: kind, key: key, pct: pct, at: todayStr() });
+    p.retake = p.retake.slice(0, 30);
+    saveProgress(p);
+  }
+  function lowScoreHTML(pct, retryAct) {
+    return '<div class="card note low-score" role="status"><h2>' + icon('alert') + ' ' + esc(t('lowScoreTitle', { pct: pct })) + '</h2>' +
+      '<p>' + esc(t('lowScoreText')) + '</p><div class="next-row"><button type="button" class="btn" data-act="' + retryAct + '">' + icon('refresh') + esc(t('tryAgain')) + '</button></div></div>';
+  }
 
   /* ---------- text helpers ---------- */
 
@@ -1274,6 +1289,12 @@
         intro: guide(t('guideQuiz')) + '<p>' + esc(t('quizIntro')) + '</p>',
         onDone: function (r, out) {
           var pct = Math.round(100 * r.score / r.total);
+          noteRetake('quiz', ch._key, pct);
+          if (pct < PASS_PCT) {
+            out.innerHTML = lowScoreHTML(pct, 'retry');
+            out.querySelector('[data-act="retry"]').addEventListener('click', function () { start(); el.scrollIntoView(); });
+            return;
+          }
           var rec = recordQuiz(ch, r, pct);
           refreshStatus(ch);
           track('quiz', { chapter_key: ch._key, score: r.score, total: r.total });
@@ -1305,10 +1326,15 @@
     var w = ch.worksheet, n = w.match.length, key = ch._key, dkey = 'wsdraft.' + key;
     var bank = w.blanks.map(function (b) { return L(b.answer); }).sort();
     var order = w.match.map(function (m, i) { return (i + 2) % n; }); // column B is shuffled the same way every time
+    var doneItems = {}; // questions already submitted one by one: key ('b0', 't1', 'm2', 's0') -> true
+    function oneBtn(k) {
+      return '<button type="button" class="btn ghost small ws-one no-print" data-one="' + k + '">' + icon('check') + esc(t('wsCheckOne')) + '</button>';
+    }
     el.innerHTML =
       '<div class="no-print ws-tools">' + guide(t('wsDigitalHelp')) +
         '<div class="btn-row"><button type="button" class="btn ghost" data-act="print">' + icon('printer') + esc(t('printMine')) + '</button>' +
         '<button type="button" class="btn ghost" data-act="print-blank">' + icon('printer') + esc(t('printBlank')) + '</button></div>' +
+        '<p class="ws-count small"></p>' +
         '<p class="ws-saved muted small" aria-live="polite"></p></div>' +
       '<form class="worksheet ws-live" autocomplete="off" novalidate>' +
         '<header class="ws-head"><p class="ws-site">' + esc(t('siteName')) + '</p>' +
@@ -1319,22 +1345,22 @@
         '<section><h3>' + esc(t('wsBlanks')) + '</h3>' +
           '<p class="ws-bank"><b>' + esc(t('wsBank')) + '</b> ' + bank.map(esc).join(' · ') + '</p>' +
           '<ol>' + w.blanks.map(function (b, i) {
-            return '<li class="ws-item" data-k="b' + i + '">' + esc(L(b.text)).replace('____', '<input type="text" class="ws-blank" name="b' + i + '" aria-label="' + (i + 1) + '">') + '</li>';
+            return '<li class="ws-item" data-k="b' + i + '">' + esc(L(b.text)).replace('____', '<input type="text" class="ws-blank" name="b' + i + '" aria-label="' + (i + 1) + '">') + ' ' + oneBtn('b' + i) + '</li>';
           }).join('') + '</ol></section>' +
         '<section><h3>' + esc(t('wsTF')) + '</h3><ol>' + w.tf.map(function (x, i) {
           return '<li class="ws-item" data-k="t' + i + '"><span>' + esc(L(x.text)) + '</span><span class="tf-pick">' +
             '<label><input type="radio" name="t' + i + '" value="true"> ' + esc(t('tfTrue')) + '</label>' +
-            '<label><input type="radio" name="t' + i + '" value="false"> ' + esc(t('tfFalse')) + '</label></span></li>';
+            '<label><input type="radio" name="t' + i + '" value="false"> ' + esc(t('tfFalse')) + '</label></span>' + oneBtn('t' + i) + '</li>';
         }).join('') + '</ol></section>' +
         '<section><h3>' + esc(t('wsMatch')) + '</h3><div class="table-wrap"><table class="ws-match"><thead><tr><th>' + esc(t('colA')) + '</th><th>' + esc(t('colB')) + '</th></tr></thead><tbody>' +
           w.match.map(function (m, i) {
             return '<tr class="ws-item" data-k="m' + i + '"><td>' + (i + 1) + '. ' + esc(L(m.a)) + '</td><td><select name="m' + i + '" aria-label="' + esc(L(m.a)) + '">' +
               '<option value="">' + esc(t('choose')) + '</option>' + order.map(function (j) { return '<option value="' + j + '">' + esc(L(w.match[j].b)) + '</option>'; }).join('') +
-              '</select></td></tr>';
+              '</select> ' + oneBtn('m' + i) + '</td></tr>';
           }).join('') + '</tbody></table></div></section>' +
         '<section><h3>' + esc(t('wsShort')) + '</h3><ol>' + w.short.map(function (x, i) {
           return '<li class="ws-item" data-k="s' + i + '"><span>' + esc(L(x.q)) + '</span>' +
-            '<textarea name="s' + i + '" rows="3" placeholder="' + esc(t('typeAnswer')) + '"></textarea>' +
+            '<textarea name="s' + i + '" rows="3" placeholder="' + esc(t('typeAnswer')) + '"></textarea>' + oneBtn('s' + i) +
             '<p class="model" hidden><b>' + esc(t('modelAnswer')) + ':</b> ' + esc(L(x.a)) + '</p></li>';
         }).join('') + '</ol></section>' +
         '<section><h3>' + esc(t('wsDraw')) + '</h3><p>' + esc(L(w.draw)) + '</p>' +
@@ -1360,9 +1386,11 @@
       w.tf.forEach(function (x, i) { var c2 = form.querySelector('input[name="t' + i + '"]:checked'); d.t.push(c2 ? c2.value : ''); });
       w.match.forEach(function (x, i) { d.m.push(fld('m' + i).value); });
       w.short.forEach(function (x, i) { d.s.push(fld('s' + i).value); });
+      d.done = doneItems;
       return d;
     }
     function fill(d) {
+      doneItems = d.done || {};
       fld('name').value = d.name || '';
       fld('date').value = d.date || todayStr();
       (d.b || []).forEach(function (v, i) { if (fld('b' + i)) fld('b' + i).value = v; });
@@ -1374,6 +1402,52 @@
         img.onload = function () { ctx.drawImage(img, 0, 0); canvas.setAttribute('data-has', '1'); };
         img.src = d.draw;
       }
+      Object.keys(doneItems).forEach(function (k) { if (form.querySelector('[data-k="' + k + '"]')) { showMark(k, judge(k, d)); lockItem(k); } });
+      updateCount();
+    }
+
+    /* one question at a time: check it, show right or wrong, and keep it as it is */
+    var keys = [].concat(w.blanks.map(function (x, i) { return 'b' + i; }), w.tf.map(function (x, i) { return 't' + i; }),
+      w.match.map(function (x, i) { return 'm' + i; }), w.short.map(function (x, i) { return 's' + i; }));
+    function judge(k, d) {
+      var i = +k.slice(1);
+      if (k[0] === 'b') return { ok: LANGS.some(function (l) { return sameWord(d.b[i], w.blanks[i].answer[l]); }), right: L(w.blanks[i].answer) };
+      if (k[0] === 't') return { ok: d.t[i] === String(w.tf[i].answer), right: t(w.tf[i].answer ? 'tfTrue' : 'tfFalse') };
+      if (k[0] === 'm') return { ok: d.m[i] === String(i), right: L(w.match[i].b) };
+      return { self: true };   // short answers: the model answer is shown for the child to compare
+    }
+    function showMark(k, j) {
+      var it = form.querySelector('[data-k="' + k + '"]');
+      it.classList.remove('is-right', 'is-wrong');
+      var old = it.querySelector('.ws-fix'); if (old) old.remove();
+      if (j.self) { var m = it.querySelector('.model'); if (m) m.hidden = false; it.classList.add('is-done'); return; }
+      it.classList.add(j.ok ? 'is-right' : 'is-wrong');
+      if (!j.ok) it.insertAdjacentHTML('beforeend', '<small class="ws-fix">' + icon('check') + ' ' + esc(j.right) + '</small>');
+    }
+    function lockItem(k) {
+      var it = form.querySelector('[data-k="' + k + '"]');
+      [].forEach.call(it.querySelectorAll('input, select, textarea'), function (x) { x.disabled = true; });
+      var b = it.querySelector('.ws-one');
+      if (b) b.outerHTML = '<span class="ws-done no-print">' + icon('check') + esc(t('wsCheckedOne')) + '</span>';
+      var need = it.querySelector('.ws-need'); if (need) need.remove();
+    }
+    function updateCount() {
+      var box = el.querySelector('.ws-count'), nDone = Object.keys(doneItems).length;
+      if (box) box.innerHTML = nDone ? icon('check') + ' ' + esc(t('wsProgress', { n: nDone, m: keys.length })) : '';
+    }
+    function checkOne(k) {
+      var d = collect(), i = +k.slice(1), v = (d[k[0]] || [])[i], it = form.querySelector('[data-k="' + k + '"]');
+      if (!String(v || '').trim()) {
+        if (!it.querySelector('.ws-need')) it.insertAdjacentHTML('beforeend', '<small class="ws-need">' + esc(t('wsNeedAnswer')) + '</small>');
+        return;
+      }
+      showMark(k, judge(k, d));
+      lockItem(k);
+      doneItems[k] = true;
+      store.set(dkey, collect());   // saved at once, so a closed browser keeps it
+      saved.textContent = t('draftSaved', { time: timeNow() });
+      updateCount();
+      refreshStatus(ch);
     }
     var timer = null;
     function saveDraft() {
@@ -1423,15 +1497,11 @@
     function mark(d) {
       clearMarks();
       var good = 0, total = 0;
-      function res(k, ok, right) {
-        var it = form.querySelector('[data-k="' + k + '"]');
-        total++; if (ok) good++;
-        it.classList.add(ok ? 'is-right' : 'is-wrong');
-        if (!ok) it.insertAdjacentHTML('beforeend', '<small class="ws-fix">' + icon('check') + ' ' + esc(right) + '</small>');
-      }
-      w.blanks.forEach(function (b, i) { res('b' + i, LANGS.some(function (l) { return sameWord(d.b[i], b.answer[l]); }), L(b.answer)); });
-      w.tf.forEach(function (x, i) { res('t' + i, d.t[i] === String(x.answer), t(x.answer ? 'tfTrue' : 'tfFalse')); });
-      w.match.forEach(function (m, i) { res('m' + i, d.m[i] === String(i), L(m.b)); });
+      keys.forEach(function (k) {
+        var j = judge(k, d);
+        showMark(k, j);
+        if (!j.self) { total++; if (j.ok) good++; }
+      });
       form.querySelectorAll('.model').forEach(function (m) { m.hidden = false; });
       return { score: good, total: total };
     }
@@ -1449,7 +1519,15 @@
       var empty = d.b.concat(d.t, d.m, d.s).filter(function (v) { return !String(v).trim(); }).length;
       if (empty && !window.confirm(t('missingAnswers', { n: empty }))) return;
       store.set(dkey, d);
-      var r = mark(d), p = getProgress(), first = !p.ws[key];
+      var r = mark(d), pct = r.total ? Math.round(100 * r.score / r.total) : 100;
+      noteRetake('worksheet', key, pct);
+      if (pct < PASS_PCT) {             // not recorded: the child sees what was wrong, then starts the worksheet again
+        lock(true);
+        resultBox.innerHTML = lowScoreHTML(pct, 'ws-restart');
+        resultBox.scrollIntoView({ block: 'center' });
+        return;
+      }
+      var p = getProgress(), first = !p.ws[key];
       p.ws[key] = { score: r.score, total: r.total, at: todayStr() };
       if (window.Classroom) window.Classroom.report('worksheet', key, r.score, r.total);
       if (first) p.points += 5;
@@ -1462,11 +1540,17 @@
       resultBox.scrollIntoView({ block: 'center' });
     });
     el.addEventListener('click', function (e) {
+      var one = e.target.closest('[data-one]');
+      if (one) { checkOne(one.getAttribute('data-one')); return; }
       var b = e.target.closest('[data-act]');
       if (!b) return;
       var act = b.getAttribute('data-act');
       if (act === 'clear') { ctx.clearRect(0, 0, canvas.width, canvas.height); canvas.removeAttribute('data-has'); saveDraft(); }
-      if (act === 'edit') { lock(false); clearMarks(); resultBox.innerHTML = ''; }
+      if (act === 'edit') {
+        lock(false); clearMarks(); resultBox.innerHTML = '';
+        Object.keys(doneItems).forEach(function (k) { showMark(k, judge(k, collect())); lockItem(k); });
+      }
+      if (act === 'ws-restart') { store.set(dkey, null); render(false); return; }
       if (act === 'print' || act === 'print-blank') {
         track('worksheet', { chapter_key: key });
         if (act === 'print-blank') document.body.classList.add('print-blank');
@@ -2113,6 +2197,12 @@
           return '<div class="card score-row"><a class="score-title" href="' + chUrl(ch) + '">' + thumb(ch) + '<span>' + esc(chLabel(ch)) + '</span></a>' +
             statusHTML(ch, true) + '</div>';
         }).join('') + '</div>' +
+        (p.retake.length ? '<section class="card note low-score"><h2>' + icon('refresh') + ' ' + esc(t('retakeTitle')) + '</h2><ul>' + p.retake.map(function (r) {
+          var ch = chs.filter(function (c) { return c._key === r.key; })[0];
+          if (!ch) return '';
+          var what = t(r.kind === 'quiz' ? 'tab_quiz' : 'tab_worksheet') + ' · ' + L(ch.title);
+          return '<li><a href="' + chUrl(ch, r.kind === 'quiz' ? 'quiz' : 'worksheet') + '">' + esc(t('retakeRow', { what: what, pct: r.pct, date: r.at })) + '</a></li>';
+        }).join('') + '</ul></section>' : '') +
         '<h2>' + esc(t('weakTitle')) + '</h2>' + (weakRows.length ? '<ul>' + weakRows.join('') + '</ul>' : '<p>' + esc(t('noWeak')) + '</p>') +
         '<p class="muted">' + icon('lock') + ' ' + esc(t('deviceNote')) + '</p>' +
         '<p><button type="button" class="btn ghost danger" data-act="reset">' + esc(t('reset')) + '</button></p>';
