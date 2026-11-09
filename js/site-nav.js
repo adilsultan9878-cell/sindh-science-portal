@@ -1,40 +1,64 @@
-/* The main site's menu on the separate pages (question paper, teacher's class, video guides), so the whole
-   portal works as one website. Labels come from ui-text.js in the language chosen on the site.
+/* The main site's menu on the separate pages (question paper, teacher's class, Sindh pages, videos …), so the whole
+   portal works as one website: the same five main links (bottom bar on phones) and the same "More" menu as js/app.js.
+   Labels come from ui-text.js in the language chosen on the site.
    Use: <script src="/js/site-nav.js" data-current="/teachers" defer></script> after ui-text.js. */
 (function () {
   'use strict';
 
-  var LINKS = [['/', 'home'], ['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/competition', 'competition'],
-    ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
-  // the signed-in student's name replaces "Log in" (account saved by js/student.js)
-  function studentName() {
-    try { var s = JSON.parse(localStorage.getItem('ssp1.student')); return s && s.token ? s.name : ''; } catch (e) { return ''; }
-  }
+  var ICONS = {
+    home: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+    lesson: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h7"/>',
+    game: '<rect x="3" y="7" width="18" height="11" rx="4"/><path d="M8 11v3M6.5 12.5h3M15 12h.01M17 14h.01"/>',
+    video: '<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>',
+    star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+    list: '<path d="M4 6h16M4 12h16M4 18h16"/>'
+  };
   var current = (document.currentScript && document.currentScript.getAttribute('data-current')) || '';
 
   function lang() {
     try { var l = JSON.parse(localStorage.getItem('ssp1.lang')); return ['sd', 'ur', 'en'].indexOf(l) >= 0 ? l : 'sd'; } catch (e) { return 'sd'; }
   }
+  // the signed-in student (account saved by js/student.js)
+  function student() {
+    try { var s = JSON.parse(localStorage.getItem('ssp1.student')); return s && s.token ? s : null; } catch (e) { return null; }
+  }
   function esc(s) {
     return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
   }
+  function icon(n) { return '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + ICONS[n] + '</svg>'; }
   function draw() {
     var top = document.querySelector('header.top'), UI = window.UI_TEXT;
     if (!top || !UI) return;
-    var l = lang(), nav = top.querySelector('.site-nav');
-    if (!nav) {
-      nav = document.createElement('nav');
-      nav.className = 'wrap nav site-nav no-print';
-      top.appendChild(nav);
+    var l = lang(), s = student();
+    function t(k) { var o = UI[k]; return o ? (o[l] || o.en) : k; }
+    function cur(href) { return href === current || (current && href.indexOf(current) === 0) ? ' aria-current="page"' : ''; }
+    var main = [['/', 'home', 'home', 'home'], ['/class-5/science', 'learn', 'tabLearn', 'lesson'], ['/games', 'gamesTitle', 'tabPlay', 'game'],
+      ['/watch', 'videosTitle', 'tabWatch', 'video'], [s ? '/progress' : '/login', s ? 'progress' : 'loginTitle', 'tabMe', 'star']];
+    var more = [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
+      ['/sindh/', 'sindhScience'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
+
+    var row = top.querySelector('.top-row');
+    var menu = top.querySelector('.more-menu');
+    if (!menu && row) { menu = document.createElement('details'); menu.className = 'more-menu'; row.appendChild(menu); }
+    if (menu) {
+      menu.innerHTML = '<summary>' + icon('list') + '<span>' + esc(t('more')) + '</span></summary><div class="more-panel">' + more.map(function (x) {
+        return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + esc(x[0] === '/login' && s ? s.name : t(x[1])) + '</a>';
+      }).join('') + '</div>';
     }
-    nav.setAttribute('aria-label', (UI.menu && UI.menu[l]) || 'Menu');
-    nav.innerHTML = LINKS.map(function (x) {
-      var s = UI[x[1]], text = (x[0] === '/login' && studentName()) || (s ? (s[l] || s.en) : x[1]);
-      return '<a href="' + x[0] + '"' + (x[0] === current ? ' aria-current="page"' : '') + '>' + esc(text) + '</a>';
-    }).join('');
+    var nav = top.querySelector('.site-nav');
+    if (!nav) { nav = document.createElement('nav'); nav.className = 'wrap nav site-nav no-print'; top.appendChild(nav); }
+    nav.setAttribute('aria-label', t('menu'));
+    nav.innerHTML = main.map(function (x) { return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + esc(x[0] === '/progress' && s ? s.name : t(x[1])) + '</a>'; }).join('');
+    var bar = document.querySelector('.tabbar');
+    if (!bar) { bar = document.createElement('nav'); bar.className = 'tabbar no-print'; document.body.appendChild(bar); }
+    bar.setAttribute('aria-label', t('menu'));
+    bar.innerHTML = main.map(function (x) { return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + icon(x[3]) + '<span>' + esc(t(x[2])) + '</span></a>'; }).join('');
   }
-  // the pages switch language themselves; redraw the menu after they have saved the new choice
   document.addEventListener('click', function (e) {
+    document.querySelectorAll('details.more-menu[open]').forEach(function (d) {
+      if (!d.contains(e.target) || e.target.closest('a')) d.removeAttribute('open');
+    });
+    // the pages switch language themselves; redraw the menu after they have saved the new choice
     if (e.target.closest && e.target.closest('[data-setlang], [data-lang]')) setTimeout(draw, 60);
   });
   draw();

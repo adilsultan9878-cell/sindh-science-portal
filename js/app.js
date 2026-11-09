@@ -439,10 +439,18 @@
     if (href === '/') return p === '/';
     return p === href || p.indexOf(href + '/') === 0;
   }
+  // Five main places (top menu on computers, bottom bar on phones); everything else sits under "More".
+  function mainLinks(student) {
+    return [['/', 'home', 'home', 'home'], ['/class-5/science', 'learn', 'tabLearn', 'lesson'], ['/games', 'gamesTitle', 'tabPlay', 'game'],
+      ['/watch', 'videosTitle', 'tabWatch', 'video'], [student ? '/progress' : '/login', student ? 'progress' : 'loginTitle', 'tabMe', 'star']];
+  }
+  function moreLinks() {
+    return [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
+      ['/sindh/', 'sindhScience'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
+  }
   function renderFrame() {
-    var links = [['/', 'home'], ['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/competition', 'competition'],
-      ['/progress', 'progress'], ['/glossary', 'glossary'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
     var student = window.Student && window.Student.current();
+    var links = mainLinks(student);
     var offline = state.lang && navigator.onLine === false;
     document.getElementById('top').innerHTML = (offline ? '<p class="offline-note" role="status">' + icon('offline') + ' ' + esc(t('offlineNote')) + '</p>' : '') +
       '<div class="wrap top-row">' +
@@ -453,11 +461,17 @@
           '<button type="button" class="zoom-btn" data-zoom="1" aria-label="' + esc(t('bigger')) + '" title="' + esc(t('bigger')) + '">A+</button></div>' : '') +
         '<div class="langs" role="group" aria-label="Language / ٻولي / زبان">' + LANGS.map(function (l) {
           return '<button type="button" class="lang-btn" data-setlang="' + l + '" lang="' + l + '" aria-pressed="' + (state.lang === l) + '">' + LANG_NAMES[l] + '</button>';
-        }).join('') + '</div></div>' +
+        }).join('') + '</div>' +
+        (state.lang ? '<details class="more-menu"><summary>' + icon('list') + '<span>' + esc(t('more')) + '</span></summary><div class="more-panel">' + moreLinks().map(function (x) {
+          var label = x[0] === '/login' && student ? student.name : t(x[1]);
+          return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(label) + '</a>';
+        }).join('') + '</div></details>' : '') + '</div>' +
       '</div>' +
       (state.lang ? '<nav class="wrap nav" aria-label="' + esc(t('menu')) + '">' + links.map(function (x) {
-        var label = x[0] === '/login' && student ? student.name : t(x[1]);
-        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + (x[0] === '/login' ? ' class="nav-login"' : '') + '>' + esc(label) + '</a>';
+        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(x[0] === '/progress' && student ? student.name : t(x[1])) + '</a>';
+      }).join('') + '</nav>' +
+      '<nav class="tabbar no-print" aria-label="' + esc(t('menu')) + '">' + links.map(function (x) {
+        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + icon(x[3]) + '<span>' + esc(t(x[2])) + '</span></a>';
       }).join('') + '</nav>' : '');
     document.getElementById('foot').innerHTML = state.lang ?
       '<div class="wrap foot-grid">' +
@@ -523,6 +537,9 @@
   function go(url) { history.pushState(null, '', url); render(true); }
 
   document.addEventListener('click', function (e) {
+    document.querySelectorAll('details.more-menu[open]').forEach(function (d) {
+      if (!d.contains(e.target) || e.target.closest('a')) d.removeAttribute('open');
+    });
     var b = e.target.closest('[data-setlang]');
     if (b) {
       state.lang = b.getAttribute('data-setlang');
@@ -530,6 +547,9 @@
       render(false);
       return;
     }
+    var gslot = document.getElementById('guide-slot');
+    if (gslot && e.target.closest('[data-act="guide-ok"]')) { store.set('guideSeen', true); gslot.innerHTML = ''; return; }
+    if (gslot && e.target.closest('[data-act="guide"]')) { if (!gslot.innerHTML) gslot.innerHTML = guideHTML(); gslot.scrollIntoView({ block: 'start' }); return; }
     var sb = e.target.closest('.say');
     if (sb) { speak(sb); return; }
     var zb = e.target.closest('.zoom-btn');
@@ -595,43 +615,55 @@
             '<p class="eyebrow">' + esc(t('heroStats', { c: chs.length, q: qCount })) + '</p>' +
             '<h1>' + esc(t('welcomeTitle')) + '</h1>' +
             '<p class="lead">' + esc(t('welcomeText')) + '</p>' +
-            '<div class="btn-row"><a class="btn big" href="/class-5/science">' + esc(t('startLearning')) + '</a>' +
-              '<a class="btn ghost big" href="/teachers">' + esc(t('forTeachers')) + '</a></div>' +
+            '<div class="btn-row">' + (last
+              ? '<a class="btn big" href="' + esc(p.last) + '">' + esc(t('continueLearning')) + ': ' + esc(L(last.title)) + '</a>'
+              : '<a class="btn big" href="' + subjUrl + '">' + esc(t('startLearning')) + '</a>') +
+              '<button type="button" class="btn ghost big" data-act="guide">' + icon('bulb') + esc(t('guideOpen')) + '</button></div>' +
           '</div>' +
           (pics.length === 4 ? '<div class="hero-pics" aria-hidden="true">' + pics.map(function (ch) {
             return '<img src="' + window.PICTURES[ch.id].src + '" alt="" width="200" height="200" decoding="async">';
           }).join('') + '</div>' : '') +
         '</section>' +
-        (last ? '<a class="card continue" href="' + esc(p.last) + '">' + thumb(last) +
-          '<span class="continue-body"><small class="muted">' + esc(t('continueLearning')) + '</small><strong>' + esc(chLabel(last)) + '</strong>' +
-          progressBar(chapterStatus(last, p).pct) + '</span>' + icon('next', 'flip') + '</a>' : '') +
+        '<div id="guide-slot">' + (store.get('guideSeen', false) ? '' : guideHTML()) + '</div>' +
+        '<div class="actions">' +
+          actionTile(subjUrl, 'lesson', 'learn') + actionTile('/watch', 'video', 'videosTitle') +
+          actionTile('/games', 'game', 'gamesTitle') + actionTile('/ustad/', 'bulb', 'ustadTitle') +
+        '</div>' +
         '<div class="sec-head"><h2>' + esc(L(cat.classes.filter(function (c) { return c.active; })[0].name)) + ' ' + esc(t('learn')) + '</h2>' +
           '<a href="' + subjUrl + '">' + esc(t('allChapters')) + icon('next', 'flip') + '</a></div>' +
-        '<div class="ch-strip">' + chs.map(function (ch) {
+        '<div class="ch-strip ch-scroll">' + chs.map(function (ch) {
           return '<a class="card ch-mini" href="' + chUrl(ch) + '">' + thumb(ch) + '<span><small class="eyebrow">' + esc(t('chapterN', { n: ch.number })) + '</small>' +
             '<strong>' + esc(L(ch.title)) + '</strong>' + progressBar(chapterStatus(ch, p).pct) + '</span></a>';
         }).join('') + '</div>' +
         '<section class="card daily" id="daily"></section>' +
+        '<div class="sec-head"><h2>' + esc(t('sindhShelf')) + '</h2><a href="/sindh/">' + esc(t('sindhScience')) + icon('next', 'flip') + '</a></div>' +
+        '<div class="shelf">' +
+          shelfTile('/lok/', 'lesson', 'lokScience') + shelfTile('/sindh/mohenjo-daro/', 'map', 'mohenjoLab') +
+          shelfTile('/mausam/', 'sun', 'mausamLab') + shelfTile('/sindh/dolphin/', 'game', 'dolphinGame') +
+          shelfTile('/sindh/my-sindh/', 'map', 'mySindh') + shelfTile('/sindh/', 'map', 'sindhScience') +
+        '</div>' +
         '<div id="stars-slot"></div>' +
-        '<h2>' + esc(t('more')) + '</h2>' +
-        '<div class="grid">' +
-          quickLink('/ustad/', 'lesson', 'ustadTitle', 'ustadShort') +
-          quickLink('/sindh/', 'map', 'sindhScience', 'sindhShort') +
-          quickLink('/mausam/', 'sun', 'mausamLab', 'mausamShort') +
-          quickLink('/lok/', 'lesson', 'lokScience', 'lokShort') +
-          quickLink('/sindh/my-sindh/', 'map', 'mySindh', 'mySindhText') +
-          quickLink('/sindh/mohenjo-daro/', 'map', 'mohenjoLab', 'mohenjoShort') +
-          quickLink('/sindh/dolphin/', 'game', 'dolphinGame', 'dolphinShort') +
-          quickLink('/watch', 'video', 'videosTitle', 'videosShort') +
-          quickLink('/games', 'game', 'gamesTitle', 'gamesShort') +
-          quickLink('/competition', 'trophy', 'competition', 'compShort') +
-          quickLink('/glossary', 'words', 'glossary', 'glossShort') +
-          quickLink('/progress', 'star', 'progress', 'progShort') +
-          quickLink('/teachers', 'users', 'teachers', 'teachShort') +
-        '</div>';
+        '<nav class="mini-links" aria-label="' + esc(t('more')) + '">' +
+          [['/competition', 'trophy', 'competition'], ['/progress', 'star', 'progress'], ['/glossary', 'words', 'glossary'], ['/teachers', 'users', 'teachers']].map(function (x) {
+            return '<a href="' + x[0] + '">' + icon(x[1]) + esc(t(x[2])) + '</a>';
+          }).join('') +
+        '</nav>';
       renderDaily(document.getElementById('daily'), chs);
       if (window.Stars) window.Stars.mount(document.getElementById('stars-slot'));
     });
+  }
+  // First-visit help: the three steps of the site, in plain words.
+  function guideHTML() {
+    return '<section class="card guide-steps" aria-labelledby="guide-title"><h2 id="guide-title">' + icon('bulb') + ' ' + esc(t('guideTitle')) + '</h2><ol>' +
+      [['lesson', 'guide1t', 'guide1'], ['play', 'guide2t', 'guide2'], ['trophy', 'guide3t', 'guide3']].map(function (s) {
+        return '<li><span class="step-ic">' + icon(s[0]) + '</span><span><strong>' + esc(t(s[1])) + '</strong><span class="muted">' + esc(t(s[2])) + '</span></span></li>';
+      }).join('') + '</ol><button type="button" class="btn" data-act="guide-ok">' + icon('check') + esc(t('guideOk')) + '</button></section>';
+  }
+  function actionTile(href, iconName, titleKey) {
+    return '<a class="action" href="' + href + '"><span class="action-ic">' + icon(iconName) + '</span><strong>' + esc(t(titleKey)) + '</strong></a>';
+  }
+  function shelfTile(href, iconName, titleKey) {
+    return '<a class="card shelf-tile" href="' + href + '"><span class="icon-tile">' + icon(iconName) + '</span><strong>' + esc(t(titleKey)) + '</strong></a>';
   }
   function quickLink(href, iconName, titleKey, textKey) {
     return '<a class="card quick" href="' + href + '"><span class="icon-tile">' + icon(iconName) + '</span><span><strong>' + esc(t(titleKey)) + '</strong><span class="muted">' + esc(t(textKey)) + '</span></span></a>';
