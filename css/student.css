@@ -1,5 +1,6 @@
 /* Student login page and the signed-in card (js/student.js). Colours and fonts from style.css. */
-.stu-card { max-width: 480px; }
+.stu-card { max-width: 480px; margin: 12px auto 24px; }   /* in the middle of the page, not in a corner */
+.stu-card > h2, .stu-card > p:first-of-type { text-align: center; }
 .stu-card h1 { margin-top: 0.1em; font-size: 1.5rem; }
 .stu-tabs { display: flex; gap: 0; margin: 12px 0 14px; border: 1px solid var(--line-2); border-radius: var(--radius); overflow: hidden; }
 .stu-tabs .tab { flex: 1; justify-content: center; font: inherit; font-weight: 600; background: #fff; border: 0; border-bottom: 0; padding: 10px; cursor: pointer; color: var(--muted); }
