@@ -292,6 +292,38 @@
     html += '<p class="muted small">' + esc(T('privacy')) + '</p>' + printCard(sc);
     main.innerHTML = html;
     bindHome();
+    citizenPart();
+  }
+
+  // Sindh Citizen Science (/citizen/): rain, trees, birds and temperature that this school's classes sent with their class code
+  var CZ = {
+    title: { sd: 'سٽيزن سائنس: اسان جي ڪلاسن جو ڊيٽا', ur: 'سٹیزن سائنس: ہماری کلاسوں کا ڈیٹا', en: 'Citizen Science: data from our classes' },
+    help: { sd: 'ٻار /citizen/ تي ماپ موڪليندي ڪلاس ڪوڊ لکن ته اهو هتي ايندو.', ur: 'بچے /citizen/ پر پیمائش بھیجتے وقت کلاس کوڈ لکیں تو یہاں نظر آئے گا۔', en: 'When children send a reading on /citizen/ with their class code, it shows here.' },
+    rain: { sd: 'مينهن جا ماپ', ur: 'بارش کی پیمائشیں', en: 'Rain readings' },
+    tree: { sd: 'وڻ پوکيا', ur: 'درخت لگائے', en: 'Trees planted' },
+    bird: { sd: 'پکي ڏٺا', ur: 'پرندے دیکھے', en: 'Birds seen' },
+    temp: { sd: 'گرمي جا ماپ', ur: 'درجۂ حرارت کی پیمائشیں', en: 'Temperature readings' },
+    recent: { sd: 'تازا ماپ', ur: 'تازہ پیمائشیں', en: 'Latest readings' },
+    open: { sd: 'سٽيزن سائنس کوليو', ur: 'سٹیزن سائنس کھولیں', en: 'Open Citizen Science' }
+  };
+  function citizenPart() {
+    var shown = openSchool;
+    rpc('citizen_school', { p_school: shown.code, p_key: shown.key }).then(function (d) {
+      if (openSchool !== shown || !d || !(d.classes || []).length) return;
+      var units = { rain: ' mm', temp: ' °C', tree: '', bird: '' }, icons = { rain: '🌧️', tree: '🌳', bird: '🐦', temp: '🌡️' };
+      var html = '<section class="card" id="cz-school"><h2>🔬 ' + esc(L(CZ.title)) + '</h2><p class="muted small">' + esc(L(CZ.help)) + '</p>' +
+        '<div class="table-wrap"><table class="table sc-table"><thead><tr><th>' + esc(T('className')) + '</th><th>' + esc(L(CZ.rain)) + '</th><th>' + esc(L(CZ.tree)) +
+        '</th><th>' + esc(L(CZ.bird)) + '</th><th>' + esc(L(CZ.temp)) + '</th><th>' + esc(T('lastActive')) + '</th></tr></thead><tbody>' +
+        d.classes.map(function (c) {
+          return '<tr><td><strong>' + esc(c.name) + '</strong></td><td>' + c.rain + '</td><td>' + c.tree + '</td><td>' + c.bird + '</td><td>' + c.temp + '</td><td class="ltr">' + esc(day(c.last)) + '</td></tr>';
+        }).join('') + '</tbody></table></div>' +
+        '<h3>' + esc(L(CZ.recent)) + '</h3><ul class="sc-weak">' + (d.recent || []).slice(0, 10).map(function (r) {
+          return '<li>' + icons[r.project] + ' <strong>' + esc(r.class) + '</strong> · ' + esc(r.nickname) + ' · ' + esc(cityName(r.district)) + ' · <span class="ltr">' +
+            esc(r.value + (units[r.project] || '')) + (r.species ? ' ' + esc(r.species.replace(/_/g, ' ')) : '') + ' · ' + esc(r.date) + '</span></li>';
+        }).join('') + '</ul><p class="no-print"><a class="btn ghost small" href="/citizen/">' + esc(L(CZ.open)) + '</a></p></section>';
+      var pc = main.querySelector('.print-card');
+      if (pc) pc.insertAdjacentHTML('beforebegin', html); else main.insertAdjacentHTML('beforeend', html);
+    }).catch(function () { /* the dashboard works without this part */ });
   }
   function tile(n, label) { return '<div class="card"><b>' + esc(n) + '</b><span>' + esc(label) + '</span></div>'; }
 

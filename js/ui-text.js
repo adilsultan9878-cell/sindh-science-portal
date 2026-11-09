@@ -258,6 +258,8 @@ window.UI_TEXT = {
 
   notFound: { sd: 'هي صفحو نه مليو.', ur: 'یہ صفحہ نہیں ملا۔', en: 'This page was not found.' },
   loadError: { sd: 'ڪجهه غلط ٿي ويو. انٽرنيٽ چيڪ ڪري صفحو ٻيهر کوليو.', ur: 'کچھ غلط ہو گیا۔ انٹرنیٹ چیک کر کے صفحہ دوبارہ کھولیں۔', en: 'Something went wrong. Check your internet and open the page again.' },
+  citizenTitle: { sd: 'سٽيزن سائنس', ur: 'سٹیزن سائنس', en: 'Citizen Science' },
+  citizenShort: { sd: 'مينهن، وڻ، پکي ۽ گرمي ماپيو ۽ سنڌ جي نقشي تي وجهو', ur: 'بارش، درخت، پرندے اور گرمی ناپیں اور سندھ کے نقشے پر ڈالیں', en: 'Measure rain, trees, birds and heat and put them on the map of Sindh' },
   goHome: { sd: 'گهر ڏانهن وڃو', ur: 'ہوم پر جائیں', en: 'Go to Home' }
 };
 

@@ -446,7 +446,7 @@
   }
   function moreLinks() {
     return [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
-      ['/sindh/', 'sindhScience'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
+      ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
   }
   function renderFrame() {
     var student = window.Student && window.Student.current();
@@ -564,7 +564,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|school|lok|mausam|ustad)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|citizen|school|lok|mausam|ustad)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -639,7 +639,7 @@
         '<div class="sec-head"><h2>' + esc(t('sindhShelf')) + '</h2><a href="/sindh/">' + esc(t('sindhScience')) + icon('next', 'flip') + '</a></div>' +
         '<div class="shelf">' +
           shelfTile('/lok/', 'lesson', 'lokScience') + shelfTile('/sindh/mohenjo-daro/', 'map', 'mohenjoLab') +
-          shelfTile('/mausam/', 'sun', 'mausamLab') +
+          shelfTile('/mausam/', 'sun', 'mausamLab') + shelfTile('/citizen/', 'map', 'citizenTitle') +
           shelfTile('/sindh/my-sindh/', 'map', 'mySindh') + shelfTile('/sindh/', 'map', 'sindhScience') +
         '</div>' +
         '<nav class="mini-links" aria-label="' + esc(t('more')) + '">' +
