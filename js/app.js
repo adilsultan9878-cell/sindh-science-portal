@@ -577,6 +577,10 @@
       render(false);
       return;
     }
+    // profile picture: open the avatar choices, or pick one (kept on the phone and in the student's account)
+    if (e.target.closest('[data-act="pf-dp"]')) { var box = document.querySelector('.pf-avatars'); if (box) box.hidden = !box.hidden; return; }
+    var av = e.target.closest('[data-avatar]');
+    if (av) { store.set('avatar', av.getAttribute('data-avatar')); render(false); return; }
     var gslot = document.getElementById('guide-slot');
     if (gslot && e.target.closest('[data-act="guide-ok"]')) { store.set('guideSeen', true); gslot.innerHTML = ''; return; }
     if (gslot && e.target.closest('[data-act="guide"]')) { if (!gslot.innerHTML) gslot.innerHTML = guideHTML(); gslot.scrollIntoView({ block: 'start' }); return; }
@@ -1333,9 +1337,12 @@
     var w = ch.worksheet, n = w.match.length, key = ch._key, dkey = 'wsdraft.' + key;
     var bank = w.blanks.map(function (b) { return L(b.answer); }).sort();
     var order = w.match.map(function (m, i) { return (i + 2) % n; }); // column B is shuffled the same way every time
-    var doneItems = {}; // questions already submitted one by one: key ('b0', 't1', 'm2', 's0') -> true
-    function oneBtn(k) {
-      return '<button type="button" class="btn ghost small ws-one no-print" data-one="' + k + '">' + icon('check') + esc(t('wsCheckOne')) + '</button>';
+    var doneItems = {}; // questions already submitted, a section at a time: key ('b0', 't1', 'm2', 's0', 'd') -> true
+    function oneBtn() { return ''; } // questions are now submitted a whole section (A, B, C …) at a time, see secHead
+    // Section heading with its own submit button, which works once every question of the section has an answer.
+    function secHead(sec, titleKey) {
+      return '<div class="ws-sec-head"><h3>' + esc(t(titleKey)) + '</h3><span class="ws-sec-tools no-print"><span class="ws-sec-count" data-sec-count="' + sec + '"></span>' +
+        '<button type="button" class="btn small ws-sec-btn" data-sec-submit="' + sec + '" disabled>' + icon('check') + esc(t('wsCheckOne')) + '</button></span></div>';
     }
     el.innerHTML =
       '<div class="no-print ws-tools">' + guide(t('wsDigitalHelp')) +
@@ -1349,28 +1356,28 @@
           '<p>' + esc(L(c.name)) + ' · ' + esc(L(s.name)) + ' · ' + esc(t('chapterN', { n: ch.number })) + '</p>' +
           '<div class="ws-fields"><label>' + esc(t('wsName')) + ': <input type="text" name="name" maxlength="40"></label>' +
           '<label>' + esc(t('wsDate')) + ': <input type="text" name="date" maxlength="20"></label></div></header>' +
-        '<section><h3>' + esc(t('wsBlanks')) + '</h3>' +
+        '<section data-sec="b">' + secHead('b', 'wsBlanks') +
           '<p class="ws-bank"><b>' + esc(t('wsBank')) + '</b> ' + bank.map(esc).join(' · ') + '</p>' +
           '<ol>' + w.blanks.map(function (b, i) {
             return '<li class="ws-item" data-k="b' + i + '">' + esc(L(b.text)).replace('____', '<input type="text" class="ws-blank" name="b' + i + '" aria-label="' + (i + 1) + '">') + ' ' + oneBtn('b' + i) + '</li>';
           }).join('') + '</ol></section>' +
-        '<section><h3>' + esc(t('wsTF')) + '</h3><ol>' + w.tf.map(function (x, i) {
+        '<section data-sec="t">' + secHead('t', 'wsTF') + '<ol>' + w.tf.map(function (x, i) {
           return '<li class="ws-item" data-k="t' + i + '"><span>' + esc(L(x.text)) + '</span><span class="tf-pick">' +
             '<label><input type="radio" name="t' + i + '" value="true"> ' + esc(t('tfTrue')) + '</label>' +
             '<label><input type="radio" name="t' + i + '" value="false"> ' + esc(t('tfFalse')) + '</label></span>' + oneBtn('t' + i) + '</li>';
         }).join('') + '</ol></section>' +
-        '<section><h3>' + esc(t('wsMatch')) + '</h3><div class="table-wrap"><table class="ws-match"><thead><tr><th>' + esc(t('colA')) + '</th><th>' + esc(t('colB')) + '</th></tr></thead><tbody>' +
+        '<section data-sec="m">' + secHead('m', 'wsMatch') + '<div class="table-wrap"><table class="ws-match"><thead><tr><th>' + esc(t('colA')) + '</th><th>' + esc(t('colB')) + '</th></tr></thead><tbody>' +
           w.match.map(function (m, i) {
             return '<tr class="ws-item" data-k="m' + i + '"><td>' + (i + 1) + '. ' + esc(L(m.a)) + '</td><td><select name="m' + i + '" aria-label="' + esc(L(m.a)) + '">' +
               '<option value="">' + esc(t('choose')) + '</option>' + order.map(function (j) { return '<option value="' + j + '">' + esc(L(w.match[j].b)) + '</option>'; }).join('') +
               '</select> ' + oneBtn('m' + i) + '</td></tr>';
           }).join('') + '</tbody></table></div></section>' +
-        '<section><h3>' + esc(t('wsShort')) + '</h3><ol>' + w.short.map(function (x, i) {
+        '<section data-sec="s">' + secHead('s', 'wsShort') + '<ol>' + w.short.map(function (x, i) {
           return '<li class="ws-item" data-k="s' + i + '"><span>' + esc(L(x.q)) + '</span>' +
             '<textarea name="s' + i + '" rows="3" placeholder="' + esc(t('typeAnswer')) + '"></textarea>' + oneBtn('s' + i) +
             '<p class="model" hidden><b>' + esc(t('modelAnswer')) + ':</b> ' + esc(L(x.a)) + '</p></li>';
         }).join('') + '</ol></section>' +
-        '<section><h3>' + esc(t('wsDraw')) + '</h3><p>' + esc(L(w.draw)) + '</p>' +
+        '<section data-sec="d">' + secHead('d', 'wsDraw') + '<p>' + esc(L(w.draw)) + '</p>' +
           '<div class="draw-box"><canvas class="draw" width="900" height="380" aria-label="' + esc(t('wsDraw')) + '"></canvas></div>' +
           '<p class="no-print draw-tools"><span class="muted small">' + esc(t('drawHere')) + '</span> <button type="button" class="btn ghost small" data-act="clear">' + icon('refresh') + esc(t('clearDraw')) + '</button></p></section>' +
         '<div class="ws-submit no-print"><button type="submit" class="btn big">' + icon('save') + esc(t('submitWs')) + '</button>' +
@@ -1411,6 +1418,44 @@
       }
       Object.keys(doneItems).forEach(function (k) { if (form.querySelector('[data-k="' + k + '"]')) { showMark(k, judge(k, d)); lockItem(k); } });
       updateCount();
+      updateSections();
+    }
+
+    /* one section at a time: the section's button works once all its questions have answers */
+    function secKeys(sec) { return sec === 'd' ? ['d'] : keys.filter(function (k) { return k[0] === sec; }); }
+    function filled(k, d) {
+      if (k === 'd') return !!canvas.getAttribute('data-has');
+      return String((d[k[0]] || [])[+k.slice(1)] || '').trim() !== '';
+    }
+    function updateSections() {
+      var d = collect();
+      ['b', 't', 'm', 's', 'd'].forEach(function (sec) {
+        var btn = form.querySelector('[data-sec-submit="' + sec + '"]'), count = form.querySelector('[data-sec-count="' + sec + '"]');
+        if (!btn && !count) return;
+        var ks = secKeys(sec), n = ks.filter(function (k) { return filled(k, d); }).length, done = ks.every(function (k) { return doneItems[k]; });
+        if (done) {
+          var box = form.querySelector('[data-sec="' + sec + '"] .ws-sec-tools');
+          if (box) box.innerHTML = '<span class="ws-done">' + icon('check') + esc(t('wsCheckedOne')) + '</span>';
+          return;
+        }
+        if (count) count.textContent = sec === 'd' ? '' : n + ' / ' + ks.length;
+        if (btn) btn.disabled = n < ks.length;
+      });
+    }
+    function submitSection(sec) {
+      var d = collect(), ks = secKeys(sec);
+      if (!ks.every(function (k) { return filled(k, d); })) return;
+      ks.forEach(function (k) {
+        doneItems[k] = true;
+        if (k === 'd') { canvas.classList.add('locked'); return; }
+        showMark(k, judge(k, d));
+        lockItem(k);
+      });
+      store.set(dkey, collect());   // saved at once, so a closed browser keeps it
+      saved.textContent = t('draftSaved', { time: timeNow() });
+      updateCount();
+      updateSections();
+      refreshStatus(ch);
     }
 
     /* one question at a time: check it, show right or wrong, and keep it as it is */
@@ -1439,7 +1484,7 @@
       var need = it.querySelector('.ws-need'); if (need) need.remove();
     }
     function updateCount() {
-      var box = el.querySelector('.ws-count'), nDone = Object.keys(doneItems).length;
+      var box = el.querySelector('.ws-count'), nDone = Object.keys(doneItems).filter(function (k) { return k !== 'd'; }).length;
       if (box) box.innerHTML = nDone ? icon('check') + ' ' + esc(t('wsProgress', { n: nDone, m: keys.length })) : '';
     }
     function checkOne(k) {
@@ -1473,7 +1518,7 @@
     }
     ctx.lineWidth = 4; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#17231a';
     canvas.addEventListener('pointerdown', function (e) {
-      if (form.classList.contains('locked')) return;
+      if (form.classList.contains('locked') || doneItems.d) return;
       drawing = pos(e);
       canvas.setPointerCapture(e.pointerId);
       e.preventDefault();
@@ -1485,7 +1530,7 @@
       drawing = p2;
       canvas.setAttribute('data-has', '1');
     });
-    function stop() { if (drawing) { drawing = null; saveDraft(); } }
+    function stop() { if (drawing) { drawing = null; saveDraft(); updateSections(); } }
     canvas.addEventListener('pointerup', stop);
     canvas.addEventListener('pointercancel', stop);
 
@@ -1520,6 +1565,8 @@
 
     form.addEventListener('input', saveDraft);
     form.addEventListener('change', saveDraft);
+    form.addEventListener('input', updateSections);
+    form.addEventListener('change', updateSections);
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var d = collect();
@@ -1547,15 +1594,19 @@
       resultBox.scrollIntoView({ block: 'center' });
     });
     el.addEventListener('click', function (e) {
+      var secBtn = e.target.closest('[data-sec-submit]');
+      if (secBtn) { submitSection(secBtn.getAttribute('data-sec-submit')); return; }
       var one = e.target.closest('[data-one]');
       if (one) { checkOne(one.getAttribute('data-one')); return; }
       var b = e.target.closest('[data-act]');
       if (!b) return;
       var act = b.getAttribute('data-act');
+      if (act === 'clear' && doneItems.d) return;
       if (act === 'clear') { ctx.clearRect(0, 0, canvas.width, canvas.height); canvas.removeAttribute('data-has'); saveDraft(); }
       if (act === 'edit') {
         lock(false); clearMarks(); resultBox.innerHTML = '';
-        Object.keys(doneItems).forEach(function (k) { showMark(k, judge(k, collect())); lockItem(k); });
+        Object.keys(doneItems).forEach(function (k) { if (k !== 'd') { showMark(k, judge(k, collect())); lockItem(k); } });
+        updateSections();
       }
       if (act === 'ws-restart') { store.set(dkey, null); render(false); return; }
       if (act === 'print' || act === 'print-blank') {
@@ -2171,6 +2222,39 @@
     });
   }
 
+  /* ---------- student profile card (right side of My progress) ---------- */
+
+  var AVATARS = ['🦁', '🐪', '🐬', '🦜', '🐢', '🐘', '🐟', '🌴', '🌻', '🚀', '🔬', '⭐'];
+  // the Sindh pages counted in "Science of Sindh"; js/site-nav.js notes each one when it is opened (ssp1.sindhSeen)
+  var SINDH_STEPS = [['sindh', '/sindh/', 'sindhScience'], ['lok', '/lok/', 'lokScience'], ['mohenjo', '/sindh/mohenjo-daro/', 'mohenjoLab'],
+    ['mausam', '/mausam/', 'mausamLab'], ['mySindh', '/sindh/my-sindh/', 'mySindh'], ['citizen', '/citizen/', 'citizenTitle'], ['league', '/league/', 'leagueTitle']];
+  function profileCard(p, chs) {
+    var s = window.Student && window.Student.current(), av = store.get('avatar', null);
+    var name = s ? s.name : (p.nick || t('pfGuest'));
+    var done = chs.filter(function (ch) { return chapterStatus(ch, p).pct === 100; }).length;
+    var streak = (p.daily.last === todayStr() || p.daily.last === yesterdayStr()) ? p.daily.streak : 0;
+    var seen = store.get('sindhSeen', {}) || {}, nSeen = SINDH_STEPS.filter(function (x) { return seen[x[0]]; }).length;
+    var pct = Math.round(100 * nSeen / SINDH_STEPS.length);
+    return '<section class="card pf-card"><div class="pf-top">' +
+        '<button type="button" class="pf-dp" data-act="pf-dp" aria-label="' + esc(t('pfChange')) + '" title="' + esc(t('pfChange')) + '">' +
+          (av ? '<span aria-hidden="true">' + esc(av) + '</span>' : '<span class="pf-initial" aria-hidden="true">' + esc(Array.from(name || '?')[0]) + '</span>') + '</button>' +
+        '<div><h2>' + esc(name) + '</h2>' + (s ? '<p class="muted ltr">@' + esc(s.username) + '</p>' : '<p><a href="/login">' + esc(t('pfLogin')) + '</a></p>') + '</div></div>' +
+      '<div class="pf-avatars" hidden>' + '<p class="muted small">' + esc(t('pfChoose')) + '</p>' + AVATARS.map(function (a) {
+        return '<button type="button" class="pf-av' + (a === av ? ' on' : '') + '" data-avatar="' + a + '">' + a + '</button>';
+      }).join('') + '</div>' +
+      '<dl class="pf-facts">' +
+        '<div><dt>' + esc(t('points')) + '</dt><dd>' + p.points + '</dd></div>' +
+        '<div><dt>' + esc(t('badges')) + '</dt><dd>' + p.badges.length + '</dd></div>' +
+        '<div><dt>' + esc(t('dayStreak')) + '</dt><dd>' + streak + '</dd></div>' +
+        '<div><dt>' + esc(t('pfChapters')) + '</dt><dd dir="ltr">' + done + ' / ' + chs.length + '</dd></div>' +
+      '</dl>' +
+      '<h3 class="pf-h">' + icon('map') + ' ' + esc(t('sindhShelf')) + '</h3>' +
+      progressBar(pct, t('sindhShelf')) + '<p class="muted small">' + esc(t('pfSindhOf', { n: nSeen, m: SINDH_STEPS.length })) + '</p>' +
+      '<ul class="pf-sindh">' + SINDH_STEPS.map(function (x) {
+        return '<li class="' + (seen[x[0]] ? 'on' : '') + '"><a href="' + x[1] + '">' + (seen[x[0]] ? icon('check') : '<span class="pf-dot" aria-hidden="true"></span>') + '<span>' + esc(t(x[2])) + '</span></a></li>';
+      }).join('') + '</ul></section>';
+  }
+
   function viewProgress(id) {
     return loadAll().then(function (chs) {
       if (stale(id)) return;
@@ -2187,6 +2271,7 @@
       });
       main.innerHTML = crumbs([['/', t('home')], ['', t('progress')]]) +
         '<h1>' + icon('star') + ' ' + esc(t('progress')) + '</h1>' +
+        '<div class="pf-layout"><aside class="pf-aside" id="profile-slot">' + profileCard(p, chs) + '</aside><div class="pf-main">' +
         '<form class="card nick-form">' + nickField(p.nick) + '<button class="btn" type="submit">' + esc(t('save')) + '</button> <span class="form-msg" aria-live="polite"></span></form>' +
         '<div id="student-slot"></div>' +
         '<div id="class-slot"></div>' +
@@ -2212,7 +2297,7 @@
         }).join('') + '</ul></section>' : '') +
         '<h2>' + esc(t('weakTitle')) + '</h2>' + (weakRows.length ? '<ul>' + weakRows.join('') + '</ul>' : '<p>' + esc(t('noWeak')) + '</p>') +
         '<p class="muted">' + icon('lock') + ' ' + esc(t('deviceNote')) + '</p>' +
-        '<p><button type="button" class="btn ghost danger" data-act="reset">' + esc(t('reset')) + '</button></p>';
+        '<p><button type="button" class="btn ghost danger" data-act="reset">' + esc(t('reset')) + '</button></p></div></div>';
       main.querySelector('.nick-form').addEventListener('submit', function (e) {
         e.preventDefault();
         var nick = validNick(e.target.querySelector('input[name="nick"]').value), msg = e.target.querySelector('.form-msg');

@@ -489,3 +489,11 @@ Object.assign(window.UI_TEXT, {
   cardsTitle: { sd: 'فليش ڪارڊ', ur: 'فلیش کارڈز', en: 'Flash cards' },
   statsTitle: { sd: 'پورٽل جو استعمال', ur: 'پورٹل کا استعمال', en: 'Portal usage' }
 });
+Object.assign(window.UI_TEXT, {
+  pfGuest: { sd: 'مهمان', ur: 'مہمان', en: 'Guest' },
+  pfLogin: { sd: 'لاگ ان ڪريو ته پروفائل محفوظ رهي', ur: 'لاگ ان کریں تاکہ پروفائل محفوظ رہے', en: 'Log in to keep your profile' },
+  pfChange: { sd: 'تصوير بدلايو', ur: 'تصویر بدلیں', en: 'Change picture' },
+  pfChoose: { sd: 'پنهنجي تصوير چونڊيو:', ur: 'اپنی تصویر چنیں:', en: 'Choose your picture:' },
+  pfChapters: { sd: 'پورا باب', ur: 'مکمل ابواب', en: 'Chapters done' },
+  pfSindhOf: { sd: '{m} مان {n} صفحا ڏٺا', ur: '{m} میں سے {n} صفحات دیکھے', en: '{n} of {m} pages opened' }
+});

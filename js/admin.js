@@ -317,7 +317,7 @@
 
   function renderNav() {
     var links = [['#chapters', 'Chapters'], ['#questions', 'Question bank'], ['#leaderboard', 'Leaderboard'], ['#badges', 'Badges'], ['#stats', 'Statistics']];
-    if (isAdmin()) links.push(['#users', 'Users']);
+    if (isAdmin()) links.push(['#users', 'Users'], ['#struck', 'Struck off']);
     links.push(['#password', 'Change password'], ['/', 'View website']);
     var cur = location.hash.split('/')[0] || '#chapters';
     document.getElementById('anav').innerHTML = links.map(function (l) {
@@ -360,7 +360,7 @@
     var parts = location.hash.slice(1).split('/');
     var name = parts[0] || 'chapters', arg = decodeURIComponent(parts.slice(1).join('/'));
     var views = { chapters: viewChapters, chapter: viewChapterEdit, questions: viewQuestions, question: viewQuestionEdit,
-      leaderboard: viewLeaderboard, badges: viewBadges, badge: viewBadgeEdit, stats: viewStats, users: viewUsers, password: viewPassword };
+      leaderboard: viewLeaderboard, badges: viewBadges, badge: viewBadgeEdit, stats: viewStats, users: viewUsers, struck: viewStruckOff, password: viewPassword };
     try { await (views[name] || viewChapters)(arg); } catch (e) { fail(e); }
     window.scrollTo(0, 0);
   }
@@ -945,6 +945,31 @@
     page(pr ? 'Principal account' : 'Teacher account', pr ? 'Your school\'s classes are on the school dashboard.' : 'Your class, your students and their homework are on the teacher page.');
     main.appendChild(h('p', null, [h('a', { class: 'btn', href: pr ? '/school/' : '/class/', text: pr ? 'Open the school dashboard' : 'Open the teacher page' }), ' ',
       btn('Sign out', function () { saveSession(null); location.reload(); })]));
+  }
+
+  /* ---------- struck-off students (admins only) ---------- */
+
+  // Students a teacher took off a class list. Their account is not deleted; this is the record of who, from which
+  // class and when (database: table struck_off, written by teacher_remove_student).
+  async function viewStruckOff() {
+    page('Struck off', 'Students a teacher took off a class list. Their account still exists; only the class link was removed.');
+    if (!isAdmin()) { main.appendChild(h('p', { text: 'Only admins can see this page.' })); return; }
+    var rows = await rpc('admin_struck_off');
+    var q = h('input', { type: 'search', placeholder: 'Search by name, username, class or school', 'aria-label': 'Search' });
+    var box = h('div');
+    main.appendChild(h('p', null, [q]));
+    main.appendChild(box);
+    function draw() {
+      var s = q.value.trim().toLowerCase();
+      var list = rows.filter(function (r) { return !s || [r.display_name, r.username, r.class_name, r.class_code, r.school].join(' ').toLowerCase().indexOf(s) >= 0; });
+      box.innerHTML = '<p class="muted">' + list.length + ' of ' + rows.length + '</p>' + (list.length ? '<div class="table-wrap"><table class="table"><thead><tr><th>Date</th><th>Student</th><th>Username</th><th>Class</th><th>School</th><th>Reason</th></tr></thead><tbody>' +
+        list.map(function (r) {
+          return '<tr><td>' + esc(String(r.removed_at || '').slice(0, 10)) + '</td><td>' + esc(r.display_name || '') + '</td><td class="ltr">' + esc(r.username || '') + '</td><td>' + esc(r.class_name || '') +
+            ' <span class="muted ltr">' + esc(r.class_code || '') + '</span></td><td>' + esc(r.school || '—') + '</td><td>' + esc(r.reason || '—') + '</td></tr>';
+        }).join('') + '</tbody></table></div>' : '<p>No students have been struck off.</p>');
+    }
+    q.addEventListener('input', draw);
+    draw();
   }
 
   /* ---------- statistics ---------- */

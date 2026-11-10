@@ -62,6 +62,7 @@
     newPinAsk: { sd: '{n} لاءِ نئون پن ٺاهيو؟ پراڻو پن ڪم نه ڪندو.', ur: '{n} کے لیے نیا پن بنائیں؟ پرانا پن کام نہیں کرے گا۔', en: 'Make a new PIN for {n}? The old PIN will stop working.' },
     remove: { sd: 'ڪلاس مان ڪڍو', ur: 'کلاس سے نکالیں', en: 'Remove' },
     removeAsk: { sd: '{n} کي ڪلاس مان ڪڍيو؟ ٻار جو اڪائونٽ ۽ پيش رفت رهندي.', ur: '{n} کو کلاس سے نکالیں؟ بچے کا اکاؤنٹ اور پیش رفت رہے گی۔', en: 'Remove {n} from the class? The child keeps the account and progress.' },
+    removeWhy: { sd: 'ڪڍڻ جو سبب (جيئن: اسڪول ڇڏي ويو). خالي به ڇڏي سگهو ٿا.', ur: 'نکالنے کی وجہ (جیسے: اسکول چھوڑ گیا)۔ خالی بھی چھوڑ سکتے ہیں۔', en: 'Reason (for example: left the school). You can leave it empty.' },
     report: { sd: 'رپورٽ', ur: 'رپورٹ', en: 'Report' },
     noStudents: { sd: 'اڃا ڪو شاگرد ناهي.', ur: 'ابھی کوئی طالب علم نہیں۔', en: 'No students yet.' },
     slipsTitle: { sd: 'لاگ ان پرچيون', ur: 'لاگ ان پرچیاں', en: 'Login slips' },
@@ -331,7 +332,9 @@
     } else if (b.hasAttribute('data-remove')) {
       var rs = data.students.filter(function (x) { return x.id === b.getAttribute('data-remove'); })[0];
       if (!rs || !window.confirm(T('removeAsk', { n: rs.name }))) return;
-      rpc('teacher_remove_student', { p_student: rs.id }).then(viewClass).catch(fail);
+      var why = window.prompt(T('removeWhy'), '');   // kept with the struck-off record the admin sees
+      if (why === null) return;
+      rpc('teacher_remove_student', { p_student: rs.id, p_reason: why }).then(viewClass).catch(fail);
     } else if (b.hasAttribute('data-hwdel')) {
       rpc('teacher_homework_delete', { p_id: +b.getAttribute('data-hwdel') }).then(viewClass).catch(fail);
     }

@@ -24,6 +24,19 @@
     }
   } catch (e) { /* storage blocked: leave the page open */ }
 
+  // "Science of Sindh" progress: which Sindh pages this child has opened (shown on My progress; js/student.js
+  // copies it to the child's account with the rest of the ssp1.* keys)
+  var SINDH_PAGES = { '/sindh/': 'sindh', '/lok/': 'lok', '/sindh/mohenjo-daro/': 'mohenjo', '/mausam/': 'mausam', '/sindh/weather/': 'mausam',
+    '/sindh/my-sindh/': 'mySindh', '/citizen/': 'citizen', '/league/': 'league' };
+  try {
+    var here = location.pathname.replace(/index\.html$/, '').replace(/([^/])$/, '$1/'), seenKey = SINDH_PAGES[here];
+    if (seenKey) {
+      var seen = JSON.parse(localStorage.getItem('ssp1.sindhSeen') || '{}') || {};
+      if (!seen[seenKey]) { var d = new Date(); seen[seenKey] = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+      localStorage.setItem('ssp1.sindhSeen', JSON.stringify(seen));
+    }
+  } catch (e) { /* storage blocked */ }
+
   function lang() {
     try { var l = JSON.parse(localStorage.getItem('ssp1.lang')); return ['sd', 'ur', 'en'].indexOf(l) >= 0 ? l : 'sd'; } catch (e) { return 'sd'; }
   }
