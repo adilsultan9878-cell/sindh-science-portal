@@ -8,7 +8,7 @@
   var LANGS = ['sd', 'ur', 'en'];
   var LANG_LABEL = { sd: 'Sindhi', ur: 'Urdu', en: 'English' };
   var STATUS_LABEL = { draft: 'Draft', review: 'In review', published: 'Published' };
-  var ROLE_LABEL = { pending: 'No access (waiting)', teacher: 'Teacher', admin: 'Admin' };   // editor and reviewer were removed (2026-11)
+  var ROLE_LABEL = { pending: 'No access (waiting)', teacher: 'Teacher', principal: 'Principal', admin: 'Admin' };   // editor and reviewer were removed (2026-11)
   var SESSION_KEY = 'ssp-staff-session';
 
   var main = document.getElementById('main');
@@ -354,7 +354,7 @@
       saveSession(null);
       return viewLogin(e.message);
     }
-    if (me.role === 'teacher') return viewTeacherHere();
+    if (me.role === 'teacher' || me.role === 'principal') return viewTeacherHere();
     if (me.role === 'pending') return viewPending();
     renderNav();
     var parts = location.hash.slice(1).split('/');
@@ -865,9 +865,10 @@
   async function viewUsers() {
     if (!isAdmin()) { page('Admins only'); return; }
     page('Users', 'Teachers sign in on the teacher page (/class/) with the email and password you give them, make their class and their students\' accounts. Admins also edit chapters and manage users.');
-    main.appendChild(newTeacherForm());
+    var sch = await rpc('admin_schools');
+    main.appendChild(newTeacherForm(sch.schools));
     var rows = await rpc('staff_list');
-    var table = h('table', { class: 'table', html: '<thead><tr><th>Email</th><th>Joined</th><th>Email confirmed</th><th>Last sign-in</th><th>Role</th><th></th></tr></thead>' });
+    var table = h('table', { class: 'table', html: '<thead><tr><th>Email</th><th>Joined</th><th>Email confirmed</th><th>Last sign-in</th><th>Role</th><th>School</th><th></th></tr></thead>' });
     var tbody = h('tbody');
     rows.forEach(function (r) {
       var roles = Object.keys(ROLE_LABEL).concat(ROLE_LABEL[r.role] ? [] : [r.role]);   // an old editor or reviewer still shows its role
@@ -878,6 +879,12 @@
       var tr = h('tr', { html: '<td>' + esc(r.email) + (r.id === me.id ? ' <small class="muted">(you)</small>' : '') + '</td><td>' + esc(when(r.created_at)) + '</td>' +
         '<td>' + (r.confirmed ? '✔' : '<span class="pill pending">Not yet</span>') + '</td><td>' + esc(when(r.last_sign_in_at) || '—') + '</td>' });
       tr.appendChild(h('td', null, [sel]));
+      var school = h('select', null, [h('option', { value: '', text: '—' })].concat(sch.schools.map(function (x) { return h('option', { value: x.code, text: x.name }); })));
+      school.value = sch.members[r.id] || '';
+      tr.appendChild(h('td', null, [school, ' ', btn('Save school', async function () {
+        try { await rpc('admin_set_school', { p_user: r.id, p_school: school.value || null }); msg.className = 'msg ok'; msg.textContent = '✔ School saved. A teacher\'s classes now show on that school\'s dashboard.'; }
+        catch (e) { msg.className = 'msg bad'; msg.textContent = e.message; }
+      })]));
       tr.appendChild(h('td', null, [r.id === me.id ? null : btn('Save role', async function () {
         try { await rpc('set_staff_role', { p_user: r.id, p_role: sel.value }); msg.className = 'msg ok'; msg.textContent = '✔ Saved'; }
         catch (e) { msg.className = 'msg bad'; msg.textContent = e.message; }
@@ -895,34 +902,48 @@
   }
 
   // The admin makes a teacher's account: email + password, saved straight to the database (no email is sent).
-  function newTeacherForm() {
+  function newTeacherForm(schools) {
     var email = h('input', { type: 'email', autocomplete: 'off', placeholder: 'teacher@example.com', dir: 'ltr' });
     var pw = h('input', { type: 'text', autocomplete: 'off', placeholder: 'at least 8 letters or numbers', dir: 'ltr' });
     var msg = h('span', { class: 'msg' });
-    var errs = { bad_email: 'Please write a correct email.', short_password: 'The password needs at least 8 letters or numbers.', email_taken: 'This email already has an account.' };
+    var role = h('select', null, [h('option', { value: 'teacher', text: 'Teacher' }), h('option', { value: 'principal', text: 'Principal' })]);
+    var school = h('select', null, [h('option', { value: '', text: '— none —' })].concat(schools.map(function (x) { return h('option', { value: x.code, text: x.name }); }))
+      .concat([h('option', { value: '__new', text: '+ New school…' })]));
+    var newName = h('input', { type: 'text', placeholder: 'New school name', hidden: true });
+    school.addEventListener('change', function () { newName.hidden = school.value !== '__new'; });
+    var errs = { bad_email: 'Please write a correct email.', short_password: 'The password needs at least 8 letters or numbers.', email_taken: 'This email already has an account.',
+      no_school: 'A principal needs a school: choose one or make a new one.' };
     return h('form', { class: 'card', onsubmit: async function (e) {
       e.preventDefault();
       msg.className = 'msg'; msg.textContent = 'Saving…';
       try {
-        await rpc('admin_create_teacher', { p_email: email.value.trim(), p_password: pw.value });
+        var code = school.value;
+        if (code === '__new') {
+          if (!newName.value.trim()) { msg.className = 'msg bad'; msg.textContent = 'Write the new school\'s name.'; return; }
+          code = await rpc('admin_create_school', { p_name: newName.value.trim(), p_district: null });
+        }
+        await rpc('admin_create_staff', { p_email: email.value.trim(), p_password: pw.value, p_role: role.value, p_school: code || null });
         msg.className = 'msg ok';
-        msg.textContent = '✔ Teacher added. Give them: the page ' + location.origin + '/class/ , email ' + email.value.trim() + ' and the password.';
+        msg.textContent = '✔ Added. Give them: the page ' + location.origin + (role.value === 'principal' ? '/school/' : '/class/') + ' , email ' + email.value.trim() + ' and the password.';
         setTimeout(function () { viewUsers().catch(fail); }, 4000);
       } catch (err) {
-        var code = (err.message.match(/bad_email|short_password|email_taken/) || [])[0];
-        msg.className = 'msg bad'; msg.textContent = code ? errs[code] : err.message;
+        var c = (err.message.match(/bad_email|short_password|email_taken|no_school/) || [])[0];
+        msg.className = 'msg bad'; msg.textContent = c ? errs[c] : err.message;
       }
-    } }, [h('h2', { text: 'Add a teacher' }),
+    } }, [h('h2', { text: 'Add a teacher or principal' }),
       h('label', { class: 'field' }, [h('span', { text: 'Teacher\'s email' }), email]),
       h('label', { class: 'field' }, [h('span', { text: 'Password' }), pw]),
-      h('p', null, [h('button', { type: 'submit', class: 'btn', text: 'Add teacher' }), ' ', msg])]);
+      h('label', { class: 'field' }, [h('span', { text: 'Role' }), role]),
+      h('label', { class: 'field' }, [h('span', { text: 'School (the principal sees this school\'s classes)' }), school, newName]),
+      h('p', null, [h('button', { type: 'submit', class: 'btn', text: 'Add' }), ' ', msg])]);
   }
 
   // a teacher signed in here: their place is the teacher page
   function viewTeacherHere() {
     main.innerHTML = '';
-    page('Teacher account', 'Your class, your students and their homework are on the teacher page.');
-    main.appendChild(h('p', null, [h('a', { class: 'btn', href: '/class/', text: 'Open the teacher page' }), ' ',
+    var pr = me.role === 'principal';
+    page(pr ? 'Principal account' : 'Teacher account', pr ? 'Your school\'s classes are on the school dashboard.' : 'Your class, your students and their homework are on the teacher page.');
+    main.appendChild(h('p', null, [h('a', { class: 'btn', href: pr ? '/school/' : '/class/', text: pr ? 'Open the school dashboard' : 'Open the teacher page' }), ' ',
       btn('Sign out', function () { saveSession(null); location.reload(); })]));
   }
 

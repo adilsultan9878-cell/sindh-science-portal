@@ -13,8 +13,22 @@
   var openSchool = null;      // { code, key, name }
   var data = null;
 
+  var SESSION_KEY = 'ssp-staff-session';   // the same sign-in as the staff panel and the teacher page
+
   var TEXT = {
-    siteName: { sd: 'سنڌ سائنس سکيا پورٽل', ur: 'سندھ سائنس لرننگ پورٹل', en: 'Sindh Science Learning Portal' },
+    pSignIn: { sd: 'پرنسپل لاگ ان', ur: 'پرنسپل لاگ ان', en: 'Principal login' },
+    pSignInText: { sd: 'ايڊمن جي ڏنل اي ميل ۽ پاسورڊ سان لاگ ان ڪريو. پوءِ توهان جي اسڪول جا سڀ ڪلاس هتي ايندا.', ur: 'ایڈمن کے دیے ای میل اور پاس ورڈ سے لاگ ان کریں۔ پھر آپ کے اسکول کی سب کلاسیں یہاں آئیں گی۔', en: 'Log in with the email and password the admin gave you. Your school\'s classes then show here.' },
+    email: { sd: 'اي ميل', ur: 'ای میل', en: 'Email' },
+    password: { sd: 'پاسورڊ', ur: 'پاس ورڈ', en: 'Password' },
+    login: { sd: 'لاگ ان', ur: 'لاگ ان', en: 'Log in' },
+    logout: { sd: 'لاگ آئوٽ', ur: 'لاگ آؤٹ', en: 'Log out' },
+    wrongLogin: { sd: 'اي ميل يا پاسورڊ غلط آهي.', ur: 'ای میل یا پاس ورڈ غلط ہے۔', en: 'Wrong email or password.' },
+    notPrincipal: { sd: 'هي اڪائونٽ پرنسپل جو ناهي. ايڊمن کان پڇو.', ur: 'یہ اکاؤنٹ پرنسپل کا نہیں۔ ایڈمن سے پوچھیں۔', en: 'This is not a principal account. Ask the admin.' },
+    noSchool: { sd: 'توهان جي اڪائونٽ سان اڃا ڪو اسڪول ڳنڍيل ناهي. ايڊمن کان پڇو.', ur: 'آپ کے اکاؤنٹ سے ابھی کوئی اسکول جڑا نہیں۔ ایڈمن سے پوچھیں۔', en: 'No school is linked to your account yet. Ask the admin.' },
+    oldWay: { sd: 'پراڻو طريقو: اسڪول ڪوڊ ۽ ڪنجي', ur: 'پرانا طریقہ: اسکول کوڈ اور کلید', en: 'Old way: school code and key' },
+    teachers: { sd: 'استاد', ur: 'اساتذہ', en: 'Teachers' },
+    teacherClasses: { sd: 'ڪلاس: {n}', ur: 'کلاسیں: {n}', en: 'Classes: {n}' },
+    noTeachers: { sd: 'اڃا ڪو استاد هن اسڪول ۾ ناهي. ايڊمن استادن کي اسڪول سان ڳنڍي ٿو.', ur: 'ابھی کوئی استاد اس اسکول میں نہیں۔ ایڈمن اساتذہ کو اسکول سے جوڑتا ہے۔', en: 'No teachers in this school yet. The admin puts teachers in the school.' },    siteName: { sd: 'سنڌ سائنس سکيا پورٽل', ur: 'سندھ سائنس لرننگ پورٹل', en: 'Sindh Science Learning Portal' },
     title: { sd: 'اسڪول ڊيش بورڊ', ur: 'اسکول ڈیش بورڈ', en: 'School dashboard' },
     intro: {
       sd: 'هيڊ ماستر ۽ پرنسپل لاءِ: پنهنجو اسڪول ٺاهيو ۽ اسڪول ڪوڊ استادن کي ڏيو. استاد پنهنجي ڪلاس کي اسڪول سان ڳنڍين، پوءِ هتي هر ڪلاس ۽ هر باب جو اوسط نظر ايندو.',
@@ -114,6 +128,30 @@
     });
   }
 
+  // principal sign-in (Supabase auth), same session as the staff panel
+  function readSession() { try { return JSON.parse(localStorage.getItem(SESSION_KEY)); } catch (e) { return null; } }
+  function saveSession(v) { try { if (v) localStorage.setItem(SESSION_KEY, JSON.stringify(v)); else localStorage.removeItem(SESSION_KEY); } catch (e) { /* ignore */ } }
+  function keep(d) { saveSession({ access_token: d.access_token, refresh_token: d.refresh_token, expires_at: d.expires_at ? +d.expires_at : Math.floor(Date.now() / 1000) + (+d.expires_in || 3600) }); }
+  function auth(path, body) {
+    return fetch(CFG.supabaseUrl + '/auth/v1/' + path, { method: 'POST', headers: { apikey: CFG.supabaseKey, 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { if (!r.ok) throw new Error('auth'); return d; }); });
+  }
+  function principalData() {
+    var sess = readSession();
+    if (!sess) return Promise.reject(new Error('signed_out'));
+    var ready = sess.expires_at - Date.now() / 1000 > 60 ? Promise.resolve(sess)
+      : auth('token?grant_type=refresh_token', { refresh_token: sess.refresh_token }).then(function (d) { keep(d); return readSession(); }, function () { saveSession(null); throw new Error('signed_out'); });
+    return ready.then(function (v) {
+      return fetch(CFG.supabaseUrl + '/rest/v1/rpc/principal_school', { method: 'POST', body: '{}', headers: { apikey: CFG.supabaseKey, Authorization: 'Bearer ' + v.access_token, 'Content-Type': 'application/json' } });
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        if (r.status === 401) { saveSession(null); throw new Error('signed_out'); }
+        if (!r.ok) throw new Error((d && d.message) || 'error');
+        return d;
+      });
+    });
+  }
+
   function applyLang() {
     var l = lang();
     document.documentElement.lang = l;
@@ -141,10 +179,25 @@
 
   function render() {
     if (openSchool) return renderSchool();
+    if (readSession()) {
+      main.innerHTML = crumbs() + '<p class="loading">' + esc(T('wait')) + '</p>';
+      principalData().then(function (d) { openSchool = { code: d.school.code, name: d.school.name, principal: true }; data = d; renderSchool(); })
+        .catch(function (e) {
+          if (/signed_out/.test(e.message)) return render();
+          main.innerHTML = crumbs() + '<p class="card form-msg">' + esc(/no_school/.test(e.message) ? T('noSchool') : /principals_only/.test(e.message) ? T('notPrincipal') : T('error')) + '</p>' +
+            '<p><button type="button" class="btn ghost" data-act="logout">' + esc(T('logout')) + '</button></p>';
+        });
+      return;
+    }
     var list = mine();
     var districts = (window.CITIES || []).map(function (c) { return '<option value="' + esc(c.en) + '">' + esc(L(c)) + '</option>'; }).join('');
-    main.innerHTML = crumbs() + '<h1>' + esc(T('title')) + '</h1><p>' + esc(T('intro')) + '</p>' +
-      '<section class="card"><h2>' + esc(T('mySchools')) + '</h2>' +
+    main.innerHTML = crumbs() + '<h1>' + esc(T('title')) + '</h1>' +
+      '<form class="card sc-form sc-login" id="p-login"><h2>' + esc(T('pSignIn')) + '</h2><p class="muted">' + esc(T('pSignInText')) + '</p>' +
+        '<label class="field"><span>' + esc(T('email')) + '</span><input name="email" type="email" dir="ltr" autocomplete="username" required></label>' +
+        '<label class="field"><span>' + esc(T('password')) + '</span><input name="pw" type="password" dir="ltr" autocomplete="current-password" required></label>' +
+        '<button type="submit" class="btn">' + esc(T('login')) + '</button><span class="form-msg" aria-live="polite"></span></form>' +
+      '<details class="card sc-old"><summary>' + esc(T('oldWay')) + '</summary><p>' + esc(T('intro')) + '</p>' +
+      '<section><h2>' + esc(T('mySchools')) + '</h2>' +
         (list.length ? '<div class="sc-list">' + list.map(function (s) {
           return '<button type="button" class="chip" data-open="' + esc(s.code) + '"><strong>' + esc(s.name) + '</strong> <span class="ltr">' + esc(s.code) + '</span></button>';
         }).join('') + '</div>' : '<p class="muted">' + esc(T('none')) + '</p>') + '</section>' +
@@ -157,7 +210,15 @@
           '<label class="field"><span>' + esc(T('code')) + '</span><input type="text" name="code" maxlength="6" dir="ltr" autocapitalize="characters" autocomplete="off" spellcheck="false"></label>' +
           '<label class="field"><span>' + esc(T('key')) + '</span><input type="text" name="key" maxlength="10" dir="ltr" autocapitalize="characters" autocomplete="off" spellcheck="false"></label>' +
           '<button type="submit" class="btn ghost">' + esc(T('open')) + '</button><span class="form-msg" aria-live="polite"></span></form>' +
-      '</div><p class="muted small">' + esc(T('privacy')) + '</p>';
+      '</div></details><p class="muted small">' + esc(T('privacy')) + '</p>';
+    var lf = document.getElementById('p-login');
+    lf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = lf.querySelector('.form-msg');
+      msg.textContent = T('wait');
+      auth('token?grant_type=password', { email: lf.email.value.trim(), password: lf.pw.value }).then(function (d) { keep(d); render(); })
+        .catch(function () { msg.textContent = T('wrongLogin'); });
+    });
 
     main.querySelectorAll('[data-open]').forEach(function (b) {
       b.addEventListener('click', function () {
@@ -227,7 +288,7 @@
   function renderSchool() {
     main.innerHTML = crumbs(openSchool.name) + '<p class="loading">' + esc(T('wait')) + '</p>';
     bindHome();
-    var need = data ? Promise.resolve(data) : rpc('school_results', { p_school: openSchool.code, p_key: openSchool.key });
+    var need = data ? Promise.resolve(data) : openSchool.principal ? principalData() : rpc('school_results', { p_school: openSchool.code, p_key: openSchool.key });
     Promise.all([need, loadChapters()]).then(function (res) { data = res[0]; drawSchool(); }).catch(function (err) {
       main.insertAdjacentHTML('beforeend', '<p class="form-msg">' + esc(err.status && err.status < 500 ? T('wrong') : T('error')) + '</p>');
     });
@@ -250,20 +311,27 @@
 
     var html = crumbs(sc.name) +
       '<div class="tc-head"><h1>' + esc(sc.name) + '</h1><p class="muted">' + esc(cityName(sc.district)) + '</p>' +
-      '<p>' + esc(T('code')) + ': <span class="keycode">' + esc(sc.code) + '</span> <span class="no-print"><button type="button" class="btn ghost small" data-act="key">' + esc(T('showKey')) + '</button> <span class="keycode" data-keyval hidden>' + esc(openSchool.key) + '</span></span></p>' +
-      '<p class="muted small no-print">' + esc(T('howLink')) + '</p></div>' +
+      (openSchool.principal ? '</div>' : '<p>' + esc(T('code')) + ': <span class="keycode">' + esc(sc.code) + '</span> <span class="no-print"><button type="button" class="btn ghost small" data-act="key">' + esc(T('showKey')) + '</button> <span class="keycode" data-keyval hidden>' + esc(openSchool.key) + '</span></span></p>' +
+      '<p class="muted small no-print">' + esc(T('howLink')) + '</p></div>') +
       '<div class="btn-row no-print">' +
         '<button type="button" class="btn small" data-act="refresh">' + esc(T('refresh')) + '</button>' +
         '<button type="button" class="btn ghost small" data-act="csv">' + esc(T('csv')) + '</button>' +
         '<button type="button" class="btn ghost small" data-act="print">' + esc(T('print')) + '</button>' +
+        (openSchool.principal ? '<button type="button" class="btn ghost small" data-act="logout">' + esc(T('logout')) + '</button></div>' :
         '<button type="button" class="btn ghost small" data-act="print-code">' + esc(T('printCode')) + '</button>' +
-        '<button type="button" class="btn ghost small danger" data-act="forget">' + esc(T('forget')) + '</button></div>' +
+        '<button type="button" class="btn ghost small danger" data-act="forget">' + esc(T('forget')) + '</button></div>') +
       '<div class="sc-tiles">' + tile(classes.length, T('classes')) + tile(students, T('students')) + tile(quizzes, T('quizzes')) +
         tile(cntQ ? Math.round(sumQ / cntQ) + '%' : '—', T('avgQuiz')) +
         tile(classes.reduce(function (n, c) { return n + c.worksheets; }, 0), T('worksheets')) +
         tile(classes.reduce(function (n, c) { return n + c.experiments; }, 0), T('experiments')) + '</div>';
 
-    if (!classes.length) html += '<p class="card">' + esc(T('noClasses')) + '</p>';
+    if (openSchool.principal) {
+      var tl = data.teachers || [];
+      html += '<section class="card"><h2>' + esc(T('teachers')) + '</h2>' + (tl.length ? '<ul class="sc-weak">' + tl.map(function (x) {
+        return '<li><span class="ltr">' + esc(x.email) + '</span> — ' + esc(T('teacherClasses', { n: x.classes })) + '</li>';
+      }).join('') + '</ul>' : '<p class="muted">' + esc(T('noTeachers')) + '</p>') + '</section>';
+    }
+    if (!classes.length) html += openSchool.principal ? '' : '<p class="card">' + esc(T('noClasses')) + '</p>';
     else {
       html += '<h2>' + esc(T('byClass')) + '</h2><div class="table-wrap"><table class="table sc-table"><thead><tr><th>' + esc(T('className')) + '</th><th>' + esc(T('students')) + '</th><th>' + esc(T('quizzes')) +
         '</th><th>' + esc(T('avgQuiz')) + '</th><th>' + esc(T('worksheets')) + '</th><th>' + esc(T('experiments')) + '</th><th>' + esc(T('lastActive')) + '</th></tr></thead><tbody>' +
@@ -289,7 +357,7 @@
         return '<li><strong>' + esc(T('chapterN', { n: ch.number })) + ': ' + esc(L(ch.title)) + '</strong> — ' + chAvg(ch.key) + '%</li>';
       }).join('') + '</ul>' : '<p class="muted">' + esc(T('weakNone')) + '</p>');
     }
-    html += '<p class="muted small">' + esc(T('privacy')) + '</p>' + printCard(sc);
+    html += '<p class="muted small">' + esc(T('privacy')) + '</p>' + (openSchool.principal ? '' : printCard(sc));
     main.innerHTML = html;
     bindHome();
     citizenPart();
@@ -308,6 +376,7 @@
   };
   function citizenPart() {
     var shown = openSchool;
+    if (!shown.key) return;   // the class data from Citizen Science needs the school key (old way)
     rpc('citizen_school', { p_school: shown.code, p_key: shown.key }).then(function (d) {
       if (openSchool !== shown || !d || !(d.classes || []).length) return;
       var units = { rain: ' mm', temp: ' °C', tree: '', bird: '' }, icons = { rain: '🌧️', tree: '🌳', bird: '🐦', temp: '🌡️' };
@@ -328,8 +397,9 @@
   function tile(n, label) { return '<div class="card"><b>' + esc(n) + '</b><span>' + esc(label) + '</span></div>'; }
 
   main.addEventListener('click', function (e) {
-    if (!openSchool || !data) return;
     var b = e.target.closest('[data-act]');
+    if (b && b.getAttribute('data-act') === 'logout') { saveSession(null); openSchool = null; data = null; render(); return; }
+    if (!openSchool || !data) return;
     if (!b) return;
     var act = b.getAttribute('data-act');
     if (act === 'key') { var k = main.querySelector('[data-keyval]'); k.hidden = !k.hidden; }
