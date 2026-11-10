@@ -483,3 +483,9 @@ Object.assign(window.UI_TEXT, {
   weatherLab: { sd: 'سنڌ جي موسم ليب', ur: 'سندھ کی موسمی لیب', en: 'Sindh weather lab' },
   weatherShort: { sd: 'جيڪب آباد جي گرمي، سنڌو ڊيلٽا ۽ جهمپير جي هوا.', ur: 'جیکب آباد کی گرمی، سندھ ڈیلٹا اور جھمپیر کی ہوا۔', en: 'Jacobabad heat, the Indus delta and Jhimpir wind.' },
 });
+
+Object.assign(window.UI_TEXT, {
+  examTitle: { sd: 'امتحان جي تياري', ur: 'امتحان کی تیاری', en: 'Mock exam' },
+  cardsTitle: { sd: 'فليش ڪارڊ', ur: 'فلیش کارڈز', en: 'Flash cards' },
+  statsTitle: { sd: 'پورٽل جو استعمال', ur: 'پورٹل کا استعمال', en: 'Portal usage' }
+});

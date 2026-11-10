@@ -461,7 +461,7 @@
   }
   function moreLinks() {
     return [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
-      ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
+      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
   }
   function renderFrame() {
     var student = window.Student && window.Student.current();
@@ -500,9 +500,9 @@
     return '<div class="wrap foot-grid">' +
         '<div class="foot-about"><p class="foot-brand">' + LEAF + '<span>' + esc(t('siteName')) + '</span></p><p>' + esc(t('footerFree')) + '</p>' +
           '<p class="foot-tags"><span>' + esc(t('footFree')) + '</span><span>' + esc(t('footLangs')) + '</span><span>' + esc(t('footNoAds')) + '</span></p></div>' +
-        col(t('footLearn'), [['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/ustad/', 'ustadTitle'], ['/book/', 'bookPdf'], ['/glossary', 'glossary']]) +
+        col(t('footLearn'), [['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/ustad/', 'ustadTitle'], ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/book/', 'bookPdf']]) +
         col(t('sindhShelf'), [['/sindh/', 'sindhScience'], ['/lok/', 'lokScience'], ['/sindh/mohenjo-daro/', 'mohenjoLab'], ['/mausam/', 'mausamLab'], ['/citizen/', 'citizenTitle'], ['/league/', 'leagueTitle']]) +
-        col(t('teachers'), [['/teachers', 'teachers'], ['/paper/', 'questionPaper'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/verify', 'verifyTitle'], ['/admin', 'staff']]) +
+        col(t('teachers'), [['/teachers', 'teachers'], ['/paper/', 'questionPaper'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/verify', 'verifyTitle'], ['/stats/', 'statsTitle'], ['/admin', 'staff']]) +
       '</div>' +
       '<div class="wrap foot-base"><p>© 2026 The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p>' +
         '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/leaderboard">' + esc(t('leaderboard')) + '</a></p></div>';
@@ -594,7 +594,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|citizen|school|lok|mausam|ustad|parent)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|citizen|school|lok|mausam|ustad|parent|exam|cards|stats)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -658,6 +658,7 @@
         '<div class="actions">' +
           actionTile(subjUrl, 'lesson', 'learn') + actionTile('/watch', 'video', 'videosTitle') +
           actionTile('/games', 'game', 'gamesTitle') + actionTile('/ustad/', 'bulb', 'ustadTitle') +
+          actionTile('/exam/', 'clock', 'examTitle') + actionTile('/cards/', 'words', 'cardsTitle') +
         '</div>' +
         '<div class="sec-head"><h2>' + esc(L(cat.classes.filter(function (c) { return c.active; })[0].name)) + ' ' + esc(t('learn')) + '</h2>' +
           '<a href="' + subjUrl + '">' + esc(t('allChapters')) + icon('next', 'flip') + '</a></div>' +
@@ -702,6 +703,11 @@
     var pic = (window.PICTURES || {})[ch.id];
     return '<span class="thumb' + (size ? ' thumb-' + size : '') + '" aria-hidden="true">' +
       (pic ? '<img src="' + pic.src + '" alt="" width="96" height="96" loading="lazy" decoding="async">' : '<span class="thumb-emoji">' + esc(ch.icon || '') + '</span>') + '</span>';
+  }
+  // Urdu subtitles (tools/subtitles) for the narrated lesson and experiment videos, shown from the start
+  function subTrack(src) {
+    return /^\/(lesson|exp)-videos\/[\w-]+-ur\.mp4$/.test(src || '')
+      ? '<track kind="subtitles" srclang="ur" label="اردو" default src="' + src.replace(/\.mp4$/, '.vtt') + '">' : '';
   }
   function progressBar(pct, label) {
     return '<span class="pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"' +
@@ -979,7 +985,7 @@
     var vid = (window.LESSON_VIDEOS || {})[ch.id], secs = ch.lesson, all = false;
     var cur = Math.max(0, secs.map(function (x) { return x.id; }).indexOf(location.hash.slice(1)));
     el.innerHTML = (vid ? '<section class="card lesson-video"><h2>' + icon('video') + ' ' + esc(t('videoTitle')) + '</h2>' +
-        '<video controls preload="none" playsinline width="960" height="540" poster="' + vid.poster + '" src="' + vid.src + '"></video>' +
+        '<video controls preload="none" playsinline width="960" height="540" poster="' + vid.poster + '" src="' + vid.src + '">' + subTrack(vid.src) + '</video>' +
         '<p class="small muted">' + esc(t('videoNote')) + '</p></section>' : '') +
       guide(t('guideLesson')) + '<div class="lesson-body"></div>';
     var body = el.querySelector('.lesson-body');
@@ -1883,7 +1889,7 @@
     var phases = [['expReady', 0], ['expYourGuess', 1], ['steps', 2], ['expYourObs', OBSERVE], ['whatLearn', RESULT]];
     var vid = (window.EXP_VIDEOS || {})[ch.id];
     el.innerHTML = (vid ? '<section class="card lesson-video"><h2>' + icon('video') + ' ' + esc(t('expVideoTitle')) + '</h2>' +
-      '<video controls preload="none" playsinline width="960" height="540" poster="' + vid.poster + '" src="' + vid.src + '"></video>' +
+      '<video controls preload="none" playsinline width="960" height="540" poster="' + vid.poster + '" src="' + vid.src + '">' + subTrack(vid.src) + '</video>' +
       '<p class="small muted">' + esc(t('expVideoNote')) + '</p></section>' : '') + '<div class="exp-main"></div>';
     var holder = el.querySelector('.exp-main');
 
@@ -2261,7 +2267,7 @@
     { key: 'guideStaff', src: '/videos/staff-panel-guide-urdu.mp4', poster: '/videos/staff-panel-guide-urdu.jpg' }
   ];
   function videoCard(v, title, sub, href) {
-    return '<article class="card vid-card"><video controls preload="none" playsinline width="960" height="540" poster="' + v.poster + '" src="' + v.src + '"></video>' +
+    return '<article class="card vid-card"><video controls preload="none" playsinline width="960" height="540" poster="' + v.poster + '" src="' + v.src + '">' + subTrack(v.src) + '</video>' +
       '<strong>' + (href ? '<a href="' + href + '">' + esc(title) + '</a>' : esc(title)) + '</strong>' + (sub ? '<small class="muted">' + esc(sub) + '</small>' : '') + '</article>';
   }
   function viewWatch(id) {

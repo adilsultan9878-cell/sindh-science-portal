@@ -686,7 +686,7 @@
         '<a class="btn ghost" href="#video">' + icon('play') + esc(t('toVideo')) + '</a>' +
         '<button type="button" class="btn ghost" data-act="print">' + icon('printer') + esc(t('print')) + '</button></div></div></section>' +
       '<section class="card md-video no-print" id="video" tabindex="-1"><h2>' + esc(t('videoTitle')) + '</h2>' +
-        '<video controls playsinline preload="none" lang="ur" poster="/exp-videos/mohenjo-daro-ur.webp" src="/exp-videos/mohenjo-daro-ur.mp4"></video>' +
+        '<video controls playsinline preload="none" lang="ur" poster="/exp-videos/mohenjo-daro-ur.webp" src="/exp-videos/mohenjo-daro-ur.mp4"><track kind="subtitles" srclang="ur" label="اردو" default src="/exp-videos/mohenjo-daro-ur.vtt"></video>' +
         '<p class="muted small">' + esc(t('videoNote')) + '</p></section>' +
       '<section class="card md-citycard" id="city" tabindex="-1"><h2 id="city-title">' + esc(t('cityTitle')) + '</h2>' +
         '<div class="md-citygrid"><div class="md-citybox">' + citySvg() + '</div><div class="md-spotinfo" id="spot" tabindex="-1" aria-live="polite">' + spotPanel() + '</div></div></section>' +

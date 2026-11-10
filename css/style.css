@@ -721,3 +721,6 @@ footer::before {
 .low-score { border: 2px solid var(--yellow-line); background: var(--yellow); }
 .low-score h2 { display: flex; align-items: center; gap: 8px; margin-top: 0.1em; color: var(--amber); font-size: 1.15rem; }
 .low-score ul { margin: 0; }
+/* home: six action tiles in one row on computers */
+.actions { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+@media (max-width: 760px) { .actions { grid-template-columns: repeat(2, 1fr); } }
