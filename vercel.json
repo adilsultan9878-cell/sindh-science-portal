@@ -10,51 +10,27 @@
     },
     {
       "source": "/sw.js",
-      "headers": [
-    {
-      "source": "/(.*)\\.vtt",
-      "headers": [{ "key": "Content-Type", "value": "text/vtt; charset=utf-8" }]
-    },{ "key": "Cache-Control", "value": "no-cache" }]
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
     },
     {
       "source": "/manifest.webmanifest",
-      "headers": [
-    {
-      "source": "/(.*)\\.vtt",
-      "headers": [{ "key": "Content-Type", "value": "text/vtt; charset=utf-8" }]
-    },{ "key": "Content-Type", "value": "application/manifest+json" }]
+      "headers": [{ "key": "Content-Type", "value": "application/manifest+json" }]
     },
     {
       "source": "/(icons|img|audio|lesson-videos|exp-videos)/(.*)",
-      "headers": [
-    {
-      "source": "/(.*)\\.vtt",
-      "headers": [{ "key": "Content-Type", "value": "text/vtt; charset=utf-8" }]
-    },{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
     },
     {
       "source": "/fonts/(.*)",
-      "headers": [
-    {
-      "source": "/(.*)\\.vtt",
-      "headers": [{ "key": "Content-Type", "value": "text/vtt; charset=utf-8" }]
-    },{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
     },
     {
       "source": "/(css|js|data)/(.*)",
-      "headers": [
-    {
-      "source": "/(.*)\\.vtt",
-      "headers": [{ "key": "Content-Type", "value": "text/vtt; charset=utf-8" }]
-    },{ "key": "Cache-Control", "value": "public, max-age=600, stale-while-revalidate=86400" }]
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=600, stale-while-revalidate=86400" }]
     },
     {
       "source": "/(.*)",
       "headers": [
-    {
-      "source": "/(.*)\\.vtt",
-      "headers": [{ "key": "Content-Type", "value": "text/vtt; charset=utf-8" }]
-    },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "no-referrer" },
         { "key": "X-Frame-Options", "value": "DENY" },
