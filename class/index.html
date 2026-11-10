@@ -44,6 +44,8 @@
   .tc-form textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid var(--line-2); border-radius: 8px; box-sizing: border-box; }
   .tc-acts { white-space: nowrap; }
   .tc-hw h3 { margin: 0 0 4px; }
+  .tc-week .tc-table td.none { color: var(--muted); }
+  @media print { .tc-week { border: 0; box-shadow: none; } }
   .tc-slips { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
   .tc-slip { border: 2px dashed var(--green); border-radius: 10px; padding: 10px 14px; background: #fff; break-inside: avoid; }
   .tc-slip p { margin: 4px 0; }
@@ -61,7 +63,7 @@
 </style>
 <script src="/js/config.js?v=20261110a" defer></script>
 <script src="/js/ui-text.js?v=20261110a" defer></script>
-<script src="/js/teacher.js?v=20261110a" defer></script>
+<script src="/js/teacher.js?v=20261110b" defer></script>
 <script src="/js/site-nav.js?v=20261110a" data-current="/teachers" defer></script>
 </head>
 <body>

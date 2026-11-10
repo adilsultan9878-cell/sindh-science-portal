@@ -10,7 +10,7 @@
   var SESSION_KEY = 'ssp-staff-session';
   var LANGS = ['sd', 'ur', 'en'], RTL = { sd: 1, ur: 1 };
   var main = document.getElementById('main');
-  var openCode = null, data = null, chapters = [], tab = 'students', slips = null;
+  var openCode = null, data = null, chapters = [], tab = 'students', slips = null, weekBack = 0;   // weekBack: 0 = this week, 1 = last week
 
   var TEXT = {
     siteName: { sd: 'سنڌ سائنس سکيا پورٽل', ur: 'سندھ سائنس لرننگ پورٹل', en: 'Sindh Science Learning Portal' },
@@ -32,6 +32,23 @@
     students: { sd: 'شاگرد', ur: 'طلبہ', en: 'Students' },
     homework: { sd: 'گهر جو ڪم', ur: 'ہوم ورک', en: 'Homework' },
     behind: { sd: 'پوئتي رهيل', ur: 'پیچھے رہ جانے والے', en: 'Who is behind' },
+    week: { sd: 'هفتيوار رپورٽ', ur: 'ہفتہ وار رپورٹ', en: 'Weekly report' },
+    thisWeek: { sd: 'هي هفتو', ur: 'یہ ہفتہ', en: 'This week' },
+    lastWeek: { sd: 'گذريل هفتو', ur: 'پچھلا ہفتہ', en: 'Last week' },
+    active: { sd: 'ڪم ڪندڙ ٻار', ur: 'کام کرنے والے بچے', en: 'Children who worked' },
+    activities: { sd: 'ڪل ڪم', ur: 'کل کام', en: 'All work' },
+    quizzes: { sd: 'ڪوئز', ur: 'کوئز', en: 'Quizzes' },
+    avg: { sd: 'اوسط', ur: 'اوسط', en: 'Average' },
+    hwShort: { sd: 'گهر جو ڪم', ur: 'ہوم ورک', en: 'Homework' },
+    worksheets: { sd: 'ورڪ شيٽ', ur: 'ورک شیٹ', en: 'Worksheets' },
+    experiments: { sd: 'تجربا', ur: 'تجربے', en: 'Experiments' },
+    status: { sd: 'حال', ur: 'حال', en: 'Status' },
+    stGood: { sd: 'سٺو', ur: 'اچھا', en: 'Good' },
+    stLow: { sd: 'مدد گهرجي', ur: 'مدد چاہیے', en: 'Needs help' },
+    stNone: { sd: 'ڪجهه نه ڪيو', ur: 'کچھ نہیں کیا', en: 'Did nothing' },
+    behindWeek: { sd: 'هن هفتي پوئتي رهيل', ur: 'اس ہفتے پیچھے رہ جانے والے', en: 'Behind this week' },
+    shareClass: { sd: 'واٽس ايپ تي موڪليو', ur: 'واٹس ایپ پر بھیجیں', en: 'Send on WhatsApp' },
+    weekWa: { sd: '{c} — هفتيوار سائنس رپورٽ ({d}): ڪم ڪندڙ ٻار {a}/{n}، ڪوئز {q}، اوسط {p}. پوئتي: {b}', ur: '{c} — ہفتہ وار سائنس رپورٹ ({d}): کام کرنے والے بچے {a}/{n}، کوئز {q}، اوسط {p}۔ پیچھے: {b}', en: '{c} — weekly science report ({d}): children who worked {a}/{n}, quizzes {q}, average {p}. Behind: {b}' },
     back: { sd: 'سڀ ڪلاس', ur: 'سب کلاسیں', en: 'All classes' },
     addStudents: { sd: 'شاگردن جا اڪائونٽ ٺاهيو', ur: 'طلبہ کے اکاؤنٹ بنائیں', en: 'Make students\' accounts' },
     namesHelp: { sd: 'هر قطار ۾ هڪ نالو (60 تائين). سائيٽ هر ٻار لاءِ يوزر نالو ۽ پن ٺاهيندي.', ur: 'ہر لائن میں ایک نام (60 تک)۔ سائٹ ہر بچے کا یوزر نیم اور پن بنائے گی۔', en: 'One name per line (up to 60). The site makes a username and PIN for each child.' },
@@ -184,7 +201,7 @@
   }
   function drawClass() {
     var c = data.class, studs = data.students;
-    var tabs = ['students', 'homework', 'behind'].map(function (k) {
+    var tabs = ['students', 'homework', 'week', 'behind'].map(function (k) {
       return '<button type="button" class="chip" data-tab="' + k + '" aria-current="' + (tab === k) + '">' + esc(T(k)) + '</button>';
     }).join('');
     var body = '';
@@ -213,6 +230,8 @@
             (studs.length ? (missing.length ? '<p class="small">' + esc(T('notYet')) + ' ' + missing.map(function (st) { return esc(st.name); }).join('، ') + '</p>' : '<p class="small">' + esc(T('allDone')) + '</p>') : '') +
             '<button type="button" class="btn small ghost" data-hwdel="' + h.id + '">' + esc(T('del')) + '</button></section>';
         }).join('') : '<p class="muted">' + esc(T('noHw')) + '</p>');
+    } else if (tab === 'week') {
+      body = weekReport();
     } else {
       var weekAgo = Date.now() - 7 * 864e5;
       var idle = studs.filter(function (st) { return !st.last || new Date(st.last).getTime() < weekAgo; });
@@ -222,7 +241,58 @@
         '<section class="card"><h2>' + esc(T('low')) + '</h2>' + list(low, function (st) { return stats(st).avg + '%'; }) + '</section>';
     }
     main.innerHTML = head(c.name) + '<div class="tc-head"><h1>' + esc(c.name) + '</h1><button type="button" class="btn ghost small" data-act="home">' + esc(T('back')) + '</button></div>' +
-      (c.school ? '<p class="muted">' + esc(c.school) + '</p>' : '') + '<div class="tc-classes tc-tabs">' + tabs + '</div>' + body;
+      (c.school ? '<p class="muted">' + esc(c.school) + '</p>' : '') + '<div class="tc-classes tc-tabs no-print">' + tabs + '</div>' + body;
+  }
+
+  // Weekly report: Monday to Sunday, per child counts and quiz %, who is behind; print or send on WhatsApp
+  function weekRange() {
+    var d = new Date(); d.setHours(0, 0, 0, 0);
+    d.setDate(d.getDate() - ((d.getDay() + 6) % 7) - 7 * weekBack);   // Monday
+    var end = new Date(d.getTime() + 7 * 864e5);
+    return { from: d, to: end, label: d.toLocaleDateString(lang() === 'en' ? 'en-GB' : 'ur-PK', { day: 'numeric', month: 'short' }) + ' – ' +
+      new Date(end.getTime() - 864e5).toLocaleDateString(lang() === 'en' ? 'en-GB' : 'ur-PK', { day: 'numeric', month: 'short' }) };
+  }
+  function weekRows() {
+    var w = weekRange(), studs = data.students;
+    var inWeek = data.results.filter(function (r) { var t = new Date(r.at).getTime(); return t >= w.from.getTime() && t < w.to.getTime(); });
+    var hwWeek = data.homework.filter(function (h) { var t = new Date(h.due ? h.due + 'T00:00:00' : h.at).getTime(); return t >= w.from.getTime() && t < w.to.getTime(); });
+    var rows = studs.map(function (st) {
+      var mine = inWeek.filter(function (r) { return r.student_id === st.id; });
+      var q = mine.filter(function (r) { return r.kind === 'quiz' && r.total; });
+      var avg = q.length ? Math.round(q.reduce(function (n, r) { return n + 100 * r.score / r.total; }, 0) / q.length) : null;
+      var hw = hwWeek.filter(function (h) { return (h.done || []).indexOf(st.id) >= 0; }).length;
+      var status = !mine.length ? 'stNone' : (avg != null && avg < 50) ? 'stLow' : 'stGood';
+      return { st: st, all: mine.length, quizzes: q.length, avg: avg, ws: mine.filter(function (r) { return r.kind === 'worksheet'; }).length,
+        ex: mine.filter(function (r) { return r.kind === 'experiment'; }).length, hw: hw, status: status };
+    });
+    var q = inWeek.filter(function (r) { return r.kind === 'quiz' && r.total; });
+    return { w: w, rows: rows, hwN: hwWeek.length, active: rows.filter(function (r) { return r.all; }).length, quizzes: q.length,
+      avg: q.length ? Math.round(q.reduce(function (n, r) { return n + 100 * r.score / r.total; }, 0) / q.length) : null,
+      behind: rows.filter(function (r) { return r.status !== 'stGood'; }) };
+  }
+  function weekReport() {
+    var R = weekRows(), studs = data.students;
+    var pct = function (v) { return v == null ? '–' : v + '%'; };
+    var wa = T('weekWa', { c: data.class.name, d: R.w.label, a: R.active, n: studs.length, q: R.quizzes, p: pct(R.avg),
+      b: R.behind.length ? R.behind.map(function (r) { return r.st.name; }).join('، ') : '–' });
+    return '<div class="tc-classes no-print"><button type="button" class="chip" data-week="0" aria-current="' + (weekBack === 0) + '">' + esc(T('thisWeek')) + '</button>' +
+        '<button type="button" class="chip" data-week="1" aria-current="' + (weekBack === 1) + '">' + esc(T('lastWeek')) + '</button></div>' +
+      '<section class="card tc-week"><h2>' + esc(T('week')) + ': ' + esc(data.class.name) + '</h2><p class="muted">' + esc(R.w.label) + '</p>' +
+      '<div class="tc-tiles">' + [[R.active + ' / ' + studs.length, T('active')], [R.quizzes, T('quizzes')], [pct(R.avg), T('avg')], [R.rows.reduce(function (n, r) { return n + r.all; }, 0), T('activities')]].map(function (x) {
+        return '<div class="card"><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></div>';
+      }).join('') + '</div>' +
+      (studs.length ? '<div class="table-wrap"><table class="table tc-table"><thead><tr><th>' + esc(T('name')) + '</th><th>' + esc(T('quizzes')) + '</th><th>' + esc(T('avg')) + '</th><th>' + esc(T('worksheets')) +
+        '</th><th>' + esc(T('experiments')) + '</th><th>' + esc(T('hwShort')) + '</th><th>' + esc(T('status')) + '</th></tr></thead><tbody>' +
+        R.rows.map(function (r) {
+          var cls = r.status === 'stGood' ? 'good' : r.status === 'stLow' ? 'low' : 'none';
+          return '<tr><td>' + esc(r.st.name) + '</td><td>' + r.quizzes + '</td><td class="' + (r.avg == null ? 'none' : r.avg >= 80 ? 'good' : r.avg >= 50 ? 'ok' : 'low') + '">' + pct(r.avg) + '</td><td>' + r.ws + '</td><td>' + r.ex + '</td><td>' +
+            r.hw + ' / ' + R.hwN + '</td><td class="' + cls + '">' + esc(T(r.status)) + '</td></tr>';
+        }).join('') + '</tbody></table></div>' : '<p class="muted">' + esc(T('noStudents')) + '</p>') +
+      '<h3>' + esc(T('behindWeek')) + '</h3>' + (R.behind.length ? '<ul>' + R.behind.map(function (r) {
+        return '<li>' + esc(r.st.name) + ' — ' + esc(T(r.status)) + (r.avg != null ? ' (' + r.avg + '%)' : '') + ' <a class="small no-print" target="_blank" rel="noopener" href="' + esc(waLink(r.st)) + '">WhatsApp</a></li>';
+      }).join('') + '</ul>' : '<p class="muted">' + esc(T('nobody')) + '</p>') +
+      '<p class="no-print"><button type="button" class="btn ghost" data-act="print">' + esc(T('print')) + '</button> ' +
+      '<a class="btn" target="_blank" rel="noopener" href="https://wa.me/?text=' + encodeURIComponent(wa) + '">' + esc(T('shareClass')) + '</a></p></section>';
   }
 
   function viewSlips() {
@@ -241,7 +311,7 @@
   /* ---------- actions ---------- */
 
   main.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-act],[data-open],[data-tab],[data-pin],[data-remove],[data-hwdel]');
+    var b = e.target.closest('[data-act],[data-open],[data-tab],[data-week],[data-pin],[data-remove],[data-hwdel]');
     if (!b) return;
     var act = b.getAttribute('data-act');
     if (act) e.preventDefault();
@@ -251,6 +321,7 @@
     else if (act === 'slipsdone') { slips = null; render(); }
     else if (b.hasAttribute('data-open')) { openCode = b.getAttribute('data-open'); tab = 'students'; render(); }
     else if (b.hasAttribute('data-tab')) { tab = b.getAttribute('data-tab'); drawClass(); }
+    else if (b.hasAttribute('data-week')) { weekBack = +b.getAttribute('data-week'); drawClass(); }
     else if (b.hasAttribute('data-pin')) {
       var st = data.students.filter(function (x) { return x.id === b.getAttribute('data-pin'); })[0];
       if (!st || !window.confirm(T('newPinAsk', { n: st.name }))) return;
