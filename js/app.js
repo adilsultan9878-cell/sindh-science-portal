@@ -504,7 +504,7 @@
         col(t('sindhShelf'), [['/sindh/', 'sindhScience'], ['/lok/', 'lokScience'], ['/sindh/mohenjo-daro/', 'mohenjoLab'], ['/mausam/', 'mausamLab'], ['/citizen/', 'citizenTitle'], ['/league/', 'leagueTitle']]) +
       '</div>' +
       '<div class="wrap foot-base"><p>© 2026 The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p>' +
-        '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/verify">' + esc(t('verifyTitle')) + '</a> · <a href="/staff/">' + esc(t('staffHome')) + '</a></p></div>';
+        '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/verify">' + esc(t('verifyTitle')) + '</a></p></div>';
   }
 
   /* ---------- router ---------- */
