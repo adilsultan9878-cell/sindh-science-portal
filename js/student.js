@@ -196,8 +196,21 @@
     return code ? T('err_' + code) : T('err_other');
   }
 
+  // Log out: save first, end the account on the server, clear this phone, then reload
+  // (the login page button and the green button in the "More" menu both use this).
+  function logout() {
+    var s = session();
+    return push().catch(function () {}).then(function () { return s && s.token ? rpc('student_logout', { p_token: s.token }).catch(function () {}) : null; }).then(function () {
+      try {
+        Object.keys(snapshot().keys).forEach(function (k) { localStorage.removeItem(k); });
+        sessionStorage.removeItem('ssp1.studentPulled');
+      } catch (err) { /* ignore */ }
+      save(KEY, null); lastSent = ''; location.reload();   // every page now shows the phone without the account
+    });
+  }
   function mount(el) {
     var mode = 'login';
+    if (location.hash === '#logout' && session()) { history.replaceState(null, '', location.pathname); logout(); }
     function draw() {
       var s = session();
       if (s && s.token) {
@@ -232,16 +245,7 @@
       var m = e.target.closest('[data-mode]');
       if (m) { mode = m.getAttribute('data-mode'); draw(); return; }
       if (e.target.closest('[data-act="guest"]')) { save('ssp1.guest', true); location.replace(next() || '/'); return; }
-      if (e.target.closest('[data-act="logout"]')) {
-        var s = session();
-        push().then(function () { return s && s.token ? rpc('student_logout', { p_token: s.token }).catch(function () {}) : null; }).then(function () {
-          try {
-            Object.keys(snapshot().keys).forEach(function (k) { localStorage.removeItem(k); });
-            sessionStorage.removeItem('ssp1.studentPulled');
-          } catch (err) { /* ignore */ }
-          save(KEY, null); lastSent = ''; location.reload();   // the menu and every page now show the phone without the account
-        });
-      }
+      if (e.target.closest('[data-act="logout"]')) logout();
     });
     el.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -351,7 +355,7 @@
     });
   }
 
-  window.Student = { mount: mount, status: status, current: current, session: session, save: push, merge: merge,
+  window.Student = { mount: mount, logout: logout, status: status, current: current, session: session, save: push, merge: merge,
     guest: guest, report: report, home: home, homework: homework, classCard: classCard };
   flush();
   startSync();

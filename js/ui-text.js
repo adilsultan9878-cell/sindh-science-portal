@@ -498,6 +498,7 @@ Object.assign(window.UI_TEXT, {
   pfSindhOf: { sd: '{m} مان {n} صفحا ڏٺا', ur: '{m} میں سے {n} صفحات دیکھے', en: '{n} of {m} pages opened' }
 });
 Object.assign(window.UI_TEXT, {
+  logoutBtn: { sd: 'لاگ آئوٽ', ur: 'لاگ آؤٹ', en: 'Log out' },
   staffHome: { sd: 'استادن ۽ اسٽاف لاءِ', ur: 'اساتذہ اور اسٹاف کے لیے', en: 'Teachers and staff' },
   toStudentSite: { sd: 'ٻارن جي ويب سائيٽ', ur: 'بچوں کی ویب سائٹ', en: 'Children\'s website' }
 });

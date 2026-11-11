@@ -461,7 +461,7 @@
   }
   function moreLinks() {
     return [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
-      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle'], ['/login', 'loginTitle']];
+      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle']];
   }
   function renderFrame() {
     var student = window.Student && window.Student.current();
@@ -480,7 +480,7 @@
         (state.lang ? '<details class="more-menu"><summary>' + icon('list') + '<span>' + esc(t('more')) + '</span></summary><div class="more-panel">' + moreLinks().map(function (x) {
           var label = x[0] === '/login' && student ? student.name : t(x[1]);
           return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(label) + '</a>';
-        }).join('') + '</div></details>' : '') + '</div>' +
+        }).join('') + (student ? '<button type="button" class="more-auth" data-act="menu-logout">' + esc(t('logoutBtn')) + '</button>' : '<a class="more-auth" href="/login">' + esc(t('loginTitle')) + '</a>') + '</div></details>' : '') + '</div>' +
       '</div>' +
       (state.lang ? '<nav class="wrap nav" aria-label="' + esc(t('menu')) + '">' + links.map(function (x) {
         return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(x[0] === '/progress' && student ? student.name : t(x[1])) + '</a>';
@@ -577,6 +577,7 @@
       return;
     }
     // profile picture: open the avatar choices, or pick one (kept on the phone and in the student's account)
+    if (e.target.closest('[data-act="menu-logout"]')) { if (window.Student && window.Student.logout) window.Student.logout(); return; }
     if (e.target.closest('[data-act="pf-dp"]')) { var box = document.querySelector('.pf-avatars'); if (box) box.hidden = !box.hidden; return; }
     var av = e.target.closest('[data-avatar]');
     if (av) { store.set('avatar', av.getAttribute('data-avatar')); render(false); return; }

@@ -767,3 +767,8 @@ html[dir="ltr"] .pf-aside { order: 2; }
 .tabbar[hidden] { display: none !important; }
 body.staff-side { padding-bottom: 0; }
 .foot-grid { grid-template-columns: minmax(0, 1.5fr) repeat(auto-fit, minmax(0, 1fr)); }
+
+/* green Log in / Log out button at the end of the More menu */
+.more-panel .more-auth { display: block; width: 100%; margin-top: 6px; padding: 10px 14px; border: 0; border-radius: 10px; background: var(--green); color: #fff; font: inherit; font-weight: 700; text-align: center; cursor: pointer; text-decoration: none; }
+.more-panel .more-auth:hover, .more-panel .more-auth:focus-visible { background: var(--green-ink); color: #fff; }
+

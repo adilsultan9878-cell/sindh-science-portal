@@ -57,7 +57,7 @@
     var main = [['/', 'home', 'home', 'home'], ['/class-5/science', 'learn', 'tabLearn', 'lesson'], ['/games', 'gamesTitle', 'tabPlay', 'game'],
       ['/watch', 'videosTitle', 'tabWatch', 'video'], [s ? '/progress' : '/login', s ? 'progress' : 'loginTitle', 'tabMe', 'star']];
     var more = [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
-      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/login', 'loginTitle']];
+      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience']];
     // teachers' and staff pages have their own small menu and no student bar (the staff side starts at /staff/)
     var staffSide = /^\/(class|school|paper|staff|stats)(\/|$)/.test(location.pathname);
     if (staffSide) {
@@ -71,7 +71,7 @@
     if (menu) {
       menu.innerHTML = '<summary>' + icon('list') + '<span>' + esc(t('more')) + '</span></summary><div class="more-panel">' + more.map(function (x) {
         return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + esc(x[0] === '/login' && s ? s.name : t(x[1])) + '</a>';
-      }).join('') + '</div>';
+      }).join('') + (staffSide ? '' : s ? '<a class="more-auth" href="/login#logout">' + esc(t('logoutBtn')) + '</a>' : '<a class="more-auth" href="/login">' + esc(t('loginTitle')) + '</a>') + '</div>';
     }
     var nav = top.querySelector('.site-nav');
     if (!nav) { nav = document.createElement('nav'); nav.className = 'wrap nav site-nav no-print'; top.appendChild(nav); }
