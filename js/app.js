@@ -461,7 +461,7 @@
   }
   function moreLinks() {
     return [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
-      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
+      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle'], ['/login', 'loginTitle']];
   }
   function renderFrame() {
     var student = window.Student && window.Student.current();
@@ -502,10 +502,9 @@
           '<p class="foot-tags"><span>' + esc(t('footFree')) + '</span><span>' + esc(t('footLangs')) + '</span><span>' + esc(t('footNoAds')) + '</span></p></div>' +
         col(t('footLearn'), [['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/ustad/', 'ustadTitle'], ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/book/', 'bookPdf']]) +
         col(t('sindhShelf'), [['/sindh/', 'sindhScience'], ['/lok/', 'lokScience'], ['/sindh/mohenjo-daro/', 'mohenjoLab'], ['/mausam/', 'mausamLab'], ['/citizen/', 'citizenTitle'], ['/league/', 'leagueTitle']]) +
-        col(t('teachers'), [['/teachers', 'teachers'], ['/paper/', 'questionPaper'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/verify', 'verifyTitle'], ['/stats/', 'statsTitle'], ['/admin', 'staff']]) +
       '</div>' +
       '<div class="wrap foot-base"><p>© 2026 The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p>' +
-        '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/leaderboard">' + esc(t('leaderboard')) + '</a></p></div>';
+        '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/verify">' + esc(t('verifyTitle')) + '</a> · <a href="/staff/">' + esc(t('staffHome')) + '</a></p></div>';
   }
 
   /* ---------- router ---------- */
@@ -521,7 +520,7 @@
     [/^\/progress\/?$/, viewProgress],
     [/^\/login\/?$/, viewLogin],
     [/^\/leaderboard\/?$/, viewLeaderboard],
-    [/^\/teachers\/?$/, viewTeachers],
+    [/^\/teachers\/?$/, function () { location.replace('/staff/'); }],   // the teachers' and staff pages moved to /staff/
     [/^\/watch\/?$/, viewWatch],
     [/^\/games\/?$/, viewGames],
     [/^\/about\/?$/, viewAbout],
@@ -598,7 +597,7 @@
     var a = e.target.closest('a[href]');
     if (!a || a.target || a.hasAttribute('download') || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     var url = new URL(a.href, location.href);
-    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|citizen|school|lok|mausam|ustad|parent|exam|cards|stats)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
+    if (url.origin !== location.origin || /^\/(data|fonts|css|js|img|audio|videos|lesson-videos|exp-videos|class|paper|play|league|book|sindh|citizen|school|lok|mausam|ustad|parent|exam|cards|stats|staff)(\/|$)/.test(url.pathname) || /^\/admin/.test(url.pathname)) return;
     if (url.pathname === location.pathname && url.search === location.search && url.hash) return; // same-page anchor
     e.preventDefault();
     go(url.pathname + url.search + url.hash);
@@ -678,7 +677,7 @@
           shelfTile('/sindh/my-sindh/', 'map', 'mySindh') + shelfTile('/sindh/', 'map', 'sindhScience') +
         '</div>' +
         '<nav class="mini-links" aria-label="' + esc(t('more')) + '">' +
-          [['/competition', 'trophy', 'competition'], ['/progress', 'star', 'progress'], ['/glossary', 'words', 'glossary'], ['/teachers', 'users', 'teachers']].map(function (x) {
+          [['/competition', 'trophy', 'competition'], ['/progress', 'star', 'progress'], ['/glossary', 'words', 'glossary']].map(function (x) {
             return '<a href="' + x[0] + '">' + icon(x[1]) + esc(t(x[2])) + '</a>';
           }).join('') +
         '</nav>';

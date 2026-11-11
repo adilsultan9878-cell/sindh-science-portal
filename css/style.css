@@ -763,3 +763,7 @@ html[dir="ltr"] .pf-aside { order: 2; }
 .pf-avatars[hidden] { display: none; }
 .pf-avatars { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .pf-av { min-width: 0; padding: 0; }
+/* teachers' and staff pages (js/site-nav.js marks them): no children's bottom bar */
+.tabbar[hidden] { display: none !important; }
+body.staff-side { padding-bottom: 0; }
+.foot-grid { grid-template-columns: minmax(0, 1.5fr) repeat(auto-fit, minmax(0, 1fr)); }

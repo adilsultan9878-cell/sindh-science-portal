@@ -497,3 +497,7 @@ Object.assign(window.UI_TEXT, {
   pfChapters: { sd: 'پورا باب', ur: 'مکمل ابواب', en: 'Chapters done' },
   pfSindhOf: { sd: '{m} مان {n} صفحا ڏٺا', ur: '{m} میں سے {n} صفحات دیکھے', en: '{n} of {m} pages opened' }
 });
+Object.assign(window.UI_TEXT, {
+  staffHome: { sd: 'استادن ۽ اسٽاف لاءِ', ur: 'اساتذہ اور اسٹاف کے لیے', en: 'Teachers and staff' },
+  toStudentSite: { sd: 'ٻارن جي ويب سائيٽ', ur: 'بچوں کی ویب سائٹ', en: 'Children\'s website' }
+});

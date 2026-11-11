@@ -18,7 +18,7 @@
   try {
     var me = JSON.parse(localStorage.getItem('ssp1.student'));
     var guest = JSON.parse(localStorage.getItem('ssp1.guest')) === true;   // started without internet (js/student.js)
-    if (!(me && me.token) && !guest && !/^\/(class|school|paper|parent|stats)(\/|$)/.test(location.pathname)) {
+    if (!(me && me.token) && !guest && !/^\/(class|school|paper|parent|stats|staff)(\/|$)/.test(location.pathname)) {
       location.replace('/login?next=' + encodeURIComponent(location.pathname + location.search + location.hash));
       return;
     }
@@ -57,7 +57,13 @@
     var main = [['/', 'home', 'home', 'home'], ['/class-5/science', 'learn', 'tabLearn', 'lesson'], ['/games', 'gamesTitle', 'tabPlay', 'game'],
       ['/watch', 'videosTitle', 'tabWatch', 'video'], [s ? '/progress' : '/login', s ? 'progress' : 'loginTitle', 'tabMe', 'star']];
     var more = [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
-      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/teachers', 'teachers'], ['/login', 'loginTitle']];
+      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/login', 'loginTitle']];
+    // teachers' and staff pages have their own small menu and no student bar (the staff side starts at /staff/)
+    var staffSide = /^\/(class|school|paper|staff|stats)(\/|$)/.test(location.pathname);
+    if (staffSide) {
+      main = [['/staff/', 'staffHome'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/paper/', 'questionPaper'], ['/stats/', 'statsTitle'], ['/admin', 'staff']];
+      more = [['/', 'toStudentSite']];
+    }
 
     var row = top.querySelector('.top-row');
     var menu = top.querySelector('.more-menu');
@@ -73,8 +79,10 @@
     nav.innerHTML = main.map(function (x) { return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + esc(x[0] === '/progress' && s ? s.name : t(x[1])) + '</a>'; }).join('');
     var bar = document.querySelector('.tabbar');
     if (!bar) { bar = document.createElement('nav'); bar.className = 'tabbar no-print'; document.body.appendChild(bar); }
+    bar.hidden = staffSide;
+    document.body.classList.toggle('staff-side', staffSide);
     bar.setAttribute('aria-label', t('menu'));
-    bar.innerHTML = main.map(function (x) { return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + icon(x[3]) + '<span>' + esc(t(x[2])) + '</span></a>'; }).join('');
+    bar.innerHTML = staffSide ? '' : main.map(function (x) { return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + icon(x[3]) + '<span>' + esc(t(x[2])) + '</span></a>'; }).join('');
 
     // the same footer as the main site (footerHTML in js/app.js)
     var foot = document.querySelector('body > footer');
@@ -91,10 +99,9 @@
           '<p class="foot-tags"><span>' + esc(t('footFree')) + '</span><span>' + esc(t('footLangs')) + '</span><span>' + esc(t('footNoAds')) + '</span></p></div>' +
         col(t('footLearn'), [['/class-5/science', 'learn'], ['/watch', 'videosTitle'], ['/games', 'gamesTitle'], ['/ustad/', 'ustadTitle'], ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/book/', 'bookPdf']]) +
         col(t('sindhShelf'), [['/sindh/', 'sindhScience'], ['/lok/', 'lokScience'], ['/sindh/mohenjo-daro/', 'mohenjoLab'], ['/mausam/', 'mausamLab'], ['/citizen/', 'citizenTitle'], ['/league/', 'leagueTitle']]) +
-        col(t('teachers'), [['/teachers', 'teachers'], ['/paper/', 'questionPaper'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/verify', 'verifyTitle'], ['/stats/', 'statsTitle'], ['/admin', 'staff']]) +
       '</div>' +
       '<div class="wrap foot-base"><p>© 2026 The Professional Educator · EduPulse Nexus · ' + esc(t('pilot')) + '</p>' +
-        '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/leaderboard">' + esc(t('leaderboard')) + '</a></p></div>';
+        '<p><a href="/about">' + esc(t('about')) + '</a> · <a href="/verify">' + esc(t('verifyTitle')) + '</a> · <a href="/staff/">' + esc(t('staffHome')) + '</a></p></div>';
   }
   document.addEventListener('click', function (e) {
     document.querySelectorAll('details.more-menu[open]').forEach(function (d) {

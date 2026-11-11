@@ -1,0 +1,11 @@
+/* Teachers and staff (/staff/) */
+.sf-hero h1 { margin: 0 0 4px; }
+.sf-hero .lead { margin: 0; }
+.sf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 14px 0; }
+.sf-card { display: flex; gap: 14px; align-items: flex-start; margin: 0; text-decoration: none; color: var(--text); }
+.sf-card:hover, .sf-card:focus-visible { border-color: var(--green); background: var(--soft); }
+.sf-body { display: flex; flex-direction: column; gap: 2px; }
+.sf-body strong { color: var(--green-ink); font-size: 1.1rem; }
+.sf-kids { text-align: center; }
+/* staff pages have no children's bottom bar */
+body.staff-side { padding-bottom: 0; }
