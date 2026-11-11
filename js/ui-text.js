@@ -332,7 +332,7 @@ Object.assign(window.UI_TEXT, {
   labelHelp: { sd: 'هر نمبر لاءِ صحيح نالو چونڊيو، پوءِ «جانچيو» دٻايو.', ur: 'ہر نمبر کے لیے درست نام چنیں، پھر «چیک کریں» دبائیں۔', en: 'Choose the right name for each number, then press “Check”.' },
   labelScore: { sd: '{m} مان {n} صحيح', ur: '{m} میں سے {n} درست', en: '{n} of {m} correct' },
   exploreTitle: { sd: 'تصوير کي سمجهو', ur: 'تصویر کو سمجھیں', en: 'Explore the diagram' },
-  wsDigitalHelp: { sd: 'جواب هتي ئي لکو. توهان جو ڪم پاڻمرادو محفوظ ٿيندو رهي ٿو. ختم ڪرڻ کان پوءِ «محفوظ ڪريو ۽ جمع ڪرايو» دٻايو.', ur: 'جوابات یہیں لکھیں۔ آپ کا کام خود بخود محفوظ ہوتا رہتا ہے۔ مکمل کرنے کے بعد «محفوظ کریں اور جمع کروائیں» دبائیں۔', en: 'Write your answers here. Your work is saved automatically. When you finish, press “Save and submit”.' },
+  wsDigitalHelp: { sd: 'جواب هتي ئي لکو. توهان جو ڪم پاڻمرادو محفوظ ٿيندو رهي ٿو. هر حصو (A، B، C …) ڀري ان جو سائو بٽڻ دٻايو. آخري حصي کان پوءِ نتيجو پاڻ ئي ملندو.', ur: 'جوابات یہیں لکھیں۔ آپ کا کام خود بخود محفوظ ہوتا رہتا ہے۔ ہر حصہ (A، B، C …) بھر کر اس کا سبز بٹن دبائیں۔ آخری حصے کے بعد نتیجہ خود آ جائے گا۔', en: 'Write your answers here. Your work is saved automatically. Fill each part (A, B, C …) and press its green button. After the last part you get your result.' },
   draftSaved: { sd: 'مسودو محفوظ ٿيو · {time}', ur: 'مسودہ محفوظ ہو گیا · {time}', en: 'Draft saved · {time}' },
   submitWs: { sd: 'محفوظ ڪريو ۽ جمع ڪرايو', ur: 'محفوظ کریں اور جمع کروائیں', en: 'Save and submit' },
   wsDoneMsg: { sd: 'ورڪ شيٽ جمع ٿي وئي. هيٺ پنهنجا نتيجا ڏسو.', ur: 'ورک شیٹ جمع ہو گئی۔ نیچے اپنے نتائج دیکھیں۔', en: 'Worksheet submitted. See your results below.' },

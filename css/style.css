@@ -730,7 +730,10 @@ footer::before {
 .ws-sec-tools { display: inline-flex; align-items: center; gap: 10px; margin-inline-start: auto; }
 .ws-sec-count { font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; direction: ltr; }
 .ws-sec-btn { min-height: 40px; margin: 0; }
-.ws-sec-btn:disabled { background: #fff; color: var(--muted); border-color: var(--line-2); cursor: not-allowed; opacity: 1; }
+.ws-sec-btn, .ws-sec-btn:disabled { background: var(--green); color: #fff; border-color: var(--green); opacity: 1; }
+.ws-sec-btn:disabled { cursor: not-allowed; }
+.ws-sec-btn:not(:disabled):hover { background: var(--green-ink); border-color: var(--green-ink); }
+.ws-submit:not(:has(.ws-result *)) { display: none; }
 canvas.locked { cursor: not-allowed; }
 /* My progress: profile card on the right side (first column in Sindhi/Urdu, last in English) */
 .pf-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 18px; align-items: start; }
@@ -773,7 +776,7 @@ body.staff-side { padding-bottom: 0; }
 .more-panel .more-auth:hover, .more-panel .more-auth:focus-visible { background: var(--green-ink); color: #fff; }
 
 
-/* Coloured buttons everywhere (20261111e): every button and chapter tab has a green colour, the current one is solid green */
+/* Coloured buttons everywhere (20261111g): every button and chapter tab has a green colour, the current one is solid green */
 .btn.ghost { background: var(--soft); color: var(--green-ink); border-color: #9cc9a6; font-weight: 600; }
 .btn.ghost:hover, .btn.ghost:focus-visible { background: #dcefe0; border-color: var(--green); }
 .btn.danger, .btn.ghost.danger { background: #fdf0f0; color: #a12b2b; border-color: #e9b4b4; }

@@ -1380,8 +1380,8 @@
         '<section data-sec="d">' + secHead('d', 'wsDraw') + '<p>' + esc(L(w.draw)) + '</p>' +
           '<div class="draw-box"><canvas class="draw" width="900" height="380" aria-label="' + esc(t('wsDraw')) + '"></canvas></div>' +
           '<p class="no-print draw-tools"><span class="muted small">' + esc(t('drawHere')) + '</span> <button type="button" class="btn ghost small" data-act="clear">' + icon('refresh') + esc(t('clearDraw')) + '</button></p></section>' +
-        '<div class="ws-submit no-print"><button type="submit" class="btn big">' + icon('save') + esc(t('submitWs')) + '</button>' +
-          '<div class="ws-result" aria-live="polite"></div></div>' +
+        // no big "Save and submit" button: the worksheet is marked by itself once the last section (A, B, C …) is submitted
+        '<div class="ws-submit no-print"><div class="ws-result" aria-live="polite"></div></div>' +
       '</form>' +
       '<details class="card answer-key no-print"><summary>' + esc(t('answerKey')) + '</summary>' +
         '<h4>' + esc(t('wsBlanks')) + '</h4><ol>' + w.blanks.map(function (b) { return '<li>' + esc(L(b.answer)) + '</li>'; }).join('') + '</ol>' +
@@ -1456,6 +1456,9 @@
       updateCount();
       updateSections();
       refreshStatus(ch);
+      // every section submitted: mark the whole worksheet and save the result
+      var all = ['b', 't', 'm', 's', 'd'].every(function (s2) { return secKeys(s2).every(function (k) { return doneItems[k]; }); });
+      if (all) { if (form.requestSubmit) form.requestSubmit(); else form.dispatchEvent(new Event('submit', { cancelable: true })); }
     }
 
     /* one question at a time: check it, show right or wrong, and keep it as it is */
