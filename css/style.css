@@ -1,4 +1,4 @@
-/* Sindh Science Learning Portal — calm, light design: white and soft green, clear type, no animations. */
+﻿/* Sindh Science Learning Portal — calm, light design: white and soft green, clear type, no animations. */
 
 @font-face {
   font-family: "Noto Naskh Arabic";
@@ -772,3 +772,17 @@ body.staff-side { padding-bottom: 0; }
 .more-panel .more-auth { display: block; width: 100%; margin-top: 6px; padding: 10px 14px; border: 0; border-radius: 10px; background: var(--green); color: #fff; font: inherit; font-weight: 700; text-align: center; cursor: pointer; text-decoration: none; }
 .more-panel .more-auth:hover, .more-panel .more-auth:focus-visible { background: var(--green-ink); color: #fff; }
 
+
+/* Coloured buttons everywhere (20261111e): every button and chapter tab has a green colour, the current one is solid green */
+.btn.ghost { background: var(--soft); color: var(--green-ink); border-color: #9cc9a6; font-weight: 600; }
+.btn.ghost:hover, .btn.ghost:focus-visible { background: #dcefe0; border-color: var(--green); }
+.btn.danger, .btn.ghost.danger { background: #fdf0f0; color: #a12b2b; border-color: #e9b4b4; }
+.btn { font-weight: 600; box-shadow: 0 1px 2px rgba(15, 61, 30, 0.12); }
+.chip { background: var(--soft); border-color: #b9d8bf; }
+.chip:hover { background: #dcefe0; }
+.tabs { gap: 6px; padding-bottom: 8px; border-bottom: 0; }
+.tab { border: 1px solid #b9d8bf; border-radius: 10px; background: var(--soft); color: var(--green-ink); font-weight: 600; padding: 8px 12px; }
+.tab:hover { background: #dcefe0; border-color: var(--green); }
+.tab[aria-current="page"] { background: var(--green); border-color: var(--green); color: #fff; }
+.tab[aria-current="page"] .tab-n { background: #fff; color: var(--green); }
+.more-panel .more-auth { background: var(--green); color: #fff; }
