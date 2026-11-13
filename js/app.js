@@ -482,13 +482,13 @@
         '<div class="langs" role="group" aria-label="Language / ٻولي / زبان">' + LANGS.map(function (l) {
           return '<button type="button" class="lang-btn" data-setlang="' + l + '" lang="' + l + '" aria-pressed="' + (state.lang === l) + '">' + LANG_NAMES[l] + '</button>';
         }).join('') + '</div>' +
-        (state.lang ? '<details class="more-menu"><summary>' + icon('list') + '<span>' + esc(t('more')) + '</span></summary><div class="more-panel">' + moreLinks().map(function (x) {
+        (state.lang ? '<details class="more-menu"><summary>' + icon('list') + '<span>' + esc(t('more')) + '</span></summary><div class="more-panel">' + (student ? '<a class="more-me" href="/progress">' + icon('star') + '<span>' + esc(student.name) + '<small>' + esc(t('progress')) + '</small></span></a>' : '') + moreLinks().map(function (x) {
           var label = x[0] === '/login' && student ? student.name : t(x[1]);
           return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(label) + '</a>';
         }).join('') + (student ? '<button type="button" class="more-auth" data-act="menu-logout">' + esc(t('logoutBtn')) + '</button>' : '<a class="more-auth" href="/login">' + esc(t('loginTitle')) + '</a>') + '</div></details>' : '') + '</div>' +
       '</div>' +
-      (state.lang ? '<nav class="wrap nav" aria-label="' + esc(t('menu')) + '">' + links.map(function (x) {
-        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(x[0] === '/progress' && student ? student.name : t(x[1])) + '</a>';
+      (state.lang ? '<nav class="wrap nav" aria-label="' + esc(t('menu')) + '">' + links.slice(0, 4).map(function (x) {   // the account (name, log in) sits under More, in the corner
+        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(t(x[1])) + '</a>';
       }).join('') + '</nav>' +
       '<nav class="tabbar no-print" aria-label="' + esc(t('menu')) + '">' + links.map(function (x) {
         return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + icon(x[3]) + '<span>' + esc(t(x[2])) + '</span></a>';

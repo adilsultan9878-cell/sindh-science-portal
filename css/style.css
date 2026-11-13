@@ -818,3 +818,10 @@ body.staff-side { padding-bottom: 0; }
 [dir="rtl"] .uc-send svg { transform: scaleX(-1); }
 @media (max-width: 760px) { .uc { bottom: 84px; inset-inline-start: 12px; } .uc-fab { width: 56px; height: 56px; } .uc-box { height: min(520px, calc(100vh - 170px)); } }
 @media print { .uc { display: none !important; } }
+
+/* signed-in student's name at the top of the More menu (not in the main menu row) */
+.more-panel .more-me { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; padding: 10px 12px; border-radius: 10px; background: var(--soft); color: var(--green-ink); font-weight: 700; text-decoration: none; }
+.more-panel .more-me span { display: flex; flex-direction: column; }
+.more-panel .more-me small { font-weight: 400; color: var(--muted); }
+.more-panel .more-me .ic { width: 22px; height: 22px; flex: none; }
+
