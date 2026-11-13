@@ -1093,16 +1093,90 @@
 
   /* ---------- statistics ---------- */
 
+  // Statistics dashboard: how many people came, who has an account (students with names, teachers, staff),
+  // how much each one used the site, and what was used. Visit counts per account come from account_visits.
   async function viewStats() {
-    page('Statistics', 'Anonymous counts only: no names and no device ids are stored.');
+    page('Statistics', 'Everything at a glance: visits, accounts, students and what they used.');
     var chs = await chapterList();
     var s = await rpc('admin_stats');
     var tot = s.totals || {};
-    function tile(n, label) { return '<div class="card stat"><span class="stat-num">' + (n || 0) + '</span><span>' + esc(label) + '</span></div>'; }
-    main.insertAdjacentHTML('beforeend', '<div class="stat-grid">' +
-      tile(tot.visit, 'Visits') + tile(tot.quiz, 'Chapter quizzes taken') + tile(tot.worksheet, 'Worksheets printed') +
-      tile(tot.game, 'Games finished') + tile(s.competitions && s.competitions.count, 'Competitions') +
-      tile(s.competitions && s.competitions.avg != null ? s.competitions.avg + '%' : '—', 'Average competition score') + '</div>');
+    var accounts = [], daily = [], ov = { students: [], teachers: [], classes: [] };
+    try { accounts = await rpc('admin_accounts') || []; } catch (e) { /* older database */ }
+    try { daily = await rpc('admin_visits_daily', { p_days: 30 }) || []; } catch (e) { /* older database */ }
+    try { if (isAdmin()) ov = await rpc('admin_overview'); } catch (e) { /* not an admin */ }
+    var today = new Date().toISOString().slice(0, 10);
+    var sum = function (list, k) { return list.reduce(function (a, x) { return a + (x[k] || 0); }, 0); };
+    var last7 = daily.slice(-7), dToday = daily.filter(function (d) { return d.day === today; })[0] || {};
+    var studentsAcc = accounts.filter(function (a) { return a.kind === 'student'; }), staffAcc = accounts.filter(function (a) { return a.kind !== 'student'; });
+    var activeWeek = accounts.filter(function (a) { return a.week > 0; }).length;
+    function tile(n, label, sub, tone) {
+      return '<div class="card stat st-' + (tone || 'g') + '"><span class="stat-num">' + esc(n == null ? '—' : String(n)) + '</span><span class="stat-label">' + esc(label) + '</span>' + (sub ? '<span class="stat-sub">' + esc(sub) + '</span>' : '') + '</div>';
+    }
+    main.insertAdjacentHTML('beforeend',
+      '<h2 class="st-h">People</h2><div class="stat-grid">' +
+        tile(tot.visit || 0, 'Visits (all time)', 'every page opening, signed in or not') +
+        tile(dToday.all || 0, 'Visits today', today, 'b') +
+        tile(sum(last7, 'all'), 'Visits in 7 days', sum(last7, 'students') + ' by signed-in students', 'b') +
+        tile(accounts.length || (ov.students.length + ov.teachers.length), 'Accounts made', studentsAcc.length + ' students · ' + staffAcc.length + ' staff', 'p') +
+        tile(studentsAcc.length || ov.students.length, 'Students', activeWeek + ' accounts active this week', 'p') +
+        tile(ov.teachers.length || staffAcc.length, 'Teachers and staff', ov.classes.length + ' classes', 'p') +
+      '</div><h2 class="st-h">Learning</h2><div class="stat-grid">' +
+        tile(tot.quiz || 0, 'Quizzes taken', null, 'o') + tile(tot.worksheet || 0, 'Worksheets', null, 'o') + tile(tot.game || 0, 'Games finished', null, 'o') +
+        tile(s.competitions && s.competitions.count || 0, 'Competitions', s.competitions && s.competitions.avg != null ? 'average ' + s.competitions.avg + '%' : null, 'o') +
+      '</div>');
+
+    // 30-day chart: all visits (bars) and signed-in student visits (line)
+    if (daily.length) {
+      var W = 900, H = 220, P = 30, n = daily.length, mx = Math.max(1, daily.reduce(function (a, d) { return Math.max(a, d.all || 0); }, 0));
+      var bw = (W - 2 * P) / n, y = function (v) { return H - P - (H - 2 * P) * v / mx; };
+      var bars = daily.map(function (d, i) {
+        return '<rect x="' + (P + i * bw + 2).toFixed(1) + '" y="' + y(d.all || 0).toFixed(1) + '" width="' + Math.max(2, bw - 4).toFixed(1) + '" height="' + (H - P - y(d.all || 0)).toFixed(1) + '" rx="3" fill="#8cc79a"><title>' + esc(d.day) + ': ' + (d.all || 0) + ' visits, ' + (d.students || 0) + ' student, ' + (d.staff || 0) + ' staff, ' + (d.new_accounts || 0) + ' new accounts</title></rect>';
+      }).join('');
+      var line = daily.map(function (d, i) { return (i ? 'L' : 'M') + (P + i * bw + bw / 2).toFixed(1) + ' ' + y(d.students || 0).toFixed(1); }).join(' ');
+      var labels = daily.map(function (d, i) { return i % 5 === 0 || i === n - 1 ? '<text x="' + (P + i * bw + bw / 2).toFixed(1) + '" y="' + (H - 8) + '" text-anchor="middle">' + esc(d.day.slice(5)) + '</text>' : ''; }).join('');
+      main.insertAdjacentHTML('beforeend', '<div class="card st-chart"><h2>Visits in the last 30 days</h2>' +
+        '<p class="st-legend"><span class="k1"></span> all visits <span class="k2"></span> signed-in students</p>' +
+        '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Visits in the last 30 days">' +
+        '<line x1="' + P + '" x2="' + (W - P) + '" y1="' + (H - P) + '" y2="' + (H - P) + '" stroke="#cfdcd2"/>' +
+        '<text x="4" y="' + (y(mx) + 4) + '">' + mx + '</text>' + bars +
+        '<path d="' + line + '" fill="none" stroke="#1e7a3c" stroke-width="2.5"/>' + labels + '</svg></div>');
+    }
+
+    // every account, with how often it came
+    if (accounts.length) {
+      var who = 'all', q = h('input', { type: 'search', placeholder: 'Search name, email or class', 'aria-label': 'Search accounts' });
+      var filt = h('p', { class: 'sch-tabs' }), box = h('div');
+      function draw() {
+        var t = q.value.trim().toLowerCase();
+        var list = accounts.filter(function (a) {
+          return (who === 'all' || (who === 'student' ? a.kind === 'student' : a.kind !== 'student')) && (!t || [a.name, a.role, a.class_code].join(' ').toLowerCase().indexOf(t) >= 0);
+        }).sort(function (a, b) { return (b.visits || 0) - (a.visits || 0); });
+        var top = Math.max(1, list.reduce(function (m, a) { return Math.max(m, a.visits || 0); }, 0));
+        box.innerHTML = '<p class="muted">' + list.length + ' of ' + accounts.length + ' accounts</p><div class="table-wrap"><table class="table"><thead><tr><th>Name</th><th>Type</th><th>Class</th><th>Visits</th><th>This week</th><th>Last visit</th><th>Joined</th></tr></thead><tbody>' +
+          list.map(function (a) {
+            return '<tr><td>' + esc(a.name || '') + '</td><td>' + pill(a.role || a.kind) + '</td><td class="ltr">' + esc(a.class_code || '—') + '</td>' +
+              '<td><span class="pbar"><span style="width:' + Math.max(3, Math.round(100 * (a.visits || 0) / top)) + '%;background:#1e7a3c"></span></span> <b>' + (a.visits || 0) + '</b></td>' +
+              '<td>' + (a.week || 0) + '</td><td>' + esc(String(a.last_visit || a.last_login || '—').slice(0, 10)) + '</td><td>' + esc(String(a.created_at || '').slice(0, 10)) + '</td></tr>';
+          }).join('') + '</tbody></table></div>';
+      }
+      [['all', 'All (' + accounts.length + ')'], ['student', 'Students (' + studentsAcc.length + ')'], ['staff', 'Teachers and staff (' + staffAcc.length + ')']].forEach(function (x) {
+        var b = btn(x[1], function () { who = x[0]; filt.querySelectorAll('button').forEach(function (k) { k.className = 'btn small ' + (k === b ? '' : 'ghost'); }); draw(); }, x[0] === 'all' ? '' : 'ghost');
+        filt.appendChild(b);
+      });
+      q.addEventListener('input', draw);
+      main.appendChild(h('h2', { class: 'st-h', text: 'Every account' }));
+      main.appendChild(filt); main.appendChild(h('p', null, [q])); main.appendChild(box);
+      main.insertAdjacentHTML('beforeend', '<p class="muted">Charts of each account\'s visits: <a href="/staff/accounts/">Accounts and visits</a>.</p>');
+      draw();
+    }
+
+    // best students by points and score
+    if (ov.students.length) {
+      var best = ov.students.slice().sort(function (a, b) { return (b.points || 0) - (a.points || 0); }).slice(0, 10);
+      main.insertAdjacentHTML('beforeend', '<h2 class="st-h">Top students</h2><div class="table-wrap"><table class="table"><thead><tr><th>#</th><th>Student</th><th>Class</th><th>Points</th><th>Average score</th></tr></thead><tbody>' +
+        best.map(function (x, i) { return '<tr><td>' + (i + 1) + '</td><td>' + esc(x.name || '') + ' <span class="muted ltr">' + esc(x.username || '') + '</span></td><td class="ltr">' + esc(x.class || '—') + '</td><td><b>' + (x.points || 0) + '</b></td><td>' + (x.avg == null ? '—' : x.avg + '%') + '</td></tr>'; }).join('') +
+        '</tbody></table></div><p class="muted">Each class and teacher in detail: <a href="#school">Teachers, classes, students</a>.</p>');
+    }
 
     var langs = s.langs || {}, totalVisits = LANGS.reduce(function (a, l) { return a + (langs[l] || 0); }, 0);
     main.insertAdjacentHTML('beforeend', '<h2>Language of visits</h2>' + LANGS.map(function (l) {
@@ -1116,10 +1190,6 @@
         return '<tr><td>' + esc(chapterTitle(c.chapter)) + '</td><td>' + c.quizzes + '</td><td>' + (c.avg == null ? '—' : c.avg + '%') + '</td><td>' + c.worksheets + '</td><td>' + c.games + '</td></tr>';
       }).join('') + '</tbody></table></div>' : '<p>No activity yet.</p>'));
 
-    var days = s.days || [], max = days.reduce(function (a, d) { return Math.max(a, d.visits); }, 0);
-    main.insertAdjacentHTML('beforeend', '<h2>Visits in the last 14 days</h2>' + (days.length ? days.map(function (d) {
-      return '<div class="hbar"><span>' + esc(d.day) + '</span><div class="bar"><span style="width:' + (max ? Math.round(100 * d.visits / max) : 0) + '%"></span></div><span>' + d.visits + '</span></div>';
-    }).join('') : '<p>No visits yet.</p>'));
   }
 
   route();

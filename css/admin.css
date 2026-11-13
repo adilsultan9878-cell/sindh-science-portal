@@ -53,3 +53,17 @@ details.fb-group > summary { font-weight: 700; color: var(--green-dark); cursor:
 .sch-new textarea { flex: 1 1 100%; }
 .table select { min-width: 180px; }
 
+
+/* Statistics dashboard */
+.st-h { margin: 22px 0 8px; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.card.stat { display: flex; flex-direction: column; gap: 2px; border-top: 4px solid #1e7a3c; }
+.card.stat.st-b { border-top-color: #2b6cb0; } .card.stat.st-p { border-top-color: #7b4bb3; } .card.stat.st-o { border-top-color: #d98200; }
+.stat-num { font-size: 2rem; font-weight: 800; line-height: 1.1; }
+.stat-label { font-weight: 700; }
+.stat-sub { color: var(--muted, #667); font-size: .85rem; }
+.st-chart svg { width: 100%; height: auto; display: block; }
+.st-chart text { font-size: 12px; fill: #667; }
+.st-legend span { display: inline-block; width: 14px; height: 10px; border-radius: 3px; margin: 0 4px 0 12px; vertical-align: middle; }
+.st-legend .k1 { background: #8cc79a; } .st-legend .k2 { background: #1e7a3c; height: 3px; }
+
