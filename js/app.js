@@ -2236,87 +2236,65 @@
   // the Sindh pages counted in "Science of Sindh"; js/site-nav.js notes each one when it is opened (ssp1.sindhSeen)
   var SINDH_STEPS = [['sindh', '/sindh/', 'sindhScience'], ['lok', '/lok/', 'lokScience'], ['mohenjo', '/sindh/mohenjo-daro/', 'mohenjoLab'],
     ['mausam', '/mausam/', 'mausamLab'], ['mySindh', '/sindh/my-sindh/', 'mySindh'], ['citizen', '/citizen/', 'citizenTitle'], ['league', '/league/', 'leagueTitle']];
-  function profileCard(p, chs) {
+  // Header of My progress: picture (tap to choose one), the student's name and account, or a sign-in link for a guest.
+  function profileCard(p) {
     var s = window.Student && window.Student.current(), av = store.get('avatar', null);
-    var name = s ? s.name : (p.nick || t('pfGuest'));
-    var done = chs.filter(function (ch) { return chapterStatus(ch, p).pct === 100; }).length;
-    var streak = (p.daily.last === todayStr() || p.daily.last === yesterdayStr()) ? p.daily.streak : 0;
-    var seen = store.get('sindhSeen', {}) || {}, nSeen = SINDH_STEPS.filter(function (x) { return seen[x[0]]; }).length;
-    var pct = Math.round(100 * nSeen / SINDH_STEPS.length);
-    return '<section class="card pf-card"><div class="pf-top">' +
+    var name = s ? s.name : t('pfGuest');
+    return '<section class="card pp-head"><div class="pf-top">' +
         '<button type="button" class="pf-dp" data-act="pf-dp" aria-label="' + esc(t('pfChange')) + '" title="' + esc(t('pfChange')) + '">' +
           (av ? '<span aria-hidden="true">' + esc(av) + '</span>' : '<span class="pf-initial" aria-hidden="true">' + esc(Array.from(name || '?')[0]) + '</span>') + '</button>' +
-        '<div><h2>' + esc(name) + '</h2>' + (s ? '<p class="muted ltr">@' + esc(s.username) + '</p>' : '<p><a href="/login">' + esc(t('pfLogin')) + '</a></p>') + '</div></div>' +
-      '<div class="pf-avatars" hidden>' + '<p class="muted small">' + esc(t('pfChoose')) + '</p>' + AVATARS.map(function (a) {
+        '<div><h1>' + esc(name) + '</h1>' + (s ? '<p class="muted ltr">@' + esc(s.username) + '</p>' : '<p>' + esc(t('ppGuestText')) + '</p>') + '</div>' +
+        (s ? '' : '<a class="btn pp-login" href="/login">' + esc(t('pfLogin')) + '</a>') + '</div>' +
+      '<div class="pf-avatars" hidden><p class="muted small">' + esc(t('pfChoose')) + '</p>' + AVATARS.map(function (a) {
         return '<button type="button" class="pf-av' + (a === av ? ' on' : '') + '" data-avatar="' + a + '">' + a + '</button>';
-      }).join('') + '</div>' +
-      '<dl class="pf-facts">' +
-        '<div><dt>' + esc(t('points')) + '</dt><dd>' + p.points + '</dd></div>' +
-        '<div><dt>' + esc(t('badges')) + '</dt><dd>' + p.badges.length + '</dd></div>' +
-        '<div><dt>' + esc(t('dayStreak')) + '</dt><dd>' + streak + '</dd></div>' +
-        '<div><dt>' + esc(t('pfChapters')) + '</dt><dd dir="ltr">' + done + ' / ' + chs.length + '</dd></div>' +
-      '</dl>' +
-      '<h3 class="pf-h">' + icon('map') + ' ' + esc(t('sindhShelf')) + '</h3>' +
-      progressBar(pct, t('sindhShelf')) + '<p class="muted small">' + esc(t('pfSindhOf', { n: nSeen, m: SINDH_STEPS.length })) + '</p>' +
-      '<ul class="pf-sindh">' + SINDH_STEPS.map(function (x) {
-        return '<li class="' + (seen[x[0]] ? 'on' : '') + '"><a href="' + x[1] + '">' + (seen[x[0]] ? icon('check') : '<span class="pf-dot" aria-hidden="true"></span>') + '<span>' + esc(t(x[2])) + '</span></a></li>';
-      }).join('') + '</ul></section>';
+      }).join('') + '</div></section>';
   }
 
+  // My progress: who you are, four numbers, homework from the class, one list of chapters, and a few small links.
   function viewProgress(id) {
     return loadAll().then(function (chs) {
       if (stale(id)) return;
       var p = getProgress();
       setMeta(t('progress'), t('deviceNote'));
-      var streak = (p.daily.last === todayStr() || p.daily.last === yesterdayStr()) ? p.daily.streak : 0;
-      var weakRows = [];
+      var done = chs.filter(function (ch) { return chapterStatus(ch, p).pct === 100; }).length;
+      var bests = chs.map(function (ch) { var r = p.quiz[ch._key]; return r && r.best != null ? r.best : null; }).filter(function (v) { return v != null; });
+      var avg = bests.length ? Math.round(bests.reduce(function (a, b) { return a + b; }, 0) / bests.length) : null;
+      var seen = store.get('sindhSeen', {}) || {}, nSeen = SINDH_STEPS.filter(function (x) { return seen[x[0]]; }).length;
+      var again = [];
+      p.retake.forEach(function (r) {
+        var ch = chs.filter(function (c) { return c._key === r.key; })[0];
+        if (ch) again.push('<li><a href="' + chUrl(ch, r.kind === 'quiz' ? 'quiz' : 'worksheet') + '">' + esc(t(r.kind === 'quiz' ? 'tab_quiz' : 'tab_worksheet') + ' · ' + L(ch.title)) + '</a> <span class="muted">' + r.pct + '%</span></li>');
+      });
       chs.forEach(function (ch) {
         var rec = p.quiz[ch._key];
         if (rec && rec.weak) rec.weak.forEach(function (sid) {
           var sec = ch.lesson.filter(function (x) { return x.id === sid; })[0];
-          if (sec) weakRows.push('<li><a href="' + chUrl(ch) + '#' + sid + '">' + esc(L(sec.title)) + '</a> <small class="muted">(' + esc(L(ch.title)) + ')</small></li>');
+          if (sec) again.push('<li><a href="' + chUrl(ch) + '#' + sid + '">' + esc(L(sec.title)) + '</a> <span class="muted">' + esc(L(ch.title)) + '</span></li>');
         });
       });
-      main.innerHTML = crumbs([['/', t('home')], ['', t('progress')]]) +
-        '<h1>' + icon('star') + ' ' + esc(t('progress')) + '</h1>' +
-        '<div class="pf-layout"><aside class="pf-aside" id="profile-slot">' + profileCard(p, chs) + '</aside><div class="pf-main">' +
-        '<form class="card nick-form">' + nickField(p.nick) + '<button class="btn" type="submit">' + esc(t('save')) + '</button> <span class="form-msg" aria-live="polite"></span></form>' +
-        '<div id="student-slot"></div>' +
+      function tile(num, label) { return '<div class="card pp-tile"><b>' + num + '</b><span>' + esc(label) + '</span></div>'; }
+      main.innerHTML = crumbs([['/', t('home')], ['', t('progress')]]) + profileCard(p) +
+        '<div class="pp-tiles">' + tile('<span dir="ltr">' + done + ' / ' + chs.length + '</span>', t('pfChapters')) +
+          tile(avg == null ? '—' : avg + '%', t('ppAvgQuiz')) + tile(p.points, t('points')) + tile(p.badges.length, t('badges')) + '</div>' +
         '<div id="class-slot"></div>' +
-        '<div class="grid">' + quickLink('/sindh/my-sindh/', 'map', 'mySindh', 'mySindhText') + '</div>' +
-        '<div class="stats">' +
-          '<div class="card stat"><span class="stat-num">' + p.points + '</span><span>' + esc(t('points')) + '</span></div>' +
-          '<div class="card stat"><span class="stat-num">' + streak + '</span><span>' + icon('flame') + ' ' + esc(t('dayStreak')) + '</span></div>' +
-          '<div class="card stat"><span class="stat-num">' + p.badges.length + '</span><span>' + icon('medal') + ' ' + esc(t('badges')) + '</span></div>' +
+        '<section class="card pp-chapters"><h2>' + esc(t('chapterScores')) + '</h2><ol class="pp-list">' + chs.map(function (ch) {
+          var st = chapterStatus(ch, p), r = p.quiz[ch._key];
+          return '<li><a href="' + chUrl(ch) + '"><span class="pp-num">' + ch.number + '</span><span class="pp-title">' + esc(L(ch.title)) + '</span>' +
+            '<span class="pp-bar">' + progressBar(st.pct, L(ch.title)) + '</span><span class="pp-state">' + (st.pct === 100 ? icon('check') : esc(t('doneOf', { n: st.done, m: st.items.length }))) +
+            (r && r.best != null ? ' · ' + r.best + '%' : '') + '</span></a></li>';
+        }).join('') + '</ol></section>' +
+        (again.length ? '<section class="card pp-again"><h2>' + icon('refresh') + ' ' + esc(t('ppAgain')) + '</h2><ul>' + again.slice(0, 8).join('') + '</ul></section>' : '') +
+        '<div class="pp-links">' +
+          '<a class="card pp-link" href="/sindh/my-sindh/">' + icon('map') + '<span><strong>' + esc(t('mySindh')) + '</strong><small class="muted">' + esc(t('pfSindhOf', { n: nSeen, m: SINDH_STEPS.length })) + '</small></span></a>' +
+          '<details class="card pp-badges"><summary>' + icon('medal') + ' ' + esc(t('badges')) + ' <span class="muted">(' + p.badges.length + ')</span></summary><div class="grid badges">' + allBadges().map(function (b) {
+            var got = p.badges.indexOf(b.id) >= 0;
+            return '<div class="card badge' + (got ? '' : ' locked') + '"><span class="badge-icon" aria-hidden="true">' + (got ? b.icon : icon('lock')) + '</span><strong>' + esc(b.name) + '</strong><small>' + esc(got ? b.desc : t('locked') + ' — ' + b.desc) + '</small></div>';
+          }).join('') + '</div></details>' +
         '</div>' +
-        '<h2>' + esc(t('badges')) + '</h2><div class="grid badges">' + allBadges().map(function (b) {
-          var got = p.badges.indexOf(b.id) >= 0;
-          return '<div class="card badge' + (got ? '' : ' locked') + '"><span class="badge-icon" aria-hidden="true">' + (got ? b.icon : icon('lock')) + '</span><strong>' + esc(b.name) + '</strong><small>' + esc(got ? b.desc : t('locked') + ' — ' + b.desc) + '</small></div>';
-        }).join('') + '</div>' +
-        '<h2>' + esc(t('chapterScores')) + '</h2><div class="scores">' + chs.map(function (ch) {
-          return '<div class="card score-row"><a class="score-title" href="' + chUrl(ch) + '">' + thumb(ch) + '<span>' + esc(chLabel(ch)) + '</span></a>' +
-            statusHTML(ch, true) + '</div>';
-        }).join('') + '</div>' +
-        (p.retake.length ? '<section class="card note low-score"><h2>' + icon('refresh') + ' ' + esc(t('retakeTitle')) + '</h2><ul>' + p.retake.map(function (r) {
-          var ch = chs.filter(function (c) { return c._key === r.key; })[0];
-          if (!ch) return '';
-          var what = t(r.kind === 'quiz' ? 'tab_quiz' : 'tab_worksheet') + ' · ' + L(ch.title);
-          return '<li><a href="' + chUrl(ch, r.kind === 'quiz' ? 'quiz' : 'worksheet') + '">' + esc(t('retakeRow', { what: what, pct: r.pct, date: r.at })) + '</a></li>';
-        }).join('') + '</ul></section>' : '') +
-        '<h2>' + esc(t('weakTitle')) + '</h2>' + (weakRows.length ? '<ul>' + weakRows.join('') + '</ul>' : '<p>' + esc(t('noWeak')) + '</p>') +
-        '<p class="muted">' + icon('lock') + ' ' + esc(t('deviceNote')) + '</p>' +
-        '<p><button type="button" class="btn ghost danger" data-act="reset">' + esc(t('reset')) + '</button></p></div></div>';
-      main.querySelector('.nick-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var nick = validNick(e.target.querySelector('input[name="nick"]').value), msg = e.target.querySelector('.form-msg');
-        if (!nick) { msg.textContent = t('nicknameBad'); return; }
-        var p2 = getProgress(); p2.nick = nick; saveProgress(p2);
-        msg.textContent = '✔ ' + t('saved');
-      });
+        '<p class="muted small pp-foot">' + icon('lock') + ' ' + esc(t('deviceNote')) + ' <button type="button" class="linkish" data-act="reset">' + esc(t('reset')) + '</button></p>';
       main.querySelector('[data-act="reset"]').addEventListener('click', function () {
         if (window.confirm(t('resetConfirm'))) { store.set('progress', {}); render(false); }
       });
-      if (window.Student) window.Student.status(document.getElementById('student-slot'));
       if (window.Classroom) window.Classroom.mount(document.getElementById('class-slot'));
     });
   }

@@ -502,3 +502,10 @@ Object.assign(window.UI_TEXT, {
   staffHome: { sd: 'استادن ۽ اسٽاف لاءِ', ur: 'اساتذہ اور اسٹاف کے لیے', en: 'Teachers and staff' },
   toStudentSite: { sd: 'ٻارن جي ويب سائيٽ', ur: 'بچوں کی ویب سائٹ', en: 'Children\'s website' }
 });
+
+/* My progress, simpler page (2026-11-13) */
+Object.assign(window.UI_TEXT, {
+  ppGuestText: { sd: 'لاگ ان ڪريو ته جيئن توهان جي ترقي هر فون تي محفوظ رهي ۽ استاد به ڏسي سگهي.', ur: 'لاگ ان کریں تاکہ آپ کی پیش رفت ہر فون پر محفوظ رہے اور استاد بھی دیکھ سکیں۔', en: 'Log in so your progress is saved on every phone and your teacher can see it.' },
+  ppAvgQuiz: { sd: 'ڪوئز جو اوسط', ur: 'کوئز کا اوسط', en: 'Average quiz' },
+  ppAgain: { sd: 'ٻيهر مشق ڪريو', ur: 'دوبارہ مشق کریں', en: 'Practise again' }
+});
