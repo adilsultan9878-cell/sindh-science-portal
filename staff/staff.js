@@ -25,6 +25,8 @@
     statsText: { sd: 'پورٽل ڪيترو استعمال ٿيو، رڳو انگن ۾.', ur: 'پورٹل کتنا استعمال ہوا، صرف گنتی میں۔', en: 'How much the portal is used, in numbers only.' },
     admin: { sd: 'اسٽاف پينل', ur: 'اسٹاف پینل', en: 'Staff panel' },
     adminText: { sd: 'ايڊمن: باب، سوال، استاد ۽ پرنسپل جا اڪائونٽ، ڪڍيل ٻار.', ur: 'ایڈمن: ابواب، سوالات، استاد اور پرنسپل کے اکاؤنٹ، نکالے گئے بچے۔', en: 'Admins: chapters, questions, teacher and principal accounts, struck-off students.' },
+    accounts: { sd: 'اڪائونٽ ۽ اچڻ جا انگ', ur: 'اکاؤنٹس اور آمد', en: 'Accounts and visits' },
+    accountsText: { sd: 'ايڊمن: هر نئون اڪائونٽ ۽ ڪير ڪيترا ڀيرا آيو، چارٽن سان.', ur: 'ایڈمن: ہر نیا اکاؤنٹ اور کون کتنی بار آیا، چارٹس کے ساتھ۔', en: 'Admins: every new account and how often each one visits, with charts.' },
     open: { sd: 'کوليو', ur: 'کھولیں', en: 'Open' },
     kids: { sd: 'ٻارن جي ويب سائيٽ ڏانهن', ur: 'بچوں کی ویب سائٹ پر جائیں', en: 'Go to the children\'s website' }
   };
@@ -36,6 +38,7 @@
     ['/book/', 'book', '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>'],
     ['/videos/', 'videos', '<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>'],
     ['/stats/', 'stats', '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'],
+    ['/staff/accounts/', 'accounts', '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><circle cx="19" cy="5" r="2"/>'],
     ['/admin', 'admin', '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>']
   ];
   var main = document.getElementById('main');

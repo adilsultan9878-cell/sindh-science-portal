@@ -1,0 +1,32 @@
+/* Accounts and visits (/staff/accounts/) */
+.ac-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 12px 0; }
+.ac-stat { display: flex; flex-direction: column; gap: 2px; margin: 0; }
+.ac-stat b { font-size: 2rem; color: var(--green); line-height: 1.2; }
+.ac-stat span { color: var(--muted); }
+.ac-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; }
+.ac-two .card { margin: 0; }
+.ac-chart { width: 100%; height: auto; display: block; margin: 6px 0; }
+.ac-axis { stroke: var(--line-2); }
+.ac-lbl { font-size: 11px; fill: var(--muted); }
+.ac-hit { fill: transparent; }
+.ac-bar.k0 { fill: #43a05a; }
+.ac-bar.k1 { fill: #0f3d1e; }
+.ac-bar.new { fill: #e0a526; }
+g:hover .ac-hit, g:focus .ac-hit { fill: rgba(30, 122, 60, 0.08); }
+.ac-legend { display: flex; gap: 16px; margin: 0; font-size: 0.9rem; }
+.ac-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.ac-legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.ac-legend i.k0 { background: #43a05a; } .ac-legend i.k1 { background: #0f3d1e; }
+.ac-top { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ac-top li { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr) auto; gap: 10px; align-items: center; font-size: 0.92rem; }
+.ac-top li > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ac-track { height: 10px; background: var(--soft); border-radius: 99px; overflow: hidden; }
+.ac-track span { display: block; height: 100%; background: var(--green); border-radius: 99px; }
+.ac-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+.ac-q { flex: 1 1 220px; min-height: 40px; padding: 6px 12px; border: 1px solid var(--line-2); border-radius: 8px; font: inherit; }
+.ac-tablewrap { overflow-x: auto; }
+.ac-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.ac-table th, .ac-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: start; white-space: nowrap; }
+.ac-table th { color: var(--green-ink); background: var(--soft); }
+.ac-table tr.ac-new td { background: #fffbea; }
+.ac-badge { display: inline-block; padding: 0 8px; border-radius: 99px; background: #e0a526; color: #fff; font-size: 0.75rem; font-weight: 700; }

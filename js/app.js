@@ -359,6 +359,11 @@
   function trackVisit() {
     try { if (sessionStorage.getItem('ssp.visit')) return; sessionStorage.setItem('ssp.visit', '1'); } catch (e) { return; }
     track('visit');
+    // the admin's "Accounts" page counts visits per account: a signed-in child, or a signed-in teacher/admin
+    var s = window.Student && window.Student.session && window.Student.session(), staff = null;
+    try { staff = JSON.parse(localStorage.getItem('ssp-staff-session')); } catch (e) { /* none */ }
+    if (CFG && s && s.token) fetch(CFG.supabaseUrl + '/rest/v1/rpc/student_visit', { method: 'POST', keepalive: true, headers: { apikey: CFG.supabaseKey, 'Content-Type': 'application/json' }, body: JSON.stringify({ p_token: s.token }) }).catch(function () {});
+    if (CFG && staff && staff.access_token && staff.expires_at > Date.now() / 1000) fetch(CFG.supabaseUrl + '/rest/v1/rpc/staff_visit', { method: 'POST', keepalive: true, headers: { apikey: CFG.supabaseKey, Authorization: 'Bearer ' + staff.access_token, 'Content-Type': 'application/json' }, body: '{}' }).catch(function () {});
   }
   function activeSubjects() {
     var out = [];
