@@ -317,6 +317,7 @@
 
   function renderNav() {
     var links = [['#chapters', 'Chapters'], ['#questions', 'Question bank'], ['#leaderboard', 'Leaderboard'], ['#badges', 'Badges'], ['#stats', 'Statistics']];
+    if (isAdmin()) links.unshift(['#school', 'Teachers, classes, students']);
     if (isAdmin()) links.push(['#users', 'Users'], ['#struck', 'Struck off']);
     links.push(['#password', 'Change password'], ['/', 'View website']);
     var cur = location.hash.split('/')[0] || '#chapters';
@@ -360,7 +361,7 @@
     var parts = location.hash.slice(1).split('/');
     var name = parts[0] || 'chapters', arg = decodeURIComponent(parts.slice(1).join('/'));
     var views = { chapters: viewChapters, chapter: viewChapterEdit, questions: viewQuestions, question: viewQuestionEdit,
-      leaderboard: viewLeaderboard, badges: viewBadges, badge: viewBadgeEdit, stats: viewStats, users: viewUsers, struck: viewStruckOff, password: viewPassword };
+      leaderboard: viewLeaderboard, badges: viewBadges, badge: viewBadgeEdit, stats: viewStats, users: viewUsers, struck: viewStruckOff, password: viewPassword, school: viewSchool };
     try { await (views[name] || viewChapters)(arg); } catch (e) { fail(e); }
     window.scrollTo(0, 0);
   }
@@ -967,6 +968,124 @@
           return '<tr><td>' + esc(String(r.removed_at || '').slice(0, 10)) + '</td><td>' + esc(r.display_name || '') + '</td><td class="ltr">' + esc(r.username || '') + '</td><td>' + esc(r.class_name || '') +
             ' <span class="muted ltr">' + esc(r.class_code || '') + '</span></td><td>' + esc(r.school || '—') + '</td><td>' + esc(r.reason || '—') + '</td></tr>';
         }).join('') + '</tbody></table></div>' : '<p>No students have been struck off.</p>');
+    }
+    q.addEventListener('input', draw);
+    draw();
+  }
+
+  /* ---------- school: teachers, classes and students with their progress (admins only) ---------- */
+
+  // One page for the admin: every teacher, class and student with an average score bar.
+  // Only admins make, give to a teacher or delete classes; teachers just add and remove students.
+  async function viewSchool(arg) {
+    page('Teachers, classes and students', 'Progress is the average score of all quizzes and worksheets sent to the class.');
+    if (!isAdmin()) { main.appendChild(h('p', { text: 'Only admins can see this page.' })); return; }
+    var d = await rpc('admin_overview');
+    var tab = ['teachers', 'classes', 'students'].indexOf(arg) >= 0 ? arg : 'classes';
+    function bar(v) {
+      if (v == null) return '<span class="muted">—</span>';
+      var c = v >= 80 ? '#1e7a3c' : v >= 50 ? '#d99a00' : '#c0392b';
+      return '<span class="pbar"><span style="width:' + Math.max(3, v) + '%;background:' + c + '"></span></span> <b>' + v + '%</b>';
+    }
+    function teacherName(id) { var t = d.teachers.filter(function (x) { return x.id === id; })[0]; return t ? t.email : '—'; }
+    function teacherSelect(cur) {
+      return '<option value="">— no teacher —</option>' + d.teachers.map(function (t) {
+        return '<option value="' + esc(t.id) + '"' + (t.id === cur ? ' selected' : '') + '>' + esc(t.email) + '</option>';
+      }).join('');
+    }
+
+    // one class: its students, add students (username and PIN to share), new PIN, remove a student
+    if (arg && arg.indexOf('class:') === 0) {
+      var code = arg.slice(6), cd = await rpc('teacher_class_data', { p_code: code });
+      page(cd.class.name + ' (' + cd.class.code + ')', 'Teacher: ' + teacherName((d.classes.filter(function (c) { return c.code === cd.class.code; })[0] || {}).teacher_id));
+      main.appendChild(h('p', null, [h('a', { href: '#school/classes', text: '← All classes' })]));
+      var per = {};
+      cd.results.forEach(function (r) { if (!r.student_id) return; var p = per[r.student_id] || (per[r.student_id] = { s: 0, t: 0, n: 0 }); p.s += r.score; p.t += r.total; p.n++; });
+      var tb2 = h('tbody');
+      cd.students.forEach(function (st) {
+        var p = per[st.id], tr = h('tr');
+        tr.innerHTML = '<td>' + esc(st.name) + '</td><td class="ltr">' + esc(st.username) + '</td><td>' + (st.points || 0) + '</td><td>' + (p ? p.n : 0) + '</td><td>' + bar(p && p.t ? Math.round(100 * p.s / p.t) : null) + '</td><td></td>';
+        tr.children[5].appendChild(btn('New PIN', async function () {
+          try { var r = await rpc('teacher_reset_pin', { p_student: st.id }); alert('Username: ' + st.username + '\nNew PIN: ' + (r && r.pin ? r.pin : r)); } catch (e) { alert(e.message); }
+        }));
+        tr.children[5].appendChild(btn('Remove', async function () {
+          var why = prompt('Why is ' + st.name + ' leaving the class?'); if (why === null) return;
+          try { await rpc('teacher_remove_student', { p_student: st.id, p_reason: why || null }); viewSchool(arg); } catch (e) { alert(e.message); }
+        }, 'danger'));
+        tb2.appendChild(tr);
+      });
+      var t2 = h('table', { class: 'table' }); t2.innerHTML = '<thead><tr><th>Student</th><th>Username</th><th>Points</th><th>Results</th><th>Progress</th><th></th></tr></thead>'; t2.appendChild(tb2);
+      main.appendChild(h('div', { class: 'table-wrap' }, [t2]));
+      var names = h('textarea', { rows: '4', placeholder: 'New students: one name on each line' }), out = h('div');
+      main.appendChild(h('div', { class: 'card sch-new' }, [h('strong', { text: 'Add students' }), names, btn('Add', async function () {
+        var list = names.value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean);
+        if (!list.length) return;
+        try {
+          var made = await rpc('teacher_add_students', { p_code: code, p_names: list });
+          out.innerHTML = '<p><b>Give these to the children (the PIN is shown only now):</b></p><div class="table-wrap"><table class="table"><thead><tr><th>Name</th><th>Username</th><th>PIN</th></tr></thead><tbody>' +
+            made.map(function (m) { return '<tr><td>' + esc(m.name) + '</td><td class="ltr">' + esc(m.username) + '</td><td class="ltr"><b>' + esc(m.pin) + '</b></td></tr>'; }).join('') + '</tbody></table></div>';
+          names.value = '';
+        } catch (e) { out.textContent = e.message; }
+      }, ''), out]));
+      return;
+    }
+
+    var tabs = h('p', { class: 'sch-tabs' });
+    [['classes', 'Classes (' + d.classes.length + ')'], ['teachers', 'Teachers (' + d.teachers.length + ')'], ['students', 'Students (' + d.students.length + ')']].forEach(function (x) {
+      tabs.appendChild(h('a', { href: '#school/' + x[0], text: x[1], class: 'btn small ' + (x[0] === tab ? '' : 'ghost') }));
+    });
+    main.appendChild(tabs);
+    if (tab === 'classes') {
+      var nm = h('input', { type: 'text', placeholder: 'Class name, e.g. Class 5 A', maxlength: '40', 'aria-label': 'Class name' });
+      var ts = h('select', { 'aria-label': 'Teacher' }); ts.innerHTML = teacherSelect(null);
+      var msg = h('span', { class: 'muted' });
+      main.appendChild(h('div', { class: 'card sch-new' }, [h('strong', { text: 'New class' }), nm, ts, btn('Make class', async function () {
+        if (nm.value.trim().length < 2) { msg.textContent = 'Write a class name.'; return; }
+        try { await rpc('admin_class_create', { p_name: nm.value.trim(), p_teacher: ts.value || null, p_school: null }); viewSchool('classes'); } catch (e) { msg.textContent = e.message; }
+      }, ''), msg]));
+    }
+    var q = h('input', { type: 'search', placeholder: 'Search', 'aria-label': 'Search' });
+    var box = h('div');
+    main.appendChild(h('p', null, [q]));
+    main.appendChild(box);
+
+    function draw() {
+      var s = q.value.trim().toLowerCase();
+      function hit(parts) { return !s || parts.join(' ').toLowerCase().indexOf(s) >= 0; }
+      if (tab === 'teachers') {
+        box.innerHTML = '<div class="table-wrap"><table class="table"><thead><tr><th>Teacher</th><th>Role</th><th>Classes</th><th>Students</th><th>Results sent</th><th>Homework given</th><th>Class progress</th></tr></thead><tbody>' +
+          d.teachers.filter(function (t) { return hit([t.email, t.school, t.role]); }).map(function (t) {
+            return '<tr><td class="ltr">' + esc(t.email) + '</td><td>' + pill(t.role) + '</td><td>' + t.classes + '</td><td>' + t.students + '</td><td>' + t.results + '</td><td>' + t.homework + '</td><td>' + bar(t.avg) + '</td></tr>';
+          }).join('') + '</tbody></table></div><p class="muted">Add a new teacher on the <a href="#users">Users</a> page.</p>';
+        return;
+      }
+      if (tab === 'students') {
+        var ss = d.students.filter(function (x) { return hit([x.name, x.username, x.class]); });
+        box.innerHTML = '<p class="muted">' + ss.length + ' of ' + d.students.length + '</p><div class="table-wrap"><table class="table"><thead><tr><th>Student</th><th>Username</th><th>Class</th><th>Points</th><th>Results</th><th>Progress</th><th>Last active</th></tr></thead><tbody>' +
+          ss.slice(0, 500).map(function (x) {
+            return '<tr><td>' + esc(x.name || '') + '</td><td class="ltr">' + esc(x.username || '') + '</td><td>' + (x.class ? '<a href="#school/class:' + esc(x.class) + '">' + esc(x.class) + '</a>' : '—') + '</td><td>' + (x.points || 0) + '</td><td>' + x.results + '</td><td>' + bar(x.avg) + '</td><td>' + esc(String(x.last || '').slice(0, 10)) + '</td></tr>';
+          }).join('') + '</tbody></table></div>';
+        return;
+      }
+      box.innerHTML = '';
+      if (!d.classes.length) { box.appendChild(h('p', { text: 'No classes yet. Make one above and choose its teacher.' })); return; }
+      var tbl = h('table', { class: 'table' });
+      tbl.innerHTML = '<thead><tr><th>Class</th><th>Code</th><th>Teacher</th><th>Students</th><th>Progress</th><th></th></tr></thead>';
+      var tb = h('tbody');
+      d.classes.filter(function (c) { return hit([c.name, c.code, c.school, c.teacher]); }).forEach(function (c) {
+        var tr = h('tr');
+        tr.innerHTML = '<td><a href="#school/class:' + esc(c.code) + '">' + esc(c.name) + '</a></td><td class="ltr">' + esc(c.code) + '</td><td></td><td>' + c.students + '</td><td>' + bar(c.avg) + '</td><td></td>';
+        var sel = h('select', { 'aria-label': 'Teacher of ' + c.name }); sel.innerHTML = teacherSelect(c.teacher_id);
+        sel.addEventListener('change', async function () { try { await rpc('admin_class_assign', { p_code: c.code, p_teacher: sel.value || null }); c.teacher_id = sel.value; } catch (e) { alert(e.message); } });
+        tr.children[2].appendChild(sel);
+        if (!c.students) tr.children[5].appendChild(btn('Delete', async function () {
+          if (!confirm('Delete class ' + c.name + '?')) return;
+          try { await rpc('admin_class_delete', { p_code: c.code }); viewSchool('classes'); } catch (e) { alert(e.message); }
+        }, 'danger'));
+        tb.appendChild(tr);
+      });
+      tbl.appendChild(tb);
+      box.appendChild(h('div', { class: 'table-wrap' }, [tbl]));
     }
     q.addEventListener('input', draw);
     draw();

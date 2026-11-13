@@ -44,3 +44,12 @@ details.fb-group > summary { font-weight: 700; color: var(--green-dark); cursor:
 @media (max-width: 700px) {
   .fb-three { grid-template-columns: 1fr; }
 }
+
+/* Teachers, classes and students page (#school) */
+.pbar { display: inline-block; width: 90px; height: 10px; border-radius: 6px; background: #e6eee8; vertical-align: middle; overflow: hidden; }
+.pbar > span { display: block; height: 100%; border-radius: 6px; }
+.sch-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.sch-new { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
+.sch-new textarea { flex: 1 1 100%; }
+.table select { min-width: 180px; }
+

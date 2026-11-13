@@ -24,7 +24,7 @@
     wrongLogin: { sd: 'اي ميل يا پاسورڊ غلط آهي.', ur: 'ای میل یا پاس ورڈ غلط ہے۔', en: 'Wrong email or password.' },
     notTeacher: { sd: 'هي اڪائونٽ استاد جو ناهي. ايڊمن کان پڇو.', ur: 'یہ اکاؤنٹ استاد کا نہیں۔ ایڈمن سے پوچھیں۔', en: 'This is not a teacher account. Ask the admin.' },
     myClasses: { sd: 'منهنجا ڪلاس', ur: 'میری کلاسیں', en: 'My classes' },
-    noClasses: { sd: 'اڃا ڪو ڪلاس ناهي. هيٺ ڪلاس ٺاهيو.', ur: 'ابھی کوئی کلاس نہیں۔ نیچے کلاس بنائیں۔', en: 'No class yet. Make one below.' },
+    noClasses: { sd: 'اڃا ڪو ڪلاس ناهي. ايڊمن توهان کي ڪلاس ڏيندو.', ur: 'ابھی کوئی کلاس نہیں۔ ایڈمن آپ کو کلاس دے گا۔', en: 'No class yet. The admin will give you a class.' },
     newClass: { sd: 'نئون ڪلاس', ur: 'نئی کلاس', en: 'New class' },
     className: { sd: 'ڪلاس جو نالو (مثال: پنجون الف)', ur: 'کلاس کا نام (مثال: پنجم الف)', en: 'Class name (e.g. Class 5 A)' },
     school: { sd: 'اسڪول', ur: 'اسکول', en: 'School' },
@@ -165,10 +165,8 @@
       main.querySelector('.loading').outerHTML = (list.length ? '<div class="tc-classes">' + list.map(function (c) {
         return '<button type="button" class="card tc-class" data-open="' + esc(c.code) + '"><b>' + esc(c.name) + '</b><span class="muted">' + esc(c.school || '') + '</span><span>' + esc(T('students')) + ': ' + c.students + '</span></button>';
       }).join('') + '</div>' : '<p class="muted">' + esc(T('noClasses')) + '</p>') +
-        '<form class="card tc-form" data-form="class"><h2>' + esc(T('newClass')) + '</h2>' +
-        '<label class="field"><span>' + esc(T('className')) + '</span><input name="name" maxlength="60" required></label>' +
-        '<label class="field"><span>' + esc(T('school')) + '</span><input name="school" maxlength="80"></label>' +
-        '<p><button class="btn" type="submit">' + esc(T('make')) + '</button> <span class="form-msg" aria-live="polite"></span></p></form>';
+        '';   // only the admin makes classes (staff panel); the teacher adds and removes students
+
     }).catch(function (e) { var l = main.querySelector('.loading'); if (l) l.remove(); fail(e); });
   }
 

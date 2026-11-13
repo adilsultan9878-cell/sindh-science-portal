@@ -791,13 +791,13 @@ body.staff-side { padding-bottom: 0; }
 .more-panel .more-auth { background: var(--green); color: #fff; }
 
 /* AI Ustad chat bubble (js/chat-widget.js) */
-.uc { position: fixed; z-index: 60; inset-inline-start: 18px; bottom: 18px; font-family: inherit; }
+.uc { position: fixed; z-index: 60; right: 18px; bottom: 18px; font-family: inherit; }   /* always bottom right */
 .uc[hidden] { display: none; }
 .uc-fab { width: 62px; height: 62px; border-radius: 50%; border: 0; cursor: pointer; background: var(--green); color: #fff; display: grid; place-items: center; box-shadow: 0 6px 18px rgba(15, 61, 30, 0.35); }
 .uc-fab:hover, .uc-fab:focus-visible { background: var(--green-dark); }
 .uc-fab svg { width: 30px; height: 30px; }
 .uc.on .uc-fab { display: none; }
-.uc-box { position: absolute; inset-inline-start: 0; bottom: 0; width: min(380px, calc(100vw - 24px)); height: min(540px, calc(100vh - 120px)); display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-2); border-radius: 16px; box-shadow: 0 12px 36px rgba(15, 61, 30, 0.25); overflow: hidden; }
+.uc-box { position: absolute; right: 0; bottom: 0; width: min(380px, calc(100vw - 24px)); height: min(540px, calc(100vh - 120px)); display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line-2); border-radius: 16px; box-shadow: 0 12px 36px rgba(15, 61, 30, 0.25); overflow: hidden; }
 .uc-box[hidden] { display: none; }
 .uc-head { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: var(--green); color: #fff; }
 .uc-avatar { width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); display: grid; place-items: center; flex: none; }

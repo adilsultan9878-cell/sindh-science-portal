@@ -22,7 +22,10 @@
     limit: { sd: 'اڄ جا سوال پورا ٿي ويا. سڀاڻي ٻيهر پڇو.', ur: 'آج کے سوال پورے ہو گئے۔ کل دوبارہ پوچھیں۔', en: 'Today\'s questions are used up. Please ask again tomorrow.' },
     notReady: { sd: 'AI استاد اڃا تيار ناهي.', ur: 'AI استاد ابھی تیار نہیں ہے۔', en: 'AI Ustad is not ready yet.' },
     noSchool: { sd: 'مان رڳو اسڪول ۽ پڙهائي بابت مدد ڪري سگهان ٿو.', ur: 'میں صرف اسکول اور پڑھائی کے بارے میں مدد کر سکتا ہوں۔', en: 'I can only help with school and studies.' },
-    read: { sd: 'ڪتاب ۾ پڙهو', ur: 'کتاب میں پڑھیں', en: 'Read in the book' }
+    read: { sd: 'ڪتاب ۾ پڙهو', ur: 'کتاب میں پڑھیں', en: 'Read in the book' },
+    here: { sd: 'هي رهيو ڳنڍڻو:', ur: 'یہ رہا لنک:', en: 'Here is the link:' },
+    chapter: { sd: 'باب', ur: 'باب', en: 'Chapter' },
+    whichChapter: { sd: 'ڪهڙي باب جو؟ باب جو نمبر لکو، مثال: باب 2 جي ورڪ شيٽ', ur: 'کس باب کا؟ باب کا نمبر لکھیں، مثال: باب 2 کی ورک شیٹ', en: 'Which chapter? Write its number, for example: worksheet of chapter 2' }
   };
   function lang() {
     var l = 'sd';
@@ -32,7 +35,69 @@
   function t(k) { var l = lang(); return T[k][l] || T[k].ur; }
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c]; }); }
   function L(o) { var l = lang(); return o ? (o[l] || o.ur || o.en || '') : ''; }
-  function skip() { return /^\/(ustad|class|school|paper|staff|stats|admin|parent)(\/|$)/.test(location.pathname); }
+  function skip() { return /^\/ustad(\/|$)/.test(location.pathname); }   // the full AI Ustad page has its own chat
+
+  /* ---------- website help: "worksheet of chapter 2" gives the link, no AI needed ---------- */
+  var PAGES = [
+    { re: /worksheet|ورک\s*شیٹ|ورڪ\s*شيٽ/i, tab: 'worksheet', name: { sd: 'ورڪ شيٽ', ur: 'ورک شیٹ', en: 'Worksheet' } },
+    { re: /quiz|test|کوئز|ڪوئز|ٹیسٹ/i, tab: 'quiz', name: { sd: 'ڪوئز', ur: 'کوئز', en: 'Quiz' } },
+    { re: /experiment|tajurb|tajarb|تجرب/i, tab: 'experiment', name: { sd: 'تجربو', ur: 'تجربہ', en: 'Experiment' } },
+    { re: /diagram|خاکہ|خاڪو/i, tab: 'diagram', name: { sd: 'خاڪو', ur: 'خاکہ', en: 'Diagram' } },
+    { re: /game|khel|کھیل|راند/i, tab: 'game', name: { sd: 'راند', ur: 'کھیل', en: 'Game' } },
+    { re: /words|glossary|الفاظ|لفظ/i, tab: 'words', name: { sd: 'اهم لفظ', ur: 'اہم الفاظ', en: 'Key words' } },
+    { re: /pdf|book|kitab|کتاب|ڪتاب/i, book: true, name: { sd: 'ڪتاب PDF', ur: 'کتاب PDF', en: 'Book PDF' } },
+    { re: /lesson|chapter|sabaq|baab|سبق|باب/i, tab: '', name: { sd: 'سبق', ur: 'سبق', en: 'Lesson' } }
+  ];
+  var SITE = [
+    { re: /log\s*in|login|password|لاگ|پاسورڈ/i, href: '/login', name: { sd: 'لاگ ان', ur: 'لاگ ان', en: 'Log in' } },
+    { re: /progress|result|natija|پیش\s*رفت|ترقي|نتیجہ|نتيجو/i, href: '/progress', name: { sd: 'منهنجي ترقي', ur: 'میری پیش رفت', en: 'My progress' } },
+    { re: /competition|مقابل/i, href: '/competition', name: { sd: 'مقابلو', ur: 'مقابلہ', en: 'Competition' } },
+    { re: /leaderboard|لیڈر|ليڊر/i, href: '/leaderboard', name: { sd: 'ليڊر بورڊ', ur: 'لیڈر بورڈ', en: 'Leaderboard' } },
+    { re: /video|ویڈیو|وڊيو/i, href: '/watch', name: { sd: 'وڊيو', ur: 'ویڈیوز', en: 'Videos' } },
+    { re: /exam|imtihan|امتحان/i, href: '/exam/', name: { sd: 'امتحان جي تياري', ur: 'امتحان کی تیاری', en: 'Mock exam' } },
+    { re: /flash|cards|کارڈ|ڪارڊ/i, href: '/cards/', name: { sd: 'ڪارڊ', ur: 'فلیش کارڈ', en: 'Flash cards' } },
+    { re: /teacher|اساتذہ|استادن/i, href: '/class/', name: { sd: 'استاد جو صفحو', ur: 'استاد کا صفحہ', en: 'Teacher page' } },
+    { re: /games|کھیل|راند/i, href: '/games', name: { sd: 'رانديون', ur: 'کھیل', en: 'Games' } }
+  ];
+  var NUMS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13,
+    'ایک': 1, 'دو': 2, 'تین': 3, 'چار': 4, 'پانچ': 5, 'چھ': 6, 'سات': 7, 'آٹھ': 8, 'نو': 9, 'دس': 10, 'گیارہ': 11, 'بارہ': 12, 'تیرہ': 13,
+    'هڪ': 1, 'ٻه': 2, 'ٽي': 3, 'پنج': 5, 'ڇهه': 6, 'ست': 7, 'اٺ': 8, 'ڏهه': 10 };
+  var chapterIds = null;
+  function loadIds() {
+    if (chapterIds) return Promise.resolve(chapterIds);
+    return fetch('/data/catalog.json').then(function (r) { return r.json(); }).then(function (c) {
+      var cls = c.classes.filter(function (x) { return x.id === '5'; })[0];
+      chapterIds = cls.subjects.filter(function (s) { return s.id === 'science'; })[0].chapters;
+      return chapterIds;
+    });
+  }
+  function chapterNumber(q) {
+    var s = q.replace(/[۰-۹]/g, function (d) { return String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)); }).replace(/[٠-٩]/g, function (d) { return String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)); });
+    var m = s.match(/(\d{1,2})/);
+    if (m) return +m[1];
+    var w = s.toLowerCase().split(/[\s،,.؟?!]+/);
+    for (var i = 0; i < w.length; i++) if (NUMS[w[i]]) return NUMS[w[i]];
+    return 0;
+  }
+  // a promise of the reply (HTML) when the child is looking for a page of the website, otherwise null
+  function siteHelp(q) {
+    var wantsLink = /kahan|kidhar|kaha[ny]|chahi?ye|chaiye|dikhao|kholo|batao|link|لنک|ڳنڍڻو|کہاں|ڪٿي|where|open|کھول|کول|چاہیے|چاهي|want|need|give|show|دکھا|ڏيکار|ملے|ملي/i.test(q);
+    var n = chapterNumber(q), page = PAGES.filter(function (p) { return p.re.test(q); })[0];
+    if (n >= 1 && n <= 13 && page) {
+      return loadIds().then(function (ids) {
+        var id = ids[n - 1];
+        if (!id) return null;
+        var href = page.book ? '/book/pdf/' + id + '-' + lang() + '.pdf' : '/class-5/science/' + id + (page.tab ? '/' + page.tab : '');
+        return esc(t('here')) + '<span class="uc-links"><a href="' + href + '">' + esc(L(page.name)) + ' · ' + esc(t('chapter')) + ' ' + n + '</a></span>';
+      }).catch(function () { return null; });
+    }
+    if (!wantsLink) return null;
+    var hit = SITE.filter(function (p) { return p.re.test(q); })[0];
+    if (hit) return Promise.resolve(esc(t('here')) + '<span class="uc-links"><a href="' + hit.href + '">' + esc(L(hit.name)) + '</a></span>');
+    if (page) return Promise.resolve(esc(t('whichChapter')));
+    return null;
+  }
+
 
   var CHAT = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>';
   var root = document.createElement('div');
@@ -82,6 +147,15 @@
     }
     if (q.length < 3) { add('bot', esc(t('tooShort'))); return; }
     add('me', esc(q));
+    var help = siteHelp(q);
+    if (help) {
+      busy = true;
+      help.then(function (html) { busy = false; if (html) add('bot', html); else askAi(q); });
+      return;
+    }
+    askAi(q);
+  }
+  function askAi(q) {
     if (!CFG || navigator.onLine === false) { add('bot', esc(t('offline'))); return; }
     busy = true;
     var wait = add('bot wait', esc(t('thinking')));
@@ -95,7 +169,8 @@
           return '<a href="/class-5/science/' + encodeURIComponent(s.chapter) + '">' + esc(t('read')) + ': ' + esc(L(s.title)) + '</a>';
         }).join('');
         wait.className = 'uc-msg bot';
-        wait.innerHTML = esc(d.answer).replace(/\n+/g, '<br>') + (links ? '<span class="uc-links">' + links + '</span>' : '');
+        wait.innerHTML = esc(d.answer).replace(/\n+/g, '<br>')
+          .replace(/https:\/\/sindh-science-portal\.vercel\.app[^\s<)"'،۔]*/g, function (u) { u = u.replace(/[.,;:!?]+$/, ''); return '<a href="' + u + '" dir="ltr">' + u.replace('https://sindh-science-portal.vercel.app', '') + '</a>'; }) + (links ? '<span class="uc-links">' + links + '</span>' : '');
       } else {
         var key = d.notInBook || d.refused ? 'noSchool' : d.error === 'not_ready' ? 'notReady' : (d.error === 'person_limit' || d.error === 'site_limit') ? 'limit' : d.error === 'too_short' ? 'tooShort' : 'busy';
         wait.className = 'uc-msg bot'; wait.textContent = t(key);

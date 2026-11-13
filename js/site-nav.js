@@ -60,7 +60,7 @@
       ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience']];
     // teachers' and staff pages have their own small menu and no student bar (the staff side starts at /staff/)
     var staffSide = /^\/(class|school|paper|staff|stats)(\/|$)/.test(location.pathname);
-    if (!staffSide && !document.querySelector('script[src^="/js/chat-widget.js"]')) { var cw = document.createElement('script'); cw.src = '/js/chat-widget.js?v=20261113a'; cw.defer = true; document.head.appendChild(cw); } // AI Ustad chat bubble
+    if (!document.querySelector('script[src^="/js/chat-widget.js"]')) { var cw = document.createElement('script'); cw.src = '/js/chat-widget.js?v=20261113b'; cw.defer = true; document.head.appendChild(cw); } // AI Ustad chat bubble
     if (staffSide) {
       main = [['/staff/', 'staffHome'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/paper/', 'questionPaper'], ['/stats/', 'statsTitle'], ['/admin', 'staff']];
       more = [['/', 'toStudentSite']];
