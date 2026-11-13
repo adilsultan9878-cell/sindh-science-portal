@@ -15,7 +15,8 @@
     open: { sd: 'AI استاد سان ڳالهايو', ur: 'AI استاد سے بات کریں', en: 'Chat with AI Ustad' },
     close: { sd: 'بند ڪريو', ur: 'بند کریں', en: 'Close' },
     thinking: { sd: 'سوچي رهيو آهيان...', ur: 'سوچ رہا ہوں...', en: 'Thinking...' },
-    tooShort: { sd: 'سوال ٿورو وڏو لکو.', ur: 'سوال تھوڑا لمبا لکھیں۔', en: 'Please write a longer question.' },
+    tooShort: { sd: 'سوال ٿورو وڏو لکو. مثال: ٻج ڪيئن ڦٽي ٿو؟', ur: 'سوال تھوڑا لمبا لکھیں۔ مثال: بیج کیسے اگتا ہے؟', en: 'Please write a longer question. Example: How does a seed grow?' },
+    greet: { sd: 'وعليڪم السلام! 😊 پنهنجو سائنس جو سوال لکو، مثال: ٻوٽن کي وڌڻ لاءِ ڇا گهرجي؟', ur: 'وعلیکم السلام! 😊 اپنا سائنس کا سوال لکھیں، مثال: پودوں کو بڑھنے کے لیے کیا چاہیے؟', en: 'Hello! 😊 Type your science question, for example: What do plants need to grow?' },
     offline: { sd: 'انٽرنيٽ ناهي. انٽرنيٽ سان ٻيهر ڪوشش ڪريو.', ur: 'انٹرنیٹ نہیں ہے۔ انٹرنیٹ کے ساتھ دوبارہ کوشش کریں۔', en: 'No internet. Please try again when you are online.' },
     busy: { sd: 'هن وقت جواب نه ملي سگهيو. ٿوري دير بعد ٻيهر ڪوشش ڪريو.', ur: 'اس وقت جواب نہیں مل سکا۔ تھوڑی دیر بعد دوبارہ کوشش کریں۔', en: 'Could not answer right now. Please try again in a little while.' },
     limit: { sd: 'اڄ جا سوال پورا ٿي ويا. سڀاڻي ٻيهر پڇو.', ur: 'آج کے سوال پورے ہو گئے۔ کل دوبارہ پوچھیں۔', en: 'Today\'s questions are used up. Please ask again tomorrow.' },
@@ -75,6 +76,10 @@
   function ask(q) {
     q = q.trim();
     if (busy) return;
+    // a greeting ("hi", "salam", "اسلام علیکم" …) gets a friendly answer instead of "too short"
+    if (/^(hi+|hey|hello|helo|salam|salaam|aoa|assalam\w*|السلام\s*علي[کك]م|اسلام\s*علي[کك]م|سلام|ہیلو|هيلو)[\s!.,،۔]*$/i.test(q)) {
+      add('me', esc(q)); add('bot', esc(t('greet'))); input.value = ''; return;
+    }
     if (q.length < 3) { add('bot', esc(t('tooShort'))); return; }
     add('me', esc(q));
     if (!CFG || navigator.onLine === false) { add('bot', esc(t('offline'))); return; }
