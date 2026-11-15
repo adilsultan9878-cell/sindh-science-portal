@@ -870,3 +870,12 @@ body.staff-side { padding-bottom: 0; }
 .nav a[aria-current="page"] { background: var(--green); border-color: var(--green); color: #fff; }
 .nav a[aria-current="page"] .ic { color: #fff; }
 @media (max-width: 760px) { .top { position: relative; } body:not(.staff-side) .nav { display: none; } }   /* phones use the bottom bar */
+
+/* Teacher attendance (/class/) */
+.tc-att .btn.tc-present { background: var(--green); color: #fff; border-color: var(--green); min-width: 96px; }
+.tc-att .btn.tc-absent { background: #c0392b; color: #fff; border-color: #c0392b; min-width: 96px; }
+.tc-attdays { display: flex; align-items: flex-end; gap: 4px; height: 110px; padding: 6px 0; overflow-x: auto; }
+.tc-attday { flex: 0 0 22px; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 2px; }
+.tc-attday span { width: 16px; background: #8cc79a; border-radius: 4px 4px 0 0; }
+.tc-attday small { font-size: 10px; color: var(--muted); direction: ltr; }
+td.low { color: #c0392b; font-weight: 700; }

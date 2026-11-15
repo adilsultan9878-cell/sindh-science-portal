@@ -90,6 +90,16 @@
     never: { sd: 'ڪڏهن نه', ur: 'کبھی نہیں', en: 'never' },
     wait: { sd: 'ٿورو انتظار ڪريو…', ur: 'تھوڑا انتظار کریں…', en: 'Please wait…' },
     error: { sd: 'ڪجهه غلط ٿيو. ٻيهر ڪوشش ڪريو.', ur: 'کچھ غلط ہو گیا۔ دوبارہ کوشش کریں۔', en: 'Something went wrong. Please try again.' },
+    attendance: { sd: 'حاضري', ur: 'حاضری', en: 'Attendance' },
+    attDay: { sd: 'تاريخ', ur: 'تاریخ', en: 'Date' },
+    attHelp: { sd: 'جيڪو ٻار اڄ نه آيو، ان جي آڏو "غير حاضر" دٻايو، پوءِ محفوظ ڪريو.', ur: 'جو بچہ آج نہیں آیا، اس کے سامنے "غیر حاضر" دبائیں، پھر محفوظ کریں۔', en: 'Tap "Absent" for each child who is not here today, then save.' },
+    present: { sd: 'حاضر', ur: 'حاضر', en: 'Present' },
+    absent: { sd: 'غير حاضر', ur: 'غیر حاضر', en: 'Absent' },
+    attSave: { sd: 'حاضري محفوظ ڪريو', ur: 'حاضری محفوظ کریں', en: 'Save attendance' },
+    attSaved: { sd: 'محفوظ ٿي وئي ✓', ur: 'محفوظ ہو گئی ✓', en: 'Saved ✓' },
+    attNotYet: { sd: 'هن ڏينهن جي حاضري اڃا نه لڳي.', ur: 'اس دن کی حاضری ابھی نہیں لگی۔', en: 'Attendance for this day is not taken yet.' },
+    att30: { sd: 'گذريل 30 ڏينهن جي حاضري', ur: 'پچھلے 30 دن کی حاضری', en: 'Attendance, last 30 days' },
+    weakCh: { sd: 'باب جن ۾ 50% کان گهٽ (مدد گهرجي)', ur: 'ابواب جن میں 50% سے کم (مدد چاہیے)', en: 'Chapters under 50% (needs help)' },
     waText: { sd: '{n} جي سائنس رپورٽ ({c}): پوائنٽس {p}، ڪوئز {q} (اوسط {a})، گهر جو ڪم {h}. تفصيل:', ur: '{n} کی سائنس رپورٹ ({c}): پوائنٹس {p}، کوئز {q} (اوسط {a})، ہوم ورک {h}۔ تفصیل:', en: '{n}\'s science report ({c}): points {p}, quizzes {q} (average {a}), homework {h}. Details:' }
   };
 
@@ -200,7 +210,7 @@
   }
   function drawClass() {
     var c = data.class, studs = data.students;
-    var tabs = ['students', 'homework', 'week', 'behind'].map(function (k) {
+    var tabs = ['students', 'attendance', 'homework', 'week', 'behind'].map(function (k) {
       return '<button type="button" class="chip" data-tab="' + k + '" aria-current="' + (tab === k) + '">' + esc(T(k)) + '</button>';
     }).join('');
     var body = '';
@@ -231,16 +241,63 @@
         }).join('') : '<p class="muted">' + esc(T('noHw')) + '</p>');
     } else if (tab === 'week') {
       body = weekReport();
+    } else if (tab === 'attendance') {
+      body = '<section class="card tc-att"><h2>' + esc(T('attendance')) + '</h2><p class="muted small">' + esc(T('attHelp')) + '</p>' +
+        '<label class="field"><span>' + esc(T('attDay')) + '</span><input type="date" data-attday value="' + esc(attDay) + '" max="' + new Date().toISOString().slice(0, 10) + '"></label>' +
+        '<div data-attbox><p class="loading">' + esc(T('wait')) + '</p></div></section>';
+      setTimeout(loadAttendance, 0);
     } else {
       var weekAgo = Date.now() - 7 * 864e5;
       var idle = studs.filter(function (st) { return !st.last || new Date(st.last).getTime() < weekAgo; });
       var low = studs.filter(function (st) { var s = stats(st); return s.avg != null && s.avg < 50; });
       function list(arr, extra) { return arr.length ? '<ul>' + arr.map(function (st) { return '<li>' + esc(st.name) + (extra ? ' — ' + esc(extra(st)) : '') + ' <a class="small" target="_blank" rel="noopener" href="' + esc(waLink(st)) + '">WhatsApp</a></li>'; }).join('') + '</ul>' : '<p class="muted">' + esc(T('nobody')) + '</p>'; }
       body = '<section class="card"><h2>' + esc(T('idle')) + '</h2>' + list(idle, function (st) { return T('last') + ': ' + day(st.last); }) + '</section>' +
-        '<section class="card"><h2>' + esc(T('low')) + '</h2>' + list(low, function (st) { return stats(st).avg + '%'; }) + '</section>';
+        '<section class="card"><h2>' + esc(T('low')) + '</h2>' + list(low, function (st) { return stats(st).avg + '%'; }) + '</section>' +
+        '<section class="card"><h2>' + esc(T('weakCh')) + '</h2>' + weakChapters() + '</section>';
     }
     main.innerHTML = head(c.name) + '<div class="tc-head"><h1>' + esc(c.name) + '</h1><button type="button" class="btn ghost small" data-act="home">' + esc(T('back')) + '</button></div>' +
       (c.school ? '<p class="muted">' + esc(c.school) + '</p>' : '') + '<div class="tc-classes tc-tabs no-print">' + tabs + '</div>' + body;
+  }
+
+  // Every child and chapter where quizzes + worksheets together are under 50%: who needs help with what
+  function weakChapters() {
+    var per = {};
+    data.results.forEach(function (r) {
+      if (!r.student_id || !r.total || (r.kind !== 'quiz' && r.kind !== 'worksheet')) return;
+      var k = r.student_id + '|' + r.chapter, p = per[k] || (per[k] = { id: r.student_id, ch: r.chapter, s: 0, t: 0 });
+      p.s += r.score; p.t += r.total;
+    });
+    var rows = Object.keys(per).map(function (k) { var p = per[k]; p.pct = Math.round(100 * p.s / p.t); return p; })
+      .filter(function (p) { return p.pct < 50; }).sort(function (a, b) { return a.pct - b.pct; });
+    if (!rows.length) return '<p class="muted">' + esc(T('nobody')) + '</p>';
+    return '<div class="table-wrap"><table class="table tc-table"><thead><tr><th>' + esc(T('name')) + '</th><th>' + esc(T('chapter')) + '</th><th>%</th><th></th></tr></thead><tbody>' +
+      rows.map(function (p) {
+        var st = data.students.filter(function (x) { return x.id === p.id; })[0]; if (!st) return '';
+        return '<tr><td>' + esc(st.name) + '</td><td>' + esc(chTitle(p.ch)) + '</td><td class="low">' + p.pct + '%</td><td><a class="small" target="_blank" rel="noopener" href="' + esc(waLink(st)) + '">WhatsApp</a></td></tr>';
+      }).join('') + '</tbody></table></div>';
+  }
+
+  // Attendance: everybody is present unless marked absent; one save writes the whole class for that day
+  var attDay = new Date().toISOString().slice(0, 10), attAbsent = {};
+  function loadAttendance() {
+    var box = main.querySelector('[data-attbox]'); if (!box) return;
+    rpc('teacher_attendance', { p_code: openCode, p_day: attDay }).then(function (a) {
+      attAbsent = {}; (a.absent || []).forEach(function (id) { attAbsent[id] = true; });
+      var sum = {}; (a.students || []).forEach(function (s) { sum[s.id] = s; });
+      var studs = data.students;
+      box.innerHTML = (a.marked ? '' : '<p class="muted small">' + esc(T('attNotYet')) + '</p>') +
+        (studs.length ? '<div class="table-wrap"><table class="table tc-table"><thead><tr><th>' + esc(T('name')) + '</th><th></th><th>' + esc(T('att30')) + '</th></tr></thead><tbody>' +
+          studs.map(function (st) {
+            var s = sum[st.id], pct = s && s.total ? Math.round(100 * s.present / s.total) : null, off = !!attAbsent[st.id];
+            return '<tr><td>' + esc(st.name) + '</td><td><button type="button" class="btn small ' + (off ? 'tc-absent' : 'tc-present') + '" data-att="' + esc(st.id) + '">' + esc(T(off ? 'absent' : 'present')) + '</button></td>' +
+              '<td>' + (pct == null ? '–' : pct + '% (' + s.present + '/' + s.total + ')') + '</td></tr>';
+          }).join('') + '</tbody></table></div>' +
+          '<p><button type="button" class="btn" data-attsave>' + esc(T('attSave')) + '</button> <span class="form-msg" aria-live="polite"></span></p>' : '<p class="muted">' + esc(T('noStudents')) + '</p>') +
+        ((a.days || []).length ? '<h3>' + esc(T('att30')) + '</h3><div class="tc-attdays">' + a.days.map(function (d) {
+          var pct = d.total ? Math.round(100 * d.present / d.total) : 0;
+          return '<div class="tc-attday" title="' + esc(d.day) + ': ' + d.present + '/' + d.total + '"><span style="height:' + Math.max(4, pct) + '%"></span><small>' + esc(String(d.day).slice(8)) + '</small></div>';
+        }).reverse().join('') + '</div>' : '');
+    }).catch(fail);
   }
 
   // Weekly report: Monday to Sunday, per child counts and quiz %, who is behind; print or send on WhatsApp
@@ -310,6 +367,20 @@
   /* ---------- actions ---------- */
 
   main.addEventListener('click', function (e) {
+    var at = e.target.closest('[data-att]');
+    if (at) {
+      var id = at.getAttribute('data-att'), off = !attAbsent[id];
+      if (off) attAbsent[id] = true; else delete attAbsent[id];
+      at.className = 'btn small ' + (off ? 'tc-absent' : 'tc-present'); at.textContent = T(off ? 'absent' : 'present');
+      return;
+    }
+    if (e.target.closest('[data-attsave]')) {
+      var m = main.querySelector('.tc-att .form-msg'); if (m) m.textContent = T('wait');
+      rpc('teacher_attendance_save', { p_code: openCode, p_day: attDay, p_absent: Object.keys(attAbsent) })
+        .then(function () { loadAttendance(); setTimeout(function () { var m2 = main.querySelector('.tc-att .form-msg'); if (m2) m2.textContent = T('attSaved'); }, 400); })
+        .catch(function () { if (m) m.textContent = T('error'); });
+      return;
+    }
     var b = e.target.closest('[data-act],[data-open],[data-tab],[data-week],[data-pin],[data-remove],[data-hwdel]');
     if (!b) return;
     var act = b.getAttribute('data-act');
@@ -336,6 +407,10 @@
     } else if (b.hasAttribute('data-hwdel')) {
       rpc('teacher_homework_delete', { p_id: +b.getAttribute('data-hwdel') }).then(viewClass).catch(fail);
     }
+  });
+
+  main.addEventListener('change', function (e) {
+    if (e.target.matches('[data-attday]') && e.target.value) { attDay = e.target.value; loadAttendance(); }
   });
 
   main.addEventListener('submit', function (e) {

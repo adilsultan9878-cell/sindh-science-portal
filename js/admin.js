@@ -1142,6 +1142,54 @@
         '<path d="' + line + '" fill="none" stroke="#1e7a3c" stroke-width="2.5"/>' + labels + '</svg></div>');
     }
 
+    // attendance, class progress, children who need help, and the Excel download
+    var ex = { attendance_days: [], attendance_classes: [], attendance_students: [], weak: [] };
+    try { if (isAdmin()) ex = await rpc('admin_dashboard_extra', { p_days: 30 }); } catch (e) { /* older database */ }
+    function hbars(rows, unit) {
+      if (!rows.length) return '<p class="muted">No data yet.</p>';
+      return rows.map(function (r) {
+        var v = r.v == null ? 0 : r.v, c = r.v == null ? '#cfdcd2' : v >= 80 ? '#1e7a3c' : v >= 50 ? '#d99a00' : '#c0392b';
+        return '<div class="hbar"><span>' + esc(r.label) + '</span><div class="bar"><span style="width:' + Math.max(2, v) + '%;background:' + c + '"></span></div><span>' + (r.v == null ? '—' : v + (unit || '%')) + (r.sub ? ' <small class="muted">' + esc(r.sub) + '</small>' : '') + '</span></div>';
+      }).join('');
+    }
+    var attTot = ex.attendance_days.reduce(function (a, d) { a.p += d.present; a.t += d.total; return a; }, { p: 0, t: 0 });
+    main.insertAdjacentHTML('beforeend', '<h2 class="st-h">Classes</h2><div class="stat-grid">' +
+      tile(attTot.t ? Math.round(100 * attTot.p / attTot.t) + '%' : '—', 'Attendance (30 days)', attTot.t ? attTot.p + ' of ' + attTot.t + ' present' : 'teachers mark it on the class page', 'b') +
+      tile(ex.weak.length, 'Need help', new Set(ex.weak.map(function (w) { return w.student_id; })).size + ' children under 50% in a chapter', 'r') +
+      tile(ov.classes.length, 'Classes', ov.classes.filter(function (c) { return c.teacher_id; }).length + ' with a teacher', 'p') + '</div>' +
+      '<div class="st-two"><div class="card"><h2>Class progress</h2>' + hbars(ov.classes.map(function (c) { return { label: c.name, v: c.avg, sub: c.students + ' students' }; })) + '</div>' +
+      '<div class="card"><h2>Class attendance</h2>' + hbars(ex.attendance_classes.map(function (c) { return { label: c.name || c.code, v: c.total ? Math.round(100 * c.present / c.total) : null, sub: c.days + ' days' }; })) + '</div></div>' +
+      (ex.attendance_days.length ? '<div class="card st-chart"><h2>Attendance by day</h2><div class="tc-attdays">' + ex.attendance_days.map(function (d) {
+        var p = d.total ? Math.round(100 * d.present / d.total) : 0;
+        return '<div class="tc-attday" title="' + esc(d.day) + ': ' + d.present + '/' + d.total + ' (' + p + '%)"><span style="height:' + Math.max(4, p) + '%"></span><small>' + esc(String(d.day).slice(8)) + '</small></div>';
+      }).join('') + '</div></div>' : ''));
+    var classNames = {}; ov.classes.forEach(function (c) { classNames[c.code] = c.name; });
+    main.insertAdjacentHTML('beforeend', '<h2 class="st-h">Children who need help (under 50% in a chapter)</h2>' + (ex.weak.length ?
+      '<div class="table-wrap"><table class="table"><thead><tr><th>Student</th><th>Class</th><th>Chapter</th><th>Score</th><th>Tries</th></tr></thead><tbody>' +
+      ex.weak.slice(0, 300).map(function (w) {
+        return '<tr><td>' + esc(w.name) + ' <span class="muted ltr">' + esc(w.username) + '</span></td><td>' + (w.class ? '<a href="#school/class:' + esc(w.class) + '">' + esc(classNames[w.class] || w.class) + '</a>' : '—') + '</td><td>' + esc(chapterTitle(w.chapter)) + '</td><td style="color:#c0392b;font-weight:700">' + w.pct + '%</td><td>' + w.tries + '</td></tr>';
+      }).join('') + '</tbody></table></div>' : '<p class="muted">Nobody yet. Well done!</p>'));
+    // Excel: a CSV file with every student (opens in Excel; the BOM keeps Urdu and Sindhi letters right)
+    if (ov.students.length) {
+      main.appendChild(h('p', null, [btn('⬇ Download Excel (all students)', function () {
+        var visits = {}; accounts.forEach(function (a) { visits[a.id] = a; });
+        var att = {}; ex.attendance_students.forEach(function (a) { att[a.id] = a; });
+        var teacherOf = {}; ov.classes.forEach(function (c) { teacherOf[c.code] = c.teacher || ''; });
+        var weakN = {}; ex.weak.forEach(function (w) { weakN[w.student_id] = (weakN[w.student_id] || 0) + 1; });
+        var head = ['Name', 'Username', 'Class code', 'Class', 'Teacher', 'Points', 'Results sent', 'Average score %', 'Chapters under 50%', 'Visits', 'Visits this week', 'Attendance % (30 days)', 'Days present', 'Days marked', 'Last active'];
+        var rows = ov.students.map(function (x) {
+          var v = visits[x.id] || {}, a = att[x.id];
+          return [x.name, x.username, x.class || '', classNames[x.class] || '', teacherOf[x.class] || '', x.points || 0, x.results || 0, x.avg == null ? '' : x.avg, weakN[x.id] || 0,
+            v.visits || 0, v.week || 0, a && a.total ? Math.round(100 * a.present / a.total) : '', a ? a.present : '', a ? a.total : '', String(x.last || '').slice(0, 10)];
+        });
+        var csv = [head].concat(rows).map(function (r) { return r.map(function (c) { c = String(c == null ? '' : c); return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c; }).join(','); }).join('\r\n');
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' }));
+        a.download = 'students-' + today + '.csv';
+        document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+      }, '')]));
+    }
+
     // every account, with how often it came
     if (accounts.length) {
       var who = 'all', q = h('input', { type: 'search', placeholder: 'Search name, email or class', 'aria-label': 'Search accounts' });

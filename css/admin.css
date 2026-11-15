@@ -67,3 +67,7 @@ details.fb-group > summary { font-weight: 700; color: var(--green-dark); cursor:
 .st-legend span { display: inline-block; width: 14px; height: 10px; border-radius: 3px; margin: 0 4px 0 12px; vertical-align: middle; }
 .st-legend .k1 { background: #8cc79a; } .st-legend .k2 { background: #1e7a3c; height: 3px; }
 
+
+.card.stat.st-r { border-top-color: #c0392b; }
+.st-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-top: 12px; }
+
