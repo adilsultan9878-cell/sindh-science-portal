@@ -92,8 +92,11 @@
     error: { sd: 'ڪجهه غلط ٿيو. ٻيهر ڪوشش ڪريو.', ur: 'کچھ غلط ہو گیا۔ دوبارہ کوشش کریں۔', en: 'Something went wrong. Please try again.' },
     attendance: { sd: 'حاضري', ur: 'حاضری', en: 'Attendance' },
     attDay: { sd: 'تاريخ', ur: 'تاریخ', en: 'Date' },
-    attHelp: { sd: 'جيڪو ٻار اڄ نه آيو، ان جي آڏو "غير حاضر" دٻايو، پوءِ محفوظ ڪريو.', ur: 'جو بچہ آج نہیں آیا، اس کے سامنے "غیر حاضر" دبائیں، پھر محفوظ کریں۔', en: 'Tap "Absent" for each child who is not here today, then save.' },
+    attHelp: { sd: 'ٻار جي بٽڻ تي دٻايو: حاضر → دير سان → غير حاضر. پوءِ محفوظ ڪريو. رڳو اڄ جي حاضري لڳي ۽ بدلجي سگهي ٿي.', ur: 'بچے کے بٹن پر دبائیں: حاضر ← دیر سے ← غیر حاضر۔ پھر محفوظ کریں۔ صرف آج کی حاضری لگ اور بدل سکتی ہے۔', en: 'Tap a child\'s button: Present → Late → Absent. Then save. Only today\'s attendance can be marked or changed.' },
     present: { sd: 'حاضر', ur: 'حاضر', en: 'Present' },
+    late: { sd: 'دير سان', ur: 'دیر سے', en: 'Late' },
+    attLocked: { sd: 'هي گذريل ڏينهن آهي: رڳو ڏسي سگهو ٿا، بدلائي نٿا سگهو.', ur: 'یہ پچھلا دن ہے: صرف دیکھ سکتے ہیں، بدل نہیں سکتے۔', en: 'This is a past day: you can only look, not change it.' },
+    attToday: { sd: 'رڳو اڄ جي حاضري محفوظ ٿي سگهي ٿي.', ur: 'صرف آج کی حاضری محفوظ ہو سکتی ہے۔', en: 'Only today\'s attendance can be saved.' },
     absent: { sd: 'غير حاضر', ur: 'غیر حاضر', en: 'Absent' },
     attSave: { sd: 'حاضري محفوظ ڪريو', ur: 'حاضری محفوظ کریں', en: 'Save attendance' },
     attSaved: { sd: 'محفوظ ٿي وئي ✓', ur: 'محفوظ ہو گئی ✓', en: 'Saved ✓' },
@@ -277,22 +280,27 @@
       }).join('') + '</tbody></table></div>';
   }
 
-  // Attendance: everybody is present unless marked absent; one save writes the whole class for that day
-  var attDay = new Date().toISOString().slice(0, 10), attAbsent = {};
+  // Attendance: everybody is present unless marked late or absent; one save writes the whole class.
+  // Only today (Pakistan time, decided by the database) can be marked or changed; past days are shown read-only.
+  function pkToday() { return new Date(Date.now() + 5 * 3600e3).toISOString().slice(0, 10); }
+  var attDay = pkToday(), attState = {}, attEditable = true, NEXT = { present: 'late', late: 'absent', absent: 'present' };
   function loadAttendance() {
     var box = main.querySelector('[data-attbox]'); if (!box) return;
     rpc('teacher_attendance', { p_code: openCode, p_day: attDay }).then(function (a) {
-      attAbsent = {}; (a.absent || []).forEach(function (id) { attAbsent[id] = true; });
+      attState = {}; attEditable = !!a.editable;
+      (a.late || []).forEach(function (id) { attState[id] = 'late'; });
+      (a.absent || []).forEach(function (id) { attState[id] = 'absent'; });
+      var dayInput = main.querySelector('[data-attday]'); if (dayInput && a.today) dayInput.max = a.today;
       var sum = {}; (a.students || []).forEach(function (s) { sum[s.id] = s; });
       var studs = data.students;
-      box.innerHTML = (a.marked ? '' : '<p class="muted small">' + esc(T('attNotYet')) + '</p>') +
+      box.innerHTML = (attEditable ? '' : '<p class="note small">🔒 ' + esc(T('attLocked')) + '</p>') + (a.marked ? '' : '<p class="muted small">' + esc(T('attNotYet')) + '</p>') +
         (studs.length ? '<div class="table-wrap"><table class="table tc-table"><thead><tr><th>' + esc(T('name')) + '</th><th></th><th>' + esc(T('att30')) + '</th></tr></thead><tbody>' +
           studs.map(function (st) {
-            var s = sum[st.id], pct = s && s.total ? Math.round(100 * s.present / s.total) : null, off = !!attAbsent[st.id];
-            return '<tr><td>' + esc(st.name) + '</td><td><button type="button" class="btn small ' + (off ? 'tc-absent' : 'tc-present') + '" data-att="' + esc(st.id) + '">' + esc(T(off ? 'absent' : 'present')) + '</button></td>' +
-              '<td>' + (pct == null ? '–' : pct + '% (' + s.present + '/' + s.total + ')') + '</td></tr>';
+            var s = sum[st.id], pct = s && s.total ? Math.round(100 * s.present / s.total) : null, k = attState[st.id] || 'present';
+            return '<tr><td>' + esc(st.name) + '</td><td><button type="button" class="btn small tc-' + k + '" data-att="' + esc(st.id) + '"' + (attEditable ? '' : ' disabled') + '>' + esc(T(k)) + '</button></td>' +
+              '<td>' + (pct == null ? '–' : pct + '% (' + s.present + '/' + s.total + (s.late ? ', ' + T('late') + ' ' + s.late : '') + ')') + '</td></tr>';
           }).join('') + '</tbody></table></div>' +
-          '<p><button type="button" class="btn" data-attsave>' + esc(T('attSave')) + '</button> <span class="form-msg" aria-live="polite"></span></p>' : '<p class="muted">' + esc(T('noStudents')) + '</p>') +
+          (attEditable ? '<p><button type="button" class="btn" data-attsave>' + esc(T('attSave')) + '</button> <span class="form-msg" aria-live="polite"></span></p>' : '') : '<p class="muted">' + esc(T('noStudents')) + '</p>') +
         ((a.days || []).length ? '<h3>' + esc(T('att30')) + '</h3><div class="tc-attdays">' + a.days.map(function (d) {
           var pct = d.total ? Math.round(100 * d.present / d.total) : 0;
           return '<div class="tc-attday" title="' + esc(d.day) + ': ' + d.present + '/' + d.total + '"><span style="height:' + Math.max(4, pct) + '%"></span><small>' + esc(String(d.day).slice(8)) + '</small></div>';
@@ -369,16 +377,18 @@
   main.addEventListener('click', function (e) {
     var at = e.target.closest('[data-att]');
     if (at) {
-      var id = at.getAttribute('data-att'), off = !attAbsent[id];
-      if (off) attAbsent[id] = true; else delete attAbsent[id];
-      at.className = 'btn small ' + (off ? 'tc-absent' : 'tc-present'); at.textContent = T(off ? 'absent' : 'present');
+      if (!attEditable) return;
+      var id = at.getAttribute('data-att'), k = NEXT[attState[id] || 'present'];
+      if (k === 'present') delete attState[id]; else attState[id] = k;
+      at.className = 'btn small tc-' + k; at.textContent = T(k);
       return;
     }
     if (e.target.closest('[data-attsave]')) {
       var m = main.querySelector('.tc-att .form-msg'); if (m) m.textContent = T('wait');
-      rpc('teacher_attendance_save', { p_code: openCode, p_day: attDay, p_absent: Object.keys(attAbsent) })
+      var ids = function (k) { return Object.keys(attState).filter(function (x) { return attState[x] === k; }); };
+      rpc('teacher_attendance_save', { p_code: openCode, p_day: attDay, p_absent: ids('absent'), p_late: ids('late') })
         .then(function () { loadAttendance(); setTimeout(function () { var m2 = main.querySelector('.tc-att .form-msg'); if (m2) m2.textContent = T('attSaved'); }, 400); })
-        .catch(function () { if (m) m.textContent = T('error'); });
+        .catch(function (x) { if (m) m.textContent = /today_only/.test(x && x.message) ? T('attToday') : T('error'); });
       return;
     }
     var b = e.target.closest('[data-act],[data-open],[data-tab],[data-week],[data-pin],[data-remove],[data-hwdel]');

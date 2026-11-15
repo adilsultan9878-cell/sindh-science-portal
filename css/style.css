@@ -879,3 +879,7 @@ body.staff-side { padding-bottom: 0; }
 .tc-attday span { width: 16px; background: #8cc79a; border-radius: 4px 4px 0 0; }
 .tc-attday small { font-size: 10px; color: var(--muted); direction: ltr; }
 td.low { color: #c0392b; font-weight: 700; }
+
+.tc-att .btn.tc-late { background: #d98200; color: #fff; border-color: #d98200; min-width: 96px; }
+.tc-att .btn[disabled] { opacity: .75; cursor: not-allowed; }
+
