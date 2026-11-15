@@ -1,4 +1,4 @@
-﻿/* Sindh Science Learning Portal — calm, light design: white and soft green, clear type, no animations. */
+/* Sindh Science Learning Portal — calm, light design: white and soft green, clear type, no animations. */
 
 @font-face {
   font-family: "Noto Naskh Arabic";
@@ -858,3 +858,15 @@ body.staff-side { padding-bottom: 0; }
   .pp-links { grid-template-columns: minmax(0, 1fr); }
   .pp-login { margin-inline-start: 0; }
 }
+/* Cleaner header (20261115): stays at the top while scrolling, menu links are pills with icons, tools the same height */
+.top { position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 10px rgba(15, 61, 30, 0.07); }
+.brand { font-size: 1.2rem; }
+.brand svg { width: 40px; height: 40px; }
+.top-tools .zoom, .top-tools .langs, .top-tools .more-menu > summary { min-height: 40px; border-radius: 12px; }
+.nav { gap: 6px; padding-top: 4px; padding-bottom: 10px; }
+.nav a { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px; border: 1px solid transparent; border-bottom: 1px solid transparent; border-radius: 999px; color: var(--green-ink); background: transparent; }
+.nav a .ic { width: 19px; height: 19px; flex: none; }
+.nav a:hover { background: var(--soft); border-color: #cfe6d5; }
+.nav a[aria-current="page"] { background: var(--green); border-color: var(--green); color: #fff; }
+.nav a[aria-current="page"] .ic { color: #fff; }
+@media (max-width: 760px) { .top { position: relative; } body:not(.staff-side) .nav { display: none; } }   /* phones use the bottom bar */

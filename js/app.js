@@ -488,7 +488,7 @@
         }).join('') + (student ? '<button type="button" class="more-auth" data-act="menu-logout">' + esc(t('logoutBtn')) + '</button>' : '<a class="more-auth" href="/login">' + esc(t('loginTitle')) + '</a>') + '</div></details>' : '') + '</div>' +
       '</div>' +
       (state.lang ? '<nav class="wrap nav" aria-label="' + esc(t('menu')) + '">' + links.slice(0, 4).map(function (x) {   // the account (name, log in) sits under More, in the corner
-        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + esc(t(x[1])) + '</a>';
+        return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + icon(x[3]) + '<span>' + esc(t(x[1])) + '</span></a>';
       }).join('') + '</nav>' +
       '<nav class="tabbar no-print" aria-label="' + esc(t('menu')) + '">' + links.map(function (x) {
         return '<a href="' + x[0] + '"' + (isCurrent(x[0]) ? ' aria-current="page"' : '') + '>' + icon(x[3]) + '<span>' + esc(t(x[2])) + '</span></a>';

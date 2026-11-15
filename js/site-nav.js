@@ -60,7 +60,7 @@
       ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience']];
     // teachers' and staff pages have their own small menu and no student bar (the staff side starts at /staff/)
     var staffSide = /^\/(class|school|paper|staff|stats)(\/|$)/.test(location.pathname);
-    if (!document.querySelector('script[src^="/js/chat-widget.js"]')) { var cw = document.createElement('script'); cw.src = '/js/chat-widget.js?v=20261113e'; cw.defer = true; document.head.appendChild(cw); } // AI Ustad chat bubble
+    if (!document.querySelector('script[src^="/js/chat-widget.js"]')) { var cw = document.createElement('script'); cw.src = '/js/chat-widget.js?v=20261115a'; cw.defer = true; document.head.appendChild(cw); } // AI Ustad chat bubble
     if (staffSide) {
       main = [['/staff/', 'staffHome'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/paper/', 'questionPaper'], ['/stats/', 'statsTitle'], ['/admin', 'staff']];
       more = [['/', 'toStudentSite']];
@@ -78,7 +78,7 @@
     if (!nav) { nav = document.createElement('nav'); nav.className = 'wrap nav site-nav no-print'; top.appendChild(nav); }
     nav.setAttribute('aria-label', t('menu'));
     // the account (name, log in) sits under More, in the corner, not in this row
-    nav.innerHTML = (staffSide ? main : main.slice(0, 4)).map(function (x) { return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + esc(t(x[1])) + '</a>'; }).join('');
+    nav.innerHTML = (staffSide ? main : main.slice(0, 4)).map(function (x) { return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + (x[3] && ICONS[x[3]] ? icon(x[3]) : '') + '<span>' + esc(t(x[1])) + '</span></a>'; }).join('');
     var bar = document.querySelector('.tabbar');
     if (!bar) { bar = document.createElement('nav'); bar.className = 'tabbar no-print'; document.body.appendChild(bar); }
     bar.hidden = staffSide;
