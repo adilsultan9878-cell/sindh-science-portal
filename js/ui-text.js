@@ -509,15 +509,3 @@ Object.assign(window.UI_TEXT, {
   ppAvgQuiz: { sd: 'ڪوئز جو اوسط', ur: 'کوئز کا اوسط', en: 'Average quiz' },
   ppAgain: { sd: 'ٻيهر مشق ڪريو', ur: 'دوبارہ مشق کریں', en: 'Practise again' }
 });
-/* Revision (1, 3, 7 days), dark mode, voice and photo questions (20261119) */
-Object.assign(window.UI_TEXT, {
-  reviewTitle: { sd: 'دهرايو', ur: 'دہرائیں', en: 'Revise' },
-  reviewText: { sd: 'جيڪي سوال غلط ٿيا هئا، اهي 1، 3 ۽ 7 ڏينهن بعد ٻيهر اچن ٿا ته جيئن پڪا ياد ٿي وڃن.', ur: 'جو سوال غلط ہوئے تھے، وہ 1، 3 اور 7 دن بعد دوبارہ آتے ہیں تاکہ پکے یاد ہو جائیں۔', en: 'Questions you got wrong come back after 1, 3 and 7 days, so you remember them for good.' },
-  reviewNone: { sd: 'اڄ دهرائڻ لاءِ ڪو سوال ناهي. شاباس!', ur: 'آج دہرانے کے لیے کوئی سوال نہیں۔ شاباش!', en: 'Nothing to revise today. Well done!' },
-  reviewLater: { sd: '{n} سوال ايندڙ ڏينهن ۾ ايندا.', ur: '{n} سوال اگلے دنوں میں آئیں گے۔', en: '{n} questions will come back on the next days.' },
-  reviewDueN: { sd: 'اڄ {n} سوال دهرائڻا آهن', ur: 'آج {n} سوال دہرانے ہیں', en: '{n} questions to revise today' },
-  reviewStart: { sd: 'شروع ڪريو', ur: 'شروع کریں', en: 'Start' },
-  reviewAfter: { sd: 'صحيح جواب وارا سوال وڌيڪ دير بعد ايندا، غلط وارا سڀاڻي ٻيهر.', ur: 'صحیح جواب والے سوال زیادہ دیر بعد آئیں گے، غلط والے کل دوبارہ۔', en: 'Right ones come back later; wrong ones come back tomorrow.' },
-  reviewMore: { sd: 'وڌيڪ دهرايو', ur: 'مزید دہرائیں', en: 'Revise more' },
-  darkMode: { sd: 'اونداهو / روشن رنگ', ur: 'اندھیرا / روشن رنگ', en: 'Dark / light colours' }
-});

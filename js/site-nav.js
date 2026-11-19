@@ -37,14 +37,6 @@
     }
   } catch (e) { /* storage blocked */ }
 
-  function theme() { try { return JSON.parse(localStorage.getItem('ssp1.theme')) === 'dark' ? 'dark' : 'light'; } catch (e) { return 'light'; } }
-  document.documentElement.setAttribute('data-theme', theme());
-  document.addEventListener('click', function (e) {
-    var b = e.target.closest('.theme-btn[data-nav-theme]'); if (!b) return;
-    var next = theme() === 'dark' ? 'light' : 'dark';
-    try { localStorage.setItem('ssp1.theme', JSON.stringify(next)); } catch (err) { /* storage blocked */ }
-    document.documentElement.setAttribute('data-theme', next); b.textContent = next === 'dark' ? '☀️' : '🌙';
-  });
   function lang() {
     try { var l = JSON.parse(localStorage.getItem('ssp1.lang')); return ['sd', 'ur', 'en'].indexOf(l) >= 0 ? l : 'sd'; } catch (e) { return 'sd'; }
   }
@@ -65,10 +57,10 @@
     var main = [['/', 'home', 'home', 'home'], ['/class-5/science', 'learn', 'tabLearn', 'lesson'], ['/games', 'gamesTitle', 'tabPlay', 'game'],
       ['/watch', 'videosTitle', 'tabWatch', 'video'], [s ? '/progress' : '/login', s ? 'progress' : 'loginTitle', 'tabMe', 'star']];
     var more = [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
-      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/review', 'reviewTitle'], ['/sindh/', 'sindhScience']];
+      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience']];
     // teachers' and staff pages have their own small menu and no student bar (the staff side starts at /staff/)
     var staffSide = /^\/(class|school|paper|staff|stats)(\/|$)/.test(location.pathname);
-    if (!document.querySelector('script[src^="/js/chat-widget.js"]')) { var cw = document.createElement('script'); cw.src = '/js/chat-widget.js?v=20261119a'; cw.defer = true; document.head.appendChild(cw); } // AI Ustad chat bubble
+    if (!document.querySelector('script[src^="/js/chat-widget.js"]')) { var cw = document.createElement('script'); cw.src = '/js/chat-widget.js?v=20261115c'; cw.defer = true; document.head.appendChild(cw); } // AI Ustad chat bubble
     if (staffSide) {
       main = [['/staff/', 'staffHome'], ['/class/', 'classTitle'], ['/school/', 'schoolTitle'], ['/paper/', 'questionPaper'], ['/stats/', 'statsTitle'], ['/admin', 'staff']];
       more = [['/', 'toStudentSite']];
@@ -77,10 +69,6 @@
     var row = top.querySelector('.top-row');
     var menu = top.querySelector('.more-menu');
     if (!menu && row) { menu = document.createElement('details'); menu.className = 'more-menu'; row.appendChild(menu); }
-    // dark mode button (same ssp1.theme key as the main site)
-    var tb = top.querySelector('.theme-btn');
-    if (!tb && menu && menu.parentNode) { tb = document.createElement('button'); tb.type = 'button'; tb.className = 'theme-btn'; tb.setAttribute('data-nav-theme', ''); menu.parentNode.insertBefore(tb, menu); }
-    if (tb) { tb.textContent = theme() === 'dark' ? '☀️' : '🌙'; tb.title = t('darkMode'); tb.setAttribute('aria-label', t('darkMode')); }
     if (menu) {
       menu.innerHTML = '<summary>' + icon('list') + '<span>' + esc(t('more')) + '</span></summary><div class="more-panel">' + (s && !staffSide ? '<a class="more-me" href="/progress">' + icon('star') + '<span>' + esc(s.name) + '<small>' + esc(t('progress')) + '</small></span></a>' : '') + more.map(function (x) {
         return '<a href="' + x[0] + '"' + cur(x[0]) + '>' + esc(x[0] === '/login' && s ? s.name : t(x[1])) + '</a>';

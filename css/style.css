@@ -883,32 +883,3 @@ td.low { color: #c0392b; font-weight: 700; }
 .tc-att .btn.tc-late { background: #d98200; color: #fff; border-color: #d98200; min-width: 96px; }
 .tc-att .btn[disabled] { opacity: .75; cursor: not-allowed; }
 
-
-/* revision banner on the home page */
-.review-due { display: flex; align-items: center; gap: 14px; margin: 0 0 14px; text-decoration: none; color: var(--text); border-inline-start: 5px solid #d98200; }
-.review-due .ic { width: 30px; height: 30px; color: #d98200; flex: none; }
-.review-due .btn { margin-inline-start: auto; }
-/* dark mode button */
-.theme-btn { min-height: 40px; min-width: 42px; border: 1px solid var(--line-2); border-radius: 12px; background: var(--bg); font-size: 1.1rem; cursor: pointer; }
-
-/* Dark mode (html[data-theme="dark"]): colours swap; pictures, diagrams and the drawing box stay light */
-html[data-theme="dark"] { color-scheme: dark; --bg: #18231c; --page: #0f1712; --soft: #1e2d23; --soft-2: #25382c; --line: #2b3d31; --line-2: #3a4f41;
-  --green: #2f9e55; --green-dark: #43b569; --green-ink: #cfe9d6; --text: #e3ebe5; --muted: #a2b5a8; --right: #173a24; --right-line: #43b569;
-  --wrong: #3d1d1d; --wrong-line: #ef7a7a; --yellow: #352e17; --yellow-line: #8a7630; --amber: #f0a64a; }
-html[data-theme="dark"] body, html[data-theme="dark"] footer { background: var(--page); color: var(--text); }
-html[data-theme="dark"] :is(.top, .card, .badge-chip, .btn.ghost, .checklist label, .chip, .ch-status, .dot, .game-tab, .hero, .lang-btn[aria-pressed="true"], .mem-card.open, .opt, .pf-av, .q, .qc-opt, .result, .say, .table, .tf-pick label, .thumb, .worksheet, .uc-box, .uc-form, .uc-msg.bot, .tabbar, .more-panel, .zoom, .langs, .more-menu > summary, input, select, textarea, .tab, .theme-btn) { background-color: var(--bg); color: var(--text); border-color: var(--line-2); }
-html[data-theme="dark"] :is(.diagram, .draw-box, .dg-block, .certificate, .cert-qr) { background: #fff; color: #17231a; }
-html[data-theme="dark"] a { color: #8fd3a6; }
-html[data-theme="dark"] :is(.btn:not(.ghost), .nav a[aria-current="page"], .tab[aria-current="page"], .more-auth) { color: #fff; }
-html[data-theme="dark"] .table th { background: var(--soft); }
-
-/* chat: microphone and camera buttons, photo in the chat */
-.uc-form .uc-tool { flex: none; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line-2); background: var(--soft); color: var(--green-ink); display: grid; place-items: center; cursor: pointer; padding: 0; }
-.uc-form .uc-tool svg { width: 20px; height: 20px; }
-.uc-form .uc-tool[hidden] { display: none; }
-.uc-form .uc-mic.on { background: #c0392b; border-color: #c0392b; color: #fff; animation: ucPulse 1s infinite; }
-@keyframes ucPulse { 50% { box-shadow: 0 0 0 6px rgba(192, 57, 43, .25); } }
-.uc-photo { max-width: 160px; max-height: 160px; border-radius: 10px; display: block; margin-bottom: 4px; }
-
-html[data-theme="dark"] :is(.ex-num, .ex-size, .ex-ch, .ex-opt, .lg-hero, .lg-match, .lg-round, .lk-form input, .lk-form textarea, .lk-hero, .ms-chap, .ms-hero, .dr-tool, .wt-btn, .pl-opt, .pl-review li, .sp-chap, .sp-hero, .us-form textarea, .wl-stats p) { background-color: var(--bg); color: var(--text); border-color: var(--line-2); }
-
