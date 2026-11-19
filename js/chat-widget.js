@@ -23,6 +23,11 @@
     notReady: { sd: 'AI استاد اڃا تيار ناهي.', ur: 'AI استاد ابھی تیار نہیں ہے۔', en: 'AI Ustad is not ready yet.' },
     noSchool: { sd: 'مان رڳو اسڪول ۽ پڙهائي بابت مدد ڪري سگهان ٿو.', ur: 'میں صرف اسکول اور پڑھائی کے بارے میں مدد کر سکتا ہوں۔', en: 'I can only help with school and studies.' },
     read: { sd: 'ڪتاب ۾ پڙهو', ur: 'کتاب میں پڑھیں', en: 'Read in the book' },
+    mic: { sd: 'ڳالهائي پڇو', ur: 'بول کر پوچھیں', en: 'Ask by speaking' },
+    listening: { sd: 'ٻڌي رهيو آهيان… ڳالهايو', ur: 'سن رہا ہوں… بولیں', en: 'Listening… speak now' },
+    noMic: { sd: 'مائيڪ جي اجازت ناهي. فون جي سيٽنگ ۾ مائيڪ کي اجازت ڏيو.', ur: 'مائیک کی اجازت نہیں۔ فون کی سیٹنگ میں مائیک کی اجازت دیں۔', en: 'No microphone permission. Allow the microphone in the phone settings.' },
+    photo: { sd: 'تصوير سان پڇو', ur: 'تصویر سے پوچھیں', en: 'Ask with a photo' },
+    photoQ: { sd: 'هن تصوير ۾ ڇا آهي؟ سائنس جي حساب سان سمجهايو.', ur: 'اس تصویر میں کیا ہے؟ سائنس کے حساب سے سمجھائیں۔', en: 'What is in this picture? Explain it with science.' },
     here: { sd: 'هي رهيو ڳنڍڻو:', ur: 'یہ رہا لنک:', en: 'Here is the link:' },
     chapter: { sd: 'باب', ur: 'باب', en: 'Chapter' },
     whichChapter: { sd: 'ڪهڙي باب جو؟ باب جو نمبر لکو، مثال: باب 2 جي ورڪ شيٽ', ur: 'کس باب کا؟ باب کا نمبر لکھیں، مثال: باب 2 کی ورک شیٹ', en: 'Which chapter? Write its number, for example: worksheet of chapter 2' }
@@ -105,9 +110,13 @@
   root.innerHTML = '<button type="button" class="uc-fab" aria-expanded="false">' + CHAT + '</button>' +
     '<section class="uc-box" hidden role="dialog"><header class="uc-head"><span class="uc-avatar">' + CHAT + '</span><span class="uc-hd"><strong></strong><small></small></span>' +
     '<button type="button" class="uc-x">&times;</button></header><div class="uc-log" aria-live="polite"></div>' +
-    '<form class="uc-form"><input type="text" maxlength="300" autocomplete="off"><button type="submit" class="uc-send"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-2-7z"/></svg></button></form></section>';
+    '<form class="uc-form"><button type="button" class="uc-tool uc-mic" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>' +
+    '<button type="button" class="uc-tool uc-cam"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></button>' +
+    '<input type="file" class="uc-file" accept="image/*" capture="environment" hidden>' +
+    '<input type="text" class="uc-text" maxlength="300" autocomplete="off"><button type="submit" class="uc-send"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-2-7z"/></svg></button></form></section>';
   var fab = root.querySelector('.uc-fab'), box = root.querySelector('.uc-box'), log = root.querySelector('.uc-log'),
-    form = root.querySelector('.uc-form'), input = form.querySelector('input'), busy = false, said = false;
+    form = root.querySelector('.uc-form'), input = form.querySelector('.uc-text'), busy = false, said = false;
+  var mic = form.querySelector('.uc-mic'), cam = form.querySelector('.uc-cam'), file = form.querySelector('.uc-file');
 
   function labels() {
     fab.setAttribute('aria-label', t('open')); fab.title = t('open');
@@ -117,6 +126,8 @@
     root.querySelector('.uc-x').setAttribute('aria-label', t('close'));
     input.placeholder = t('place');
     form.querySelector('.uc-send').setAttribute('aria-label', t('send'));
+    mic.setAttribute('aria-label', t('mic')); mic.title = t('mic');
+    cam.setAttribute('aria-label', t('photo')); cam.title = t('photo');
     root.dir = lang() === 'en' ? 'ltr' : 'rtl';
   }
   function add(who, html) {
@@ -155,14 +166,14 @@
     }
     askAi(q);
   }
-  function askAi(q) {
+  function askAi(q, image) {
     if (!CFG || navigator.onLine === false) { add('bot', esc(t('offline'))); return; }
     busy = true;
     var wait = add('bot wait', esc(t('thinking')));
     fetch(CFG.supabaseUrl + '/functions/v1/science-ustad', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', apikey: CFG.supabaseKey },
-      body: JSON.stringify({ q: q.slice(0, 300), lang: lang(), chapter: chapterHint(), mode: 'school' })
+      body: JSON.stringify({ q: q.slice(0, 300), lang: lang(), chapter: chapterHint(), mode: 'school', image: image || undefined })
     }).then(function (r) { return r.json().catch(function () { return { error: 'busy' }; }); }).then(function (d) {
       if (d.answer) {
         var seen = {}, links = (d.sources || []).filter(function (s) { if (seen[s.chapter]) return false; seen[s.chapter] = 1; return true; }).slice(0, 2).map(function (s) {
@@ -183,6 +194,42 @@
   fab.addEventListener('click', function () { openBox(box.hidden); });
   root.querySelector('.uc-x').addEventListener('click', function () { openBox(false); fab.focus(); });
   form.addEventListener('submit', function (e) { e.preventDefault(); var q = input.value; input.value = ''; ask(q); });
+
+  /* ---------- ask by voice: the phone writes down what the child says (Urdu, Sindhi or English) ---------- */
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition, rec = null;
+  if (SR) mic.hidden = false;
+  mic.addEventListener('click', function () {
+    if (!SR || busy) return;
+    if (rec) { rec.stop(); return; }
+    rec = new SR();
+    rec.lang = { ur: 'ur-PK', sd: 'ur-PK', en: 'en-US' }[lang()] || 'ur-PK';   // phones rarely know Sindhi speech; Urdu is closest
+    rec.interimResults = true; rec.maxAlternatives = 1;
+    var said2 = '';
+    mic.classList.add('on'); input.placeholder = t('listening');
+    rec.onresult = function (ev) { said2 = [].map.call(ev.results, function (r) { return r[0].transcript; }).join(' '); input.value = said2; };
+    rec.onerror = function (ev) { if (ev.error === 'not-allowed' || ev.error === 'service-not-allowed') add('bot', esc(t('noMic'))); };
+    rec.onend = function () { mic.classList.remove('on'); input.placeholder = t('place'); rec = null; if (said2.trim()) { input.value = ''; ask(said2); } };
+    try { rec.start(); } catch (err) { rec = null; mic.classList.remove('on'); }
+  });
+
+  /* ---------- ask with a photo: made small on the phone (about 100 KB), then AI Ustad explains it ---------- */
+  cam.addEventListener('click', function () { if (!busy) file.click(); });
+  file.addEventListener('change', function () {
+    var f = file.files && file.files[0]; file.value = '';
+    if (!f || !/^image\//.test(f.type)) return;
+    var url = URL.createObjectURL(f), img = new Image();
+    img.onload = function () {
+      var max = 768, s = Math.min(1, max / Math.max(img.width, img.height));
+      var c = document.createElement('canvas'); c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      var data = c.toDataURL('image/jpeg', 0.7);
+      var q = input.value.trim() || t('photoQ'); input.value = '';
+      add('me', '<img class="uc-photo" src="' + data + '" alt=""><br>' + esc(q));
+      askAi(q, data);
+    };
+    img.onerror = function () { URL.revokeObjectURL(url); add('bot', esc(t('busy'))); };
+    img.src = url;
+  });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) { openBox(false); fab.focus(); } });
   // the SPA changes pages without reloading: hide the bubble on grown-ups' pages and the full AI Ustad page
   function place() { root.hidden = skip(); if (root.hidden) openBox(false); labels(); }

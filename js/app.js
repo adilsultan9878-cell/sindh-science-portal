@@ -76,6 +76,15 @@
     }
   };
 
+  // dark mode: kept per phone (ssp1.theme); js/site-nav.js reads the same key on the separate pages
+  function applyTheme() { document.documentElement.setAttribute('data-theme', store.get('theme', 'light') === 'dark' ? 'dark' : 'light'); }
+  applyTheme();
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.theme-btn'); if (!b || b.hasAttribute('data-nav-theme')) return;
+    store.set('theme', store.get('theme', 'light') === 'dark' ? 'light' : 'dark'); applyTheme();
+    b.textContent = store.get('theme') === 'dark' ? '☀️' : '🌙';
+  });
+
   var savedLang = store.get('lang', null);
   var state = {
     lang: LANGS.indexOf(savedLang) >= 0 ? savedLang : null,
@@ -466,7 +475,7 @@
   }
   function moreLinks() {
     return [['/ustad/', 'ustadTitle'], ['/competition', 'competition'], ['/progress', 'progress'], ['/glossary', 'glossary'],
-      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle']];
+      ['/exam/', 'examTitle'], ['/cards/', 'cardsTitle'], ['/review', 'reviewTitle'], ['/sindh/', 'sindhScience'], ['/citizen/', 'citizenTitle']];
   }
   function renderFrame() {
     var student = window.Student && window.Student.current();
@@ -479,6 +488,7 @@
         (state.lang ? '<div class="zoom" role="group" aria-label="' + esc(t('textSize')) + '">' +
           '<button type="button" class="zoom-btn" data-zoom="-1" aria-label="' + esc(t('smaller')) + '" title="' + esc(t('smaller')) + '">A−</button>' +
           '<button type="button" class="zoom-btn" data-zoom="1" aria-label="' + esc(t('bigger')) + '" title="' + esc(t('bigger')) + '">A+</button></div>' : '') +
+        (state.lang ? '<button type="button" class="theme-btn" aria-label="' + esc(t('darkMode')) + '" title="' + esc(t('darkMode')) + '">' + (store.get('theme', 'light') === 'dark' ? '☀️' : '🌙') + '</button>' : '') +
         '<div class="langs" role="group" aria-label="Language / ٻولي / زبان">' + LANGS.map(function (l) {
           return '<button type="button" class="lang-btn" data-setlang="' + l + '" lang="' + l + '" aria-pressed="' + (state.lang === l) + '">' + LANG_NAMES[l] + '</button>';
         }).join('') + '</div>' +
@@ -523,6 +533,7 @@
     [/^\/search\/?$/, function () { history.replaceState(null, '', '/'); return viewHome.apply(null, arguments); }], // search was removed; old links go home
     [/^\/competition\/?$/, viewCompetition],
     [/^\/progress\/?$/, viewProgress],
+    [/^\/review\/?$/, viewReview],
     [/^\/login\/?$/, viewLogin],
     [/^\/leaderboard\/?$/, viewLeaderboard],
     [/^\/teachers\/?$/, function () { location.replace('/staff/'); }],   // the teachers' and staff pages moved to /staff/
@@ -648,7 +659,9 @@
       var last = p.last && chs.filter(function (ch) { return p.last === chUrl(ch) || p.last.indexOf(chUrl(ch) + '/') === 0; })[0];
       var pics = chs.filter(function (ch) { return ['plants', 'water-cycle', 'earth-space', 'seeds'].indexOf(ch.id) >= 0 && (window.PICTURES || {})[ch.id]; });
       var subjUrl = '/class-5/science';
+      var dueN = reviewDue().length;
       main.innerHTML = '<div id="hw-slot"></div>' +   // homework from the teacher, first thing a signed-in child sees
+        (dueN ? '<a class="card review-due" href="/review">' + icon('refresh') + '<span><b>' + esc(t('reviewTitle')) + '</b><br>' + esc(t('reviewDueN', { n: dueN })) + '</span><span class="btn small">' + esc(t('reviewStart')) + '</span></a>' : '') +
         '<section class="hero">' +
           '<div class="hero-text">' +
             '<p class="eyebrow">' + esc(t('heroStats', { c: chs.length, q: qCount })) + '</p>' +
@@ -1215,8 +1228,48 @@
       fb.hidden = false;
       fb.innerHTML = ok ? '✔ ' + esc(t('correct')) : '✘ ' + esc(t('wrong')) + ' — ' + esc(t('correctAnswerIs')) + ' <b>' + esc(correctText) + '</b>';
       if (!ok && q.topic && weak.indexOf(q.topic) < 0) weak.push(q.topic);
+      reviewNote(q, ok);
     });
     return { score: score, total: total, weak: weak };
+  }
+
+  /* ---------- revision: a wrong question comes back after 1, then 3, then 7 days ---------- */
+  var REVIEW_GAPS = [1, 3, 7];
+  function reviewKey(q) { return q.id || JSON.stringify(q.q).slice(0, 120); }
+  function addDays(n) { var d = new Date(); d.setDate(d.getDate() + n); return dateStr(d); }
+  function reviewList() { return store.get('review', []) || []; }
+  function reviewDue() { var today = todayStr(); return reviewList().filter(function (r) { return r.due <= today; }); }
+  // wrong: (again) due tomorrow; right when it was due: the next, longer gap, and after 7 days it is learnt
+  function reviewNote(q, ok) {
+    var list = reviewList(), k = reviewKey(q), it = list.filter(function (r) { return r.k === k; })[0];
+    if (!ok) {
+      if (it) { it.step = 0; it.due = addDays(REVIEW_GAPS[0]); }
+      else list.push({ k: k, q: q, step: 0, due: addDays(REVIEW_GAPS[0]) });
+    } else if (it && it.due <= todayStr()) {
+      it.step++;
+      if (it.step >= REVIEW_GAPS.length) list = list.filter(function (r) { return r !== it; });
+      else it.due = addDays(REVIEW_GAPS[it.step]);
+    } else return;
+    store.set('review', list.slice(-200));
+  }
+  function viewReview() {
+    setMeta(t('reviewTitle'), t('reviewText'));
+    var due = reviewDue(), left = reviewList().length;
+    main.innerHTML = crumbs([['/', t('home')], ['', t('reviewTitle')]]) + '<h1>' + icon('refresh') + ' ' + esc(t('reviewTitle')) + '</h1>' +
+      '<p class="lead">' + esc(t('reviewText')) + '</p><div id="review-box"></div>';
+    var box = document.getElementById('review-box');
+    if (!due.length) {
+      box.innerHTML = '<div class="card note"><p>✔ ' + esc(t('reviewNone')) + '</p>' + (left ? '<p class="muted">' + esc(t('reviewLater', { n: left })) + '</p>' : '') +
+        '<p><a class="btn" href="/class-5/science">' + esc(t('startLearning')) + '</a></p></div>';
+      return;
+    }
+    runQuiz(box, shuffle(due).slice(0, 10).map(function (r) { return r.q; }), {
+      prefix: 'rv', submitKey: 'checkAnswers',
+      onDone: function (r, out) {
+        out.innerHTML = '<div class="card result"><p class="result-line">' + esc(t('score')) + ': <b>' + r.score + ' / ' + r.total + '</b></p>' +
+          '<p>' + esc(t('reviewAfter')) + '</p><p><a class="btn" href="/review">' + icon('refresh') + esc(t('reviewMore')) + '</a> <a class="btn ghost" href="/">' + esc(t('home')) + '</a></p></div>';
+      }
+    });
   }
   // Renders a quiz into el, one question at a time with Back / Next. At the end every question is shown
   // again with its marking, under the result box.
